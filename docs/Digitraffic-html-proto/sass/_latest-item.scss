@@ -1,0 +1,36 @@
+.latest-item {
+    font-size: 0.75rem;
+    margin: 1rem;
+
+    /* Elements */
+    &__header-link {
+        text-decoration: none;
+        font-weight: bold;
+        color: $color-3;
+        transition: 800ms;
+
+        &:hover {
+            color: $color-4;
+        }
+    }
+
+    &__timestamp {
+        &::after {
+            @include separator();
+        }
+    }
+
+    &__content-type {
+        text-transform: uppercase;
+    }
+
+    &__traffic-type {
+        &::after {
+            @include separator("●")
+        }
+
+        &:last-child::after {
+            @include separator("", 0);
+        }
+    }
+}

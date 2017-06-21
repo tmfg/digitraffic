@@ -1,0 +1,12 @@
+.content {
+    z-index: 0;
+
+    &__section {
+        padding: $margin-sm $content-padding;
+
+        &:nth-child(even) {
+            background-color: $color-5;
+            box-shadow: 2px 2px 2px #ddd;
+        }
+    }
+}

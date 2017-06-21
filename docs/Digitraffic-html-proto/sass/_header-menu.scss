@@ -1,0 +1,22 @@
+.header-menu {
+    float: right;
+    margin: $header-margin-y $header-margin-x;
+}
+
+.header-menu__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-menu__item {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.header-menu__icon {
+    padding: $icon-padding-y $icon-padding-x;
+    color: $header-icon-color;
+}
