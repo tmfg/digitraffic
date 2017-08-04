@@ -1,0 +1,21 @@
+@mixin body($font-size: 1rem) {
+  font-family: $base-font-family;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: $base-line-height;
+  color: $gray-68;
+}
+
+@mixin heading($font-size: 3rem, $font-weight: 500, $color: $gray-68, $letter-spacing:$heading-letter-spacing) {
+  font-family: $heading-font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $base-line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+@mixin separator($char: "|", $padding: 0.5rem) {
+  content: $char;
+  padding: 0 $padding;
+}

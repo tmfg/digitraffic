@@ -1,0 +1,40 @@
+.latest-item {
+  font-size: $font-size-sm;
+  margin: $margin-xs;
+
+  /* Elements */
+  &__header-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: $gray-68;
+    transition: $transition-moderate;
+
+    &:hover {
+        color: $blue;
+    }
+  }
+
+  &__meta-first {
+    padding-bottom: $margin-xxxs;
+  }
+
+  &__timestamp {
+    &::after {
+        @include separator();
+    }
+  }
+
+  &__content-type {
+    text-transform: uppercase;
+  }
+
+  &__traffic-type {
+    &::after {
+        @include separator("•")
+    }
+
+    &:last-child::after {
+        @include separator("", 0);
+    }
+  }
+}

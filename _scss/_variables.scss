@@ -1,0 +1,73 @@
+/* Base values */
+$base-font-family: 'Roboto', Arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+/* Font sizes */
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+
+/* Margins and paddings */
+$margin-xxxs: 0.25rem;
+$margin-xxs: 0.5rem;
+$margin-xs: 1rem;
+$margin-xssm: 1.5rem;
+$margin-sm: 2rem;
+$margin-md: 3rem;
+$margin-lg: 4.5rem;
+$margin-xl: 6rem;
+$margin-xxl: 7.5rem;
+
+/* Transitions */
+$transition-faster: 150ms;
+$transition-fast: 300ms;
+$transition-moderate: 600ms;
+$transition-slow: 900ms;
+
+/* Body */
+$body-background-color: $white;
+
+/* Headings */
+$heading-font-family: 'Montserrat', Arial, sans-serif;
+$heading-letter-spacing: 0;
+
+/* Header */
+$header-background-color: #666;
+$header-text-color: $white;
+$header-icon-color: $white;
+$language--active-color: $white;
+$header-margin-y: 1rem;
+$header-margin-x: 1rem;
+
+/* Content */
+$content-padding: $margin-md;
+
+/* Hero image */
+$hero-image__header-text-color: $white;
+
+/* Hero image background images */
+// Frontpage
+$hero-image--frontpage-background-image: url('../img/hero-img-road.jpg');
+
+
+/*** Material Design icons ***/
+
+/* Colors */
+/* Black icons on light background */
+$md-dark: rgba(0, 0, 0, 0.54);
+$md-dark-inactive: rgba(0, 0, 0, 0.26);
+
+/* White icons on dark background */
+$md-light: rgba(255, 255, 255, 1);
+$md-light-inactive: rgba(255, 255, 255, 0.3);
+
+/* Icon sizes */
+$md-sm: 0.75rem; // 18px;
+$md-md: 1rem; // 24px;
+$md-lg: 1.5rem; // 36px;
+$md-xl: 2rem; // 48px;
+
+/* Icon padding */
+$icon-padding-y: 0rem;
+$icon-padding-x: 0.5rem;

@@ -1,0 +1,12 @@
+.frontpage-traffic-type {
+  margin-top: $margin-xssm;
+
+  &__button {
+    margin: $margin-xssm 0 0 0;
+  }
+
+  &__description {
+    margin-top: $margin-xs;
+    padding-left: $margin-xssm;
+  }
+}

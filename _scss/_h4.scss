@@ -1,0 +1,4 @@
+.h4 {
+    @include heading(1.125rem, 500, $gray-68, 0);
+    margin: $margin-xs 0;
+}

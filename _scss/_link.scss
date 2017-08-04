@@ -1,0 +1,23 @@
+.link {
+  color: $blue-dark;
+  text-decoration: none;
+
+  &:link, &::visited {  
+    color: $blue-dark;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus, &--active {
+    color: $gray-102;
+    text-decoration: underline;
+  }
+
+  &--disabled {
+    color: $gray-68;
+    text-decoration: none;
+  }
+}

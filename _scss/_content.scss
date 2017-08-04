@@ -1,0 +1,12 @@
+.content {
+    z-index: 0;
+
+    &__frontpage-section {
+        padding: $margin-sm $content-padding;
+
+        &:nth-child(even) {
+            background-color: $gray-241;
+            box-shadow: 0px 2px 10px #ddd;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.h-link {
+  color: $blue-dark;
+  text-decoration: none;
+  transition: $transition-fast;
+  
+  &:link, &:visited {
+    color: $blue-dark;
+  }
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:focus, &--active {
+    color: $gray-102;
+  }
+
+  &--disabled {
+    color: $gray-68;
+  }
+}

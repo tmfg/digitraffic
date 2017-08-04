@@ -1,0 +1,11 @@
+body, .body {
+    /* Background */
+    background-color: $body-background-color;
+    
+    /* Positioning */
+    margin: 0;
+    padding: 0;
+
+    /* Text */
+    @include body();
+}
