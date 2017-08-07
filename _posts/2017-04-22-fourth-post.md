@@ -1,6 +1,6 @@
 ---
 title: Toistaiseksi uusin tiedote
-layout: default
+image: hero-img-roundabout.jpg
 ---
 
 Tämä on sivuston uusin tiedote toistaiseksi.

@@ -3,3 +3,10 @@ baseurl: /digitraffic
 sass:
   sass_dir: _scss
 exclude: [node_modules, gulpfile.js]
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "news"

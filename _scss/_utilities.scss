@@ -1,5 +1,17 @@
 .u {
-    &--centered {
-        text-align: center;
-    }
+  &--centered {
+    text-align: center;
+  }
+
+  &--P-x-xs {
+    padding: 0 $margin-xs + 0.5rem;
+  }
+
+  &--t-sm {
+    font-size: $font-size-sm;
+  }
+
+  &--t-xs {
+    font-size: $font-size-xs;
+  }
 }

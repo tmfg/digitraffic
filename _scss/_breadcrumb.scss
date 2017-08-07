@@ -1,0 +1,15 @@
+.breadcrumb {
+  font-size: $font-size-sm;
+  margin: $margin-xs;
+
+  &__item {
+    &::after {
+      content: '>';
+      padding: 0 $margin-xxs;
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+  }
+}

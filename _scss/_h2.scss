@@ -1,4 +1,4 @@
-.h2 {
+h2, .h2 {
     @include heading(2.25rem, 700);
     margin: $margin-xs 0;
 }

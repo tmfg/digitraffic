@@ -1,7 +1,7 @@
 ---
 ---
 /* Normalize */
-@import "normalize";
+//@import "normalize";
 
 /* Reset margins and paddings */
 @import "reset-spacing";
@@ -26,6 +26,7 @@
 /* SCSS styles for components */
 @import
   "body",
+  "breadcrumb",
   "button",
   "content",
   "frontpage-button-area",
@@ -44,5 +45,7 @@
   "latest-item",
   "link",
   "logo",
+  "news-heading",
+  "quote",
   "support-description",
   "utilities";

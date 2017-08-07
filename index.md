@@ -1,7 +1,5 @@
 ---
 title: Digitraffic
-layout: default
+layout: frontpage
 published: true
 ---
-
-Content goes here... This is some awesome content right here.

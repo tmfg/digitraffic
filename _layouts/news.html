@@ -1,0 +1,44 @@
+{% include base.html %}
+
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body class="body">
+    {% include header.html %}
+      
+    <content class="content content--padded">
+      <!--Breadcrumb-->
+      <div class="row">
+        <div class="col-xs-12 breadcrumb">
+          <span class="breadcrumb__item"><a class="link" href="{{ base }}">Digitraffic</a></span>
+          <span class="breadcrumb__item"><a class="link" href="{{ base }}">Tiedotteet</a></span>
+          <span class="breadcrumb__item">{{ page.title }}</span>
+        </div>
+      </div>
+
+      <!--News title-->
+      <div class="row">
+        <div class="col-xs-12 u--P-x-xs">
+          <h1 class="h1 h1--page-top">{{ page.title }}</h1>
+        </div>
+      </div>
+
+      <!--Cover image-->
+      <div class="row">
+        <div class="col-xs-12 u--P-x-xs">
+          <img src="{{ base }}/img/{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
+        </div>
+      </div>
+
+      <section>
+        <div class="row">
+          <div class="col-xs-12 col-md">
+            {{ content }}
+          </div>
+        </div>
+
+      </section>
+    </content>
+  </body>
+</html>
