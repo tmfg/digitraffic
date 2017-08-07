@@ -1,5 +1,5 @@
 name: Digitraffic
-baseurl: /jekyll-2
+baseurl: /digitraffic
 sass:
   sass_dir: _scss
 exclude: [node_modules, gulpfile.js]
