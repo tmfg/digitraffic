@@ -1,0 +1,28 @@
+.date-type-tags {
+  font-size: $font-size-sm;
+
+  /* Elements */
+  &__date {
+    &::after {
+      @include separator;
+    }
+  }
+
+  &__type{
+    text-transform: uppercase;
+
+    &::after {
+      @include separator;
+    }
+  }
+
+  &__tag {
+    &::after {
+      @include separator('•');
+    }
+
+    &:last-child::after {
+      content: none;
+    }
+  }
+}

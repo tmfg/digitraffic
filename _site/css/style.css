@@ -2107,6 +2107,45 @@
 html {
   font-size: 16px; }
 
+/* Heading styles */
+h1, .h1 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #444444;
+  margin: 1.5rem 0; }
+  h1--page-top, .h1--page-top {
+    margin: 0 0 1rem 0; }
+
+h2, .h2 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #444444;
+  margin: 1rem 0; }
+
+h3, .h3 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #444444;
+  margin: 1rem 0; }
+
+h4, .h4 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #444444;
+  margin: 1rem 0; }
+
 /* SCSS styles for components */
 body, .body {
   /* Background */
@@ -2123,7 +2162,7 @@ body, .body {
 
 .breadcrumb {
   font-size: 0.875rem;
-  margin: 1rem; }
+  margin: 1rem 0; }
   .breadcrumb__item::after {
     content: '>';
     padding: 0 0.5rem; }
@@ -2171,9 +2210,29 @@ body, .body {
       background-color: #f1f1f1;
       box-shadow: 0px 2px 10px #ddd; }
   .content--padded {
-    padding: 0 3rem; }
+    padding: 0 4rem; }
   .content--transparent-header {
     top: 0; }
+
+.cover-image {
+  margin: 1.5rem 0 1rem 0; }
+
+.date-type-tags {
+  font-size: 0.875rem;
+  /* Elements */ }
+  .date-type-tags__date::after {
+    content: "|";
+    padding: 0 0.5rem; }
+  .date-type-tags__type {
+    text-transform: uppercase; }
+    .date-type-tags__type::after {
+      content: "|";
+      padding: 0 0.5rem; }
+  .date-type-tags__tag::after {
+    content: "•";
+    padding: 0 0.5rem; }
+  .date-type-tags__tag:last-child::after {
+    content: none; }
 
 .frontpage-button-area {
   margin: 2rem auto; }
@@ -2198,44 +2257,6 @@ body, .body {
     color: #666666; }
   .h-link--disabled {
     color: #444444; }
-
-h1, .h1 {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: #444444;
-  margin: 1.5rem 0; }
-  h1--page-top, .h1--page-top {
-    margin-top: 0; }
-
-h2, .h2 {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: #444444;
-  margin: 1rem 0; }
-
-h3, .h3 {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700rem;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: #444444;
-  margin: 1rem 0; }
-
-h4, .h4 {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0;
-  color: #444444;
-  margin: 1rem 0; }
 
 .header {
   position: fixed;
@@ -2336,6 +2357,26 @@ h4, .h4 {
 .img--full-width {
   width: 100%; }
 
+.intro, .jekyll-content > p:first-child {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #444444; }
+
+.jekyll-content {
+  margin: 1.5rem 0; }
+  .jekyll-content blockquote {
+    background-image: url('data:image/svg+xml;utf-8,<svg fill="#0088ce" height="48" viewBox="5 2 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    padding-left: 4.5rem;
+    margin: 3rem 0; }
+  .jekyll-content p {
+    margin-bottom: 1.5rem; }
+  .jekyll-content > p:first-child {
+    margin-bottom: 2rem; }
+
 .language--active {
   color: white; }
 
@@ -2364,15 +2405,15 @@ h4, .h4 {
     content: "";
     padding: 0 0; }
 
-.link {
+.link, .jekyll-content a {
   color: #0067be;
   text-decoration: none; }
-  .link:link, .link::visited {
+  .link:link, .jekyll-content a:link, .link::visited, .jekyll-content a::visited {
     color: #0067be;
     text-decoration: none; }
-  .link:hover {
+  .link:hover, .jekyll-content a:hover {
     text-decoration: underline; }
-  .link:focus, .link--active {
+  .link:focus, .jekyll-content a:focus, .link--active {
     color: #666666;
     text-decoration: underline; }
   .link--disabled {
@@ -2386,13 +2427,16 @@ h4, .h4 {
   .logo__service {
     padding: 1rem; }
 
-.quote {
+.quote, .jekyll-content blockquote {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 1.75rem;
   font-weight: 200;
   line-height: 1.5;
   letter-spacing: 0;
   color: #444444; }
+
+.sidebar {
+  margin: 1.5rem 0; }
 
 .support-description {
   padding: 0 2rem 2rem 2rem; }
@@ -2405,8 +2449,13 @@ h4, .h4 {
     font-size: 6rem;
     color: #0067be; }
 
+.text-body {
+  margin: 1rem 0; }
+
 .u--centered {
   text-align: center; }
+.u--no-padding {
+  padding: 0; }
 .u--P-x-xs {
   padding: 0 1.5rem; }
 .u--t-sm {

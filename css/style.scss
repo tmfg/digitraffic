@@ -23,29 +23,37 @@
 /* HTML base styles */
 @import "html";
 
+/* Heading styles */
+@import
+  "h1",
+  "h2",
+  "h3",
+  "h4";
+
 /* SCSS styles for components */
 @import
   "body",
   "breadcrumb",
   "button",
   "content",
+  "cover-image",
+  "date-type-tags",
   "frontpage-button-area",
   "frontpage-traffic-type",
   "h-link",
-  "h1",
-  "h2",
-  "h3",
-  "h4",
   "header",
   "header-menu",
   "hero-image",
   "icons",
   "img",
+  "intro",
+  "jekyll-content",
   "language",
   "latest-item",
   "link",
   "logo",
-  "news-heading",
   "quote",
+  "sidebar",
   "support-description",
+  "text-body",
   "utilities";

@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html>
+  <!--HTML head-->
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,10 @@
   <link rel="stylesheet" type="text/css" href="/digitraffic/css/style.css">
 </head>
 
+  <!--HTML body-->
   <body class="body">
+    
+    <!--Header-->
     <header class="header">
   <div class="row">
     <div class="col-xs">
@@ -36,8 +40,10 @@
 </div>
   </div>
 </header>
-      
+    
+    <!--Content-->
     <content class="content content--padded">
+
       <!--Breadcrumb-->
       <div class="row">
         <div class="col-xs-12 breadcrumb">
@@ -47,29 +53,47 @@
         </div>
       </div>
 
-      <!--News title-->
+      <!--Title-->
       <div class="row">
-        <div class="col-xs-12 u--P-x-xs">
+        <div class="col-xs-12">
           <h1 class="h1 h1--page-top">First Post</h1>
         </div>
       </div>
 
       <!--Cover image-->
+      
+
       <div class="row">
-        <div class="col-xs-12 u--P-x-xs">
-          <img src="../../../img/" alt="Kuva: First Post" class="img img--full-width">
+        <!--Text body-->
+        <div class="col-xs-12 col-sm-8 text-body">
+          
+          <!--Date, type, tags-->
+          <div class="row">
+            <div class="col-xs-12 date-type-tags u--no-padding">
+              <span class="date-type-tags__date">02.01.2017</span>
+              <span class="date-type-tags__type"><a class="link" href="#">Tieliikenne</a></span>
+              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 jekyll-content u--no-padding">
+              <p>Tiedotteen leipätekstiä.</p>
+  
+            </div>
+          </div>
+
         </div>
+
+        <!--Sidebar-->
+        <div class="col-xs-12 col-sm-4 sidebar">
+          Sidebar
+        </div>
+
       </div>
 
-      <section>
-        <div class="row">
-          <div class="col-xs-12 col-md">
-            <p>Tiedotteen leipätekstiä.</p>
-
-          </div>
-        </div>
-
-      </section>
     </content>
   </body>
 </html>

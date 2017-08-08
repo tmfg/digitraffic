@@ -3,6 +3,10 @@
     text-align: center;
   }
 
+  &--no-padding {
+    padding: 0;
+  }
+
   &--P-x-xs {
     padding: 0 $margin-xs + 0.5rem;
   }

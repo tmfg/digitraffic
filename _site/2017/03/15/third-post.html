@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html>
+  <!--HTML head-->
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,10 @@
   <link rel="stylesheet" type="text/css" href="/digitraffic/css/style.css">
 </head>
 
+  <!--HTML body-->
   <body class="body">
+    
+    <!--Header-->
     <header class="header">
   <div class="row">
     <div class="col-xs">
@@ -36,40 +40,60 @@
 </div>
   </div>
 </header>
-      
+    
+    <!--Content-->
     <content class="content content--padded">
+
       <!--Breadcrumb-->
       <div class="row">
         <div class="col-xs-12 breadcrumb">
           <span class="breadcrumb__item"><a class="link" href="../../..">Digitraffic</a></span>
           <span class="breadcrumb__item"><a class="link" href="../../..">Tiedotteet</a></span>
-          <span class="breadcrumb__item">Tämä tässä on kolmas tiedote, joka on sivustolla julkaistu</span>
+          <span class="breadcrumb__item">Tämä tässä on kolmas tiedote, jossa ei ole kuvaa</span>
         </div>
       </div>
 
-      <!--News title-->
+      <!--Title-->
       <div class="row">
-        <div class="col-xs-12 u--P-x-xs">
-          <h1 class="h1 h1--page-top">Tämä tässä on kolmas tiedote, joka on sivustolla julkaistu</h1>
+        <div class="col-xs-12">
+          <h1 class="h1 h1--page-top">Tämä tässä on kolmas tiedote, jossa ei ole kuvaa</h1>
         </div>
       </div>
 
       <!--Cover image-->
+      
+
       <div class="row">
-        <div class="col-xs-12 u--P-x-xs">
-          <img src="../../../img/" alt="Kuva: Tämä tässä on kolmas tiedote, joka on sivustolla julkaistu" class="img img--full-width">
+        <!--Text body-->
+        <div class="col-xs-12 col-sm-8 text-body">
+          
+          <!--Date, type, tags-->
+          <div class="row">
+            <div class="col-xs-12 date-type-tags u--no-padding">
+              <span class="date-type-tags__date">15.03.2017</span>
+              <span class="date-type-tags__type"><a class="link" href="#">Tieliikenne</a></span>
+              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 jekyll-content u--no-padding">
+              <p>Uutinen näkyy suoraan otsikon alla, jos uutisessa ei ole määriteltynä kuvaa.</p>
+  
+            </div>
+          </div>
+
         </div>
+
+        <!--Sidebar-->
+        <div class="col-xs-12 col-sm-4 sidebar">
+          Sidebar
+        </div>
+
       </div>
 
-      <section>
-        <div class="row">
-          <div class="col-xs-12 col-md">
-            <p>Tärkeää asiaa.</p>
-
-          </div>
-        </div>
-
-      </section>
     </content>
   </body>
 </html>

@@ -1,0 +1,24 @@
+.jekyll-content {
+  margin: $margin-xssm 0;
+
+  a {
+    @extend .link;
+  }
+
+  blockquote {
+    @extend .quote;
+    background-image: url('data:image/svg+xml;utf-8,<svg fill="#0088ce" height="48" viewBox="5 2 24 24" width="48" xmlns="http://www.w3.org/2000/svg"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    padding-left: $margin-lg;
+    margin: $margin-md 0;
+  }
+
+  p {
+    margin-bottom: $margin-xssm;
+    }
+
+  & > p:first-child {
+    @extend .intro;
+    margin-bottom: $margin-sm;
+  }
+}
