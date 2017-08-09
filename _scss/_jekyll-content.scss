@@ -13,6 +13,26 @@
     margin: $margin-md 0;
   }
 
+  img {
+    width: 100%;
+
+
+
+    & + em {
+      display: inline-block;
+      width: 100%;
+      color: $gray-153;
+      font-size: $font-size-sm;
+      font-style: normal;
+      text-decoration: none;
+      padding-bottom: $margin-xs;
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-color: $gray-200;
+      margin-bottom: $margin-xxs;
+    }
+  }
+
   p {
     margin-bottom: $margin-xssm;
     }

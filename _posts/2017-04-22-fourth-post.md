@@ -7,7 +7,7 @@ Johdantoteksti lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dia
 
 Leipäteksti luis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan [tekstilinkki](http://www.liikennevirasto.fi/) et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 
-**Kuva**
+![Kuvaava teksti näkörajoitteisille]({{ base }}/img/hero-img-road.jpg)
 *Kuvateksti on pienellä kuvan alla*
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.

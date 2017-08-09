@@ -10,3 +10,8 @@ defaults:
       type: "posts"
     values:
       layout: "news"
+  -
+    scope:
+      path: "img"
+    values:
+      image: true
