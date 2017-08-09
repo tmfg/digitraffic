@@ -3,6 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
     
     /* Text */
@@ -22,14 +23,14 @@
 
     /* Elements */
     &__heading {
-        @include heading(6rem, 200, $white, -0.05rem);
+        @include heading(6rem, 100, $white, -0.05rem);
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         padding: 0 $content-padding;
         margin: $margin-xxl auto 0 auto;
     }
 
     &__intro {
-        @include heading(2.25rem, 200, $white, -0.05rem);
+        @include heading(2.25rem, 100, $white, -0.05rem);
         text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
         max-width: 58rem;
         padding: 0 $content-padding;
