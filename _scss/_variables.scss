@@ -25,6 +25,17 @@ $transition-fast: 300ms;
 $transition-moderate: 600ms;
 $transition-slow: 900ms;
 
+/* Media queries for device sizes */
+/* min-width */
+$min-width-sm: nth(nth($breakpoints, 1), 2);
+$min-width-md: nth(nth($breakpoints, 2), 2);
+$min-width-lg: nth(nth($breakpoints, 3), 2);
+
+/* max-width */
+$max-width-sm: nth(nth($breakpoints, 1), 2) + 1px;
+$max-width-md: nth(nth($breakpoints, 2), 2) + 1px;
+$max-width-lg: nth(nth($breakpoints, 3), 2) + 1px;
+
 /* Body */
 $body-background-color: $white;
 

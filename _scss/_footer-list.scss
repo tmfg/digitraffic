@@ -1,0 +1,38 @@
+.footer-list {
+
+  /* Elements */
+  &__item {
+    padding: $margin-xxs 0;
+
+    &:first-child {
+      padding-top: $margin-xxxs;
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+
+    &:link, &:visited {
+      color: $white;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &:focus, &--active {
+      color: $gray-102;
+      text-decoration: underline;
+
+      .footer-list__link-icon {
+        color: $gray-102;
+      }
+    }
+  }
+
+  &__link-icon {
+    padding-right: $margin-xxs;
+  }
+}

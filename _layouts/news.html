@@ -12,7 +12,7 @@
     {% include header.html %}
     
     <!--Content-->
-    <content class="content content--padded">
+    <div class="content content--padded">
 
       <!--Breadcrumb-->
       <div class="row">
@@ -23,52 +23,60 @@
         </div>
       </div>
 
-      <!--Title-->
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="h1 h1--page-top">{{ page.title }}</h1>
+      <!--Artice-->
+      <article>
+      
+        <!--Title-->
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="h1 h1--page-top">{{ page.title }}</h1>
+          </div>
         </div>
-      </div>
 
-      <!--Cover image-->
-      {% if page.image != null and page.image != empty %}
-      <div class="row">
-        <div class="col-xs-12 cover-image">
-          <img src="{{ base }}/img/{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
+        <!--Cover image-->
+        {% if page.image != null and page.image != empty %}
+        <div class="row">
+          <div class="col-xs-12 cover-image">
+            <img src="{{ base }}/img/{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
+          </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
 
-      <div class="row">
-        <!--Text body-->
-        <div class="col-xs-12 col-sm-8 text-body">
-          
-          <!--Date, type, tags-->
-          <div class="row">
-            <div class="col-xs-12 date-type-tags u--no-padding">
-              <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span>
-              <span class="date-type-tags__type"><a class="link" href="#">Tieliikenne</a></span>
-              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
-              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
-              <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+        <div class="row">
+          <!--Text body-->
+          <div class="col-xs-12 col-sm-8 text-body">
+            
+            <!--Date, type, tags-->
+            <div class="row">
+              <div class="col-xs-12 date-type-tags u--no-padding">
+                <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span>
+                <span class="date-type-tags__type"><a class="link" href="#">Tieliikenne</a></span>
+                <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+                <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+                <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+              </div>
             </div>
+
+            <!--Text content-->
+            <div class="row">
+              <div class="col-xs-12 jekyll-content u--no-padding">
+                {{ content }}  
+              </div>
+            </div>
+
           </div>
 
-          <div class="row">
-            <div class="col-xs-12 jekyll-content u--no-padding">
-              {{ content }}  
-            </div>
+          <!--Sidebar-->
+          <div class="col-xs-12 col-sm-4 sidebar">
+            Sidebar
           </div>
 
         </div>
+      </article>
+    </div>
 
-        <!--Sidebar-->
-        <div class="col-xs-12 col-sm-4 sidebar">
-          Sidebar
-        </div>
+    <!--footer-->
+    {% include footer.html %}
 
-      </div>
-
-    </content>
   </body>
 </html>

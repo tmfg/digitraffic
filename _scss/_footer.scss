@@ -1,0 +1,22 @@
+.footer {
+  position: relative;
+  padding: $margin-sm $content-padding + $margin-xs;
+  box-sizing: border-box;
+  background-color: $gray-68;
+  
+  @media screen and (max-width: $max-width-md) {
+    &__section:first-child {
+      margin-bottom: $margin-xssm;
+    }
+  }
+
+  @media screen and (max-width: $max-width-sm) {
+    &__section {
+      margin-bottom: $margin-xssm;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

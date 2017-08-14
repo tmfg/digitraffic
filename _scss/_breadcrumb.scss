@@ -1,6 +1,6 @@
 .breadcrumb {
   font-size: $font-size-sm;
-  margin: $margin-xs 0;
+  margin: $margin-sm 0 ($margin-xs + $margin-xxs) 0;
 
   &__item {
     &::after {
