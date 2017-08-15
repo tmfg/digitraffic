@@ -22,7 +22,9 @@
 ## Build the site and push to GitHub
 1. `git pull` -> Pull latest changes from GitHub
 2. `npm run build` -> Build the site for GitHub Pages
-3. `git push -u origin master` -> Push changes to GitHub
+3. `git add .` -> Stages changes
+4. `git commit -m “<message>”` -> Commits changes with given message
+5. `git push -u origin master` -> Push changes to GitHub
 
 ## In addition
 
