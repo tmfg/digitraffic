@@ -30,12 +30,12 @@
         color: $gray-102;
       }
 
-      .footer-list__custom-icon--facebook {
-        background-image: url('data:image/svg+xml;utf-8,<svg fill="#{$gray-102}" height="32px" viewBox="4 4 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M16.2,7.1h-2.4c-0.3,0-0.6,0.4-0.6,0.9v1.7h3v2.4h-3v7.4h-2.8v-7.4H7.8V9.7h2.5V8.2c0-2.1,1.4-3.7,3.4-3.7h2.4V7.1z"/></svg>');
+      .footer-list__custom-icon--facebook svg {
+        fill: $gray-102;
       }
 
-      .footer-list__custom-icon--twitter {
-        background-image: url('data:image/svg+xml;utf-8,<svg fill="#{$gray-102}" height="24px" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4,7.5c0,0.2,0,0.4,0,0.6c0,6-4.5,12.8-12.8,12.8c-2.5,0-4.9-0.7-6.9-2C2,19,2.3,19,2.7,19 c2.1,0,4.1-0.7,5.6-1.9c-2,0-3.6-1.3-4.2-3.1C4.4,14,4.6,14,4.9,14c0.4,0,0.8-0.1,1.2-0.2c-2.1-0.4-3.6-2.2-3.6-4.4c0,0,0,0,0-0.1 c0.6,0.3,1.3,0.5,2,0.6c-1.2-0.8-2-2.2-2-3.8c0-0.8,0.2-1.6,0.6-2.3c2.2,2.7,5.6,4.5,9.3,4.7c-0.1-0.3-0.1-0.7-0.1-1 c0-2.5,2-4.5,4.5-4.5c1.3,0,2.5,0.5,3.3,1.4c1-0.2,2-0.6,2.9-1.1c-0.3,1.1-1.1,1.9-2,2.5c0.9-0.1,1.8-0.4,2.6-0.7 C23,6.1,22.3,6.9,21.4,7.5z"/></svg>');
+      .footer-list__custom-icon--twitter svg {
+        fill: $gray-102;
       }
     }
   }
@@ -53,11 +53,18 @@
     background-repeat: no-repeat;
   
     &--facebook {
-      background-image: url('data:image/svg+xml;utf-8,<svg fill="#{$white}" height="32px" viewBox="4 4 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M16.2,7.1h-2.4c-0.3,0-0.6,0.4-0.6,0.9v1.7h3v2.4h-3v7.4h-2.8v-7.4H7.8V9.7h2.5V8.2c0-2.1,1.4-3.7,3.4-3.7h2.4V7.1z"/></svg>');
+      vertical-align: -1rem;
+
+      & svg {
+        fill: $white;
+      }
     }
 
     &--twitter {
-      background-image: url('data:image/svg+xml;utf-8,<svg fill="#{$white}" height="24px" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4,7.5c0,0.2,0,0.4,0,0.6c0,6-4.5,12.8-12.8,12.8c-2.5,0-4.9-0.7-6.9-2C2,19,2.3,19,2.7,19 c2.1,0,4.1-0.7,5.6-1.9c-2,0-3.6-1.3-4.2-3.1C4.4,14,4.6,14,4.9,14c0.4,0,0.8-0.1,1.2-0.2c-2.1-0.4-3.6-2.2-3.6-4.4c0,0,0,0,0-0.1 c0.6,0.3,1.3,0.5,2,0.6c-1.2-0.8-2-2.2-2-3.8c0-0.8,0.2-1.6,0.6-2.3c2.2,2.7,5.6,4.5,9.3,4.7c-0.1-0.3-0.1-0.7-0.1-1 c0-2.5,2-4.5,4.5-4.5c1.3,0,2.5,0.5,3.3,1.4c1-0.2,2-0.6,2.9-1.1c-0.3,1.1-1.1,1.9-2,2.5c0.9-0.1,1.8-0.4,2.6-0.7 C23,6.1,22.3,6.9,21.4,7.5z"/></svg>');
+      
+      & svg {
+        fill: $white;
+      }
     }
   }
 }
