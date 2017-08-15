@@ -1,0 +1,15 @@
+.hidden {
+  &-xs {
+    @media screen and (max-width: $max-width-sm) {
+      display: none;
+    }
+  }
+}
+
+.visible {
+  &-xs {
+    @media screen and (min-width: $min-width-sm) {
+      display: none;
+    }
+  }
+}

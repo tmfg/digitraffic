@@ -32,9 +32,9 @@ $min-width-md: nth(nth($breakpoints, 2), 2);
 $min-width-lg: nth(nth($breakpoints, 3), 2);
 
 /* max-width */
-$max-width-sm: nth(nth($breakpoints, 1), 2) + 1px;
-$max-width-md: nth(nth($breakpoints, 2), 2) + 1px;
-$max-width-lg: nth(nth($breakpoints, 3), 2) + 1px;
+$max-width-sm: nth(nth($breakpoints, 1), 2) - 1px;
+$max-width-md: nth(nth($breakpoints, 2), 2) - 1px;
+$max-width-lg: nth(nth($breakpoints, 3), 2) - 1px;
 
 /* Body */
 $body-background-color: $white;
@@ -49,7 +49,6 @@ $header-text-color: $white;
 $header-icon-color: $white;
 $language--active-color: $white;
 $header-margin-y: 1rem;
-$header-margin-x: 1rem;
 
 /* Content */
 $content-padding: $margin-md;

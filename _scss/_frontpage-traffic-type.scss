@@ -1,12 +1,24 @@
 .frontpage-traffic-type {
   margin-top: $margin-xssm;
-
+  
+  /* Elements */
   &__button {
     margin: $margin-xssm 0 0 0;
   }
-
+  
   &__description {
     margin-top: $margin-xs;
-    padding-left: $margin-xssm;
+
+    &--last {
+      margin-bottom: $margin-sm;
+    }
   }
+
+  /* Media queries for different screen sizes */
+  @media screen and (min-width: $min-width-sm) {
+    div:first-child {
+      padding-right: $margin-xssm;
+    }
+  }
+
 }

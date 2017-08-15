@@ -31,12 +31,10 @@
           </div>
           <div class="row">
             {% for post in site.posts limit:3 %}
-              <div class="col-xs-12 col-sm">
-                <section class="latest-item">
-                  <h4 class="h4 latest-item__header-text"><a href="{{ base }}{{ post.url }}" class="latest-item__header-link">{{ post.title }}</a></h4>
-                  <p class="latest-item__meta-first"><span class="latest-item__timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><a href="#" class="latest-item__content-type link">Tiedotteet</a></p>
-                  <p><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">Tieliikenne</a></span><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">Rautatieliikenne</a></span><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">Meriliikenne</a></span></p>
-                </section>
+              <div class="col-xs-12 col-sm-4 latest-item">
+                <h4 class="h4 latest-item__header-text"><a href="{{ base }}{{ post.url }}" class="latest-item__header-link">{{ post.title }}</a></h4>
+                <p class="latest-item__meta-first"><span class="latest-item__timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><a href="#" class="latest-item__content-type link">Tiedotteet</a></p>
+                <div><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">Tieliikenne</a></span><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">Rautatieliikenne</a></span><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">Meriliikenne</a></span></div>
               </div>
             {% endfor %}
           </div>
@@ -61,12 +59,15 @@
             </div>
           </div>
           <div class="row frontpage-traffic-type">
+            <div class="col-xs-12 col-sm-4 visible-xs">
+              <img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />
+            </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
               <h2 class="h2"><a href="#" class="h-link">Rautatieliikenne</a></h2>
               <p>Liikennevirastossa tietojen lähteenä toimii ratakapasiteetin hallinnan LIIKE-järjestelmä, josta tietoja poimitaan avoimen datan rajapintaan. Rajapinnan tarjoamia tietolajeja ovat aikataulutiedot sekä matkustajajunien kokoonpanot. Aikataulutiedot jakautuvat kolmeen osaan: reaaliaikaiseen liikennetilanteeseen, tuleviin aikatauluihin sekä historiatietoon jo menneistä junista.</p>
               <a href="#"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">Rautatieliikenne tietolähteet</span></button></a>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-4 hidden-xs">
               <img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />
             </div>
           </div>
@@ -74,7 +75,7 @@
             <div class="col-xs-12 col-sm-4">
               <img class="img img--full-width" src="{{ "/img/3d-img-boat.svg" | prepend:site.baseurl }}" alt="Meriliikenne" />
             </div>
-            <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
+            <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
               <h2 class="h2"><a href="#" class="h-link">Meriliikenne</a></h2>
               <p>Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä.</p>
               <a href="#"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_boat</i><span class="button__text">Meriliikenne tietolähteet</span></button></a>
@@ -112,12 +113,15 @@
             </div>
           </div>
           <div class="row frontpage-traffic-type">
-            <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
+            <div class="col-xs-12 col-sm-4 visible-xs">
+              <img class="img img--full-width" src="{{ "/img/3d-img-compass.svg" | prepend:site.baseurl }}" alt="Kehityssuunnitelma" />
+            </div>
+            <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
               <h2 class="h2"><a href="#" class="h-link">Kehityssuunnitelma</a></h2>
               <p>Digitrafficin palvelun kehittämisen tulevaisuuden tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan. Näin voit seurata, mitä on hiljattain toteutettu, parhaillaan työn alla sekä suunniteltu toteutettavaksi lähitulevaisuudessa.</p>
               <a href="#"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">explore</i><span class="button__text">Kehityssuunnitelma</span></button></a>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-4 hidden-xs">
               <img class="img img--full-width" src="{{ "/img/3d-img-compass.svg" | prepend:site.baseurl }}" alt="Kehityssuunnitelma" />
             </div>
           </div>

@@ -1,21 +1,28 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: calc(100%);
-    color: $header-text-color;
-    padding: 0 $content-padding;
-    box-sizing: border-box;
-    background-color: $gray-68;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: calc(100%);
+  color: $header-text-color;
+  padding: 0 $content-padding;
+  box-sizing: border-box;
+  background-color: $gray-68;
 
-    &--transparent {
-      background-color: transparent;
-    }
+  /* Modifiers */
+  &--transparent {
+    background-color: transparent;
+  }
 
-    &__link {
-      &:link, &:visited, &:hover, &:active {
-        color: $header-text-color;
-      }
+  /* Elements */
+  &__link {
+    &:link, &:visited, &:hover, &:active {
+      color: $header-text-color;
     }
+  }
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    height: 50px;
+  }
 }
