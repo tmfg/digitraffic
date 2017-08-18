@@ -2,11 +2,11 @@
 
 ## Dev dependencies
 * Bundler, 1.15.1
-	* `bundle --version`
+    * `bundle --version`
 * Npm, 5.3.0
-	* `npm --version`
+    * `npm --version`
 * Gulp, 3.9.1
-	* `gulp --version`
+    * `gulp --version`
 
 ## Install
 1. `git clone https://github.com/finnishtransportagency/digitraffic.git` -> Clones the project from GitHub
