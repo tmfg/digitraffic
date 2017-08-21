@@ -1,9 +1,39 @@
 .logo {
-    display: inline-block;
-    float: left;
-    margin: $header-margin-y 0;
+  display: inline-block;
+  box-sizing: border-box;
+  float: left;
+  height: 100px;
+  padding: $header-margin-y 0;
+  transition: $transition-fast;
 
-    &__service {
-      padding: 1rem;
-    }
+  &__organization {
+    box-sizing: border-box;
+    height: 60px;
+    transition: $transition-fast;
+  }
+
+  &__service {
+    box-sizing: border-box;
+    height: 56px;
+    padding: 1rem;
+    transition: $transition-fast;
+  }
+}
+
+.header--scrolled .logo {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0 0;
+  transition: $transition-faster;
+
+  &__organization {
+    height: 50px;
+    padding: $margin-xxs 0;
+    transition: $transition-faster;
+  }
+
+  &__service {
+    height: 50px;
+    transition: $transition-faster;
+  }
 }

@@ -1,8 +1,12 @@
 # digitraffic
 
 ## Dev dependencies
+* RubyGems, 2.6.12
+  * `gem --version`
 * Bundler, 1.15.1
 	* `bundle --version`
+* Node.js, 8.0.0
+  * `node --version`
 * Npm, 5.3.0
 	* `npm --version`
 * Gulp, 3.9.1

@@ -1,8 +1,10 @@
 name: Digitraffic
 baseurl: /digitraffic
+gems:
+  - jekyll-babel
 sass:
   sass_dir: _scss
-exclude: [node_modules, gulpfile.js]
+exclude: [README.md,node_modules, gulpfile.js, Gemfile, package.json, package-lock.json, metadata, docs]
 defaults:
   -
     scope:

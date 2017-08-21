@@ -3,7 +3,12 @@ GEM
   specs:
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     colorator (1.1.0)
+    execjs (2.7.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
     jekyll (3.3.1)
@@ -17,6 +22,8 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
+    jekyll-babel (1.1.0)
+      babel-transpiler
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
@@ -42,6 +49,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-babel
   rb-fsevent (= 0.9.8)
 
 BUNDLED WITH
