@@ -2118,9 +2118,13 @@ h1, .h1 {
   line-height: 1.5;
   letter-spacing: 0;
   color: #444444;
-  margin: 1.5rem 0; }
+  margin: 1.5rem 0;
+  /* Media queries for different screen sizes */ }
   h1--page-top, .h1--page-top {
     margin: 0 0 1rem 0; }
+  @media screen and (max-width: 767px) {
+    h1, .h1 {
+      font-size: 2rem; } }
 
 h2, .h2 {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2129,7 +2133,11 @@ h2, .h2 {
   line-height: 1.5;
   letter-spacing: 0;
   color: #444444;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  /* Media queries for different screen sizes */ }
+  @media screen and (max-width: 767px) {
+    h2, .h2 {
+      font-size: 1.75rem; } }
 
 h3, .h3 {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2138,7 +2146,11 @@ h3, .h3 {
   line-height: 1.5;
   letter-spacing: 0;
   color: #444444;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  /* Media queries for different screen sizes */ }
+  @media screen and (max-width: 767px) {
+    h3, .h3 {
+      font-size: 1.25rem; } }
 
 h4, .h4 {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2147,7 +2159,11 @@ h4, .h4 {
   line-height: 1.5;
   letter-spacing: 0;
   color: #444444;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  /* Media queries for different screen sizes */ }
+  @media screen and (max-width: 767px) {
+    h4, .h4 {
+      font-size: 1rem; } }
 
 /* SCSS styles for components */
 body, .body {
@@ -2162,6 +2178,12 @@ body, .body {
   font-weight: 400;
   line-height: 1.5;
   color: #444444; }
+
+.body {
+  /* Media queries for different screen sizes */ }
+  @media screen and (max-width: 767px) {
+    .body {
+      font-size: 0.875rem; } }
 
 .breadcrumb {
   font-size: 0.875rem;
@@ -2187,7 +2209,8 @@ body, .body {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: 300ms;
   /* States */
-  /* Elements */ }
+  /* Elements */
+  /* Media queries for different screen sizes */ }
   .button:hover {
     background-position: left center;
     transform: scale(0.98, 0.98);
@@ -2202,6 +2225,9 @@ body, .body {
     outline: 0; }
   .button__text {
     padding-left: 1rem; }
+  @media screen and (max-width: 767px) {
+    .button {
+      font-size: 0.875rem; } }
 
 .content {
   position: relative;
@@ -2221,7 +2247,9 @@ body, .body {
     top: 0; }
   @media screen and (max-width: 767px) {
     .content {
-      margin-top: 50px; } }
+      margin-top: 50px; }
+      .content--padded {
+        padding: 0 1rem; } }
 
 .copyright {
   box-sizing: border-box;
@@ -2367,7 +2395,8 @@ body, .body {
     color: white; }
   @media screen and (max-width: 767px) {
     .header {
-      height: 50px; } }
+      height: 50px;
+      padding: 0 1rem; } }
 
 .header .row {
   height: inherit; }
@@ -2410,6 +2439,11 @@ body, .body {
           padding-right: 0; }
       .header-menu__item-text {
         display: none; } }
+  @media screen and (max-width: 420px) {
+    .header-menu__item--search .header-menu__icon {
+      padding-right: 0; }
+    .header-menu__item--language {
+      display: none; } }
 
 .header--scrolled .header-menu {
   height: 50px;
@@ -2431,7 +2465,8 @@ body, .body {
   text-align: center;
   /* Background images */
   /* Overlay */
-  /* Elements */ }
+  /* Elements */
+  /* Media queries for different screen sizes */ }
   .hero-image--frontpage {
     background-image: url("../img/hero-img-road.jpg"); }
   .hero-image__overlay {
@@ -2459,6 +2494,12 @@ body, .body {
     margin: 0 auto 2rem auto; }
   .hero-image__button-area {
     margin: 2rem auto 4.5rem auto; }
+  @media screen and (max-width: 767px) {
+    .hero-image__heading {
+      margin-top: 70px;
+      font-size: 2.5rem; }
+    .hero-image__intro {
+      font-size: 1.75rem; } }
 
 @media screen and (max-width: 767px) {
   .hidden-xs {
@@ -2499,7 +2540,11 @@ body, .body {
   font-weight: 200;
   line-height: 1.5;
   letter-spacing: 0;
-  color: #444444; }
+  color: #444444;
+  /* Media queries for different screen sizes */ }
+  @media screen and (max-width: 767px) {
+    .intro, .jekyll-content > p:first-child {
+      font-size: 1.125rem; } }
 
 .jekyll-content {
   margin: 1.5rem 0; }
@@ -2612,6 +2657,9 @@ body, .body {
         height: 50px;
         width: 199px;
         padding: 1em; } }
+  @media screen and (max-width: 380px) {
+    .logo__service {
+      width: 150px; } }
 
 .header--scrolled .logo {
   box-sizing: border-box;
@@ -2628,6 +2676,9 @@ body, .body {
     width: 199px;
     padding: 1em;
     transition: 150ms; }
+  @media screen and (max-width: 380px) {
+    .header--scrolled .logo__service {
+      width: 150px; } }
 
 .quote, .jekyll-content blockquote {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2635,7 +2686,11 @@ body, .body {
   font-weight: 200;
   line-height: 1.5;
   letter-spacing: 0;
-  color: #444444; }
+  color: #444444;
+  /* Media queries for different screen sizes */ }
+  @media screen and (max-width: 767px) {
+    .quote, .jekyll-content blockquote {
+      font-size: 1.5rem; } }
 
 .sidebar {
   margin: 1.5rem 0; }

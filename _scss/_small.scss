@@ -1,3 +1,8 @@
 .small {
-    @include body(0.875rem);
+  @include body(0.875rem);
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    font-size: 0.75rem;
+  }
 }

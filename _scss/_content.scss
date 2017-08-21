@@ -25,5 +25,9 @@
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     margin-top: 50px;
+
+    &--padded {
+      padding: 0 $content-padding-mobile;
+    }
   }
 }

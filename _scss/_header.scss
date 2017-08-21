@@ -34,6 +34,7 @@
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     height: 50px;
+    padding: 0 $content-padding-mobile;
   }
 }
 

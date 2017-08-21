@@ -1,43 +1,55 @@
 .hero-image {
-    /* Background image position */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-    
-    /* Text */
-    color: $hero-image__header-text-color;
-    text-align: center;
+  /* Background image position */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  
+  /* Text */
+  color: $hero-image__header-text-color;
+  text-align: center;
 
-    /* Background images */
-    // Frontpage
-    &--frontpage {
-        background-image: $hero-image--frontpage-background-image;
-    }
+  /* Background images */
+  // Frontpage
+  &--frontpage {
+    background-image: $hero-image--frontpage-background-image;
+  }
 
-    /* Overlay */
-    &__overlay {
-        background: linear-gradient(90deg, $blue-darker-80 0%, $black-80 100%);
-    }
+  /* Overlay */
+  &__overlay {
+    background: linear-gradient(90deg, $blue-darker-80 0%, $black-80 100%);
+  }
 
-    /* Elements */
+  /* Elements */
+  &__heading {
+    @include heading(6rem, 100, $white, -0.05rem);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    padding: 0 $content-padding;
+    margin: $margin-xxl auto 0 auto;
+  }
+
+  &__intro {
+    @include heading(2.25rem, 100, $white, -0.05rem);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    max-width: 58rem;
+    padding: 0 $content-padding;
+    margin: 0 auto $margin-sm auto;
+  }
+
+  &__button-area {
+    margin: $margin-sm auto $margin-lg auto;
+  }
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
     &__heading {
-        @include heading(6rem, 100, $white, -0.05rem);
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-        padding: 0 $content-padding;
-        margin: $margin-xxl auto 0 auto;
+      margin-top: 70px;
+      font-size: 2.5rem;
     }
 
     &__intro {
-        @include heading(2.25rem, 100, $white, -0.05rem);
-        text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-        max-width: 58rem;
-        padding: 0 $content-padding;
-        margin: 0 auto $margin-sm auto;
+      font-size: 1.75rem;
     }
-
-    &__button-area {
-      margin: $margin-sm auto $margin-lg auto;
-    }
+  }
 }

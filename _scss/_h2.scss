@@ -1,4 +1,9 @@
 h2, .h2 {
-    @include heading(2.25rem, 800);
-    margin: $margin-xs 0;
+  @include heading(2.25rem, 800);
+  margin: $margin-xs 0;
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    font-size: 1.75rem;
+  }
 }

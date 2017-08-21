@@ -38,6 +38,12 @@
       padding: 1em;
     }
   }
+
+  @media screen and (max-width: 380px) {
+    &__service {
+      width: 150px;
+    }
+  }
 }
 
 .header--scrolled .logo {
@@ -58,5 +64,11 @@
     width: 199px;
     padding: 1em;
     transition: $transition-faster;
+  }
+
+  @media screen and (max-width: 380px) {
+    &__service {
+      width: 150px;
+    }
   }
 }

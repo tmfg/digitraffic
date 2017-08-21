@@ -1,8 +1,13 @@
 h1, .h1 {
-    @include heading();
-    margin: $margin-xssm 0;
+  @include heading();
+  margin: $margin-xssm 0;
 
-    &--page-top {
-      margin: 0 0 $margin-xs 0;
-    }
+  &--page-top {
+    margin: 0 0 $margin-xs 0;
+  }
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    font-size: 2rem;
+  }
 }

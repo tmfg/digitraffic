@@ -1,3 +1,8 @@
 .quote {
-    @include heading(1.75rem, 200);
+  @include heading(1.75rem, 200);
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    font-size: 1.5rem;
+  }
 }

@@ -9,3 +9,10 @@ body, .body {
     /* Text */
     @include body();
 }
+
+.body {
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    font-size: 0.875rem;
+  }
+}

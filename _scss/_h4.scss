@@ -1,4 +1,9 @@
 h4, .h4 {
-    @include heading(1.125rem, 600, $gray-68, 0);
-    margin: $margin-xs 0;
+  @include heading(1.125rem, 600, $gray-68, 0);
+  margin: $margin-xs 0;
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    font-size: 1rem;
+  }
 }

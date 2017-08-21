@@ -38,21 +38,35 @@
   @media screen and (max-width: $max-width-sm) {
     height: 50px;
     margin: 0;
-
+    
     &__list {
       padding: 13px 0 12px 0;  
     }
-
+    
     &__item {
       margin-left: $margin-xxxs;
-
+      
       &:last-child .header-menu__icon {
         padding-right: 0;
       }
     }
-
+    
     &__item-text {
       display: none;
+    }
+  }
+ 
+  @media screen and (max-width: 420px) {
+    &__item {
+      &--search {
+        .header-menu__icon {
+          padding-right: 0;
+        }
+      }
+
+      &--language {
+        display: none;
+      }
     }
   }
 }
