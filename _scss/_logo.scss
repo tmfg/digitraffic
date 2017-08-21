@@ -1,22 +1,23 @@
 .logo {
-  display: inline-block;
   box-sizing: border-box;
-  float: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   height: 100px;
   padding: $header-margin-y 0;
-  transition: $transition-fast;
+  transition: $transition-faster;
 
   &__organization {
     box-sizing: border-box;
     height: 60px;
-    transition: $transition-fast;
+    transition: $transition-faster;
   }
 
   &__service {
     box-sizing: border-box;
     height: 56px;
-    padding: 1rem;
-    transition: $transition-fast;
+    padding: 1rem 1rem 1rem 2rem;
+    transition: $transition-faster;
   }
 }
 
@@ -34,6 +35,8 @@
 
   &__service {
     height: 50px;
+    width: 199px;
+    padding: 1em;
     transition: $transition-faster;
   }
 }

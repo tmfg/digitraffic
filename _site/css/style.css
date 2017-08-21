@@ -2346,7 +2346,7 @@ body, .body {
   padding: 0 3rem;
   box-sizing: border-box;
   background-color: #444444;
-  transition: 300ms;
+  transition: 150ms;
   /* Modifiers */
   /* Elements */
   /* Media queries for different screen sizes */ }
@@ -2368,10 +2368,12 @@ body, .body {
 
 .header-menu {
   box-sizing: border-box;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   height: inherit;
-  margin: 1rem;
-  transition: 300ms;
+  margin: 21px 0 22px 0;
+  transition: 150ms;
   /* Elements */ }
   .header-menu__list {
     list-style-type: none;
@@ -2390,7 +2392,7 @@ body, .body {
 
 .header--scrolled .header-menu {
   height: 50px;
-  margin: 0 1rem;
+  margin: 0;
   transition: 150ms; }
   .header--scrolled .header-menu__list {
     padding: 13px 0 12px 0;
@@ -2559,21 +2561,22 @@ body, .body {
     text-decoration: none; }
 
 .logo {
-  display: inline-block;
   box-sizing: border-box;
-  float: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   height: 100px;
   padding: 1rem 0;
-  transition: 300ms; }
+  transition: 150ms; }
   .logo__organization {
     box-sizing: border-box;
     height: 60px;
-    transition: 300ms; }
+    transition: 150ms; }
   .logo__service {
     box-sizing: border-box;
     height: 56px;
-    padding: 1rem;
-    transition: 300ms; }
+    padding: 1rem 1rem 1rem 2rem;
+    transition: 150ms; }
 
 .header--scrolled .logo {
   box-sizing: border-box;
@@ -2586,6 +2589,8 @@ body, .body {
     transition: 150ms; }
   .header--scrolled .logo__service {
     height: 50px;
+    width: 199px;
+    padding: 1em;
     transition: 150ms; }
 
 .quote, .jekyll-content blockquote {

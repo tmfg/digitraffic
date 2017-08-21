@@ -1,9 +1,11 @@
 .header-menu {
   box-sizing: border-box;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   height: inherit;
-  margin: $header-margin-y;
-  transition: $transition-fast;
+  margin:  21px 0 22px 0;
+  transition: $transition-faster;
   
   /* Elements */
   &__list {
@@ -31,7 +33,7 @@
 
 .header--scrolled .header-menu {
   height: 50px;
-  margin: 0 $header-margin-y;
+  margin: 0;
   transition: $transition-faster;
 
   &__list {
