@@ -2109,6 +2109,9 @@
 /* HTML base styles */
 html {
   font-size: 16px; }
+  @media screen and (max-width: 767px) {
+    html {
+      font-size: 14px; } }
 
 /* Heading styles */
 h1, .h1 {
@@ -2124,7 +2127,7 @@ h1, .h1 {
     margin: 0 0 1rem 0; }
   @media screen and (max-width: 767px) {
     h1, .h1 {
-      font-size: 2rem; } }
+      font-size: 2.28571rem; } }
 
 h2, .h2 {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2137,7 +2140,7 @@ h2, .h2 {
   /* Media queries for different screen sizes */ }
   @media screen and (max-width: 767px) {
     h2, .h2 {
-      font-size: 1.75rem; } }
+      font-size: 2rem; } }
 
 h3, .h3 {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2150,7 +2153,7 @@ h3, .h3 {
   /* Media queries for different screen sizes */ }
   @media screen and (max-width: 767px) {
     h3, .h3 {
-      font-size: 1.25rem; } }
+      font-size: 1.42857rem; } }
 
 h4, .h4 {
   font-family: "Montserrat", Arial, sans-serif;
@@ -2163,7 +2166,7 @@ h4, .h4 {
   /* Media queries for different screen sizes */ }
   @media screen and (max-width: 767px) {
     h4, .h4 {
-      font-size: 1rem; } }
+      font-size: 1.14286rem; } }
 
 /* SCSS styles for components */
 body, .body {
@@ -2178,12 +2181,6 @@ body, .body {
   font-weight: 400;
   line-height: 1.5;
   color: #444444; }
-
-.body {
-  /* Media queries for different screen sizes */ }
-  @media screen and (max-width: 767px) {
-    .body {
-      font-size: 0.875rem; } }
 
 .breadcrumb {
   font-size: 0.875rem;
@@ -2248,6 +2245,8 @@ body, .body {
   @media screen and (max-width: 767px) {
     .content {
       margin-top: 50px; }
+      .content__frontpage-section {
+        padding: 2rem 1rem; }
       .content--padded {
         padding: 0 1rem; } }
 
@@ -2290,10 +2289,12 @@ body, .body {
     .footer__section:first-child {
       margin-bottom: 1.5rem; } }
   @media screen and (max-width: 767px) {
-    .footer__section {
-      margin-bottom: 1.5rem; }
-      .footer__section:last-child {
-        margin-bottom: 0; } }
+    .footer {
+      padding: 2rem 1rem; }
+      .footer__section {
+        margin-bottom: 1.5rem; }
+        .footer__section:last-child {
+          margin-bottom: 0; } }
 
 .footer-list {
   /* Elements */ }
@@ -2496,10 +2497,11 @@ body, .body {
     margin: 2rem auto 4.5rem auto; }
   @media screen and (max-width: 767px) {
     .hero-image__heading {
-      margin-top: 70px;
-      font-size: 2.5rem; }
+      font-size: 2.85714rem;
+      padding: 0 1rem;
+      margin-top: 70px; }
     .hero-image__intro {
-      font-size: 1.75rem; } }
+      font-size: 2rem; } }
 
 @media screen and (max-width: 767px) {
   .hidden-xs {
@@ -2544,7 +2546,7 @@ body, .body {
   /* Media queries for different screen sizes */ }
   @media screen and (max-width: 767px) {
     .intro, .jekyll-content > p:first-child {
-      font-size: 1.125rem; } }
+      font-size: 1.28571rem; } }
 
 .jekyll-content {
   margin: 1.5rem 0; }
@@ -2690,7 +2692,7 @@ body, .body {
   /* Media queries for different screen sizes */ }
   @media screen and (max-width: 767px) {
     .quote, .jekyll-content blockquote {
-      font-size: 1.5rem; } }
+      font-size: 1.71429rem; } }
 
 .sidebar {
   margin: 1.5rem 0; }

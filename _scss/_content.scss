@@ -26,6 +26,10 @@
   @media screen and (max-width: $max-width-sm) {
     margin-top: 50px;
 
+    &__frontpage-section {
+      padding: $margin-sm $content-padding-mobile;
+    }
+
     &--padded {
       padding: 0 $content-padding-mobile;
     }

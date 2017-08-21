@@ -1,18 +1,11 @@
 body, .body {
-    /* Background */
-    background-color: $body-background-color;
-    
-    /* Positioning */
-    margin: 0;
-    padding: 0;
+  /* Background */
+  background-color: $body-background-color;
+  
+  /* Positioning */
+  margin: 0;
+  padding: 0;
 
-    /* Text */
-    @include body();
-}
-
-.body {
-  /* Media queries for different screen sizes */
-  @media screen and (max-width: $max-width-sm) {
-    font-size: 0.875rem;
-  }
+  /* Text */
+  @include body();
 }

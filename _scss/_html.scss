@@ -1,3 +1,7 @@
 html {
-    font-size: $base-font-size;
+  font-size: $base-font-size;
+
+  @media screen and (max-width: $max-width-sm) {
+    font-size: $base-font-size-mobile;
+  }
 }

@@ -15,6 +15,10 @@
   color: $color;
 }
 
+@mixin mobile-font-size($font-size: 1rem) {
+  font-size: $base-font-size-n/$base-font-size-mobile-n * $font-size;
+}
+
 @mixin separator($char: "|", $padding: 0.5rem) {
   content: $char;
   padding: 0 $padding;

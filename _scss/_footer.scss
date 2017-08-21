@@ -13,6 +13,8 @@
   }
 
   @media screen and (max-width: $max-width-sm) {
+    padding: $margin-sm $content-padding-mobile;
+    
     &__section {
       margin-bottom: $margin-xssm;
 

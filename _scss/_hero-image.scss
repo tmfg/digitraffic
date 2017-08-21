@@ -44,12 +44,13 @@
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     &__heading {
+      @include mobile-font-size(2.5rem);
+      padding: 0 $content-padding-mobile;
       margin-top: 70px;
-      font-size: 2.5rem;
     }
 
     &__intro {
-      font-size: 1.75rem;
+      @include mobile-font-size(1.75rem);
     }
   }
 }

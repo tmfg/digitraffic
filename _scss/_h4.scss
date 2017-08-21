@@ -4,6 +4,6 @@ h4, .h4 {
 
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
-    font-size: 1rem;
+    @include mobile-font-size(1rem);
   }
 }
