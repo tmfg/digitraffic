@@ -7,6 +7,7 @@
   padding: $header-margin-y 0;
   transition: $transition-faster;
 
+  /* Elements */
   &__organization {
     box-sizing: border-box;
     height: 60px;
@@ -19,6 +20,24 @@
     padding: 1rem 1rem 1rem 2rem;
     transition: $transition-faster;
   }
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    height: 50px;
+    padding: 0 0;
+
+    &__organization {
+      height: 50px;
+      width: 34px;
+      padding: $margin-xxs 0;
+    }
+
+    &__service {
+      height: 50px;
+      width: 199px;
+      padding: 1em;
+    }
+  }
 }
 
 .header--scrolled .logo {
@@ -29,6 +48,7 @@
 
   &__organization {
     height: 50px;
+    width: 34px;
     padding: $margin-xxs 0;
     transition: $transition-faster;
   }

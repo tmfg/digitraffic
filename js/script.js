@@ -1,3 +1,7 @@
+---
+---
+
+/* Add .header--scrolled when scrolling page */
 window.onscroll = () => {
   const headerClasses = document.body.querySelector(".header").classList;
   
@@ -5,8 +9,7 @@ window.onscroll = () => {
     if (headerClasses.contains("header--scrolled")) {
       headerClasses.remove("header--scrolled");
     }
-  }
-  else {
+  } else {
     if (!headerClasses.contains("header--scrolled")) {
       headerClasses.add("header--scrolled");
     }

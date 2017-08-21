@@ -2206,7 +2206,10 @@ body, .body {
 .content {
   position: relative;
   z-index: 0;
-  margin-top: 6.2rem; }
+  margin-top: 100px;
+  /* Elements */
+  /* Modifiers */
+  /* Media queries for different screen sizes */ }
   .content__frontpage-section {
     padding: 2rem 3rem; }
     .content__frontpage-section:nth-child(even) {
@@ -2216,6 +2219,9 @@ body, .body {
     padding: 0 3rem; }
   .content--transparent-header {
     top: 0; }
+  @media screen and (max-width: 767px) {
+    .content {
+      margin-top: 50px; } }
 
 .copyright {
   box-sizing: border-box;
@@ -2374,7 +2380,8 @@ body, .body {
   height: inherit;
   margin: 21px 0 22px 0;
   transition: 150ms;
-  /* Elements */ }
+  /* Elements */
+  /* Media queries for different screen sizes */ }
   .header-menu__list {
     list-style-type: none;
     margin: 0;
@@ -2384,11 +2391,25 @@ body, .body {
     margin-left: 1rem;
     font-size: 0.75rem;
     text-transform: uppercase; }
+    .header-menu__item:first-child {
+      margin-left: 0; }
   .header-menu__icon {
     padding: 0rem 0.5rem;
     color: white; }
   .header-menu__item-text {
     vertical-align: 0.1rem; }
+  @media screen and (max-width: 767px) {
+    .header-menu {
+      height: 50px;
+      margin: 0; }
+      .header-menu__list {
+        padding: 13px 0 12px 0; }
+      .header-menu__item {
+        margin-left: 0.25rem; }
+        .header-menu__item:last-child .header-menu__icon {
+          padding-right: 0; }
+      .header-menu__item-text {
+        display: none; } }
 
 .header--scrolled .header-menu {
   height: 50px;
@@ -2567,7 +2588,9 @@ body, .body {
   align-items: center;
   height: 100px;
   padding: 1rem 0;
-  transition: 150ms; }
+  transition: 150ms;
+  /* Elements */
+  /* Media queries for different screen sizes */ }
   .logo__organization {
     box-sizing: border-box;
     height: 60px;
@@ -2577,6 +2600,18 @@ body, .body {
     height: 56px;
     padding: 1rem 1rem 1rem 2rem;
     transition: 150ms; }
+  @media screen and (max-width: 767px) {
+    .logo {
+      height: 50px;
+      padding: 0 0; }
+      .logo__organization {
+        height: 50px;
+        width: 34px;
+        padding: 0.5rem 0; }
+      .logo__service {
+        height: 50px;
+        width: 199px;
+        padding: 1em; } }
 
 .header--scrolled .logo {
   box-sizing: border-box;
@@ -2585,6 +2620,7 @@ body, .body {
   transition: 150ms; }
   .header--scrolled .logo__organization {
     height: 50px;
+    width: 34px;
     padding: 0.5rem 0;
     transition: 150ms; }
   .header--scrolled .logo__service {

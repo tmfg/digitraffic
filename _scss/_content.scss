@@ -1,22 +1,29 @@
 .content {
   position: relative;
   z-index: 0;
-  margin-top: $margin-xl + 0.2rem;
+  margin-top: 100px;
 
+  /* Elements */
   &__frontpage-section {
-      padding: $margin-sm $content-padding;
+    padding: $margin-sm $content-padding;
 
-      &:nth-child(even) {
-          background-color: $gray-241;
-          box-shadow: 0px 4px 40px #c8c8c8;
-      }
+    &:nth-child(even) {
+      background-color: $gray-241;
+      box-shadow: 0px 4px 40px #c8c8c8;
+    }
   }
 
+  /* Modifiers */
   &--padded {
     padding: 0 $content-padding;
   }
 
   &--transparent-header {
     top: 0;
+  }
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    margin-top: 50px;
   }
 }
