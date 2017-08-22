@@ -52,5 +52,9 @@
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     padding: $margin-xs $margin-xxs;
+
+    &:first-child, &:last-child {
+      padding: $margin-xs $margin-xxs;
+    }
   }
 }

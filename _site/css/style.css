@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box; }
 
+a, a:hover, a:link, a:focus, a:visited {
+  text-decoration: none; }
+
 /* Flexboxgrid Sass */
 .wrapper {
   box-sizing: border-box;
@@ -2192,6 +2195,7 @@ body, .body {
     content: none; }
 
 /* Button colors */
+/* Button styles */
 .button {
   cursor: pointer;
   background: linear-gradient(to right, #0046ad 0%, #0067be 50%, #0046ad 100%);
@@ -2221,7 +2225,9 @@ body, .body {
   .button:focus {
     outline: 0; }
   .button__text {
-    padding-left: 1rem; }
+    padding-left: 1rem;
+    text-decoration: none;
+    border: none; }
   @media screen and (max-width: 767px) {
     .button {
       font-size: 0.875rem; } }
@@ -2340,7 +2346,13 @@ body, .body {
   padding: 1.5rem 3rem; }
 
 .frontpage-button-area {
-  margin: 2rem auto; }
+  margin: 1rem auto; }
+  .frontpage-button-area__button {
+    margin: 1rem; }
+    @media screen and (max-width: 520px) {
+      .frontpage-button-area__button {
+        display: block;
+        margin: 1rem auto; } }
 
 .frontpage-traffic-type {
   margin-top: 1.5rem;
@@ -2611,7 +2623,9 @@ body, .body {
       padding: 0 0; }
   @media screen and (max-width: 767px) {
     .latest-item {
-      padding: 1rem 0.5rem; } }
+      padding: 1rem 0.5rem; }
+      .latest-item:first-child, .latest-item:last-child {
+        padding: 1rem 0.5rem; } }
 
 .link, .jekyll-content a {
   color: #0067be;
