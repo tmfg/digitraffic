@@ -2420,8 +2420,9 @@ body, .body {
     color: white; }
   @media screen and (max-width: 767px) {
     .header {
-      height: 50px;
-      padding: 0 1rem; } }
+      height: 50px; }
+      .header__content {
+        padding: 0 1rem; } }
 
 .header .row {
   height: inherit; }
