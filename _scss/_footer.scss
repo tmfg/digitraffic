@@ -2,8 +2,14 @@
   position: relative;
   padding: $margin-sm $content-padding;
   box-sizing: border-box;
-  background-color: $gray-68;
-  box-shadow: 0px -4px 40px #c8c8c8;
+  max-width: $content-max-width;
+  margin: 0 auto;
+
+  &__wrapper {
+    width: 100%;
+    background-color: $gray-68;
+    box-shadow: 0px -4px 40px rgba(0, 0, 0, 0.25);
+  }
   
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-md) {

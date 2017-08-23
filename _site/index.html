@@ -17,7 +17,7 @@
 
   <body class="body">
     <header class="header header--transparent">
-  <div class="row">
+  <div class="row header__content">
     <div class="col-xs-6 col-sm-7 header__logo">
   <a href="." class="header__link">
     <section class="logo">
@@ -144,6 +144,7 @@
           </div>
         </section>
       <!--Applications-->
+      <div class="content__frontpage-section-wrapper">
         <section class="content__frontpage-section">
           <div class="row frontpage-traffic-type">
             <div class="col-xs-12 col-sm-4">
@@ -169,43 +170,46 @@
             </div>
           </div>
         </section>
+      </div>
 
       <!--footer-->
         <footer>
-  <div class="row footer">
-    <div class="col-xs-12 col-sm-12 col-md-4 footer__section">
-        <section class="footer-logo">
-          <img class="footer-logo__organization" src="/digitraffic/img/liikennevirasto-logo.svg" />
-          <img class="footer-logo__service" src="/digitraffic/img/digitraffic-logo.svg" />
-        </section>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 footer__section">
-      <ul class="footer-list">
-        <li class="footer-list__item"><a href="#" class="footer-list__link">
-          <i class="footer-list__link-icon material-icons md-light md-lg">contacts</i><span class="footer-list__link-text">Yhteystiedot</span></a></li>
-        <li class="footer-list__item"><a href="#" class="footer-list__link">
-          <i class="footer-list__link-icon material-icons md-light md-lg">chat</i><span class="footer-list__link-text">Palaute</span></a></li>
-        <li class="footer-list__item"><a href="https://www.facebook.com/OpenDigitraffic/" class="footer-list__link">
-          <div class="footer-list__link-icon footer-list__custom-icon footer-list__custom-icon--facebook">
-            <svg fill="#ffffff" height="32px" viewBox="3 4 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M16.2,7.1h-2.4c-0.3,0-0.6,0.4-0.6,0.9v1.7h3v2.4h-3v7.4h-2.8v-7.4H7.8V9.7h2.5V8.2c0-2.1,1.4-3.7,3.4-3.7h2.4V7.1z"/></svg>
-          </div><span class="footer-list__link-text">Facebook</span>
-        </a></li>
-        <li class="footer-list__item"><a href="https://twitter.com/Liikennevirasto" class="footer-list__link">
-          <div class="footer-list__link-icon footer-list__custom-icon footer-list__custom-icon--twitter">
-              <svg fill="#ffffff" height="24px" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4,7.5c0,0.2,0,0.4,0,0.6c0,6-4.5,12.8-12.8,12.8c-2.5,0-4.9-0.7-6.9-2C2,19,2.3,19,2.7,19 c2.1,0,4.1-0.7,5.6-1.9c-2,0-3.6-1.3-4.2-3.1C4.4,14,4.6,14,4.9,14c0.4,0,0.8-0.1,1.2-0.2c-2.1-0.4-3.6-2.2-3.6-4.4c0,0,0,0,0-0.1 c0.6,0.3,1.3,0.5,2,0.6c-1.2-0.8-2-2.2-2-3.8c0-0.8,0.2-1.6,0.6-2.3c2.2,2.7,5.6,4.5,9.3,4.7c-0.1-0.3-0.1-0.7-0.1-1 c0-2.5,2-4.5,4.5-4.5c1.3,0,2.5,0.5,3.3,1.4c1-0.2,2-0.6,2.9-1.1c-0.3,1.1-1.1,1.9-2,2.5c0.9-0.1,1.8-0.4,2.6-0.7 C23,6.1,22.3,6.9,21.4,7.5z"/></svg>
-          </div><span class="footer-list__link-text">Twitter</span>
-        </a></li>
-      </ul>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 footer__section">
+  <div class="footer__wrapper">
+    <div class="row footer">
+      <div class="col-xs-12 col-sm-12 col-md-4 footer__section">
+          <section class="footer-logo">
+            <img class="footer-logo__organization" src="/digitraffic/img/liikennevirasto-logo.svg" />
+            <img class="footer-logo__service" src="/digitraffic/img/digitraffic-logo.svg" />
+          </section>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 footer__section">
         <ul class="footer-list">
-          <li class="footer-list__item"><a href="http://www.liikennevirasto.fi/" class="footer-list__link"><i class="footer-list__link-icon material-icons md-light md-lg">open_in_new</i><span class="footer-list__link-text">Liikennevirasto.fi</span></a></li>
-          <li class="footer-list__item"><a href="https://www.avoindata.fi/fi" class="footer-list__link"><i class="footer-list__link-icon material-icons md-light md-lg">open_in_new</i><span class="footer-list__link-text">Avoindata.fi</span></a></li>
-          <li class="footer-list__item"><a href="http://www.liikennelabra.fi/" class="footer-list__link"><i class="footer-list__link-icon material-icons md-light md-lg">open_in_new</i><span class="footer-list__link-text">Liikennelabra.fi</span></a></li>
+          <li class="footer-list__item"><a href="#" class="footer-list__link">
+            <i class="footer-list__link-icon material-icons md-light md-lg">contacts</i><span class="footer-list__link-text">Yhteystiedot</span></a></li>
+          <li class="footer-list__item"><a href="#" class="footer-list__link">
+            <i class="footer-list__link-icon material-icons md-light md-lg">chat</i><span class="footer-list__link-text">Palaute</span></a></li>
+          <li class="footer-list__item"><a href="https://www.facebook.com/OpenDigitraffic/" class="footer-list__link">
+            <div class="footer-list__link-icon footer-list__custom-icon footer-list__custom-icon--facebook">
+              <svg fill="#ffffff" height="32px" viewBox="3 4 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M16.2,7.1h-2.4c-0.3,0-0.6,0.4-0.6,0.9v1.7h3v2.4h-3v7.4h-2.8v-7.4H7.8V9.7h2.5V8.2c0-2.1,1.4-3.7,3.4-3.7h2.4V7.1z"/></svg>
+            </div><span class="footer-list__link-text">Facebook</span>
+          </a></li>
+          <li class="footer-list__item"><a href="https://twitter.com/Liikennevirasto" class="footer-list__link">
+            <div class="footer-list__link-icon footer-list__custom-icon footer-list__custom-icon--twitter">
+                <svg fill="#ffffff" height="24px" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21.4,7.5c0,0.2,0,0.4,0,0.6c0,6-4.5,12.8-12.8,12.8c-2.5,0-4.9-0.7-6.9-2C2,19,2.3,19,2.7,19 c2.1,0,4.1-0.7,5.6-1.9c-2,0-3.6-1.3-4.2-3.1C4.4,14,4.6,14,4.9,14c0.4,0,0.8-0.1,1.2-0.2c-2.1-0.4-3.6-2.2-3.6-4.4c0,0,0,0,0-0.1 c0.6,0.3,1.3,0.5,2,0.6c-1.2-0.8-2-2.2-2-3.8c0-0.8,0.2-1.6,0.6-2.3c2.2,2.7,5.6,4.5,9.3,4.7c-0.1-0.3-0.1-0.7-0.1-1 c0-2.5,2-4.5,4.5-4.5c1.3,0,2.5,0.5,3.3,1.4c1-0.2,2-0.6,2.9-1.1c-0.3,1.1-1.1,1.9-2,2.5c0.9-0.1,1.8-0.4,2.6-0.7 C23,6.1,22.3,6.9,21.4,7.5z"/></svg>
+            </div><span class="footer-list__link-text">Twitter</span>
+          </a></li>
         </ul>
-    </div>
-    <div class="col-xs-12 copyright">
-      <p>Copyright © 2017 Liikennevirasto.</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 footer__section">
+          <ul class="footer-list">
+            <li class="footer-list__item"><a href="http://www.liikennevirasto.fi/" class="footer-list__link"><i class="footer-list__link-icon material-icons md-light md-lg">open_in_new</i><span class="footer-list__link-text">Liikennevirasto.fi</span></a></li>
+            <li class="footer-list__item"><a href="https://www.avoindata.fi/fi" class="footer-list__link"><i class="footer-list__link-icon material-icons md-light md-lg">open_in_new</i><span class="footer-list__link-text">Avoindata.fi</span></a></li>
+            <li class="footer-list__item"><a href="http://www.liikennelabra.fi/" class="footer-list__link"><i class="footer-list__link-icon material-icons md-light md-lg">open_in_new</i><span class="footer-list__link-text">Liikennelabra.fi</span></a></li>
+          </ul>
+      </div>
+      <div class="col-xs-12 copyright">
+        <p>Copyright © 2017 Liikennevirasto.</p>
+      </div>
     </div>
   </div>
 </footer>
