@@ -1,5 +1,5 @@
 ---
-title: Toistaiseksi uusin tiedote jippii
+title: Toistaiseksi uusin tiedote
 image: hero-img-roundabout.jpg
 published: true
 ---
