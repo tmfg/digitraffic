@@ -3,6 +3,12 @@
     text-align: center;
   }
 
+  &--disable-scroll-mobile {
+    @media screen and (max-width: $max-width-sm) {
+      overflow: hidden;
+    }
+  }
+
   &--no-padding {
     padding: 0;
   }

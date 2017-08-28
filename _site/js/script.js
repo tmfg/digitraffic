@@ -32,16 +32,31 @@ window.onscroll = function () {
 /* Open and close menu */
 function addToggleMenu() {
   var menuElement = document.body.querySelector(".header-menu__item--menu");
+  var outsideMenu = document.body.querySelector(".content");
 
-  if (menuElement) {
-    menuElement.addEventListener("click", function () {
-      var headerClasses = document.body.querySelector(".header").classList;
+  menuElement.addEventListener("click", toggleMenu);
+  outsideMenu.addEventListener("click", closeMenu);
+}
 
-      if (headerClasses.contains("header--menu-opened")) {
-        headerClasses.remove("header--menu-opened");
-      } else {
-        headerClasses.add("header--menu-opened");
-      }
-    });
+function toggleMenu() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  var bodyClasses = document.body.classList;
+
+  if (headerClasses.contains("header--menu-opened")) {
+    headerClasses.remove("header--menu-opened");
+    bodyClasses.remove("u--disable-scroll-mobile");
+  } else {
+    headerClasses.add("header--menu-opened");
+    bodyClasses.add("u--disable-scroll-mobile");
+  }
+}
+
+function closeMenu() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  var bodyClasses = document.body.classList;
+
+  if (headerClasses.contains("header--menu-opened")) {
+    headerClasses.remove("header--menu-opened");
+    bodyClasses.remove("u--disable-scroll-mobile");
   }
 }
