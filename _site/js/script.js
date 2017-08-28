@@ -1,18 +1,16 @@
 /***Write javascript under this line***/
 
 /* Check if DOM is ready */
-"use strict";
+'use strict';
 
-var domResolve = undefined;
-var domReady = new Promise(function (resolve) {
-  domResolve = resolve;
-});
-
-document.addEventListener('DOMContentLoaded', domResolve);
-domReady.then(init);
+if (document.readyState !== 'loading') {
+  init();
+} else {
+  document.addEventListener('DOMContentLoaded', init, false);
+}
 
 function init() {
-  console.log("Dom ready");
+  console.log("DOM ready");
   addToggleMenu();
 }
 
