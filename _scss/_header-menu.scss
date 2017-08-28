@@ -19,6 +19,7 @@
     margin-left: $margin-xs;
     font-size: $font-size-xs;
     text-transform: uppercase;
+    cursor: pointer;
 
     &:first-child {
       margin-left: 0;
@@ -28,6 +29,11 @@
   &__icon {
     padding: $icon-padding-y $icon-padding-x;
     color: $header-icon-color;
+
+    &--close {
+      color: $blue-light;
+      display: none;
+    }
   }
   
   &__item-text {
@@ -80,4 +86,21 @@
     padding: 13px 0 12px 0;
     transition: $transition-faster;
   }
+}
+
+/* Show / hide menu */
+.header--menu-opened {
+  .header-menu__item--menu {
+    color: $gray-153;
+  }
+
+  .header-menu__icon {
+    &--close {
+      display: inline-block;
+    }
+  
+    &--menu {
+      display: none;
+    }
+  } 
 }

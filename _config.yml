@@ -4,6 +4,7 @@ gems:
   - jekyll-babel
 sass:
   sass_dir: _scss
+  style: compressed
 exclude: [README.md,node_modules, gulpfile.js, Gemfile, package.json, package-lock.json, metadata, docs]
 defaults:
   -
