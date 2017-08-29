@@ -66,10 +66,19 @@ function toggleMenu() {
 
 function closeMenu() {
   var headerClasses = document.body.querySelector(".header").classList;
+  var headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
   var bodyClasses = document.body.classList;
 
   if (headerClasses.contains("header--menu-opened")) {
+    headerClasses.add("header--menu-closing");
+    headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
     headerClasses.remove("header--menu-opened");
+    setTimeout(function () {
+      headerClasses.remove("header--menu-closing");
+    }, 150);
+    setTimeout(function () {
+      headerContentWrapperClasses.remove("header__content-wrapper--menu-closing");
+    }, 300);
     bodyClasses.remove("u--disable-scroll-mobile");
   }
 }

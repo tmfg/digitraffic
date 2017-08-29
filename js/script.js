@@ -73,10 +73,23 @@ function toggleMenu() {
 
 function closeMenu() {
   const headerClasses = document.body.querySelector(".header").classList;
+  const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
   const bodyClasses = document.body.classList;
-
+  
   if (headerClasses.contains("header--menu-opened")) {
+    headerClasses.add("header--menu-closing");
+    headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
     headerClasses.remove("header--menu-opened");
+    setTimeout( () => {
+      headerClasses.remove("header--menu-closing");
+      },
+      150
+    );
+    setTimeout( () => {
+      headerContentWrapperClasses.remove("header__content-wrapper--menu-closing");
+      },
+      300
+    );
     bodyClasses.remove("u--disable-scroll-mobile");
   }
 }
