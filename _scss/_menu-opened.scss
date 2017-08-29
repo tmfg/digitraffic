@@ -7,7 +7,7 @@
   border-top: 2px solid $gray-102;
   overflow: auto;
   display: none;
-  transition: $transition-slow;
+  transition: $transition-fast;
 
   /* Elements */
   &__wrapper {
@@ -34,6 +34,7 @@
 
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
+
     &__heading {
       margin-top: $margin-md;
     }
@@ -49,11 +50,35 @@
 }
 
 /* Show / hide menu */
+.header--menu-opening .menu-opened {
+  display: flex;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: $transition-fast;
+
+  &__wrapper {
+    background-color: $gray-68-0;
+  }
+}
+
 .header--menu-opened .menu-opened {
   display: flex;
-  transition: $transition-slow;
+  opacity: 1;
+  transform: translateY(0);
+  transition: $transition-fast;
 
   &__wrapper {
     background-color: $gray-68-100;
+  }
+}
+
+.header--menu-closing .menu-opened {
+  display: flex;
+  opacity: 0;
+  transform: translateY(0);
+  transition: $transition-faster;
+
+  &__wrapper {
+    background-color: $gray-68-0;
   }
 }
