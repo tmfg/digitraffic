@@ -11,13 +11,18 @@ if (document.readyState !== 'loading') {
 
 function init() {
   console.log("DOM ready");
+  parallax();
   addToggleMenu();
 }
 
-/* Add .header--scrolled when scrolling page */
+/* On scroll actions */
 window.onscroll = function () {
-  var headerClasses = document.body.querySelector(".header").classList;
 
+  /* Add parallax effect */
+  parallax();
+
+  // Add .header--scrolled when scrolling page, remove when scrolled to top
+  var headerClasses = document.body.querySelector(".header").classList;
   if (window.scrollY < 40) {
     if (headerClasses.contains("header--scrolled")) {
       headerClasses.remove("header--scrolled");
@@ -81,4 +86,15 @@ function closeMenu() {
     }, 300);
     bodyClasses.remove("u--disable-scroll-mobile");
   }
+}
+
+/* Parallax function for elements with css class ".parallax" */
+function parallax() {
+  Array.from(document.body.querySelectorAll('.parallax')).forEach(function (element) {
+    var elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
+    var windowCenter = window.innerHeight / 2;
+    var diffFromCenter = elementCenter - windowCenter;
+    var translateY = diffFromCenter / 15;
+    element.style.transform = "translate(0, " + translateY + "px)";
+  });
 }
