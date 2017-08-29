@@ -12,6 +12,7 @@ if (document.readyState !== 'loading') {
 function init() {
   console.log("DOM ready");
   parallax();
+  parallaxFooter();
   addToggleMenu();
 }
 
@@ -21,6 +22,7 @@ window.onscroll = () => {
 
   /* Add parallax effect */
   parallax();
+  parallaxFooter();
   
   // Add .header--scrolled when scrolling page, remove when scrolled to top
   const headerClasses = document.body.querySelector(".header").classList;
@@ -108,4 +110,12 @@ function parallax() {
     let translateY = diffFromCenter / 15;
     element.style.transform = "translate(0, " + translateY + "px)";
   });
+}
+
+function parallaxFooter() {
+  let element = document.body.querySelector('footer');
+  let elementBottom = element.getBoundingClientRect().bottom;
+  let diffFromBottom = elementBottom - window.innerHeight;
+  let translateY = diffFromBottom / 15;
+  element.style.transform = "translate(0, " + translateY + "px)";
 }
