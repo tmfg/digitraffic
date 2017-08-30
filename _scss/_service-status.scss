@@ -16,19 +16,31 @@
     border-radius: 50%;
     height: 3.5rem;
     width: 3.5rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     vertical-align: middle;
 
     &--operational {
       background-color: $green;
+
+      .service-status__icon-circle {
+        box-shadow: 0px 0px 10px $green;
+      }
     }
 
     &--minor-incident {
       background-color: $orange;
+
+      .service-status__icon-circle {
+        box-shadow: 0px 0px 10px $orange;
+      }
     }
 
     &--major-incident {
       background-color: $red;
+
+      .service-status__icon-circle {
+        box-shadow: 0px 0px 10px $red;
+      }
     }
   }
 
