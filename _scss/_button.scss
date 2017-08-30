@@ -6,7 +6,7 @@ $button-color-disabled: $gray-200;
 /* Button styles */
 .button {
   cursor: pointer;
-  background: linear-gradient(to right, $button-color-2 0%, $button-color-1 50%, $button-color-2 100%);
+  background: linear-gradient(45deg, $button-color-2 0%, $button-color-1 50%, $button-color-2 100%);
   background-size: 200% auto;
   background-position: right center;
   background-color: $button-color-1;
