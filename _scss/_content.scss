@@ -9,7 +9,7 @@
   &__frontpage-section-wrapper {
     width: 100%;
     
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background-color: $gray-241;
       box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
     }

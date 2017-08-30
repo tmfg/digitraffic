@@ -15,7 +15,7 @@
   <script type="text/javascript" src="/digitraffic/js/script.js" async></script>
 </head>
 
-  <body class="body">
+  <body class="body" lang="fi">
     <header class="header header--transparent">
   <div class="header__content-wrapper">
     <div class="row header__content">
@@ -81,19 +81,70 @@
     
     <content class="content content--transparent-header">
       <!--Hero image-->
-        <section class="hero-image hero-image--frontpage">
-            <div class="hero-image__overlay">
-                <div class="row">
-                    <div class="col-xs">
-                        <h1 class="hero-image__heading">Digitraffic</h1>
-                        <p class="hero-image__intro">Ajantasaista liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- sekä vesiliikenteestä.</p>
-                        <div class="hero-image__button-area">
-                          <a href="#"><button class="button"><i class="button__icon material-icons md-light md-lg">info</i><span class="button__text">Palvelun esittely</span></button></a>
-                        </div>
-                    </div>
-                </div>
+      <section class="hero-image hero-image--frontpage">
+          <div class="hero-image__overlay">
+              <div class="row">
+                  <div class="col-xs">
+                      <h1 class="hero-image__heading">Digitraffic</h1>
+                      <p class="hero-image__intro">Ajantasaista liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- sekä vesiliikenteestä.</p>
+                      <div class="hero-image__button-area">
+                        <a href="#"><button class="button"><i class="button__icon material-icons md-light md-lg">info</i><span class="button__text">Palvelun esittely</span></button></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!--Service status-->
+      <div class="content__frontpage-section-wrapper">
+        <section class="content__frontpage-section">
+          <div class="row">
+            <div class="col-xs">
+              <h2 class="h2 u--centered service-status__section-header"><a href="#" class="h-link">Palveluiden tila</a></h2>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="service-status__column">
+                <div id="service-status-circle-road" class="service-status__icon-circle-bottom service-status__icon-circle-bottom--operational">
+                  <div class="service-status__icon-circle">
+                    <i class="material-icons md-light service-status__icon">directions_car</i>
+                  </div>
+                </div>
+                <div class="service-status__text">
+                  <h4 class="h4 service-status__service-heading">Tieliikenne</h4>
+                  <span class="">Toiminnassa</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="service-status__column">
+                <div id="service-status-circle-rail" class="service-status__icon-circle-bottom service-status__icon-circle-bottom--minor-incident">
+                  <div class="service-status__icon-circle">
+                    <i class="material-icons md-light service-status__icon">train</i>
+                  </div>
+                </div>
+                <div class="service-status__text">
+                  <h4 class="h4 service-status__service-heading">Rautatieliikenne</h4>
+                  <span class="">Osittainen katkos</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="service-status__column">
+                <div id="service-status-circle-marine" class="service-status__icon-circle-bottom service-status__icon-circle-bottom--major-incident">
+                  <div class="service-status__icon-circle">
+                    <i class="material-icons md-light service-status__icon">directions_boat</i>
+                  </div>
+                </div>
+                <div class="service-status__text">
+                  <h4 class="h4 service-status__service-heading">Meriliikenne</h4>
+                  <span class="">Merkittävä katkos</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
+      </div>
       <!--News-->
       <div class="content__frontpage-section-wrapper parallax">
         <section class="content__frontpage-section">
