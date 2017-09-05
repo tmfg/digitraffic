@@ -17,7 +17,7 @@ function init() {
   parallaxFooter();
 
   // Add menu event listeners
-  addToggleMenu();
+  addEventListeners();
 
   // If Service status section exists, get service status
   document.getElementById("service-status-section") ? getServiceStatus() : '';
@@ -43,58 +43,142 @@ window.onscroll = function () {
   }
 };
 
-/* Open and close menu */
-function addToggleMenu() {
+/* Add event listeners for menu, search and language */
+function addEventListeners() {
   var menuElement = document.body.querySelector(".header-menu__item--menu");
+  var searchElement = document.body.querySelector(".header-menu__item--search");
   var outsideMenu = document.body.querySelector(".content");
 
   menuElement.addEventListener("click", toggleMenu);
-  outsideMenu.addEventListener("click", closeMenu);
+  searchElement.addEventListener("click", toggleSearch);
+  outsideMenu.addEventListener("click", closeMenuSearchLanguage);
 }
 
+// Toggle menu function
 function toggleMenu() {
+  var headerClasses = document.body.querySelector(".header").classList;
+
+  // Toggle menu
+  if (headerClasses.contains("header--menu-opened")) {
+    closeMenu();
+  } else {
+    // If search is opened, close it
+    if (headerClasses.contains("header--search-opened")) {
+      closeSearchQuick();
+    }
+    openMenu();
+  }
+}
+
+// Toggle search function
+function toggleSearch() {
+  var headerClasses = document.body.querySelector(".header").classList;
+
+  // Toggle search
+  if (headerClasses.contains("header--search-opened")) {
+    closeSearch();
+  } else {
+    // If menu is opened, close it
+    if (headerClasses.contains("header--menu-opened")) {
+      closeMenuQuick();
+    }
+    openSearch();
+  }
+}
+
+// Close menu, search and language
+function closeMenuSearchLanguage() {
+  var headerClasses = document.body.querySelector(".header").classList;
+
+  if (headerClasses.contains("header--menu-opened")) {
+    closeMenu();
+  }
+
+  if (headerClasses.contains("header--search-opened")) {
+    closeSearch();
+  }
+}
+
+// Open menu
+function openMenu() {
   var headerClasses = document.body.querySelector(".header").classList;
   var headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
   var bodyClasses = document.body.classList;
 
-  if (headerClasses.contains("header--menu-opened")) {
-    headerClasses.add("header--menu-closing");
-    headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
-    headerClasses.remove("header--menu-opened");
-    setTimeout(function () {
-      headerClasses.remove("header--menu-closing");
-    }, 150);
-    setTimeout(function () {
-      headerContentWrapperClasses.remove("header__content-wrapper--menu-closing");
-    }, 300);
-    bodyClasses.remove("u--disable-scroll-mobile");
-  } else {
-    headerClasses.add("header--menu-opening");
-    setTimeout(function () {
-      headerClasses.add("header--menu-opened");
-      headerClasses.remove("header--menu-opening");
-    }, 1);
-    bodyClasses.add("u--disable-scroll-mobile");
-  }
+  headerClasses.add("header--menu-opening");
+  setTimeout(function () {
+    headerClasses.add("header--menu-opened");
+    headerClasses.remove("header--menu-opening");
+  }, 1);
+  bodyClasses.add("u--disable-scroll-mobile");
 }
 
+// Close menu
 function closeMenu() {
   var headerClasses = document.body.querySelector(".header").classList;
   var headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
   var bodyClasses = document.body.classList;
 
-  if (headerClasses.contains("header--menu-opened")) {
-    headerClasses.add("header--menu-closing");
-    headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
-    headerClasses.remove("header--menu-opened");
-    setTimeout(function () {
-      headerClasses.remove("header--menu-closing");
-    }, 150);
-    setTimeout(function () {
-      headerContentWrapperClasses.remove("header__content-wrapper--menu-closing");
-    }, 300);
-    bodyClasses.remove("u--disable-scroll-mobile");
-  }
+  headerClasses.add("header--menu-closing");
+  headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
+  headerClasses.remove("header--menu-opened");
+  setTimeout(function () {
+    headerClasses.remove("header--menu-closing");
+  }, 150);
+  setTimeout(function () {
+    headerContentWrapperClasses.remove("header__content-wrapper--menu-closing");
+  }, 300);
+  bodyClasses.remove("u--disable-scroll-mobile");
+}
+
+// Quickly close menu
+function closeMenuQuick() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  var bodyClasses = document.body.classList;
+
+  headerClasses.remove("header--menu-opened");
+  bodyClasses.remove("u--disable-scroll-mobile");
+}
+
+// Open search
+function openSearch() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  var headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+  var bodyClasses = document.body.classList;
+
+  headerClasses.add("header--search-opening");
+  setTimeout(function () {
+    headerClasses.add("header--search-opened");
+    headerClasses.remove("header--search-opening");
+  }, 1);
+  bodyClasses.add("u--disable-scroll-mobile");
+}
+
+// Close search
+function closeSearch() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  var headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+  var bodyClasses = document.body.classList;
+
+  headerClasses.add("header--search-closing");
+  headerContentWrapperClasses.add("header__content-wrapper--search-closing");
+  headerClasses.remove("header--search-opened");
+  setTimeout(function () {
+    headerClasses.remove("header--search-closing");
+  }, 150);
+  setTimeout(function () {
+    headerContentWrapperClasses.remove("header__content-wrapper--search-closing");
+  }, 300);
+  bodyClasses.remove("u--disable-scroll-mobile");
+}
+
+// Quickly close search
+function closeSearchQuick() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  var bodyClasses = document.body.classList;
+
+  headerClasses.remove("header--search-opened");
+  bodyClasses.remove("u--disable-scroll-mobile");
 }
 
 /* Parallax function for elements with css class ".parallax" */
@@ -143,15 +227,15 @@ function addOperationStatus(service, status) {
   var statusText = document.getElementById('service-status-text-' + service);
 
   // Clean previous status
-  classes.remove("service-status__icon-circle-bottom--operational", "service-status__icon-circle-bottom--minor-outage", "service-status__icon-circle-bottom--major-outage");
+  classes.remove("service-status__icon-circle-bottom--operational", "service-status__icon-circle-bottom--partial-outage", "service-status__icon-circle-bottom--major-outage");
 
   // Update status
   if (status === "operational") {
     classes.add("service-status__icon-circle-bottom--operational");
     statusText.textContent = "Toiminnassa";
     statusText.classList.remove("service-status__service-text--loading");
-  } else if (status === "minor outage") {
-    classes.add("service-status__icon-circle-bottom--minor-outage");
+  } else if (status === "partial outage") {
+    classes.add("service-status__icon-circle-bottom--partial-outage");
     statusText.textContent = "Osittainen katkos";
     statusText.classList.remove("service-status__service-text--loading");
   } else if (status === "major outage") {

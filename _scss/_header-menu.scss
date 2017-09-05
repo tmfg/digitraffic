@@ -30,7 +30,17 @@
     padding: $icon-padding-y $icon-padding-x;
     color: $header-icon-color;
 
-    &--close {
+    &--menu-close {
+      color: $blue-light;
+      display: none;
+    }
+
+    &--search-close {
+      color: $blue-light;
+      display: none;
+    }
+
+    &--language-close {
       color: $blue-light;
       display: none;
     }
@@ -95,11 +105,28 @@
   }
 
   .header-menu__icon {
-    &--close {
+    &--menu-close {
       display: inline-block;
     }
   
     &--menu {
+      display: none;
+    }
+  } 
+}
+
+/* Show / hide search */
+.header--search-opened {
+  .header-menu__item--search {
+    color: $gray-153;
+  }
+
+  .header-menu__icon {
+    &--search-close {
+      display: inline-block;
+    }
+  
+    &--search {
       display: none;
     }
   } 
