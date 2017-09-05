@@ -11,16 +11,23 @@ if (document.readyState !== 'loading') {
 
 function init() {
   console.log("DOM ready");
+
+  // Add parallax effect to elements with ".parallax" and to footer
   parallax();
   parallaxFooter();
+
+  // Add menu event listeners
   addToggleMenu();
+
+  // If Service status section exists, get service status
+  document.getElementById("service-status-section") ? getServiceStatus() : '';
 }
 
 
 /* On scroll actions */
 window.onscroll = () => {
 
-  /* Add parallax effect */
+  // Add parallax effect
   parallax();
   parallaxFooter();
   
@@ -118,4 +125,58 @@ function parallaxFooter() {
   let diffFromBottom = elementBottom - window.innerHeight;
   let translateY = diffFromBottom / 15;
   element.style.transform = "translate(0, " + translateY + "px)";
+}
+
+function updateServiceStatus() {
+  // Add updated service status info to each service
+  JSON.parse(this.responseText).data.forEach(service => {
+    addOperationStatus(service.name.toLowerCase(), service.lowest_human_status.toLowerCase());
+  });
+  console.log("Service status updated.");
+}
+
+function getServiceStatus() {
+  console.log("Updating service status...");
+
+  // Get service status data from api
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", updateServiceStatus);
+  oReq.open("GET", "https://status.digitraffic.fi/api/v1/components/groups");
+  oReq.send();
+
+  // Update service status every 60 seconds
+  setTimeout(getServiceStatus, 60000);
+}
+
+function addOperationStatus(service, status) {
+  // Elements
+  const classes = document.getElementById(`service-status-circle-${service}`).classList;
+  let statusText = document.getElementById(`service-status-text-${service}`);
+
+  // Clean previous status
+  classes.remove(
+    "service-status__icon-circle-bottom--operational",
+    "service-status__icon-circle-bottom--minor-outage",
+    "service-status__icon-circle-bottom--major-outage"
+  );
+
+  // Update status
+  if (status === "operational") {
+    classes.add("service-status__icon-circle-bottom--operational");
+    statusText.textContent = "Toiminnassa";
+    statusText.classList.remove("service-status__service-text--loading");
+  } else if (status === "minor outage") {
+    classes.add("service-status__icon-circle-bottom--minor-outage");
+    statusText.textContent = "Osittainen katkos";
+    statusText.classList.remove("service-status__service-text--loading");
+  }
+  else if (status === "major outage") {
+    classes.add("service-status__icon-circle-bottom--major-outage");
+    statusText.textContent = "Merkittävä katkos";
+    statusText.classList.remove("service-status__service-text--loading");
+  }
+  else {
+    statusText.textContent = "Virhe ladattaessa tietoja";
+    statusText.classList.add("service-status__service-text--loading");
+  }
 }

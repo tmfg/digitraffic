@@ -96,7 +96,7 @@
       </section>
       <!--Service status-->
       <div class="content__frontpage-section-wrapper">
-        <section class="content__frontpage-section">
+        <section id="service-status-section" class="content__frontpage-section">
           <div class="row">
             <div class="col-xs">
               <h2 class="h2 u--centered service-status__section-header"><a href="#" class="h-link">Palveluiden tila</a></h2>
@@ -106,14 +106,14 @@
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
                 <div class="service-status__content">
-                  <div id="service-status-circle-road" class="service-status__icon-circle-bottom service-status__icon-circle-bottom--operational">
+                  <div id="service-status-circle-road" class="service-status__icon-circle-bottom">
                     <div class="service-status__icon-circle">
                       <i class="material-icons md-light service-status__icon">directions_car</i>
                     </div>
                   </div>
                   <div class="service-status__text">
                     <h4 class="h4 service-status__service-heading">Tieliikenne</h4>
-                    <span class="">Toiminnassa</span>
+                    <span id="service-status-text-road" class="service-status__service-text--loading">Ladataan...</span>
                   </div>
                 </div>
               </div>
@@ -121,14 +121,14 @@
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
                 <div class="service-status__content">
-                  <div id="service-status-circle-rail" class="service-status__icon-circle-bottom service-status__icon-circle-bottom--minor-incident">
+                  <div id="service-status-circle-rail" class="service-status__icon-circle-bottom">
                     <div class="service-status__icon-circle">
                       <i class="material-icons md-light service-status__icon">train</i>
                     </div>
                   </div>
                   <div class="service-status__text">
                     <h4 class="h4 service-status__service-heading">Rautatieliikenne</h4>
-                    <span class="">Osittainen katkos</span>
+                    <span id="service-status-text-rail" class="service-status__service-text--loading">Ladataan...</span>
                   </div>
                 </div>
               </div>
@@ -136,14 +136,14 @@
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
                 <div class="service-status__content">
-                  <div id="service-status-circle-marine" class="service-status__icon-circle-bottom service-status__icon-circle-bottom--major-incident">
+                  <div id="service-status-circle-marine" class="service-status__icon-circle-bottom">
                     <div class="service-status__icon-circle">
                       <i class="material-icons md-light service-status__icon">directions_boat</i>
                     </div>
                   </div>
                   <div class="service-status__text">
                     <h4 class="h4 service-status__service-heading">Meriliikenne</h4>
-                    <span class="">Merkittävä katkos</span>
+                    <span id="service-status-text-marine" class="service-status__service-text--loading">Ladataan...</span>
                   </div>
                 </div>
               </div>

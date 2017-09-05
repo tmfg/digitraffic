@@ -18,6 +18,7 @@
     width: 3.5rem;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     vertical-align: middle;
+    transition: $transition-moderate;
 
     &--operational {
       background-color: $green;
@@ -27,7 +28,7 @@
       }
     }
 
-    &--minor-incident {
+    &--minor-outage {
       background-color: $orange;
 
       .service-status__icon-circle {
@@ -35,7 +36,7 @@
       }
     }
 
-    &--major-incident {
+    &--major-outage {
       background-color: $red;
 
       .service-status__icon-circle {
@@ -65,6 +66,13 @@
 
   &__service-heading {
     margin: $margin-xxxxs 0 0;
+  }
+
+  &__service-text {
+
+    &--loading {
+      color: $gray-200;
+    }
   }
 
   /* Media queries for different screen sizes */
