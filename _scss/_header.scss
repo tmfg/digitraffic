@@ -19,6 +19,10 @@
     background-color: $gray-68-100;
   }
 
+  .header__content-wrapper--menu-switching {
+    background-color: $gray-68-100 !important;
+  }
+
   &--scrolled {
     transition: $transition-faster;
     background-color: $gray-68-100;

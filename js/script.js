@@ -107,13 +107,13 @@ function openMenu() {
   const bodyClasses = document.body.classList;
 
   headerClasses.add("header--menu-opening");
+  bodyClasses.add("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.add("header--menu-opened");
     headerClasses.remove("header--menu-opening");
     },
     1
   );
-  bodyClasses.add("u--disable-scroll-mobile");
 }
 
 // Close menu
@@ -125,6 +125,7 @@ function closeMenu() {
   headerClasses.add("header--menu-closing");
   headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
   headerClasses.remove("header--menu-opened");
+  bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.remove("header--menu-closing");
     },
@@ -135,16 +136,22 @@ function closeMenu() {
     },
     300
   );
-  bodyClasses.remove("u--disable-scroll-mobile");
 }
 
 // Quickly close menu
 function closeMenuQuick() {
   const headerClasses = document.body.querySelector(".header").classList;
+  const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
   const bodyClasses = document.body.classList;
 
+  headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--menu-opened");
   bodyClasses.remove("u--disable-scroll-mobile");
+  setTimeout( () => {
+    headerContentWrapperClasses.remove("header__content-wrapper--menu-switching");
+    },
+    150
+  );
 }
 
 // Open search
@@ -154,13 +161,13 @@ function openSearch() {
   const bodyClasses = document.body.classList;
 
   headerClasses.add("header--search-opening");
+  bodyClasses.add("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.add("header--search-opened");
     headerClasses.remove("header--search-opening");
     },
     1
   );
-  bodyClasses.add("u--disable-scroll-mobile");
 }
 
 // Close search
@@ -172,6 +179,7 @@ function closeSearch() {
   headerClasses.add("header--search-closing");
   headerContentWrapperClasses.add("header__content-wrapper--search-closing");
   headerClasses.remove("header--search-opened");
+  bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.remove("header--search-closing");
     },
@@ -182,16 +190,22 @@ function closeSearch() {
     },
     300
   );
-  bodyClasses.remove("u--disable-scroll-mobile");
 }
 
 // Quickly close search
 function closeSearchQuick() {
   const headerClasses = document.body.querySelector(".header").classList;
+  const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
   const bodyClasses = document.body.classList;
 
+  headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--search-opened");
   bodyClasses.remove("u--disable-scroll-mobile");
+  setTimeout( () => {
+    headerContentWrapperClasses.remove("header__content-wrapper--menu-switching");
+    },
+    150
+  );
 }
 
 /* Parallax function for elements with css class ".parallax" */
