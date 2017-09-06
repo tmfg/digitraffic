@@ -131,3 +131,20 @@
     }
   } 
 }
+
+/* Show / hide language */
+.header--language-opened {
+  .header-menu__item--language {
+    color: $gray-153;
+  }
+
+  .header-menu__icon {
+    &--language-close {
+      display: inline-block;
+    }
+  
+    &--language {
+      display: none;
+    }
+  } 
+}

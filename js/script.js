@@ -48,10 +48,12 @@ window.onscroll = () => {
 function addEventListeners() {
   let menuElement = document.body.querySelector(".header-menu__item--menu");
   let searchElement = document.body.querySelector(".header-menu__item--search");
+  let languageElement = document.body.querySelector(".header-menu__item--language");
   let outsideMenu = document.body.querySelector(".content");
   
   menuElement.addEventListener("click", toggleMenu);
   searchElement.addEventListener("click", toggleSearch);
+  languageElement.addEventListener("click", toggleLanguage);
   outsideMenu.addEventListener("click", closeMenuSearchLanguage);
 }
 
@@ -63,9 +65,12 @@ function toggleMenu() {
   if (headerClasses.contains("header--menu-opened")) {
     closeMenu();
   } else {
-    // If search is opened, close it
+    // If search or language is opened, close it
     if (headerClasses.contains("header--search-opened")) {
       closeSearchQuick();
+    }
+    if (headerClasses.contains("header--language-opened")) {
+      closeLanguageQuick();
     }
     openMenu();
   }
@@ -79,11 +84,33 @@ function toggleSearch() {
   if (headerClasses.contains("header--search-opened")) {
     closeSearch();
   } else {
-    // If menu is opened, close it
+    // If menu or language is opened, close it
     if (headerClasses.contains("header--menu-opened")) {
       closeMenuQuick();
     }
+    if (headerClasses.contains("header--language-opened")) {
+      closeLanguageQuick();
+    }
     openSearch();
+  }
+}
+
+// Toggle language menu function
+function toggleLanguage() {
+  const headerClasses = document.body.querySelector(".header").classList;
+
+  // Toggle search
+  if (headerClasses.contains("header--language-opened")) {
+    closeLanguage();
+  } else {
+    // If menu or search is opened, close it
+    if (headerClasses.contains("header--menu-opened")) {
+      closeMenuQuick();
+    }
+    if (headerClasses.contains("header--search-opened")) {
+      closeSearchQuick();
+    }
+    openLanguage();
   }
 }
 
@@ -97,6 +124,10 @@ function closeMenuSearchLanguage() {
 
   if (headerClasses.contains("header--search-opened")) {
     closeSearch();
+  }
+
+  if (headerClasses.contains("header--language-opened")) {
+    closeLanguage();
   }
 }
 
@@ -208,6 +239,60 @@ function closeSearchQuick() {
   );
 }
 
+// Open language
+function openLanguage() {
+  const headerClasses = document.body.querySelector(".header").classList;
+  const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+  const bodyClasses = document.body.classList;
+
+  headerClasses.add("header--language-opening");
+  bodyClasses.add("u--disable-scroll-mobile");
+  setTimeout( () => {
+    headerClasses.add("header--language-opened");
+    headerClasses.remove("header--language-opening");
+    },
+    1
+  );
+}
+
+// Close language
+function closeLanguage() {
+  const headerClasses = document.body.querySelector(".header").classList;
+  const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+  const bodyClasses = document.body.classList;
+
+  headerClasses.add("header--language-closing");
+  headerContentWrapperClasses.add("header__content-wrapper--language-closing");
+  headerClasses.remove("header--language-opened");
+  bodyClasses.remove("u--disable-scroll-mobile");
+  setTimeout( () => {
+    headerClasses.remove("header--language-closing");
+    },
+    150
+  );
+  setTimeout( () => {
+    headerContentWrapperClasses.remove("header__content-wrapper--language-closing");
+    },
+    300
+  );
+}
+
+// Quickly close language
+function closeLanguageQuick() {
+  const headerClasses = document.body.querySelector(".header").classList;
+  const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+  const bodyClasses = document.body.classList;
+
+  headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
+  headerClasses.remove("header--language-opened");
+  bodyClasses.remove("u--disable-scroll-mobile");
+  setTimeout( () => {
+    headerContentWrapperClasses.remove("header__content-wrapper--menu-switching");
+    },
+    150
+  );
+}
+
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
   Array.from(document.body.querySelectorAll('.parallax')).forEach(element => {
@@ -265,12 +350,12 @@ function addOperationStatus(service, status) {
     classes.add("service-status__icon-circle-bottom--operational");
     statusText.textContent = "Toiminnassa";
     statusText.classList.remove("service-status__service-text--loading");
-  } else if (status === "partial outage") {
+  } else if (status === "partial_outage") {
     classes.add("service-status__icon-circle-bottom--partial-outage");
     statusText.textContent = "Osittainen katkos";
     statusText.classList.remove("service-status__service-text--loading");
   }
-  else if (status === "major outage") {
+  else if (status === "major_outage") {
     classes.add("service-status__icon-circle-bottom--major-outage");
     statusText.textContent = "Merkittävä katkos";
     statusText.classList.remove("service-status__service-text--loading");
