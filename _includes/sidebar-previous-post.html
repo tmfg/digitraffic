@@ -1,0 +1,16 @@
+{% if prev_post.url %}
+<div class="sidebar__section">
+  <h3 class="h3 sidebar__heading">Edellinen {{ include.category }}</h3>
+  <h4 class="h4 sidebar__page-heading"><a href="{{ prev_post.url | prepend:site.baseurl }}" class="sidebar__page-heading-link">{{ prev_post.title }}</a></h4>
+  <div class="sidebar__metadata">
+    <!-- White spaces commented -->
+    <span class="sidebar__page-timestamp">{{ prev_post.date | date: "%d.%m.%Y" }}</span><!--
+   --><ul class="sidebar__page-traffic-type-list"><!--
+     -->{% for traffictype in prev_post.traffictypes %}<!--
+     --><span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span><!--
+     -->{% endfor %}<!--
+   --></ul>
+    <!-- White spaces commented -->
+  </div>
+</div>
+{% endif %}

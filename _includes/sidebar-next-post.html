@@ -1,0 +1,16 @@
+{% if next_post.url %}
+<div class="sidebar__section">
+  <h3 class="h3 sidebar__heading">Seuraava {{ include.category }}</h3>
+  <h4 class="h4 sidebar__page-heading"><a href="{{ next_post.url | prepend:site.baseurl }}" class="sidebar__page-heading-link">{{ next_post.title }}</a></h4>
+  <div class="sidebar__metadata">
+    <!-- White spaces commented -->
+    <span class="sidebar__page-timestamp">{{ next_post.date | date: "%d.%m.%Y" }}</span><!--
+ --><ul class="sidebar__page-traffic-type-list"><!--
+   -->{% for traffictype in next_post.traffictypes %}<!--
+   --><span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span><!--
+   -->{% endfor %}<!--
+ --></ul>
+    <!-- White spaces commented -->
+  </div>
+</div>
+{% endif %}
