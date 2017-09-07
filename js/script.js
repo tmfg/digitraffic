@@ -334,6 +334,8 @@ function getServiceStatus() {
 }
 
 function addOperationStatus(service, status) {
+  console.log(service, ":", status);
+
   // Elements
   const classes = document.getElementById(`service-status-circle-${service}`).classList;
   let statusText = document.getElementById(`service-status-text-${service}`);
@@ -350,12 +352,12 @@ function addOperationStatus(service, status) {
     classes.add("service-status__icon-circle-bottom--operational");
     statusText.textContent = "Toiminnassa";
     statusText.classList.remove("service-status__service-text--loading");
-  } else if (status === "partial_outage") {
+  } else if (status === "partial outage") {
     classes.add("service-status__icon-circle-bottom--partial-outage");
     statusText.textContent = "Osittainen katkos";
     statusText.classList.remove("service-status__service-text--loading");
   }
-  else if (status === "major_outage") {
+  else if (status === "major outage") {
     classes.add("service-status__icon-circle-bottom--major-outage");
     statusText.textContent = "Merkittävä katkos";
     statusText.classList.remove("service-status__service-text--loading");
