@@ -35,7 +35,7 @@
         {% if page.image != null and page.image != empty %}
         <div class="row">
           <div class="col-xs-12 cover-image">
-            <img src="/img/{{ page.image | prepend:site.baseurl }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
+            <img src="{{ "/img/" | prepend:site.baseurl }}{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
           </div>
         </div>
         {% endif %}
