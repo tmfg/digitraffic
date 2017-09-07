@@ -31,6 +31,10 @@
     @extend .latest-item__timestamp;
   }
 
+  &__page-traffic-type-list {
+    @extend .latest-item__traffic-type-list;
+  }
+
   &__page-traffic-type {
     @extend .latest-item__traffic-type;
   }

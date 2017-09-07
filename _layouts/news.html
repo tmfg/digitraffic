@@ -47,17 +47,19 @@
             <!--Date, type, tags-->
             <div class="row">
               <div class="col-xs-12 date-type-tags u--no-padding">
-                <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span>
-                <ul class="date-type-tags__type-list">
-                  {% for traffictype in page.traffictypes %}
-                  <li class="date-type-tags__type"><a class="link" href="#">{{ traffictype }}</a></li>
-                  {% endfor %}
-                </ul>
-                <ul class="date-type-tags__tag-list">
-                  {% for tag in page.tags %}
-                  <li class="date-type-tags__tag"><a class="link" href="#">{{ tag }}</a></li>
-                  {% endfor %}
-                </ul>
+                <!-- White spaces commented -->
+                <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span><!--
+             --><ul class="date-type-tags__type-list"><!--
+               -->{% for traffictype in page.traffictypes %}<!--
+               --><li class="date-type-tags__type"><a class="link" href="#">{{ traffictype }}</a></li><!--
+               -->{% endfor %}<!--
+             --></ul><!--
+             --><ul class="date-type-tags__tag-list"><!--
+               -->{% for tag in page.tags %}<!--
+               --><li class="date-type-tags__tag"><a class="link" href="#">{{ tag }}</a></li><!--
+               -->{% endfor %}<!--
+             --></ul>
+              <!-- /White spaces commented --> 
               </div>
             </div>
 
@@ -77,10 +79,14 @@
               <h3 class="h3 sidebar__heading">Seuraava tiedote</h3>
               <h4 class="h4 sidebar__page-heading"><a href="{{ page.next.url | prepend:site.baseurl }}" class="sidebar__page-heading-link">{{ page.next.title }}</a></h4>
               <div class="sidebar__metadata">
-                <span class="sidebar__page-timestamp">{{ page.next.date | date: "%d.%m.%Y" }}</span>
-                {% for traffictype in page.next.traffictypes %}
-                <span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span>
-                {% endfor %}
+                <!-- White spaces commented -->
+                <span class="sidebar__page-timestamp">{{ page.next.date | date: "%d.%m.%Y" }}</span><!--
+             --><ul class="sidebar__page-traffic-type-list"><!--
+               -->{% for traffictype in page.next.traffictypes %}<!--
+               --><span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span><!--
+               -->{% endfor %}<!--
+             --></ul>
+                <!-- White spaces commented -->
               </div>
             </div>
             {% endif %}
@@ -89,11 +95,15 @@
               <h3 class="h3 sidebar__heading">Edellinen tiedote</h3>
               <h4 class="h4 sidebar__page-heading"><a href="{{ page.previous.url | prepend:site.baseurl }}" class="sidebar__page-heading-link">{{ page.previous.title }}</a></h4>
               <div class="sidebar__metadata">
-                  <span class="sidebar__page-timestamp">{{ page.previous.date | date: "%d.%m.%Y" }}</span>
-                  {% for traffictype in page.previous.traffictypes %}
-                  <span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span>
-                  {% endfor %}
-                </div>
+                <!-- White spaces commented -->
+                <span class="sidebar__page-timestamp">{{ page.previous.date | date: "%d.%m.%Y" }}</span><!--
+               --><ul class="sidebar__page-traffic-type-list"><!--
+                 -->{% for traffictype in page.previous.traffictypes %}<!--
+                 --><span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span><!--
+                 -->{% endfor %}<!--
+               --></ul>
+                <!-- White spaces commented -->
+              </div>
             </div>
             {% endif %}
             <div class="sidebar__section">

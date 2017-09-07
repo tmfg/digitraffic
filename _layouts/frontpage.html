@@ -89,15 +89,20 @@
             {% for post in site.posts limit:3 %}
               <div class="col-xs-12 col-sm-4 latest-item">
                 <h4 class="h4 latest-item__header-text"><a href="{{ post.url | prepend:site.baseurl }}" class="latest-item__header-link">{{ post.title }}</a></h4>
-                <p class="latest-item__meta-first"><span class="latest-item__timestamp">{{ post.date | date: "%d.%m.%Y" }}</span>
-                  {% for category in post.categories %}
-                  <a href="#" class="latest-item__content-type link">{{ category }}</a>
-                  {% endfor %}
-                </p>
-                <div>
-                  {% for traffictype in post.traffictypes %}
-                  <span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span>
-                  {% endfor %}
+                <div class="latest-item__meta-first">
+                  <!-- White spaces commented -->
+                  <span class="latest-item__timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><!--
+               --><ul class="latest-item__content-type-list"><!--
+                 -->{% for category in post.categories %}<!--
+                 --><li class="latest-item__content-type"><a href="#" class="link">{{ category }}</a></li><!--
+                 -->{% endfor %}<!--
+               --></ul><!--
+               --><ul class="latest-item__traffic-type-list"><!--
+                 -->{% for traffictype in post.traffictypes %}<!--
+                 --><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
+                 -->{% endfor %}<!--
+               --></ul>
+                <!-- /White spaces commented -->
                 </div>
               </div>
             {% endfor %}

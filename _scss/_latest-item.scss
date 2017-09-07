@@ -28,24 +28,46 @@
   }
 
   &__timestamp {
+    display: inline;
+
     &::after {
-        @include separator();
+      @include separator;
     }
   }
 
+  &__content-type-list {
+    display: inline;
+    list-style-type: none;
+  }
+
   &__content-type {
-    text-transform: uppercase;
+    display: inline;
+    text-transform: capitalize;
+
+    &::after {
+      @include separator('•');
+    }
+
+    &:last-child::after {
+      @include separator;
+    }
+  }
+
+  &__traffic-type-list {
+    display: inline;
+    list-style-type: none;
   }
 
   &__traffic-type {
     display: inline-block;
+    text-transform: capitalize;
     
     &::after {
-        @include separator("•")
+      @include separator("•");
     }
 
     &:last-child::after {
-        @include separator("", 0);
+      content: none;
     }
   }
 
