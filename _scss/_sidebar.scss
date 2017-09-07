@@ -1,3 +1,46 @@
 .sidebar {
-  margin: $margin-xssm 0;
+  margin: 0;
+
+  /* Elements */
+  &__section {
+    padding-bottom: $margin-smmd;
+    border-bottom: 1px solid $gray-200;
+
+    &:first-child .sidebar__heading {
+      margin-top: $margin-xxs;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__heading {
+    margin: $margin-sm 0 $margin-xssm;
+  }
+
+  &__page-heading {
+    margin: 0 0 $margin-xssm;
+  }
+
+  &__page-heading-link {
+    @extend .latest-item__header-link;
+  }
+
+  &__page-timestamp {
+    @extend .latest-item__timestamp;
+  }
+
+  &__page-traffic-type {
+    @extend .latest-item__traffic-type;
+  }
+
+  &__metadata {
+    @extend .small;
+  }
+
+  /* Media queries for different screen sizes */
+  @media screen and (min-width: $min-width-sm) {
+    padding-left: $margin-xssm;
+  }
 }

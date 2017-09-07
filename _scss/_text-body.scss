@@ -1,3 +1,8 @@
 .text-body {
   margin: $margin-xs 0;
+
+  /* Media queries for different screen sizes */
+  @media screen and (min-width: $min-width-sm) {
+    padding-right: $margin-xssm;
+  }
 }

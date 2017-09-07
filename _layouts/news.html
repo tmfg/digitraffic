@@ -68,7 +68,29 @@
 
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
-            Sidebar
+            {% if page.next.url %}
+            <div class="sidebar__section">
+              <h3 class="h3 sidebar__heading">Seuraava tiedote</h3>
+              <h4 class="h4 sidebar__page-heading"><a href="{{ base }}{{ page.next.url }}" class="sidebar__page-heading-link">{{ page.next.title }}</a></h4>
+              <div class="sidebar__metadata">
+                <span class="sidebar__page-timestamp">{{ page.next.date | date: "%d.%m.%Y" }}</span>
+                <span class="sidebar__page-traffic-type"><a href="#" class="link">Tieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Rautatieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Meriliikenne</a></span>
+              </div>
+            </div>
+            {% endif %}
+            {% if page.previous.url %}
+            <div class="sidebar__section">
+              <h3 class="h3 sidebar__heading">Edellinen tiedote</h3>
+              <h4 class="h4 sidebar__page-heading"><a href="{{ base }}{{ page.previous.url }}" class="sidebar__page-heading-link">{{ page.previous.title }}</a></h4>
+              <div class="sidebar__metadata">
+                  <span class="sidebar__page-timestamp">{{ page.previous.date | date: "%d.%m.%Y" }}</span>
+                  <span class="sidebar__page-traffic-type"><a href="#" class="link">Tieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Rautatieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Meriliikenne</a></span>
+                </div>
+            </div>
+            {% endif %}
+            <div class="sidebar__section">
+              <h3 class="h3 sidebar__heading">Liittyvät tiedotteet</h3>
+            </div>
           </div>
 
         </div>
