@@ -1,5 +1,3 @@
-{% include base.html %}
-
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -90,7 +88,7 @@
           <div class="row">
             {% for post in site.posts limit:3 %}
               <div class="col-xs-12 col-sm-4 latest-item">
-                <h4 class="h4 latest-item__header-text"><a href="{{ base }}{{ post.url }}" class="latest-item__header-link">{{ post.title }}</a></h4>
+                <h4 class="h4 latest-item__header-text"><a href="{{ post.url | prepend:site.baseurl }}" class="latest-item__header-link">{{ post.title }}</a></h4>
                 <p class="latest-item__meta-first"><span class="latest-item__timestamp">{{ post.date | date: "%d.%m.%Y" }}</span>
                   {% for category in post.categories %}
                   <a href="#" class="latest-item__content-type link">{{ category }}</a>
