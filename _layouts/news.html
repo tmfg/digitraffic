@@ -50,10 +50,16 @@
             <div class="row">
               <div class="col-xs-12 date-type-tags u--no-padding">
                 <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span>
-                <span class="date-type-tags__type"><a class="link" href="#">Tieliikenne</a></span>
-                <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
-                <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
-                <span class="date-type-tags__tag"><a class="link" href="#">Avainsana</a></span>
+                <ul class="date-type-tags__type-list">
+                  {% for traffictype in page.traffictypes %}
+                  <li class="date-type-tags__type"><a class="link" href="#">{{ traffictype }}</a></li>
+                  {% endfor %}
+                </ul>
+                <ul class="date-type-tags__tag-list">
+                  {% for tag in page.tags %}
+                  <li class="date-type-tags__tag"><a class="link" href="#">{{ tag }}</a></li>
+                  {% endfor %}
+                </ul>
               </div>
             </div>
 
@@ -74,7 +80,9 @@
               <h4 class="h4 sidebar__page-heading"><a href="{{ base }}{{ page.next.url }}" class="sidebar__page-heading-link">{{ page.next.title }}</a></h4>
               <div class="sidebar__metadata">
                 <span class="sidebar__page-timestamp">{{ page.next.date | date: "%d.%m.%Y" }}</span>
-                <span class="sidebar__page-traffic-type"><a href="#" class="link">Tieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Rautatieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Meriliikenne</a></span>
+                {% for traffictype in page.next.traffictypes %}
+                <span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span>
+                {% endfor %}
               </div>
             </div>
             {% endif %}
@@ -84,7 +92,9 @@
               <h4 class="h4 sidebar__page-heading"><a href="{{ base }}{{ page.previous.url }}" class="sidebar__page-heading-link">{{ page.previous.title }}</a></h4>
               <div class="sidebar__metadata">
                   <span class="sidebar__page-timestamp">{{ page.previous.date | date: "%d.%m.%Y" }}</span>
-                  <span class="sidebar__page-traffic-type"><a href="#" class="link">Tieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Rautatieliikenne</a></span><span class="sidebar__page-traffic-type"><a href="#" class="link">Meriliikenne</a></span>
+                  {% for traffictype in page.previous.traffictypes %}
+                  <span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span>
+                  {% endfor %}
                 </div>
             </div>
             {% endif %}

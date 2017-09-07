@@ -2,6 +2,9 @@
 title: Toistaiseksi uusin tiedote
 image: hero-img-roundabout.jpg
 published: true
+categories: Tiedotteet
+traffictypes: [Tieliikenne, Rautatieliikenne, Meriliikenne]
+tags: [Avainsana2, Avainsana3, Avainsana4]
 ---
 
 Johdantoteksti lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.

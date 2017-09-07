@@ -8,15 +8,32 @@
     }
   }
 
+  &__type-list {
+    display: inline;
+    list-style-type: none;
+  }
+
   &__type{
-    text-transform: uppercase;
+    display: inline;
+    text-transform: capitalize;
 
     &::after {
+      @include separator('•');
+    }
+
+    &:last-child::after {
       @include separator;
     }
   }
 
+  &__tag-list {
+    display: inline;
+    list-style-type: none;
+  }
+
   &__tag {
+    display: inline;
+
     &::after {
       @include separator('•');
     }

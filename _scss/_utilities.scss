@@ -5,6 +5,7 @@
 
   &--disable-scroll-mobile {
     @media screen and (max-width: $max-width-sm) {
+      height: 100%;
       overflow: hidden;
     }
   }
