@@ -6,6 +6,7 @@
   margin: 0 auto;
   border-top: 2px solid $gray-102;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   display: none;
   transition: $transition-fast;
 
