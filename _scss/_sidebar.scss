@@ -3,7 +3,6 @@
 
   /* Elements */
   &__section {
-    padding-bottom: $margin-smmd;
     border-bottom: 1px solid $gray-200;
 
     &:first-child .sidebar__heading {
@@ -20,7 +19,7 @@
   }
 
   &__page-heading {
-    margin: 0 0 $margin-xssm;
+    margin: 0 0 $margin-xs;
   }
 
   &__page-heading-link {
@@ -41,6 +40,7 @@
 
   &__metadata {
     @extend .small;
+    margin-bottom: $margin-smmd;
   }
 
   /* Media queries for different screen sizes */
