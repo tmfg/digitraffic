@@ -3,43 +3,22 @@
 
   /* Elements */
   &__date {
-    &::after {
-      @include separator;
-    }
+    @extend .latest-item__timestamp;
   }
 
   &__type-list {
-    display: inline;
-    list-style-type: none;
+    @extend .latest-item__content-type-list;
   }
 
   &__type{
-    display: inline;
-    text-transform: capitalize;
-
-    &::after {
-      @include separator('•');
-    }
-
-    &:last-child::after {
-      @include separator;
-    }
+    @extend .latest-item__content-type;
   }
 
   &__tag-list {
-    display: inline;
-    list-style-type: none;
+    @extend .latest-item__traffic-type-list;
   }
 
   &__tag {
-    display: inline;
-
-    &::after {
-      @include separator('•');
-    }
-
-    &:last-child::after {
-      content: none;
-    }
+    @extend .latest-item__traffic-type;
   }
 }

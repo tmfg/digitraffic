@@ -41,7 +41,7 @@
   }
 
   &__content-type {
-    display: inline;
+    display: inline-block;
     text-transform: capitalize;
 
     &::after {

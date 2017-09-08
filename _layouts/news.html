@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 {% include next-and-previous-post-in-category.html %}
 
 <!DOCTYPE html>
@@ -48,20 +52,22 @@
             
             <!--Date, type, tags-->
             <div class="row">
-              <div class="col-xs-12 date-type-tags u--no-padding">
-                <!-- White spaces commented -->
-                <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span><!--
-             --><ul class="date-type-tags__type-list"><!--
-               -->{% for traffictype in page.traffictypes %}<!--
-               --><li class="date-type-tags__type"><a class="link" href="#">{{ traffictype }}</a></li><!--
-               -->{% endfor %}<!--
-             --></ul><!--
-             --><ul class="date-type-tags__tag-list"><!--
-               -->{% for tag in page.tags %}<!--
-               --><li class="date-type-tags__tag"><a class="link" href="#">{{ tag }}</a></li><!--
-               -->{% endfor %}<!--
-             --></ul>
-              <!-- /White spaces commented --> 
+              <div class="col-xs-12 u--no-padding">
+                <div class="date-type-tags">
+                  <!-- White spaces commented -->
+                  <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span><!--
+               --><ul class="date-type-tags__type-list"><!--
+                 -->{% for traffictype in page.traffictypes %}<!--
+                 --><li class="date-type-tags__type"><a class="link" href="#">{{ traffictype }}</a></li><!--
+                 -->{% endfor %}<!--
+               --></ul><!--
+               --><ul class="date-type-tags__tag-list"><!--
+                 -->{% for tag in page.tags %}<!--
+                 --><li class="date-type-tags__tag"><a class="link" href="#">{{ tag }}</a></li><!--
+                 -->{% endfor %}<!--
+               --></ul>
+                <!-- /White spaces commented --> 
+                </div>
               </div>
             </div>
 

@@ -5,6 +5,9 @@ gems:
 sass:
   sass_dir: _scss
   style: compressed
+compress_html:
+  clippings: all
+  comments: all
 exclude: [README.md,node_modules, gulpfile.js, Gemfile, package.json, package-lock.json, metadata, docs]
 defaults:
   -
