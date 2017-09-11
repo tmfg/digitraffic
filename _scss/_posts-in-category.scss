@@ -1,0 +1,35 @@
+.posts-in-category {
+
+  /* Elements */
+  &__page-heading {
+    margin-bottom: $margin-xxs;
+  }
+
+  &__amount {
+    @extend .small;
+    border-bottom: 1px solid $gray-200;
+    padding-bottom: $margin-xs;
+  }
+
+  &__post {
+    border-bottom: 1px solid $gray-200;
+    padding: $margin-sm 0;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: $margin-sm;
+    }
+  }
+
+  &__post-heading {
+    margin-top: 0;
+  }
+
+  &__post-heading-link {
+    @extend .latest-item__header-link;
+  }
+
+  &__excerpt {
+    margin-top: $margin-xssm;
+  }
+}
