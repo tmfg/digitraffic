@@ -1,5 +1,5 @@
 ---
-Title: Tämä on ensimmäinen tiedote
+title: Tämä on ensimmäinen tiedote
 published: true
 categories: Tiedotteet
 traffictypes:

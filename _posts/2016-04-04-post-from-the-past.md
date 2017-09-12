@@ -1,5 +1,5 @@
 ---
-Title: Tämä tiedote on vuodelta 2016
+title: Tämä tiedote on vuodelta 2016
 published: true
 categories: Tiedotteet
 traffictypes:
