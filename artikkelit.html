@@ -1,7 +1,7 @@
 ---
 layout: compress
-permalink: /tiedotteet/
-title: Tiedotteet
+permalink: /artikkelit/
+title: Artikkelit
 ---
 
 <!DOCTYPE html>
@@ -34,24 +34,24 @@ title: Tiedotteet
       </div>
 
       <div class="row">
-        <!--Page body-->
+          <!--Page body-->
         <div class="col-xs-12 col-sm-8 text-body">
-          {% include posts-in-category.html category="Tiedotteet" posts-singular="tiedote" posts-plural="tiedotetta" %}
+          {% include posts-in-category.html category="Artikkelit" posts-singular="artikkeli" posts-plural="artikkelia" %}
         </div>
-        
+
         <!--Sidebar-->
         <div class="col-xs-12 col-sm-4 sidebar">
-          <div class="row">
-            <div class="col-xs-12 sidebar__filters-heading-col">
-              <h3 class="h3 sidebar__filters-heading">Rajaa tiedotelistaa</h3>
+            <div class="row">
+              <div class="col-xs-12 sidebar__filters-heading-col">
+                <h3 class="h3 sidebar__filters-heading">Rajaa tiedotelistaa</h3>
+              </div>
             </div>
+  
+            {% include sidebar-year-filter.html category="Artikkelit" %}
+            {% include sidebar-traffictype-filter.html category="Artikkelit" %}
+            {% include sidebar-tag-filter.html category="Artikkelit" %}
+  
           </div>
-
-          {% include sidebar-year-filter.html category=page.title %}
-          {% include sidebar-traffictype-filter.html category=page.title %}
-          {% include sidebar-tag-filter.html category=page.title %}
-
-        </div>
 
       </div>
     </div>

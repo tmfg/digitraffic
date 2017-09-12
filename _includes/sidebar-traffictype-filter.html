@@ -1,0 +1,43 @@
+<!--Assign variables-->
+{% assign has_road = false %}
+{% assign has_rail = false %}
+{% assign has_marine = false %}
+
+<!--Get if posts in category have traffictype-->
+{% for category in site.categories %}
+  {% if category[0] == include.category %}
+    {% for posts in category %}
+      {% for post in posts %}
+        {% for traffictype in post.traffictypes %}
+          {% if traffictype == 'Tieliikenne' %}
+            {% assign has_road = true %}
+          {% endif %}
+          {% if traffictype == 'Rautatieliikenne' %}
+            {% assign has_rail = true %}
+          {% endif %}
+          {% if traffictype == 'Meriliikenne' %}
+            {% assign has_marine = true %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+
+<div class="row sidebar__filter-row">
+  <div class="col-xs-12 sidebar__filter-section">
+    <h4 class="h4 sidebar__filter-section-heading">Liikennetyyppi</h4>
+    <ul class="sidebar__filter-list">
+      {% if has_road %}
+      <li class="sidebar__filter-list-item"><input type="checkbox" id="tieliikenne" class="checkbox__input"><label for="tieliikenne" class="checkbox__label">Tieliikenne</label></li>
+      {% endif %}
+      {% if has_rail %}
+      <li class="sidebar__filter-list-item"><input type="checkbox" id="rautatieliikenne" class="checkbox__input"><label for="rautatieliikenne" class="checkbox__label">Rautatieliikenne</label></li>
+      {% endif %}
+      {% if has_marine %}
+      <li class="sidebar__filter-list-item"><input type="checkbox" id="meriliikenne" class="checkbox__input"><label for="meriliikenne" class="checkbox__label">Meriliikenne</label></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>

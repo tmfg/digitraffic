@@ -3,7 +3,7 @@
 
   /* Elements */
   &__section {
-    border-bottom: 1px solid $gray-200;
+    @include border-bottom;
 
     &:first-child .sidebar__heading {
       margin-top: $margin-xxs;
@@ -11,6 +11,7 @@
 
     &:last-child {
       border-bottom: none;
+      margin-bottom: $margin-lg;
     }
   }
 
@@ -41,6 +42,49 @@
   &__metadata {
     @extend .small;
     margin-bottom: $margin-smmd;
+  }
+
+  &__filters-heading-col {
+    padding: 0;
+  }
+
+  &__filters-heading {
+    @include border-bottom;
+    padding-bottom: $margin-xxs;
+    margin: $margin-xxs 0 0;
+  }
+
+  &__filter-row {
+    @include border-bottom;
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: $margin-lg;
+
+      .sidebar__filter-section {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__filter-section {
+    padding: $margin-xs 0;
+  }
+
+  &__filter-section-heading {
+    margin-top: 0;
+  }
+
+  &__filter-list {
+    list-style: none;
+  }
+
+  &__filter-list-item {
+    margin-bottom: $margin-xxs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   /* Media queries for different screen sizes */

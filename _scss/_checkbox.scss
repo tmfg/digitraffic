@@ -1,0 +1,13 @@
+.checkbox {
+
+  /* Elements */
+  &__input {
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__label {
+    padding-left: $margin-xxs;
+    cursor: pointer;
+  }
+}

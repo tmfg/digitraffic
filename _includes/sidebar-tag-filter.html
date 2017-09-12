@@ -1,0 +1,37 @@
+<!--Assign empty arrays-->
+{% assign all_tags = '' | split: ',' %}
+{% assign unique_tags = '' | split: ',' %}
+
+<!--Get all tags for all posts in category-->
+{% for category in site.categories %}
+  {% if category[0] == include.category %}
+    {% for posts in category %}
+      {% for post in posts %}
+        {% for tag in post.tags %}
+          {% assign all_tags = all_tags | push: tag %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<!--Get unique tags-->
+{% assign all_tags = all_tags | sort %}
+{% for tag in all_tags %}
+  {% unless tag == previous %}
+    {% assign unique_tags = unique_tags | push: tag %}
+  {% endunless %}
+  {% assign previous = tag %}
+{% endfor %}
+
+
+<div class="row sidebar__filter-row">
+  <div class="col-xs-12 sidebar__filter-section">
+    <h4 class="h4 sidebar__filter-section-heading">Avainsana</h4>
+    <ul class="sidebar__filter-list">
+      {% for tag in unique_tags %}
+        <li class="sidebar__filter-list-item"><input type="checkbox" id="{{ tag | downcase }}" class="checkbox__input"><label for="{{ tag | downcase }}" class="checkbox__label">{{ tag }}</label></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

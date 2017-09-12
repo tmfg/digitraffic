@@ -23,3 +23,7 @@
   content: $char;
   padding: 0 $padding;
 }
+
+@mixin border-bottom($color: $gray-200) {
+  border-bottom: 1px solid $color;
+}

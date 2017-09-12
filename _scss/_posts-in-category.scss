@@ -7,12 +7,12 @@
 
   &__amount {
     @extend .small;
-    border-bottom: 1px solid $gray-200;
+    @include border-bottom;
     padding-bottom: $margin-xs;
   }
 
   &__post {
-    border-bottom: 1px solid $gray-200;
+    @include border-bottom;
     padding: $margin-sm 0;
 
     &:last-child {
