@@ -20,6 +20,7 @@
     font-size: $font-size-xs;
     text-transform: uppercase;
     cursor: pointer;
+    user-select: none;
 
     &:first-child {
       margin-left: 0;

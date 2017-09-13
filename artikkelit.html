@@ -36,7 +36,7 @@ title: Artikkelit
       <div class="row">
           <!--Page body-->
         <div class="col-xs-12 col-sm-8 text-body">
-          {% include posts-in-category.html category="Artikkelit" posts-singular="artikkeli" posts-plural="artikkelia" %}
+          {% include posts-in-category.html category=page.title posts-singular="artikkeli" posts-plural="artikkelia" %}
         </div>
 
         <!--Sidebar-->
@@ -47,9 +47,9 @@ title: Artikkelit
               </div>
             </div>
   
-            {% include sidebar-year-filter.html category="Artikkelit" %}
-            {% include sidebar-traffictype-filter.html category="Artikkelit" %}
-            {% include sidebar-tag-filter.html category="Artikkelit" %}
+            {% include sidebar-year-filter.html category=page.title %}
+            {% include sidebar-traffictype-filter.html category=page.title %}
+            {% include sidebar-tag-filter.html category=page.title %}
   
           </div>
 

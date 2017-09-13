@@ -1,13 +1,78 @@
+$checkbox-size: 20px;
+$label-padding: 8px;
+
 .checkbox {
-
-  /* Elements */
-  &__input {
-    outline: none;
+  display:      inline-block;
+  cursor:       pointer;
+  label {
+    position: relative;
+    padding-left: $checkbox-size + $label-padding;
     cursor: pointer;
-  }
+    user-select: none;
 
-  &__label {
-    padding-left: $margin-xxs;
-    cursor: pointer;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      transition: transform 0.2s ease;
+      pointer-events: none;
+    }
+    &:active svg {
+      transform: scale3d(0.9, 0.9, 1);
+    }
+    input + svg {
+      .indeterminate {
+        display: none;
+      }
+      .checked {
+        display: none;
+      }
+      path {
+        fill: $gray-68;
+      }
+    }
+    input:checked + svg {
+      .unchecked {
+        display: none;
+      }
+      .checked {
+        display: initial;
+      }
+      path {
+        fill: $blue-dark;
+      }
+    }
+    input:indeterminate         + svg,
+    input:checked:indeterminate + svg {
+      .unchecked {
+        display: none;
+      }
+      .checked {
+        display: none;
+      }
+      .indeterminate {
+        display: block;
+      }
+    }
+
+    input:disabled  + svg {
+      cursor: default;
+      &:active {
+        transform: none;
+      }
+      path {
+        fill: $gray-153;
+      }
+    }
+
+    input {
+      display:   block;
+      position:  absolute;
+      opacity:   0;
+      width:     0;
+      height:    0;
+    }
   }
 }
