@@ -80,7 +80,8 @@
   }
 
   &__filter-list-item {
-    margin-bottom: $margin-xxs;
+    @extend .small;
+    margin-bottom: $margin-xs;
 
     &:last-child {
       margin-bottom: 0;
