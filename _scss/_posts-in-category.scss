@@ -1,5 +1,10 @@
 .posts-in-category {
 
+  /* Modifiers */
+  &--hidden {
+    display: none;
+  }
+
   /* Elements */
   &__page-heading {
     margin-bottom: $margin-xxs;
