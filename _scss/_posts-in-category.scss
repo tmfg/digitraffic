@@ -1,10 +1,5 @@
 .posts-in-category {
 
-  /* Modifiers */
-  &--hidden {
-    display: none;
-  }
-
   /* Elements */
   &__page-heading {
     margin-bottom: $margin-xxs;
@@ -19,6 +14,15 @@
   &__post {
     @include border-bottom;
     padding: $margin-sm 0;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--last {
+      border-bottom: none;
+      margin-bottom: $margin-sm;
+    }
 
     &:last-child {
       border-bottom: none;

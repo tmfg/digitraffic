@@ -42,33 +42,46 @@ function toggleFilter() {
   showHidePosts();
 }
 
+// Show/hide posts based on active filters
 function showHidePosts() {
-  //console.log(activeFilters);
-  Array.from(document.body.querySelectorAll('.posts-in-category__post')).forEach(element => {
+  let postsInCategory = Array.from(document.body.querySelectorAll('.posts-in-category__post'));
+  postsInCategory.forEach(post => {
     // Get year, traffictypes and tags for all posts
-    let elementYear = element.dataset.year.split(' ');
-    let elementTraffictypes = element.dataset.traffictypes.split(' ');
-    let elementTags = element.dataset.tags.split(' ');
+    let postYear = post.dataset.year.split(' ');
+    let postTraffictypes = post.dataset.traffictypes.split(' ');
+    let postTags = post.dataset.tags.split(' ');
 
-    let showByYear = hasSharedValue(elementYear, activeFilters.year) || activeFilters.year.length === 0;
-    let showByTraffictype = hasSharedValue(elementTraffictypes, activeFilters.traffictype) || activeFilters.traffictype.length === 0;
-    let showByTag = hasSharedValue(elementTags, activeFilters.tag) || activeFilters.tag.length === 0;
+    // Filter conditions
+    let showByYear = hasSharedValue(postYear, activeFilters.year) || activeFilters.year.length === 0;
+    let showByTraffictype = hasSharedValue(postTraffictypes, activeFilters.traffictype) || activeFilters.traffictype.length === 0;
+    let showByTag = hasSharedValue(postTags, activeFilters.tag) || activeFilters.tag.length === 0;
     
-    // If no filters are set, show all posts
-    if (activeFilters.year.length === 0 && activeFilters.traffictype.length === 0 && activeFilters.tag.length === 0) {
-      element.classList.remove("posts-in-category--hidden");
-    }
-    // Else show only posts with shared year, traffictype or tag
-    else {
-      if (showByYear && showByTraffictype && showByTag) {
-        element.classList.remove("posts-in-category--hidden");
-      } else {
-        element.classList.add("posts-in-category--hidden");
-      }
+    // Show only posts with shared year, traffictype or tag OR if filters are not set
+    if (showByYear && showByTraffictype && showByTag) {
+      post.classList.remove('posts-in-category__post--hidden');
+    } else {
+      post.classList.add('posts-in-category__post--hidden');
     }
   });
+  
+  // Style last post
+  // If --last class exists, remove it
+  let lastPost = document.body.querySelector('.posts-in-category__post--last');
+  if (lastPost) {
+    lastPost.classList.remove('posts-in-category__post--last');
+  }
+  // Get visible posts
+  let visiblePosts = [];
+  postsInCategory.forEach((post) => {
+    if (post.classList.contains('posts-in-category__post') && !post.classList.contains('posts-in-category__post--hidden')) {
+      visiblePosts.push(post);
+    }
+  });
+  // Add --last class to last visible post
+  visiblePosts[visiblePosts.length - 1].classList.add('posts-in-category__post--last');
 }
 
+// Check if two arrays share any values
 function hasSharedValue(arr1, arr2) {
   let isShared = false;
   arr1.forEach(arr1val => {
