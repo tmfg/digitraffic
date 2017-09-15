@@ -1,0 +1,68 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+  <!--HTML head-->
+  {% include head.html %}
+
+  <!--HTML body-->
+  <body class="body" lang="fi">
+    
+    <!--Header-->
+    {% include header.html %}
+    
+    <!--Content-->
+    <div class="content content--padded">
+
+      <!--Breadcrumb-->
+      <div class="row">
+        <div class="col-xs-12 breadcrumb"><!--
+        --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+        --><span class="breadcrumb__item">{{ page.title }}</span>
+        </div>
+      </div>
+
+      <!--Artice-->
+      <article>
+      
+        <!--Title-->
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="h1 h1--page-top">{{ page.title }}</h1>
+          </div>
+        </div>
+
+        <!--Cover image-->
+        {% if page.image != null and page.image != empty %}
+        <div class="row">
+          <div class="col-xs-12 cover-image">
+            <img src="{{ "/img/" | prepend:site.baseurl }}{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          <!--Text body-->
+          <div class="col-xs-12 col-sm-8 text-body">
+            {{ content }}
+          </div>
+            
+          <!--Sidebar-->
+          <div class="col-xs-12 col-sm-4 sidebar">
+            <!--Add sidebar below-->
+            Sidebar
+            <!--Add sidebar above-->
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+    <!--footer-->
+    {% include footer.html %}
+
+  </body>
+</html>
