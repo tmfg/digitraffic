@@ -1,6 +1,8 @@
 # digitraffic
 
 ## Dev dependencies
+* Ruby, 2.4.1
+  * `ruby --version`
 * RubyGems, 2.6.12
   * `gem --version`
 * Bundler, 1.15.1
@@ -12,11 +14,17 @@
 * Gulp, 3.9.1
     * `gulp --version`
     
-## Install used Ruby version with nbenv
+### Install used Ruby version with nbenv
 `rbenv global 2.4.1`
 
 * Check that system uses Ruby version 2.4.1
 `ruby --version`
+
+### Install Gulp
+`npm install --global gulp-cli`
+
+* Check that Gulp is installed
+`gulp --version`
 
 ## Install
 1. `git clone https://github.com/finnishtransportagency/digitraffic.git` -> Clones the project from GitHub
