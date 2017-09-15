@@ -11,6 +11,12 @@
     * `npm --version`
 * Gulp, 3.9.1
     * `gulp --version`
+    
+## Install used Ruby version with nbenv
+`rbenv global 2.4.1`
+
+* Check that system uses Ruby version 2.4.1
+`ruby --version`
 
 ## Install
 1. `git clone https://github.com/finnishtransportagency/digitraffic.git` -> Clones the project from GitHub
