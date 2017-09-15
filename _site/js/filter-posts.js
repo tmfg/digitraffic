@@ -19,12 +19,22 @@ if (document.readyState !== 'loading') {
 function init() {
   // Add filter check box event listeners
   addEventListeners();
+  getParams();
 }
 
 function addEventListeners() {
   Array.from(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(function (element) {
     element.addEventListener("change", toggleFilter, false);
   });
+}
+
+function getParams() {
+  var query = window.location.search.substring(1);
+  getFiltersFromQuery(query);
+}
+
+function getFiltersFromQuery(query) {
+  console.log(query);
 }
 
 function toggleFilter() {
