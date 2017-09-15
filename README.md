@@ -7,17 +7,17 @@ Käytä vain kuvatiedostoja, joihin voi antaa loppukäyttäjille vapaat oikeudet
 * https://unsplash.com/ (tms) 
 * Itse ottamasi valokuvat
 
-1. Pääkuva 
-  * Vaakakuva, korkeintaan 1500 px leveä, optimi 1200 x 675 px
+#### 1. Pääkuva 
+Vaakakuva, korkeintaan 1500 px leveä, optimi 1200 x 675 px
 
-2. Sisältökuva 
-  * Vaakakuva, korkeintaan 1000 px leveä, optimi 960 x 540 px
+#### 2. Sisältökuva 
+Vaakakuva, korkeintaan 1000 px leveä, optimi 960 x 540 px
 
-3. Oikean palstan kuva 
-  * Vaakakuva, korkeintaan 500 px leveä, optimi 480 x 270 px
+#### 3. Oikean palstan kuva 
+Vaakakuva, korkeintaan 500 px leveä, optimi 480 x 270 px
 
-4. Hero-taustakuva
-  * Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edited)
+#### 4. Hero-taustakuva
+Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edited)
 
 
 ## Dev dependencies
