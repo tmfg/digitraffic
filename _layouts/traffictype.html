@@ -58,17 +58,7 @@ layout: compress
             <div class="col-xs-12 col-sm-4 sidebar">
               <h3 class="h3 h3--sidebar-page">Linkit</h3>
               <ul class="sidebar__link-list">
-                {% for link in page.links %}
-                  {% if link.size == 1 %}
-                    {% assign link_url = link[0] %}
-                    {% assign link_text = link[0] %}
-                  {% endif %}
-                  {% if link.size == 2 %}
-                    {% assign link_url = link[1] %}
-                    {% assign link_text = link[0] %}
-                  {% endif %}
-                <li class="sidebar__link-list-item"><a href="{{ link_url }}" class="link">{{ link_text }}</a></li>
-                {% endfor %}
+                {% include sidebar-links.html %}
               </ul>
             </div>
 

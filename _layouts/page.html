@@ -46,14 +46,21 @@ layout: compress
         <div class="row">
           <!--Text body-->
           <div class="col-xs-12 col-sm-8 text-body">
-            {{ content }}
+            
+            <!--Text content-->
+            <div class="row">
+              <div class="col-xs-12 jekyll-content jekyll-content--no-tags u--no-padding">
+                {{ content }}
+              </div>
+            </div>
+
           </div>
             
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
-            <!--Add sidebar below-->
-            Sidebar
-            <!--Add sidebar above-->
+            <ul class="sidebar__link-list sidebar__link-list--border-top">
+              {% include sidebar-links.html %}
+            </ul>
           </div>
 
         </div>

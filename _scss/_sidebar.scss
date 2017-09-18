@@ -89,7 +89,13 @@
   }
 
   &__link-list {
+    @extend .small;
     list-style: none;
+
+    &--border-top {
+      border-top: 1px solid $gray-200;
+      padding-top: $margin-sm;
+    }
   }
 
   &__link-list-item {
