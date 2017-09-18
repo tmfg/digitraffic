@@ -13,7 +13,19 @@
   /* Background images */
   // Frontpage
   &--frontpage {
-    background-image: $hero-image--frontpage-background-image;
+    background-image: $hero-image__background-image--frontpage;
+  }
+
+  &--road {
+    background-image: $hero-image__background-image--road;
+  }
+  
+  &--rail {
+    background-image: $hero-image__background-image--rail;
+  }
+
+  &--marine {
+    background-image: $hero-image__background-image--marine;
   }
 
   /* Overlay */
@@ -27,6 +39,7 @@
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     padding: 0 $content-padding;
     margin: $margin-xxl auto 0 auto;
+    line-height: 1.1;
   }
 
   &__intro {
@@ -34,7 +47,11 @@
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     max-width: 58rem;
     padding: 0 $content-padding;
-    margin: 0 auto $margin-sm auto;
+    margin: $margin-xs auto $margin-md;
+
+    &--no-buttons {
+      margin: $margin-sm auto $margin-md;
+    }
   }
 
   &__button-area {

@@ -88,6 +88,14 @@
     }
   }
 
+  &__link-list {
+    list-style: none;
+  }
+
+  &__link-list-item {
+    margin-bottom: $margin-xs;
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (min-width: $min-width-sm) {
     padding-left: $margin-xssm;

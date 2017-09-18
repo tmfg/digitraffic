@@ -1,0 +1,85 @@
+---
+layout: compress
+---
+
+{% include next-and-previous-post-in-category.html %}
+
+<!DOCTYPE html>
+<html>
+  <!--HTML head-->
+  {% include head.html %}
+
+  <!--HTML body-->
+  <body class="body" lang="fi">
+    
+    <!--Header-->
+    {% include header.html header-classes="header--transparent" %}
+    
+    <!--Content-->
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <div class="content--padded">
+
+        <!--Breadcrumb-->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
+        </div>
+
+        <!--Artice-->
+        <article>
+
+          <div class="row">
+            <!--Text body-->
+            <div class="col-xs-12 col-sm-8 text-body">
+
+              <!--Text content-->
+              <div class="row">
+                <div class="col-xs-12 jekyll-content jekyll-content--no-tags u--no-padding">
+                  {{ content }}
+                </div>
+              </div>
+
+            </div>
+
+            <!--Sidebar-->
+            <div class="col-xs-12 col-sm-4 sidebar">
+              <h3 class="h3 h3--sidebar-page">Linkit</h3>
+              <ul class="sidebar__link-list">
+                {% for link in page.links %}
+                  {% if link.size == 1 %}
+                    {% assign link_url = link[0] %}
+                    {% assign link_text = link[0] %}
+                  {% endif %}
+                  {% if link.size == 2 %}
+                    {% assign link_url = link[1] %}
+                    {% assign link_text = link[0] %}
+                  {% endif %}
+                <li class="sidebar__link-list-item"><a href="{{ link_url }}" class="link">{{ link_text }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </content>
+
+    <!--footer-->
+    {% include footer.html %}
+
+  </body>
+</html>

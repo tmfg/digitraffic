@@ -2,6 +2,10 @@ h3, .h3 {
   @include heading(1.5rem, 700);
   margin: $margin-xs 0;
 
+  &--sidebar-page {
+    margin-top: $margin-xxsxs;
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     @include mobile-font-size(1.25rem);

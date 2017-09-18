@@ -1,6 +1,10 @@
 .jekyll-content {
   margin: $margin-xssm 0;
 
+  &--no-tags {
+    margin-top: 0;
+  }
+
   a {
     @extend .link;
   }
