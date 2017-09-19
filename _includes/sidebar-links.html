@@ -1,21 +1,21 @@
-{% assign local_url_first_char = "/" %}
+{% assign local_url_first_char = "/" | slice: 0 %}
 {% for link in page.links %}
 {% if link.size == 1 %}
   {% assign link_url = link[0] %}
-  {% assign link_text = link[0] %}
-  {% if local_url_first_char == link_url | slice: 0 %}
-    {% assign link_url = link_url | prepend:site.baseurl %}
-    {% assign link_text = "link_url" %}
+  {% assign link_url_first_char = link_url | slice: 0 %}
+  {% if local_url_first_char == link_url_first_char %}
+  {% assign link_url = link_url | prepend:site.baseurl %}
   {% endif %}
+  {% assign link_text = link[0] %}
   
 {% endif %}
 {% if link.size == 2 %}
   {% assign link_url = link[1] %}
-  {% assign link_text = link[0] %}
-  {% if local_url_first_char == link_url | slice :0 %}
+  {% assign link_url_first_char = link_url | slice: 0 %}
+  {% if local_url_first_char == link_url_first_char %}
     {% assign link_url = link_url | prepend:site.baseurl %}
-    {% assign link_text = link_url | slice: 0 %}
   {% endif %}
+  {% assign link_text = link[0] %}
 {% endif %}
 <li class="sidebar__link-list-item"><a href="{{ link_url }}" class="link">{{ link_text }}</a></li>
 {% endfor %}
