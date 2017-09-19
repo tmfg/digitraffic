@@ -26,6 +26,7 @@ layout: compress
       </section>
       <!--Service status-->
       <div class="content__frontpage-section-wrapper">
+        <a name="palveluiden-tila"></a>
         <section id="service-status-section" class="content__frontpage-section">
           <div class="row">
             <div class="col-xs">
@@ -128,7 +129,7 @@ layout: compress
               <img class="img img--full-width" src="{{ "/img/3d-img-car.svg" | prepend:site.baseurl }}" alt="Tieliikenne" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="#" class="h-link">Tieliikenne</a></h2>
+              <h2 class="h2"><a href="{{ "/tieliikenne" | prepend:site.baseurl }}" class="h-link">Tieliikenne</a></h2>
               <p>Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä.</p>
               <a href="{{ "/tieliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_car</i><span class="button__text">Tieliikenne tietolähteet</span></button></a>
             </div>
@@ -138,7 +139,7 @@ layout: compress
               <img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="#" class="h-link">Rautatieliikenne</a></h2>
+              <h2 class="h2"><a href="{{ "/rautatieliikenne" | prepend:site.baseurl }}" class="h-link">Rautatieliikenne</a></h2>
               <p>Liikennevirastossa tietojen lähteenä toimii ratakapasiteetin hallinnan LIIKE-järjestelmä, josta tietoja poimitaan avoimen datan rajapintaan. Rajapinnan tarjoamia tietolajeja ovat aikataulutiedot sekä matkustajajunien kokoonpanot. Aikataulutiedot jakautuvat kolmeen osaan: reaaliaikaiseen liikennetilanteeseen, tuleviin aikatauluihin sekä historiatietoon jo menneistä junista.</p>
               <a href="{{ "/rautatieliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">Rautatieliikenne tietolähteet</span></button></a>
             </div>
@@ -151,7 +152,7 @@ layout: compress
               <img class="img img--full-width" src="{{ "/img/3d-img-boat.svg" | prepend:site.baseurl }}" alt="Meriliikenne" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
-              <h2 class="h2"><a href="#" class="h-link">Meriliikenne</a></h2>
+              <h2 class="h2"><a href="{{ "/meriliikenne" | prepend:site.baseurl }}" class="h-link">Meriliikenne</a></h2>
               <p>Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä.</p>
               <a href="{{ "/meriliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_boat</i><span class="button__text">Meriliikenne tietolähteet</span></button></a>
             </div>

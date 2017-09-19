@@ -91,9 +91,11 @@
   &__link-list {
     @extend .small;
     list-style: none;
+    margin-bottom: $margin-lg;
 
     &--border-top {
       border-top: 1px solid $gray-200;
+      margin-top: $margin-xs;
       padding-top: $margin-sm;
     }
   }
