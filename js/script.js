@@ -19,6 +19,9 @@ function init() {
   // Add menu event listeners
   addEventListeners();
 
+  // Add .header--scrolled if landed in the middle of page
+  headerScrolled();
+
   // If Service status section exists, get service status
   document.getElementById("service-status-section") ? getServiceStatus() : '';
 }
@@ -32,16 +35,7 @@ window.onscroll = () => {
   parallaxFooter();
   
   // Add .header--scrolled when scrolling page, remove when scrolled to top
-  const headerClasses = document.body.querySelector(".header").classList;
-  if (window.scrollY < 40) {
-    if (headerClasses.contains("header--scrolled")) {
-      headerClasses.remove("header--scrolled");
-    }
-  } else {
-    if (!headerClasses.contains("header--scrolled")) {
-      headerClasses.add("header--scrolled");
-    }
-  }
+  headerScrolled();
 }
 
 /* Add event listeners for menu, search and language */
@@ -55,6 +49,20 @@ function addEventListeners() {
   searchElement.addEventListener("click", toggleSearch);
   languageElement.addEventListener("click", toggleLanguage);
   outsideMenu.addEventListener("click", closeMenuSearchLanguage);
+}
+
+// Add .header--scrolled when scrolling page, remove when scrolled to top
+function headerScrolled() {
+  var headerClasses = document.body.querySelector(".header").classList;
+  if (window.scrollY < 40) {
+    if (headerClasses.contains("header--scrolled")) {
+      headerClasses.remove("header--scrolled");
+    }
+  } else {
+    if (!headerClasses.contains("header--scrolled")) {
+      headerClasses.add("header--scrolled");
+    }
+  }
 }
 
 // Toggle menu function
