@@ -11,10 +11,11 @@ tags:
   - EndOfLife
 ---
 
-Digitrafficin vanhojen SOAP-rajapintojen elinkaari pättyi 31.8.2017. Vanhat rajapinnat tarjosivat 
-tieliikenteen tietoja https://tie.digitraffic.fi/sujuvuus/ws/* -osoitteissa. 
+Digitrafficin vanhojen SOAP-rajapintojen elinkaari pättyi 31.8.2017. Vanhat rajapinnat ehtivät tarjota 
+tieliikenteen tietoja lähes 10 vuoden ajan. Vuodesta 2014 alkaen tiedot olivat saatavina myös avoimena datana.
 
 Uusien REST-rajapintojen dokumentaatio löytyy osoitteesta 
+```
 https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html . 
-
+```
 Mikäli tarvitset yhä vanhaa rajapintaa johonkin, otathan pikaisesti yhteyttä.
