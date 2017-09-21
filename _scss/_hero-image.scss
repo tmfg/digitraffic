@@ -28,6 +28,10 @@
     background-image: $hero-image__background-image--marine;
   }
 
+  &--laptop {
+    background-image: $hero-image__background-image--laptop;
+  }
+
   /* Overlay */
   &__overlay {
     background: linear-gradient(90deg, $blue-darker-80 0%, $black-80 100%);
