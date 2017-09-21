@@ -303,20 +303,44 @@ function closeLanguageQuick() {
 
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
-  Array.from(document.body.querySelectorAll('.parallax')).forEach(element => {
-    let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
-    let windowCenter = window.innerHeight / 2;
-    let diffFromCenter = elementCenter - windowCenter;
-    let translateY = diffFromCenter / 15;
-    element.style.transform = "translate(0, " + translateY + "px)";
+  Array.from(document.body.querySelectorAll('[class*=parallax]')).forEach(element => {
+    //console.log(element.classList);
+    let speed = 100;
+    for (let i = 0; i < element.classList.length; i++) {
+      let cssClass = element.classList[i];
+      if (cssClass === 'parallax') {
+        addParallax(element, speed);
+        break;
+      }
+      if (cssClass.includes('parallax-')) {
+        let classArray = cssClass.split('-');
+        if (classArray.length === 2) {
+          let speed = parseInt(classArray[1]);
+          if (speed) {
+            addParallax(element, speed);
+            break;
+          }
+        }
+      }
+    }
+    
   });
 }
 
+function addParallax(element, speed) {
+  let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
+  let windowCenter = window.innerHeight / 2;
+  let diffFromCenter = elementCenter - windowCenter;
+  let translateY = (diffFromCenter * speed) / (15 * 100);
+  element.style.transform = "translate(0, " + translateY + "px)";
+}
+
 function parallaxFooter() {
+  let speed = 75;
   let element = document.body.querySelector('footer');
   let elementBottom = element.getBoundingClientRect().bottom;
   let diffFromBottom = elementBottom - window.innerHeight;
-  let translateY = diffFromBottom / 15;
+  let translateY = (diffFromBottom * speed) / (15 * 100);
   element.style.transform = "translate(0, " + translateY + "px)";
 }
 
