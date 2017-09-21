@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /palvelun-esittely/
-title: Palvelun kuvaus
+title: Palvelun esittely
 links:
   - ["Kehityssuunnitelma", "/kehityssuunnitelma"]
   - ["Sovellukset", "/sovellukset"]
