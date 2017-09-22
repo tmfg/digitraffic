@@ -2,6 +2,7 @@
 ---
 /***Write javascript under this line***/
 var runParallax = true;
+var scrollingStopped;
 
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
@@ -30,19 +31,38 @@ function init() {
 
 /* On scroll actions */
 window.onscroll = () => {
+  // Always animate when scrolling to top or bottom of page
+  if (window.scrollY === 0) {
+    headerScrolled();
+  }
+
+  // Otherwise, parallax and header animation run once every 50ms
+  if (!runParallax) {
+    return;
+  }
+  runParallax = false;
+
+  clearTimeout(scrollingStopped);
 
   // Add parallax effect
-  if (runParallax) {
-    runParallax = false;
-    parallax();
-    parallaxFooter();
-    setTimeout( () => {
-      runParallax = true;
-    }, 50);
-  }
+  parallax();
+  parallaxFooter();
   
   // Add .header--scrolled when scrolling page, remove when scrolled to top
   headerScrolled();
+
+  setTimeout( () => {
+    runParallax = true;
+  }, 50);
+
+  scrollingStopped = setTimeout( () => {
+    // Add parallax effect
+    parallax();
+    parallaxFooter();
+    
+    // Add .header--scrolled when scrolling page, remove when scrolled to top
+    headerScrolled();
+  }, 100);
 }
 
 /* Add event listeners for menu, search and language */
@@ -337,7 +357,7 @@ function addParallax(element, speed) {
   let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
   let windowCenter = window.innerHeight / 2;
   let diffFromCenter = elementCenter - windowCenter;
-  let translateY = (diffFromCenter * speed) / (10 * 100);
+  let translateY = (diffFromCenter * speed) / (15 * 100);
   element.style.transform = "translate(0, " + translateY + "px)";
 }
 
@@ -346,7 +366,7 @@ function parallaxFooter() {
   let element = document.body.querySelector('footer');
   let elementBottom = element.getBoundingClientRect().bottom;
   let diffFromBottom = elementBottom - window.innerHeight;
-  let translateY = (diffFromBottom * speed) / (10 * 100);
+  let translateY = (diffFromBottom * speed) / (15 * 100);
   element.style.transform = "translate(0, " + translateY + "px)";
 }
 
