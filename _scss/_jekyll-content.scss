@@ -31,8 +31,6 @@
   img {
     width: 100%;
 
-
-
     & + em {
       display: inline-block;
       width: 100%;
@@ -48,6 +46,11 @@
     }
   }
 
+  ol {
+    margin-left: $margin-sm;
+    margin-bottom: $margin-xssm;
+  }
+
   p {
     margin-bottom: $margin-xssm;
     }
@@ -55,5 +58,10 @@
   & > p:first-child {
     @extend .intro;
     margin-bottom: $margin-sm;
+  }
+
+  ul {
+    margin-left: $margin-sm;
+    margin-bottom: $margin-xssm;
   }
 }

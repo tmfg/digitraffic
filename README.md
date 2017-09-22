@@ -1,5 +1,57 @@
 # digitraffic
 
+## Sisältösivujen päivitys
+Sisältösivut löytyvät `pages`-kansiosta. Muokattavissa olevat sivut ovat `.md`-päätteisiä. Sivujen sisältöä voi muokata [prose.io](http://prose.io/)-palvelulla. Navigoi palvelussa pages-kansioon ja haluttuun sisältösivuun. Avaa sisältösivu prosessa. Voit muokata sivun sisältöä avautuvassa tekstieditorissa.
+
+Voit tyylitellä tekstiä, otsikoita, listoja ja lainauksia maalaamalla tyyliteltävän tekstin ja valitsemalla tyylin tekstieditorin ylälaidassa olevan tyylin painikkeesta. Editori kirjoittaa valitun tekstin *Markdown*-merkintätavalla suoraan tekstiin. Voit käyttää [Markdownia](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) myös kirjoittamalla merkinnät suoraan tekstin sekaan.
+
+### Kuvan lisääminen
+Voit lisätä sivulle kuvia valitsemalla kuvapainikkeen Prosen editorista (neljäs painike oikealta). Valitse ladattava kuva, ja anna sille alt-teksti. Editori lataa kuvan pages-kansioon ja sijoittaa kuvan merkintätavan mukaisesti valitsemaasi kohtaan tekstissä.
+
+Voit kirjoittaa kuvan alla sivulla näkyvän kuvatekstin kirjoittamalla sen `*`-merkkien väliin suoraan kuvalinkin seuraavalle riville.
+
+```
+![Kuvan alt-teksti]({{site.baseurl}}/pages/kuvan-nimi.jpg)
+*Tähän tulee kuvateksti*
+```
+
+Voit lisätä kuvan muuhunkin kansioon repositoriossa ja korvata kuvatiedoston polun vastaamaan oikeaa kansiota. Muista `{{site.baseurl}}/` polun alkuun!
+
+Voit vaihtaa kuvan paikkaa siirtämällä alt-tekstin, kuvatiedoston ja kuvatekstin merkinnän toiseen väliin tekstissä.
+
+### Oikean sivupalkin linkkien lisääminen
+
+Voit muokata/lisätä linkkejä sisältösivun oikeaan sivupalkkiin valitsemalla `Meta Data`-painikkeen Prosen sivun oikeasta laidasta (kolmas ylhäältä). Linkit on sijoitettu listaan seuraavan näköisesti.
+
+```
+links:
+  - - Sivupalkissa näkyvä linkin teksti
+    - /sisäisen-sivun-polku
+  - - Linkin teksti
+    - http://www.ulkoisen-linkin-osoite.fi
+  - - Liikennevirasto
+    - http://www.liikennevirasto.fi
+  - - http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
+```
+
+Yksi linkki sisältää sivupalkissa näkyvän tekstin ja linkin osoitteen. Osoite voi olla joko ulkoinen tai sivuston sisäinen osoite. Mikäli linkki on ulkoinen, tulee sen alkaa `http://` tai `https://`. Mikäli linkki on sisäinen tulee sen alkaa `/`-merkillä ja sisältää osoitepalkissa näkyvän osoitteen polku, esim. `/palvelun-esittely`.
+
+Linkin teksti ja osoite ovat listassa peräkkäin. Tekstin edessä on kaksi väliviivaa `- -` ja osoitteen perässä vain yksi `-`.
+
+```
+- - Liikennevirasto
+    - http://www.liikennevirasto.fi
+```
+
+Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyttää itse osoite tekstinä, lisätään vain yksi rivi jossa on edessä kaksi väliviivaa `- -`.
+
+```
+- - http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
+```
+
+**HUOM!** Älä muokkaa muita Meta Datan tietoja!
+
+
 ## Ohje kuvatiedostojen vaatimuksista
 
 Käytä vain kuvatiedostoja, joihin voi antaa loppukäyttäjille vapaat oikeudet, kuten: 
