@@ -331,16 +331,16 @@ function addParallax(element, speed) {
   let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
   let windowCenter = window.innerHeight / 2;
   let diffFromCenter = elementCenter - windowCenter;
-  let translateY = (diffFromCenter * speed) / (15 * 100);
+  let translateY = (diffFromCenter * speed) / (10 * 100);
   element.style.transform = "translate(0, " + translateY + "px)";
 }
 
 function parallaxFooter() {
-  let speed = 75;
+  let speed = 50;
   let element = document.body.querySelector('footer');
   let elementBottom = element.getBoundingClientRect().bottom;
   let diffFromBottom = elementBottom - window.innerHeight;
-  let translateY = (diffFromBottom * speed) / (15 * 100);
+  let translateY = (diffFromBottom * speed) / (10 * 100);
   element.style.transform = "translate(0, " + translateY + "px)";
 }
 
