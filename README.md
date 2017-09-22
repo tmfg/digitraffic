@@ -40,7 +40,7 @@ Linkin teksti ja osoite ovat listassa peräkkäin. Tekstin edessä on kaksi väl
 
 ```
 - - Liikennevirasto
-    - http://www.liikennevirasto.fi
+  - http://www.liikennevirasto.fi
 ```
 
 Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyttää itse osoite tekstinä, lisätään vain yksi rivi jossa on edessä kaksi väliviivaa `- -`.
