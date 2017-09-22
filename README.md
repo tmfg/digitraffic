@@ -52,6 +52,130 @@ Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyt
 **HUOM!** Älä muokkaa muita Meta Datan tietoja!
 
 
+## Tiedotteiden, artikkelien ja tapahtumien julkaisu
+
+### Uuden tiedotteen tai artikkelin julkaisu
+Tiedotteet, artikkelit ja tapahtumat sijaitsevat `_posts`-kansiossa ja ovat `.md`-päätteisiä tiedostoja. Tiedotteita voit julkaista ja muokata [prose.io](http://prose.io/)-palvelulla. Navigoi palvelussa _posts-kansioon ja valitse `NEW FILE` ruudun ylälaidasta hakukentän oikealta puolelta.
+
+#### Julkaisun tiedoston nimeäminen ja päivämäärän asettaminen
+Kirjoita julkaisulle otsikko klikkaamalla sivun ylälaidassa olevaa kenttää, jossa on placeholder-tekstinä luontipäivämäärää vastaava `_posts/2017-09-22-your-filename.m` tyylinen teksti. Voit kirjoittaa tämän tekstin tilalle halutun tiedostonimen, jonka alussa on julkaisun päivämäärä. Esimerkiksi, jos julkaisun päivämäärä on 26.9.2017 ja otiskoksi tulee "Vanhat rajapinnat suljetaan", voi tiedostonimeksi antaa `_posts/2017-09-26-vanhat-rajapinnat-suljetaan.md`.
+
+**HUOM!** Varmista, että tiedostonimen alkuun tulee `_posts/`, välittömästi perään päivämäärä muodossa `VVVV-KK-PP`, tämän jälkeen haluttu nimi väliviivan perässä `-haluttu-nimi` ja lopuksi tiedostopääte `.md`.
+
+```
+_posts/VVVV-KK-PP-haluttu-nimi.md
+```
+
+#### Julkaisun sisällön kirjoittaminen
+Kirjoita julkaisulle varsinainen sisältö otsikon alapuolella olevaan tekstieditoriin. Sivusto muotoilee julkaisun ensimmäisen kappaleen aina ingressiksi. Ingressiä käytetään myös nostotekstinä koontisivulla. Voit vaihtaa kappaletta lisäämällä kappaleiden väliin kaksi rivinvaihtoa.
+
+```
+Tämä on ensimmäinen kappale.
+
+Tämä on toinen kappale.
+Tämä ei ole vielä kolmatta kappaletta.
+
+Mutta tämä on.
+```
+
+Voit tyylitellä tekstiä, lisätä väliotsikoita, listoja ja lainauksia. Ks. [Sisältösivujen päivitys](#sisältösivujen-päivitys).
+
+Voit lisätä kuvia tekstin sekaan. Ks. [Kuvan lisääminen](#kuvan-lisääminen).
+
+#### Julkaisun otsikointi
+Voit lisätä julkaisulle hero-kuvan valitsemalla Prosesta `Meta Data`-painikkeen sivun oikeasta laidasta (kolmas ylhäältä). Uuden julkaisun meta data on tyhjä, joten meta data -editorin sisältöalue on vielä tyhjä. Voit halutessasi kopioida metadatalle pohjan aikaisemmasta julkaisusta. Valmiin julkaisun meta data näyttää seuraavalta.
+
+```
+published: true
+title: Vanhojen SOAP-rajapintojen elinkaari päättyi
+image: 2017-08-31-old-api-eol/data-eol.jpg
+categories: Tiedotteet
+traffictypes:
+  - Tieliikenne
+tags:
+  - Rajapinnat
+  - Ylläpito
+  - EndOfLife
+```
+
+Kirjoita julkaisun otsikko meta datan `title`-tietoon esimerkiksi seuraavalla tavalla.
+
+```
+title: Vanhojen SOAP-rajapintojen elinkaari päättyi
+```
+
+#### Julkaisun hero-kuvan lisääminen
+
+Jotta voit lisätä kuvan julkaisun meta datan `image`-tietoon, sinun tulee ensin ladata kuva repositorion juuresta löytyvään `img`-kansioon, esim. julkaisun mukaan nimettyyn alikansioon `2017-08-31-old-api-eol/`.
+
+Kun kuva löytyy repositoriosta, voit lisätä kuvatiedoston `img`-kansion alaisen polun `image:`-avaimen perään. Esimerkiksi, kun kuva on sijoitettu kansioon `/img/2017-08-31-old-api-eol/data-eol.jpg`, tulee meta dataan kirjoittaa seuraava rivi.
+
+```
+image: 2017-08-31-old-api-eol/data-eol.jpg
+```
+
+**HUOM!** Voit myös jättää hero-kuvan lisäämättä, jolloin julkaisussa ei näy hero-kuvaa vaan tekstisisältö näytetään suoraan otsikon alla. Tällöin voit jättää `image`-tiedon kirjoittamatta kokonaan meta dataan.
+
+#### Julkaisun kategorian lisääminen
+
+Julkaisut voivat olla Tiedotteita, Artikkeleita tai Tapahtumia. Näitä vastaa kolme katgoriaa `Tidotteet`, `Artikkelit` ja `Tapahtumat`. Kategoria määritellään meta datan `categories`-tietoon. Esimerkiksi, jos julkaisu on tiedote, kirjoita meta dataan seuraava rivi.
+
+```
+categories: Tiedotteet
+```
+
+**HUOM!** Muista kirjoittaa varsinainen kategoria isolla alkukirjaimella. `Artikkelit` on oikein. `artikkelit` on väärin.
+
+#### Julkaisun liikennetyyppien lisääminen
+Julkaisulla voi olla yksi tai useampi kolmesta liikennetyypistä: `Tieliikenne`, `Rautatieliikenne`, `Meriliikenne`. Liikennetyypit määritellään meta datan `traffictypes`-tietoon listaksi. Jokainen liikennetyyppi kirjoitetaan omalle rivilleen meta dataan ja kunkin eteen kirjoitetaan väliviiva ja välilyönti `- `. Esimerkiksi, kun haluat lisätä julkaisulle liikennetyypit `Rautatieliikenne` ja `Meriliikenne`, kirjoita metadataan seuraavat rivit.
+
+```
+traffictypes:
+  - Rautatieliikenne
+  - Meriliikenne
+```
+
+**HUOM!** Määrittele julkaisulle **vähintään yksi** liikennetyyppi.
+
+#### Julkaisun avainsanojen lisääminen
+Julkaisulle voidaan antaa yksi tai useampi avainsana. Julkaisuja voidaan suodattaa avainsanojen perusteella. Avainsanat ovat vapaamuotoisia. Tarkista aikaisemmista julkaisuista, mitä avainsanoja on jo käytetty ja pyri käyttämään yhdenmukaisia avainsanoja.
+
+Avainsanat määritellään meta dataan `tags`-tietoon. Jokainen avainsana kirjoitetaan omalle rivilleen ja kunkin eteen kirjoitetaan väliviiva ja välilyönti `- `. Esimerkiksi, kun haluat lisätä julkaisulle avainsanat `Kelikamerat`, `Rajapinnat` ja `Ylläpito`, kirjoita meta dataan seuraavat rivit.
+
+```
+tags:
+  - Kelikamerat
+  - Rajapinnat
+  - Ylläpito
+```
+
+**HUOM!** Voit olla antamatta julkaisulle yhtäkään avainsanaa mutta on suositeltavaa, että jokaiselle julkaisulle annetaan ainakin yksi avainsana.
+
+#### Julkaiseminen
+Julkaise uusi tiedote, artikkeli tai tapahtuma lisäämällä meta dataan seuraava rivi.
+
+```
+published: true
+```
+
+Tämän jälkeen valitse Prosen oikeasta laidasta `Changes to Save` -painike (alin oikean laidan painikkeista). Kirjoita aukeavaan tekstialueeseen kommentti GitHub committia varten, esim. "Tiedote vanhojen rajapintojen päättymisestä luotu". Julkaise tiedote valitsemalla `Commit` komenttikentän alta.
+
+Julkaistu tiedote näkyy sivustolla muutaman minuutin kuluttua.
+
+### Aikaisemmin julkaistun julkaisun muokkaaminen
+Voit muokata aikasemmin julkaistuja julkaisuja samaan tapaan kuin sisältösivuja, ks. [Sisältösivujen päivitys](#sisältösivujen-päivitys). Avaa julkaisu klikkaamalla sen otsikkoa `_posts`-kansiossa. Tämän jälkeen voit muokata sisältöä ja meta dataa, kuten uutta lisättäessä.
+
+#### Otiskon muokkaaminen
+Jo julkaistun julkaisun otsikko näkyy nyt sisältöeditorin yläpuolella. Muokkaa julkaisun otsikkoa klikkaamalla otsikkoa ja kirjoittamalla uusi otiskko vanhan tilalle.
+
+#### Päivämäärän muokkaaminen
+Jo julkaistun julkaisun päivämäärää voit muokata muokkaamalla tiedoston tiedostonimeä. Muokkaa tiedostonimeä valitsemalla `Settings` Prosen oikeasta laidasta (neljäs painike ylhäältä). Auenneeseen `File Path` -kenttään voit muokata päivämäärän tiedostonimeen muodossa `VVVV-KK-PP`.
+
+```
+_posts/VVVV-KK-PP-julkaisun-nimi.md
+```
+
+
 ## Ohje kuvatiedostojen vaatimuksista
 
 Käytä vain kuvatiedostoja, joihin voi antaa loppukäyttäjille vapaat oikeudet, kuten: 
