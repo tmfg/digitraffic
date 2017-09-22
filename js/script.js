@@ -1,6 +1,7 @@
 ---
 ---
 /***Write javascript under this line***/
+var runParallax = true;
 
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
@@ -31,8 +32,14 @@ function init() {
 window.onscroll = () => {
 
   // Add parallax effect
-  parallax();
-  parallaxFooter();
+  if (runParallax) {
+    runParallax = false;
+    parallax();
+    parallaxFooter();
+    setTimeout( () => {
+      runParallax = true;
+    }, 50);
+  }
   
   // Add .header--scrolled when scrolling page, remove when scrolled to top
   headerScrolled();
@@ -304,7 +311,6 @@ function closeLanguageQuick() {
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
   Array.from(document.body.querySelectorAll('[class*=parallax]')).forEach(element => {
-    //console.log(element.classList);
     let speed = 100;
     for (let i = 0; i < element.classList.length; i++) {
       let cssClass = element.classList[i];
