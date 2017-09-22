@@ -58,7 +58,7 @@ Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyt
 Tiedotteet, artikkelit ja tapahtumat sijaitsevat `_posts`-kansiossa ja ovat `.md`-päätteisiä tiedostoja. Tiedotteita voit julkaista ja muokata [prose.io](http://prose.io/)-palvelulla. Navigoi palvelussa _posts-kansioon ja valitse `NEW FILE` ruudun ylälaidasta hakukentän oikealta puolelta.
 
 #### Julkaisun tiedoston nimeäminen ja päivämäärän asettaminen
-Kirjoita julkaisulle otsikko klikkaamalla sivun ylälaidassa olevaa kenttää, jossa on placeholder-tekstinä luontipäivämäärää vastaava `_posts/2017-09-22-your-filename.m` tyylinen teksti. Voit kirjoittaa tämän tekstin tilalle halutun tiedostonimen, jonka alussa on julkaisun päivämäärä. Esimerkiksi, jos julkaisun päivämäärä on 26.9.2017 ja otiskoksi tulee "Vanhat rajapinnat suljetaan", voi tiedostonimeksi antaa `_posts/2017-09-26-vanhat-rajapinnat-suljetaan.md`.
+Kirjoita julkaisulle otsikko klikkaamalla sivun ylälaidassa olevaa kenttää, jossa on placeholder-tekstinä luontipäivämäärää vastaava `_posts/2017-09-22-your-filename.md` tyylinen teksti. Voit kirjoittaa tämän tekstin tilalle halutun tiedostonimen, jonka alussa on julkaisun päivämäärä. Esimerkiksi, jos julkaisun päivämäärä on 26.9.2017 ja otiskoksi tulee "Vanhat rajapinnat suljetaan", voi tiedostonimeksi antaa `_posts/2017-09-26-vanhat-rajapinnat-suljetaan.md`.
 
 **HUOM!** Varmista, että tiedostonimen alkuun tulee `_posts/`, välittömästi perään päivämäärä muodossa `VVVV-KK-PP`, tämän jälkeen haluttu nimi väliviivan perässä `-haluttu-nimi` ja lopuksi tiedostopääte `.md`.
 
