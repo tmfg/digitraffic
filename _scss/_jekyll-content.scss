@@ -17,6 +17,11 @@
     margin: $margin-md 0;
   }
 
+  code {
+    border: 1px solid $gray-153;
+    background-color: $gray-200;
+  }
+
   img {
     width: 100%;
 
