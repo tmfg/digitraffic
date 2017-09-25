@@ -1,0 +1,5 @@
+<ul>
+  {% for application in site.applications %}
+  <li><a href="{{ application.url | prepend:site.baseurl }}">{{ application.title }}</a></li>
+  {% endfor %}
+</ul>

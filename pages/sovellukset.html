@@ -1,5 +1,9 @@
 ---
 layout: compress
+permalink: /sovellukset/
+hero-image: locomotive-cab
+title: Sovellukset
+intro: Rautatieliikenteen avointa dataa, rajapintoja ja lähdekoodia käyttäviä sovelluksia.
 ---
 
 <!DOCTYPE html>
@@ -42,22 +46,12 @@ layout: compress
           <div class="row">
             <!--Text body-->
             <div class="col-xs-12 col-sm-8 text-body">
-
-              <!--Text content-->
-              <div class="row">
-                <div class="col-xs-12 jekyll-content jekyll-content--no-tags u--no-padding">
-                  {{ content }}
-                </div>
-              </div>
-
+              {% include applications-list.html %}
             </div>
 
             <!--Sidebar-->
             <div class="col-xs-12 col-sm-4 sidebar">
-              <h3 class="h3 h3--sidebar-page">Linkit</h3>
-              <ul class="sidebar__link-list">
-                {% include sidebar-links.html %}
-              </ul>
+              {% include applications-filters.html %}
             </div>
 
           </div>

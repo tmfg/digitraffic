@@ -1,0 +1,141 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+  <!--HTML head-->
+  {% include head.html %}
+
+  <!--HTML body-->
+  <body class="body" lang="fi">
+    
+    <!--Header-->
+    {% include header.html header-classes="header--transparent" %}
+    
+    <!--Content-->
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <div class="content--padded">
+
+        <!--Breadcrumb-->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+          --><span class="breadcrumb__item"><a class="link" href="{{ "/sovellukset" | prepend:site.baseurl }}">Sovellukset</a></span><!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
+        </div>
+
+        <!--Artice-->
+        <article>
+
+          <div class="row">
+            <!--Text body-->
+            <div class="col-xs-12 col-sm-8 text-body">
+
+              <!--Text content-->
+              <div class="row">
+                <div class="col-xs-12 jekyll-content jekyll-content--no-tags u--no-padding">
+                  {{ content }}
+                </div>
+              </div>
+
+            </div>
+
+            <!--Sidebar-->
+            <div class="col-xs-12 col-sm-4 sidebar">
+              
+              <!--Application logo-->
+              {% if page.logo %}
+              <div class="sidebar__application-image">
+                <img alt="{{ page.title }} logo" src="{{ "/img/" | prepend:site.baseurl }}{{ page.logo }}" />
+              </div>
+              {% endif %}
+
+              <!--Developer-->
+              {% if page.developer %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Kehittäjä</h4>
+                {% assign developer_length = page.developer | size %}
+                {% if developer_length == 2 %}
+                <a href="{{ page.developer[1] }}" class="link">
+                {% endif %}
+                  <span>{{ page.developer[0] }}</span>
+                {% if developer_length == 2 %}
+                </a>
+                {% endif %}
+              </div>
+              {% endif %}
+
+              <!--Traffictype-->
+              {% if page.traffictype %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Liikennetyyppi</h4>
+                <span>{{ page.traffictype }}</span>
+              </div>
+              {% endif %}
+
+              <!--Käyttöympäristö-->
+              {% if page.environment %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Käyttöympäristö</h4>
+                <span>{{ page.environment }}</span>
+              </div>
+              {% endif %}
+
+              <!--Kieli-->
+              {% if page.language %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Kieli</h4>
+                <span>{{ page.language }}</span>
+              </div>
+              {% endif %}
+
+              <!--Hinta-->
+              {% if page.price %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Hinta</h4>
+                <span>{{ page.price }}</span>
+              </div>
+              {% endif %}
+
+              <!--Latauslinkki-->
+              {% if page.download-url %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Latauslinkki</h4>
+                <a href="{{ page.download-url }}" class="link">{{ page.download-url }}</a>
+              </div>
+              {% endif %}
+
+              <!--Palaute-->
+              {% if page.feedback-url %}
+              <div class="sidebar__application-property">
+                <h4 class="h4 sidebar__application-property-heading">Palaute</h4>
+                <a href="{{ page.feedback-url }}" class="link">Anna palautetta sovelluksesta</a>
+              </div>
+              {% endif %}
+
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </content>
+
+    <!--footer-->
+    {% include footer.html %}
+
+  </body>
+</html>

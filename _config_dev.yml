@@ -6,6 +6,9 @@ sass:
 compress_html:
   clippings: all
 exclude: [README.md,node_modules, gulpfile.js, Gemfile, package.json, package-lock.json, metadata, docs]
+collections:
+  applications:
+    output: true
 defaults:
   -
     scope:
@@ -18,3 +21,9 @@ defaults:
       path: "img"
     values:
       image: true
+  -
+    scope:
+      path: ""
+      type: "applications"
+    values:
+      layout: "application"

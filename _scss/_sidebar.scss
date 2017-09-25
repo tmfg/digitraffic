@@ -104,6 +104,27 @@
     margin-bottom: $margin-xs;
   }
 
+  &__application-image {
+    margin: $margin-xs 0 $margin-sm;
+
+    img {
+      width: 100%;
+      max-width: 120px;
+    }
+  }
+
+  &__application-property {
+    margin-bottom: $margin-xssm;
+
+    &:last-child {
+      margin-bottom: $margin-lg;
+    }
+  }
+
+  &__application-property-heading {
+    margin: 0;
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (min-width: $min-width-sm) {
     padding-left: $margin-xssm;

@@ -16,20 +16,24 @@
     background-image: $hero-image__background-image--frontpage;
   }
 
-  &--road {
-    background-image: $hero-image__background-image--road;
+  &--laptop {
+    background-image: $hero-image__background-image--laptop;
+  }
+
+  &--locomotive-cab {
+    background-image: $hero-image__background-image--locomotive-cab;
+  }
+  
+  &--marine {
+    background-image: $hero-image__background-image--marine;
   }
   
   &--rail {
     background-image: $hero-image__background-image--rail;
   }
 
-  &--marine {
-    background-image: $hero-image__background-image--marine;
-  }
-
-  &--laptop {
-    background-image: $hero-image__background-image--laptop;
+  &--road {
+    background-image: $hero-image__background-image--road;
   }
 
   /* Overlay */
