@@ -30,7 +30,7 @@ layout: compress
         <section id="service-status-section" class="content__frontpage-section">
           <div class="row">
             <div class="col-xs">
-              <h2 class="h2 u--centered service-status__section-header"><a href="#" class="h-link">Palveluiden tila</a></h2>
+              <h2 class="h2 u--centered service-status__section-header"><a href="https://status.digitraffic.fi/" class="h-link">Palveluiden tila</a></h2>
             </div>
           </div>
           <div class="row">
@@ -99,12 +99,13 @@ layout: compress
                   <span class="latest-item__timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><!--
                --><ul class="latest-item__content-type-list"><!--
                  -->{% for category in post.categories %}<!--
+                 -->{% assign post_category = category %}<!--
                  --><li class="latest-item__content-type"><a href="{{ "/" | prepend:site.baseurl }}{{category | downcase}}" class="link">{{ category }}</a></li><!--
                  -->{% endfor %}<!--
                --></ul><!--
                --><ul class="latest-item__traffic-type-list"><!--
                  -->{% for traffictype in post.traffictypes %}<!--
-                 --><span class="latest-item__traffic-type"><a href="#" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
+                 --><span class="latest-item__traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
                  -->{% endfor %}<!--
                --></ul>
                 <!-- /White spaces commented -->

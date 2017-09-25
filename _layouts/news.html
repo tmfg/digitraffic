@@ -57,13 +57,16 @@ layout: compress
                   <!-- White spaces commented -->
                   <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span><!--
                --><ul class="date-type-tags__type-list"><!--
+                 -->{% for category in page.categories %}<!--
+                 -->{% assign post_category = category %}<!--
+                 -->{% endfor %}<!--
                  -->{% for traffictype in page.traffictypes %}<!--
-                 --><li class="date-type-tags__type"><a class="link" href="#">{{ traffictype }}</a></li><!--
+                 --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
                  -->{% endfor %}<!--
                --></ul><!--
                --><ul class="date-type-tags__tag-list"><!--
                  -->{% for tag in page.tags %}<!--
-                 --><li class="date-type-tags__tag"><a class="link" href="#">{{ tag }}</a></li><!--
+                 --><li class="date-type-tags__tag"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
                  -->{% endfor %}<!--
                --></ul>
                 <!-- /White spaces commented --> 

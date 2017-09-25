@@ -20,6 +20,7 @@ function init() {
   // Add filter check box event listeners
   addEventListeners();
   getParams();
+  showHidePosts();
 }
 
 function addEventListeners() {
@@ -34,7 +35,26 @@ function getParams() {
 }
 
 function getFiltersFromQuery(query) {
-  console.log(query);
+  if (query.length > 0) {
+    query.split('&').forEach(filter => {
+      let key = filter.split('=')[0];
+      let values = filter.split('=')[1].split(',');
+      values = values.map(value => {
+        return decodeURIComponent(value);
+      });
+      let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"').querySelectorAll('li');
+      Array.from(listItems).forEach(listItem => {
+        let checkbox = listItem.querySelector('input');
+        for (let i = 0; i < values.length; i++) {
+          if (values[i] === checkbox.dataset.filtervalue) {
+            checkbox.checked = true;
+            activeFilters[key].push(values[i]);
+            break;
+          }
+        }
+      });
+    });
+  }
 }
 
 function toggleFilter() {
@@ -57,9 +77,9 @@ function showHidePosts() {
   let postsInCategory = Array.from(document.body.querySelectorAll('.posts-in-category__post'));
   postsInCategory.forEach(post => {
     // Get year, traffictypes and tags for all posts
-    let postYear = post.dataset.year.split(' ');
-    let postTraffictypes = post.dataset.traffictypes.split(' ');
-    let postTags = post.dataset.tags.split(' ');
+    let postYear = post.dataset.year.split(',');
+    let postTraffictypes = post.dataset.traffictypes.split(',');
+    let postTags = post.dataset.tags.split(',');
 
     // Filter conditions
     let showByYear = hasSharedValue(postYear, activeFilters.year) || activeFilters.year.length === 0;
@@ -88,7 +108,9 @@ function showHidePosts() {
     }
   });
   // Add --last class to last visible post
-  visiblePosts[visiblePosts.length - 1].classList.add('posts-in-category__post--last');
+  if (visiblePosts.length > 0) {
+    visiblePosts[visiblePosts.length - 1].classList.add('posts-in-category__post--last');
+  }
 }
 
 // Check if two arrays share any values

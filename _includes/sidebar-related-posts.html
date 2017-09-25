@@ -1,5 +1,6 @@
 {% assign RELATED_POSTS_THRESHOLD = 3 %}
 {% assign posts = site.categories[category] %}
+{% assign post_category = posts[0].categories[0] %}
 
 <div class="sidebar__section">
   {% assign related_post_count = 0 %}
@@ -18,7 +19,7 @@
           <span class="sidebar__page-timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><!--
         --><ul class="sidebar__page-traffic-type-list"><!--
           -->{% for traffictype in post.traffictypes %}<!--
-          --><span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span><!--
+          --><span class="sidebar__page-traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
           -->{% endfor %}<!--
         --></ul>
           <!-- White spaces commented -->
@@ -55,7 +56,7 @@
             <span class="sidebar__page-timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><!--
           --><ul class="sidebar__page-traffic-type-list"><!--
             -->{% for traffictype in post.traffictypes %}<!--
-            --><span class="sidebar__page-traffic-type"><a href="#" class="link">{{ traffictype }}</a></span><!--
+            --><span class="sidebar__page-traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
             -->{% endfor %}<!--
           --></ul>
             <!-- White spaces commented -->

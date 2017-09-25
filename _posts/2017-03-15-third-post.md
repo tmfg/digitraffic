@@ -7,6 +7,7 @@ traffictypes:
   - Meriliikenne
 tags:
   - Avainsana5
+  - Kaksi sanaa
 ---
 
 Uutinen näkyy suoraan otsikon alla, jos uutisessa ei ole määriteltynä kuvaa.
