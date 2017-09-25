@@ -12,7 +12,14 @@
     &-i {
       font-size: 6rem;
       color: $blue-dark;
+      transition: $transition-fast;
     }
   }
   
+  &__link:hover{
+    .h-link,
+    .support-description__icon-i {
+      @extend .h-link:hover;
+    }
+  }
 }
