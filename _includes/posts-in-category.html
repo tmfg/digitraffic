@@ -6,7 +6,7 @@
     {% else %}
       {% assign posts_text = include.posts-plural %}
     {% endif %}
-    <div class="posts-in-category__amount">{{ posts_size }} {{ posts_text }} julkaisujärjestyksessä</div>
+    <div class="posts-in-category__amount"><span id="posts-in-category-amount">{{ posts_size }}</span> {{ posts_text }} julkaisujärjestyksessä</div>
     {% for posts in category %}
       {% for post in posts %}
         {% if post.title %}
@@ -37,5 +37,8 @@
         {% endif %}
       {% endfor %}
     {% endfor %}
+    <div class="posts-in-category__no-posts posts-in-category__no-posts--hidden">
+      Ei näytettäviä julkaisuja.
+    </div>
   {% endif %}
 {% endfor %}

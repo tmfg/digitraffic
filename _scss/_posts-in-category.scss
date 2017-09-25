@@ -41,4 +41,13 @@
   &__excerpt {
     margin-top: $margin-xssm;
   }
+
+  &__no-posts {
+    margin: $margin-sm 0;
+    color: $gray-153;
+
+    &--hidden {
+      display: none;
+    }
+  }
 }

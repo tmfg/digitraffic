@@ -107,9 +107,19 @@ function showHidePosts() {
       visiblePosts.push(post);
     }
   });
+  // Update amount of posts
+  document.getElementById('posts-in-category-amount').innerText = visiblePosts.length;
   // Add --last class to last visible post
+  let noPostsClasses = document.body.querySelector('.posts-in-category__no-posts').classList;
   if (visiblePosts.length > 0) {
+    if (!noPostsClasses.contains('posts-in-category__no-posts--hidden')) {
+      noPostsClasses.add('posts-in-category__no-posts--hidden');
+    }
     visiblePosts[visiblePosts.length - 1].classList.add('posts-in-category__post--last');
+  } else {
+    if (noPostsClasses.contains('posts-in-category__no-posts--hidden')) {
+      noPostsClasses.remove('posts-in-category__no-posts--hidden');
+    }
   }
 }
 
