@@ -9,6 +9,7 @@ exclude: [README.md,node_modules, gulpfile.js, Gemfile, package.json, package-lo
 collections:
   applications:
     output: true
+    permalink: /sovellukset/:name.html
 defaults:
   -
     scope:
@@ -27,3 +28,4 @@ defaults:
       type: "applications"
     values:
       layout: "application"
+      hero-image: "locomotive-cab"
