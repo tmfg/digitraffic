@@ -22,6 +22,12 @@
     margin: 0 auto;
   }
 
+  &__section {
+    margin: 0 auto;
+    min-height: calc(100vh - 43rem);
+    max-width: $content-max-width;
+  }
+
   /* Modifiers */
   &--padded {
     padding: 0 $content-padding;
