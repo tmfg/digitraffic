@@ -2,8 +2,14 @@
 
   /* Elements */
   &__column {
+    display: flex;
+    justify-content: center;
     margin-bottom: $margin-sm;
     white-space: nowrap;
+  }
+
+  &__content {
+    width: 15rem;
   }
 
   &__section-header {
@@ -75,15 +81,5 @@
     }
   }
 
-  /* Media queries for different screen sizes */
-  @media screen and (max-width: $max-width-sm) {
-    &__column {
-      display: flex;
-      justify-content: center;
-    }
-
-    &__content {
-      width: 15rem;
-    }
-  }
+  
 }
