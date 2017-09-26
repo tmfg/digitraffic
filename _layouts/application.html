@@ -79,18 +79,22 @@ layout: compress
               {% endif %}
 
               <!--Traffictype-->
-              {% if page.traffictype %}
+              {% if page.traffictypes %}
               <div class="sidebar__application-property">
                 <h4 class="h4 sidebar__application-property-heading">Liikennetyyppi</h4>
-                <span>{{ page.traffictype }}</span>
+                {% for traffictype in page.traffictypes %}
+                <span class="sidebar__application-traffictype">{{ traffictype }}</span>
+                {% endfor %}
               </div>
               {% endif %}
 
               <!--Käyttöympäristö-->
-              {% if page.environment %}
+              {% if page.environments %}
               <div class="sidebar__application-property">
                 <h4 class="h4 sidebar__application-property-heading">Käyttöympäristö</h4>
-                <span>{{ page.environment }}</span>
+                {% for environment in page.environments %}
+                <span class="sidebar__application-environment">{{ environment }}</span>
+                {% endfor %}
               </div>
               {% endif %}
 

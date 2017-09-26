@@ -6,8 +6,12 @@ logo:
 developer:
   - Kaisa Kehittäjä
   - http://www.digitraffic.fi
-traffictype: Meriliikenne
-environment: iOS / Android
+traffictypes: 
+  - Tieliikenne
+  - Meriliikenne
+environments: 
+  - iOS
+  - Android
 language: Suomi (FIN)
 price: 1,99€
 download-url: https://www.liikennevirasto.fi/

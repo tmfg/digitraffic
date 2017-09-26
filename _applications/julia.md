@@ -5,8 +5,10 @@ intro: Julia on erityisesti rautatieharrastajien tarpeisiin kehitetty palvelu, j
 logo: julia/julia-logo.png
 developer:
   - Teemu Sirkiä
-traffictype: Rautatieliikenne
-environment: Verkkoselain (mobiilioptimoitu)
+traffictypes: 
+  - Rautatieliikenne
+environments:
+  - Verkkopalvelu
 language: Suomi (FIN)
 price: Ilmainen
 download-url: https://julia.dy.fi

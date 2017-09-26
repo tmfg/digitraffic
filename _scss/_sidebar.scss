@@ -125,6 +125,21 @@
     margin: 0;
   }
 
+  &__application-traffictype {
+
+    &:after {
+      @include separator(",", 0);
+    }
+
+    &:last-child:after {
+      content: none;
+    }
+  }
+
+  &__application-environment {
+    @extend .sidebar__application-traffictype;
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (min-width: $min-width-sm) {
     padding-left: $margin-xssm;

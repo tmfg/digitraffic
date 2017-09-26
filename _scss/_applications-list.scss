@@ -1,0 +1,78 @@
+.applications-list {
+  
+  /* Elements */
+  &__page-heading {
+    margin-top: 0;
+  }
+  
+  &__amount {
+    @extend .posts-in-category__amount;
+  }
+
+  &__application {
+    margin-top: $margin-sm;
+    padding-bottom: $margin-xssm;
+    @include border-bottom();
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: $margin-xssm;
+    }
+  }
+
+  &__application-logo-heading-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__application-logo-wrapper {
+    display: flex;
+  }
+
+  &__application-logo {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &__application-heading-traffictype-environment {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-left: $margin-smmd;
+  }
+
+  &__application-heading-wrapper {
+    display: block;
+  }
+
+  &__application-heading {
+    display: block;
+    margin: 0;
+  }
+
+  &__application-traffictypes {
+    @extend .small;
+    display: block;
+  }
+
+  &__application-environments {
+    @extend .applications-list__application-traffictypes;
+    margin-top: $margin-xxxs;
+  }
+
+  &__application-traffictype,
+  &__application-environment {
+    
+    &:after {
+      @include separator("●");
+    }
+
+    &:last-child:after {
+      content: none;
+    }
+  }
+
+  &__application-intro {
+    margin-top: $margin-xs;
+  }
+}

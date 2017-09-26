@@ -1,5 +1,29 @@
-<ul>
-  {% for application in site.applications %}
-  <li><a href="{{ application.url | prepend:site.baseurl }}">{{ application.title }}</a></li>
-  {% endfor %}
-</ul>
+{% assign applications_size = site.applications.size %}
+<div class="applications-list__amount"><span id="applications-list-amount">{{ applications_size }}</span> sovellusta julkaisujärjestyksessä</div>
+{% for application in site.applications %}
+<div class="applications-list__application">
+  <div class="applications-list__application-logo-heading-wrapper">
+    <div class="applications-list__application-logo-wrapper">
+      <img src="{{ "/img/" | prepend:site.baseurl }}{{ application.logo }}" class="applications-list__application-logo">
+    </div>
+    <div class="applications-list__application-heading-traffictype-environment">
+      <div class="applications-list__application-heading-wrapper">
+        <h3 class="h3 applications-list__application-heading"><a href="{{ application.url | prepend:site.baseurl }}" class="h-link">{{ application.title }}</a></h3>
+      </div>
+      <div class="applications-list__application-traffictypes">
+        {% for traffictype in application.traffictypes %}
+        <span class="applications-list__application-traffictype">{{ traffictype }}</span>
+        {% endfor %}
+      </div>
+      <div class="applications-list__application-environments">
+        {% for environment in application.environments %}
+        <span class="applications-list__application-environment">{{ environment }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="applications-list__application-intro">
+    {{ application.intro }}
+  </div>
+</div>
+{% endfor %}
