@@ -18,6 +18,14 @@
       border-bottom: none;
       margin-bottom: $margin-xssm;
     }
+
+    &--last {
+      @extend .applications-list__application:last-child;
+    }
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__application-logo-heading-wrapper {
@@ -74,5 +82,13 @@
 
   &__application-intro {
     margin-top: $margin-xs;
+  }
+
+  &__no-applications {
+    @extend .posts-in-category__no-posts;
+
+    &--hidden {
+      display: none;
+    }
   }
 }

@@ -1,7 +1,11 @@
 {% assign applications_size = site.applications.size %}
 <div class="applications-list__amount"><span id="applications-list-amount">{{ applications_size }}</span> sovellusta julkaisujärjestyksessä</div>
 {% for application in site.applications %}
-<div class="applications-list__application">
+<div 
+  class="applications-list__application"
+  data-traffictypes="{% for traffictype in application.traffictypes %}{{ traffictype | downcase }}{% unless forloop.last %}{{ "," }}{% endunless %}{% endfor %}"
+  data-environments="{% for environment in application.environments %}{{ environment | downcase }}{% unless forloop.last %}{{ "," }}{% endunless %}{% endfor %}"
+>
   <div class="applications-list__application-logo-heading-wrapper">
     <div class="applications-list__application-logo-wrapper">
       <img src="{{ "/img/" | prepend:site.baseurl }}{{ application.logo }}" class="applications-list__application-logo">
@@ -27,3 +31,6 @@
   </div>
 </div>
 {% endfor %}
+<div class="applications-list__no-applications applications-list__no-applications--hidden">
+  Ei näytettäviä sovelluksia.
+</div>

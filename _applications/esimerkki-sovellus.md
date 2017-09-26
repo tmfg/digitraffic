@@ -10,8 +10,8 @@ traffictypes:
   - Tieliikenne
   - Meriliikenne
 environments: 
-  - iOS
   - Android
+  - iOS
 language: Suomi (FIN)
 price: 1,99€
 download-url: https://www.liikennevirasto.fi/

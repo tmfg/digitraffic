@@ -10,12 +10,7 @@
 {% endfor %}
 
 <!--Sort case insensitively-->
-{% capture envs %}
-  {% for env in all_envs %}
-    {{ env | downcase }},{{ env }}{% unless forloop.last %}|{% endunless %}
-  {% endfor %}
-{% endcapture %}
-{% assign all_envs = envs | split:'|' | sort %}
+{% capture envs %}{% for env in all_envs %}{{ env | downcase }},{{ env }}{% unless forloop.last %}|{% endunless %}{% endfor %}{% endcapture %}{% assign all_envs = envs | split:'|' | sort %}
 
 <!--Get unique environments-->
 {% for env in all_envs %}
