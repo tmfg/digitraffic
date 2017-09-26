@@ -52,7 +52,9 @@ intro: Rautatieliikenteen avointa dataa, rajapintoja ja lähdekoodia käyttä
 
             <!--Sidebar-->
             <div class="col-xs-12 col-sm-4 sidebar">
-              {% include applications-filters.html %}
+              <h3 class="h3 sidebar__applications-filters-heading">Rajaa sovelluslistaa</h3>
+              {% include applications-filters-traffictype.html %}
+              {% include applications-filters-environment.html %}
             </div>
 
           </div>

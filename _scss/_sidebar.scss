@@ -104,6 +104,12 @@
     margin-bottom: $margin-xs;
   }
 
+  &__applications-filters-heading {
+    margin: 0;
+    padding-bottom: $margin-xxs;
+    @include border-bottom();
+  }
+
   &__application-image {
     margin: $margin-xs 0 $margin-sm;
 

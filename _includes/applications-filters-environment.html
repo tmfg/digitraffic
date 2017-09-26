@@ -1,0 +1,55 @@
+<!--Assign empty arrays-->
+{% assign all_envs = '' | split: ',' %}
+{% assign unique_envs = '' | split: ',' %}
+
+<!--Get all environments for all applications-->
+{% for application in site.applications %}
+  {% for env in application.environments %}
+    {% assign all_envs = all_envs | push: env %}
+  {% endfor %}
+{% endfor %}
+
+<!--Sort case insensitively-->
+{% capture envs %}
+  {% for env in all_envs %}
+    {{ env | downcase }},{{ env }}{% unless forloop.last %}|{% endunless %}
+  {% endfor %}
+{% endcapture %}
+{% assign all_envs = envs | split:'|' | sort %}
+
+<!--Get unique environments-->
+{% for env in all_envs %}
+  {% unless env == previous %}
+    {% assign unique_envs = unique_envs | push: env %}
+  {% endunless %}
+  {% assign previous = env %}
+{% endfor %}
+
+
+
+<div class="row sidebar__filter-row">
+    <div class="col-xs-12 sidebar__filter-section">
+      <h4 class="h4 sidebar__filter-section-heading">Käyttöympäristö</h4>
+      <ul data-filtersection="environment" class="sidebar__filter-list">
+        {% for environment in unique_envs %}
+        <!--envlist[0] has downcased version, envlist[1] has the original spelling of environment-->
+        {% assign envlist = environment | split:',' %}
+        <li class="sidebar__filter-list-item">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" data-filtervalue="{{ envlist[0] }}" data-filtertype="environment">
+              <svg width="20" height="20">
+                <path class="checked" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M7,14L2,9l1.4-1.4L7,11.2l7.6-7.6L16,5L7,14z"/>
+                <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
+                <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
+              </svg>
+              <span class="checkbox__label-text">
+                {{ envlist[1] }}
+              </span>
+            </label>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
