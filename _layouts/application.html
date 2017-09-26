@@ -57,7 +57,7 @@ layout: compress
             <div class="col-xs-12 col-sm-4 sidebar">
               
               <!--Application logo-->
-              {% if page.logo %}
+              {% if page.logo != "application-default-logo.svg" %}
               <div class="sidebar__application-image">
                 <img alt="{{ page.title }} logo" src="{{ "/img/" | prepend:site.baseurl }}{{ page.logo }}" />
               </div>
