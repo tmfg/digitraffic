@@ -1,0 +1,190 @@
+<!--Assign empty arrays-->
+{% assign planned_road = '' | split: ',' %}
+{% assign planned_rail = '' | split: ',' %}
+{% assign planned_marine = '' | split: ',' %}
+{% assign inprogress_road = '' | split: ',' %}
+{% assign inprogress_rail = '' | split: ',' %}
+{% assign inprogress_marine = '' | split: ',' %}
+{% assign finished_road = '' | split: ',' %}
+{% assign finished_rail = '' | split: ',' %}
+{% assign finished_marine = '' | split: ',' %}
+
+<!--Loop through developments and push to arrays-->
+{% for development in site.developments %}
+  {% assign status = development.status | downcase %}
+  {% assign traffictype = development.traffictype | downcase %}
+  {% if 'suunnitteilla' == status %}
+    {% if 'tieliikenne' == traffictype %}
+      {% assign planned_road = planned_road | push: development %}
+    {% endif %}
+    {% if 'rautatieliikenne' == traffictype %}
+      {% assign planned_rail = planned_rail | push: development %}
+    {% endif %}
+    {% if 'meriliikenne' == traffictype %}
+      {% assign planned_marine = planned_marine | push: development %}
+    {% endif %}
+  {% endif %}
+  {% if 'toteutuksessa' == status %}
+    {% if 'tieliikenne' == traffictype %}
+      {% assign inprogress_road = inprogress_road | push: development %}
+    {% endif %}
+    {% if 'rautatieliikenne' == traffictype %}
+      {% assign inprogress_rail = inprogress_rail | push: development %}
+    {% endif %}
+    {% if 'meriliikenne' == traffictype %}
+      {% assign inprogress_marine = inprogress_marine | push: development %}
+    {% endif %}
+  {% endif %}
+  {% if 'valmis' == status %}
+    {% if 'tieliikenne' == traffictype %}
+      {% assign finished_road = finished_road | push: development %}
+    {% endif %}
+    {% if 'rautatieliikenne' == traffictype %}
+      {% assign finished_rail = finished_rail | push: development %}
+    {% endif %}
+    {% if 'meriliikenne' == traffictype %}
+      {% assign finished_marine = finished_marine | push: development %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<!--Planned-->
+<div class="developments__status-section developments__status-section--first">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="h2 developments__status-heading developments__status-heading--first">Suunnitteilla</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Tieliikenne</h3>
+      {% for development in planned_road %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if planned_road.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Rautatieliikenne</h3>
+      {% for development in planned_rail %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if planned_rail.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Meriliikenne</h3>
+      {% for development in planned_marine %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if planned_marine.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!--In progress-->
+<div class="developments__status-section">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="h2 developments__status-heading">Toteutuksessa</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Tieliikenne</h3>
+      {% for development in inprogress_road %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if inprogress_road.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Rautatieliikenne</h3>
+      {% for development in inprogress_rail %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if inprogress_rail.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Meriliikenne</h3>
+      {% for development in inprogress_marine %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if inprogress_marine.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!--Finished-->
+<div class="developments__status-section developments__status-section--last">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="h2 developments__status-heading">Valmis</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Tieliikenne</h3>
+      {% for development in finished_road %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if finished_road.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Rautatieliikenne</h3>
+      {% for development in finished_rail %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if finished_rail.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4 developments__col">
+      <h3 class="h3 developments__traffictype-heading">Meriliikenne</h3>
+      {% for development in finished_marine %}
+      <div class="developments__development">
+        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
+        <p>{{ development.excerpt }}</p>
+      </div>
+      {% endfor %}
+      {% if finished_marine.size == 0 %}
+      <div class="developments__development developments__development--empty">Ei kehityshankkeita</div>
+      {% endif %}
+    </div>
+  </div>
+</div>

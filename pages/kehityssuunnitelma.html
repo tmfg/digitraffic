@@ -1,0 +1,53 @@
+---
+layout: compress
+permalink: /kehityssuunnitelma/
+hero-image: road
+title: Kehityssuunnitelma
+intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen ja tilan mukaan.
+---
+
+<!DOCTYPE html>
+<html>
+  <!--HTML head-->
+  {% include head.html %}
+
+  <!--HTML body-->
+  <body class="body" lang="fi">
+    
+    <!--Header-->
+    {% include header.html header-classes="header--transparent" %}
+    
+    <!--Content-->
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <div class="content__section content--padded">
+
+        <!--Breadcrumb-->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
+        </div>
+
+        <!--Developments list-->
+        {% include developments-list.html %}
+
+      </div>
+    </content>
+
+    <!--footer-->
+    {% include footer.html %}
+
+  </body>
+</html>

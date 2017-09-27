@@ -13,6 +13,8 @@ collections:
   applications:
     output: true
     permalink: /sovellukset/:name.html
+  developments:
+    output: false
 defaults:
   -
     scope:
