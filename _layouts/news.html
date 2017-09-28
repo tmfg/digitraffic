@@ -55,11 +55,16 @@ layout: compress
               <div class="col-xs-12 u--no-padding">
                 <div class="date-type-tags">
                   <!-- White spaces commented -->
-                  <span class="date-type-tags__date">{{ page.date | date: "%d.%m.%Y" }}</span><!--
+                  {% for category in page.categories %}<!--
+               -->{% assign post_category = category %}<!--
+               -->{% endfor %}<!--
+               --><span class="date-type-tags__date"><!--
+                 --><i class="material-icons md-md date-type-tags__date-icon"><!--
+                   -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
+                   -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
+                 --></i><!--
+                 -->{{ page.date | date: "%d.%m.%Y" }}</span><!--
                --><ul class="date-type-tags__type-list"><!--
-                 -->{% for category in page.categories %}<!--
-                 -->{% assign post_category = category %}<!--
-                 -->{% endfor %}<!--
                  -->{% for traffictype in page.traffictypes %}<!--
                  --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
                  -->{% endfor %}<!--

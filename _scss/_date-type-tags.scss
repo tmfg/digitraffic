@@ -6,6 +6,11 @@
     @extend .latest-item__timestamp;
   }
 
+  &__date-icon {
+    color: $gray-200;
+    margin-right: $margin-xxxs;
+  }
+
   &__type-list {
     @extend .latest-item__content-type-list;
   }

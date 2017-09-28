@@ -18,8 +18,11 @@
           >
             <h3 class="h3 posts-in-category__post-heading"><a href="{{ post.url | prepend:site.baseurl }}" class="posts-in-category__post-heading-link">{{ post.title }}</a></h3>
             <div class="date-type-tags">
-              <!-- White spaces commented -->
-              <span class="date-type-tags__date">{{ post.date | date: "%d.%m.%Y" }}</span><!--
+            <!-- White spaces commented -->
+              <span class="date-type-tags__date"><!--
+              --><i class="material-icons md-md date-type-tags__date-icon">create</i><!--
+              -->{{ post.date | date: "%d.%m.%Y" }}<!--
+            --></span><!--
             --><ul class="date-type-tags__type-list"><!--
               -->{% for traffictype in post.traffictypes %}<!--
               --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ category[0] | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
