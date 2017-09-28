@@ -68,6 +68,16 @@
       &:first-child, &:last-child {
         padding: 0;
       }
+
+      &:last-child .developments__development:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+
+    &__development:last-child {
+      @include border-bottom();
+      margin-bottom: $margin-sm;
     }
   }
 }
