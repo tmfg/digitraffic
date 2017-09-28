@@ -146,6 +146,11 @@
     @extend .sidebar__application-traffictype;
   }
 
+  /* Modifiers */
+  &--margin-top {
+    margin-top: $margin-xs;
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (min-width: $min-width-sm) {
     padding-left: $margin-xssm;

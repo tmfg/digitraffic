@@ -100,11 +100,11 @@ layout: compress
                -->{% assign post_category = category %}<!--
                -->{% endfor %}<!--
                --><span class="latest-item__timestamp"><!--
+                 -->{{ post.date | date: "%d.%m.%Y" }}<!--
                  --><i class="material-icons md-md date-type-tags__date-icon"><!--
                    -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
                    -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
                  --></i><!--
-                 -->{{ post.date | date: "%d.%m.%Y" }}<!--
                --></span><!--
                --><ul class="latest-item__content-type-list"><!--
                  --><li class="latest-item__content-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase}}" class="link">{{ post_category }}</a></li><!--

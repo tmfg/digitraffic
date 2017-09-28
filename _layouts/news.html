@@ -59,11 +59,13 @@ layout: compress
                -->{% assign post_category = category %}<!--
                -->{% endfor %}<!--
                --><span class="date-type-tags__date"><!--
+                 -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}{{ page.date | date: "%d.%m.%Y" }}{% endif %}<!--
+                 -->{% if post_category == 'Tapahtumat' %}{{ page.event-date | date: "%d.%m.%Y" }}{% endif %}<!--
                  --><i class="material-icons md-md date-type-tags__date-icon"><!--
                    -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
                    -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
                  --></i><!--
-                 -->{{ page.date | date: "%d.%m.%Y" }}</span><!--
+                 --></span><!--
                --><ul class="date-type-tags__type-list"><!--
                  -->{% for traffictype in page.traffictypes %}<!--
                  --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
