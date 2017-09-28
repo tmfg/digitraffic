@@ -19,6 +19,8 @@ defaults:
       type: "posts"
     values:
       layout: "news"
+      categories: "Tiedotteet"
+      traffictypes: "Tieliikenne"
   -
     scope:
       path: "img"
