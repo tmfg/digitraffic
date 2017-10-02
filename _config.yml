@@ -33,5 +33,5 @@ defaults:
       type: "applications"
     values:
       layout: "application"
-      hero-image: "road"
+      hero-image: "code"
       logo: "application-default-logo.svg"
