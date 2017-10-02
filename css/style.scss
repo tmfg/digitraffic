@@ -27,13 +27,17 @@
   "h3",
   "h4";
 
+/* Base styles for elements */
+@import
+  "body",
+  "button",
+  "checkbox",
+  "img";
+
 /* SCSS styles for components */
 @import
   "applications-list",
-  "body",
   "breadcrumb",
-  "button",
-  "checkbox",
   "content",
   "copyright",
   "cover-image",
@@ -51,7 +55,6 @@
   "hero-image",
   "hiddenvisible",
   "icons",
-  "img",
   "intro",
   "jekyll-content",
   "language",
