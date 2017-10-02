@@ -30,5 +30,5 @@ defaults:
       type: "applications"
     values:
       layout: "application"
-      hero-image: "locomotive-cab"
+      hero-image: "code"
       logo: "application-default-logo.svg"

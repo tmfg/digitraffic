@@ -1,7 +1,7 @@
 ---
 layout: traffictype
 permalink: /meriliikenne/
-hero-image: marine
+hero-image: icebreaker
 title: Meriliikenne tietolähteet
 intro: Meriliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
 links:

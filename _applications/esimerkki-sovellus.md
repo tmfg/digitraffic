@@ -1,5 +1,4 @@
 ---
-hero-image: locomotive-cab
 title: Esimerkkisovellus
 intro: Tämä on esimerkkisivu sovelluksesta.
 logo: 

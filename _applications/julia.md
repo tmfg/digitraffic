@@ -1,5 +1,4 @@
 ---
-hero-image: locomotive-cab
 title: Julia
 intro: Julia on erityisesti rautatieharrastajien tarpeisiin kehitetty palvelu, joka näyttää avoimesta rajapinnasta junien aikataulut ja kulkutiedot.
 logo: julia/julia-logo.png

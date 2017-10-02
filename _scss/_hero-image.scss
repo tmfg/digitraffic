@@ -1,39 +1,59 @@
 .hero-image {
   /* Background image position */
   background-position-x: center;
-  background-position-y: bottom;
+  background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   
   /* Text */
-  color: $hero-image__header-text-color;
+  color: $white;
   text-align: center;
 
   /* Background images */
   // Frontpage
+  &--code {
+    background-image: url('../img/hero-img-code.jpg');
+  }
+  
+  &--escalator {
+    background-image: url('../img/hero-img-escalator.jpg');
+  }
+  
   &--frontpage {
-    background-image: $hero-image__background-image--frontpage;
+    background-image: url('../img/hero-img-road.jpg');
+  }
+
+  &--icebreaker {
+    background-image: url('../img/hero-img-icebreaker.jpg');
+  }
+
+  &--keyboard {
+    background-image: url('../img/hero-img-keyboard.jpg');
   }
 
   &--laptop {
-    background-image: $hero-image__background-image--laptop;
+    background-image: url('../img/hero-img-laptop.jpg');
   }
 
   &--locomotive-cab {
-    background-image: $hero-image__background-image--locomotive-cab;
+    background-image: url('../img/hero-img-locomotive-cab.jpg');
   }
   
   &--marine {
-    background-image: $hero-image__background-image--marine;
+    background-image: url('../img/hero-img-ship.jpg');
   }
   
   &--rail {
-    background-image: $hero-image__background-image--rail;
+    background-image: url('../img/hero-img-train-track.jpg');
   }
 
   &--road {
-    background-image: $hero-image__background-image--road;
+    background-image: url('../img/hero-img-intersection.jpg');
+  }
+
+  &--train-track-straight {
+    background-image: url('../img/hero-img-train-track-straight.jpg');
   }
 
   /* Overlay */
