@@ -8,6 +8,7 @@ developer:
 traffictypes: 
   - Tieliikenne
   - Meriliikenne
+  - Kokeellinen
 environments: 
   - Android
   - iOS

@@ -42,7 +42,7 @@ function getFiltersFromQuery(query) {
       values = values.map(value => {
         return decodeURIComponent(value);
       });
-      let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"').querySelectorAll('li');
+      let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"]').querySelectorAll('li');
       Array.from(listItems).forEach(listItem => {
         let checkbox = listItem.querySelector('input');
         for (let i = 0; i < values.length; i++) {

@@ -6,6 +6,7 @@ event-date: 2018-05-04
 traffictypes:
   - Rautatieliikenne
   - Meriliikenne
+  - Kokeellinen
 tags: 
   - Avainsana4
   - Rautatie

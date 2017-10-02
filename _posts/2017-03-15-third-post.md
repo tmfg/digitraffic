@@ -5,6 +5,7 @@ categories: Tiedotteet
 traffictypes: 
   - Rautatieliikenne
   - Meriliikenne
+  - Kokeellinen
 tags:
   - Avainsana5
   - Kaksi sanaa
