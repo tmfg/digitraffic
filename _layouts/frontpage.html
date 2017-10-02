@@ -2,6 +2,18 @@
 layout: compress
 ---
 
+<!--Check whether site has articles or events-->
+{% assign has_articles = false %}
+{% assign has_events = false %}
+{% for category in site.categories %}
+  {% if category[0] == 'Artikkelit' %}
+    {% assign has_articles = true %}
+  {% endif %}
+  {% if category[0] == 'Tapahtumat' %}
+    {% assign has_events = true %}
+  {% endif %}
+{% endfor %}
+
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -86,8 +98,12 @@ layout: compress
       <div class="content__frontpage-section-wrapper parallax">
         <section class="content__frontpage-section">
           <div class="row">
-            <div class="col-xs">
-              <h2 class="h2 u--centered">Ajankohtaista</h2>
+            <div class="col-xs"><!--
+          -->{% if has_articles == false and has_events == false %}<!--
+            --><h2 class="h2 u--centered"><a href="https://status.digitraffic.fi/" class="h-link">Tiedotteet</a></h2><!--
+          -->{% else %}<!--
+            --><h2 class="h2 u--centered">Ajankohtaista</h2><!--
+          -->{% endif %}
             </div>
           </div>
           <div class="row">
@@ -120,11 +136,13 @@ layout: compress
             {% endfor %}
           </div>
           <div class="row">
+            {% if has_articles == true or has_events == true %}
             <section class="frontpage-button-area">
               <a href="{{ "/tiedotteet" | prepend:site.baseurl }}"><button class="frontpage-button-area__button button"><i class="button__icon material-icons md-light md-lg">info</i><span class="button__text">Tiedotteet</span></button></a>
-              <a href="{{ "/artikkelit" | prepend:site.baseurl }}"><button class="frontpage-button-area__button button"><i class="button__icon material-icons md-light md-lg">format_quote</i><span class="button__text">Artikkelit</span></button></a>
-              <a href="{{ "/tapahtumat" | prepend:site.baseurl }}"><button class="frontpage-button-area__button button"><i class="button__icon material-icons md-light md-lg">event</i><span class="button__text">Tapahtumat</span></button></a>
+              {% if has_articles == true %}<a href="{{ "/artikkelit" | prepend:site.baseurl }}"><button class="frontpage-button-area__button button"><i class="button__icon material-icons md-light md-lg">format_quote</i><span class="button__text">Artikkelit</span></button></a>{% endif %}
+              {% if has_events == true %}<a href="{{ "/tapahtumat" | prepend:site.baseurl }}"><button class="frontpage-button-area__button button"><i class="button__icon material-icons md-light md-lg">event</i><span class="button__text">Tapahtumat</span></button></a>{% endif %}
             </section>
+            {% endif %}
           </div>
         </section>
       </div>

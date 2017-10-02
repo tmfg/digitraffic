@@ -1,3 +1,15 @@
+<!--Check whether site has articles or events-->
+{% assign has_articles = false %}
+{% assign has_events = false %}
+{% for category in site.categories %}
+  {% if category[0] == 'Artikkelit' %}
+    {% assign has_articles = true %}
+  {% endif %}
+  {% if category[0] == 'Tapahtumat' %}
+    {% assign has_events = true %}
+  {% endif %}
+{% endfor %}
+
 <div class="menu-opened__wrapper">
   <div class="row menu-opened">
     <div class="col-xs-12 menu-opened__language-mobile">
@@ -12,8 +24,8 @@
       <ul class="menu-opened__list">
         <li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/#palveluiden-tila" | prepend:site.baseurl }}">Palveluiden tila</a></li>
         <li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/tiedotteet" | prepend:site.baseurl }}">Tiedotteet</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/artikkelit" | prepend:site.baseurl }}">Artikkelit</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/tapahtumat" | prepend:site.baseurl }}">Tapahtumat</a></li>
+        {% if has_articles == true %}<li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/artikkelit" | prepend:site.baseurl }}">Artikkelit</a></li>{% endif %}
+        {% if has_events == true %}<li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/tapahtumat" | prepend:site.baseurl }}">Tapahtumat</a></li>{% endif %}
       </ul>
     </div>
     <div class="col-xs-12 col-sm-3">
