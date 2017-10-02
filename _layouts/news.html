@@ -56,16 +56,16 @@ layout: compress
                 <div class="date-type-tags">
                   <!-- White spaces commented -->
                   {% for category in page.categories %}<!--
-               -->{% assign post_category = category %}<!--
+                -->{% assign post_category = category %}<!--
                -->{% endfor %}<!--
                --><span class="date-type-tags__date"><!--
-                 -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}{{ page.date | date: "%d.%m.%Y" }}{% endif %}<!--
-                 -->{% if post_category == 'Tapahtumat' %}{{ page.event-date | date: "%d.%m.%Y" }}{% endif %}<!--
-                 --><i class="material-icons md-md date-type-tags__date-icon"><!--
-                   -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
-                   -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
-                 --></i><!--
-                 --></span><!--
+                --><i class="material-icons md-md date-type-tags__date-icon"><!--
+                  -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
+                  -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
+                --></i><!--
+                -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}{{ page.date | date: "%d.%m.%Y" }}{% endif %}<!--
+                -->{% if post_category == 'Tapahtumat' %}{{ page.event-date | date: "%d.%m.%Y" }}{% endif %}<!--
+                --></span><!--
                --><ul class="date-type-tags__type-list"><!--
                  -->{% for traffictype in page.traffictypes %}<!--
                  --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
@@ -92,15 +92,28 @@ layout: compress
 
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
+
+            {% if post_category == 'Tiedotteet' %}
+              {% assign category_singular = 'tiedote' %}
+              {% assign category_plural = 'tiedotteet' %}
+            {% endif %}
+            {% if post_category == 'Artikkelit' %}
+              {% assign category_singular = 'artikkeli' %}
+              {% assign category_plural = 'artikkelit' %}
+            {% endif %}
+            {% if post_category == 'Tapahtumat' %}
+              {% assign category_singular = 'tapahtuma' %}
+              {% assign category_plural = 'tapahtumat' %}
+            {% endif %}
             
             <!--Next post-->
-            {% include sidebar-next-post.html category="tiedote" %}
+            {% include sidebar-next-post.html category=category_singular %}
 
             <!--Previous post-->
-            {% include sidebar-previous-post.html category="tiedote" %}
+            {% include sidebar-previous-post.html category=category_singular %}
 
             <!--Related posts-->
-            {% include sidebar-related-posts.html category="tiedotteet" %}
+            {% include sidebar-related-posts.html category=category_plural %}
             
           </div>
 

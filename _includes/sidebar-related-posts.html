@@ -14,16 +14,23 @@
         <h3 class="h3 sidebar__heading">Liittyvät {{ include.category }}</h3>
         {% endif %}
         <h4 class="h4 sidebar__page-heading"><a href="{{ post.url | prepend:site.baseurl }}" class="sidebar__page-heading-link">{{ post.title }}</a></h4>
-        <div class="sidebar__metadata">
-          <!-- White spaces commented -->
-          <span class="sidebar__page-timestamp">{{ post.date | date: "%d.%m.%Y" }}</span><!--
+        <!-- White spaces commented -->
+        <div class="sidebar__metadata"><!--
+        --><span class="sidebar__page-timestamp"><!--
+          --><i class="material-icons md-md date-type-tags__date-icon"><!--
+            -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
+            -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
+          --></i><!--
+          -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}{{ page.date | date: "%d.%m.%Y" }}{% endif %}<!--
+          -->{% if post_category == 'Tapahtumat' %}{{ page.event-date | date: "%d.%m.%Y" }}{% endif %}<!--
+        --></span><!--
         --><ul class="sidebar__page-traffic-type-list"><!--
           -->{% for traffictype in post.traffictypes %}<!--
           --><span class="sidebar__page-traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
           -->{% endfor %}<!--
-        --></ul>
-          <!-- White spaces commented -->
-        </div>
+        --></ul><!--
+      --></div>
+      <!-- /White spaces commented -->
         {% assign related_post_count = related_post_count | plus: 1 %}
         {% break %}
       {% endif %}
