@@ -1,36 +1,29 @@
-<!--Assign variables-->
+<!-- Assign variables -->
 {% assign has_road = false %}
 {% assign has_rail = false %}
 {% assign has_marine = false %}
 {% assign has_experimental = false %}
 
-<!--Get if posts in category have traffictype-->
-{% for category in site.categories %}
-  {% if category[0] == include.category %}
-    {% for posts in category %}
-      {% for post in posts %}
-      {% if has_road == true and has_rail == true and has__marine == true and has__experimental == true %}
-        {% break %}
-      {% endif %}
-        {% for traffictype in post.traffictypes %}
-          {% if traffictype == 'Tieliikenne' %}
-            {% assign has_road = true %}
-          {% endif %}
-          {% if traffictype == 'Rautatieliikenne' %}
-            {% assign has_rail = true %}
-          {% endif %}
-          {% if traffictype == 'Meriliikenne' %}
-            {% assign has_marine = true %}
-          {% endif %}
-          {% if traffictype == 'Kokeellinen' %}
-            {% assign has_experimental = true %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
+<!-- Get if developments have traffictype -->
+{% for development in site.developments %}
+  {% if has_road == true and has_rail == true and has__marine == true and has__experimental == true %}
+    {% break %}
   {% endif %}
+  {% for traffictype in development.traffictypes %}
+    {% if traffictype == 'Tieliikenne' %}
+      {% assign has_road = true %}
+    {% endif %}
+    {% if traffictype == 'Rautatieliikenne' %}
+      {% assign has_rail = true %}
+    {% endif %}
+    {% if traffictype == 'Meriliikenne' %}
+      {% assign has_marine = true %}
+    {% endif %}
+    {% if traffictype == 'Kokeellinen' %}
+      {% assign has_experimental = true %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}
-
 
 <div class="row sidebar__filter-row">
   <div class="col-xs-12 sidebar__filter-section">

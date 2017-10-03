@@ -49,7 +49,8 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
             <h3 class="h3 sidebar__applications-filters-heading">Rajaa hankelistaa</h3>
-            
+            {% include developments-filters-traffictype.html %}
+            {% include developments-filters-status.html %}
           </div>
 
         </div>
@@ -60,5 +61,6 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
     <!--footer-->
     {% include footer.html %}
 
+    <script type="text/javascript" src="{{ "/js/filter-developments.js" | prepend:site.baseurl }}" async></script>
   </body>
 </html>

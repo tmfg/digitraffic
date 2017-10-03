@@ -39,14 +39,13 @@ function toggleFilter() {
       activeFilters[filtertype].splice(activeFilters[filtertype].indexOf(filtervalue), 1);
     }
   }
-  console.log(activeFilters);
   showHideApps();
 }
 
 // Show/hide applications based on active filters
 function showHideApps() {
-  let appsInCategory = Array.from(document.body.querySelectorAll('.applications-list__application'));
-  appsInCategory.forEach(post => {
+  let applications = Array.from(document.body.querySelectorAll('.applications-list__application'));
+  applications.forEach(post => {
     // Get year, traffictypes and tags for all posts
     let appTraffictypes = post.dataset.traffictypes.split(',');
     let appEnvironments = post.dataset.environments.split(',');
@@ -71,7 +70,7 @@ function showHideApps() {
   }
   // Get visible applications
   let visibleApps = [];
-  appsInCategory.forEach((app) => {
+  applications.forEach((app) => {
     if (app.classList.contains('applications-list__application') && !app.classList.contains('applications-list__application--hidden')) {
       visibleApps.push(app);
     }

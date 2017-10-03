@@ -11,6 +11,19 @@
 
   &__development {
     @extend .posts-in-category__post;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: $margin-xssm;
+    }
+
+    &--last {
+      @extend .developments__development:last-child;
+    }
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &__development-heading {
@@ -19,5 +32,13 @@
 
   &__development-excerpt {
     @extend .posts-in-category__excerpt;
+  }
+
+  &__no-developments {
+    @extend .posts-in-category__no-posts;
+
+    &--hidden {
+      display: none;
+    }
   }
 }
