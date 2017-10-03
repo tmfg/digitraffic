@@ -1,5 +1,6 @@
 ---
 title: Häiriötiedotteiden jakaminen uudessa REST/JSON-rajapinnassa
+issue-number: DPO-166
 traffictypes:
   - Tieliikenne
 status: toteutuksessa

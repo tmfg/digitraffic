@@ -1,5 +1,6 @@
 ---
 title: LAM-rajapintojen dokumentaation kehitys
+issue-number: DPO-163
 traffictypes:
   - Tieliikenne
 status: toteutuksessa

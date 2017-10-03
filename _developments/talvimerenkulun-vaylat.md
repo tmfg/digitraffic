@@ -1,5 +1,6 @@
 ---
 title: Talvimerenkulun väylät
+issue-number: DPO-162
 traffictypes:
   - Meriliikenne
 status: toteutuksessa

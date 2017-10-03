@@ -2,7 +2,8 @@
   font-size: $font-size-sm;
 
   /* Elements */
-  &__date {
+  &__date,
+  &__id {
     @extend .latest-item__timestamp;
   }
 
@@ -25,5 +26,9 @@
 
   &__tag {
     @extend .latest-item__traffic-type;
+  }
+
+  &__status {
+    text-transform: capitalize;
   }
 }

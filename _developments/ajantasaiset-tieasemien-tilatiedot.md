@@ -1,5 +1,6 @@
 ---
 title: Ajantasaiset tieasemien tilatiedot
+issue-number: DPO-168
 traffictypes:
   - Tieliikenne
 status: valmis

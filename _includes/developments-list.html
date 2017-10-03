@@ -1,9 +1,9 @@
-<!--Assign empty arrays-->
+<!-- Assign empty arrays-->
 {% assign planned = '' | split: ',' %}
 {% assign inprogress = '' | split: ',' %}
 {% assign finished = '' | split: ',' %}
 
-<!--Loop through developments and push to arrays-->
+<!-- Loop through developments and push to arrays-->
 {% for development in site.developments %}
   {% assign status = development.status | downcase %}
   {% if 'suunnitteilla' == status %}
@@ -17,143 +17,87 @@
   {% endif %}
 {% endfor %}
 
-<!--Planned-->
-<div class="developments__status-section developments__status-section--first">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2 class="h2 developments__status-heading developments__status-heading--first">Suunnitteilla</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Tieliikenne</h3>
-      {% for development in planned_road %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if planned_road.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita suunnitteilla</div>
-      {% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Rautatieliikenne</h3>
-      {% for development in planned_rail %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if planned_rail.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita suunnitteilla</div>
-      {% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Meriliikenne</h3>
-      {% for development in planned_marine %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if planned_marine.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita suunnitteilla</div>
-      {% endif %}
-    </div>
-  </div>
-</div>
+<!-- Developments amount text -->
+{% if developments.size == 1 %}
+  {% assign developments_text = 'hanke' %}
+{% else %}
+  {% assign developments_text = 'hanketta' %}
+{% endif %}
 
-<!--In progress-->
-<div class="developments__status-section">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2 class="h2 developments__status-heading">Toteutuksessa</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Tieliikenne</h3>
-      {% for development in inprogress_road %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if inprogress_road.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita toteutuksessa</div>
-      {% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Rautatieliikenne</h3>
-      {% for development in inprogress_rail %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if inprogress_rail.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita toteutuksessa</div>
-      {% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Meriliikenne</h3>
-      {% for development in inprogress_marine %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if inprogress_marine.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita toteutuksessa</div>
-      {% endif %}
-    </div>
-  </div>
-</div>
+<h2 class="h2 developments__list-heading">Kehityshankkeet</h2>
+<div class="developments__amount"><span id="developments-amount">{{ site.developments.size }}</span> {{ developments_text }} suunnittelujärjestyksessä</div>
 
-<!--Finished-->
-<div class="developments__status-section developments__status-section--last">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2 class="h2 developments__status-heading">Valmis</h2>
-    </div>
+<!-- Planned -->
+{% for development in planned %}
+<div
+  class="developments__development"
+  data-traffictypes="{% for traffictype in development.traffictypes %}{{ traffictype | downcase }}{% unless forloop.last %}{{ "," }}{% endunless %}{% endfor %}"
+  data-status="{{ development.status }}"
+>
+  <h3 class="h3 developments__development-heading">{{ development.title }}</h3>
+  <div class="date-type-tags">
+  <!-- White spaces commented -->
+    <span class="date-type-tags__id"><!--
+    -->{{ development.issue-number }}<!--
+  --></span><!--
+  --><ul class="date-type-tags__type-list"><!--
+    -->{% for traffictype in development.traffictypes %}<!--
+    --><li class="date-type-tags__type">{{ traffictype }}</li><!--
+    -->{% endfor %}<!--
+  --></ul><!--
+  --><span class="date-type-tags__status">{{ development.status }}</span>
+  <!-- /White spaces commented --> 
   </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Tieliikenne</h3>
-      {% for development in finished_road %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if finished_road.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita valmiina</div>
-      {% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Rautatieliikenne</h3>
-      {% for development in finished_rail %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if finished_rail.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita valmiina</div>
-      {% endif %}
-    </div>
-    <div class="col-xs-12 col-sm-4 developments__col">
-      <h3 class="h3 developments__traffictype-heading">Meriliikenne</h3>
-      {% for development in finished_marine %}
-      <div class="developments__development">
-        <h4 class="h4 developments__development-heading">{{ development.title }}</h4>
-        <p>{{ development.excerpt }}</p>
-      </div>
-      {% endfor %}
-      {% if finished_marine.size == 0 %}
-      <div class="developments__development developments__development--empty">Ei kehityshankkeita valmiina</div>
-      {% endif %}
-    </div>
-  </div>
+  <div class="developments__development-excerpt">{{ development.excerpt }}</div>
 </div>
+{% endfor %}
+
+<!-- In progress -->
+{% for development in inprogress %}
+<div
+  class="developments__development"
+  data-traffictypes="{% for traffictype in development.traffictypes %}{{ traffictype | downcase }}{% unless forloop.last %}{{ "," }}{% endunless %}{% endfor %}"
+  data-status="{{ development.status }}"
+>
+  <h3 class="h3 developments__development-heading">{{ development.title }}</h3>
+  <div class="date-type-tags">
+  <!-- White spaces commented -->
+    <span class="date-type-tags__id"><!--
+    -->{{ development.issue-number }}<!--
+  --></span><!--
+  --><ul class="date-type-tags__type-list"><!--
+    -->{% for traffictype in development.traffictypes %}<!--
+    --><li class="date-type-tags__type">{{ traffictype }}</li><!--
+    -->{% endfor %}<!--
+  --></ul><!--
+  --><span class="date-type-tags__status">{{ development.status }}</span>
+  <!-- /White spaces commented --> 
+  </div>
+  <div class="developments__development-excerpt">{{ development.excerpt }}</div>
+</div>
+{% endfor %}
+
+<!-- Finished -->
+{% for development in finished %}
+<div
+  class="developments__development"
+  data-traffictypes="{% for traffictype in development.traffictypes %}{{ traffictype | downcase }}{% unless forloop.last %}{{ "," }}{% endunless %}{% endfor %}"
+  data-status="{{ development.status }}"
+>
+  <h3 class="h3 developments__development-heading">{{ development.title }}</h3>
+  <div class="date-type-tags">
+  <!-- White spaces commented -->
+    <span class="date-type-tags__id"><!--
+    -->{{ development.issue-number }}<!--
+  --></span><!--
+  --><ul class="date-type-tags__type-list"><!--
+    -->{% for traffictype in development.traffictypes %}<!--
+    --><li class="date-type-tags__type">{{ traffictype }}</li><!--
+    -->{% endfor %}<!--
+  --></ul><!--
+  --><span class="date-type-tags__status">{{ development.status }}</span>
+  <!-- /White spaces commented --> 
+  </div>
+  <div class="developments__development-excerpt">{{ development.excerpt }}</div>
+</div>
+{% endfor %}

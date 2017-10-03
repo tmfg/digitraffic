@@ -1,6 +1,8 @@
 ---
 title: GraphQL
+issue-number: DPO-167
 traffictypes:
+  - Tieliikenne
   - Rautatieliikenne
 status: suunnitteilla
 ---
