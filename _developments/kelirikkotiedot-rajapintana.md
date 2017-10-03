@@ -1,6 +1,7 @@
 ---
 title: Kelirikkotiedot rajapintana
-traffictype: Tieliikenne
+traffictypes:
+  - Tieliikenne
 status: suunnitteilla
 ---
 

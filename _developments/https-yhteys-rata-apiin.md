@@ -1,6 +1,7 @@
 ---
 title: Https-yhteys rata-apiin
-traffictype: Rautatieliikenne
+traffictypes:
+  - Rautatieliikenne
 status: toteutuksessa
 ---
 

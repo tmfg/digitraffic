@@ -1,50 +1,19 @@
 <!--Assign empty arrays-->
-{% assign planned_road = '' | split: ',' %}
-{% assign planned_rail = '' | split: ',' %}
-{% assign planned_marine = '' | split: ',' %}
-{% assign inprogress_road = '' | split: ',' %}
-{% assign inprogress_rail = '' | split: ',' %}
-{% assign inprogress_marine = '' | split: ',' %}
-{% assign finished_road = '' | split: ',' %}
-{% assign finished_rail = '' | split: ',' %}
-{% assign finished_marine = '' | split: ',' %}
+{% assign planned = '' | split: ',' %}
+{% assign inprogress = '' | split: ',' %}
+{% assign finished = '' | split: ',' %}
 
 <!--Loop through developments and push to arrays-->
 {% for development in site.developments %}
   {% assign status = development.status | downcase %}
-  {% assign traffictype = development.traffictype | downcase %}
   {% if 'suunnitteilla' == status %}
-    {% if 'tieliikenne' == traffictype %}
-      {% assign planned_road = planned_road | push: development %}
-    {% endif %}
-    {% if 'rautatieliikenne' == traffictype %}
-      {% assign planned_rail = planned_rail | push: development %}
-    {% endif %}
-    {% if 'meriliikenne' == traffictype %}
-      {% assign planned_marine = planned_marine | push: development %}
-    {% endif %}
+    {% assign planned = planned | push: development %}
   {% endif %}
   {% if 'toteutuksessa' == status %}
-    {% if 'tieliikenne' == traffictype %}
-      {% assign inprogress_road = inprogress_road | push: development %}
-    {% endif %}
-    {% if 'rautatieliikenne' == traffictype %}
-      {% assign inprogress_rail = inprogress_rail | push: development %}
-    {% endif %}
-    {% if 'meriliikenne' == traffictype %}
-      {% assign inprogress_marine = inprogress_marine | push: development %}
-    {% endif %}
+    {% assign inprogress = inprogress | push: development %}
   {% endif %}
   {% if 'valmis' == status %}
-    {% if 'tieliikenne' == traffictype %}
-      {% assign finished_road = finished_road | push: development %}
-    {% endif %}
-    {% if 'rautatieliikenne' == traffictype %}
-      {% assign finished_rail = finished_rail | push: development %}
-    {% endif %}
-    {% if 'meriliikenne' == traffictype %}
-      {% assign finished_marine = finished_marine | push: development %}
-    {% endif %}
+    {% assign finished = finished | push: development %}
   {% endif %}
 {% endfor %}
 

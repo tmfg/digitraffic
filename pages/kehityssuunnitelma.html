@@ -30,7 +30,7 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
         </div>
       </section>
     
-      <div class="content__section content--padded">
+      <div class="content__section-under-hero content--padded">
 
         <!--Breadcrumb-->
         <div class="row">
@@ -40,8 +40,19 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
           </div>
         </div>
 
-        <!--Developments list-->
-        {% include developments-list.html %}
+        <div class="row">
+          <!--Text body-->
+          <div class="col-xs-12 col-sm-8 text-body text-body--no-top-margin">
+            {% include developments-list.html %}
+          </div>
+
+          <!--Sidebar-->
+          <div class="col-xs-12 col-sm-4 sidebar">
+            <h3 class="h3 sidebar__applications-filters-heading">Rajaa hankelistaa</h3>
+            
+          </div>
+
+        </div>
 
       </div>
     </content>

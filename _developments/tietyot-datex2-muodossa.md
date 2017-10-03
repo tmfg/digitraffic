@@ -1,6 +1,7 @@
 ---
 title: Tietyöt datex2-muodossa
-traffictype: Tieliikenne
+traffictypes:
+  - Tieliikenne
 status: toteutuksessa
 ---
 

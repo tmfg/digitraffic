@@ -1,6 +1,7 @@
 ---
 title: GraphQL
-traffictype: Rautatieliikenne
+traffictypes:
+  - Rautatieliikenne
 status: suunnitteilla
 ---
 

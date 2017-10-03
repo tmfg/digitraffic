@@ -1,6 +1,7 @@
 ---
 title: Häiriötiedotteiden jakaminen uudessa REST/JSON-rajapinnassa
-traffictype: Tieliikenne
+traffictypes:
+  - Tieliikenne
 status: toteutuksessa
 ---
 

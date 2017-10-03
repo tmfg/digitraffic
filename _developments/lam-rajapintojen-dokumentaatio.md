@@ -1,6 +1,7 @@
 ---
 title: LAM-rajapintojen dokumentaation kehitys
-traffictype: Tieliikenne
+traffictypes:
+  - Tieliikenne
 status: toteutuksessa
 ---
 

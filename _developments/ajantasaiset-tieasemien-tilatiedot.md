@@ -1,6 +1,7 @@
 ---
 title: Ajantasaiset tieasemien tilatiedot
-traffictype: Tieliikenne
+traffictypes:
+  - Tieliikenne
 status: valmis
 ---
 

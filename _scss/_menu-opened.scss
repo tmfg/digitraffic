@@ -60,9 +60,11 @@
   }
 
   @media screen and (min-width: 421px) and (max-width: $max-width-sm) {
+    /*
     & div:nth-child(2) .menu-opened__heading {
       margin-top: $margin-xs;
     }
+    */
   }
 
   @media screen and (max-width: 420px) {

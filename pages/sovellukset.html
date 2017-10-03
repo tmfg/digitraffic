@@ -30,7 +30,7 @@ intro: Rautatieliikenteen avointa dataa, rajapintoja ja lähdekoodia käyttä
         </div>
       </section>
     
-      <div class="content__section content--padded">
+      <div class="content__section-under-hero content--padded">
 
         <!--Breadcrumb-->
         <div class="row">
@@ -40,26 +40,22 @@ intro: Rautatieliikenteen avointa dataa, rajapintoja ja lähdekoodia käyttä
           </div>
         </div>
 
-        <!--Artice-->
-        <article>
-
-          <div class="row">
-            <!--Text body-->
-            <div class="col-xs-12 col-sm-8 text-body text-body--no-top-margin">
-              <h2 class="h2 applications-list__page-heading">Sovellukset</h2>
-              {% include applications-list.html %}
-              <a href="{{ "/ilmoita-oma-sovellus" | prepend:site.baseurl }}"><button class="button applications-list__button"><i class="button__icon material-icons md-light md-lg">add_to_queue</i><span class="button__text">Ilmoita oma sovellus</span></button></a>
-            </div>
-
-            <!--Sidebar-->
-            <div class="col-xs-12 col-sm-4 sidebar">
-              <h3 class="h3 sidebar__applications-filters-heading">Rajaa sovelluslistaa</h3>
-              {% include applications-filters-traffictype.html %}
-              {% include applications-filters-environment.html %}
-            </div>
-
+        <div class="row">
+          <!--Text body-->
+          <div class="col-xs-12 col-sm-8 text-body text-body--no-top-margin">
+            <h2 class="h2 applications-list__page-heading">Sovellukset</h2>
+            {% include applications-list.html %}
+            <a href="{{ "/ilmoita-oma-sovellus" | prepend:site.baseurl }}"><button class="button applications-list__button"><i class="button__icon material-icons md-light md-lg">add_to_queue</i><span class="button__text">Ilmoita oma sovellus</span></button></a>
           </div>
-        </article>
+
+          <!--Sidebar-->
+          <div class="col-xs-12 col-sm-4 sidebar">
+            <h3 class="h3 sidebar__applications-filters-heading">Rajaa sovelluslistaa</h3>
+            {% include applications-filters-traffictype.html %}
+            {% include applications-filters-environment.html %}
+          </div>
+
+        </div>
 
       </div>
     </content>

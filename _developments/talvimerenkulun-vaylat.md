@@ -1,6 +1,7 @@
 ---
 title: Talvimerenkulun väylät
-traffictype: Meriliikenne
+traffictypes:
+  - Meriliikenne
 status: toteutuksessa
 ---
 

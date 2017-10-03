@@ -1,6 +1,7 @@
 ---
 title: AIS-data tietyn MMSI:n tai paikan ympäriltä
-traffictype: Meriliikenne
+traffictypes:
+  - Meriliikenne
 status: valmis
 ---
 
