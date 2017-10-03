@@ -8,6 +8,11 @@ let activeFilters = {
   status: []
 };
 
+let visibleAmounts = {
+  traffictype: [],
+  status: []
+};
+
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
   init();
@@ -18,7 +23,12 @@ if (document.readyState !== 'loading') {
 function init() {
   // Add filter check box event listeners
   addEventListeners();
+
+  // Show/hide developments based on active filters
   showHideDevs();
+
+  // Update amounts of visible developments for filters
+  updateVisibleAmounts();
 }
 
 function addEventListeners() {
@@ -40,6 +50,7 @@ function toggleFilter() {
     }
   }
   showHideDevs();
+  updateVisibleAmounts();
 }
 
 // Show/hide developments based on active filters
@@ -100,4 +111,61 @@ function hasSharedValue(arr1, arr2) {
     } 
   });
   return isShared;
+}
+
+// Update visible amounts for filters
+function updateVisibleAmounts() {
+  // Reset visible amounts
+  visibleAmounts = {
+    traffictype: [],
+    status: []
+  };
+
+  // Get updated visible amounts
+  Array.from(document.body.querySelectorAll('.developments__development')).forEach(element => {
+    // Check that element is visible
+    if (!element.classList.contains('developments__development--hidden')) {
+      
+      // Traffictypes
+      element.dataset.traffictypes.split(',').forEach(traffictype => {
+        let found = false;
+        visibleAmounts.traffictype.forEach(visibleFilter => {
+          if (visibleFilter[0] === traffictype) {
+            visibleFilter[1]++;
+            found = true;
+          }
+        });
+        if (!found) {
+          visibleAmounts.traffictype.push([traffictype, 1]);
+        }
+      });
+  
+      // Status
+      let status = element.dataset.status;
+      let found = false;
+      visibleAmounts.status.forEach(visibleFilter => {
+        if (visibleFilter[0] === status) {
+          visibleFilter[1]++;
+          found = true;
+        }
+      });
+      if (!found) {
+        visibleAmounts.status.push([status, 1]);
+      }
+    }
+  });
+
+  Array.from(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
+    let filtertype = element.dataset.filtertype;
+    let found = false;
+    visibleAmounts[filtertype].forEach(visibleFilter => {
+      if (element.dataset.filtervalue === visibleFilter[0]) {
+        element.innerText = visibleFilter[1];
+        found = true;
+      }
+      if (!found) {
+        element.innerText = 0;
+      }
+    });
+  });
 }

@@ -100,7 +100,7 @@ layout: compress
           <div class="row">
             <div class="col-xs"><!--
           -->{% if has_articles == false and has_events == false %}<!--
-            --><h2 class="h2 u--centered"><a href="https://status.digitraffic.fi/" class="h-link">Tiedotteet</a></h2><!--
+            --><h2 class="h2 u--centered"><a href="{{ "/tiedotteet" | prepend:site.baseurl }}" class="h-link">Tiedotteet</a></h2><!--
           -->{% else %}<!--
             --><h2 class="h2 u--centered">Ajankohtaista</h2><!--
           -->{% endif %}

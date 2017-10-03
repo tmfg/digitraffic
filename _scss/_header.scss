@@ -7,11 +7,13 @@
   width: calc(100%);
   background-color: $gray-68-100;
   color: $header-text-color;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
   transition: $transition-faster;
 
   /* Modifiers */
   &--transparent {
     background-color: $gray-68-0;
+    box-shadow: none;
   }
 
   &:not(.header--transparent) .header__content-wrapper--menu-closing,
