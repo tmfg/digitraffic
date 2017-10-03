@@ -68,4 +68,4 @@ The message contains history data for given link from the begining to the end of
 
 [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
 
-{% github_edit_link %}
+Löysitkö virheen? Auta meitä {% github_edit_link "parantamaan tätä sivua" %}.
