@@ -167,5 +167,8 @@ function updateVisibleAmounts() {
         element.innerText = 0;
       }
     });
+    if (visibleAmounts[filtertype].length === 0) {
+      element.innerText = 0;
+    }
   });
 }
