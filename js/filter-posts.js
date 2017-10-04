@@ -9,6 +9,12 @@ let activeFilters = {
   tag: []
 };
 
+let visibleAmounts = {
+  year: [],
+  traffictype: [],
+  tag: []
+};
+
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
   init();
@@ -19,8 +25,15 @@ if (document.readyState !== 'loading') {
 function init() {
   // Add filter check box event listeners
   addEventListeners();
+
+  // Get URL parameters for filters
   getParams();
+
+  // Show/hide posts based on active filters
   showHidePosts();
+
+  // Update amounts of visible posts for filters
+  updateVisibleAmounts();
 }
 
 function addEventListeners() {
@@ -70,6 +83,7 @@ function toggleFilter() {
     }
   }
   showHidePosts();
+  updateVisibleAmounts();
 }
 
 // Show/hide posts based on active filters
@@ -132,4 +146,76 @@ function hasSharedValue(arr1, arr2) {
     } 
   });
   return isShared;
+}
+
+// Update visible amounts for filters
+function updateVisibleAmounts() {
+  // Reset visible amounts
+  visibleAmounts = {
+    year: [],
+    traffictype: [],
+    tag: []
+  };
+
+  // Get updated visible amounts
+  Array.from(document.body.querySelectorAll('.posts-in-category__post')).forEach(element => {
+    // Check that element is visible
+    if (!element.classList.contains('posts-in-category__post--hidden')) {
+
+      // Year
+      let year = element.dataset.year;
+      let found = false;
+      visibleAmounts.year.forEach(visibleFilter => {
+        if (visibleFilter[0] === year) {
+          visibleFilter[1]++;
+          found = true;
+        }
+      });
+      if (!found) {
+        visibleAmounts.year.push([year, 1]);
+      }
+      
+      // Traffictypes
+      element.dataset.traffictypes.split(',').forEach(traffictype => {
+        let found = false;
+        visibleAmounts.traffictype.forEach(visibleFilter => {
+          if (visibleFilter[0] === traffictype) {
+            visibleFilter[1]++;
+            found = true;
+          }
+        });
+        if (!found) {
+          visibleAmounts.traffictype.push([traffictype, 1]);
+        }
+      });
+  
+      // Tag
+      element.dataset.tags.split(',').forEach(tag => {
+        let found = false;
+        visibleAmounts.tag.forEach(visibleFilter => {
+          if (visibleFilter[0] === tag) {
+            visibleFilter[1]++;
+            found = true;
+          }
+        });
+        if (!found) {
+          visibleAmounts.tag.push([tag, 1]);
+        }
+      });
+    }
+  });
+
+  Array.from(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
+    let filtertype = element.dataset.filtertype;
+    let found = false;
+    visibleAmounts[filtertype].forEach(visibleFilter => {
+      if (element.dataset.filtervalue === visibleFilter[0]) {
+        element.innerText = visibleFilter[1];
+        found = true;
+      }
+      if (!found) {
+        element.innerText = 0;
+      }
+    });
+  });
 }
