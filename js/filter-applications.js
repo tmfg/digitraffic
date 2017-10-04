@@ -8,6 +8,11 @@ let activeFilters = {
   environment: []
 };
 
+let visibleAmounts = {
+  traffictype: [],
+  environment: []
+}
+
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
   init();
@@ -18,7 +23,12 @@ if (document.readyState !== 'loading') {
 function init() {
   // Add filter check box event listeners
   addEventListeners();
+
+  // Show/hide applications based on active filters
   showHideApps();
+
+  // Update amounts of visible applications for filters
+  updateVisibleAmounts();
 }
 
 function addEventListeners() {
@@ -40,6 +50,7 @@ function toggleFilter() {
     }
   }
   showHideApps();
+  updateVisibleAmounts();
 }
 
 // Show/hide applications based on active filters
@@ -100,4 +111,64 @@ function hasSharedValue(arr1, arr2) {
     } 
   });
   return isShared;
+}
+
+// Update visible amounts for filters
+function updateVisibleAmounts() {
+  // Reset visible amounts
+  visibleAmounts = {
+    traffictype: [],
+    environment: []
+  };
+
+  // Get updated visible amounts
+  Array.from(document.body.querySelectorAll('.applications-list__application')).forEach(element => {
+    // Check that element is visible
+    if (!element.classList.contains('applications-list__application--hidden')) {
+      
+      // Traffictypes
+      element.dataset.traffictypes.split(',').forEach(traffictype => {
+        let found = false;
+        visibleAmounts.traffictype.forEach(visibleFilter => {
+          if (visibleFilter[0] === traffictype) {
+            visibleFilter[1]++;
+            found = true;
+          }
+        });
+        if (!found) {
+          visibleAmounts.traffictype.push([traffictype, 1]);
+        }
+      });
+  
+      // Environment
+      element.dataset.environments.split(',').forEach(environment => {
+        let found = false;
+        visibleAmounts.environment.forEach(visibleFilter => {
+          if (visibleFilter[0] === environment) {
+            visibleFilter[1]++;
+            found = true;
+          }
+        });
+        if (!found) {
+          visibleAmounts.environment.push([environment, 1]);
+        }
+      });
+    }
+  });
+
+  console.log(visibleAmounts);
+
+  Array.from(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
+    let filtertype = element.dataset.filtertype;
+    let found = false;
+    visibleAmounts[filtertype].forEach(visibleFilter => {
+      if (element.dataset.filtervalue === visibleFilter[0]) {
+        element.innerText = visibleFilter[1];
+        found = true;
+      }
+      if (!found) {
+        element.innerText = 0;
+      }
+    });
+  });
 }

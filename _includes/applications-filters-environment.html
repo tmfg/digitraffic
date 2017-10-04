@@ -30,18 +30,25 @@
         <!--envlist[0] has downcased version, envlist[1] has the original spelling of environment-->
         {% assign envlist = environment | split:',' %}
         <li class="sidebar__filter-list-item">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" data-filtervalue="{{ envlist[0] }}" data-filtertype="environment">
-              <svg width="20" height="20">
-                <path class="checked" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M7,14L2,9l1.4-1.4L7,11.2l7.6-7.6L16,5L7,14z"/>
-                <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
-                <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
-              </svg>
-              <span class="checkbox__label-text">
-                {{ envlist[1] }}
-              </span>
-            </label>
+          <div class="row">
+            <div class="col-xs-10 u--no-padding">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" data-filtervalue="{{ envlist[0] }}" data-filtertype="environment">
+                  <svg width="20" height="20">
+                    <path class="checked" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M7,14L2,9l1.4-1.4L7,11.2l7.6-7.6L16,5L7,14z"/>
+                    <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
+                    <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
+                  </svg>
+                  <span class="checkbox__label-text">
+                    {{ envlist[1] }}
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="col-xs-2 u--no-padding sidebar__filter-amount-col">
+              <span data-filtervalue="{{ envlist[0] }}" data-filtertype="environment" class="sidebar__filter-amount"></span>
+            </div>
           </div>
         </li>
         {% endfor %}
