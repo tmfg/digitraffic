@@ -1,0 +1,17 @@
+.github-edit {
+  @extend .small;
+  padding: $margin-sm $content-padding 4rem;
+  max-width: $content-max-width;
+  margin: 0 auto;
+
+  &__wrapper {
+    background-color: $gray-241;
+    transform: translateY(2rem);
+    margin-top: -2rem;
+  }
+
+  &__icon {
+    color: $gray-200;
+    margin-right: $margin-xxxs;
+  }
+}

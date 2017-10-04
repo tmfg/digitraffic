@@ -85,7 +85,6 @@ layout: compress
             <div class="row">
               <div class="col-xs-12 jekyll-content u--no-padding">
                 {{ content }}
-                <p class="jekyll-content__github-edit">Löysitkö virheen? Auta meitä <a href="{{site.github.repository_url}}/blob/master/{{page.path}}">parantamaan tätä sivua</a>.</p>
               </div>
             </div>
 
@@ -122,6 +121,9 @@ layout: compress
       </article>
 
     </div>
+
+    <!-- Github edit link -->
+    {% include github-edit.html %}
 
     <!--footer-->
     {% include footer.html %}
