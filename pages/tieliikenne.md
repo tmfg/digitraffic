@@ -1,6 +1,7 @@
 ---
 layout: traffictype
 permalink: /tieliikenne/
+data: road
 hero-image: road
 title: Tieliikenne tietolähteet
 intro: Tieliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
