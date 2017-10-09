@@ -14,6 +14,10 @@
     }
 }
 
+.swagger-section-heading {
+  margin-top: $margin-md;
+}
+
 .swagger-path {
     font-size: $base-font-size * 1.2;
     margin: 25px 0 10px 0;
@@ -23,8 +27,6 @@
 .swagger-method {
     padding: 0;
     margin: 10px 0;
-    border-radius: 5px;
-
 }
 
 .swagger-method-title {

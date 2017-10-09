@@ -1,6 +1,7 @@
 ---
 layout: traffictype
 permalink: /rautatieliikenne/
+data: rail
 hero-image: rail
 title: Rautatieliikenne tietolähteet
 intro: Rautatieliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
