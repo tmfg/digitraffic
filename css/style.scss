@@ -20,19 +20,19 @@
 /* HTML base styles */
 @import "html";
 
-/* Heading styles */
-@import
-  "h1",
-  "h2",
-  "h3",
-  "h4";
-
 /* Base styles for elements */
 @import
   "body",
   "button",
   "checkbox",
   "img";
+
+/* Heading styles */
+@import
+  "h1",
+  "h2",
+  "h3",
+  "h4";
 
 /* SCSS styles for components */
 @import
@@ -72,5 +72,6 @@
   "sidebar",
   "small",
   "support-description",
+  "swagger",
   "text-body",
   "utilities";
