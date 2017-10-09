@@ -2,7 +2,7 @@
   position: relative;
   z-index: 0;
   margin: 100px auto 0 auto;
-  min-height: calc(100vh - 344px);
+  min-height: calc(100vh - 432px);
   max-width: $content-max-width;
 
   /* Elements */
@@ -24,7 +24,7 @@
 
   &__section-under-hero {
     margin: 0 auto;
-    min-height: calc(100vh - 603px);
+    min-height: calc(100vh - 691px);
     max-width: $content-max-width;
   }
 
