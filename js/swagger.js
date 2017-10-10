@@ -34,7 +34,7 @@ $.toggleDetails = function (element) {
 /* Initialization */
 
 function init() {
-    $$('.swagger-method-title').forEach(function (title) {
+    $$('.swagger-method-link').forEach(function (title) {
         $.bind(title, {
             'click': function (e) {
                 var details = $('.swagger-method-details', title.parentNode)

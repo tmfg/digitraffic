@@ -1,7 +1,7 @@
 @mixin swagger-method($color) {
     border: 1px solid $color;
 
-    .swagger-method-title {
+    .swagger-method-summary {
         background: lighten($color, 30%);
     }
 
@@ -40,18 +40,43 @@
 }
 
 .swagger-method-link {
-    &:hover {
-        text-decoration: none;
+  &:hover {
+    .swagger-method-summary-heading {
+      text-decoration: none !important;
+      color: darken($green, 16%);
+      transition: $transition-faster;
     }
+  }
+
+  &:active {
+    .swagger-method-summary-heading {
+      color: darken($green, 16%);
+      transition: $transition-faster;
+    }
+  }
 }
 
-.swagger-method-name {
-    padding: $margin-xxs 0;
-    display: inline-block;
-    width: 5rem;
-    text-align: center;
-    color: white;
-    margin-right: $margin-xs;
+.swagger-method-wrapper {
+  flex-direction: row;
+}
+
+.swagger-method-name-heading {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: $margin-xxs 0;
+  text-align: center;
+  color: white;
+  top: calc(50% - 1.33rem);
+}
+
+.swagger-method-summary {
+  padding: $margin-xxs $margin-xs;
+}
+
+.swagger-method-summary-heading {
+  margin: 0;
+  transition: $transition-faster;
 }
 
 .swagger-method-get {
@@ -100,13 +125,14 @@
     }
 }
 
-.swagger-parameters-heading {
+.swagger-sub-heading {
   margin-top: 0;
 }
 
 .swagger-parameters-table-wrapper {
   overflow: auto;
-  margin-bottom: $margin-sm;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: $margin-smmd;
 }
 
 .swagger-parameters-table {

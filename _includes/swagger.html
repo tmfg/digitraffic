@@ -10,16 +10,16 @@
     <p class="swagger-path">{{ route[0] }}</p>
     {% for method in route[1] %}
     <div class="swagger-method swagger-method-{{ method[0] }}">
-        <h3 class="swagger-method-title"><!--
-          --><a href="#" class="swagger-method-link"><!--
-              --><span class="swagger-method-name">{{ method[0] | upcase }}</span><!--
-              -->{{ method[1].summary }}
-            </a>
-        </h3>
+        <a href="#" class="swagger-method-link">
+          <div class="row">
+            <div class="col-xs-2 swagger-method-name"><h4 class="h4 swagger-method-name-heading">{{ method[0] | upcase }}</h4></div>
+            <div class="col-xs-10 swagger-method-summary"><h4 class="h4 swagger-method-summary-heading">{{ method[1].summary }}</h4></div>
+          </div>
+        </a>
         <div class="swagger-method-details">
           {% if method[1].parameters %}
           <div class="swagger-parameters">
-            <h4 class="h4 swagger-parameters-heading">Parameters</h4>
+            <h4 class="h4 swagger-sub-heading">Parameters</h4>
               <div class="swagger-parameters-table-wrapper">
                 <table class="swagger-parameters-table">
                     <thead>
@@ -63,7 +63,7 @@
           {% endif %}
           {% if method[1].responses %}
           <div class="swagger-response">
-            <h4>Responses</h4>
+            <h4 class="swagger-sub-heading">Responses</h4>
             {% for response in method[1].responses %}
             <h5>
                 <span class="swagger-response-code">{{ response[0] }}</span>
