@@ -65,10 +65,10 @@
           <div class="swagger-response">
             <h4 class="swagger-sub-heading">Responses</h4>
             {% for response in method[1].responses %}
-            <h5>
+            <div>
                 <span class="swagger-response-code">{{ response[0] }}</span>
                 {{ response[1].description }}
-            </h5>
+            </div>
             {% for content_type in swagger.produces %}
                 {% if response[1].examples[content_type] %}
                     {% assign example = response[1].examples[content_type] %}
