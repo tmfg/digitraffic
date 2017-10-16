@@ -1,6 +1,7 @@
 ---
 layout: traffictype
 permalink: /meriliikenne/
+swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 data: marine
 hero-image: icebreaker
 title: Meriliikenne tietolähteet

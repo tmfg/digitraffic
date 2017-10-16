@@ -1,6 +1,7 @@
 ---
 layout: traffictype
 permalink: /rautatieliikenne/
+swagger-source: https://rata.digitraffic.fi/swagger/swagger.json
 data: rail
 hero-image: rail
 title: Rautatieliikenne tietolähteet

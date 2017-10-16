@@ -1,6 +1,7 @@
 ---
 layout: traffictype
 permalink: /tieliikenne/
+swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 data: road
 hero-image: road
 title: Tieliikenne tietolähteet
