@@ -32,7 +32,7 @@ function init() {
 }
 
 function addEventListeners() {
-  Array.from(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
     element.addEventListener("change", toggleFilter, false);
   });
 }
@@ -41,11 +41,11 @@ function toggleFilter() {
   let filtertype = this.dataset.filtertype;
   let filtervalue = this.dataset.filtervalue;
   if (this.checked) {
-    if (!activeFilters[filtertype].includes(filtervalue)) {
+    if (activeFilters[filtertype].indexOf(filtervalue) < 0) {
       activeFilters[filtertype].push(filtervalue);
     }
   } else {
-    if (activeFilters[filtertype].includes(filtervalue)) {
+    if (activeFilters[filtertype].indexOf(filtervalue) >= 0) {
       activeFilters[filtertype].splice(activeFilters[filtertype].indexOf(filtervalue), 1);
     }
   }
@@ -55,7 +55,7 @@ function toggleFilter() {
 
 // Show/hide applications based on active filters
 function showHideApps() {
-  let applications = Array.from(document.body.querySelectorAll('.applications-list__application'));
+  let applications = [].slice.call(document.body.querySelectorAll('.applications-list__application'));
   applications.forEach(post => {
     // Get year, traffictypes and tags for all posts
     let appTraffictypes = post.dataset.traffictypes.split(',');
@@ -122,7 +122,7 @@ function updateVisibleAmounts() {
   };
 
   // Get updated visible amounts
-  Array.from(document.body.querySelectorAll('.applications-list__application')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.applications-list__application')).forEach(element => {
     // Check that element is visible
     if (!element.classList.contains('applications-list__application--hidden')) {
       
@@ -156,9 +156,7 @@ function updateVisibleAmounts() {
     }
   });
 
-  console.log(visibleAmounts);
-
-  Array.from(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
     let filtertype = element.dataset.filtertype;
     let found = false;
     visibleAmounts[filtertype].forEach(visibleFilter => {

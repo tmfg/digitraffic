@@ -303,7 +303,7 @@ function closeLanguageQuick() {
 
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
-  Array.from(document.body.querySelectorAll('.parallax')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.parallax')).forEach(element => {
     let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
     let windowCenter = window.innerHeight / 2;
     let diffFromCenter = elementCenter - windowCenter;

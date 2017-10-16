@@ -37,7 +37,7 @@ function init() {
 }
 
 function addEventListeners() {
-  Array.from(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
     element.addEventListener("change", toggleFilter, false);
   });
 }
@@ -56,7 +56,7 @@ function getFiltersFromQuery(query) {
         return decodeURIComponent(value);
       });
       let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"]').querySelectorAll('li');
-      Array.from(listItems).forEach(listItem => {
+      [].slice.call(listItems).forEach(listItem => {
         let checkbox = listItem.querySelector('input');
         for (let i = 0; i < values.length; i++) {
           if (values[i] === checkbox.dataset.filtervalue) {
@@ -74,11 +74,11 @@ function toggleFilter() {
   let filtertype = this.dataset.filtertype;
   let filtervalue = this.dataset.filtervalue;
   if (this.checked) {
-    if (!activeFilters[filtertype].includes(filtervalue)) {
+    if (activeFilters[filtertype].indexOf(filtervalue) < 0) {
       activeFilters[filtertype].push(filtervalue);
     }
   } else {
-    if (activeFilters[filtertype].includes(filtervalue)) {
+    if (activeFilters[filtertype].indexOf(filtervalue) >= 0) {
       activeFilters[filtertype].splice(activeFilters[filtertype].indexOf(filtervalue), 1);
     }
   }
@@ -88,7 +88,7 @@ function toggleFilter() {
 
 // Show/hide posts based on active filters
 function showHidePosts() {
-  let postsInCategory = Array.from(document.body.querySelectorAll('.posts-in-category__post'));
+  let postsInCategory = [].slice.call(document.body.querySelectorAll('.posts-in-category__post'));
   postsInCategory.forEach(post => {
     // Get year, traffictypes and tags for all posts
     let postYear = post.dataset.year.split(',');
@@ -158,7 +158,7 @@ function updateVisibleAmounts() {
   };
 
   // Get updated visible amounts
-  Array.from(document.body.querySelectorAll('.posts-in-category__post')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.posts-in-category__post')).forEach(element => {
     // Check that element is visible
     if (!element.classList.contains('posts-in-category__post--hidden')) {
 
@@ -205,7 +205,7 @@ function updateVisibleAmounts() {
     }
   });
 
-  Array.from(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
     let filtertype = element.dataset.filtertype;
     let found = false;
     visibleAmounts[filtertype].forEach(visibleFilter => {

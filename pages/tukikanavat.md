@@ -9,5 +9,3 @@ links:
 ---
 
 Avoimet kehittäjäyhteisöt toimivat Digitraffic-palvelun kehityksen tukena ja palautekanavana. Yhteisöt toimivat avoimien Google-keskusteluryhmien kautta. Liikenneviraston asiantuntijat ja Liikenneviraston sovellustoimittajat ovat mukana keskustelussa, joka on kokonaan julkista. Keskusteluryhmien kautta tiedotetaan myös rajapintojen kehityksestä ja käyttökatkoista.
-
-<script type="text/javascript" src="{{ "/js/google-groups.js" | prepend:site.baseurl }}" async></script>

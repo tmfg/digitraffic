@@ -32,7 +32,7 @@ function init() {
 }
 
 function addEventListeners() {
-  Array.from(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
     element.addEventListener("change", toggleFilter, false);
   });
 }
@@ -41,11 +41,11 @@ function toggleFilter() {
   let filtertype = this.dataset.filtertype;
   let filtervalue = this.dataset.filtervalue;
   if (this.checked) {
-    if (!activeFilters[filtertype].includes(filtervalue)) {
+    if (activeFilters[filtertype].indexOf(filtervalue) < 0) {
       activeFilters[filtertype].push(filtervalue);
     }
   } else {
-    if (activeFilters[filtertype].includes(filtervalue)) {
+    if (activeFilters[filtertype].indexOf(filtervalue) >= 0) {
       activeFilters[filtertype].splice(activeFilters[filtertype].indexOf(filtervalue), 1);
     }
   }
@@ -55,7 +55,7 @@ function toggleFilter() {
 
 // Show/hide developments based on active filters
 function showHideDevs() {
-  let developments = Array.from(document.body.querySelectorAll('.developments__development'));
+  let developments = [].slice.call(document.body.querySelectorAll('.developments__development'));
   developments.forEach(post => {
     // Get traffictypes and status for all developments
     let appTraffictypes = post.dataset.traffictypes.split(',');
@@ -122,7 +122,7 @@ function updateVisibleAmounts() {
   };
 
   // Get updated visible amounts
-  Array.from(document.body.querySelectorAll('.developments__development')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.developments__development')).forEach(element => {
     // Check that element is visible
     if (!element.classList.contains('developments__development--hidden')) {
       
@@ -155,7 +155,7 @@ function updateVisibleAmounts() {
     }
   });
 
-  Array.from(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
+  [].slice.call(document.body.querySelectorAll('.sidebar__filter-amount')).forEach(element => {
     let filtertype = element.dataset.filtertype;
     let found = false;
     visibleAmounts[filtertype].forEach(visibleFilter => {
