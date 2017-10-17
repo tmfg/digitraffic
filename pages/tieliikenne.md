@@ -12,9 +12,9 @@ links:
   - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
 ---
 
-Tieliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.  
-   ‍       
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
+Tieliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
+
+Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
 
 ### Swagger API-documentation and sandbox for testing data APIs
 
