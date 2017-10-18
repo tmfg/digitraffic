@@ -49,6 +49,13 @@
       color: $gray-153;
     }
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px $gray-68 inset;
+    -webkit-text-fill-color: $white;
+  }
   
   &__button {
     background: none;

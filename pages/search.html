@@ -3,13 +3,26 @@ layout: search
 permalink: /haku/
 title: Haku
 ---
-<form action="/haku" method="get">
-  <label for="search-box">Search</label>
-  <input type="text" id="search-box" name="query">
-  <input type="submit" value="search">
-</form>
+<div class="row search">
+  <div class="col-xs-12 u--no-padding">
+    <form action="/haku" method="get">
+      <div class="search__content">
+        <div class="search__input-col">
+          <input type="text" id="search-box" name="query" placeholder="Mitä etsit?" value="" class="search__input-field">
+        </div>
+        <div class="search__button-col">
+          <button type="submit" class="search__button pointer"><i class="material-icons search__button-icon">search</i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
-<ul id="search-results"></ul>
+<div class="row">
+  <div class="col-xs-12 u--no-padding">
+    <ul id="search-results" class="search__results"></ul>
+  </div>
+</div>
 
 <script>
   window.store = {
