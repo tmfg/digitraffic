@@ -9,7 +9,7 @@
         var item = store[results[i].ref];
 
         appendString += '<div class="posts-in-category__post">';
-        appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="' + item.url + '" class="posts-in-category__post-heading-link">' + item.title +'</a></h3>';
+        appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="' + window.baseurl + item.url + '" class="posts-in-category__post-heading-link">' + item.title +'</a></h3>';
         appendString += '<div class="posts-in-category__excerpt">' + item.content.substring(0, 300);
         if (item.content.length >= 300) {
           if (item.content[299] === '.') appendString += '..';
