@@ -12,9 +12,9 @@ links:
   - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
 ---
 
-Tieliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
 
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
+Tieliikenteen Digitraffic –palvelu tarjoaa pääosin Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä ajantasaista liikenne ja olosuhdetietoja Suomen tieverkolta. Tietolähteinä Tie-Digitraffic käyttää Liikenneviraston matka-aikatietopalvelua sekä liikenteen automaattisia mittauspisteitä (LAM), tiesääasemien, kelikamerakuvia sekä Tieliikennekeskusten häiriötiedotteita. Palvelun kautta jaettava avoin data on JSON ja Datex2 sanomia sekä WebSocket –streamia.
+
 
 ### Swagger API-documentation and sandbox for testing data APIs
 
