@@ -11,10 +11,17 @@ links:
   - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
   - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
 ---
+Vesiliikenteen Digitraffic-palvelu tarjoaa WebSocket- ja REST- rajapintateknologioilla avointa dataa pääosin JSON-formaatissa. Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta. 
+Vesiliikenteen tietolajeista löytyvät seuraavat tietokokonaisuudet:
 
-Meriliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
+Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
 
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
+Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien aikataulutietojen kautta voidaan hakea kauppamerenkulun alusten satamatietoja
+
+Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä.
+
+Metatiedot. Alusten ja satamien metatietojen rajapinta.
+
 
 ### Swagger API-documentation and sandbox for testing data APIs
 
