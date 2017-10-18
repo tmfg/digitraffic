@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 1460px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0;
 }
 
 .opblock-tag-section
@@ -39,6 +39,10 @@
     &:hover
     {
         background: rgba(#000,.02);
+    }
+
+    .markdown p {
+      margin-bottom: 0;
     }
 }
 
