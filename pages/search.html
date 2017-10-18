@@ -20,7 +20,7 @@ title: Haku
 
 <div class="row">
   <div class="col-xs-12 u--no-padding">
-    <ul id="search-results" class="search__results"></ul>
+    <div id="search-results" class="search__results"></div>
   </div>
 </div>
 
@@ -30,7 +30,7 @@ title: Haku
       "{{ post.url | slugify }}": {
         "title": "{{ post.title | xml_escape }}",
         "category": "{% for category in post.categories %}{{ category | xml_escape }}{% unless forloop.last %}, {% endunless %}{% endfor %}",
-        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+        "content": {{ post.content | strip_html | jsonify }},
         "url": "{{ post.url | xml_escape }}"
       }
       {% unless forloop.last %},{% endunless %}
