@@ -8,8 +8,8 @@ title: Meriliikenne tietolähteet
 intro: Meriliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
-  - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
-  - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
+  - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
+  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 Vesiliikenteen Digitraffic-palvelu tarjoaa WebSocket- ja REST- rajapintateknologioilla avointa dataa pääosin JSON-formaatissa. Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta. 
 Vesiliikenteen tietolajeista löytyvät seuraavat tietokokonaisuudet:
