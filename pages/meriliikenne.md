@@ -4,68 +4,104 @@ permalink: /meriliikenne/
 swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 data: marine
 hero-image: icebreaker
-title: Meriliikenne tietolähteet
-intro: Meriliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
+title: Meriliikenne
+intro: avointa dataa Suomen meriltä ja järviltä 
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
-  - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
-  - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
+  - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
+  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Meriliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
+Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
 
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
+- Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
 
-### Swagger API-documentation and sandbox for testing data APIs
+- Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien aikataulutietojen kautta voidaan hakea kauppamerenkulun alusten satamatietoja
 
-[http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data](http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data)
+- Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä.
 
-### Current data of cameras
+- Alusten ja satamien metatiedot
 
-[http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data](http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data)
+# REST/JSON-rajapinnat
 
-[http://tie.digitraffic.fi/api/v1/data/camera-data/{id}](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
+Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html)
 
-The message contains all public camera presets including url where you can find the camera pictures. For example image for camera preset C0150200 can be found at [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
+Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
-### Current fluency data of links including journey times
+# WebSocket-rajapinnat
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-current](http://tie.digitraffic.fi/api/v1/data/fluency-current)
+Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-current/{id})
+Kaikkien laivojen seuraaminen
 
-Only links of Helsinki Metropolitan Area are measured. Link numbers are 1 to 3 digits long and under 1000 for Helsinki Metropolitan Area.
+``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations ```
 
-The message contains for each link the latest 5 minute median, corresponding average speed, fluency class, and timestamp of the latest update.
+Yhden laivan seuraaminen mmsi:n perusteella
 
-The message is updates each time we receive new median data from MTP. Normally this is once per minute. If MTP does not send us new data, the message is not updated.
+``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
 
-### History data of links for previous day
+Viestit ovat muotoa:
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day)
+Aluksen metadata-viesti
+```
+{"type":"VESSEL_METADATA","data":{"mmsi":255805753,"name":"CHRISTIAN ESSBERGER","shipType":80,"referencePointA":79,"referencePointB":22,"referencePointC":8,"referencePointD":8,"posType":1,"draught":61,"imo":9212498,"callSign":"CQCC","eta":176640,"timestamp":1487938960141,"destination":"PORVOO"}}
+```
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id})
+Aluksen sijainti-viesti
+```
+{"type":"VESSEL_LOCATION","data":{"mmsi":563907000,"type":"Feature","geometry":{"type":"Point","coordinates":[24.951581666666666,59.49639333333334]},"properties":{"sog":0.1,"cog":169.3,"navStat":5,"rot":0,"posAcc":true,"raim":false,"heading":311,"timestamp":34,"timestampExternal":1487938959356}}}
+```
 
-Only links of Helsinki Metropolitan Area are measured. Link numbers are 1 to 3 digits long and under 1000 for Helsinki Metropolitan Area.
+Yksinkertainen JavaScript WebSocket -clientti
+```
+<html>
+<head>
+    <title>Testiclient for vessel locations</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
 
-The message contains for each link all the median data from the previous day: median travel time, average speed and fluency class. The message contains all the available medians for each link, so there are (at most) 1440 medians per each link.
+    <script>
 
-A batch process updates the messages once each day. The updated message is available at 02:30 Finnish time each night.
+        var lines = [];
 
-Due to the large size of the message, it must not be retrieved more than once per each day.
+        function connect() {
+            console.log('trying to connect...');
+            var socket = new WebSocket('ws://meri-test.digitraffic.fi/api/v1/plain-websockets/locations');
+            console.info('Socket is ' + socket.readyState);
+            socket.onopen = function (event) {
+                console.info('Socket is open');
+            }
+            socket.onmessage = function(message) {
+                addMessage(JSON.parse(message.data));
+                updateList();
+            };
+        }
 
-### History data of link for given month
+        function addMessage(message) {
+            var text = convert(message);
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
+            if (lines.length > 50) {
+                lines.shift();
+            }
 
-Only links of Helsinki Metropolitan Area are measured. Link numbers are 1 to 3 digits long and under 1000 for Helsinki Metropolitan Area.
+            lines.push(text);
+        }
 
-The message contains history data for given link from the begining to the end of the given month.
+        function updateList() {
+            $(".locations").html(lines.join('<br/>'));
+        }
 
-### Current free flow speeds
+        function convert(message) {
+            return JSON.stringify(message);
+        }
 
-[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds})
+        connect();
+    </script>
+</head>
+<body>
+    Vessel locations:
+    <div class="locations" />
+</body>
+</html>
+```
 
-[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
-
-[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
