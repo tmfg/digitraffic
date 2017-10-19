@@ -325,11 +325,9 @@ function updateServiceStatus() {
   JSON.parse(this.responseText).data.forEach(service => {
     addOperationStatus(service.name.toLowerCase(), service.lowest_human_status.toLowerCase());
   });
-  console.log("Service status updated.");
 }
 
 function getServiceStatus() {
-  console.log("Updating service status...");
 
   // Get service status data from api
   var oReq = new XMLHttpRequest();
