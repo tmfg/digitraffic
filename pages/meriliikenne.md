@@ -4,8 +4,8 @@ permalink: /meriliikenne/
 swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 data: marine
 hero-image: icebreaker
-title: Meriliikenne tietolähteet
-intro: Meriliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
+title: Vesiliikenne
+intro: Vesiliikenteen tiedot
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
