@@ -31,9 +31,9 @@ Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyypp
 
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
 
-# REST/JSON-rajapinnat
+## REST/JSON-rajapinnat
 
-## Kelikamerat
+# Kelikamerat
 
 > [http://tie.digitraffic.fi/api/v1/data/camera-data](http://tie.digitraffic.fi/api/v1/data/camera-data)
 >
@@ -43,7 +43,7 @@ Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä 
 
 ![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg).
 
-## Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
+# Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
 ``` [http://tie.digitraffic.fi/api/v1/data/fluency-current](http://tie.digitraffic.fi/api/v1/data/fluency-current) ```
 
@@ -55,7 +55,7 @@ Viesti sisältää kullekin linkille viimeisimmän 5 minuutin mediaanimatka-ajan
 
 Viesti päivitetään aina kun uutta mediaanidataa on vastaanotettu MTP:stä, eli noin kerran minuutissa. Jos MTP ei lähetä uutta dataa normaalisti, viestin päivitysväli on vastaavasti pitempi.
 
-## Edellisen päivän sujuvuuden historiatiedot
+# Edellisen päivän sujuvuuden historiatiedot
 
 ``` [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day) ```
 
@@ -69,14 +69,14 @@ Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viest
 
 Viestin suuresta koosta johtuen viestiä ei kannata (tarpeettomasti, kun päivitys on kerran vuorokaudessa) hakea toistuvasti samana päivänä.
 
-## Sujuvuuden historiatiedot halutulta kuulta
+# Sujuvuuden historiatiedot halutulta kuulta
 ``` [http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})```
 
 ``` Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).```
 
 Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
-## Ajantasaiset vapaat nopeudet
+# Ajantasaiset vapaat nopeudet
 
 ```[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)```
 
@@ -92,13 +92,13 @@ Kun linkki- tai LAM–asema vaihtuu talvinopeusrajoituksesta kesänopeuksiin tai
 
 Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viesti on haettavissa 03:30 Suomen aikaa.
 
-## Ajantasaiset tiejaksojen keliennusteet
+# Ajantasaiset tiejaksojen keliennusteet
 
 [http://tie.digitraffic.fi/api/v1/data/road-conditions](http://tie.digitraffic.fi/api/v1/data/road-conditions)
 
 Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
 
-## Ajantasaiset LAM mittaustiedot
+# Ajantasaiset LAM mittaustiedot
 
 ```[http://tie.digitraffic.fi/api/v1/data/tms-data](http://tie.digitraffic.fi/api/v1/data/tms-data)```
 
@@ -151,7 +151,7 @@ Yksinkertainen JavaScript WebSocket -asiakassovellus:
  </html>
 ```
 
-## Tiesääasemien ajantasaiset mittaustiedot
+# Tiesääasemien ajantasaiset mittaustiedot
 
 ```[http://tie.digitraffic.fi/api/v1/data/weather-data](http://tie.digitraffic.fi/api/v1/data/weather-data)```
 
