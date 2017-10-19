@@ -12,9 +12,29 @@ links:
   - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
 ---
 
-Tieliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
 
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
+Tieliikenteen Digitraffic –palvelu tarjoaa pääosin Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä ajantasaista liikenne ja olosuhdetietoja Suomen tieverkolta. Tietolähteinä Tie-Digitraffic käyttää Liikenneviraston matka-aikatietopalvelua sekä liikenteen automaattisia mittauspisteitä (LAM), tiesääasemien, kelikamerakuvia sekä Tieliikennekeskusten häiriötiedotteita. Palvelun kautta jaettava avoin data on JSON ja Datex2 sanomia sekä WebSocket –streamia.
+
+Tieliikenteen tietolajeista löytyvät seuraavat tietokokonaisuudet:
+
+Sujuvuustiedot. Liikenteen ajantasaiset sujuvuustiedot ja matka-aikatiedot ovat saatavissa tällä hetkellä pääkaupunkiseudulta. Matka-aikapalvelu kerää tietoa ajoneuvojen matka-ajoista eri tieosuuksilla hyödyntäen kameratekniikkaa ja rekisterikilven automaattista tunnistusmenetelmää. Rajapinnan kautta on saatavissa 5 minuutin mediaanimatka, keskinopeus ja sujuvuusluokka.
+Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyyppisesti kerran vuorokaudessa.
+
+LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.
+
+Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
+
+Tieliikenteen häiriötiedotteet. Tieliikennekeskuksista saatavat liikenteen ensi- ja muut häiriötiedotteet, tiedotteet tietöistä sekä kelirikkotilanteista. Viestit ovat saatavissa kautta JSON ja Datex2 formaateissa.
+
+Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
+
+Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
+
+Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
+
+Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
+
+
 
 ### Swagger API-documentation and sandbox for testing data APIs
 
