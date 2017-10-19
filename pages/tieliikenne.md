@@ -4,88 +4,161 @@ permalink: /tieliikenne/
 swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 data: road
 hero-image: road
-title: Tieliikenne tietolähteet
-intro: Tieliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
+title: Tieliikenne
+intro: avointa dataa Suomen tieverkolta
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
-  - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
-  - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
+  - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
+  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
+Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä. Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
-Tieliikenteen Digitraffic –palvelu tarjoaa pääosin Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä ajantasaista liikenne ja olosuhdetietoja Suomen tieverkolta. Tietolähteinä Tie-Digitraffic käyttää Liikenneviraston matka-aikatietopalvelua sekä liikenteen automaattisia mittauspisteitä (LAM), tiesääasemien, kelikamerakuvia sekä Tieliikennekeskusten häiriötiedotteita. Palvelun kautta jaettava avoin data on JSON ja Datex2 sanomia sekä WebSocket –streamia.
-
-Tieliikenteen tietolajeista löytyvät seuraavat tietokokonaisuudet:
-
-Sujuvuustiedot. Liikenteen ajantasaiset sujuvuustiedot ja matka-aikatiedot ovat saatavissa tällä hetkellä pääkaupunkiseudulta. Matka-aikapalvelu kerää tietoa ajoneuvojen matka-ajoista eri tieosuuksilla hyödyntäen kameratekniikkaa ja rekisterikilven automaattista tunnistusmenetelmää. Rajapinnan kautta on saatavissa 5 minuutin mediaanimatka, keskinopeus ja sujuvuusluokka.
+- Sujuvuustiedot. Liikenteen ajantasaiset sujuvuustiedot ja matka-aikatiedot ovat saatavissa tällä hetkellä pääkaupunkiseudulta. Matka-aikapalvelu kerää tietoa ajoneuvojen matka-ajoista eri tieosuuksilla hyödyntäen kameratekniikkaa ja rekisterikilven automaattista tunnistusmenetelmää. Rajapinnan kautta on saatavissa 5 minuutin mediaanimatka, keskinopeus ja sujuvuusluokka.
 Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyyppisesti kerran vuorokaudessa.
 
-LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.
+- LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.
 
-Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
+- Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
 
-Tieliikenteen häiriötiedotteet. Tieliikennekeskuksista saatavat liikenteen ensi- ja muut häiriötiedotteet, tiedotteet tietöistä sekä kelirikkotilanteista. Viestit ovat saatavissa kautta JSON ja Datex2 formaateissa.
+- Tieliikenteen häiriötiedotteet. Tieliikennekeskuksista saatavat liikenteen ensi- ja muut häiriötiedotteet, tiedotteet tietöistä sekä kelirikkotilanteista. Viestit ovat saatavissa kautta JSON ja Datex2 formaateissa.
 
-Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
+- Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
 
-Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
+- Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
 
-Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
+- Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
 
-Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
+- Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
 
+# REST/JSON-rajapinnat
 
+## Kelikamerat
 
-### Swagger API-documentation and sandbox for testing data APIs
+> [http://tie.digitraffic.fi/api/v1/data/camera-data](http://tie.digitraffic.fi/api/v1/data/camera-data)
+>
+> [http://tie.digitraffic.fi/api/v1/data/camera-data/{id}](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-[http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data](http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data)
+Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0150200 kuva löytyy osoitteesta [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
 
-### Current data of cameras
+![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg).
 
-[http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data](http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data)
+## Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
-[http://tie.digitraffic.fi/api/v1/data/camera-data/{id}](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
+> [http://tie.digitraffic.fi/api/v1/data/fluency-current](http://tie.digitraffic.fi/api/v1/data/fluency-current)
+>
+> [http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-current/{id})
 
-The message contains all public camera presets including url where you can find the camera pictures. For example image for camera preset C0150200 can be found at [http://weathercam.digitraffic.fi/C0150200.jpg].
+> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
-### Current fluency data of links including journey times
+Viesti sisältää kullekin linkille viimeisimmän 5 minuutin mediaanimatka-ajan sekunteina, vastaavan keskinopeuden, sujuvuusluokan, ja tiedon siitä milloin tiedot on päivitetty.
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-current](http://tie.digitraffic.fi/api/v1/data/fluency-current)
+Viesti päivitetään aina kun uutta mediaanidataa on vastaanotettu MTP:stä, eli noin kerran minuutissa. Jos MTP ei lähetä uutta dataa normaalisti, viestin päivitysväli on vastaavasti pitempi.
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-current/{id})
+## Edellisen päivän sujuvuuden historiatiedot
 
-Only links of Helsinki Metropolitan Area are measured. Link numbers are 1 to 3 digits long and under 1000 for Helsinki Metropolitan Area.
+> [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day)
+>
+> [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id})
 
-The message contains for each link the latest 5 minute median, corresponding average speed, fluency class, and timestamp of the latest update.
+> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
-The message is updates each time we receive new median data from MTP. Normally this is once per minute. If MTP does not send us new data, the message is not updated.
+Viesti sisältää kullekin linkille edellisen vuorokauden mediaanitiedot: matka-ajan, keskinopeuden ja sujuvuusluokan. Viesti sisältää kullekin linkille kaikki edellisen vuorokauden 5 minuutin mediaanit, eli maksimissaan 1440 kappaletta per linkki.
 
-### History data of links for previous day
+Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viesti on haettavissa 02:30 Suomen aikaa.
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day)
+Viestin suuresta koosta johtuen viestiä ei kannata (tarpeettomasti, kun päivitys on kerran vuorokaudessa) hakea toistuvasti samana päivänä.
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id})
+## Sujuvuuden historiatiedot halutulta kuulta
+> [http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
 
-Only links of Helsinki Metropolitan Area are measured. Link numbers are 1 to 3 digits long and under 1000 for Helsinki Metropolitan Area.
+> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
-The message contains for each link all the median data from the previous day: median travel time, average speed and fluency class. The message contains all the available medians for each link, so there are (at most) 1440 medians per each link.
+Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
-A batch process updates the messages once each day. The updated message is available at 02:30 Finnish time each night.
+## Ajantasaiset vapaat nopeudet
 
-Due to the large size of the message, it must not be retrieved more than once per each day.
+> [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
+>
+> [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
+> 
+> [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
 
-### History data of link for given month
+> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
-[http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
+Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille.
 
-Only links of Helsinki Metropolitan Area are measured. Link numbers are 1 to 3 digits long and under 1000 for Helsinki Metropolitan Area.
+Kun linkki- tai LAM–asema vaihtuu talvinopeusrajoituksesta kesänopeuksiin tai päinvastoin, viestin sisältö muuttuu.
 
-The message contains history data for given link from the begining to the end of the given month.
+Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viesti on haettavissa 03:30 Suomen aikaa.
 
-### Current free flow speeds
+## Ajantasaiset tiejaksojen keliennusteet
 
-[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds})
+> [http://tie.digitraffic.fi/api/v1/data/road-conditions](http://tie.digitraffic.fi/api/v1/data/road-conditions)
 
-[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
+Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
 
-[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
+## Ajantasaiset LAM mittaustiedot
+
+> [http://tie.digitraffic.fi/api/v1/data/tms-data](http://tie.digitraffic.fi/api/v1/data/tms-data)
+>
+> [http://tie.digitraffic.fi/api/v1/data/tms-data/{id}](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
+>
+> [ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata)
+> 
+> [ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
+
+Viesti sisältää LAM (Liikenteen Automaattinen Mittaus)–asemien mittaustiedot.
+
+Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mitattu keskinopeus molempiin suuntiin.
+
+Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
+
+Yksinkertainen JavaScript WebSocket asiakassovellus:
+```html
+<html>
+     <head>
+         <title>Testiclient for lam sensor values</title>
+         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
+
+         <script>
+             function connect() {
+                 var url = "ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata";
+                 var socket = new WebSocket(url);
+                 socket.onopen = function (event) {
+                     console.info('Socket is open');
+                 }
+                 socket.onmessage = function(message) {
+                     addMessage(message);
+                 };
+             }
+             function addMessage(message) {
+                 var text = convert(message);
+                 $(".messages").append(text);
+                 $(".messages").append('\n');
+             }
+             function convert(message) {
+                 return JSON.stringify(JSON.parse(message.data));
+             }
+             connect();
+         </script>
+     </head>
+     <body>
+         <b>All messages:</b>
+         <pre class="messages"></pre>
+     </body>
+ </html>
+```
+
+## Tiesääasemien ajantasaiset mittaustiedot
+
+> [http://tie.digitraffic.fi/api/v1/data/weather-data](http://tie.digitraffic.fi/api/v1/data/weather-data)
+>
+> [http://tie.digitraffic.fi/api/v1/data/weather-data/{id}](http://tie.digitraffic.fi/api/v1/data/weather-data/{id})
+
+Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
+
+Viestissä on kullekin tiesääasemalle kyseisen aseman anturiarvot.
+
+Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
