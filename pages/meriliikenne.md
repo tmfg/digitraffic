@@ -20,6 +20,8 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
 
 - Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä.
 
+- Alusten ja satamien metatiedot
+
 # REST/JSON-rajapinnat
 
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html)
@@ -31,10 +33,12 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
 
 Kaikkien laivojen seuraaminen
-> ws://meri.digitraffic.fi/api/v1/plain-websockets/locations
+
+``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations ```
 
 Yhden laivan seuraaminen mmsi:n perusteella
-> ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi}
+
+``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
 
 Viestit ovat muotoa:
 
@@ -100,9 +104,4 @@ Yksinkertainen JavaScript WebSocket -clientti
 </body>
 </html>
 ```
-
-
-### Metatiedot
-Alusten ja satamien metatietojen rajapinta.
-
 
