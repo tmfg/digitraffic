@@ -10,6 +10,10 @@ Voit lisätä sivulle kuvia valitsemalla kuvapainikkeen Prosen editorista (nelj�
 
 Voit kirjoittaa kuvan alla sivulla näkyvän kuvatekstin kirjoittamalla sen `*`-merkkien väliin suoraan kuvalinkin seuraavalle riville.
 
+Pääkuvan kuvasuhdesuositus on 16:9, mikä on deskarilla "näyttävä" ja pystypuhelimellakin vielä tolkullinen. Lisäksi suurin osa nykymobiilikameroista tuottaa oletuksena sitä. Ammattikameroilla ja kuvapankeista tulee pääsasiassa 3:2, mitä voi myös käyttää, jos sitä ei saa rajattua näppärästi. Jos kuvasisältö on jotenkin infomatiivinen tai visuaalisesti tyylikäs, niin siitä voi hyvin tehdä huomiotaherättävä ison pääkuvan.
+
+Muut vähempiarvoiset kuvat voi hyvin laittaa sisältötekstin lomaan, koska sinne käy paremmin mikä vaan kuvasuhde - tosin pystykuvat ovat internetissä hiukan hankalia. Millään sivulla ei tietenkään ole pakko olla isoa pääkuvaa.
+
 ```
 ![Kuvan alt-teksti]({{site.baseurl}}/pages/kuvan-nimi.jpg)
 *Tähän tulee kuvateksti*
@@ -202,7 +206,7 @@ Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edi
 * RubyGems, 2.6.12
   * `gem --version`
 * Bundler, 1.15.1
-	* `bundle --version`
+    * `bundle --version`
 * Node.js, 8.0.0
   * `node --version`
 * Npm, 5.3.0
