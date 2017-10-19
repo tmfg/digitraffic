@@ -12,9 +12,9 @@ links:
   - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
 ---
 
-Meriliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.  
-   ‍       
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
+Meriliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
+
+Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
 
 ### Swagger API-documentation and sandbox for testing data APIs
 
@@ -26,7 +26,7 @@ Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen tieverkosta. P
 
 [http://tie.digitraffic.fi/api/v1/data/camera-data/{id}](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-The message contains all public camera presets including url where you can find the camera pictures. For example image for camera preset C0150200 can be found at [http://weathercam.digitraffic.fi/C0150200.jpg].
+The message contains all public camera presets including url where you can find the camera pictures. For example image for camera preset C0150200 can be found at [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
 
 ### Current fluency data of links including journey times
 

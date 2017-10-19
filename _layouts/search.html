@@ -1,0 +1,32 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+  <!--HTML head-->
+  {% include head.html %}
+
+  <!--HTML body-->
+  <body class="body" lang="fi">
+    
+    <!--Header-->
+    {% include header.html %}
+    
+    <!--Content-->
+    <div class="content content--padded">
+
+        <div class="row">
+          <!--Text body-->
+          <div class="col-xs-12">
+            {{ content }}
+          </div>
+        </div>
+
+    </div>
+
+    <!--footer-->
+    {% include footer.html %}
+
+  </body>
+</html>

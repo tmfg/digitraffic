@@ -1,0 +1,43 @@
+---
+layout: search
+permalink: /haku/
+title: Haku
+---
+<div class="row search">
+  <div class="col-xs-12 u--no-padding">
+    <form action="{{ "/haku" | prepend:site.baseurl }}" method="get">
+      <div class="search__content">
+        <div class="search__input-col">
+          <input type="text" id="search-box" name="query" placeholder="Mitä etsit?" value="" class="search__input-field">
+        </div>
+        <div class="search__button-col">
+          <button type="submit" class="search__button pointer"><i class="material-icons search__button-icon">search</i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 u--no-padding">
+    <div id="search-results" class="search__results"></div>
+  </div>
+</div>
+
+<script>
+  window.store = {
+    {% for post in site.posts %}
+      "{{ post.url | slugify }}": {
+        "title": "{{ post.title | xml_escape }}",
+        "category": "{% for category in post.categories %}{{ category | xml_escape }}{% unless forloop.last %}, {% endunless %}{% endfor %}",
+        "content": {{ post.content | strip_html | jsonify }},
+        "url": "{{ post.url | xml_escape }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+  window.baseurl = "{{ site.baseurl }}";
+</script>
+<script src="{{ "/js/lunr.js" | prepend:site.baseurl }}"></script>
+<script src="{{ "/js/search.js" | prepend:site.baseurl }}"></script>
