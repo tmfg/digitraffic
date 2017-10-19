@@ -61,6 +61,24 @@
     @extend .intro;
   }
 
+  table {
+    padding: 0;
+    margin: 0 auto $margin-sm;
+    border-collapse: collapse;
+
+    th {
+      background-color: $gray-241;
+      font-weight: bold;
+    }
+
+    th, td {
+      margin: 0;
+      padding: $margin-xxs $margin-xs;
+      border: 1px solid $gray-200;
+
+    }
+  }
+
   ul {
     margin-left: $margin-sm;
     margin-bottom: $margin-xssm;

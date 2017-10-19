@@ -12,7 +12,16 @@ links:
   - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
 ---
 
+
+<section markdown="1">
+
 Rautatieliikenteen avoimet rajapinnat on julkaistu rata.digitraffic.fi -palvelussa. Tiedot tarjotaan REST/JSON -rajapintojen kautta. Junien kulkutietoviestit ovat saatavissa myös websocket-yhteyden kautta.
+
+</section>
+
+<table><tr><th>Otsikko</th><th>Otsikko</th></tr><tr><td>Sisältöä</td><td>Sisältöä</td><tr><table>
+
+<section markdown="1">
 
 Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset.
 
@@ -69,3 +78,5 @@ The message contains history data for given link from the begining to the end of
 [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
 
 [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
+
+</section>
