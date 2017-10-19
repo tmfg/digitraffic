@@ -45,11 +45,11 @@ Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä 
 
 ## Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
-> [http://tie.digitraffic.fi/api/v1/data/fluency-current](http://tie.digitraffic.fi/api/v1/data/fluency-current)
->
-> [http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-current/{id})
+``` [http://tie.digitraffic.fi/api/v1/data/fluency-current](http://tie.digitraffic.fi/api/v1/data/fluency-current) ```
 
-> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
+``` [http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}) ```
+
+Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
 Viesti sisältää kullekin linkille viimeisimmän 5 minuutin mediaanimatka-ajan sekunteina, vastaavan keskinopeuden, sujuvuusluokan, ja tiedon siitä milloin tiedot on päivitetty.
 
@@ -57,11 +57,11 @@ Viesti päivitetään aina kun uutta mediaanidataa on vastaanotettu MTP:stä, el
 
 ## Edellisen päivän sujuvuuden historiatiedot
 
-> [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day)
->
-> [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id})
+``` [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day) ```
 
-> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
+``` [http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}) ```
+
+Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
 Viesti sisältää kullekin linkille edellisen vuorokauden mediaanitiedot: matka-ajan, keskinopeuden ja sujuvuusluokan. Viesti sisältää kullekin linkille kaikki edellisen vuorokauden 5 minuutin mediaanit, eli maksimissaan 1440 kappaletta per linkki.
 
@@ -70,21 +70,21 @@ Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viest
 Viestin suuresta koosta johtuen viestiä ei kannata (tarpeettomasti, kun päivitys on kerran vuorokaudessa) hakea toistuvasti samana päivänä.
 
 ## Sujuvuuden historiatiedot halutulta kuulta
-> [http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
+``` [http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})```
 
-> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
+``` Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).```
 
 Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
 ## Ajantasaiset vapaat nopeudet
 
-> [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
->
-> [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
-> 
-> [http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
+```[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)```
 
-> Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
+```[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})```
+
+```[http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})```
+
+Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
 Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille.
 
@@ -94,19 +94,19 @@ Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viest
 
 ## Ajantasaiset tiejaksojen keliennusteet
 
-> [http://tie.digitraffic.fi/api/v1/data/road-conditions](http://tie.digitraffic.fi/api/v1/data/road-conditions)
+[http://tie.digitraffic.fi/api/v1/data/road-conditions](http://tie.digitraffic.fi/api/v1/data/road-conditions)
 
 Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
 
 ## Ajantasaiset LAM mittaustiedot
 
-> [http://tie.digitraffic.fi/api/v1/data/tms-data](http://tie.digitraffic.fi/api/v1/data/tms-data)
->
-> [http://tie.digitraffic.fi/api/v1/data/tms-data/{id}](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
->
-> [ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata)
-> 
-> [ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
+```[http://tie.digitraffic.fi/api/v1/data/tms-data](http://tie.digitraffic.fi/api/v1/data/tms-data)```
+
+```[http://tie.digitraffic.fi/api/v1/data/tms-data/{id}](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})```
+
+```[ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata)```
+
+```[ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})```
 
 Viesti sisältää LAM (Liikenteen Automaattinen Mittaus)–asemien mittaustiedot.
 
@@ -114,7 +114,7 @@ Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mita
 
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 
-Yksinkertainen JavaScript WebSocket asiakassovellus:
+Yksinkertainen JavaScript WebSocket -asiakassovellus:
 ```html
 <html>
      <head>
@@ -153,9 +153,9 @@ Yksinkertainen JavaScript WebSocket asiakassovellus:
 
 ## Tiesääasemien ajantasaiset mittaustiedot
 
-> [http://tie.digitraffic.fi/api/v1/data/weather-data](http://tie.digitraffic.fi/api/v1/data/weather-data)
->
-> [http://tie.digitraffic.fi/api/v1/data/weather-data/{id}](http://tie.digitraffic.fi/api/v1/data/weather-data/{id})
+```[http://tie.digitraffic.fi/api/v1/data/weather-data](http://tie.digitraffic.fi/api/v1/data/weather-data)```
+
+```[http://tie.digitraffic.fi/api/v1/data/weather-data/{id}](http://tie.digitraffic.fi/api/v1/data/weather-data/{id})```
 
 Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
 
