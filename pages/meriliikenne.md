@@ -5,7 +5,7 @@ swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api
 data: marine
 hero-image: icebreaker
 title: Meriliikenne
-intro: avointa dataa Suomen meriltä ja järviltä 
+intro: Avointa dataa Suomen meriltä ja järviltä.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
