@@ -23,6 +23,7 @@
     display: inline-block;
     font-family: $code-font-family;
     width: 100%;
+    background-color: $gray-248;
     box-shadow: inset 0 0 0.9rem rgba(0, 0, 0, 0.20);
     padding: $margin-xs $margin-xssm;
     overflow-x: auto;

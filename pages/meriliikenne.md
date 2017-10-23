@@ -45,13 +45,52 @@ Viestit ovat muotoa:
 #### Aluksen metadata-viesti
 
 ```
-{"type":"VESSEL_METADATA","data":{"mmsi":255805753,"name":"CHRISTIAN ESSBERGER","shipType":80,"referencePointA":79,"referencePointB":22,"referencePointC":8,"referencePointD":8,"posType":1,"draught":61,"imo":9212498,"callSign":"CQCC","eta":176640,"timestamp":1487938960141,"destination":"PORVOO"}}
+{
+  "type":"VESSEL_METADATA",
+  "data":{
+    "mmsi":255805753,
+    "name":"CHRISTIAN ESSBERGER",
+    "shipType":80,
+    "referencePointA":79,
+    "referencePointB":22,
+    "referencePointC":8,
+    "referencePointD":8,
+    "posType":1,
+    "draught":61,
+    "imo":9212498,
+    "callSign":"CQCC",
+    "eta":176640,
+    "timestamp":1487938960141,
+    "destination":"PORVOO"
+  }
+}
 ```
 
 #### Aluksen sijainti-viesti
 
 ```
-{"type":"VESSEL_LOCATION","data":{"mmsi":563907000,"type":"Feature","geometry":{"type":"Point","coordinates":[24.951581666666666,59.49639333333334]},"properties":{"sog":0.1,"cog":169.3,"navStat":5,"rot":0,"posAcc":true,"raim":false,"heading":311,"timestamp":34,"timestampExternal":1487938959356}}}
+{
+  "type":"VESSEL_LOCATION",
+  "data":{
+    "mmsi":563907000,
+    "type":"Feature",
+    "geometry":{
+      "type":"Point",
+      "coordinates":[24.951581666666666,59.49639333333334]
+    },
+    "properties":{
+      "sog":0.1,
+      "cog":169.3,
+      "navStat":5,
+      "rot":0,
+      "posAcc":true,
+      "raim":false,
+      "heading":311,
+      "timestamp":34,
+      "timestampExternal":1487938959356
+    }
+  }
+}
 ```
 
 #### Yksinkertainen JavaScript WebSocket -clientti
@@ -59,51 +98,51 @@ Viestit ovat muotoa:
 ```
 <html>
 <head>
-    <title>Testiclient for vessel locations</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
+  <title>Testiclient for vessel locations</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
 
-    <script>
+  <script>
 
-        var lines = [];
+    var lines = [];
 
-        function connect() {
-            console.log('trying to connect...');
-            var socket = new WebSocket('ws://meri-test.digitraffic.fi/api/v1/plain-websockets/locations');
-            console.info('Socket is ' + socket.readyState);
-            socket.onopen = function (event) {
-                console.info('Socket is open');
-            }
-            socket.onmessage = function(message) {
-                addMessage(JSON.parse(message.data));
-                updateList();
-            };
-        }
+    function connect() {
+      console.log('trying to connect...');
+      var socket = new WebSocket('ws://meri-test.digitraffic.fi/api/v1/plain-websockets/locations');
+      console.info('Socket is ' + socket.readyState);
+      socket.onopen = function (event) {
+        console.info('Socket is open');
+      }
+      socket.onmessage = function(message) {
+        addMessage(JSON.parse(message.data));
+        updateList();
+      };
+    }
 
-        function addMessage(message) {
-            var text = convert(message);
+    function addMessage(message) {
+      var text = convert(message);
 
-            if (lines.length > 50) {
-                lines.shift();
-            }
+      if (lines.length > 50) {
+          lines.shift();
+      }
 
-            lines.push(text);
-        }
+      lines.push(text);
+    }
 
-        function updateList() {
-            $(".locations").html(lines.join('<br/>'));
-        }
+    function updateList() {
+      $(".locations").html(lines.join('<br/>'));
+    }
 
-        function convert(message) {
-            return JSON.stringify(message);
-        }
+    function convert(message) {
+      return JSON.stringify(message);
+    }
 
-        connect();
-    </script>
+    connect();
+  </script>
 </head>
 <body>
-    Vessel locations:
-    <div class="locations" />
+  Vessel locations:
+  <div class="locations" />
 </body>
 </html>
 ```
