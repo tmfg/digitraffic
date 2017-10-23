@@ -20,14 +20,14 @@
         item.category === 'Tapahtumat' ? appendString += 'event' : appendString += 'create';
         appendString += '</i>' + item.date + '</span>';
         //Category
-        appendString += '<span class="date-type-tags__category"><a class="link" href="/' + window.baseurl + item.category.toLowerCase() + '">' + item.category + '</a></span>';
+        appendString += '<span class="date-type-tags__category"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '">' + item.category + '</a></span>';
         //Traffictypes
         appendString += '<ul class="date-type-tags__type-list">';
-        item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="/' + window.baseurl + item.category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
+        item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
         appendString += '</ul>';
         //Tags
         appendString += '<ul class="date-type-tags__tag-list">';
-        item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="/' + window.baseurl + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
+        item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
         appendString += '</ul>';
 
         // /Metadata
