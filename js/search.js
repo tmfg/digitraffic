@@ -3,6 +3,8 @@
     var searchResults = document.getElementById('search-results');
 
     if (results.length) { // Are there any results?
+      document.getElementById('search-results-amount').innerText = results.length;
+
       var appendString = '';
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
