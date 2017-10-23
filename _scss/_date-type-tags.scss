@@ -12,6 +12,10 @@
     margin-right: 0.375rem;
   }
 
+  &__category {
+    @extend .latest-item__timestamp;
+  }
+
   &__type-list {
     @extend .latest-item__content-type-list;
   }
