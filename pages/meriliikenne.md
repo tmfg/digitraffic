@@ -22,37 +22,40 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
 
 - Alusten ja satamien metatiedot
 
-# REST/JSON-rajapinnat
+## REST/JSON-rajapinnat
 
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html)
 
 Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
-# WebSocket-rajapinnat
+## WebSocket-rajapinnat
 
 Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
 
-Kaikkien laivojen seuraaminen
+#### Kaikkien laivojen seuraaminen
 
 ``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations ```
 
-Yhden laivan seuraaminen mmsi:n perusteella
+#### Yhden laivan seuraaminen mmsi:n perusteella
 
 ``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
 
 Viestit ovat muotoa:
 
-Aluksen metadata-viesti
+#### Aluksen metadata-viesti
+
 ```
 {"type":"VESSEL_METADATA","data":{"mmsi":255805753,"name":"CHRISTIAN ESSBERGER","shipType":80,"referencePointA":79,"referencePointB":22,"referencePointC":8,"referencePointD":8,"posType":1,"draught":61,"imo":9212498,"callSign":"CQCC","eta":176640,"timestamp":1487938960141,"destination":"PORVOO"}}
 ```
 
-Aluksen sijainti-viesti
+#### Aluksen sijainti-viesti
+
 ```
 {"type":"VESSEL_LOCATION","data":{"mmsi":563907000,"type":"Feature","geometry":{"type":"Point","coordinates":[24.951581666666666,59.49639333333334]},"properties":{"sog":0.1,"cog":169.3,"navStat":5,"rot":0,"posAcc":true,"raim":false,"heading":311,"timestamp":34,"timestampExternal":1487938959356}}}
 ```
 
-Yksinkertainen JavaScript WebSocket -clientti
+#### Yksinkertainen JavaScript WebSocket -clientti
+
 ```
 <html>
 <head>
@@ -104,4 +107,3 @@ Yksinkertainen JavaScript WebSocket -clientti
 </body>
 </html>
 ```
-

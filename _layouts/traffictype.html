@@ -38,29 +38,12 @@ layout: compress
 
         <!--Artice-->
         <article>
-
           <div class="row">
             <!--Text body-->
-            <div class="col-xs-12 col-sm-8 text-body">
-
-              <!--Text content-->
-              <div class="row">
-                <div class="col-xs-12 jekyll-content jekyll-content--no-tags u--no-padding">
-                  {{ content }}
-                  {% if page.swagger-source.size > 0 %}{% include swagger-ui.html %}{% endif %}
-                </div>
-              </div>
-
+            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+              {{ content }}
+              {% if page.swagger-source.size > 0 %}{% include swagger-ui.html %}{% endif %}
             </div>
-
-            <!--Sidebar-->
-            <div class="col-xs-12 col-sm-4 sidebar">
-              <h3 class="h3 h3--sidebar-page">Linkit</h3>
-              <ul class="sidebar__link-list">
-                {% include sidebar-links.html %}
-              </ul>
-            </div>
-
           </div>
         </article>
 

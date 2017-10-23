@@ -5,7 +5,7 @@ swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-
 data: road
 hero-image: road
 title: Tieliikenne
-intro: avointa dataa Suomen tieverkolta
+intro: Avointa dataa Suomen tieverkolta.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
