@@ -13,7 +13,14 @@
         appendString += '<div class="posts-in-category__post">';
         
         //Title
-        appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="' + window.baseurl + item.url + '" class="posts-in-category__post-heading-link">' + item.title +'</a></h3>';
+        appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="';
+        if (item.category === "Kehityssuunnitelma") {
+          appendString += window.baseurl + '/kehityssuunnitelma';
+        }
+        else {
+          appendString += window.baseurl + item.url;
+        }
+        appendString += '" class="posts-in-category__post-heading-link">' + item.title +'</a></h3>';
         
         //Metadata
         if (item.category !== "Page") {
@@ -75,7 +82,7 @@
   if (searchTerm) {
     document.getElementById('search-box').setAttribute("value", searchTerm);
 
-    // Initalize lunr with the fields it will be searching on. I've given title
+    // Initalize lunr with the fields it will be searching on
     var idx = lunr(function () {
       this.field('id');
       this.field('title');
