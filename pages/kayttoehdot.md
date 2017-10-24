@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /kayttoehdot/
+searchable: true
 title: Käyttöehdot
 links:
   - ["Käyttöehdot", "/kayttoehdot"]

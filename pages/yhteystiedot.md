@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /yhteystiedot/
+searchable: true
 title: Yhteystiedot
 links:
   - ["Tukikanavat", "/tukikanavat"]

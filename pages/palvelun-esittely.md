@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /palvelun-esittely/
+searchable: true
 title: Palvelun esittely
 links:
   - - Kehityssuunnitelma

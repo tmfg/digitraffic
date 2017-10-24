@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /ilmoita-oma-sovellus/
+searchable: true
 title: Ilmoita oma sovellus
 links:
   - ["Sovellukset", "/sovellukset"]

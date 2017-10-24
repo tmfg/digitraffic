@@ -11,27 +11,37 @@
         var item = store[results[i].ref];
 
         appendString += '<div class="posts-in-category__post">';
+        
         //Title
         appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="' + window.baseurl + item.url + '" class="posts-in-category__post-heading-link">' + item.title +'</a></h3>';
+        
         //Metadata
-        appendString += '<div class="date-type-tags">';
-        //Date
-        appendString += '<span class="date-type-tags__date"><i class="material-icons md-md date-type-tags__date-icon">';
-        item.category === 'Tapahtumat' ? appendString += 'event' : appendString += 'create';
-        appendString += '</i>' + item.date + '</span>';
-        //Category
-        appendString += '<span class="date-type-tags__category"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '">' + item.category + '</a></span>';
-        //Traffictypes
-        appendString += '<ul class="date-type-tags__type-list">';
-        item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
-        appendString += '</ul>';
-        //Tags
-        appendString += '<ul class="date-type-tags__tag-list">';
-        item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
-        appendString += '</ul>';
+        if (item.category !== "Page") {
+          appendString += '<div class="date-type-tags">';
+          //Date
+          if (item.category !== "Sovellukset" && item.category !== "Kehityssuunnitelma") {
+            appendString += '<span class="date-type-tags__date"><i class="material-icons md-md date-type-tags__date-icon">';
+            item.category === 'Tapahtumat' ? appendString += 'event' : appendString += 'create';
+            appendString += '</i>' + item.date + '</span>';
+          }
+          //Issue number
+          if (item.issuenumber && item.issuenumber.length > 0) {
+            appendString += '<span class="date-type-tags__id">' + item.issuenumber + '</span>';
+          }
+          //Category
+          appendString += '<span class="date-type-tags__category"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '">' + item.category + '</a></span>';
+          //Traffictypes
+          appendString += '<ul class="date-type-tags__type-list">';
+          item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
+          appendString += '</ul>';
+          //Tags
+          appendString += '<ul class="date-type-tags__tag-list">';
+          item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
+          appendString += '</ul>';
+          // /Metadata
+          appendString += '</div>';
+        }
 
-        // /Metadata
-        appendString += '</div>';
         appendString += '<div class="posts-in-category__excerpt">' + item.content.substring(0, 300);
         if (item.content.length >= 300) {
           if (item.content[299] === '.') appendString += '..';
@@ -73,6 +83,7 @@
       this.field('traffictypes');
       this.field('tags');
       this.field('content');
+      this.field('issuenumber');
     
       for (var key in window.store) { // Add the data to lunr
         this.add({
@@ -81,7 +92,8 @@
           'traffictypes': window.store[key].traffictypes,
           'tags': window.store[key].tags,
           'category': window.store[key].category,
-          'content': window.store[key].content
+          'content': window.store[key].content,
+          'issue-number': window.store[key].issuenumber
         });
   
       }

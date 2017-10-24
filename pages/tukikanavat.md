@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /tukikanavat/
+searchable: true
 title: Tukikanavat
 links:
   - ["Tieliikenne Google Group", "https://groups.google.com/forum/#!forum/roaddigitrafficfi"]

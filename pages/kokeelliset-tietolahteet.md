@@ -1,6 +1,7 @@
 ---
 layout: traffictype
 permalink: /kokeelliset-tietolahteet/
+searchable: true
 hero-image: escalator
 title: Kokeelliset tietolähteet
 intro: Kokeelliset avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
