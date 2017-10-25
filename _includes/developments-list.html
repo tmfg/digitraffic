@@ -42,10 +42,10 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in development.traffictypes %}<!--
-    --><li class="date-type-tags__type">{{ traffictype }}</li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
-  --><span class="date-type-tags__status">{{ development.status }}</span>
+  --><span class="date-type-tags__status"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
   <!-- /White spaces commented --> 
   </div>
   <div class="developments__development-excerpt">{{ development.excerpt }}</div>
@@ -67,10 +67,10 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in development.traffictypes %}<!--
-    --><li class="date-type-tags__type">{{ traffictype }}</li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
-  --><span class="date-type-tags__status">{{ development.status }}</span>
+  --><span class="date-type-tags__status"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
   <!-- /White spaces commented --> 
   </div>
   <div class="developments__development-excerpt">{{ development.excerpt }}</div>
@@ -92,10 +92,10 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in development.traffictypes %}<!--
-    --><li class="date-type-tags__type">{{ traffictype }}</li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
-  --><span class="date-type-tags__status">{{ development.status }}</span>
+  --><span class="date-type-tags__status"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
   <!-- /White spaces commented --> 
   </div>
   <div class="developments__development-excerpt">{{ development.excerpt }}</div>
@@ -103,5 +103,5 @@
 {% endfor %}
 
 <div class="developments__no-developments developments__no-developments--hidden">
-    Ei näytettäviä hankkeita.
-  </div>
+  Ei näytettäviä hankkeita.
+</div>

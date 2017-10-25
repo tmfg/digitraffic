@@ -15,14 +15,18 @@
         <h3 class="h3 applications-list__application-heading"><a href="{{ application.url | prepend:site.baseurl }}" class="h-link">{{ application.title }}</a></h3>
       </div>
       <div class="applications-list__application-traffictypes">
-        {% for traffictype in application.traffictypes %}
-        <span class="applications-list__application-traffictype">{{ traffictype }}</span>
-        {% endfor %}
+        <!-- White spaces commented -->
+        {% for traffictype in application.traffictypes %}<!--
+     --><span class="applications-list__application-traffictype"><a class="link" href="{{ "/sovellukset" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></span><!--
+     -->{% endfor %}
+        <!-- /White spaces commented -->
       </div>
       <div class="applications-list__application-environments">
-        {% for environment in application.environments %}
-        <span class="applications-list__application-environment">{{ environment }}</span>
-        {% endfor %}
+        <!-- White spaces commented -->
+        {% for environment in application.environments %}<!--
+     --><span class="applications-list__application-environment"><a class="link" href="{{ "/sovellukset" | prepend:site.baseurl }}?environment={{ environment | downcase }}">{{ environment }}</a></span><!--
+     -->{% endfor %}
+        <!-- /White spaces commented -->
       </div>
     </div>
   </div>

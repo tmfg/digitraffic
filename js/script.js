@@ -10,7 +10,7 @@ if (document.readyState !== 'loading') {
 }
 
 function init() {
-  console.log("DOM ready");
+  //console.log("DOM ready");
 
   // Add parallax effect to elements with ".parallax" and to footer
   parallax();
@@ -340,7 +340,7 @@ function getServiceStatus() {
 }
 
 function addOperationStatus(service, status) {
-  console.log(service, ":", status);
+  //console.log(service, ":", status);
 
   // Elements
   const classes = document.getElementById(`service-status-circle-${service}`).classList;

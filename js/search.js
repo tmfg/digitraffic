@@ -15,7 +15,7 @@
         //Title
         appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="';
         if (item.category === "Kehityssuunnitelma") {
-          appendString += window.baseurl + '/kehityssuunnitelma';
+          appendString += window.baseurl + '/kehityssuunnitelma?traffictype=' + item.traffictypes[0].toLowerCase() + '&status=' + item.status.toLowerCase();
         }
         else {
           appendString += window.baseurl + item.url;
@@ -42,9 +42,21 @@
           item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
           appendString += '</ul>';
           //Tags
-          appendString += '<ul class="date-type-tags__tag-list">';
-          item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
-          appendString += '</ul>';
+          if (item.tags && item.tags.length > 0) {
+            appendString += '<ul class="date-type-tags__tag-list">';
+            item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
+            appendString += '</ul>';
+          }
+          //Environments
+          if (item.environments && item.environments.length > 0) {
+            appendString += '<ul class="date-type-tags__tag-list">';
+            item.environments.forEach(env => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?environment=' + env.toLowerCase() + '">' + env + '</a></li>'; });
+            appendString += '</ul>';
+          }
+          //Status
+          if (item.status && item.status.length > 0) {
+            appendString += '<span class="date-type-tags__status"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?status=' + item.status.toLowerCase() + '">' + item.status + '</a></span>';
+          }
           // /Metadata
           appendString += '</div>';
         }
@@ -91,6 +103,8 @@
       this.field('tags');
       this.field('content');
       this.field('issuenumber');
+      this.field('environments');
+      this.field('status');
     
       for (var key in window.store) { // Add the data to lunr
         this.add({
@@ -100,7 +114,9 @@
           'tags': window.store[key].tags,
           'category': window.store[key].category,
           'content': window.store[key].content,
-          'issue-number': window.store[key].issuenumber
+          'issuenumber': window.store[key].issuenumber,
+          'environments': window.store[key].environments,
+          'status': window.store[key].status
         });
   
       }

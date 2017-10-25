@@ -24,6 +24,9 @@ function init() {
   // Add filter check box event listeners
   addEventListeners();
 
+  // Get URL parameters for filters
+  getParams();
+
   // Show/hide developments based on active filters
   showHideDevs();
 
@@ -35,6 +38,34 @@ function addEventListeners() {
   [].slice.call(document.body.querySelectorAll('.checkbox input[type="checkbox"]')).forEach(element => {
     element.addEventListener("change", toggleFilter, false);
   });
+}
+
+function getParams() {
+  let query = window.location.search.substring(1);
+  getFiltersFromQuery(query);
+}
+
+function getFiltersFromQuery(query) {
+  if (query.length > 0) {
+    query.split('&').forEach(filter => {
+      let key = filter.split('=')[0];
+      let values = filter.split('=')[1].split(',');
+      values = values.map(value => {
+        return decodeURIComponent(value);
+      });
+      let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"]').querySelectorAll('li');
+      [].slice.call(listItems).forEach(listItem => {
+        let checkbox = listItem.querySelector('input');
+        for (let i = 0; i < values.length; i++) {
+          if (values[i] === checkbox.dataset.filtervalue) {
+            checkbox.checked = true;
+            activeFilters[key].push(values[i]);
+            break;
+          }
+        }
+      });
+    });
+  }
 }
 
 function toggleFilter() {

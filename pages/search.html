@@ -48,7 +48,7 @@ title: Haku
         "title": "{{ app.title | xml_escape }}",
         "category": "Sovellukset",
         "traffictypes": [{% for traffictype in app.traffictypes %}"{{ traffictype }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
-        "tags": [{% for tag in app.environments %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+        "environments": [{% for tag in app.environments %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "content": {{ app.content | strip_html | jsonify }},
         "url": "{{ app.url | xml_escape }}"
       },
@@ -60,7 +60,7 @@ title: Haku
         "issuenumber": "{{ dev.issue-number }}",
         "category": "Kehityssuunnitelma",
         "traffictypes": [{% for traffictype in dev.traffictypes %}"{{ traffictype }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
-        "tags": [{% for tag in dev.status %}"{{ tag }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+        "status": "{{ dev.status }}",
         "content": {{ dev.content | strip_html | jsonify }},
         "url": "{{ dev.url | xml_escape }}"
       },
@@ -80,7 +80,6 @@ title: Haku
     {% unless forloop.last %},{% endunless %}
     {% endfor %}
   };
-  console.log(window.store);
 
   window.baseurl = "{{ site.baseurl }}";
 </script>
