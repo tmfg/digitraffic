@@ -8,14 +8,14 @@ a, a:hover, a:link, a:focus, a:visited, a:active {
   text-decoration: none;
 }
 
-a:any-link {
+a:any-link span {
   color: $base-font-color;
 }
 
-a:-webkit-any-link {
+a:-webkit-any-link span {
   color: $base-font-color;
 }
 
-a:-moz-any-link {
+a:-moz-any-link span {
   color: $base-font-color;
 }
