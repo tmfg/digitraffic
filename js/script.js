@@ -207,6 +207,7 @@ function openSearch() {
     },
     1
   );
+  document.body.querySelector("input.search-opened__input-field").focus();
 }
 
 // Close search
