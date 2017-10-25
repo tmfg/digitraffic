@@ -81,13 +81,23 @@
   }
 
   &__service-text {
+    color: $base-font-color;
 
     &--loading {
       color: $gray-200;
     }
   }
+}
 
-  a:hover .service-status__service-text span {
-    color: $gray-68;
-  }
+/* a:any-link text color fix */
+.service-status__column a:any-link span {
+  color: $base-font-color;
+}
+
+.service-status__column a:-webkit-any-link span{
+  color: $base-font-color;
+}
+
+.service-status__column a:-moz-any-link span {
+  color: $base-font-color;
 }
