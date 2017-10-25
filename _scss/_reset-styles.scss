@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, a:hover, a:link, a:focus, a:visited, a:active {
+  text-decoration: none;
+}
+
+a:any-link {
+  color: $base-font-color;
+}
+
+a:-webkit-any-link {
+  color: $base-font-color;
+}
+
+a:-moz-any-link {
+  color: $base-font-color;
+}

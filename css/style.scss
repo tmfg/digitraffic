@@ -1,13 +1,7 @@
 ---
 ---
-/* Reset margins and paddings */
-@import "reset-spacing";
-
 /* Flexboxgrid Sass */
 @import "flexboxgrid";
-
-/* Flexbox overrides */
-@import "flexbox-overrides";
 
 /* SCSS variables */
 @import
@@ -16,6 +10,12 @@
 
 /* Mixins */
 @import "mixins";
+
+/* Reset margins and paddings */
+@import "reset-styles";
+
+/* Flexbox overrides */
+@import "flexbox-overrides";
 
 /* HTML base styles */
 @import "html";

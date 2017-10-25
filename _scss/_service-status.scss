@@ -72,6 +72,12 @@
 
   &__service-heading {
     margin: $margin-xxxxs 0 0;
+    transition: $transition-fast;
+  }
+
+  &__link:hover .service-status__service-heading {
+    @extend .h-link:hover;
+    transition: $transition-moderate;
   }
 
   &__service-text {
@@ -81,5 +87,7 @@
     }
   }
 
-  
+  a:hover .service-status__service-text span {
+    color: $gray-68;
+  }
 }

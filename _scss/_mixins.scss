@@ -3,7 +3,7 @@
   font-size: $font-size;
   font-weight: 400;
   line-height: $base-line-height;
-  color: $gray-68;
+  color: $base-font-color;
 }
 
 @mixin heading($font-size: 3rem, $font-weight: 500, $color: $gray-68, $letter-spacing:$heading-letter-spacing) {
