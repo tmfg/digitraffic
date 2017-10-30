@@ -34,12 +34,8 @@
     cursor: pointer;
     transition: all .2s;
 
+    background-color: $gray-102;
     border-bottom: 1px solid rgba(#3b4151, .3);
-
-    &:hover
-    {
-        background: rgba(#000,.02);
-    }
 
     .markdown p {
       margin-bottom: 0;
@@ -48,22 +44,18 @@
 
 @mixin method($color)
 {
-    border-color: $color;
-    background: rgba($color, .1);
+    .opblock-summary {
+      background: $gray-241;
+    }
 
     .opblock-summary-method
     {
-        background: $color;
-    }
-
-    .opblock-summary
-    {
-        border-color: $color;
+      background: transparent;
     }
 
     .tab-header .tab-item.active h4 span:after
     {
-        background: $color;
+      background: $color;
     }
 }
 
@@ -72,11 +64,6 @@
 
 .opblock-tag
 {
-    font-size: 24px;
-
-    margin: 0 0 5px 0;
-
-    @include text_headline();
 
     &.no-desc
     {
@@ -89,19 +76,35 @@
     svg
     {
         transition: all .4s;
+        fill: $white;
     }
 
     small
     {
-        font-size: 14px;
-        font-weight: normal;
-
         flex: 1;
-
-        padding: 0 10px;
-
-        @include text_body();
     }
+}
+
+h4.opblock-tag {
+  @include heading(1.125rem, 600, $white, 0);
+  margin: $margin-xssm 0 0;
+  padding: $margin-xs;
+
+  @media screen and (max-width: $max-width-sm) {
+    @include mobile-font-size(1rem);
+  }
+
+  .markdown {
+    @include heading(1.125rem, 600, $white, 0);
+    padding-left: $margin-xs;
+  
+    @media screen and (max-width: $max-width-sm) {
+      @include mobile-font-size(1rem);
+    }
+  }
+
+  
+
 }
 
 .parameter__type
@@ -129,11 +132,7 @@
 
 .opblock
 {
-    margin: 0 0 15px 0;
-
-    border: 1px solid #000;
-    border-radius: 4px;
-    box-shadow: 0 0 3px rgba(#000,.19);
+    margin: 0;
 
     .tab-header
     {
@@ -159,7 +158,6 @@
                     {
                         position: relative;
 
-
                         &:after
                         {
                             position: absolute;
@@ -183,9 +181,12 @@
 
     &.is-open
     {
-        .opblock-summary
+      border: 1px solid $blue-dark;
+      
+      .opblock-summary
         {
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid $gray-200;
+            background-color: $gray-241;
         }
     }
 
@@ -194,12 +195,11 @@
         display: flex;
         align-items: center;
 
-        padding: 8px 20px;
+        padding: $margin-xs 20px;
 
         min-height: 50px;
 
-        background: rgba(#fff,.8);
-        box-shadow: 0 1px 2px rgba(#000,.1);
+        background: $gray-248;
 
         label
         {
@@ -222,48 +222,34 @@
 
         h4
         {
-            font-size: 14px;
+          @extend .h4;
 
-            flex: 1;
-
-            margin: 0;
-
-            @include text_headline();
+          flex: 1;
+          margin: 0;
         }
     }
 
     .opblock-summary-method
     {
-        font-size: 14px;
-        font-weight: bold;
-
         min-width: 80px;
-        padding: 6px 15px;
+        padding: $margin-xxs 0;
 
+        color: $blue-dark;
         text-align: center;
-
-        border-radius: 3px;
-        background: #000;
-        text-shadow: 0 1px 0 rgba(#000,.1);
-
-        @include text_headline(#fff);
+        font-weight: bold;
     }
 
     .opblock-summary-path,
     .opblock-summary-operation-id,
     .opblock-summary-path__deprecated
     {
-        font-size: 16px;
-
         display: flex;
         flex: 0 3 auto;
         align-items: center;
 
         word-break: break-all;
 
-        padding: 0 10px;
-
-        @include text_code();
+        padding: $margin-xxs $margin-xxs $margin-xxs 0;
 
         .view-line-link
         {
@@ -294,14 +280,17 @@
 
     .opblock-summary-operation-id
     {
-        font-size: 14px;
+        @extend .small;
     }
 
     .opblock-summary-description
     {
-        font-size: 13px;
+        @extend .small;
 
         flex: 1;
+        flex-basis: 100%;
+
+        padding: 0 $margin-xxs $margin-xs 80px;
 
         @include text_body();
     }
@@ -310,8 +299,7 @@
     {
         display: flex;
         align-items: center;
-
-        padding: 5px;
+        flex-wrap: wrap;
 
         cursor: pointer;
     }
@@ -469,7 +457,7 @@
 
 .execute-wrapper
 {
-    padding: 20px;
+    padding: 0 20px;
 
     text-align: right;
 
