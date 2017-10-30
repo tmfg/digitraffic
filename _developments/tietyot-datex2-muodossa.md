@@ -1,6 +1,6 @@
 ---
 title: Tietyöt datex2-muodossa
-issue-number: DPO-161
+issue-number: DPO-227
 traffictypes:
   - Tieliikenne
 status: toteutuksessa

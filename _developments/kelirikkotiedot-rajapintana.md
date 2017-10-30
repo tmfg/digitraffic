@@ -1,6 +1,6 @@
 ---
 title: Kelirikkotiedot rajapintana
-issue-number: DPO-164
+issue-number: DPO-337
 traffictypes:
   - Tieliikenne
 status: suunnitteilla
