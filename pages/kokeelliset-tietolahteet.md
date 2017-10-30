@@ -1,6 +1,8 @@
 ---
 layout: traffictype
 permalink: /kokeelliset-tietolahteet/
+section: Tietolähteet
+traffictypes: Kokeellinen
 searchable: true
 hero-image: escalator
 title: Kokeelliset tietolähteet

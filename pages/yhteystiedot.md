@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /yhteystiedot/
+section: Tuki
 searchable: true
 title: Yhteystiedot
 links:

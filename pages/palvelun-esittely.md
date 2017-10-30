@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /palvelun-esittely/
+section: Tietoa Palvelusta
 searchable: true
 title: Palvelun esittely
 links:

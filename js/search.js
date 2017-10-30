@@ -23,8 +23,19 @@
         appendString += '" class="posts-in-category__post-heading-link">' + item.title +'</a></h3>';
         
         //Metadata
-        if (item.category !== "Page") {
-          appendString += '<div class="date-type-tags">';
+        appendString += '<div class="date-type-tags">';
+        if (item.category === "Page") {
+          appendString += '<span class="date-type-tags__section';
+          if (item.traffictypes && item.traffictypes.length > 0) appendString += ' date-type-tags__section--has-traffictype';
+          appendString += '">' + item.section + '</span>';
+          if (item.traffictypes && item.traffictypes.length > 0) {
+            appendString += '<ul class="date-type-tags__type-list">';
+            item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type date-type-tags__type--no-preceding-data"><a class="link" href="' + window.baseurl + item.url + '">' + traffictype + '</a></li>'; });
+            appendString += '</ul>';
+          }
+
+        }
+        else {
           //Date
           if (item.category !== "Sovellukset" && item.category !== "Kehityssuunnitelma") {
             appendString += '<span class="date-type-tags__date"><i class="material-icons md-md date-type-tags__date-icon">';
@@ -57,9 +68,9 @@
           if (item.status && item.status.length > 0) {
             appendString += '<span class="date-type-tags__status"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?status=' + item.status.toLowerCase() + '">' + item.status + '</a></span>';
           }
-          // /Metadata
-          appendString += '</div>';
         }
+        // /Metadata
+        appendString += '</div>';
 
         appendString += '<div class="posts-in-category__excerpt">' + item.content.substring(0, 300);
         if (item.content.length >= 300) {
@@ -99,6 +110,7 @@
       this.field('id');
       this.field('title');
       this.field('category');
+      this.field('section');
       this.field('traffictypes');
       this.field('tags');
       this.field('content');
@@ -110,9 +122,10 @@
         this.add({
           'id': key,
           'title': window.store[key].title,
+          'category': window.store[key].category,
+          'section': window.store[key].section,
           'traffictypes': window.store[key].traffictypes,
           'tags': window.store[key].tags,
-          'category': window.store[key].category,
           'content': window.store[key].content,
           'issuenumber': window.store[key].issuenumber,
           'environments': window.store[key].environments,

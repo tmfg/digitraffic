@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /ilmoita-oma-sovellus/
+section: Tietoa Palvelusta
 searchable: true
 title: Ilmoita oma sovellus
 links:

@@ -7,6 +7,18 @@
     @extend .latest-item__timestamp;
   }
 
+  &__section {
+    display: inline;
+
+    &::after {
+      content: none;
+    }
+
+    &--has-traffictype::after {
+      @include separator();
+    }
+  }
+
   &__date-icon {
     color: $gray-200;
     margin-right: 0.375rem;
@@ -22,6 +34,10 @@
 
   &__type{
     @extend .latest-item__content-type;
+
+    &--no-preceding-data:last-child::after {
+      content: none !important;
+    }
   }
 
   &__tag-list {

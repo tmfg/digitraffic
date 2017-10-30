@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /kayttoehdot/
+section: Tietoa Palvelusta
 searchable: true
 title: Käyttöehdot
 links:

@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /tukikanavat/
+section: Tuki
 searchable: true
 title: Tukikanavat
 links:

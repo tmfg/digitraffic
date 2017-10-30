@@ -1,6 +1,8 @@
 ---
 layout: traffictype
 permalink: /meriliikenne/
+section: Tietolähteet
+traffictypes: Meriliikenne
 searchable: true
 swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 hero-image: icebreaker
