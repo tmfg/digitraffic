@@ -185,7 +185,6 @@ h4.opblock-tag {
       
       .opblock-summary
         {
-            border-bottom: 1px solid $gray-200;
             background-color: $gray-241;
         }
     }
@@ -195,28 +194,24 @@ h4.opblock-tag {
         display: flex;
         align-items: center;
 
-        padding: $margin-xs 20px;
+        padding: $margin-xssm;
 
         min-height: 50px;
 
         background: $gray-248;
+        border-top: 1px solid $gray-200;
 
         label
         {
-            font-size: 12px;
-            font-weight: bold;
-
             display: flex;
             align-items: center;
 
             margin: 0;
             margin-left: auto;
 
-            @include text_headline();
-
             span
             {
-                padding: 0 10px 0 0;
+                padding: 0 $margin-xs 0 0;
             }
         }
 
