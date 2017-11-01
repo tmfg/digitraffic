@@ -304,16 +304,12 @@ function closeLanguageQuick() {
 
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
-  var first = true;
   [].slice.call(document.body.querySelectorAll('.parallax')).forEach(element => {
     let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
     let windowCenter = window.innerHeight / 2;
     let diffFromCenter = elementCenter - windowCenter;
     let translateY = diffFromCenter / 15;
     element.style.transform = "translate(0, " + translateY + "px)";
-    
-    //if (first) console.log(diffFromCenter);
-    first = false;
   });
 }
 
