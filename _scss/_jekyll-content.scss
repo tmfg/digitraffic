@@ -18,19 +18,7 @@
   }
 
   code {
-    font-size: 0.875rem;
-    box-sizing: border-box;
-    display: inline-block;
-    font-family: $code-font-family;
-    width: 100%;
-    background-color: $gray-248;
-    box-shadow: inset 0 0 0.9rem rgba(0, 0, 0, 0.20);
-    padding: $margin-xs $margin-xssm;
-    overflow-x: auto;
-
-    @media screen and (max-width: $max-width-sm) {
-      @include mobile-font-size(0.75rem);
-    }
+    @include code();
   }
 
   img {

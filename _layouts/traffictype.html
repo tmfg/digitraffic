@@ -42,6 +42,10 @@ layout: compress
             <!--Text body-->
             <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
               {{ content }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
               {% if page.swagger-source.size > 0 %}{% include swagger-ui.html %}{% endif %}
             </div>
           </div>

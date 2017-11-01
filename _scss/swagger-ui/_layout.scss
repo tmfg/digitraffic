@@ -1,9 +1,9 @@
 .wrapper
 {
     width: 100%;
-    max-width: 1460px;
-    margin: 0 auto;
-    padding: 0 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .opblock-tag-section
@@ -109,10 +109,7 @@ h4.opblock-tag {
 
 .parameter__type
 {
-    font-size: 12px;
-
-    padding: 5px 0;
-
+    padding: $margin-xxs 0;
     @include text_code();
 }
 
@@ -268,6 +265,15 @@ h4.opblock-tag {
         }
     }
 
+    .opblock-summary-path a {
+      
+      &:hover {
+        text-decoration: underline;
+        color: inherit;
+        cursor: pointer;
+      }
+    }
+
     .opblock-summary-path__deprecated
     {
         text-decoration: line-through;
@@ -369,22 +375,18 @@ h4.opblock-tag {
 {
     display: flex;
 
-    margin: 20px 0 10px 0;
+    margin: 0 0 $margin-xs 0;
     padding: 0;
 
     list-style: none;
 
     li
     {
-        font-size: 12px;
-
         min-width: 100px;
         min-width: 90px;
         padding: 0;
 
-        cursor: pointer;
-
-        @include text_headline();
+        @extend .small;
 
         &:first-of-type
         {
@@ -394,22 +396,29 @@ h4.opblock-tag {
 
             &:after
             {
-                position: absolute;
-                top: 0;
-                right: 6px;
-
-                width: 1px;
-                height: 100%;
-
-                content: '';
-
-                background: rgba(#000,.2);
+                padding: 0 $margin-xxs;
+                color: $base-font-color;
+                content: '|';
             }
         }
 
-        &.active
+        .tablinks {
+          color: $blue-dark;
+          cursor: pointer;
+        
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &.active .tablinks
         {
-            font-weight: bold;
+            color: $base-font-color;
+            cursor: default;
+
+            &:hover {
+              text-decoration: none;
+            }
         }
     }
 }
@@ -485,30 +494,31 @@ h4.opblock-tag {
 
 .responses-inner
 {
-    padding: 20px;
+    padding: $margin-xssm;
 
     h5,
     h4
     {
-        font-size: 12px;
+        margin: $margin-xs 0 $margin-xxs 0;
 
-        margin: 10px 0 5px 0;
-
-        @include text_body();
+        @include body();
+        font-weight: bold;
     }
+}
+
+.col_header {
+  font-weight: bold;
 }
 
 .response-col_status
 {
-    font-size: 14px;
-
     @include text_body();
 
     .response-undocumented
     {
-        font-size: 11px;
+        @extend .small;
 
-        @include text_code(#999);
+        @include text_code($gray-153);
     }
 }
 
@@ -522,9 +532,9 @@ h4.opblock-tag {
 
     .response-undocumented
     {
-        font-size: 11px;
+      @extend .small;
 
-        @include text_code(#999);
+        @include text_code($gray-153);
     }
 }
 
@@ -532,18 +542,9 @@ h4.opblock-tag {
 {
     div.markdown, div.renderedMarkdown
     {
-        font-size: 12px;
-        font-style: italic;
-
         display: block;
 
         margin: 0;
-        padding: 10px;
-
-        border-radius: 4px;
-        background: #41444e;
-
-        @include text_code(#fff);
 
         p
         {
@@ -564,10 +565,9 @@ h4.opblock-tag {
 
 .opblock-body pre
 {
-    font-size: 12px;
+    @include code();
 
-    margin: 0;
-    padding: 10px;
+    margin-bottom: $margin-xs;
 
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -575,15 +575,7 @@ h4.opblock-tag {
     word-break: break-word;
     hyphens: auto;
 
-    border-radius: 4px;
-    background: #41444e;
-
     overflow-wrap: break-word;
-    @include text_code(#fff);
-    span
-    {
-        color: #fff !important;
-    }
 
     .headerline
     {

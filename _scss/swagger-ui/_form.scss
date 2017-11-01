@@ -51,16 +51,25 @@ input[type=email],
 input[type=file]
 {
     min-width: 100px;
-    margin: 5px 0;
-    padding: 8px 10px;
+    margin: $margin-xxs 0 0;
+    padding: 0 0 $margin-xxs;
 
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
+    border: none;
+    border-bottom: 1px solid $gray-153;
     background: #fff;
+
+    @include body();
+
+    outline: none;
 
     &.invalid
     {
         @include invalidFormElement();
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $blue-dark;
     }
 }
 
@@ -97,7 +106,7 @@ textarea
     font-size: 12px;
 
     width: 100%;
-    min-height: 280px;
+    min-height: 3rem;
     padding: 10px;
 
     border: none;
@@ -114,18 +123,8 @@ textarea
 
     &.curl
     {
-        font-size: 12px;
-
-        min-height: 100px;
-        margin: 0;
-        padding: 10px;
-
-        resize: none;
-
-        border-radius: 4px;
-        background: #41444e;
-
-        @include text_code(#fff);
+        @include code();
+        border-radius: 0;
     }
 }
 

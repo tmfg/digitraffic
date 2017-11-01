@@ -54,9 +54,8 @@
     &.execute
     {
         //animation: swagger-ui-pulse 2s infinite;
-
-        @extend .button;
-        margin: 0 0 $margin-xs;
+        color: $blue-dark;
+        border-color: $blue-dark;
     }
 
     &.try-out__btn {
@@ -67,10 +66,10 @@
         color: $red;
         border-color: $red;
       }
+    }
 
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
 }
 
@@ -101,7 +100,7 @@
 {
     display: flex;
 
-    padding: 30px;
+    padding: 0 $margin-xssm;
 
     .btn
     {
@@ -109,12 +108,12 @@
 
         &:first-child
         {
-            border-radius: 4px 0 0 4px;
+          margin-right: $margin-xxsxs;
         }
 
         &:last-child
         {
-            border-radius: 0 4px 4px 0;
+          margin-left: $margin-xxsxs;
         }
     }
 }
@@ -168,6 +167,10 @@
 
         fill: #777;
     }
+}
+
+.opblock-control__btn {
+  margin: 0 0 $margin-xssm;
 }
 
 

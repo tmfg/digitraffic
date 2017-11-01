@@ -1,9 +1,11 @@
 table
 {
     width: 100%;
-    padding: 0 10px;
+    padding: 0 $margin-xs;
 
     border-collapse: collapse;
+
+    border: none;
 
     &.model
     {
@@ -46,9 +48,11 @@ table
         {
             td
             {
-                padding: 10px 0 0 0;
+                padding: $margin-xxs 0 0 0;
 
                 vertical-align: top;
+
+                border-bottom: 1px solid $gray-200;
 
                 &:first-of-type
                 {
@@ -67,16 +71,13 @@ table
             th,
             td
             {
-                font-size: 12px;
                 font-weight: bold;
 
-                padding: 12px 0;
+                padding: $margin-xxs 0;
 
                 text-align: left;
 
-                border-bottom: 1px solid rgba(#3b4151, .2);
-
-                @include text_body();
+                border-bottom: 1px solid $gray-200;
             }
         }
     }
@@ -86,11 +87,7 @@ table
 {
     p
     {
-        font-size: 14px;
-
         margin: 0;
-
-        @include text_body();
     }
 
     input[type=text]
@@ -100,20 +97,16 @@ table
     }
 
     select {
-        border-width: 1px;
+        margin: $margin-xxs 0;
     }
 }
 
 .parameter__name
 {
-    font-size: 16px;
-    font-weight: normal;
-
-    @include text_headline();
 
     &.required
     {
-        font-weight: bold;
+        //font-weight: bold;
 
         &:after
         {
@@ -124,8 +117,6 @@ table
 
             padding: 5px;
 
-            content: 'required';
-
             color: rgba(#f00, .6);
         }
     }
@@ -133,24 +124,21 @@ table
 
 .parameter__in
 {
-    font-size: 12px;
     font-style: italic;
-
-    @include text_code(#888);
+    font-family: $code-font-family;
 }
 
 .parameter__deprecated
 {
-    font-size: 12px;
     font-style: italic;
-
-    @include text_code(#f00);
+    font-family: $code-font-family;
+    color: $red;
 }
 
 
 .table-container
 {
-    padding: 20px;
+    padding: $margin-xssm;
 
     table {
       margin: 0;
