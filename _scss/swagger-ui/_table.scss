@@ -15,17 +15,26 @@ table
             {
                 td
                 {
-                    padding: 0;
+                  padding: $margin-xs $margin-xssm;
+                  border-bottom: 1px solid $gray-200;
+                  vertical-align: top;
 
-                    vertical-align: top;
-
-                    &:first-of-type
-                    {
-                        width: 124px;
-                        padding: 0 0 0 2em;
-                    }
+                  &:first-of-type
+                  {
+                      width: 124px;
+                  }
                 }
             }
+        }
+
+        table.model {
+          border-style: solid;
+          border-color: $gray-200;
+          border-width: 0 1px 0 1px;
+        }
+
+        .model-title {
+          padding-left: 0;
         }
     }
 

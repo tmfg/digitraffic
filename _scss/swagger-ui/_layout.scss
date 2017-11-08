@@ -22,30 +22,24 @@
             // }
         }
     }
-}
 
-.opblock-tag
-{
-    display: flex;
-    align-items: center;
-
-    padding: 10px 20px 10px 10px;
-
-    cursor: pointer;
-    transition: all .2s;
-
-    background-color: $gray-102;
-    border-bottom: 1px solid rgba(#3b4151, .3);
-
-    .markdown p {
-      margin-bottom: 0;
+    &:first-child h4.opblock-tag {
+      margin-top: $margin-xssm;
     }
 }
 
 @mixin method($color)
 {
     .opblock-summary {
-      background: $gray-241;
+      background-color: $gray-241;
+
+      &:hover {
+        background-color: $gray-248;
+      }
+
+      &:active {
+        background-color: $white;
+      }
     }
 
     .opblock-summary-method
@@ -64,31 +58,52 @@
 
 .opblock-tag
 {
+  display: flex;
+  align-items: center;
 
-    &.no-desc
-    {
-        span
-        {
-            flex: 1;
-        }
-    }
+  padding: 10px 20px 10px 10px;
 
-    svg
-    {
-        transition: all .4s;
-        fill: $white;
-    }
+  cursor: pointer;
+  transition: all .2s;
 
-    small
-    {
-        flex: 1;
-    }
+  background-color: $gray-102;
+
+  &:hover {
+    background-color: $gray-119;
+  }
+
+  &:active {
+    background-color: $gray-136;
+  }
+
+  .markdown p {
+    margin-bottom: 0;
+  }
+
+  &.no-desc
+  {
+      span
+      {
+          flex: 1;
+      }
+  }
+
+  svg
+  {
+      transition: all .4s;
+      fill: $white;
+  }
+
+  small
+  {
+      flex: 1;
+  }
 }
 
 h4.opblock-tag {
   @include heading(1.125rem, 600, $white, 0);
-  margin: $margin-xssm 0 0;
-  padding: $margin-xs;
+  margin: $margin-md 0 0;
+  padding: $margin-xssm;
 
   @media screen and (max-width: $max-width-sm) {
     @include mobile-font-size(1rem);
@@ -519,6 +534,20 @@ h4.opblock-tag {
 
     .response {
       border-bottom: 1px solid $gray-200;
+    }
+
+    .model-title {
+      padding-left: 0;
+    }
+
+    table.model {
+      border-style: solid;
+      border-color: $gray-200;
+      border-width: 0 1px 0 1px;
+    }
+    
+    .model-box > span.model > span > .brace-close {
+      padding-left: 0;
     }
 }
 

@@ -1,7 +1,5 @@
 .model
 {
-    font-size: 12px;
-    font-weight: 300;
 
     .deprecated
     {
@@ -10,7 +8,8 @@
       }
     }
 
-    @include text_code();
+    @extend .small;
+
     &-toggle
     {
         font-size: 10px;
@@ -95,49 +94,57 @@
 
 section.models
 {
-    margin: 30px 0;
-
-    border: 1px solid rgba(#3b4151, .3);
-    border-radius: 4px;
+    margin: $margin-md 0;
 
     &.is-open
     {
         padding: 0 0 20px;
         h4
         {
-            margin: 0 0 5px 0;
-            border-bottom: 1px solid rgba(#3b4151, .3);
+
         }
     }
     h4
     {
-        font-size: 16px;
+      @include heading(1.125rem, 600, $white, 0);
+      margin: $margin-md 0 0;
+      padding: $margin-xssm;
+    
+      @media screen and (max-width: $max-width-sm) {
+        @include mobile-font-size(1rem);
+      }
 
-        display: flex;
+      display: flex;
+      align-items: center;
+  
+      cursor: pointer;
+      transition: all .2s;
+  
+      background-color: $gray-102;
+  
+      .markdown p {
+        margin-bottom: 0;
+      }
 
-        margin: 0;
-        padding: 10px 20px 10px 10px;
+      svg
+      {
+          transition: all .4s;
+          fill: $white;
+      }
 
-        cursor: pointer;
-        transition: all .2s;
+      span
+      {
+          flex: 1;
+      }
 
-        @include text_headline(#777);
-        align-items: center;
+      &:hover
+      {
+        background-color: $gray-119;
+      }
 
-        svg
-        {
-            transition: all .4s;
-        }
-
-        span
-        {
-            flex: 1;
-        }
-
-        &:hover
-        {
-            background: rgba(#000,.02);
-        }
+      &:active {
+        background-color: $gray-136;
+      }
     }
 
     h5
@@ -157,26 +164,26 @@ section.models
 
     .model-container
     {
-        margin: 0 20px 15px;
+        margin: 0;
+        border-style: solid;
+        border-color: $gray-200;
+        border-width: 0 1px 1px 1px;
 
         transition: all .5s;
 
-        border-radius: 4px;
-        background: rgba(#000,.05);
-
         &:hover
         {
-            background: rgba(#000,.07);
+
         }
 
         &:first-of-type
         {
-            margin: 20px;
+            margin: 0;
         }
 
         &:last-of-type
         {
-            margin: 0 20px;
+            margin: 0;
         }
     }
 
@@ -190,10 +197,7 @@ section.models
 
 .model-box
 {
-    padding: 10px;
-
-    border-radius: 4px;
-    background: rgba(#000,.1);
+    padding: 0;
 
     .model-jump-to-path
     {
@@ -210,9 +214,10 @@ section.models
 
 .model-title
 {
-    font-size: 16px;
-
-    @include text_headline(#555);
+    @extend .h4;
+    display: inline-block;
+    margin: 0;
+    padding: $margin-xs $margin-xs $margin-xs $margin-xssm;
 }
 
 .model-deprecated-warning
@@ -226,13 +231,19 @@ section.models
 
 span
 {
-    > span.model
+    > span.model > span
     {
-        .brace-close
+        > .brace-close
         {
-            padding: 0 0 0 10px;
+          display: inline-block;
+          padding: $margin-xxs 0;
         }
     }
+}
+
+.model-box > span.model > span > .brace-close {
+  display: inline-block;
+  padding: $margin-xxs $margin-xxs $margin-xssm $margin-xssm;
 }
 
 .prop-name
@@ -244,7 +255,7 @@ span
 
 .prop-type
 {
-    color: #55a;
+    font-weight: bold;
 }
 
 .prop-enum
