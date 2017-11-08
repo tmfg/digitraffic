@@ -461,7 +461,9 @@ h4.opblock-tag {
 
 .execute-wrapper
 {
-    padding: 0 20px;
+    padding: 0 $margin-xssm;
+    margin-bottom: -1px;
+    border-top: 1px solid $gray-200;
 
     text-align: right;
 
@@ -494,15 +496,29 @@ h4.opblock-tag {
 
 .responses-inner
 {
-    padding: $margin-xssm;
+    padding: 0;
 
-    h5,
+    h5 {
+      margin: 0 0 $margin-xxs;
+      
+      @include body();
+      font-weight: bold;
+    }
+
     h4
     {
-        margin: $margin-xs 0 $margin-xxs 0;
+        margin: $margin-xs $margin-xssm $margin-xxs;
 
         @include body();
         font-weight: bold;
+    }
+
+    .copy-paste, .request-url {
+      margin: 0 $margin-xssm;
+    }
+
+    .response {
+      border-bottom: 1px solid $gray-200;
     }
 }
 

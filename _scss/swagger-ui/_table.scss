@@ -48,17 +48,21 @@ table
         {
             td
             {
-                padding: $margin-xxs 0 0 0;
+                padding: $margin-xs $margin-xssm;
 
                 vertical-align: top;
 
-                border-bottom: 1px solid $gray-200;
+                border-top: 1px solid $gray-200;
+                border-left: 1px solid $gray-200;
+
+                &:first-child {
+                  border-left: none;
+                }
 
                 &:first-of-type
                 {
                     max-width: 20%;
                     min-width: 6em;
-                    padding: 10px 0;
                 }
             }
         }
@@ -73,11 +77,16 @@ table
             {
                 font-weight: bold;
 
-                padding: $margin-xxs 0;
+                padding: $margin-xs $margin-xssm;
 
                 text-align: left;
 
-                border-bottom: 1px solid $gray-200;
+                border-top: 1px solid $gray-200;
+                border-left: 1px solid $gray-200;
+
+                &:first-child {
+                  border-left: none;
+                }
             }
         }
     }
@@ -138,8 +147,6 @@ table
 
 .table-container
 {
-    padding: $margin-xssm;
-
     table {
       margin: 0;
     }

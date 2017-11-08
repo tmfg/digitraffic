@@ -101,6 +101,7 @@
     display: flex;
 
     padding: 0 $margin-xssm;
+    border-top: 1px solid $gray-200;
 
     .btn
     {
@@ -170,7 +171,7 @@
 }
 
 .opblock-control__btn {
-  margin: 0 0 $margin-xssm;
+  margin: $margin-xssm 0;
 }
 
 
