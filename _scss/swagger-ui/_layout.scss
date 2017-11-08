@@ -512,6 +512,8 @@ h4.opblock-tag {
 .responses-inner
 {
     padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
     h5 {
       margin: 0 0 $margin-xxs;

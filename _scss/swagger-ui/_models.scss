@@ -209,6 +209,10 @@ section.models
     {
       opacity: .5;
     }
+
+    td > span.model > span > span + span + span:not(.model-title):not(.model-title__text) {
+      padding-right: $margin-xs;
+    }
 }
 
 
@@ -239,6 +243,11 @@ span
           padding: $margin-xxs 0;
         }
     }
+}
+
+td > span.model > span > .brace-close {
+  display: inline-block;
+  padding: $margin-xxs 0;
 }
 
 .model-box > span.model > span > .brace-close {
