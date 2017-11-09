@@ -37,11 +37,11 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#K
 # Sisältö
 - [Yleistä](#Yleistä)
     - [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
-    - [Suunnittellut ominaisuudet](#Suunnittellut ominaisuudet)
-    - [Toteutut ominaisuudet](#Toteutut ominaisuudet)
-    - [HTTPS](#HTTPS)
-    - [Dataa tukevat rajapinnat](#Dataa tukevat rajapinnat)
-- [Rajapinnat](#Rajapinnat)
+    - [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
+    - [Toteutut ominaisuudet](#toteutut-ominaisuudet)
+    - [HTTPS](#https)
+    - [Dataa tukevat rajapinnat](#dataa-tukevat-rajapinnat)
+- [Rajapinnat](#rajapinnat)
     - [Junien tiedot (/trains)](#Junien tiedot (/trains))
         - [Yhden junan tiedot](#Yhden junan tiedot)
         - [Päivän junien tiedot](#Päivän junien tiedot)
@@ -182,7 +182,7 @@ Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [http://rat
 
 Rajapinnan käytössä on yhtäaikaiseen käyttöön liittyviä rajoituksia. Yhdestä ip-osoitteesta voi olla maksimissaan kaksi yhtäaikaista yhteyttä ja tehdä viisi pyyntöä sekunnissa. Rajoituksen ylittyessä palvelu viivästyttää pyyntöjä tai antaa HTTP 429 -virheen. Palvelun tilaa voi seurata osoitteessa [http://uptime.statuscake.com/?TestID=KIvdE8ZaAe](http://uptime.statuscake.com/?TestID=KIvdE8ZaAe).
 
-## Junien tiedot
+## Junien tiedot (/trains)
 
 Tämän rajapinnan kautta voidaan kysyä junien tietoja. Erilaisia tapoja kysyä junien tietoja ovat: junanumero, lähtöpäivämäärä, asema ja versio.
 
