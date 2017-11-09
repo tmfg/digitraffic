@@ -36,7 +36,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#K
 
 # Sisältö
 - [Yleistä](#Yleistä)
-    - [Palvelun kehittäjäyhteisö](#palvelun-kehittajayhteiso)
+    - [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
     - [Suunnittellut ominaisuudet](#Suunnittellut ominaisuudet)
     - [Toteutut ominaisuudet](#Toteutut ominaisuudet)
     - [HTTPS](#HTTPS)
