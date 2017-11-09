@@ -1,19 +1,3 @@
----
-layout: traffictype
-permalink: /rautatieliikenne/
-section: Tietolähteet
-traffictypes: Rautatieliikenne
-searchable: true
-swagger-source: https://rata.digitraffic.fi/swagger/swagger.json
-hero-image: rail
-title: Rautatieliikenne tietolähteet
-intro: Rautatieliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
-links:
-  - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
-  - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
-  - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
----
-
 # RATA.DIGITRAFFIC.FI
 
 Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Liikennevirasto ja tietolähteenä toimii Liikenneviraston ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset sekä matkustajainformaatiojärjestelmä MIKU.
