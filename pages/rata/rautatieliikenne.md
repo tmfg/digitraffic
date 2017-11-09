@@ -415,3 +415,361 @@ Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parame
 **Paluuarvo**
 
 Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+
+### Kohta lähtevien tai saapuvien junien seuranta
+
+URL: `/live-trains?version=<version>`
+
+Esimerkkejä:
+- [/live-trains?version=12345671234567](../live-trains?version=12345671234567)
+- [/live-trains](../live-trains)
+
+**Kuvaus**
+
+Palauttaa kaikkien lähiaikoina kulussa olevien junien tiedot.
+
+Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suunniteltu, ennuste tai toteuma reitin jollain liikennepaikalla) hetkestä on kulunut alle 4 tuntia nykyhetkeen verrattuna.
+
+**Hakuehdot**
+
+
+ 
+|  | Nimi | Formaatti | Esimerkki | Selitys
+  |---|---|---|--- |--- 
+![alt text](images\required.png) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+![alt text](images\required.png) Pakollinen ![alt text](images\optional.png) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+
+## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
+
+Liikennepaikkakohtaisten toteumien ja ennusteiden lisäksi junaa voidaan seurata ja paikantaa raideosuustarkkuudella kulkutietoviestien avulla
+
+Kun juna saapuu raideosuudelle, aktivoituu raideosuuden anturi ja raideosuus varautuu kyseiselle junalle. Varatumisesta muodostuu "OCCUPY"-tyyppinen kulkutietoviesti. Junan poistuessa raideosuudelta syntyy puolestaan "RELEASE"-tyyppinen kulkutietoviesti. Kulkutietoviestit kertovat siis mitä raideosuuksia juna on varannut itselleen kuljettavaksi.
+
+Kulkutietoviestejä voi seurata kahdella tapaa. Perinteisellä REST-rajapinalla (eli kuten esimerkiksi "live-trains"-liittymää) tai WebSocketeilla (STOMP-protokolla, versiot 1.0 - 1.2).
+
+Kulkutietoviestejä kertyy päivittäin yli 300 000. On siis hyvä miettiä halutaanko hyödyntää kulkutietoviestejä vai luvussa 1.1 kuvattuja liikennepaikkakohtaisia toteumia ja ennusteita.
+
+![warning](images/warn.png) Datan laatu ei ole aina optimaalista. Tunnettuja välillä esiintyviä vikoja:
+
+* Seuraavan ja edellisen aseman/raideosuuden puuttuvat
+* Junan lähtöpäivämäärä tyhjä
+* Viestejä esiintyy tuplana (samat tiedot, eri id)
+
+Kulkutietoviestit välitetään avoimen datan rajapintaan käytännössä sellaisena kuin ne saadaan kauko-ohjausjärjestelmistä. Virheellisiä viestejä lähettäviä kauko-ohjausjärjestelmiä pyritään korjaamaan jatkuvasti palautteen avulla.
+
+### Kaikkien junien seuranta
+
+URL: `/train-tracking?version=<version>`
+
+Esimerkiksi: [/train-tracking?version=65403053026](../train-tracking?version=65403053026)
+
+**Kuvaus**
+
+Palauttaa kaikki kulkutietoviestit, joiden versionumero on suurempi kuin parametrina annettuna versio.
+
+Maksimissaan palautetaan 2500 kulkutietoviestiä.
+
+**Hakuehdot**
+
+|  | Nimi | Formaatti | Esimerkki | Selitys
+  |---|---|---|--- |--- 
+![alt text](images\required.png) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan.
+![alt text](images\required.png) Pakollinen ![alt text](images\optional.png) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+
+### Yhden junan seuranta
+
+URL: `/train-tracking/<departure_date>/<train_number>?version=<version>`
+
+Esimerkki: [/train-tracking/2017-01-01/1?version=1000](../train-tracking/2017-01-01/1?version=1000)
+
+**Kuvaus**
+
+Palauttaa halutun yhden junan kulkutietoviestit.
+
+![warning](images/warn.png) Kyselyyn otetaan mukaan myös kulkutietoviestit, joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa palautua "eilisen" kulkutietoviestejä.
+
+**Hakuehdot**
+
+| | Nimi | Formaatti | Esimerkki | Selitys
+|---|---|---|--- |--- 
+![alt text](images\required.png) | train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+![alt text](images\required.png) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
+![alt text](images\optional.png)  | version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos. Jos tyhjä, ei tehdä versiorajoitusta.
+![alt text](images\required.png) Pakollinen ![alt text](images\optional.png) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+
+###Liikennepaikan seuranta
+
+URL: `/train-tracking/station/<station>/<departure_date>`
+
+Esimerkki: [/train-tracking/station/JY/2017-08-01](../train-tracking/station/JY/2017-08-01)
+
+**Kuvaus**
+
+Palauttaa liikennepaikan kulkutietoviestit.
+
+![warning](images/warn.png) Kyselyyn otetaan mukaan myös kulkutietoviestit, joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa palautua "eilisen" kulkutietoviestejä.
+
+**Hakuehdot**
+
+| | Nimi | Formaatti | Esimerkki | Selitys
+|---|---|---|--- |--- 
+![alt text](images\required.png)  | station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät täältä
+![alt text](images\required.png)  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
+![alt text](images\required.png) Pakollinen ![alt text](images\optional.png) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+
+### Raideosuuden seuranta
+
+URL: `/train-tracking/station/<station>/<departure_date>/<track_section>`
+
+Esimerkkejä:
+- [/train-tracking/station/PSL/2017-01-01/293](../train-tracking/station/PSL/2017-01-01/293)
+- [/train-tracking/station/PSL/latest/293](../train-tracking/station/PSL/latest/293)
+- [/train-tracking/station/PSL/latest/293?limit=150](../train-tracking/station/PSL/latest/293?limit=150)
+
+**Kuvaus**
+
+Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
+
+![warning](images/warn.png) Kyselyyn otetaan mukaan myös kulkutietoviestit, joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa palautua "eilisen" kulkutietoviestejä.
+
+**Hakuehdot**
+
+|  | Nimi | Formaatti | Esimerkki | Selitys
+|---|---|---|--- |--- 
+ ![alt text](images\required.png)| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät täältä
+ ![alt text](images\required.png)| track_section | string | "001" | Liikennepaikan raideosuuden lyhenne. Lyhennekoodit löytyvät täältä
+ ![alt text](images\required.png)| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä.
+ ![alt text](images\optional.png) | limit | positive integer | 100 | Kuinka monta uusinta kulkutietoviestiä kyselyssä palautetaan. Maksimiarvo 1000. Tämä rajaus poissulkee departure_date-rajauksen. Jos departure_date- tai limit-rajoitusta ei anneta, käytetään limit-rajoitusta.
+![alt text](images\required.png) Pakollinen ![alt text](images\optional.png) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+
+### Kaikkien junien seuranta (WebSocket)
+
+Esimerkki: [esimerkki](examples/websocket-train-running-message-all.html)
+
+**Kuvaus**
+
+Websockettiin pistetään kaikkien junien kulkutietoviestit.
+
+**Paluuarvo**
+
+Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisiä vastauksia.
+
+### Yhden junan seuranta (WebSocket)
+
+Esimerkkejä:
+- [esimerkki 1](examples/websocket-train-running-message-specific-train-without-departure-date.html)
+- [esimerkki 2](examples/websocket-train-running-message-specific-train.html)
+
+**Kuvaus**
+
+WebSockettiin pistetään yhden tietyn junan kulkutietoviestit. Jos departure_date jätetään tyhjäksi, ei tehdä departure_date-rajoitusta.
+
+**Paluuarvo**
+
+Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisiä vastauksia.
+
+## Kokoonpanotiedot
+
+Kokoonpanotietoja tulee junille 0-5 tuntia ennen junan lähtö tai pysähdystä, jossa kokoonpano muuttuu.
+
+![warning](images/warn.png) Moottorivaunut (esimerkiksi tyypit Sm3, Sm4, Sm5) on yleisesti ilmoitettu kokoonpanoissa vaunuina.
+
+### Junan kokoonpanohaku
+
+URL: `/compositions/<departure_date>/<train_number>`
+
+Esimerkki: [/compositions/2017-01-01/1](../compositions/2017-01-01/1)
+
+**Kuvaus**
+
+Palauttaa yksittäisen junan kokoonpanotiedot tiettynä päivämääränä.
+
+**Hakuehdot**
+
+ | |Nimi|Formaatti|Selitys|
+|---|---|---|--- 
+ ![alt text](images\required.png) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+ ![alt text](images\required.png) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
+![alt text](images\required.png) Pakollinen ![alt text](images\optional.png) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kokoonpanot](#Kokoonpanot)-tyyppisen vastauksen.
+
+### Junien kokoonpanohaku
+
+URL: `/compositions/<departure_date>`
+
+Esimerkki: [/compositions/2017-01-01](../compositions/2017-01-01)
+
+**Kuvaus**
+
+Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
+
+**Hakuehdot**
+
+| |Nimi|Formaatti|Esimerkki
+|---|---|---|--- 
+ ![alt text](images\required.png)|departure_date|date(yyyy-mm-dd)|2017-01-01
+
+**Paluuarvo**
+
+Palauttaa [Kokoonpanot](#Kokoonpanot)-tyyppisen vastauksen.
+
+## Metatiedot
+
+Palvelun metatietojen hakurajapinta.
+
+### Liikennepaikkatiedot
+
+URL: [metadata/stations](../metadata/stations)
+
+**Kuvaus**
+
+Palauttaa palvelun liikennepaikkojen tiedot. Tiedot päivittyvät lähdejärjestelmästä päivittäin n. klo 1:00.
+
+**Paluuarvo**
+
+Palauttaa [Liikennepaikat](#Liikennepaikat)-tyyppisen vastauksen.
+
+### Operaattoritiedot
+
+URL: [metadata/operators](../metadata/operators)
+
+**Kuvaus**
+
+Palauttaa palvelun operaattoreiden tiedot. Tiedot päivittyvät lähdejärjestelmästä päivittäin n. klo 1:00.
+
+**Paluuarvo**
+
+Palauttaa [Operaattorit](#Operaattorit)-tyyppisen vastauksen.
+
+### Syyluokat
+
+URL: [metadata/cause-category-codes](..metadata/cause-category-codes)
+
+**Kuvaus**
+
+Palauttaa listan palvelussa aktiivisesti käytössä olevista syyluokista. Syyluokat ovat yleisiä kategorioita syytiedoille. Kaikki syyluokat julkaistaan AvoinData-palvelun kautta. Jos haluat listaukseen mukaan käytöstä poistuneet tai käyttöön lisättävät syyluokat, lisää osoitteeseen parametri `show_inactive=true`.
+
+**Paluuarvo**
+
+Palauttaa Palauttaa [Syyluokat](#Syyluokat)-tyyppisen vastauksen.-tyyppisen vastauksen.
+
+### Syykoodit
+
+URL: [metadata/detailed-cause-category-codes](..metadata/detailed-cause-category-codes)
+
+**Kuvaus**
+
+Palauttaa listan palvelussa käytössä olevista syykoodeista. Jokainen syyluokka on jaettu syykoodeihin eli syykoodi on syyluokan alempi taso. Kaikkia syykoodeja ei julkaista. Jos haluat listaukseen mukaan käytöstä poistuneet tai käyttöön lisättävät syykoodit, lisää osoitteeseen parametri `show_inactive=true`.
+
+**Paluuarvo**
+
+Palauttaa [Syykoodit](#Syykoodit)-tyyppisen vastauksen.
+
+### Kolmannen tason syykoodit
+
+URL: [metadata /third-cause-category-codes](..metadata/third-cause-category-codes)
+
+**Kuvaus**
+
+Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. Kolmannen tason syykoodi on syykoodin alempi taso. Kaikkia kolmannen tason syykoodeja ei julkaista. Jos haluat listaukseen mukaan käytöstä poistuneet tai käyttöön lisättävät kolmannen tason syykoodit, lisää osoitteeseen parametri `show_inactive=true`.
+
+**Paluuarvo**
+
+Palauttaa [Kolmannen tason syykoodit](#Kolmannen tason syykoodit)-tyyppisen vastauksen.
+
+### Junatyypit
+
+URL: [metadata/train-types](..metadata/train-types)
+
+**Kuvaus**
+
+Palauttaa listan palvelussa käytössä olevista junatyypeista (esim. IC, P, P). Jokaisella junatyypillä on yläkäsitteenä junalaji (esim. lähijuna, kaukojuna, tavarajuna).
+
+**Paluuarvo**
+
+Palauttaa [Junatyypit](#Junatyypit)-tyyppisen vastauksen.
+
+### Raideosuudet
+
+URL: [metadata/track-sections](..metadata/track-sections)
+
+**Kuvaus**
+
+Palauttaa listan raideosuuksista. Raideosuus on pienin osuus raiteesta, jonka yksittäinen juna voi varata käyttöönsä ja näin muodostaa turvallisen kulkureitin. Raideosuudella voi siis sijaita maksimissaan yksi juna.
+
+Lista ei kata kaikkia kulkutietoviesteissä esiintyviä raideosuuksia. Datan laatua pyritään parantamaan.
+
+**Paluuarvo**
+
+Palauttaa [Raideosuudet](#Raideosuudet)-tyyppisen vastauksen.
+
+### Herätepisteet
+
+URL: [metadata/train-running-message-rules](..metadata/train-running-message-rules)
+
+**Kuvaus**
+
+Herätepiste kuvaa miten kulkutietoviesti muunnetaan aikataulurivin toteumaksi taustajärjestelmässä.
+
+Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määriteltyä liikennepaikkaa, raideosuutta, varautumisen tyyppiä ja seuraavaa liikennepaikkaa, haetaan kulkutietoviestissä määritellyn junan aikataulurivi, joka vastaa herätepisteessä määritelty liikennepaikkaa ja aikataulurivityyppiä. Aikatauluriville kirjataan toteuma, joka on kulkutietoviestin aikaleima lisättynä offset-arvolla.
+
+**Paluuarvo**
+
+Palauttaa [Herätepisteet](#Herätepisteet)-tyyppisen vastauksen.
+
+## Versionumeroiden käyttö
+
+Useissa rajapinnan pyynnöissä parametrina on mukana `version`, joka rajaa vastauksesta pois junat, jotka eivät ole päivittyneet sitten `version` määrittelemän versionumeron.
+
+Esimerkiksi kysely [/live-trains/station/HKI?arrived_trains=5](..//live-trains/station/HKI?arrived_trains=5) saattaisi palauttaa seuraavan vastauksen:
+
+```
+[
+   {
+      "trainNumber":44,
+      "departureDate":"2017-01-01",
+      "operatorUICCode":10,
+      "operatorShortCode":"vr",
+      "trainType":"S",
+      "trainCategory":"Long-distance",
+      "runningCurrently":true,
+      "cancelled":false,
+      "version":3657782905,
+      "timeTableRows":...
+```      
+Jos kyselyyn lisättäisiin versionumero [/live-trains/station/HKI?arrived_trains=5&version=3657782905](../live-trains/station/HKI?arrived_trains=5&version=3657782905), ei junaa 44 palautettaisi vastauksessa ennenkuin se on muuttunut.
+
+Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettävä sitä seuraavassa kyselyssä parametrina.
+
+## Käyttöehdot
+
+Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/).
+
+Digitraffic, jonka tekijä on [Liikennevirasto](http://www.liikennevirasto.fi/), on lisensoitu [Creative Commons Nimeä 4.0 Kansainvälinen](http://creativecommons.org/licenses/by/4.0/)-lisenssillä.
+
+ ![Creative Commons -lisenssi](images\cc4.png)
+
+Tämän lisenssin antamia oikeuksia laajempia lupia voi olla saatavilla osoitteessa [http://www.liikennevirasto.fi](http://www.liikennevirasto.fi).
