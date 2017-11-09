@@ -32,62 +32,62 @@ Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraa
 
 Saatavilla on myös [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/index.html)
 
-Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#Kayttoehdot).
+Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#käyttoehdot).
 
 # Sisältö
-- [Yleistä](#Yleistä)
+- [Yleistä](#yleistä)
     - [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
     - [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
     - [Toteutut ominaisuudet](#toteutut-ominaisuudet)
     - [HTTPS](#https)
     - [Dataa tukevat rajapinnat](#dataa-tukevat-rajapinnat)
 - [Rajapinnat](#rajapinnat)
-    - [Junien tiedot (/trains)](#Junien tiedot (/trains))
-        - [Yhden junan tiedot](#Yhden junan tiedot)
-        - [Päivän junien tiedot](#Päivän junien tiedot)
-        - [Kaikkien junien seuranta](#Kaikkien junien seuranta)
-        - [Kaikkien junien seuranta (WebSocket)](#Kaikkien junien seuranta (WebSocket))
-        - [Liikennepaikan seuranta (WebSocket)](#Liikennepaikan seuranta (WebSocket))
-        - [Yhden junan seuranta (WebSocket)](#Yhden junan seuranta (WebSocket))
-        - [GTFS](#GTFS)
-    - [Aktiivisten junien seuranta (/live-trains)](#Aktiivisten junien seuranta (/live-trains))
-        - [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus))
-        - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus))
-        - [Reittiperusteinen haku](#Reittiperusteinen haku)
-        - [Kohta lähtevien tai saapuvien junien seuranta](#Kohta lähtevien tai saapuvien junien seuranta)
-    - [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#Tarkempi seuranta kulkutietoviestien avulla (/train-tracking))
-        - [Kaikkien junien seuranta](#Kaikkien junien seuranta)
-        - [Yhden junan seuranta](#Yhden junan seuranta)
-        - [Liikennepaikan seuranta](#Liikennepaikan seuranta)
-        - [Raideosuuden seuranta](#Raideosuuden seuranta)
-        - [Kaikkien junien seuranta (WebSocket)](#Kaikkien junien seuranta (WebSocket))
-        - [Yhden junan seuranta (WebSocket)](#Yhden junan seuranta (WebSocket))
-    - [Kokoonpanotiedot (/compositions)](#Kokoonpanotiedot (/compositions))
-        - [Junan kokoonpanohaku](#Junan kokoonpanohaku)
-        - [Junien kokoonpanohaku](#Junien kokoonpanohaku)
-    - [Metatiedot (/metadata)](#Metatiedot (/metadata))
-        - [Liikennepaikkatiedot](#Liikennepaikkatiedot)
-        - [Operaattoritiedot](#Operaattoritiedot)
-        - [Syyluokat](#Syyluokat)
-        - [Syykoodit](#Syykoodit)
-        - [Kolmannen tason syykoodit](#Kolmannen tason syykoodit)
-        - [Junatyypit](#Junatyypit)
-        - [Raideosuudet](#Raideosuudet)
-        - [Herätepisteet](#Herätepisteet)        
-- [Vastaustyypit](#Vastaustyypit)
-    - [Junat](#Junat)
-    - [Kokoonpanot](#Kokoonpanot)
-    - [Kulkutietoviestit](#Kulkutietoviestit)
-    - [Liikennepaikat](#Liikennepaikat)
-    - [Operaattorit](#Operaattorit)
-    - [Syyluokat](#Syyluokat)
-    - [Syykoodit](#Syykoodit)
-    - [Kolmannen tason syykoodit](#Kolmannen tason syykoodit)
-    - [Junatyypit](#Junatyypit)
-    - [Raideosuudet](#Raideosuudet)
-    - [Herätepisteet](#Herätepisteet)
-- [Versionumeroiden käyttö](#Versionumeroiden käyttö)
-- [Käyttöehdot](#Käyttöehdot)
+    - [Junien tiedot (/trains)](#junien-tiedot-trains)
+        - [Yhden junan tiedot](#yhden-junan-tiedot)
+        - [Päivän junien tiedot](#päivän-junan-tiedot)
+        - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
+        - [Kaikkien junien seuranta (WebSocket)](#kaikkien-junien-seuranta-websocket)
+        - [Liikennepaikan seuranta (WebSocket)](#liikennepaikan-seuranta-websocket)
+        - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
+        - [GTFS](#gtfs)
+    - [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
+        - [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-lukumäärärajoitus)
+        - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
+        - [Reittiperusteinen haku](#reittiperusteinen-haku)
+        - [Kohta lähtevien tai saapuvien junien seuranta](#kohta-lähtevien-tai-saapuvien-junien-seuranta)
+    - [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
+        - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
+        - [Yhden junan seuranta](#yhden-junan-seuranta)
+        - [Liikennepaikan seuranta](#liikennepaikan-seuranta)
+        - [Raideosuuden seuranta](#raideosuuden-seuranta)
+        - [Kaikkien junien seuranta (WebSocket)](#kaikkien-junien-seuranta-websocket)
+        - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
+    - [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
+        - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
+        - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
+    - [Metatiedot (/metadata)](#metatiedot-metadata)
+        - [Liikennepaikkatiedot](lLiikennepaikkatiedot)
+        - [Operaattoritiedot](#operaattoritiedot)
+        - [Syyluokat](#syyluokat)
+        - [Syykoodit](#syykoodit)
+        - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
+        - [Junatyypit](#junatyypit)
+        - [Raideosuudet](#raideosuudet)
+        - [Herätepisteet](#herätepisteet)        
+- [Vastaustyypit](#vastaustyypit)
+    - [Junat](#junat)
+    - [Kokoonpanot](#kokoonpanot)
+    - [Kulkutietoviestit](#kulkutietoviestit)
+    - [Liikennepaikat](#liikennepaikat)
+    - [Operaattorit](#operaattorit)
+    - [Syyluokat](#syyluokat)
+    - [Syykoodit](#syykoodit)
+    - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
+    - [Junatyypit](#junatyypit)
+    - [Raideosuudet](#raideosuudet)
+    - [Herätepisteet](#herätepisteet)
+- [Versionumeroiden käyttö](#versionumeroiden-käyttö)
+- [Käyttöehdot](#käyttöehdot)
 
 # Yleistä
 
@@ -234,7 +234,7 @@ Palauttaa yhden junan tiedot
  
  **Paluuarvo**
  
- Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+ Palauttaa [junat](#junat)-tyyppisen vastauksen.
  
  ### Kaikkien junien seuranta
  
@@ -255,7 +255,7 @@ Palauttaa yhden junan tiedot
  
  **Paluuarvo**
  
- Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+ Palauttaa [junat](#junat)-tyyppisen vastauksen.
  
  ### Kaikkien junien seuranta (WebSocket)
  
@@ -267,7 +267,7 @@ Palauttaa yhden junan tiedot
  
  **Paluuarvo**
  
- Palauttaa [junat](#Junat)-tyyppisiä vastauksia.
+ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
  ### Liikennepaikan seuranta (WebSocket)
  
@@ -279,7 +279,7 @@ Palauttaa yhden junan tiedot
  
  **Paluuarvo**
  
- Palauttaa [junat](#Junat)-tyyppisiä vastauksia.
+ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
  ### Yhden junan seuranta (WebSocket)
  
@@ -293,7 +293,7 @@ Palauttaa yhden junan tiedot
  
  **Paluuarvo**
  
- Palauttaa [junat](#Junat)-tyyppisiä vastauksia.
+ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
  ### GTFS
  
@@ -348,7 +348,7 @@ Palauttaa yhden junan tiedot
    
 **Paluuarvo**
 
-Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+Palauttaa [junat](#junat)-tyyppisen vastauksen.
    
 ### Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)
 
@@ -383,7 +383,7 @@ Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole mu
 
 **Paluuarvo**
 
-Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 ### Reittiperusteinen haku
 
@@ -414,7 +414,7 @@ Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parame
 
 **Paluuarvo**
 
-Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 ### Kohta lähtevien tai saapuvien junien seuranta
 
@@ -441,7 +441,7 @@ Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suun
 
 **Paluuarvo**
 
-Palauttaa [junat](#Junat)-tyyppisen vastauksen.
+Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
@@ -482,7 +482,7 @@ Maksimissaan palautetaan 2500 kulkutietoviestiä.
 
 **Paluuarvo**
 
-Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ### Yhden junan seuranta
 
@@ -507,7 +507,7 @@ Palauttaa halutun yhden junan kulkutietoviestit.
 
 **Paluuarvo**
 
-Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ###Liikennepaikan seuranta
 
@@ -531,7 +531,7 @@ Palauttaa liikennepaikan kulkutietoviestit.
 
 **Paluuarvo**
 
-Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ### Raideosuuden seuranta
 
@@ -560,7 +560,7 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 
 **Paluuarvo**
 
-Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisen vastauksen.
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ### Kaikkien junien seuranta (WebSocket)
 
@@ -572,7 +572,7 @@ Websockettiin pistetään kaikkien junien kulkutietoviestit.
 
 **Paluuarvo**
 
-Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisiä vastauksia.
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
 ### Yhden junan seuranta (WebSocket)
 
@@ -586,9 +586,9 @@ WebSockettiin pistetään yhden tietyn junan kulkutietoviestit. Jos departure_da
 
 **Paluuarvo**
 
-Palauttaa [Kulkutietoviestit](#Kulkutietoviestit)-tyyppisiä vastauksia.
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
-## Kokoonpanotiedot
+## Kokoonpanotiedot (/compositions)
 
 Kokoonpanotietoja tulee junille 0-5 tuntia ennen junan lähtö tai pysähdystä, jossa kokoonpano muuttuu.
 
@@ -614,7 +614,7 @@ Palauttaa yksittäisen junan kokoonpanotiedot tiettynä päivämääränä.
 
 **Paluuarvo**
 
-Palauttaa [Kokoonpanot](#Kokoonpanot)-tyyppisen vastauksen.
+Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 ### Junien kokoonpanohaku
 
@@ -634,7 +634,7 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 
 **Paluuarvo**
 
-Palauttaa [Kokoonpanot](#Kokoonpanot)-tyyppisen vastauksen.
+Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 ## Metatiedot
 
@@ -650,7 +650,7 @@ Palauttaa palvelun liikennepaikkojen tiedot. Tiedot päivittyvät lähdejärjest
 
 **Paluuarvo**
 
-Palauttaa [Liikennepaikat](#Liikennepaikat)-tyyppisen vastauksen.
+Palauttaa [Liikennepaikat](#liikennepaikat)-tyyppisen vastauksen.
 
 ### Operaattoritiedot
 
@@ -662,7 +662,7 @@ Palauttaa palvelun operaattoreiden tiedot. Tiedot päivittyvät lähdejärjestel
 
 **Paluuarvo**
 
-Palauttaa [Operaattorit](#Operaattorit)-tyyppisen vastauksen.
+Palauttaa [Operaattorit](#operaattorit)-tyyppisen vastauksen.
 
 ### Syyluokat
 
@@ -674,7 +674,7 @@ Palauttaa listan palvelussa aktiivisesti käytössä olevista syyluokista. Syylu
 
 **Paluuarvo**
 
-Palauttaa Palauttaa [Syyluokat](#Syyluokat)-tyyppisen vastauksen.-tyyppisen vastauksen.
+Palauttaa Palauttaa [Syyluokat](#syyluokat)-tyyppisen vastauksen.-tyyppisen vastauksen.
 
 ### Syykoodit
 
@@ -686,7 +686,7 @@ Palauttaa listan palvelussa käytössä olevista syykoodeista. Jokainen syyluokk
 
 **Paluuarvo**
 
-Palauttaa [Syykoodit](#Syykoodit)-tyyppisen vastauksen.
+Palauttaa [Syykoodit](#syykoodit)-tyyppisen vastauksen.
 
 ### Kolmannen tason syykoodit
 
@@ -698,7 +698,7 @@ Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. K
 
 **Paluuarvo**
 
-Palauttaa [Kolmannen tason syykoodit](#Kolmannen tason syykoodit)-tyyppisen vastauksen.
+Palauttaa [Kolmannen tason syykoodit](#kolmannen tason syykoodit)-tyyppisen vastauksen.
 
 ### Junatyypit
 
@@ -710,7 +710,7 @@ Palauttaa listan palvelussa käytössä olevista junatyypeista (esim. IC, P, P).
 
 **Paluuarvo**
 
-Palauttaa [Junatyypit](#Junatyypit)-tyyppisen vastauksen.
+Palauttaa [Junatyypit](#junatyypit)-tyyppisen vastauksen.
 
 ### Raideosuudet
 
@@ -724,7 +724,7 @@ Lista ei kata kaikkia kulkutietoviesteissä esiintyviä raideosuuksia. Datan laa
 
 **Paluuarvo**
 
-Palauttaa [Raideosuudet](#Raideosuudet)-tyyppisen vastauksen.
+Palauttaa [Raideosuudet](#raideosuudet)-tyyppisen vastauksen.
 
 ### Herätepisteet
 
@@ -738,7 +738,7 @@ Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määrit
 
 **Paluuarvo**
 
-Palauttaa [Herätepisteet](#Herätepisteet)-tyyppisen vastauksen.
+Palauttaa [Herätepisteet](#herätepisteet)-tyyppisen vastauksen.
 
 ## Versionumeroiden käyttö
 
