@@ -192,22 +192,23 @@ Automaattinen ennusteen laskeminen perustuu toteutuneisiin toteumiin. Historiast
 
 ### Yhden junan tiedot
 
-URL: `/trains/<train_number>?departure_date=<departure_date>&version=<version>`
-
-Esimerkkejä
-- [/trains/latest/1](../trains/latest/1)
-- [/trains/2017-01-01/1](../trains/2017-01-01/1)
-
 **Kuvaus**
 
 Palauttaa yhden junan tiedot
 
 **Hakuehdot**
 
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
+| --- | --- | --- | --- | ---
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
+|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
+  
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
  
  **Paluuarvo**
  
- Palauttaa [junat](www.google.com) -tyyppisen vastauksen.
+ Palauttaa [junat](#junat) -tyyppisen vastauksen.
  
  ## MEga
  
