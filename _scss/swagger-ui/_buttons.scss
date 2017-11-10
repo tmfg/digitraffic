@@ -23,9 +23,7 @@
 
     &.cancel
     {
-        border-color: #ff6060;
-
-        @include text_headline(#ff6060);
+        
     }
 
     &.authorize
@@ -53,23 +51,39 @@
 
     &.execute
     {
-        //animation: swagger-ui-pulse 2s infinite;
-        color: $blue-dark;
-        border-color: $blue-dark;
+      @extend .button;
+      @extend .button--small;
+      @extend .button--no-icon;
+
+      margin-top: $margin-xs;
+      margin-bottom: $margin-xs;
+      margin-left: 0;
     }
 
     &.try-out__btn {
-      color: $blue-dark;
-      border-color: $blue-dark;
+      @extend .button;
+      @extend .button--secondary;
+      @extend .button--small;
+      @extend .button--no-icon;
+
+      margin-right: 0;
+      padding: calc(0.5rem - 1px) calc(1rem - 1px) calc(0.5rem - 1px) calc(1rem - 1px);
+
+      &:hover {
+        padding: calc(0.5rem - 2px) calc(1rem - 2px) calc(0.5rem - 2px) calc(1rem - 2px);
+      }
+
+      &:active {
+        padding: calc(0.5rem - 2px) calc(1rem - 2px) calc(0.5rem - 2px) calc(1rem - 2px);
+      }
 
       &.cancel {
-        color: $red;
-        border-color: $red;
+
       }
     }
 
     &:hover {
-      text-decoration: underline;
+      
     }
 }
 
@@ -98,14 +112,11 @@
 
 .btn-group
 {
-    display: flex;
-
     padding: 0 $margin-xssm;
     border-top: 1px solid $gray-200;
 
     .btn
     {
-        flex: 1;
 
         &:first-child
         {
@@ -116,6 +127,27 @@
         {
           margin-left: $margin-xxsxs;
         }
+    }
+
+    .execute {
+      
+    }
+
+    .btn-clear {
+      @extend .button;
+      @extend .button--secondary;
+      @extend .button--small;
+      @extend .button--no-icon;
+
+      padding: calc(0.5rem - 1px) calc(1rem - 1px) calc(0.5rem - 1px) calc(1rem - 1px);
+
+      &:hover {
+        padding: calc(0.5rem - 2px) calc(1rem - 2px) calc(0.5rem - 2px) calc(1rem - 2px);
+      }
+
+      &:active {
+        padding: calc(0.5rem - 2px) calc(1rem - 2px) calc(0.5rem - 2px) calc(1rem - 2px);
+      }
     }
 }
 

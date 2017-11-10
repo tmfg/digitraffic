@@ -16,6 +16,7 @@ $button-color-disabled: $gray-200;
   border: none;
   padding: 1rem 1.2rem 1rem 1rem;
   margin: 0 $margin-xs;
+  box-sizing: border-box;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   transition: $transition-fast;
 
@@ -36,6 +37,49 @@ $button-color-disabled: $gray-200;
 
   &:focus {
     outline: 0;
+  }
+
+  /* Modifiers */
+  &--secondary {
+    background: $white;
+    background-size: auto;
+    color: $blue-dark;
+    border: 1px solid $blue-dark;
+    padding: calc(1rem - 1px) calc(1.2rem - 1px) calc(1rem - 1px) calc(1rem - 1px);
+
+    &:hover {
+      border-width: 2px;
+      padding: calc(1rem - 2px) calc(1.2rem - 2px) calc(1rem - 2px) calc(1rem - 2px);
+    }
+
+    &:active {
+      background: $white;
+      color: $gray-102;
+      border: 2px solid $gray-102;
+      padding: calc(1rem - 2px) calc(1.2rem - 2px) calc(1rem - 2px) calc(1rem - 2px);
+    }
+
+    &.button--no-icon {
+      padding-right: calc(1rem - 1px);
+    }
+
+    &.button--small:hover, &.button--small:active {
+      padding-top: calc(0.5rem - 2px);
+      padding-bottom: calc(0.5rem - 2px);
+    }
+
+    &.button--no-icon:hover, &.button--no-icon:active {
+      padding-right: calc(1rem - 2px);
+    }
+  }
+
+  &--small {
+    padding-top: $margin-xxs;
+    padding-bottom: $margin-xxs;
+  }
+
+  &--no-icon {
+    padding-right: 1rem;
   }
 
   /* Elements */
