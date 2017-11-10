@@ -4,7 +4,7 @@ permalink: /rautatieliikenne/
 section: Tietolähteet
 traffictypes: Rautatieliikenne
 searchable: true
-swagger-source: https://rata.digitraffic.fi/swagger/swagger.json
+swagger-source: null
 hero-image: rail
 title: Rautatieliikenne tietolähteet
 intro: Rautatieliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
