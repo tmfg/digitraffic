@@ -194,7 +194,7 @@ Palauttaa yhden junan tiedot
   ![vapaaehtoinen](images/optional.png)| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
   ![vapaaehtoinen](images/optional.png)| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
   
- ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
+![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
  
  **Paluuarvo**
  
@@ -215,7 +215,8 @@ Palauttaa yhden junan tiedot
 | | Nimi | Formaatti | Esimerkki |
 | --- | --- | --- | ---
  ![pakollinen](images/required.png) | departure_date | date (yyyy-mm-dd) | 2017-01-01
- ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
+ 
+![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
  
  **Paluuarvo**
  
@@ -236,7 +237,8 @@ Palauttaa yhden junan tiedot
 |   | Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
 ![vapaaehtoinen](images/optional.png)  | version | positive integer | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmalla versionumerolla muuttuneet junat.
- ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
+ 
+![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
  
  **Paluuarvo**
  
@@ -329,6 +331,7 @@ Palauttaa yhden junan tiedot
 ![vapaaehtoinen](images/optional.png)  | departing_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta lähtevää junaa palautetaan maksimissaan.
 ![vapaaehtoinen](images/optional.png) | include_nonstopping | true/false | false | true | Palautetaanko aseman ohi pysähtymättä ajavat junat.
 ![vapaaehtoinen](images/optional.png) | version | positive integer |   | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
    
 **Paluuarvo**
@@ -364,6 +367,7 @@ Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole mu
  ![pakollinen](images/required.png)| minutes_after_arrival | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään sen saapumisen jälkeen.
 ![vapaaehtoinen](images/optional.png) | include_nonstopping | true/false | false | true | Palautetaanko aseman ohi pysähtymättä ajavat junat.
 ![vapaaehtoinen](images/optional.png) | version | positive integer |   | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -395,6 +399,7 @@ Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parame
  ![vapaaehtoinen](images/optional.png)| to | datetime(ISO 8601) | 2017-01-01T23:28:59.564Z | Tämä parametri määrittelee aikavälin lopun. Jos tämä parametri jätetään tyhjäksi, haetaan junia seuraavalle 24 tunnille asti.
  ![vapaaehtoinen](images/optional.png)| limit | positive integer | 15 | Rajaa palautettavien junien määrää. Oletusarvo on 1000.
  ![vapaaehtoinen](images/optional.png)| include_nonstopping | true/false | false | Palautetaanko aseman ohi pysähtymättä ajavat junat.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -422,6 +427,7 @@ Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suun
 |  | Nimi | Formaatti | Esimerkki | Selitys
   |---|---|---|--- |--- 
 ![pakollinen](images/required.png) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -463,6 +469,7 @@ Maksimissaan palautetaan 2500 kulkutietoviestiä.
 |  | Nimi | Formaatti | Esimerkki | Selitys
   |---|---|---|--- |--- 
 ![pakollinen](images/required.png) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -488,6 +495,7 @@ Palauttaa halutun yhden junan kulkutietoviestit.
 ![pakollinen](images/required.png) | train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
 ![pakollinen](images/required.png) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
 ![vapaaehtoinen](images/optional.png)  | version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos. Jos tyhjä, ei tehdä versiorajoitusta.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -512,6 +520,7 @@ Palauttaa liikennepaikan kulkutietoviestit.
 |---|---|---|--- |--- 
 ![pakollinen](images/required.png)  | station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät täältä
 ![pakollinen](images/required.png)  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -541,6 +550,7 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
  ![pakollinen](images/required.png)| track_section | string | "001" | Liikennepaikan raideosuuden lyhenne. Lyhennekoodit löytyvät täältä
  ![pakollinen](images/required.png)| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä.
  ![vapaaehtoinen](images/optional.png) | limit | positive integer | 100 | Kuinka monta uusinta kulkutietoviestiä kyselyssä palautetaan. Maksimiarvo 1000. Tämä rajaus poissulkee departure_date-rajauksen. Jos departure_date- tai limit-rajoitusta ei anneta, käytetään limit-rajoitusta.
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
@@ -595,6 +605,7 @@ Palauttaa yksittäisen junan kokoonpanotiedot tiettynä päivämääränä.
 |---|---|---|--- 
  ![pakollinen](images/required.png) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen](images/required.png) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
+
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
 
 **Paluuarvo**
