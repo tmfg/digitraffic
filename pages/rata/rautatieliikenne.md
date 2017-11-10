@@ -518,7 +518,7 @@ Palauttaa halutun yhden junan kulkutietoviestit.
 
 Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
-###Liikennepaikan seuranta
+### Liikennepaikan seuranta
 
 URL: `/train-tracking/station/<station>/<departure_date>`
 
