@@ -214,7 +214,7 @@ Palauttaa yhden junan tiedot
  
  **Paluuarvo**
  
- Palauttaa [junat](#junat)-tyyppisen vastauksen.
+ Palauttaa [junat](www.google.com) -tyyppisen vastauksen.
  
  ### Päivän junien tiedot
  
