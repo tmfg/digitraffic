@@ -483,7 +483,7 @@ Maksimissaan palautetaan 2500 kulkutietoviestiä.
 **Hakuehdot**
 
 |  | Nimi | Formaatti | Esimerkki | Selitys
-  |---|---|---|--- |--- 
+|---|---|---|--- |--- 
 ![pakollinen](images/required.png) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan.
 
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
