@@ -216,7 +216,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat) -tyyppisen vastauksen.
  
- ### Paivan junien tiedot
+ ### Päivän junien tiedot
  
  URL: `/trains/<departure_date>`
  
