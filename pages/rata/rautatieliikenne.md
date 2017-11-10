@@ -192,6 +192,12 @@ Automaattinen ennusteen laskeminen perustuu toteutuneisiin toteumiin. Historiast
 
 ### Yhden junan tiedot
 
+URL: `/trains/<train_number>?departure_date=<departure_date>&version=<version>`
+
+Esimerkkejä
+- [/trains/latest/1](../trains/latest/1)
+- [/trains/2017-01-01/1](../trains/2017-01-01/1)
+
 **Kuvaus**
 
 Palauttaa yhden junan tiedot
@@ -209,8 +215,6 @@ Palauttaa yhden junan tiedot
  **Paluuarvo**
  
  Palauttaa [junat](#junat) -tyyppisen vastauksen.
- 
- ## MEga
  
  ### Päivän junien tiedot
  
