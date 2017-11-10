@@ -216,6 +216,8 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](www.google.com) -tyyppisen vastauksen.
  
+ ## MEga
+ 
  ### Päivän junien tiedot
  
  URL: `/trains/<departure_date>`
@@ -906,8 +908,7 @@ ajaa seuraavaksi.
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) Junanumeroavaruuden yksilöivä tunnus
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) bottomLimit: 1-99999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) Junanumeroiden alaraja
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) topLimit: 1-99999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) Junanumeroiden yläraja
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: string ![Info]({{ site.baseurl }}{{ "/img/rata/info
-    .png" }}) Junalaji
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) Junalaji
 
 ### Syyluokat
 
