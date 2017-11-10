@@ -628,6 +628,8 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 |---|---|---|--- 
  ![pakollinen](images/required.png)|departure_date|date(yyyy-mm-dd)|2017-01-01
 
+![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
+
 **Paluuarvo**
 
 Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
