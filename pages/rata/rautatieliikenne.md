@@ -206,9 +206,9 @@ Palauttaa yhden junan tiedot
 
 | | Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
- ![pakollinen](images/required.png)| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-  ![vapaaehtoinen](images/optional.png)| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
-  ![vapaaehtoinen](images/optional.png)| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
+| ![pakollinen](images/required.png)| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+|  ![vapaaehtoinen](images/optional.png)| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
+|  ![vapaaehtoinen](images/optional.png)| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
   
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
  
@@ -230,7 +230,7 @@ Palauttaa yhden junan tiedot
  
 | | Nimi | Formaatti | Esimerkki |
 | --- | --- | --- | ---
- ![pakollinen](images/required.png) | departure_date | date (yyyy-mm-dd) | 2017-01-01
+| ![pakollinen](images/required.png) | departure_date | date (yyyy-mm-dd) | 2017-01-01
  
 ![pakollinen](images/required.png) Pakollinen ![vapaaehtoinen](images/optional.png) Vapaaehtoinen
  
