@@ -228,7 +228,7 @@ Palauttaa yhden junan tiedot
  
  **Hakuehdot**
  
-| | Nimi | Formaatti | Esimerkki |
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki |
 | --- | --- | --- | ---
 | ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date (yyyy-mm-dd) | 2017-01-01
  
@@ -250,7 +250,7 @@ Palauttaa yhden junan tiedot
  
  **Hakuehdot**
  
-|   | Nimi | Formaatti | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | version | positive integer | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmalla versionumerolla muuttuneet junat.
  
@@ -374,7 +374,7 @@ Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole mu
 
 **Hakuehdot**
 
-|  | Nimi | Formaatti | Oletusarvo | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Oletusarvo | Esimerkki | Selitys
 |---|---|---|---|---|---
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | station | string |   | "HKI" | Aseman lyhenne. Esimerkiksi HKL, TPE, PSL. Lista lyhenteistä löytyy täältä.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | minutes_before_departure | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään ennen sen lähtöä.
@@ -406,7 +406,7 @@ Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parame
 
 **Hakuehdot**
 
-|  | Nimi | Formaatti | Esimerkki | Selite
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selite
 |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_station | string | "HKI" | Lähtöaseman lyhenne. Lyhennekoodit löytyvät täältä.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | arrival_station | string | "RI" | Määränpääaseman lyhenne. Lyhennekoodit löytyvät täältä.
@@ -438,9 +438,7 @@ Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suun
 
 **Hakuehdot**
 
-
- 
-|  | Nimi | Formaatti | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
   |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
 
@@ -482,7 +480,7 @@ Maksimissaan palautetaan 2500 kulkutietoviestiä.
 
 **Hakuehdot**
 
-|  | Nimi | Formaatti | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|---|--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan.
 
@@ -506,7 +504,7 @@ Palauttaa halutun yhden junan kulkutietoviestit.
 
 **Hakuehdot**
 
-| | Nimi | Formaatti | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
@@ -532,7 +530,7 @@ Palauttaa liikennepaikan kulkutietoviestit.
 
 **Hakuehdot**
 
-| | Nimi | Formaatti | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät täältä
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
@@ -560,7 +558,7 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 
 **Hakuehdot**
 
-|  | Nimi | Formaatti | Esimerkki | Selitys
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|--- |--- 
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät täältä
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| track_section | string | "001" | Liikennepaikan raideosuuden lyhenne. Lyhennekoodit löytyvät täältä
@@ -617,7 +615,7 @@ Palauttaa yksittäisen junan kokoonpanotiedot tiettynä päivämääränä.
 
 **Hakuehdot**
 
- | |Nimi|Formaatti|Selitys|
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Selitys|
 |---|---|---|--- 
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
@@ -640,7 +638,7 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 
 **Hakuehdot**
 
-| |Nimi|Formaatti|Esimerkki
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki
 |---|---|---|--- 
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})|departure_date|date(yyyy-mm-dd)|2017-01-01
 
