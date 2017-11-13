@@ -812,7 +812,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia, ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }} *Lista operaattoreista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia, ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: lähiliikenne, kaukoliikenne, tavaraliikenne
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainType: P, S, IC, IC2, MUS, etc.
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa juna on viimeksi muuttunut*
