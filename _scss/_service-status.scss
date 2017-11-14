@@ -13,7 +13,12 @@
   }
 
   &__section-header {
-    margin: $margin-xssm 0 $margin-smmd 0;
+    margin: $margin-xssm 0 $margin-xs 0;
+  }
+
+  &__section-intro {
+    text-align: center;
+    margin: 0 0 $margin-smmd 0;
   }
 
   &__icon-circle-bottom {
@@ -71,7 +76,7 @@
   }
 
   &__service-heading {
-    margin: $margin-xxxxs 0 0;
+    margin: 0;
     transition: $transition-fast;
   }
 
@@ -81,11 +86,19 @@
   }
 
   &__service-text {
+    display: block;
     color: $base-font-color;
 
     &--loading {
       color: $gray-200;
     }
+  }
+
+  &__more-link {
+    @extend .small;
+    @extend .link;
+    display: block;
+    margin-top: $margin-xxs;
   }
 }
 
@@ -100,4 +113,21 @@
 
 .service-status__column a:-moz-any-link span {
   color: $base-font-color;
+}
+
+// .more-link
+.service-status__column a:any-link span.service-status__more-link {
+  color: $blue-dark;
+}
+
+.service-status__column a:-webkit-any-link span.service-status__more-link {
+  color: $blue-dark;
+}
+
+.service-status__column a:-moz-any-link span.service-status__more-link {
+  color: $blue-dark;
+}
+
+.service-status__column a:active span.service-status__more-link {
+  color: $gray-102;
 }

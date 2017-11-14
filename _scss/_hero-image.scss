@@ -80,6 +80,10 @@
     &--no-buttons {
       margin: $margin-sm auto $margin-md;
     }
+
+    &--small {
+      font-size: 2rem;
+    }
   }
 
   &__button-area {
