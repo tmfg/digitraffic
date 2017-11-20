@@ -216,7 +216,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat) -tyyppisen vastauksen.
  
- ### Päivän junien tiedot
+### Päivän junien tiedot
  
  URL: `/trains/<departure_date>`
  
@@ -238,7 +238,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
  
- ### Kaikkien junien seuranta
+### Kaikkien junien seuranta
  
  URL: `/trains?version/<version>`
  
@@ -260,7 +260,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
  
- ### Kaikkien junien seuranta (WebSocket)
+### Kaikkien junien seuranta (WebSocket)
  
  Esimerkki: [esimerkki](examples/websocket-train-all.html)
  
@@ -272,7 +272,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
- ### Liikennepaikan seuranta (WebSocket)
+### Liikennepaikan seuranta (WebSocket)
  
  Esimerkki: [esimerkki](examples/websocket-train-station.html)
  
@@ -284,7 +284,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
- ### Yhden junan seuranta (WebSocket)
+### Yhden junan seuranta (WebSocket)
  
  Esimerkkejä:
  - [esimerkki #1](examples/websocket-train-specific-train-without-departure-date.html)
@@ -298,7 +298,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
- ### GTFS
+### GTFS
  
  URL:t
  - [/trains/gtfs-all.zip](../trains/gtfs-all.zip)
@@ -314,9 +314,9 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [GTFS-muodossa](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md) olevan zip-paketin
  
- ## Aktiivisten junien seuranta (/live-trains)
+## Aktiivisten junien seuranta (/live-trains)
  
- ### Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)
+### Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)
  
  URL: `/live-trains/station/<station_shortcode>?arrived_trains=arrived_trains>&arriving_trains=arriving_trains> &departed_trains=<departed_trains>&departing_trains=<departing_trains>&version=<change_number>`
  
