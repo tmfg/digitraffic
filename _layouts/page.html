@@ -58,7 +58,7 @@ layout: compress
             
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
-            <ul class="sidebar__link-list sidebar__link-list--border-top">
+            <ul class="sidebar__link-list{% if page.links and page.links.size > 0 %} sidebar__link-list--border-top{% endif %}">
               {% include sidebar-links.html %}
             </ul>
           </div>
