@@ -8,7 +8,7 @@ Voit tyylitellä tekstiä, otsikoita, listoja ja lainauksia maalaamalla tyylitel
 ### Kuvan lisääminen
 Voit lisätä sivulle kuvia valitsemalla kuvapainikkeen Prosen editorista (neljäs painike oikealta). Valitse ladattava kuva, ja anna sille alt-teksti. Editori lataa kuvan pages-kansioon ja sijoittaa kuvan merkintätavan mukaisesti valitsemaasi kohtaan tekstissä.
 
-Voit kirjoittaa kuvan alla sivulla näkyvän kuvatekstin kirjoittamalla sen `*`-merkkien väliin suoraan kuvalinkin seuraavalle riville.
+Voit kirjoittaa kuvan alla sivulla näkyvän kuvatekstin kirjoittamalla sen `**`-merkkien väliin suoraan kuvalinkin seuraavalle riville.
 
 Pääkuvan kuvasuhdesuositus on 16:9, mikä on deskarilla "näyttävä" ja pystypuhelimellakin vielä tolkullinen. Lisäksi suurin osa nykymobiilikameroista tuottaa oletuksena sitä. Ammattikameroilla ja kuvapankeista tulee pääsasiassa 3:2, mitä voi myös käyttää, jos sitä ei saa rajattua näppärästi. Jos kuvasisältö on jotenkin infomatiivinen tai visuaalisesti tyylikäs, niin siitä voi hyvin tehdä huomiotaherättävä ison pääkuvan.
 
@@ -16,7 +16,7 @@ Muut vähempiarvoiset kuvat voi hyvin laittaa sisältötekstin lomaan, koska sin
 
 ```
 ![Kuvan alt-teksti]({{site.baseurl}}/pages/kuvan-nimi.jpg)
-*Tähän tulee kuvateksti*
+**Tähän tulee kuvateksti**
 ```
 
 Voit lisätä kuvan muuhunkin kansioon repositoriossa ja korvata kuvatiedoston polun vastaamaan oikeaa kansiota. Muista `{{site.baseurl}}/` polun alkuun!
