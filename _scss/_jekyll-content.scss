@@ -88,6 +88,10 @@
   ul {
     margin-left: $margin-sm;
     margin-bottom: $margin-xssm;
+
+    ul {
+      margin-bottom: 0;
+    }
   }
 
   &__github-edit {
