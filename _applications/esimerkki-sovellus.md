@@ -1,4 +1,5 @@
 ---
+published: false
 title: Esimerkkisovellus
 intro: Tämä on esimerkkisivu sovelluksesta.
 logo: 
