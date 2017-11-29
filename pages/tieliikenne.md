@@ -78,7 +78,7 @@ Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelm
 
 Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
-### Ajantasaiset vapaat nopeudet
+### Vapaat nopeudet
 
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
 
@@ -152,6 +152,20 @@ Yksinkertainen JavaScript WebSocket -asiakassovellus:
      </body>
  </html>
 ```
+
+### Häiriötiedotteet
+
+[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
+
+[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month})
+
+[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId})
+
+Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittäviä tieliikenteen sujuvuuteen vaikuttavia häiriöitä. Tällaisia ovat esimerkiksi liikenneonnettomuudesta johtuvat poikkeusjärjestelyt.
+
+Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen.
+
+[```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
