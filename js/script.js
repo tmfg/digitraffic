@@ -328,6 +328,23 @@ function updateServiceStatus() {
   });
 }
 
+function updateServiceStatusList() {
+
+  var statusList = document.getElementById('service-status-incident-list'); //ul
+
+  // Get a reference to the template li and remove it from dom
+  var templateItem = statusList.firstElementChild;
+
+  while (statusList.firstChild) {
+    statusList.removeChild(statusList.firstChild);
+  }
+
+  // Add list of service status incidents to incident list
+  JSON.parse(this.responseText).data.forEach(function (incident) {
+    addIncidentToList(incident.created_at, incident.name, incident.message, statusList, templateItem);
+  });
+}
+
 function getServiceStatus() {
 
   // Get service status data from api
@@ -336,8 +353,14 @@ function getServiceStatus() {
   oReq.open("GET", "https://status.digitraffic.fi/api/v1/components/groups");
   oReq.send();
 
+  // Get service incidents from api
+  var oReq2 = new XMLHttpRequest();
+  oReq2.addEventListener("load", updateServiceStatusList);
+  oReq2.open("GET", "https://status.digitraffic.fi/api/v1/incidents?per_page=3&sort=id&order=desc");
+  oReq2.send();
+
   // Update service status every 60 seconds
-  setTimeout(getServiceStatus, 60000);
+  setTimeout(getServiceStatus, 6000);
 }
 
 function addOperationStatus(service, status) {
@@ -373,4 +396,12 @@ function addOperationStatus(service, status) {
     statusText.textContent = "Virhe ladattaessa tietoja";
     statusText.classList.add("service-status__service-text--loading");
   }
+}
+
+function addIncidentToList(created_at, name, message, statusList, templateItem) {
+  console.log(name, message);
+
+  var newItem = templateItem.cloneNode(true);
+  newItem.textContent = created_at + " " + name + " " + message;
+  statusList.appendChild(newItem);
 }
