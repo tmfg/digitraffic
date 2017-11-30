@@ -1,5 +1,5 @@
 ---
-title: Talvimerenkulun väylät
+title: Talvimerenkulku
 issue-number: DPO-168
 traffictypes:
   - Meriliikenne
