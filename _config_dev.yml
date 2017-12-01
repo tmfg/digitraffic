@@ -6,7 +6,17 @@ sass:
   sass_dir: _scss
 compress_html:
   clippings: all
-exclude: [README.md,node_modules, gulpfile.js, Gemfile, package.json, package-lock.json, metadata, docs]
+exclude:
+  - docs
+  - digitraffic.iml
+  - Gemfile
+  - gulpfile.js
+  - metadata
+  - node_modules
+  - package-lock.json
+  - package.json
+  - README.md
+  - update-swagger.sh
 collections:
   applications:
     output: true
