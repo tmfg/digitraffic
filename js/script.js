@@ -360,7 +360,7 @@ function getServiceStatus() {
   oReq2.send();
 
   // Update service status every 60 seconds
-  setTimeout(getServiceStatus, 6000);
+  setTimeout(getServiceStatus, 60000);
 }
 
 function addOperationStatus(service, status) {
