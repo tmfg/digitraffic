@@ -17,6 +17,21 @@
     }
   }
 
+  &__icon-p {
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  &__icon-i {
+    color: $blue-dark;
+    font-size: 25vw;
+
+    @media screen and (min-width: $min-width-lg) {
+      font-size: 455px;
+    }
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (min-width: $min-width-sm) {
     div:first-child {
