@@ -103,9 +103,10 @@ layout: compress
             </div>
           </div>
           <div class="row">
-            <div class="col-xs">
-              <ul id="service-status-incident-list">
-                <li class="munhienoclassi">Ladataan...</li>
+            <div class="col-xs-12">
+              <h3 class="service-status__incident-list-heading">Viimeisimmät häiriöt</h3>
+              <ul id="service-status-incident-list" class="service-status__incident-list">
+                <li class="service-status__incident-list-item">Ladataan...</li>
               </ul>
             </div>
           </div>
@@ -167,7 +168,7 @@ layout: compress
       <div class="content__frontpage-section-wrapper">
         <section class="content__frontpage-section">
           <div class="row frontpage-traffic-type">
-            <div class="col-xs-12 col-sm-4 parallax">
+            <div class="col-xs-6 col-sm-4 parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-car.svg" | prepend:site.baseurl }}" alt="Tieliikenne" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
@@ -177,7 +178,7 @@ layout: compress
             </div>
           </div>
           <div class="row frontpage-traffic-type">
-            <div class="col-xs-12 col-sm-4 visible-xs parallax">
+            <div class="col-xs-6 visible-xs parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
@@ -185,12 +186,12 @@ layout: compress
               <p>Liikennevirastossa tietojen lähteenä toimii ratakapasiteetin hallinnan LIIKE-järjestelmä, josta tietoja poimitaan avoimen datan rajapintaan. Rajapinnan tarjoamia tietolajeja ovat aikataulutiedot sekä matkustajajunien kokoonpanot. Aikataulutiedot jakautuvat kolmeen osaan: reaaliaikaiseen liikennetilanteeseen, tuleviin aikatauluihin sekä historiatietoon jo menneistä junista.</p>
               <a href="{{ "/rautatieliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">Rautatieliikenne tietolähteet</span></button></a>
             </div>
-            <div class="col-xs-12 col-sm-4 hidden-xs parallax">
+            <div class="col-sm-4 hidden-xs parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />
             </div>
           </div>
           <div class="row frontpage-traffic-type">
-            <div class="col-xs-12 col-sm-4 parallax">
+            <div class="col-xs-6 col-sm-4 parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-boat.svg" | prepend:site.baseurl }}" alt="Meriliikenne" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
@@ -208,17 +209,10 @@ layout: compress
             <div class="col-xs"><h2 class="h2 u--centered">Tuki</h2></div>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm support-description">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 support-description">
               <a href="{{ "/tukikanavat" | prepend:site.baseurl }}" class="support-description__link">
                 <p class="support-description__icon-p"><i class="support-description__icon-i material-icons">help_outline</i></p>
                 <h3 class="h3 u--centered h-link">Tukikanavat</h3>
-              </a>
-              <p class="u--centered">Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkinen Google-ryhmä.</p>
-            </div>
-            <div class="col-xs-12 col-sm support-description">
-              <a href="{{ "/tukikanavat" | prepend:site.baseurl }}" class="support-description__link">
-                <p class="support-description__icon-p"><i class="support-description__icon-i material-icons">bug_report</i></p>
-                <h3 class="h3 u--centered h-link">Löysitkö virheen?</h3>
               </a>
               <p class="u--centered">Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkinen Google-ryhmä.</p>
             </div>
@@ -229,7 +223,7 @@ layout: compress
       <div class="content__frontpage-section-wrapper">
         <section class="content__frontpage-section">
           <div class="row frontpage-traffic-type">
-            <div class="col-xs-12 col-sm-4 parallax">
+            <div class="col-xs-6 col-sm-4 parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-laptop.svg" | prepend:site.baseurl }}" alt="Sovellukset" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
@@ -239,7 +233,7 @@ layout: compress
             </div>
           </div>
           <div class="row frontpage-traffic-type">
-            <div class="col-xs-12 col-sm-4 visible-xs parallax">
+            <div class="col-xs-6 visible-xs parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-compass.svg" | prepend:site.baseurl }}" alt="Kehityssuunnitelma" />
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
@@ -247,7 +241,7 @@ layout: compress
               <p>Digitrafficin palvelun kehittämisen tulevaisuuden tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan. Näin voit seurata, mitä on hiljattain toteutettu, parhaillaan työn alla sekä suunniteltu toteutettavaksi lähitulevaisuudessa.</p>
               <a href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">explore</i><span class="button__text">Kehityssuunnitelma</span></button></a>
             </div>
-            <div class="col-xs-12 col-sm-4 hidden-xs parallax">
+            <div class="col-sm-4 hidden-xs parallax">
               <img class="img img--full-width" src="{{ "/img/3d-img-compass.svg" | prepend:site.baseurl }}" alt="Kehityssuunnitelma" />
             </div>
           </div>

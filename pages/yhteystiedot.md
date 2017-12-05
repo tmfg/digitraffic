@@ -10,7 +10,7 @@ links:
 
 Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.
 
-Sähköposti: digitraffi(a)liikennevirasto.fi
+Sähköposti: digitraffic(a)liikennevirasto.fi
 
 Facebook: [www.facebook.com/OpenDigitraffic](https://www.facebook.com/OpenDigitraffic/)
 

@@ -11,8 +11,6 @@ links:
 
 Voit ilmoittaa oman sovelluksesi lisäämällä esittelysivun projektiin ja lähettämällä pull requestin tai lähettämällä esittelyn tiedot kuvineen sähköpostilla digitraffic(a)liikennevirasto.fi.
 
-Ohjeet pull requestiin.
-
 ## Sovellusesittelyyn vaadittavat tiedot
 * Sovelluksen nimi
 * Johdanto

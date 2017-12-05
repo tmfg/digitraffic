@@ -100,6 +100,32 @@
     display: block;
     margin-top: $margin-xxs;
   }
+
+  &__incident-list-heading {
+    text-align: center;
+    margin: $margin-sm 0;
+  }
+
+  &__incident-list {
+    list-style-type: none;
+  }
+
+  &__incident-list-item {
+    @include border-bottom();
+    padding-bottom: $margin-sm;
+    margin-bottom: $margin-sm;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__incident-list-timestamp {
+    @extend .small;
+    display: block;
+    margin-bottom: $margin-xs;
+  }
 }
 
 /* a:any-link text color fix */

@@ -399,9 +399,9 @@ function addOperationStatus(service, status) {
 }
 
 function addIncidentToList(created_at, name, message, statusList, templateItem) {
-  console.log(name, message);
+  //console.log(name, message);
 
   var newItem = templateItem.cloneNode(true);
-  newItem.textContent = created_at + " " + name + " " + message;
+  newItem.innerHTML = "<h4>" + name + "</h4><span class='service-status__incident-list-timestamp'>" + created_at + "</span><span>" + message + "</span>";
   statusList.appendChild(newItem);
 }
