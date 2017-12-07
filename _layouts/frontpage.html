@@ -42,7 +42,7 @@ layout: compress
         <section id="service-status-section" class="content__frontpage-section">
           <div class="row">
             <div class="col-xs">
-              <h2 class="h2 u--centered service-status__section-header"><a href="https://status.digitraffic.fi/" class="h-link">Palveluiden rajapintojen tilat</a></h2>
+              <h2 class="h2 u--centered service-status__section-header"><a href="{{ "/palveluiden-tilat" | prepend:site.baseurl }}" class="h-link">Palveluiden rajapintojen tilat</a></h2>
               <p class="service-status__section-intro">Digitraffic-palvelujen rajapintojen statukset. Yksityiskohtaisemmat tiedot näet klikkaamalla linkkejä.</p>
             </div>
           </div>
@@ -104,10 +104,9 @@ layout: compress
           </div>
           <div class="row">
             <div class="col-xs-12">
-              <h3 class="service-status__incident-list-heading">Viimeisimmät häiriöt</h3>
-              <ul id="service-status-incident-list" class="service-status__incident-list">
-                <li class="service-status__incident-list-item">Ladataan...</li>
-              </ul>
+                <div class="service-status__button-area">
+                  <a href="{{ "/palveluiden-tilat" | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">show_chart</i><span class="button__text">Palveluiden tilat</span></button></a>
+                </div>
             </div>
           </div>
         </section>

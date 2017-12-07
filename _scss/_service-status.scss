@@ -126,6 +126,16 @@
     display: block;
     margin-bottom: $margin-xs;
   }
+
+  &__button-area {
+    text-align: center;
+    margin: $margin-xs auto;
+  }
+
+  &__page-section {
+    margin-top: $margin-smmd;
+    margin-bottom: $margin-lg;
+  }
 }
 
 /* a:any-link text color fix */

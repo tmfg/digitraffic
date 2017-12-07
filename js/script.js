@@ -354,10 +354,12 @@ function getServiceStatus() {
   oReq.send();
 
   // Get service incidents from api
-  var oReq2 = new XMLHttpRequest();
-  oReq2.addEventListener("load", updateServiceStatusList);
-  oReq2.open("GET", "https://status.digitraffic.fi/api/v1/incidents?per_page=3&sort=id&order=desc");
-  oReq2.send();
+  if (document.getElementById("service-status-incident-list")) {
+    var oReq2 = new XMLHttpRequest();
+    oReq2.addEventListener("load", updateServiceStatusList);
+    oReq2.open("GET", "https://status.digitraffic.fi/api/v1/incidents?per_page=3&sort=id&order=desc");
+    oReq2.send();
+  }
 
   // Update service status every 60 seconds
   setTimeout(getServiceStatus, 60000);

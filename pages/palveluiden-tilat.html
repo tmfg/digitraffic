@@ -1,0 +1,118 @@
+---
+layout: compress
+permalink: /palveluiden-tilat/
+hero-image: code
+title: Palveluiden rajapintojen tilat
+intro: Digitraffic-palvelujen rajapintojen statukset. Yksityiskohtaisemmat tiedot näet klikkaamalla linkkejä.
+---
+
+<!DOCTYPE html>
+<html>
+  <!-- HTML head -->
+  {% include head.html %}
+
+  <!-- HTML body -->
+  <body class="body" lang="fi">
+    
+    <!-- Header -->
+    {% include header.html header-classes="header--transparent" %}
+    
+    <!-- Content -->
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <div class="content__section-under-hero content--padded">
+
+        <!-- Breadcrumb -->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
+        </div>
+
+        <!-- Service status -->
+        <section id="service-status-section" class="service-status__page-section">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="service-status__column">
+                <a href="https://status.digitraffic.fi/" class="service-status__link">
+                  <div class="service-status__content">
+                    <div id="service-status-circle-road" class="service-status__icon-circle-bottom">
+                      <div class="service-status__icon-circle">
+                        <i class="material-icons md-light service-status__icon">directions_car</i>
+                      </div>
+                    </div>
+                    <div class="service-status__text">
+                      <h4 class="h4 service-status__service-heading">Tieliikenne</h4>
+                      <span id="service-status-text-road" class="service-status__service-text service-status__service-text--loading">Ladataan...</span>
+                      <span class="service-status__more-link">Katso tarkemmat tiedot</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="service-status__column">
+                <a href="https://status.digitraffic.fi/" class="service-status__link">
+                  <div class="service-status__content">
+                    <div id="service-status-circle-rail" class="service-status__icon-circle-bottom">
+                      <div class="service-status__icon-circle">
+                        <i class="material-icons md-light service-status__icon">train</i>
+                      </div>
+                    </div>
+                    <div class="service-status__text">
+                      <h4 class="h4 service-status__service-heading">Rautatieliikenne</h4>
+                      <span id="service-status-text-rail" class="service-status__service-text service-status__service-text--loading">Ladataan...</span>
+                      <span class="service-status__more-link">Katso tarkemmat tiedot</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="service-status__column">
+                <a href="https://status.digitraffic.fi/" class="service-status__link">
+                  <div class="service-status__content">
+                    <div id="service-status-circle-marine" class="service-status__icon-circle-bottom">
+                      <div class="service-status__icon-circle">
+                        <i class="material-icons md-light service-status__icon">directions_boat</i>
+                      </div>
+                    </div>
+                    <div class="service-status__text">
+                      <h4 class="h4 service-status__service-heading">Meriliikenne</h4>
+                      <span id="service-status-text-marine" class="service-status__service-text service-status__service-text--loading">Ladataan...</span>
+                      <span class="service-status__more-link">Katso tarkemmat tiedot</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <h3 class="service-status__incident-list-heading">Viimeisimmät häiriöt</h3>
+              <ul id="service-status-incident-list" class="service-status__incident-list">
+                <li class="service-status__incident-list-item">Ladataan...</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </content>
+
+    <!-- Footer -->
+    {% include footer.html %}
+
+  </body>
+</html>
