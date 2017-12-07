@@ -24,4 +24,4 @@ Ominaisuuksina
 - Lämpötilojen värikoodaus ja min/max lämpötilat valitulta alueelta 
 - Optimoitu suorituskyky ja tietojen ajantasaisuuden validointi
 
-[![Tiesää Suomi esittely]({{ site.baseurl }}{{ "/img/tiesaa-suomi/tiesaa-suomi-mainos.png" }})](http://roadweatherfinland.azurewebsites.net/)
+[![Tiesää Suomi esittely]({{ site.baseurl }}{{ "/img/tiesaa-suomi/tiesaa-suomi-mainos.png" }})](http://roadweatherfinland.azurewebsites.net/){:target="_blank"}
