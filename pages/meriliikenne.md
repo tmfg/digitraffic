@@ -24,6 +24,15 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
 
 - Alusten ja satamien metatiedot
 
+# Sisältö
+- [REST/JSON-rajapinnat](#restjson-rajapinnat)
+- [WebSocket-rajapinnat](#websocket-rajapinnat)
+    - [Kaikkien laivojen seuraaminen](#kaikkien-laivojen-seuraaminen)
+    - [Yhden laivan seuraaminen mmsi:n perusteella](#yhden-laivan-seuraaminen-mmsin-perusteella)
+    - [Aluksen metadata-viesti](#aluksen-metadata-viesti)
+    - [Aluksen sijainti-viesti](#aluksen-sijainti-viesti)
+    - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--clientti)
+
 ## REST/JSON-rajapinnat
 
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html)
