@@ -46,3 +46,8 @@ defaults:
       layout: "application"
       hero-image: "code"
       logo: "application-default-logo.svg"
+  -
+    scope:
+      path: ""
+    values:
+      language: "fin"
