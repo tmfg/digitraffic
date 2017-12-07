@@ -23,6 +23,6 @@ Tässä.fi paikantaa missä olet ja antaa sinulle hyödyllisiä tietoja ympäris
 
 Suomen kattavimmat tiedot liikenteeseen. Sovelluksen liikenne-osio tarjoaa Suomen kattavimmat tiedot liikenteeseen. Tässä.fi palvelee sekä autoilijoita että julkisen liikenteen käyttäjiä. Autoilijana löydät helposti lähimmät huoltoasemat, kelikamerat, tiesää- ja ruuhkatiedot. Saat samat tiedot myös oman reittisi varrelle, kuinkas kaukana se seuraava. Merkitsemällä tiesääaseman suosikiksi saat sovelluksesta push-hälytyksen, kun tiesää mittauspisteessä huononee. Merkitsemällä liikennemittauspisteen suosikiksi saat tiedon, kun tienkohta ruuhkautuu.
 
-[![Lataa tässä.fi]({{ site.baseurl }}{{ "/img/tassa/tassa-mainos.jpg" }})](http://tassa.fi/lataa)
+[![Lataa tässä.fi]({{ site.baseurl }}{{ "/img/tassa/tassa-mainos.jpg" }})](http://tassa.fi/lataa){:target="_blank"}
 
 Lataa sovellus ja pysyt ajan tasalla missä tahansa Suomessa liikutkin! Tässä.fi – Paikallinen kaikkialla.

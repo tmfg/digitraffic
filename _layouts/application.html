@@ -69,7 +69,7 @@ layout: compress
                 <h4 class="h4 sidebar__application-property-heading">Kehittäjä</h4>
                 {% assign developer_length = page.developer | size %}
                 {% if developer_length == 2 %}
-                <a href="{{ page.developer[1] }}" class="link">
+                <a href="{{ page.developer[1] }}" target="_blank" class="link">
                 {% endif %}
                   <span>{{ page.developer[0] }}</span>
                 {% if developer_length == 2 %}
@@ -118,7 +118,7 @@ layout: compress
               {% if page.download-url %}
               <div class="sidebar__application-property">
                 <h4 class="h4 sidebar__application-property-heading">Latauslinkki</h4>
-                <a href="{{ page.download-url }}" class="link">{{ page.download-url }}</a>
+                <a href="{{ page.download-url }}" target="_blank" class="link">{{ page.download-url }}</a>
               </div>
               {% endif %}
 

@@ -341,7 +341,11 @@ function updateServiceStatusList() {
 
   // Add list of service status incidents to incident list
   JSON.parse(this.responseText).data.forEach(function (incident) {
-    addIncidentToList(incident.created_at, incident.name, incident.message, statusList, templateItem);
+    if (incident.status === 0) {
+      addIncidentToList(incident.scheduled_at, incident.name, incident.message, statusList, templateItem);
+    } else {
+      addIncidentToList(incident.created_at, incident.name, incident.message, statusList, templateItem);
+    }
   });
 }
 
