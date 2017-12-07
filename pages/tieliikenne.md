@@ -45,6 +45,7 @@ Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyypp
     - [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot)
     - [Häiriötiedotteet](#häiriötiedotteet)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
+- [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
 
 ## REST/JSON-rajapinnat
 
