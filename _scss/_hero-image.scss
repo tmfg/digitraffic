@@ -73,7 +73,7 @@
   &__intro {
     @include heading(2.25rem, 100, $white, -0.05rem);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    max-width: 58rem;
+    max-width: 65rem;
     padding: 0 $content-padding;
     margin: $margin-xs auto $margin-md;
 
