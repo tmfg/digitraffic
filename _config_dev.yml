@@ -1,4 +1,5 @@
 name: Digitraffic
+baseurl:
 repository: finnishtransportagency/digitraffic
 gems:
   - jekyll-babel
