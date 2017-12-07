@@ -42,12 +42,12 @@ window.onscroll = () => {
 function addEventListeners() {
   let menuElement = document.body.querySelector(".header-menu__item--menu");
   let searchElement = document.body.querySelector(".header-menu__item--search");
-  //let languageElement = document.body.querySelector(".header-menu__item--language");
+  let languageElement = document.body.querySelector(".header-menu__item--language");
   let outsideMenu = document.body.querySelector(".content");
   
   menuElement.addEventListener("click", toggleMenu);
   searchElement.addEventListener("click", toggleSearch);
-  //languageElement.addEventListener("click", toggleLanguage);
+  languageElement.addEventListener("click", toggleLanguage);
   outsideMenu.addEventListener("click", closeMenuSearchLanguage);
 }
 

@@ -8,7 +8,7 @@
   }
   
   &__description {
-    @media screen and (min-width: $min-width-sm) {
+    @media screen and (min-width: $min-width-md) {
       margin-top: $margin-xs;
     }
 
@@ -25,10 +25,10 @@
 
   &__icon-i {
     color: $blue-dark;
-    font-size: 25vw;
+    font-size: 15vw;
 
     @media screen and (min-width: $min-width-lg) {
-      font-size: 455px;
+      font-size: 275px;
     }
   }
 
