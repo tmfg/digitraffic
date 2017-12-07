@@ -36,7 +36,7 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
 
 ## REST/JSON-rajapinnat
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html)
+Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
 Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 

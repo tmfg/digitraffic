@@ -49,7 +49,9 @@ Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyypp
 
 ## REST/JSON-rajapinnat
 
+Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
+Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 ### Kelikamerat
 
