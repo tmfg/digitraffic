@@ -14,7 +14,8 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä. Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
+Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
+Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Sujuvuustiedot. Liikenteen ajantasaiset sujuvuustiedot ja matka-aikatiedot ovat saatavissa tällä hetkellä pääkaupunkiseudulta. Matka-aikapalvelu kerää tietoa ajoneuvojen matka-ajoista eri tieosuuksilla hyödyntäen kameratekniikkaa ja rekisterikilven automaattista tunnistusmenetelmää. Rajapinnan kautta on saatavissa 5 minuutin mediaanimatka, keskinopeus ja sujuvuusluokka.
 Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyyppisesti kerran vuorokaudessa.
@@ -33,7 +34,21 @@ Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyypp
 
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
 
+# Sisältö
+- [REST/JSON-rajapinnat](#restjson-rajapinnat)
+    - [Kelikamerat](#kelikamerat)
+    - [Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot](#ajantasaiset-linkkien-sujuvuustiedot-sisältäen-matka-aikatiedot)
+    - [Edellisen päivän sujuvuuden historiatiedot](#edellisen-päivän-sujuvuuden-historiatiedot)
+    - [Sujuvuuden historiatiedot halutulta kuulta](#sujuvuuden-historiatiedot-halutulta-kuulta)
+    - [Vapaat nopeudet](#vapaat-nopeudet)
+    - [Ajantasaiset tiejaksojen keliennusteet](#ajantasaiset-tiejaksojen-keliennusteet)
+    - [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot)
+    - [Häiriötiedotteet](#häiriötiedotteet)
+    - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
+
 ## REST/JSON-rajapinnat
+
+
 
 ### Kelikamerat
 
