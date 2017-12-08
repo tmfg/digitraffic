@@ -327,7 +327,13 @@ function parallaxFooter() {
     let elementBottom = footerElement.getBoundingClientRect().bottom;
     let diffFromBottom = elementBottom - window.innerHeight;
     let translateY = diffFromBottom / 15;
-    footerElement.style.transform = "translate3d(0, " + translateY + "px, 1px)";
+    if (translateY <= 10) {
+      footerElement.style.transform = "translate3d(0px, 0px, 1px)";
+      console.log("<10");
+    } else {
+      footerElement.style.transform = "translate3d(0px, " + translateY + "px, 1px)";
+      console.log(translateY);
+    }
   }
 }
 
