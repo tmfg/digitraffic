@@ -3,15 +3,16 @@
   box-sizing: border-box;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
   width: calc(100%);
   background-color: $gray-68-100;
   color: $header-text-color;
   box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
   transition: $transition-faster;
+  transform: translate3d(0, 0, 100px);
 
   // Prevent scroll stuttering on Chrome
-  -webkit-transform: translateZ(0);
+  -webkit-transform: translateZ(100);
   -webkit-backface-visibility: hidden;
 
   /* Modifiers */

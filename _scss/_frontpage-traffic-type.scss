@@ -1,5 +1,5 @@
 .frontpage-traffic-type {
-  margin-top: $margin-xssm;
+  margin: $margin-md 0;
   justify-content: center;
   
   /* Elements */
@@ -24,7 +24,7 @@
   }
 
   &__icon-i {
-    color: $blue-dark;
+    color: $base-font-color;
     font-size: 15vw;
 
     @media screen and (min-width: $min-width-lg) {
@@ -37,5 +37,15 @@
     div:first-child {
       padding-right: $margin-xssm;
     }
+  }
+}
+
+.content__frontpage-section .frontpage-traffic-type {
+  &:first-child {
+    margin-top: $margin-sm;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
