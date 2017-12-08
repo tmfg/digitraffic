@@ -3,7 +3,7 @@ layout: page
 permalink: /english/
 section: Tuki
 searchable: true
-language: Eng
+site-language: Eng
 title: About Digitraffic
 links:
   - ["Digitraffic wiki in English", "https://github.com/finnishtransportagency/digitraffic/wiki/Digitraffic-in-English"]
