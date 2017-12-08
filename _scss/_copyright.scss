@@ -5,4 +5,20 @@
   font-size: $font-size-sm;
   text-align: center;
   color: $gray-153;
+
+  &__img {
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: $margin-xxs;
+  }
+
+  &__text {
+    a {
+      color: $gray-200;
+
+      &:hover, focus {
+        text-decoration: underline;
+      }
+    }
+  }
 }
