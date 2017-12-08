@@ -2,6 +2,9 @@
 ---
 /***Write javascript under this line***/
 
+var parallaxElements;
+var footerElement;
+
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
   init();
@@ -11,6 +14,10 @@ if (document.readyState !== 'loading') {
 
 function init() {
   //console.log("DOM ready");
+
+  //Set parallax elements
+  parallaxElements = [].slice.call(document.body.querySelectorAll('.parallax'));
+  footerElement = document.body.querySelector('footer');
 
   // Add parallax effect to elements with ".parallax" and to footer
   parallax();
@@ -304,21 +311,40 @@ function closeLanguageQuick() {
 
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
-  [].slice.call(document.body.querySelectorAll('.parallax')).forEach(element => {
-    let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
-    let windowCenter = window.innerHeight / 2;
-    let diffFromCenter = elementCenter - windowCenter;
-    let translateY = diffFromCenter / 15;
-    element.style.transform = "translate(0, " + translateY + "px)";
+  parallaxElements.forEach(element => {
+    if (elementInViewport(element)) {
+      let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
+      let windowCenter = window.innerHeight / 2;
+      let diffFromCenter = elementCenter - windowCenter;
+      let translateY = diffFromCenter / 15;
+      element.style.transform = "translate3d(0, " + translateY + "px, 1px)";
+    }
   });
 }
 
 function parallaxFooter() {
-  let element = document.body.querySelector('footer');
-  let elementBottom = element.getBoundingClientRect().bottom;
-  let diffFromBottom = elementBottom - window.innerHeight;
-  let translateY = diffFromBottom / 15;
-  element.style.transform = "translate(0, " + translateY + "px)";
+  if (elementInViewport(footerElement)) {
+    let elementBottom = footerElement.getBoundingClientRect().bottom;
+    let diffFromBottom = elementBottom - window.innerHeight;
+    let translateY = diffFromBottom / 15;
+    footerElement.style.transform = "translate3d(0, " + translateY + "px, 1px)";
+  }
+}
+
+/* Check if a part of element is in viewport */
+function elementInViewport(el) {
+  var top = el.offsetTop;
+  var height = el.offsetHeight;
+
+  while(el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+  }
+
+  return (
+    top < (window.pageYOffset + window.innerHeight) &&
+    (top + height) > window.pageYOffset
+  );
 }
 
 function updateServiceStatus() {
