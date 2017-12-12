@@ -195,8 +195,8 @@ Automaattinen ennusteen laskeminen perustuu toteutuneisiin toteumiin. Historiast
 URL: `/trains/<train_number>?departure_date=<departure_date>&version=<version>`
 
 Esimerkkejä
-- [/trains/latest/1](../trains/latest/1)
-- [/trains/2017-01-01/1](../trains/2017-01-01/1)
+- [/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1)
+- [/trains/2017-01-01/1](https://rata.digitraffic.fi/api/v1/trains/2017-01-01/1)
 
 **Kuvaus**
 
@@ -220,7 +220,7 @@ Palauttaa yhden junan tiedot
  
  URL: `/trains/<departure_date>`
  
- Esimerkki: [/trains/2017-11-09](../trains?version=1234567891234)
+ Esimerkki: [/trains/2017-11-09](https://rata.digitraffic.fi/api/v1/trains?version=1234567891234)
  
  **Kuvaus**
  
@@ -242,7 +242,7 @@ Palauttaa yhden junan tiedot
  
  URL: `/trains?version/<version>`
  
- Esimerkki: [/trains?version=1234567891234](../trains?version=1234567891234)
+ Esimerkki: [/trains?version=1234567891234](https://rata.digitraffic.fi/api/v1/trains?version=1234567891234)
  
  **Kuvaus**
  
@@ -301,8 +301,8 @@ Palauttaa yhden junan tiedot
 ### GTFS
  
  URL:t
- - [/trains/gtfs-all.zip](../trains/gtfs-all.zip)
- - [/trains/gtfs-passenger.zip](../trains/gtfs-passenger.zip)
+ - [/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
+ - [/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
  
  **Kuvaus**
  
@@ -321,8 +321,8 @@ Palauttaa yhden junan tiedot
  URL: `/live-trains/station/<station_shortcode>?arrived_trains=arrived_trains>&arriving_trains=arriving_trains> &departed_trains=<departed_trains>&departing_trains=<departing_trains>&version=<change_number>`
  
  Esimerkkejä:
- - [/live-trains/station/HKI](../live-trains/station/HKI)
- - [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false](../live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false)
+ - [/live-trains/station/HKI](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI)
+ - [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false)
  
  **Kuvaus**
  
@@ -358,7 +358,7 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 URL: `/live-trains/station/<station_shortcode>?minutes_before_departure=<minutes_before_departure>&minutes_after_departure=<minutes_after_departure>&minutes_before_arrival=<minutes_before_arrival>&minutes_after_arrival=<minutes_after_arrival>&version=<change_number>&includeNonstopping=<includeNonstopping`
 
-Esimerkiksi: [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15](../live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15)
+Esimerkiksi: [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15)
 
 **Kuvaus**
 
@@ -394,7 +394,7 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 URL: `/live-trains/station/<departure_station_code>/<arrival_station_code>?departure_date=<departure_date>&from=<from>&to=<to>&limit=<limit>`
 
-Esimerkki: [/live-trains/station/HKI/TPE](../live-trains/station/HKI/TPE)
+Esimerkki: [/live-trains/station/HKI/TPE](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI/TPE)
 
 **Kuvaus**
 
@@ -427,8 +427,8 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 URL: `/live-trains?version=<version>`
 
 Esimerkkejä:
-- [/live-trains?version=12345671234567](../live-trains?version=12345671234567)
-- [/live-trains](../live-trains)
+- [/live-trains?version=12345671234567](https://rata.digitraffic.fi/api/v1/live-trains?version=12345671234567)
+- [/live-trains](https://rata.digitraffic.fi/api/v1/live-trains)
 
 **Kuvaus**
 
@@ -470,7 +470,7 @@ Kulkutietoviestit välitetään avoimen datan rajapintaan käytännössä sellai
 
 URL: `/train-tracking?version=<version>`
 
-Esimerkiksi: [/train-tracking?version=65403053026](../train-tracking?version=65403053026)
+Esimerkiksi: [/train-tracking?version=65403053026](https://rata.digitraffic.fi/api/v1/train-tracking?version=65403053026)
 
 **Kuvaus**
 
@@ -494,7 +494,7 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 URL: `/train-tracking/<departure_date>/<train_number>?version=<version>`
 
-Esimerkki: [/train-tracking/2017-01-01/1?version=1000](../train-tracking/2017-01-01/1?version=1000)
+Esimerkki: [/train-tracking/2017-01-01/1?version=1000](https://rata.digitraffic.fi/api/v1/train-tracking/2017-01-01/1?version=1000)
 
 **Kuvaus**
 
@@ -520,7 +520,7 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 URL: `/train-tracking/station/<station>/<departure_date>`
 
-Esimerkki: [/train-tracking/station/JY/2017-08-01](../train-tracking/station/JY/2017-08-01)
+Esimerkki: [/train-tracking/station/JY/2017-08-01](https://rata.digitraffic.fi/api/v1/train-tracking/station/JY/2017-08-01)
 
 **Kuvaus**
 
@@ -546,9 +546,9 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 URL: `/train-tracking/station/<station>/<departure_date>/<track_section>`
 
 Esimerkkejä:
-- [/train-tracking/station/PSL/2017-01-01/293](../train-tracking/station/PSL/2017-01-01/293)
-- [/train-tracking/station/PSL/latest/293](../train-tracking/station/PSL/latest/293)
-- [/train-tracking/station/PSL/latest/293?limit=150](../train-tracking/station/PSL/latest/293?limit=150)
+- [/train-tracking/station/PSL/2017-01-01/293](https://rata.digitraffic.fi/api/v1/train-tracking/station/PSL/2017-01-01/293)
+- [/train-tracking/station/PSL/latest/293](https://rata.digitraffic.fi/api/v1/train-tracking/station/PSL/latest/293)
+- [/train-tracking/station/PSL/latest/293?limit=150](https://rata.digitraffic.fi/api/v1/train-tracking/station/PSL/latest/293?limit=150)
 
 **Kuvaus**
 
@@ -607,7 +607,7 @@ Kokoonpanotietoja tulee junille 0-5 tuntia ennen junan lähtö tai pysähdystä,
 
 URL: `/compositions/<departure_date>/<train_number>`
 
-Esimerkki: [/compositions/2017-01-01/1](../compositions/2017-01-01/1)
+Esimerkki: [/compositions/2017-01-01/1](https://rata.digitraffic.fi/api/v1/compositions/2017-01-01/1)
 
 **Kuvaus**
 
@@ -630,7 +630,7 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 URL: `/compositions/<departure_date>`
 
-Esimerkki: [/compositions/2017-01-01](../compositions/2017-01-01)
+Esimerkki: [/compositions/2017-01-01](https://rata.digitraffic.fi/api/v1/compositions/2017-01-01)
 
 **Kuvaus**
 
@@ -654,7 +654,7 @@ Palvelun metatietojen hakurajapinta.
 
 ### Liikennepaikkatiedot
 
-URL: [metadata/stations](../metadata/stations)
+URL: [metadata/stations](https://rata.digitraffic.fi/api/v1/metadata/stations)
 
 **Kuvaus**
 
@@ -666,7 +666,7 @@ Palauttaa [Liikennepaikat](#liikennepaikat)-tyyppisen vastauksen.
 
 ### Operaattoritiedot
 
-URL: [metadata/operators](../metadata/operators)
+URL: [metadata/operators](https://rata.digitraffic.fi/api/v1/metadata/operators)
 
 **Kuvaus**
 
@@ -960,7 +960,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 
 Useissa rajapinnan pyynnöissä parametrina on mukana `version`, joka rajaa vastauksesta pois junat, jotka eivät ole päivittyneet sitten `version` määrittelemän versionumeron.
 
-Esimerkiksi kysely [/live-trains/station/HKI?arrived_trains=5](..//live-trains/station/HKI?arrived_trains=5) saattaisi palauttaa seuraavan vastauksen:
+Esimerkiksi kysely [/live-trains/station/HKI?arrived_trains=5](https://rata.digitraffic.fi/api/v1//live-trains/station/HKI?arrived_trains=5) saattaisi palauttaa seuraavan vastauksen:
 
 ```
 [
@@ -976,7 +976,7 @@ Esimerkiksi kysely [/live-trains/station/HKI?arrived_trains=5](..//live-trains/s
       "version":3657782905,
       "timeTableRows":...
 ```      
-Jos kyselyyn lisättäisiin versionumero [/live-trains/station/HKI?arrived_trains=5&version=3657782905](../live-trains/station/HKI?arrived_trains=5&version=3657782905), ei junaa 44 palautettaisi vastauksessa ennenkuin se on muuttunut.
+Jos kyselyyn lisättäisiin versionumero [/live-trains/station/HKI?arrived_trains=5&version=3657782905](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&version=3657782905), ei junaa 44 palautettaisi vastauksessa ennenkuin se on muuttunut.
 
 Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettävä sitä seuraavassa kyselyssä parametrina.
 
