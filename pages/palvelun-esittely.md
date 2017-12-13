@@ -16,12 +16,14 @@ links:
   - - Sovellukset
     - /sovellukset
   - - Käyttöehdot
-    - /kayttoehdot
+    - https://www.liikennevirasto.fi/avoindata/kayttoehdot
+  - - Liikenneviraston avoin data
+    - https://www.liikennevirasto.fi/avoindata
 published: true
 ---
+Digitraffic on Liikenneviraston palvelu, jonka kautta on saatavissa ajantasaista liikennetietoa Suomen tieverkolta, rautatieliikenteestä ja meriliikenteestä. Liikennetiedot ovat avointa dataa, jota jaetaan avointen rajapintojen kautta.
+DigiTraffic viittaa sanana digitaaliseen liikenteeseen eli liikennettä esittävään malliin.
 
-Digitraffic on Suomen kaikkien valtiohallinnollisten liikenneväylien yhteinen avoimen datan julkaisujärjestelmä. Digitraffic palvelee muun muassa sellaisia tietoja kuin kelikamerakuvat, keliennusteet, liikenteen sujuvuustiedot, merivaroitukset, laivojen sijaintitiedot, rautatieliikenteen sujuvuus, junien aikataulutiedot ja niin edelleen.
+Digitrafficin kehitys alkoi vuonna 2002 VTT:n ja TKK:n [projektista](http://virtual.vtt.fi/virtual/proj6/fits/julkaisut/hanke3/FITS_30.pdf), jossa   tavoitteena oli  tuottaa  entistä  parempia  liikennetelematiikan palveluja. Käynnistysvaiheen jälkeen Digitraffic siirtyi Tiehallinnon ja sittemmin Kaakkois-Suomen ELY-keskuksen hoitoon. Liikennevirasto on vastannut palvelun ylläpidosta ja kehityksestä vuodesta 2014 alkaen, jonka jälkeen Digitrafficin hyödyntäjäsopimuksista luovuttiin, koko palvelusta tehtiin avointa dataa ja palvelu laajennettiin kattamaan rautatie- ja meriliikenteen tietoja.
 
-Digitrafficin tie- ja meriosa julkaisee tie- ja meriliikennemuotojen julkista reaaliaikaista sekä historiallista ja ennustavaa tietoa useiden rajapintojen kautta. Tien rajapinnoista on saatavilla kelikamerakuvia, pääkaupunkiseudun (PKS) väylien sujuvuustietoa, historiatietoa PKS-väylien sujuvuudesta, nopeustietoa PKS-väyliltä, historiatietoa PKS-väylien nopeuksista, LAM-asemien mittaustuloksia, tieosuuksien keliennusteita ja vallitsevaa säätietoa tiesääasemilta. Lisäksi palautetaan Datex II muotoisia häiriöilmoituksia, liikennemääriä, keskinopeuksia ja niiden historiaa. Edelleen on saatavissa metatietoja näiden tulkitsemiseksi. Meripuolen rajapinnat tarjoavat tietoa merivaroituksista, satamakäynneistä ja alusten sijainnista sekä metatietoa näiden tietojen tulkitsemiseksi. Lisäksi laivojen sijainteja ja metatietoja voi kuunnella WebSocket-rajapinnasta. Kulloinkin voimassa olevat rajapinnat ovat nähtävillä palvelun rajapintakuvauksista.
-
-Digitrafficin rautatieosa sisältää junien aikataulut, toteumat, kokoonpanot, gps-sijainnit, kulkutietoviestit ja kasan metatietoa kuten listan suomen rautatieliikennepaikoista. 
+Digitrafficin jakelemat tiedot perustuvat Liikenneviraston keräämään liikenne- ja olosuhdetietoon. Liikennevirasto kerää tietoja omaa toimintaansa varten ja jakaa tiedot hyödynnettäväksi avoimen datan periaatteiden mukaisesti. Tietojen hyödyntäminen on maksutonta eikä edellytä sopimusta Liikenneviraston kanssa, mutta tiedon hyödyntäjän on noudatettava avoimen datan [käyttöehtoja](https://www.liikennevirasto.fi/avoindata/kayttoehdot).
