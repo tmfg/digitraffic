@@ -22,7 +22,9 @@ links:
 published: true
 ---
 
-![IC10 (Sr2 3225 + 6 kpl kaksikerrosvaunuja), jonka tekijä on Tomi Lapinlampi, on lisensoitu Creative Commons Nimeä-EiKaupallinen 4.0 Kansainvälinen -lisenssillä.](https://www.liikennevirasto.fi/documents/20473/34954/rautatiekuva/8d4369dc-3b89-4dbe-a581-db811a142208?t=1443442757740)
+![Kelikamerakuva Tie 12 Tampere, Rantatunnelin suu, itä. ](https://weathercam.digitraffic.fi/C0460900.jpg)
+**Kelikamerakuva Tie 12 Tampere, Rantatunnelin suu, itä.**
+
 Digitraffic on Liikenneviraston palvelu, jonka kautta on saatavissa ajantasaista liikennetietoa Suomen tieverkolta, rautatieliikenteestä ja meriliikenteestä. Liikennetiedot ovat avointa dataa, jota jaetaan avointen rajapintojen kautta.
 Digitraffic viittaa sanana digitaaliseen liikenteeseen eli liikennettä esittävään malliin.
 
