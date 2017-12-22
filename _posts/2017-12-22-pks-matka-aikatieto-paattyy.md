@@ -16,7 +16,7 @@ vastaa enää asetettuja laatuvaatimuksia. Tämän vuoksi Digitraffic lakkaa toi
 liittyvää tietoa.
 
 Seuraavat endpointit lakkaavat tarjoamasta ajantasaista matka-aikatietoa:
-- `/api/v1/data/fluency-current tiedot` lakkaavat päivittymästä
+- `/api/v1/data/fluency-current` tiedot lakkaavat päivittymästä
 - `/api/v1/data/fluency-current/{id}` tiedot lakkaavat päivittymästä
 - `/api/v1/data/fluency-history-previous-day` tiedot lakkaavat päivittymästä
 - `/api/v1/data/fluency-history-previous-day/{id}` tiedot lakkaavat päivittymästä
