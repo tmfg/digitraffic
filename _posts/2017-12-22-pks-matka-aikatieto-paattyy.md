@@ -11,7 +11,8 @@ tags:
   - EndOfLife
 ---
 
-Perjantaina 29.12.2017 päättyy pääkaupunkiseudun matka-aikajärjestelmän toiminta. Tämän vuoksi Digitraffic lakkaa toimittamasta PKS-järjestelmään
+Perjantaina 29.12.2017 päättyy pääkaupunkiseudun matka-aikajärjestelmän toiminta.  Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
+vastaa enää asetettuja laatuvaatimuksia. Tämän vuoksi Digitraffic lakkaa toimittamasta PKS-järjestelmään
 liittyvää tietoa.
 
 Seuraavat endpointit lakkaavat tarjoamasta ajantasaista matka-aikatietoa:
