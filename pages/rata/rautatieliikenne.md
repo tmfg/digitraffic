@@ -175,9 +175,9 @@ Avoimen datan rajapinta tarjoaa sekä on REST- että WebSocket-rajapinnat, joide
 
 Rajapinta on jaettu kuuteen osaan:
 
-* [Junien tiedot (/trains)]((#junien-tiedot-trains))
+* [Junien tiedot (/trains)](#junien-tiedot-trains)
 * [Aktiivisten junien seuranta (/live-trains)]((#aktiivisten-junien-seuranta-live-trains))
-* [Junan GPS-sijainnit (/train-locations)](#junien-gps-sijainnit)
+* [Junan GPS-sijainnit (/train-locations)](#junan-gps-sijainnit-train-locations)
 * [Kulkutietoviestit (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
 * [Kokoopanotiedot (/compositions)](#kokoonpanotiedot-compositions)
 * [Metatiedot (/metadata)](#metatiedot-metadata)
