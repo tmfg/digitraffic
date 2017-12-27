@@ -81,6 +81,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
 1. [Vastaustyypit](#vastaustyypit)
     1. [Junat](#junat)
     1. [Kokoonpanot](#kokoonpanot)
+    1. [GPS-sijainnit](#gps-sijainnit)
     1. [Kulkutietoviestit](#kulkutietoviestit)
     1. [Liikennepaikat](#liikennepaikat)
     1. [Operaattorit](#operaattorit)
