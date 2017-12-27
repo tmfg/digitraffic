@@ -106,9 +106,8 @@ Listassa ensimmäisenä oleva pyritään toteuttamaan ensimmäisenä. Ominaisuuk
 
 Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskusteluryhmässä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi) 
 
-**Vuonna 2017 suunnitteilla olevat ominaisuudet:**
+**Vuonna 2018 suunnitteilla olevat ominaisuudet:**
 
-* GPS-sijainti
 * Routeset-sanomat
      * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan.
 
