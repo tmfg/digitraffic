@@ -55,7 +55,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
         - [Reittiperusteinen haku](#reittiperusteinen-haku)
         - [Kohta lähtevien tai saapuvien junien seuranta](#kohta-lähtevien-tai-saapuvien-junien-seuranta)
-    1. [Junien GPS-sijainnit](#junien-gps-sijainnit)
+    1. [Junien GPS-sijainnit](#junan-gps-sijainnit-train-locations)
         - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
         - [Yhden junan sijainti](#yhden-junan-sijainti)
         - [Sijainnit (MQTT)](#sijainnit-mqtt)
@@ -920,6 +920,14 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta. Lisätietoa http://fi.wikipedia.org/wiki/Sarjatunnus*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) totalLength: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokonaispituus metreissä*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) maximumSpeed: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokoonpanolle ilmoitettu maksiminopeus kilometreina tunnissa*
+    
+### GPS-sijainnit    
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin sijainti on luettu*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: geojson ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainti GeoJSON-muodossa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) speed: number ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan nopeus*
     
 ### Kulkutietoviestit
 
