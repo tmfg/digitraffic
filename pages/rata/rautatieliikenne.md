@@ -7,7 +7,7 @@ searchable: true
 swagger-source: null
 hero-image: rail
 title: Rautatieliikenne tietolähteet
-intro: Rautatieliikenteen avoimen datan, rajapintojen sekä lähdekoodin tietolähteet.
+intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
   - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
