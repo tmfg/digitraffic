@@ -512,7 +512,7 @@ Topic: `train-locations/<departure_date>/<train_number>/`
 
 Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-locations/#". Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
-Aiemmista Websocket-toteutuksista poiketen GPS-sijainnit jaetaan MQTT:lla. MQTT-palvelin löytyy osoitteesta rata-mqtt.digitraffic.fi:9001. Myös ei-Websocket -yhteys on mahdollinen (portti 1883).
+Aiemmista Websocket-toteutuksista poiketen GPS-sijainnit jaetaan MQTT:lla. MQTT-palvelin löytyy osoitteesta `rata-mqtt.digitraffic.fi:9001`. Myös ei-Websocket -yhteys on mahdollinen (portti 1883).
 
 Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
 
