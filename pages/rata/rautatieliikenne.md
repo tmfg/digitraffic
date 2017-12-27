@@ -108,8 +108,10 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 **Vuonna 2018 suunnitteilla olevat ominaisuudet:**
 
+* GraphQL
+    * Tapa filtteröidä, rajoittaa ja yhdistellä vastauksia
 * Routeset-sanomat
-     * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan.
+    * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan. 
 
 ## Toteutetut ominaisuudet
 
