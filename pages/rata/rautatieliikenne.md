@@ -23,7 +23,7 @@ Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kul
 Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraaviin kysymyksiin:
 
 * Onko junani aikataulussa?
-* Missä juna A menee tällä hetkellä?
+* Missä junani sijaitsee tällä hetkellä?
 * Millä junalla voin matkustaa paikasta A paikkaan B ajanhetkenä C?
 * Mitkä junat lähtevät ja saapuvat asemalta seuraavaksi?
 * Mistä vaunuista junani koostuu?
