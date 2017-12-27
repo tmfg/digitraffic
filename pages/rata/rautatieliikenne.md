@@ -35,14 +35,14 @@ Saatavilla on myös [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/
 Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#käyttoehdot).
 
 # Sisältö
-- [Yleistä](#yleistä)
-    - [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
-    - [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
-    - [Toteutut ominaisuudet](#toteutut-ominaisuudet)
-    - [HTTPS](#https)
-    - [Dataa tukevat rajapinnat](#dataa-tukevat-rajapinnat)
-- [Rajapinnat](#rajapinnat)
-    - [Junien tiedot (/trains)](#junien-tiedot-trains)
+1. [Yleistä](#yleistä)
+    1. [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
+    1. [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
+    1. [Toteutut ominaisuudet](#toteutut-ominaisuudet)
+    1. [HTTPS](#https)
+    1. [Dataa tukevat rajapinnat](#dataa-tukevat-rajapinnat)
+1. [Rajapinnat](#rajapinnat)
+    1. [Junien tiedot (/trains)](#junien-tiedot-trains)
         - [Yhden junan tiedot](#yhden-junan-tiedot)
         - [Päivän junien tiedot](#päivän-junan-tiedot)
         - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
@@ -50,22 +50,26 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Liikennepaikan seuranta (WebSocket)](#liikennepaikan-seuranta-websocket)
         - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
         - [GTFS](#gtfs)
-    - [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
+    1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
         - [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-lukumäärärajoitus)
         - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
         - [Reittiperusteinen haku](#reittiperusteinen-haku)
         - [Kohta lähtevien tai saapuvien junien seuranta](#kohta-lähtevien-tai-saapuvien-junien-seuranta)
-    - [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
+    1. [Junien GPS-sijainnit](#junien-gps-sijainnit)
+        - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
+        - [Yhden junan sijainti](#yhden-junan-sijainti)
+        - [Sijainnit (MQTT)](#sijainnit-mqtt)
+    1. [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
         - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
         - [Yhden junan seuranta](#yhden-junan-seuranta)
         - [Liikennepaikan seuranta](#liikennepaikan-seuranta)
         - [Raideosuuden seuranta](#raideosuuden-seuranta)
         - [Kaikkien junien seuranta (WebSocket)](#kaikkien-junien-seuranta-websocket)
         - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
-    - [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
+    1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
-    - [Metatiedot (/metadata)](#metatiedot-metadata)
+    1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](lLiikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
         - [Syyluokat](#syyluokat)
@@ -74,20 +78,20 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junatyypit](#junatyypit)
         - [Raideosuudet](#raideosuudet)
         - [Herätepisteet](#herätepisteet)        
-- [Vastaustyypit](#vastaustyypit)
-    - [Junat](#junat)
-    - [Kokoonpanot](#kokoonpanot)
-    - [Kulkutietoviestit](#kulkutietoviestit)
-    - [Liikennepaikat](#liikennepaikat)
-    - [Operaattorit](#operaattorit)
-    - [Syyluokat](#syyluokat)
-    - [Syykoodit](#syykoodit)
-    - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
-    - [Junatyypit](#junatyypit)
-    - [Raideosuudet](#raideosuudet)
-    - [Herätepisteet](#herätepisteet)
-- [Versionumeroiden käyttö](#versionumeroiden-käyttö)
-- [Käyttöehdot](#käyttöehdot)
+1. [Vastaustyypit](#vastaustyypit)
+    1. [Junat](#junat)
+    1. [Kokoonpanot](#kokoonpanot)
+    1. [Kulkutietoviestit](#kulkutietoviestit)
+    1. [Liikennepaikat](#liikennepaikat)
+    1. [Operaattorit](#operaattorit)
+    1. [Syyluokat](#syyluokat)
+    1. [Syykoodit](#syykoodit)
+    1. [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
+    1. [Junatyypit](#junatyypit)
+    1. [Raideosuudet](#raideosuudet)
+    1. [Herätepisteet](#herätepisteet)
+1. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
+1. [Käyttöehdot](#käyttöehdot)
 
 # Yleistä
 
@@ -109,6 +113,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 12.12.2017
+    * Junien GPS-sijainnit
 * 03.10.2017
     * Junien tiedot GTFS-muodossa
 * 22.08.2017
@@ -166,17 +172,16 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
 
 Avoimen datan rajapinta tarjoaa sekä on REST- että WebSocket-rajapinnat, joiden vastaukset ovat JSON-formaattia. Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
 
-Rajapinta on jaettu viiteen osaan:
+Rajapinta on jaettu kuuteen osaan:
 
-* Junien tiedot (/trains)
-* Aktiivisten junien seuranta (/live-trains)
-* Kulkutietoviestit (/train-tracking)
-* Kokoopanotiedot (/compositions)
-* Metatiedot (/metadata)
+* [Junien tiedot (/trains)]((#junien-tiedot-trains))
+* [Aktiivisten junien seuranta (/live-trains)]((#aktiivisten-junien-seuranta-live-trains))
+* [Junan GPS-sijainnit (/train-locations)](#junien-gps-sijainnit)
+* [Kulkutietoviestit (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
+* [Kokoopanotiedot (/compositions)](#kokoonpanotiedot-compositions)
+* [Metatiedot (/metadata)](#metatiedot-metadata)
 
-Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, jotka ovat aikataulukaudella 2017: 11.12.2016, 26.3.2017, 19.6.2017, 14.8.2017 ja 29.10.2017. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
-
-Tiedot päivittyvät noin 10 sekunnin viiveellä lähdejärjestelmistä rajapintapalveluun.
+Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
 
 Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [http://rata.digitraffic.fi/api/v1/trains/latest/1](/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
 
@@ -184,7 +189,7 @@ Rajapinnan käytössä on yhtäaikaiseen käyttöön liittyviä rajoituksia. Yhd
 
 ## Junien tiedot (/trains)
 
-Tämän rajapinnan kautta voidaan kysyä junien tietoja. Erilaisia tapoja kysyä junien tietoja ovat: junanumero, lähtöpäivämäärä, asema ja versio.
+Tämän rajapinnan kautta voidaan kysyä junien aikataulutietoja. Erilaisia tapoja kysyä junien tietoja ovat: junanumero, lähtöpäivämäärä, asema ja versio.
 
 Toteumatiedoista osa perustuu liikenteenohjauksen tekemiin käsikirjauksiin, jonka vuoksi osa toteumakirjauksista tehdään tapahtumahetkeä 0-5 minuuttia myöhemmin (siis historiaan). Esimerkiksi Tampereen ja Seinäjoen liikennepaikoilla ei saada automaattisia toteumatietoja, vaan kaikki toteumat perustuvat käsikirjauksiin.
 
@@ -447,6 +452,72 @@ Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suun
 **Paluuarvo**
 
 Palauttaa [junat](#junat)-tyyppisen vastauksen.
+
+## Junan GPS-sijainnit (/train-locations)
+
+Tämän rajapinnan kautta voidaan lukea junan GPS:n tuottamaa sijaintitietoa. Kaikissa junissa ei ole GPS:ää käytössä. Jos näiden junien tarkka sijainti kiinnostaa, voidaan seuraamiseen käyttää käyttää esimerkiksi kulkutietoviestejä.
+
+Junan GPS-laite toimittaa sijainnin tällä hetkellä 15 sekunnin välein. Sijainnit saapuvat kuitenkin eri aikoihin, joten kyselyiden cache-aika on yksi sekunti.
+
+GPS-datan tuotto kytkeytyy päälle ja pois veturin kuljettajan toimesta, joten on mahdollista, että juna tuottaa GPS-dataa vaikka se ei olekaan ajossa. Yli 500 metriä lähimmästä radasta sijaitsevat GPS-sijainnit suodatetaan pois.
+
+Kehittäjien kannattaa huomioida junien sijaintitietojen puutteet sovelluksissaan ja kertoa rajoitteista selkeästi myös sovellusten loppukäyttäjille. Puutteiden ja virheiden vuoksi tietojen käyttöä turvallisuuteen liittyvissä sovelluksissa kannattaa harkita tarkkaan.
+
+### Kaikkien junien sijainnit
+
+URL: `/train-locations/latest?bbox=<points>`
+
+* Esimerkki 1: [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
+* Esimerkki 2: [/train-locations/latest?bbox=20,60,35,70](https://rata.digitraffic.fi/api/v1/train-locations/latest?bbox=20,60,35,70)
+
+**Kuvaus**
+
+Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 minuutin sisällä. Historiatietojen kysely tulossa myöhemmin.
+
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
+|---|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa | 	1,1,70,70 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [GPS-sijainti](#gps-sijainti) -tyyppisen vastauksen.
+
+### Yhden junan sijainti
+
+URL: `/train-locations/latest/<train_number>?bbox=<points>`
+
+Esimerkki: [/train-locations/latest/1](https://rata.digitraffic.fi/api/v1/train-locations/latest/1)
+
+**Kuvaus**
+
+Palauttaa junan GPS-sijainnin, jos se on ollut aktiivinen viimeisen 15 minuutin sisällä. Historiatietojen kysely tulossa myöhemmin.
+
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
+|---|---|---|---|---
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 	1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59. 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa | 	1,1,70,70 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [GPS-sijainti](#gps-sijainti) -tyyppisen vastauksen.
+
+### Sijainnit (MQTT)
+
+Topic: `train-locations/<departure_date>/<train_number>/`
+
+Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-locations/#". Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+
+Aiemmista Websocket-toteutuksista poiketen GPS-sijainnit jaetaan MQTT:lla. MQTT-palvelin löytyy osoitteesta rata-mqtt.digitraffic.fi:9001. Myös ei-Websocket -yhteys on mahdollinen (portti 1883).
+
+Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
+
+**Paluuarvo**
+
+Palauttaa [GPS-sijainti](#gps-sijainti) -tyyppisen vastauksen.
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
