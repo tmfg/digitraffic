@@ -77,7 +77,8 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
         - [Junatyypit](#junatyypit)
         - [Raideosuudet](#raideosuudet)
-        - [Herätepisteet](#herätepisteet)        
+        - [Herätepisteet](#herätepisteet)       
+    1. [GraphQL](#graphQL) 
 1. [Vastaustyypit](#vastaustyypit)
     1. [Junat](#junat)
     1. [Kokoonpanot](#kokoonpanot)
@@ -108,13 +109,13 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 **Vuonna 2018 suunnitteilla olevat ominaisuudet:**
 
-* GraphQL
-    * Tapa filtteröidä, rajoittaa ja yhdistellä vastauksia
 * Routeset-sanomat
     * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan. 
 
 ## Toteutetut ominaisuudet
 
+* ??.??.???? 
+    * GraphQL. Tapa filtteröidä, rajoittaa ja yhdistellä vastauksia
 * 12.12.2017
     * Junien GPS-sijainnit
 * 03.10.2017
@@ -824,6 +825,89 @@ Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määrit
 **Paluuarvo**
 
 Palauttaa [Herätepisteet](#herätepisteet)-tyyppisen vastauksen.
+
+## GraphQL
+
+GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin ja yhdistelyyn. GraphQL:än avulla voidaan esimerkiksi rajata mukaan vain tietyt json-kentät tai filtteröidä vastausta käyttäen mitä tahansa vastauksesta löytyvää json-kenttää. 
+
+GraphQL-kyselyitä voi kokeilla ja kirjoitella osoitteessa[https://rata.digitraffic.fi/api/v1/graphql/](https://rata.digitraffic.fi/api/v1/graphql/)
+
+Jokaista kyselyä voidaan filtteröidä `where`-parametrillä, joka on [json-query](https://www.npmjs.com/package/json-query) -tyyppinen string.
+
+###Esimerkkejä
+
+Vain tiettyjen kenttien (junanumero ja operaattori) poiminta vastaukseen: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+
+```
+{
+  viewer {
+    getStationsTrainsUsingGET(station: "HKI") {
+      trainNumber
+      operatorShortCode
+    }
+  }
+}
+```
+
+Sisällön filtteröinti (vain U-junat): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*commuterLineID%3DU%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%20%20commuterLineID%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+
+```
+{
+  viewer {
+    getStationsTrainsUsingGET(station: "HKI", where:"[*commuterLineID=U]") {
+      trainNumber
+      commuterLineID
+    }
+  }
+}
+```
+
+Ensimmäisen alkion poiminta: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*%5D%5B0%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+
+```
+{
+  viewer {
+    getStationsTrainsUsingGET(station: "HKI", where:"[*][0]") {
+      trainNumber
+      operatorShortCode
+    }
+  }
+}
+```
+
+Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getTrainByTrainNumberUsingGET_1(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20trainType%0A%20%20%20%20%7D%0A%20%20%20%20getCompositionByTrainNumberAndDepartureDateUsingGET(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20departureDate%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+```
+{
+  viewer {
+    getTrainByTrainNumberUsingGET_1(train_number: "1", departure_date: "2017-12-28") {
+      departureDate
+      trainNumber
+      trainType
+    }
+    getCompositionByTrainNumberAndDepartureDateUsingGET(train_number: "1", departure_date: "2017-12-28") {
+      departureDate
+      trainNumber
+    }
+  }
+}
+```
+
+###GraphQL-kysely omassa sovelluksessa
+
+GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/?`.
+
+HTTP-pyyntöön tulee lisätä otsikko `Content-Type: application/json`
+
+Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
+```
+{"query":"{  viewer  {    getCompositionsByDepartureDateUsingGET(departure_date:\"2017-12-26\", where:\"[*trainType=S]\"){      trainType trainNumber    }  } }"}
+```
+
+Kokonaisuudessaan homma näyttää esimerkiksi REST-pluginissa tältä:
+
+![GraphQL Postmanissa]({{ site.baseurl }}{{ "/img/rata/graphql.png" }})
+
+
 
 ## Vastaustyypit
 
