@@ -38,6 +38,7 @@
   padding: $margin-xxxs $margin-xxs;
   overflow-x: auto;
   vertical-align: -0.55rem;
+  max-width: 100%;
 
   @media screen and (max-width: $max-width-sm) {
     @include mobile-font-size(0.75rem);
