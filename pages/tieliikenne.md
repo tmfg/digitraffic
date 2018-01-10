@@ -88,8 +88,6 @@ Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
 
-Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
-
 Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille.
 
 Kun linkki- tai LAM–asema vaihtuu talvinopeusrajoituksesta kesänopeuksiin tai päinvastoin, viestin sisältö muuttuu.
