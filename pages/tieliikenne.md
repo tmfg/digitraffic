@@ -78,8 +78,6 @@ Koska uutta tietoa ei enää saavu, tämä rajapinta ei enää ole saatavilla.
 ### Sujuvuuden historiatiedot halutulta kuulta
 [```http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
 
-Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
-
 Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
 ### Vapaat nopeudet
