@@ -17,9 +17,6 @@ links:
 Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
 Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
-- Sujuvuustiedot. Liikenteen ajantasaiset sujuvuustiedot ja matka-aikatiedot ovat saatavissa tällä hetkellä pääkaupunkiseudulta. Matka-aikapalvelu kerää tietoa ajoneuvojen matka-ajoista eri tieosuuksilla hyödyntäen kameratekniikkaa ja rekisterikilven automaattista tunnistusmenetelmää. Rajapinnan kautta on saatavissa 5 minuutin mediaanimatka, keskinopeus ja sujuvuusluokka.
-Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyyppisesti kerran vuorokaudessa.
-
 - LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.
 
 - Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
