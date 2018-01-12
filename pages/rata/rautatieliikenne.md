@@ -830,13 +830,13 @@ Palauttaa [Herätepisteet](#herätepisteet)-tyyppisen vastauksen.
 
 GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin ja yhdistelyyn. GraphQL:än avulla voidaan esimerkiksi rajata mukaan vain tietyt json-kentät tai filtteröidä vastausta käyttäen mitä tahansa vastauksesta löytyvää json-kenttää. 
 
-GraphQL-kyselyitä voi kokeilla ja kirjoitella osoitteessa[https://rata.digitraffic.fi/api/v1/graphql/](https://rata.digitraffic.fi/api/v1/graphql/)
+GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v1/graphql/graphiql](https://rata.digitraffic.fi/api/v1/graphql/graphiql)
 
 Jokaista kyselyä voidaan filtteröidä `where`-parametrillä, joka on [json-query](https://www.npmjs.com/package/json-query) -tyyppinen string.
 
 ###Esimerkkejä
 
-Vain tiettyjen kenttien (junanumero ja operaattori) poiminta vastaukseen: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+Vain tiettyjen kenttien (junanumero ja operaattori) poiminta vastaukseen: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 
 ```
 {
@@ -849,7 +849,7 @@ Vain tiettyjen kenttien (junanumero ja operaattori) poiminta vastaukseen: [kokei
 }
 ```
 
-Sisällön filtteröinti (vain U-junat): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*commuterLineID%3DU%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%20%20commuterLineID%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+Sisällön filtteröinti (vain U-junat): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*commuterLineID%3DU%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20commuterLineID%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
 
 ```
 {
@@ -862,7 +862,7 @@ Sisällön filtteröinti (vain U-junat): [kokeile](https://rata.digitraffic.fi/a
 }
 ```
 
-Ensimmäisen alkion poiminta: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*%5D%5B0%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+Ensimmäisen alkion poiminta: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*%5D%5B0%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
 
 ```
 {
@@ -875,7 +875,7 @@ Ensimmäisen alkion poiminta: [kokeile](https://rata.digitraffic.fi/api/v1/graph
 }
 ```
 
-Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getTrainByTrainNumberUsingGET_1(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20trainType%0A%20%20%20%20%7D%0A%20%20%20%20getCompositionByTrainNumberAndDepartureDateUsingGET(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20departureDate%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getTrainByTrainNumberUsingGET_1(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20trainType%0A%20%20%20%20%7D%0A%20%20%20%20getCompositionByTrainNumberAndDepartureDateUsingGET(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20departureDate%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
 ```
 {
   viewer {
