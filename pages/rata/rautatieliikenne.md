@@ -100,18 +100,20 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
 
 Jos sinulla on kysymyksiä tietosisällöstä, kehitysehdotuksia tai tarvitset apua rajapinnan käyttöön, palvelulle on perustettu julkinen [rata.digitraffic.fi Google-ryhmä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi).
 
-## Suunnittellut ominaisuudet 2017
+## Suunnittellut ominaisuudet
 
 Listassa ensimmäisenä oleva pyritään toteuttamaan ensimmäisenä. Ominaisuuksia saatetaan vielä hyllyttää esim. operaattorien liikesalaisuussyistä tai odottamattomien teknisten vaikeuksien takia.
 
 Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskusteluryhmässä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi) 
 
-**Vuonna 2018 suunnitteilla olevat ominaisuudet:**
+**Suunnitteilla olevat ominaisuudet:**
 
 * GraphQL
     * Tapa filtteröidä, rajoittaa ja yhdistellä vastauksia
 * Routeset-sanomat
-    * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan. 
+    * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan.
+* Vanhojen junien kokoonpano- ja aikataulutiedot zip-paketteina
+* Kokoonpanojen haku versionumerolla 
 
 ## Toteutetut ominaisuudet
 
