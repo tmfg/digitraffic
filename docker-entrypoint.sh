@@ -14,6 +14,6 @@ echo 'eval "$(rbenv init -)"' >> ${HOME}/.bashrc
 
 mkdir ${HOME}/git
 
-bundle install
-npm install
-npm run dev
+exec bundle install
+exec npm install
+exec npm run dev
