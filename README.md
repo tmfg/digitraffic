@@ -213,6 +213,14 @@ Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edi
     * `npm --version`
 * Gulp, 3.9.1
     * `gulp --version`
+
+### Install with Docker
+```
+docker build . -t my/digitraffic
+docker run --name=digitraffic -p 3000:3000 -p 3001:3001 -v ${PWD}:/app my/digitraffic:latest
+```
+
+or one-liner `docker build . -t my/digitraffic; docker run --name=digitraffic -p 3000:3000 -p 3001:3001 -v ${PWD}:/app my/digitraffic:latest`
     
 ### Install used Ruby version with nbenv
 `rbenv global 2.4.1`
