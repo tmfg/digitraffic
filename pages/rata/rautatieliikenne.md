@@ -177,7 +177,7 @@ Avoimen datan rajapinta tarjoaa sekä on REST- että WebSocket-rajapinnat, joide
 Rajapinta on jaettu kuuteen osaan:
 
 * [Junien tiedot (/trains)](#junien-tiedot-trains)
-* [Aktiivisten junien seuranta (/live-trains)]((#aktiivisten-junien-seuranta-live-trains))
+* [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains))
 * [Junan GPS-sijainnit (/train-locations)](#junan-gps-sijainnit-train-locations)
 * [Kulkutietoviestit (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
 * [Kokoopanotiedot (/compositions)](#kokoonpanotiedot-compositions)
@@ -269,7 +269,7 @@ Palauttaa yhden junan tiedot
  
 ### Kaikkien junien seuranta (WebSocket)
  
- Esimerkki: [esimerkki](examples/websocket-train-all.html)
+ Esimerkki: [esimerkki](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-all.html)
  
  **Kuvaus**
  
@@ -281,7 +281,7 @@ Palauttaa yhden junan tiedot
  
 ### Liikennepaikan seuranta (WebSocket)
  
- Esimerkki: [esimerkki](examples/websocket-train-station.html)
+ Esimerkki: [esimerkki](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-station.html)
  
  **Kuvaus**
  
@@ -294,8 +294,8 @@ Palauttaa yhden junan tiedot
 ### Yhden junan seuranta (WebSocket)
  
  Esimerkkejä:
- - [esimerkki #1](examples/websocket-train-specific-train-without-departure-date.html)
- - [esimerkki #1](examples/websocket-train-specific-train.html)
+ - [esimerkki #1](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-specific-train-without-departure-date.html)
+ - [esimerkki #1](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-specific-train.html)
  
  **Kuvaus**
  
@@ -646,7 +646,7 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ### Kaikkien junien seuranta (WebSocket)
 
-Esimerkki: [esimerkki](examples/websocket-train-running-message-all.html)
+Esimerkki: [esimerkki](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-running-message-all.html)
 
 **Kuvaus**
 
@@ -659,8 +659,8 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 ### Yhden junan seuranta (WebSocket)
 
 Esimerkkejä:
-- [esimerkki 1](examples/websocket-train-running-message-specific-train-without-departure-date.html)
-- [esimerkki 2](examples/websocket-train-running-message-specific-train.html)
+- [esimerkki 1](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-running-message-specific-train-without-departure-date.html)
+- [esimerkki 2](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-running-message-specific-train.html)
 
 **Kuvaus**
 
@@ -751,7 +751,7 @@ Palauttaa [Operaattorit](#operaattorit)-tyyppisen vastauksen.
 
 ### Syyluokat
 
-URL: [metadata/cause-category-codes](..metadata/cause-category-codes)
+URL: [metadata/cause-category-codes](https://rata.digitraffic.fi/api/v1/metadata/cause-category-codes)
 
 **Kuvaus**
 
@@ -763,7 +763,7 @@ Palauttaa Palauttaa [Syyluokat](#syyluokat)-tyyppisen vastauksen.-tyyppisen vast
 
 ### Syykoodit
 
-URL: [metadata/detailed-cause-category-codes](..metadata/detailed-cause-category-codes)
+URL: [metadata/detailed-cause-category-codes](https://rata.digitraffic.fi/api/v1/metadata/detailed-cause-category-codes)
 
 **Kuvaus**
 
@@ -775,7 +775,7 @@ Palauttaa [Syykoodit](#syykoodit)-tyyppisen vastauksen.
 
 ### Kolmannen tason syykoodit
 
-URL: [metadata /third-cause-category-codes](..metadata/third-cause-category-codes)
+URL: [metadata /third-cause-category-codes](https://rata.digitraffic.fi/api/v1/metadata/third-cause-category-codes)
 
 **Kuvaus**
 
@@ -787,7 +787,7 @@ Palauttaa [Kolmannen tason syykoodit](#kolmannen tason syykoodit)-tyyppisen vast
 
 ### Junatyypit
 
-URL: [metadata/train-types](..metadata/train-types)
+URL: [metadata/train-types](https://rata.digitraffic.fi/api/v1/metadata/train-types)
 
 **Kuvaus**
 
@@ -799,7 +799,7 @@ Palauttaa [Junatyypit](#junatyypit)-tyyppisen vastauksen.
 
 ### Raideosuudet
 
-URL: [metadata/track-sections](..metadata/track-sections)
+URL: [metadata/track-sections](https://rata.digitraffic.fi/api/v1/metadata/track-sections)
 
 **Kuvaus**
 
@@ -813,7 +813,7 @@ Palauttaa [Raideosuudet](#raideosuudet)-tyyppisen vastauksen.
 
 ### Herätepisteet
 
-URL: [metadata/train-running-message-rules](..metadata/train-running-message-rules)
+URL: [metadata/train-running-message-rules](https://rata.digitraffic.fi/api/v1/metadata/train-running-message-rules)
 
 **Kuvaus**
 

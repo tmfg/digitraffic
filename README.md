@@ -202,7 +202,7 @@ Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edi
 
 ## Dev dependencies
 * Ruby, 2.4.1
-  * `ruby --version`
+  * `ruby --version`
 * RubyGems, 2.6.12
   * `gem --version`
 * Bundler, 1.15.1
