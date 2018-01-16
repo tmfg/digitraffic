@@ -25,8 +25,8 @@
     display: inline-block;
     background-color: $gray-200;
     border-radius: 50%;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 6rem;
+    width: 6rem;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     vertical-align: middle;
     transition: $transition-moderate;
@@ -60,13 +60,15 @@
     display: block;
     background: radial-gradient(rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.25) 100%);
     border-radius: 50%;
-    height: 3.5rem;
-    width: 3.5rem;
+    height:6rem;
+    width: 6rem;
     padding: 0.96rem 1rem 1.04rem;
   }
 
   &__icon {
-    font-size: 1.5rem;
+    font-size: 3rem;
+    margin-left: 8px;
+    margin-top: 8px;
   }
 
   &__text {
@@ -77,6 +79,7 @@
 
   &__service-heading {
     margin: 0;
+    font-size: 24px;
     transition: $transition-fast;
   }
 
