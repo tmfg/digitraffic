@@ -70,7 +70,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
-        - [Liikennepaikkatiedot](liikennepaikkatiedot)
+        - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
         - [Syyluokat](#syyluokat)
         - [Syykoodit](#syykoodit)
