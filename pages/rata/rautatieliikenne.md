@@ -229,7 +229,7 @@ Palauttaa yhden junan tiedot
  
  URL: `/trains/<departure_date>`
  
- Esimerkki: [/trains/2017-11-09](https://rata.digitraffic.fi/api/v1/trains?version=1234567891234)
+ Esimerkki: [/trains/2017-11-09](https://rata.digitraffic.fi/api/v1/trains/2017-11-09)
  
  **Kuvaus**
  
