@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 var browserSync = require('browser-sync').create();
 
 // Task for building blog when something changed:
-gulp.task('build', shell.task(['bundle exec jekyll build --watch --config _config_dev.yml']));
+gulp.task('build', shell.task(['bundle exec jekyll build --force_polling --watch --config _config_dev.yml']));
 // Or if you don't use bundle:
 // gulp.task('build', shell.task(['jekyll build --watch']));
 
