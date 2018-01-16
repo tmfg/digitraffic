@@ -4,6 +4,8 @@
 # Either use the LOCAL_USER_ID if passed in at runtime or
 # fallback
 
+trap "echo Exiting...; kill -TERM -1; exit" SIGINT SIGTERM
+
 USER_ID=${LOCAL_USER_ID:-9001}
 
 echo "Starting with UID : $USER_ID"
@@ -14,6 +16,11 @@ echo 'eval "$(rbenv init -)"' >> ${HOME}/.bashrc
 
 mkdir ${HOME}/git
 
-exec bundle install
-exec npm install
-exec npm run dev
+bundle install
+npm install
+npm run dev &
+
+while true
+do
+ sleep 1
+done
