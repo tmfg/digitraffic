@@ -484,7 +484,7 @@ Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 
 
 **Paluuarvo**
 
-Palauttaa [GPS-sijainti](#gps-sijainti) -tyyppisen vastauksen.
+Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ### Yhden junan sijainti
 
@@ -505,7 +505,7 @@ Palauttaa junan GPS-sijainnin, jos se on ollut aktiivinen viimeisen 15 minuutin 
 
 **Paluuarvo**
 
-Palauttaa [GPS-sijainti](#gps-sijainti) -tyyppisen vastauksen.
+Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ### Sijainnit (MQTT)
 
@@ -519,7 +519,7 @@ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4a
 
 **Paluuarvo**
 
-Palauttaa [GPS-sijainti](#gps-sijainti) -tyyppisen vastauksen.
+Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
@@ -721,7 +721,7 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 
 Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
-## Metatiedot
+## Metatiedot (/metadata)
 
 Palvelun metatietojen hakurajapinta.
 
@@ -783,7 +783,7 @@ Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. K
 
 **Paluuarvo**
 
-Palauttaa [Kolmannen tason syykoodit](#kolmannen tason syykoodit)-tyyppisen vastauksen.
+Palauttaa [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)-tyyppisen vastauksen.
 
 ### Junatyypit
 
