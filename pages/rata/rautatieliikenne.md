@@ -70,7 +70,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
-        - [Liikennepaikkatiedot](lLiikennepaikkatiedot)
+        - [Liikennepaikkatiedot](liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
         - [Syyluokat](#syyluokat)
         - [Syykoodit](#syykoodit)
@@ -185,7 +185,7 @@ Rajapinta on jaettu kuuteen osaan:
 
 Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
 
-Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [http://rata.digitraffic.fi/api/v1/trains/latest/1](/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
+Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [http://rata.digitraffic.fi/api/v1/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
 
 Rajapinnan käytössä on yhtäaikaiseen käyttöön liittyviä rajoituksia. Yhdestä ip-osoitteesta voi olla maksimissaan kaksi yhtäaikaista yhteyttä ja tehdä viisi pyyntöä sekunnissa. Rajoituksen ylittyessä palvelu viivästyttää pyyntöjä tai antaa HTTP 429 -virheen. Palvelun tilaa voi seurata osoitteessa [http://uptime.statuscake.com/?TestID=KIvdE8ZaAe](http://uptime.statuscake.com/?TestID=KIvdE8ZaAe).
 
