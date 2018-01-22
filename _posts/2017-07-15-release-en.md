@@ -16,10 +16,12 @@ tags:
 Production applications have been updated.
 
 Changelog:
+
 ROAD
 - DPO-226 - Datex2 messages are now fetched into a new daemon
 - DPO-268 - OPERATIONS listHistoryData throws Illegal Year excepotion
 - DPO-282 - Wheather camera images processing stability improvements
+
 MARITIME
 - DPO-277 - AIS message value doesn't fit into database
 - DPO-281 - WebSocket session and message logging imporvements

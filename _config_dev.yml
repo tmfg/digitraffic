@@ -52,19 +52,46 @@ defaults:
 
 # Translations below
 t:
+  # Traffic types
+  tieliikenne:
+    en: "Road"
+    fi: "Tieliikenne"
+  rautatieliikenne:
+    en: "Railroad"
+    fi: "Rautatieliikenne"
+  meriliikenne:
+    en: "Maritime"
+    fi: "Meriliikenne"
+  # Post types
+  artikkelit:
+    en: "Article"
+    fi: "Artikkelit"
+  tapahtumat:
+    en: "Events"
+    fi: "Tapahtumat"
+  tiedotteet:
+    en: "News"
+    fi: "Tiedotteet"
+  # Menu
+  menu:
+    en: "Menu"
+    fi: "Valikko"
+  search:
+    en: "Search"
+    fi: "Haku"
+  search-placeholder:
+    en: "What are you looking for?"
+    fi: "Mitä etsit?"
+  # Posts
   filter-news:
     en: "Filter news"
     fi: "Rajaa tiedotelistaa"
+  tag:
+    en: "Tag"
+    fi: "Avainsana"
   traffictype:
-    tieliikenne:
-      en: "Road"
-      fi: "Tieliikenne"
-    rautatieliikenne:
-      en: "Railroad"
-      fi: "Rautatieliikenne"
-    meriliikenne:
-      en: "Maritime"
-      fi: "Meriliikenne"
+    en: "Traffic type"
+    fi: "Liikennetyyppi"
   year:
     en: "Year"
     fi: "Vuosi"

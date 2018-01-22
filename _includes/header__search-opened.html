@@ -4,7 +4,7 @@
       <form action="{{ "/haku" | prepend:site.baseurl }}" method="get">
         <div class="search-opened__content">
           <div class="search-opened__input-col">
-            <input type="text" name="query" placeholder="Mitä etsit?" value="" class="search-opened__input-field">
+            <input type="text" name="query" placeholder="{{ site.t.search-placeholder[page.lang] }}" value="" class="search-opened__input-field">
           </div>
           <div class="search-opened__button-col">
             <button type="submit" class="search-opened__button pointer"><i class="material-icons md-light search-opened__button-icon">search</i></button>

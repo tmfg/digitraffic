@@ -16,10 +16,12 @@ tags:
 Päivitimme Digitraffic-sovelluksia tuotantoympäristön.
 
 Muutokset:
+
 TIE
 - DPO-226 - Datex2-viestien hakeminen uuteen daemoniin
 - DPO-268 - OPEROINTI listHistoryData heittää Illegal Year poikkeuksen
 - DPO-282 - Kelikamerakuvien kuvatiedostojen käsittelyn vakauden parannus
+
 MERI
 - DPO-277 - AIS-viestin arvo ei mahdu tietokantaan
 - DPO-281 - WebSocket-istunnon ja viestien logituksen parannus
