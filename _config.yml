@@ -50,4 +50,4 @@ defaults:
     scope:
       path: ""
     values:
-      site-language: "fin"
+      lang: "fi"
