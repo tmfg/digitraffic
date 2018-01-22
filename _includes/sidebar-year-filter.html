@@ -32,7 +32,7 @@
 
 <div class="row sidebar__filter-row">
   <div class="col-xs-12 sidebar__filter-section">
-    <h4 class="h4 sidebar__filter-section-heading">Vuosi</h4>
+    <h4 class="h4 sidebar__filter-section-heading">{{ site.t.year[page.lang] }}</h4>
     <ul data-filtersection="year" class="sidebar__filter-list">
       {% for year in unique_years %}
       <li class="sidebar__filter-list-item">

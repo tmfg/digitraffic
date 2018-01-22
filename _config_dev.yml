@@ -48,4 +48,13 @@ defaults:
     scope:
       path: ""
     values:
-      site-language: "fin"
+      lang: "fi"
+
+# Translations below
+t:
+  filter-news:
+    en: "Filter news"
+    fi: "Rajaa tiedotelistaa"
+  year:
+    en: "Year"
+    fi: "Vuosi"
