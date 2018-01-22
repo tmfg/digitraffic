@@ -55,6 +55,16 @@ t:
   filter-news:
     en: "Filter news"
     fi: "Rajaa tiedotelistaa"
+  traffictype:
+    tieliikenne:
+      en: "Road"
+      fi: "Tieliikenne"
+    rautatieliikenne:
+      en: "Railroad"
+      fi: "Rautatieliikenne"
+    meriliikenne:
+      en: "Maritime"
+      fi: "Meriliikenne"
   year:
     en: "Year"
     fi: "Vuosi"
