@@ -1,5 +1,7 @@
 ---
-title: 'Tuotannon sovellukset päivitetty 28.11.2017 10:20 - 10:30'
+title: 'Production applications updated 28.11.2017 10:20 - 10:30'
+lang: en
+ref: 2017-11-28-release
 image: 
 published: true
 categories: Tiedotteet
@@ -7,8 +9,8 @@ traffictypes:
   - Tieliikenne
   - Meriliikenne
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - APIs
+  - Admin
 ---
 
 Päivitimme Digitraffic-sovelluksia tuotantoympäristön.
