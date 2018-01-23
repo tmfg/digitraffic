@@ -6,7 +6,7 @@
 {% else %}
   {% assign posts_text = include.posts-plural %}
 {% endif %}
-<div class="posts-in-category__amount"><span id="posts-in-category-amount">{{ posts_size }}</span> {{ posts_text }} julkaisujärjestyksessä</div>
+<div class="posts-in-category__amount"><span id="posts-in-category-amount">{{ posts_size }}</span> {% if posts.size == 1 %}{{ site.t.news-amount-singular[page.lang] }}{% else %}{{ site.t.news-amount-plural[page.lang] }}{% endif %}</div>
 {% for post in posts %}
   {% if post.title %}
     <div
@@ -20,7 +20,7 @@
       <!-- White spaces commented -->
         <span class="date-type-tags__date"><!--
         --><i class="material-icons md-md date-type-tags__date-icon">create</i><!--
-        -->{{ post.date | date: "%d.%m.%Y" }}<!--
+        -->{% if page.lang == "en" %}{{ post.date | date: "%-m/%-d/%Y" }}{% else %}{{ post.date | date: "%-d.%-m.%Y" }}{% endif %}<!--
       --></span><!--
       --><ul class="date-type-tags__type-list"><!--
         -->{% for traffictype in post.traffictypes %}<!--
@@ -40,5 +40,5 @@
 {% endfor %}
 
 <div class="posts-in-category__no-posts posts-in-category__no-posts--hidden">
-  Ei näytettäviä julkaisuja.
+  {{ site.t.no-posts[page.lang] }}
 </div>
