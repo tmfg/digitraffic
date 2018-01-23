@@ -24,7 +24,7 @@
       --></span><!--
       --><ul class="date-type-tags__type-list"><!--
         -->{% for traffictype in post.traffictypes %}<!--
-        --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ category[0] | downcase }}?traffictype={{ traffictype | downcase }}">{% assign traffictype_l = traffictype | downcase %}{{ site.t[traffictype_l][page.lang] }}</a></li><!--
+        --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ category[0] | downcase }}?traffictype={{ traffictype | downcase }}">{% assign traffictype_dc = traffictype | downcase %}{{ site.t[traffictype_dc][page.lang] }}</a></li><!--
         -->{% endfor %}<!--
       --></ul><!--
       --><ul class="date-type-tags__tag-list"><!--

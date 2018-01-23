@@ -1,5 +1,7 @@
 ---
 title: 'Tuotannon sovellukset päivitetty 9.1.2018 10:05 - 10:54'
+lang: fi
+ref: 2018-01-09-release
 image: 
 published: true
 categories: Tiedotteet

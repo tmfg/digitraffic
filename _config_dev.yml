@@ -152,15 +152,24 @@ t:
   api-status:
     en: "API status"
     fi: "Rajapintojen tila"
+    url:
+      en: "/en/api-status"
+      fi: "/rajapintojen-tila"
   frontpage-heading:
     en: "Digitraffic"
     fi: "Digitraffic"
   frontpage-intro:
     en: "Information about open data for application development from Finnish road, railway and maritime traffic."
     fi: "Ajantasaista avointa liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- ja vesiliikenteestä."
+  latest-posts:
+    en: "Latest posts"
+    fi: "Ajankohtaista"
   loading:
     en: "Loading"
     fi: "Ladataan"
+  news:
+    en: "News"
+    fi: "Tiedotteet"
   service-introduction:
     en: "Service introduction"
     fi: "Palvelun esittely"
@@ -193,7 +202,7 @@ t:
     en: "Year"
     fi: "Vuosi"
 
-  # For javascript
+  # For javascript // Use camelCasing in naming
   js:
     loadingError:
       en: "Error in loading data"
