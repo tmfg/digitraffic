@@ -2,8 +2,13 @@
 ---
 /***Write javascript under this line***/
 
+// Init parallax elements
 var parallaxElements;
 var footerElement;
+
+// Init translations object
+var t = {};
+var pageLang = "fi";
 
 /* Check if DOM is ready */
 if (document.readyState !== 'loading') {
@@ -28,6 +33,10 @@ function init() {
 
   // Add .header--scrolled if landed in the middle of page
   headerScrolled();
+  
+  // Get translations
+  getPageLanguage();
+  getTranslations();
 
   // If Service status section exists, get service status
   document.getElementById("service-status-section") ? getServiceStatus() : '';
@@ -379,6 +388,27 @@ function updateServiceStatusList() {
   });
 }
 
+// Get page language
+function getPageLanguage() {
+  let lang = document.getElementsByTagName("html")[0].getAttribute('lang');
+  if (lang) {
+    pageLang = lang;
+  }
+}
+
+// Get translations
+function getTranslations() {
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", setTranslations);
+  oReq.open("GET", "/data/translations.json");
+  oReq.send();
+}
+
+// Set translations to object t
+function setTranslations() {
+  t = JSON.parse(this.responseText);
+}
+
 function getServiceStatus() {
 
   // Get service status data from api
@@ -416,20 +446,20 @@ function addOperationStatus(service, status) {
   // Update status
   if (status === "operational") {
     classes.add("service-status__icon-circle-bottom--operational");
-    statusText.textContent = "Toiminnassa";
+    statusText.textContent = t.statusOperational[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
   } else if (status === "partial outage") {
     classes.add("service-status__icon-circle-bottom--partial-outage");
-    statusText.textContent = "Osittainen katkos";
+    statusText.textContent = t.statusPartialOutage[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
   }
   else if (status === "major outage") {
     classes.add("service-status__icon-circle-bottom--major-outage");
-    statusText.textContent = "Merkittävä katkos";
+    statusText.textContent = t.statusMajorOutage[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
   }
   else {
-    statusText.textContent = "Virhe ladattaessa tietoja";
+    statusText.textContent = t.loadingError[pageLang];
     statusText.classList.add("service-status__service-text--loading");
   }
 }

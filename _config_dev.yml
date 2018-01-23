@@ -50,18 +50,19 @@ defaults:
     values:
       lang: "fi"
 
-# Translations below
+# == Translations below == #
 t:
   # Traffic types
   tieliikenne:
     en: "Road"
     fi: "Tieliikenne"
   rautatieliikenne:
-    en: "Railroad"
+    en: "Railway"
     fi: "Rautatieliikenne"
   meriliikenne:
     en: "Maritime"
     fi: "Meriliikenne"
+  
   # Post types
   artikkelit:
     en: "Article"
@@ -72,6 +73,7 @@ t:
   tiedotteet:
     en: "News"
     fi: "Tiedotteet"
+  
   # Menu
   menu:
     en: "Menu"
@@ -82,6 +84,7 @@ t:
   search-placeholder:
     en: "What are you looking for?"
     fi: "Mitä etsit?"
+  
   # Footer
   contact:
     en: "Contact"
@@ -142,6 +145,31 @@ t:
       en: "Creative Commons Attribution 4.0 International license"
       fi: "Creative Commons Nimeä 4.0 Kansainvälinen -lisenssillä"
 
+  # Frontpage
+  apis:
+    en: "APIs"
+    fi: "Rajapinnat"
+  api-status:
+    en: "API status"
+    fi: "Rajapintojen tila"
+  frontpage-heading:
+    en: "Digitraffic"
+    fi: "Digitraffic"
+  frontpage-intro:
+    en: "Information about open data for application development from Finnish road, railway and maritime traffic."
+    fi: "Ajantasaista avointa liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- ja vesiliikenteestä."
+  loading:
+    en: "Loading"
+    fi: "Ladataan"
+  service-introduction:
+    en: "Service introduction"
+    fi: "Palvelun esittely"
+
+  # API status
+  recent-outages:
+    en: "Recent outages"
+    fi: "Viimeisimmät häiriöt"
+
   # Posts
   filter-news:
     en: "Filter news"
@@ -164,3 +192,18 @@ t:
   year:
     en: "Year"
     fi: "Vuosi"
+
+  # For javascript
+  js:
+    loadingError:
+      en: "Error in loading data"
+      fi: "Virhe ladattaessa tietoja"
+    statusMajorOutage:
+      en: "Major outage"
+      fi: "Merkittävä katkos"
+    statusOperational:
+      en: "Operational"
+      fi: "Toiminnassa"
+    statusPartialOutage:
+      en: "Partial outage"
+      fi: "Osittainen katkos"
