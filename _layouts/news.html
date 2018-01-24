@@ -22,7 +22,7 @@ layout: compress
       <div class="row">
         <div class="col-xs-12 breadcrumb"><!--
         -->{% include breadcrumb-home.html %}<!--
-        -->{% assign category = page.categories[0] | downcase %}<span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang == "fi" %}{% else %}{{ page.lang }}/{% endif %}{{ site.t[category][page.lang] | downcase }}">{{ site.t[category][page.lang] }}</a></span><!--
+        -->{% assign category = page.categories[0] %}{% if category == "en" %}{% assign category = page.categories[1] %}{% endif %}<span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ category | downcase }}">{{ category }}</a></span><!--
         --><span class="breadcrumb__item">{{ page.title }}</span>
         </div>
       </div>
@@ -55,25 +55,17 @@ layout: compress
               <div class="col-xs-12 u--no-padding">
                 <div class="date-type-tags">
                   <!-- White spaces commented -->
-                  {% for category in page.categories %}<!--
-                -->{% assign post_category = category %}<!--
-               -->{% endfor %}<!--
-               --><span class="date-type-tags__date"><!--
-                --><i class="material-icons md-md date-type-tags__date-icon"><!--
-                  -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
-                  -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
-                --></i><!--
-                -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}{{ page.date | date: "%d.%m.%Y" }}{% endif %}<!--
-                -->{% if post_category == 'Tapahtumat' %}{{ page.event-date | date: "%d.%m.%Y" }}{% endif %}<!--
+                  <span class="date-type-tags__date"><!--
+                -->{% include post-date.html %}<!--
                 --></span><!--
                --><ul class="date-type-tags__type-list"><!--
                  -->{% for traffictype in page.traffictypes %}<!--
-                 --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+                 --><li class="date-type-tags__type"><a class="link" href="{% include url-home.html %}{{ category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
                  -->{% endfor %}<!--
                --></ul><!--
                --><ul class="date-type-tags__tag-list"><!--
                  -->{% for tag in page.tags %}<!--
-                 --><li class="date-type-tags__tag"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
+                 --><li class="date-type-tags__tag"><a class="link" href="{% include url-home.html %}{{ category | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
                  -->{% endfor %}<!--
                --></ul>
                 <!-- /White spaces commented --> 
@@ -92,29 +84,12 @@ layout: compress
 
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
-
-            {% if post_category == 'Tiedotteet' %}
-              {% assign category_singular = 'tiedote' %}
-              {% assign category_plural = 'tiedotteet' %}
-            {% endif %}
-            {% if post_category == 'Artikkelit' %}
-              {% assign category_singular = 'artikkeli' %}
-              {% assign category_plural = 'artikkelit' %}
-            {% endif %}
-            {% if post_category == 'Tapahtumat' %}
-              {% assign category_singular = 'tapahtuma' %}
-              {% assign category_plural = 'tapahtumat' %}
-            {% endif %}
-            
             <!--Next post-->
-            {% include sidebar-next-post.html category=category_singular %}
-
+            {% include sidebar-next-post.html %}
             <!--Previous post-->
-            {% include sidebar-previous-post.html category=category_singular %}
-
+            {% include sidebar-previous-post.html %}
             <!--Related posts-->
-            {% include sidebar-related-posts.html category=category_plural %}
-            
+            {% include sidebar-related-posts.html %}
           </div>
 
         </div>

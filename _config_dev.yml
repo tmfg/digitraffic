@@ -68,7 +68,7 @@ t:
   
   # Post types
   artikkelit:
-    en: "Article"
+    en: "Articles"
     fi: "Artikkelit"
   tapahtumat:
     en: "Events"
@@ -148,6 +148,15 @@ t:
       en: "Creative Commons Attribution 4.0 International license"
       fi: "Creative Commons Nimeä 4.0 Kansainvälinen -lisenssillä"
 
+  # Github edit
+  github-edit:
+    text:
+      en: "Did you find an error? Help us "
+      fi: "Löysitkö virheen? Auta meitä "
+    link-text:
+      en: "improve this page"
+      fi: "parantamaan tätä sivua"
+
   # Frontpage
   apis:
     en: "APIs"
@@ -204,6 +213,31 @@ t:
   year:
     en: "Year"
     fi: "Vuosi"
+
+  # Post sidebar headings
+  post-next:
+    artikkeli: "Seuraava artikkeli"
+    tapahtuma: "Seuraava tapahtuma"
+    tiedotteet: "Seuraava tiedote"
+    articles: "Next article"
+    events: "Next event"
+    news: "Next news"
+  post-previous:
+    artikkeli: "Edellinen artikkeli"
+    tapahtuma: "Edellinen tapahtuma"
+    tiedotteet: "Edellinen tiedote"
+    articles: "Previous article"
+    events: "Previous event"
+    news: "Previous news"
+  post-related:
+    artikkeli: "Liittyvät artikkelit"
+    tapahtuma: "Liittyvät tapahtumat"
+    tiedotteet: "Liittyvät tiedotteet"
+    articles: "Related articles"
+    events: "Related events"
+    news: "Related news"
+
+
 
   # For javascript // Use camelCasing in naming
   js:
