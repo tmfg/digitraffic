@@ -4,9 +4,9 @@ lang: en
 ref: 2018-01-09-release
 image: 
 published: true
-categories: Tiedotteet
+categories: en News
 traffictypes:
-  - Tieliikenne
+  - Road
 tags:
   - APIs
   - Admin

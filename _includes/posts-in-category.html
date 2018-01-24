@@ -1,5 +1,11 @@
 {% assign posts = site.posts | where:"lang",page.lang %}
-{% assign posts = posts | where:"categories",include.category %}
+{% if page.lang == "en" and include.category_en %}
+  {% assign posts = posts | where:"categories",include.category_en %}
+  {% assign category = include.category_en | downcase %}
+{% else %}
+  {% assign posts = posts | where:"categories",include.category_fi" %}
+  {% assign category = include.category_fi | downcase %}
+{% endif %}
 
 {% if posts.size == 1 %}
   {% assign posts_text = include.posts-singular %}
@@ -24,7 +30,7 @@
       --></span><!--
       --><ul class="date-type-tags__type-list"><!--
         -->{% for traffictype in post.traffictypes %}<!--
-        --><li class="date-type-tags__type"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ category[0] | downcase }}?traffictype={{ traffictype | downcase }}">{% assign traffictype_dc = traffictype | downcase %}{{ site.t[traffictype_dc][page.lang] }}</a></li><!--
+        --><li class="date-type-tags__type"><a class="link" href="{% include url-home.html %}{{ category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
         -->{% endfor %}<!--
       --></ul><!--
       --><ul class="date-type-tags__tag-list"><!--

@@ -62,6 +62,9 @@ t:
   meriliikenne:
     en: "Maritime"
     fi: "Meriliikenne"
+  kokeellinen:
+    en: "Experimental"
+    fi: "Kokeellinen"
   
   # Post types
   artikkelit:
