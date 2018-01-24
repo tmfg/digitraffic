@@ -1,21 +1,17 @@
+{% assign category_dc = category | downcase %}
 {% if next_post.url %}
 <div class="sidebar__section">
-  <h3 class="h3 sidebar__heading">Seuraava {{ include.category }}</h3>
+  <h3 class="h3 sidebar__heading">{{ site.t.post-next[category_dc] }}</h3>
   <h4 class="h4 sidebar__page-heading"><a href="{{ next_post.url | prepend:site.baseurl }}" class="sidebar__page-heading-link">{{ next_post.title }}</a></h4>
   <!-- White spaces commented -->
   <div class="sidebar__metadata"><!--
   -->{% assign post_category = next_post.categories[0] %}<!--
   --><span class="sidebar__page-timestamp"><!--
-    --><i class="material-icons md-md date-type-tags__date-icon"><!--
-      -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
-      -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
-    --></i><!--
-    -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}{{ page.date | date: "%d.%m.%Y" }}{% endif %}<!--
-    -->{% if post_category == 'Tapahtumat' %}{{ page.event-date | date: "%d.%m.%Y" }}{% endif %}<!--
+    -->{% include post-date.html %}<!--
   --></span><!--
  --><ul class="sidebar__page-traffic-type-list"><!--
    -->{% for traffictype in next_post.traffictypes %}<!--
-   --><span class="sidebar__page-traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
+   --><span class="sidebar__page-traffic-type"><a href="{% include url-home.html %}{{ category_dc }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
    -->{% endfor %}<!--
  --></ul><!--
 --></div>
