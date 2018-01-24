@@ -137,12 +137,12 @@ layout: compress
                 -->{% if page.lang == "en" %}{{ post.date | date: "%-m/%-d/%Y" }}{% else %}{{ post.date | date: "%-d.%-m.%Y" }}{% endif %}<!--
               --></span><!--
                --><ul class="latest-item__content-type-list"><!--
-                 --><li class="latest-item__content-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase}}" class="link">{{ site.t[post_category][page.lang] }}</a></li><!--
+                 --><li class="latest-item__content-type"><a href="{% include url-home.html %}{{ post_category | downcase}}" class="link">{{ post_category }}</a></li><!--
                --></ul><!--
                --><ul class="latest-item__traffic-type-list"><!--
                  -->{% for traffictype in post.traffictypes %}<!--
                  -->{% assign traffictype_dc = traffictype | downcase %}<!-- 
-                 --><span class="latest-item__traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="latest-item__traffic-type-link link">{{ site.t[traffictype_dc][page.lang] }}</a></span><!--
+                 --><span class="latest-item__traffic-type"><a href="{% include url-home.html %}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
                  -->{% endfor %}<!--
                --></ul>
                 <!-- /White spaces commented -->

@@ -4,10 +4,10 @@ lang: en
 ref: 2017-07-15-release
 image: main-data-eol.jpg
 published: true
-categories: Tiedotteet
-traffictypes: 
-  - Tieliikenne
-  - Meriliikenne
+categories: en News
+traffictypes:
+  - Road
+  - Maritime
 tags:
   - APIs
   - Admin

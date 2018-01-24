@@ -4,10 +4,10 @@ lang: en
 ref: 2017-11-28-release
 image: 
 published: true
-categories: Tiedotteet
+categories: en News
 traffictypes:
-  - Tieliikenne
-  - Meriliikenne
+  - Road
+  - Maritime
 tags:
   - APIs
   - Admin
