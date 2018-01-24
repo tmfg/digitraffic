@@ -190,8 +190,8 @@ t:
     en: "No matching posts."
     fi: "Ei näytettäviä julkaisuja."
   news-amount-singular:
-    en: "news story to show"
-    fi: "näytettävä tiedote"
+    en: "news story"
+    fi: "tiedote"
   news-amount-plural:
     en: "news in order of date published"
     fi: "tiedotetta julkaisujärjestyksessä"

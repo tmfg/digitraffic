@@ -12,7 +12,7 @@
 {% else %}
   {% assign posts_text = include.posts-plural %}
 {% endif %}
-<div class="posts-in-category__amount"><span id="posts-in-category-amount">{{ posts_size }}</span> {% if posts.size == 1 %}{{ site.t.news-amount-singular[page.lang] }}{% else %}{{ site.t.news-amount-plural[page.lang] }}{% endif %}</div>
+<div class="posts-in-category__amount"><span id="posts-in-category-amount">{{ posts_size }}</span> <span id="posts-in-category-amount-text-singular" class="u--hidden">{{ site.t.news-amount-singular[page.lang] }}</span><span id="posts-in-category-amount-text-plural">{{ site.t.news-amount-plural[page.lang] }}</span></div>
 {% for post in posts %}
   {% if post.title %}
     <div

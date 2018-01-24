@@ -123,6 +123,15 @@ function showHidePosts() {
   });
   // Update amount of posts
   document.getElementById('posts-in-category-amount').innerText = visiblePosts.length;
+  // Show singular/plural text according to amount
+  if (visiblePosts.length === 1) {
+    document.getElementById('posts-in-category-amount-text-plural').classList.add('u--hidden');
+    document.getElementById('posts-in-category-amount-text-singular').classList.remove('u--hidden');
+  } else {
+    document.getElementById('posts-in-category-amount-text-singular').classList.add('u--hidden');
+    document.getElementById('posts-in-category-amount-text-plural').classList.remove('u--hidden');
+  }
+  
   // Add --last class to last visible post
   let noPostsClasses = document.body.querySelector('.posts-in-category__no-posts').classList;
   if (visiblePosts.length > 0) {
