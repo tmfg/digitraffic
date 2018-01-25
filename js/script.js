@@ -7,7 +7,7 @@ var parallaxElements;
 var footerElement;
 
 // Init translations object
-var t = {};
+var t = {{ site.t.js | jsonify }};
 var pageLang = "fi";
 
 /* Check if DOM is ready */
@@ -34,9 +34,8 @@ function init() {
   // Add .header--scrolled if landed in the middle of page
   headerScrolled();
   
-  // Get translations
+  // Get page language for translations
   getPageLanguage();
-  getTranslations();
 
   // If Service status section exists, get service status
   document.getElementById("service-status-section") ? getServiceStatus() : '';
@@ -394,19 +393,6 @@ function getPageLanguage() {
   if (lang) {
     pageLang = lang;
   }
-}
-
-// Get translations
-function getTranslations() {
-  var oReq = new XMLHttpRequest();
-  oReq.addEventListener("load", setTranslations);
-  oReq.open("GET", "/data/translations.json");
-  oReq.send();
-}
-
-// Set translations to object t
-function setTranslations() {
-  t = JSON.parse(this.responseText);
 }
 
 function getServiceStatus() {
