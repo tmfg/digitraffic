@@ -182,9 +182,12 @@ t:
   news:
     en: "News"
     fi: "Tiedotteet"
-  service-introduction:
-    en: "Service introduction"
+  service-overview:
+    en: "Service overview"
     fi: "Palvelun esittely"
+    url:
+      en: "/en/service-overview"
+      fi: "/palvelun-esittely/"
 
   # API status
   recent-outages:
@@ -216,22 +219,22 @@ t:
 
   # Post sidebar headings
   post-next:
-    artikkeli: "Seuraava artikkeli"
-    tapahtuma: "Seuraava tapahtuma"
+    artikkelit: "Seuraava artikkeli"
+    tapahtumat: "Seuraava tapahtuma"
     tiedotteet: "Seuraava tiedote"
     articles: "Next article"
     events: "Next event"
     news: "Next news"
   post-previous:
-    artikkeli: "Edellinen artikkeli"
-    tapahtuma: "Edellinen tapahtuma"
+    artikkelit: "Edellinen artikkeli"
+    tapahtumat: "Edellinen tapahtuma"
     tiedotteet: "Edellinen tiedote"
     articles: "Previous article"
     events: "Previous event"
     news: "Previous news"
   post-related:
-    artikkeli: "Liittyvät artikkelit"
-    tapahtuma: "Liittyvät tapahtumat"
+    artikkelit: "Liittyvät artikkelit"
+    tapahtumat: "Liittyvät tapahtumat"
     tiedotteet: "Liittyvät tiedotteet"
     articles: "Related articles"
     events: "Related events"
