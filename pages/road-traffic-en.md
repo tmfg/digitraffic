@@ -6,7 +6,7 @@ traffictypes: Tieliikenne
 searchable: true
 swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 hero-image: road
-title: Tieliikenne
+title: Road traffic
 lang: en
 ref: road-traffic
 intro: Open data from Finnish roads.
@@ -33,7 +33,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
 
-# Sisältö
+# Content
 - [REST/JSON-rajapinnat](#restjson-rajapinnat)
     - [Kelikamerat](#kelikamerat)
     - [Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot](#ajantasaiset-linkkien-sujuvuustiedot-sisältäen-matka-aikatiedot)
@@ -46,13 +46,13 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
 - [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
 
-## REST/JSON-rajapinnat
+## REST/JSON-APIs
 
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
 Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
-### Kelikamerat
+### Road weather cameras
 
 [```http://tie.digitraffic.fi/api/v1/data/camera-data```](http://tie.digitraffic.fi/api/v1/data/camera-data)
 
