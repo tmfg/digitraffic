@@ -329,7 +329,7 @@ Palauttaa yhden junan tiedot
 
 Vanhojen junien tiedot löytyvät zip-paketteina osoittesta [/api/v1/trains/dumps/list.html](/api/v1/trains/dumps/list.html)
 
-Paketin sisältämä json on samanmuontoista kuin muutkin [juna-vastaukset](#junat).
+Paketin sisältämä json on saman muotoista kuin muutkin [juna-vastaukset](#junat).
 
 Uusi paketti luodaan joka kuun viides päivä. 
  
@@ -737,7 +737,7 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 Vanhat kokoonpanot löytyvät zip-paketteina osoittesta [/api/v1/compositions/dumps/list.html](/api/v1/compositions/dumps/list.html)
 
-Paketin sisältämä json on samanmuontoista kuin muutkin [kokoonpano-vastaukset](#kokoonpanot).
+Paketin sisältämä json on saman muotoista kuin muutkin [kokoonpano-vastaukset](#kokoonpanot).
 
 Uusi paketti luodaan joka kuun viides päivä. 
 
