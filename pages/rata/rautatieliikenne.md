@@ -50,6 +50,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Liikennepaikan seuranta (WebSocket)](#liikennepaikan-seuranta-websocket)
         - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
         - [GTFS](#gtfs)
+        - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
     1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
         - [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-lukumäärärajoitus)
         - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
@@ -69,6 +70,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
+        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
@@ -322,6 +324,14 @@ Palauttaa yhden junan tiedot
  **Paluuarvo**
  
  Palauttaa [GTFS-muodossa](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md) olevan zip-paketin
+ 
+### Vanhat junat zip-paketteina
+
+Vanhojen junien tiedot löytyvät zip-paketteina osoittesta [/api/v1/trains/dumps/list.html](/api/v1/trains/dumps/list.html)
+
+Paketin sisältämä json on samanmuontoista kuin muutkin [juna-vastaukset](#junat).
+
+Uusi paketti luodaan joka kuun viides päivä. 
  
 ## Aktiivisten junien seuranta (/live-trains)
  
@@ -722,6 +732,14 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 **Paluuarvo**
 
 Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
+
+### Vanhat kokoonpanot zip-paketteina
+
+Vanhat kokoonpanot löytyvät zip-paketteina osoittesta [/api/v1/compositions/dumps/list.html](/api/v1/compositions/dumps/list.html)
+
+Paketin sisältämä json on samanmuontoista kuin muutkin [kokoonpano-vastaukset](#kokoonpanot).
+
+Uusi paketti luodaan joka kuun viides päivä. 
 
 ## Metatiedot (/metadata)
 
