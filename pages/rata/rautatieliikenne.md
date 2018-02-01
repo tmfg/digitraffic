@@ -117,6 +117,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 1.2.2017
+    * Uusi tyyli etusivulle
 * 12.12.2017
     * Junien GPS-sijainnit
 * 03.10.2017
