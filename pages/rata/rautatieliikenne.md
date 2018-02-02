@@ -121,6 +121,7 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 * 1.2.2017
     * Uusi tyyli etusivulle
+    * Vanhat junat ja kokoonpanot zip-paketteina
 * 12.12.2017
     * Junien GPS-sijainnit
 * 03.10.2017
