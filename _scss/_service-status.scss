@@ -25,11 +25,15 @@
     display: inline-block;
     background-color: $gray-200;
     border-radius: 50%;
-    height: 3.5rem;
-    width: 3.5rem;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
     vertical-align: middle;
-    transition: $transition-moderate;
+    transition: background-color $transition-moderate;
+    height: 4rem;
+    width: 4rem;
+    @media screen and (min-width: $min-width-md) {
+      height: 6rem;
+      width: 6rem;
+    }
 
     &--operational {
       background-color: $green;
@@ -60,13 +64,21 @@
     display: block;
     background: radial-gradient(rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.25) 100%);
     border-radius: 50%;
-    height: 3.5rem;
-    width: 3.5rem;
     padding: 0.96rem 1rem 1.04rem;
+    height: 4rem;
+    width: 4rem;
+    @media screen and (min-width: $min-width-md) {
+      height: 6rem;
+      width: 6rem;
+    }
   }
 
   &__icon {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    @media screen and (min-width: $min-width-md) {
+      font-size: 3rem;
+      margin: $margin-xxs;
+    }
   }
 
   &__text {
@@ -76,8 +88,15 @@
   }
 
   &__service-heading {
+    @include mobile-font-size($font-size-mdlg);
     margin: 0;
     transition: $transition-fast;
+    @media screen and (min-width: $min-width-sm) {
+      font-size: $font-size-mdlg;
+    }
+    @media screen and (min-width: $min-width-md) {
+      font-size: $font-size-lg
+    }
   }
 
   &__link:hover .service-status__service-heading {

@@ -17,9 +17,6 @@ links:
 Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
 Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
-- Sujuvuustiedot. Liikenteen ajantasaiset sujuvuustiedot ja matka-aikatiedot ovat saatavissa tällä hetkellä pääkaupunkiseudulta. Matka-aikapalvelu kerää tietoa ajoneuvojen matka-ajoista eri tieosuuksilla hyödyntäen kameratekniikkaa ja rekisterikilven automaattista tunnistusmenetelmää. Rajapinnan kautta on saatavissa 5 minuutin mediaanimatka, keskinopeus ja sujuvuusluokka.
-Edellisen päivän sujuvuuden historiatiedot. Tiedot päivitetään eräajotyyppisesti kerran vuorokaudessa.
-
 - LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.
 
 - Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
@@ -59,40 +56,24 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 [```http://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0150200 kuva löytyy osoitteesta [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
+Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0150200 kuva löytyy
+osoitteesta [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
 
 ![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
 
 ### Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
-[```http://tie.digitraffic.fi/api/v1/data/fluency-current```](http://tie.digitraffic.fi/api/v1/data/fluency-current)
+Perjantaina 29.12.2017 päättyi pääkaupunkiseudun matka-aikajärjestelmän toiminta. Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
+vastaa enää asetettuja laatuvaatimuksia Tämän vuoksi myös Digitraffic lopetti toimittamasta PKS-järjestelmään liittyvää tietoa.
 
-[```http://tie.digitraffic.fi/api/v1/data/fluency-current/{id}```](http://tie.digitraffic.fi/api/v1/data/fluency-current/{id})
-
-Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
-
-Viesti sisältää kullekin linkille viimeisimmän 5 minuutin mediaanimatka-ajan sekunteina, vastaavan keskinopeuden, sujuvuusluokan, ja tiedon siitä milloin tiedot on päivitetty.
-
-Viesti päivitetään aina kun uutta mediaanidataa on vastaanotettu MTP:stä, eli noin kerran minuutissa. Jos MTP ei lähetä uutta dataa normaalisti, viestin päivitysväli on vastaavasti pitempi.
+Tämän johdosta tätä rajapintaa ei enää ole saatavilla.
 
 ### Edellisen päivän sujuvuuden historiatiedot
 
-[```http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day```](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day)
-
-[```http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id}```](http://tie.digitraffic.fi/api/v1/data/fluency-history-previous-day/{id})
-
-Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
-
-Viesti sisältää kullekin linkille edellisen vuorokauden mediaanitiedot: matka-ajan, keskinopeuden ja sujuvuusluokan. Viesti sisältää kullekin linkille kaikki edellisen vuorokauden 5 minuutin mediaanit, eli maksimissaan 1440 kappaletta per linkki.
-
-Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viesti on haettavissa 02:30 Suomen aikaa.
-
-Viestin suuresta koosta johtuen viestiä ei kannata (tarpeettomasti, kun päivitys on kerran vuorokaudessa) hakea toistuvasti samana päivänä.
+Koska uutta tietoa ei enää saavu, tämä rajapinta ei enää ole saatavilla.
 
 ### Sujuvuuden historiatiedot halutulta kuulta
 [```http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
-
-Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
 Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
@@ -103,8 +84,6 @@ Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
 
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
-
-Linkeistä käytössä ovat vain pääkaupunkiseudun linkit. Ns. PKS-järjestelmän matka-aikalinkit ovat linkkinumeroiltaan 1-3 numeroisia (alle 1000).
 
 Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille.
 
