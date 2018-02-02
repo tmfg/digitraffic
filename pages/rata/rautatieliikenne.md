@@ -80,7 +80,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junatyypit](#junatyypit)
         - [Raideosuudet](#raideosuudet)
         - [Herätepisteet](#herätepisteet)       
-    1. [GraphQL](#graphQL) 
+    1. [GraphQL](#graphql) 
 1. [Vastaustyypit](#vastaustyypit)
     1. [Junat](#junat)
     1. [Kokoonpanot](#kokoonpanot)
@@ -857,7 +857,7 @@ GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa 
 
 Jokaista kyselyä voidaan filtteröidä `where`-parametrillä, joka on [json-query](https://www.npmjs.com/package/json-query) -tyyppinen string.
 
-###Esimerkkejä
+### Esimerkkejä
 
 Vain tiettyjen kenttien (junanumero ja operaattori) poiminta vastaukseen: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 
@@ -915,7 +915,7 @@ Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [ko
 }
 ```
 
-###GraphQL-kysely omassa sovelluksessa
+### GraphQL-kysely omassa sovelluksessa
 
 GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/?`.
 
@@ -926,7 +926,7 @@ Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
 {"query":"{  viewer  {    getCompositionsByDepartureDateUsingGET(departure_date:\"2017-12-26\", where:\"[*trainType=S]\"){      trainType trainNumber    }  } }"}
 ```
 
-Kokonaisuudessaan homma näyttää esimerkiksi REST-pluginissa tältä:
+Kokonaisuudessaan homma näyttää REST-pluginissa tältä:
 
 ![GraphQL Postmanissa]({{ site.baseurl }}{{ "/img/rata/graphql.png" }})
 
