@@ -70,6 +70,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
+        - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
         - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
@@ -113,11 +114,11 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 * Routeset-sanomat
     * Kun juna varaa edestään rataosia kuljettavaksi, tästä syntyy Routeset-sanomia. Myös TrackSet- ja TrackConfirm-sanomat pyritään julkaisemaan.
-* Vanhojen junien kokoonpano- ja aikataulutiedot zip-paketteina
-* Kokoonpanojen haku versionumerolla 
 
 ## Toteutetut ominaisuudet
 
+* 12.2.2018
+    * Kokoonpanojen haku versionumeron avulla
 * 5.2.2018 
     * GraphQL. Tapa filtteröidä, rajoittaa ja yhdistellä vastauksia
 * 1.2.2018
@@ -736,6 +737,28 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 **Paluuarvo**
 
 Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
+
+### Kaikkien kokoonpanojen seuranta
+
+URL: `/compositions?version=<version>`
+
+Esimerkki: [/compositions?version=12349873459128375](/api/v1/compositions?version=12349873459128375)
+
+**Kuvaus**
+
+Palauttaa kaikki kokoonpanot, jotka ovat uudempia kuin `version`
+
+**Paluuarvo**
+
+Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
+  |---|---|---|--- |--- 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kokoonpanot, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kokoonpano.
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 ### Vanhat kokoonpanot zip-paketteina
 
