@@ -3,11 +3,13 @@ layout: page
 permalink: /tukikanavat/
 section: Tuki
 searchable: true
-title: Tukikanavat
+title: Support Channels
+lang: en
+ref: support-channels
 links:
-  - ["Tieliikenne Google Group", "https://groups.google.com/forum/#!forum/roaddigitrafficfi"]
-  - ["Rautatieliikenne Google Group", "https://groups.google.com/forum/#!forum/rata_digitraffic_fi"]
-  - ["Meriliikenne Google Group", "https://groups.google.com/forum/#!forum/meridigitrafficfi"]
+  - ["Road traffic Google Group", "https://groups.google.com/forum/#!forum/roaddigitrafficfi"]
+  - ["Rail traffic Google Group", "https://groups.google.com/forum/#!forum/rata_digitraffic_fi"]
+  - ["Maritime traffic Google Group", "https://groups.google.com/forum/#!forum/meridigitrafficfi"]
 ---
 
-Avoimet kehittäjäyhteisöt toimivat Digitraffic-palvelun kehityksen tukena ja palautekanavana. Yhteisöt toimivat avoimien Google-keskusteluryhmien kautta. Liikenneviraston asiantuntijat ja Liikenneviraston sovellustoimittajat ovat mukana keskustelussa, joka on kokonaan julkista. Keskusteluryhmien kautta tiedotetaan myös rajapintojen kehityksestä ja käyttökatkoista.
+Open developer communities form the support channel for the Digitraffic service. The communities operate on open Google discussion groups where all discussion is public. The specialists from Finnish Transport Agency and the service supplier for the Digitraffic service are involved in the communities. The discussion groups are also used to announce new API features and maintenance breaks.
