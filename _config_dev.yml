@@ -60,7 +60,7 @@ t:
     en: "Railway"
     fi: "Rautatieliikenne"
   meriliikenne:
-    en: "Maritime"
+    en: "Marine"
     fi: "Meriliikenne"
   kokeellinen:
     en: "Experimental"
@@ -171,7 +171,7 @@ t:
     en: "Digitraffic"
     fi: "Digitraffic"
   frontpage-intro:
-    en: "Information about open data for application development from Finnish road, railway and maritime traffic."
+    en: "Information about open data for application development from Finnish road, railway and marine traffic."
     fi: "Ajantasaista avointa liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- ja vesiliikenteestä."
   latest-posts:
     en: "Latest posts"
@@ -179,15 +179,51 @@ t:
   loading:
     en: "Loading"
     fi: "Ladataan"
+  marine-traffic:
+    en: "Marine traffic"
+    fi: "Meriliikenne"
+  marine-traffic-description:
+    en: "Marine traffic APIs provide sea warnings, ship locations and their meta data, and Portnet data."
+    fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
+  marine-traffic-button:
+    en: "Marine traffic APIs"
+    fi: "Meriliikenne tietolähteet"
+    url:
+      en: "en/marine-traffic"
+      fi: "/meriliikenne"
   news:
     en: "News"
     fi: "Tiedotteet"
+  railway-traffic:
+    en: "Railway traffic"
+    fi: "Rautatieliikenne"
+  railway-traffic-description:
+    en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
+    fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."
+  railway-traffic-button:
+    en: "Railway traffic APIs"
+    fi: "Rautatieliikenne tietolähteet"
+    url:
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
+  road-traffic:
+    en: "Road traffic"
+    fi: "Tieliikenne"
+  road-traffic-description:
+    en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Finnish Transport Agency."
+    fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä."
+  road-traffic-button:
+    en: "Road traffic APIs"
+    fi: "Tietoliikenne tietolähteet"
+    url:
+      en: "/en/road-traffic"
+      fi: "tieliikenne"
   service-overview:
     en: "Service overview"
     fi: "Palvelun esittely"
     url:
       en: "/en/service-overview"
-      fi: "/palvelun-esittely/"
+      fi: "/palvelun-esittely"
 
   # API status
   recent-outages:
@@ -239,8 +275,6 @@ t:
     articles: "Related articles"
     events: "Related events"
     news: "Related news"
-
-
 
   # For javascript // Use camelCasing in naming
   js:

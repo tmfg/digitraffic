@@ -7,7 +7,7 @@ published: true
 categories: en News
 traffictypes:
   - Road
-  - Maritime
+  - Marine
 tags:
   - APIs
   - Admin
@@ -17,7 +17,7 @@ Production applications have been updated.
 
 Changelog:
 
-MARITIME
+MARINE
 - DPO-319 - Differing datasource specifications in AIS and METADATA projects
 - DPO-329 - OracleDatasource initialization fix
 ROAD

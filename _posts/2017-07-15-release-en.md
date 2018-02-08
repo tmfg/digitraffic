@@ -7,7 +7,7 @@ published: true
 categories: en News
 traffictypes:
   - Road
-  - Maritime
+  - Marine
 tags:
   - APIs
   - Admin
@@ -22,7 +22,7 @@ ROAD
 - DPO-268 - OPERATIONS listHistoryData throws Illegal Year excepotion
 - DPO-282 - Wheather camera images processing stability improvements
 
-MARITIME
+MARINE
 - DPO-277 - AIS message value doesn't fit into database
 - DPO-281 - WebSocket session and message logging imporvements
 
