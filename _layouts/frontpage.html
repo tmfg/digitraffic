@@ -208,11 +208,11 @@ layout: compress
         <section class="content__frontpage-section ">
           <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 support-description">
-              <a href="{{ "/tukikanavat" | prepend:site.baseurl }}" class="support-description__link">
+              <a href="{{ site.t.support.url[page.lang] | prepend:site.baseurl }}" class="support-description__link">
                 <p class="support-description__icon-p"><i class="support-description__icon-i material-icons">help_outline</i></p>
-                <h3 class="h3 u--centered h-link">Tukikanavat</h3>
+                <h3 class="h3 u--centered h-link">{{ site.t.support[page.lang] }}</h3>
               </a>
-              <p class="u--centered">Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät.</p>
+              <p class="u--centered">{{ site.t.support-description[page.lang] }}</p>
             </div>
           </div>
         </section>
@@ -226,9 +226,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">important_devices</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="{{ "/sovellukset" | prepend:site.baseurl }}" class="h-link">Sovellukset</a></h2>
-              <p>Digitrafficin tietolähteiden tarjoamaa tietoa hyödyntävät jo useat sovellukset, jotka palvelevat hyvin erilaisia liikenteeseen liittyviä tarpeita.</p>
-              <a href="{{ "/sovellukset" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">important_devices</i><span class="button__text">Sovellukset</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.applications[page.lang] }}</a></h2>
+              <p>{{ site.t.applications-description[page.lang] }}</p>
+              <a href="{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">important_devices</i><span class="button__text">{{ site.t.applications[page.lang] }}</span></button></a>
             </div>
           </div>
           <div class="row frontpage-traffic-type">
@@ -237,9 +237,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">explore</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
-              <h2 class="h2"><a href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}" class="h-link">Kehityssuunnitelma</a></h2>
-              <p>Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut.</p>
-              <a href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">explore</i><span class="button__text">Kehityssuunnitelma</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.development-roadmap[page.lang] }}</a></h2>
+              <p>{{ site.t.development-roadmap-description[page.lang] }}</p>
+              <a href="{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">explore</i><span class="button__text">{{ site.t.development-roadmap[page.lang] }}</span></button></a>
             </div>
             <div class="col-sm-4 hidden-xs">
               <!--<img class="img img--full-width" src="{{ "/img/3d-img-compass.svg" | prepend:site.baseurl }}" alt="Kehityssuunnitelma" />-->
