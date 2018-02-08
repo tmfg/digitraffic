@@ -4,6 +4,8 @@ permalink: /tukikanavat/
 section: Tuki
 searchable: true
 title: Tukikanavat
+lang: fi
+ref: support-channels
 links:
   - ["Tieliikenne Google Group", "https://groups.google.com/forum/#!forum/roaddigitrafficfi"]
   - ["Rautatieliikenne Google Group", "https://groups.google.com/forum/#!forum/rata_digitraffic_fi"]
