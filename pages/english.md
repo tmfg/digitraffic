@@ -9,7 +9,7 @@ links:
   - ["Digitraffic wiki in English", "https://github.com/finnishtransportagency/digitraffic/wiki/Digitraffic-in-English"]
 ---
 
-Digitraffic is a service operated by the Finnish Transport Agency offering real time traffic information. Currently the service covers road and rail traffic. In the future the service will expand to maritime information.
+Digitraffic is a service operated by the Finnish Transport Agency offering real time traffic information. Currently the service covers road and rail traffic. In the future the service will expand to marine information.
 
 ## Road traffic
 

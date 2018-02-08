@@ -170,9 +170,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">directions_car</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="{{ "/tieliikenne" | prepend:site.baseurl }}" class="h-link">Tieliikenne</a></h2>
-              <p>Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä.</p>
-              <a href="{{ "/tieliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_car</i><span class="button__text">Tieliikenne tietolähteet</span></button></a>
+              <h2 class="h2"><a href="{{ "/tieliikenne" | prepend:site.baseurl }}" class="h-link">{{ site.t.road-traffic[page.lang] }}</a></h2>
+              <p>{{ site.t.road-traffic-description[page.lang] }}</p>
+              <a href="{{ site.t.road-traffic-button.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_car</i><span class="button__text">{{ site.t.road-traffic-button[page.lang] }}</span></button></a>
             </div>
           </div>
           <div class="row frontpage-traffic-type">
@@ -181,9 +181,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">train</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="{{ "/rautatieliikenne" | prepend:site.baseurl }}" class="h-link">Rautatieliikenne</a></h2>
-              <p>Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä.</p>
-              <a href="{{ "/rautatieliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">Rautatieliikenne tietolähteet</span></button></a>
+              <h2 class="h2"><a href="{{ "/rautatieliikenne" | prepend:site.baseurl }}" class="h-link">{{ site.t.railway-traffic[page.lang] }}</a></h2>
+              <p>{{ site.t.railway-traffic-description[page.lang] }}</p>
+              <a href="{{ site.t.railway-traffic-button.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">{{ site.t.railway-traffic-button[page.lang] }}</span></button></a>
             </div>
             <div class="col-sm-4 hidden-xs">
               <!--<img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />-->
@@ -196,9 +196,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">directions_boat</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
-              <h2 class="h2"><a href="{{ "/meriliikenne" | prepend:site.baseurl }}" class="h-link">Meriliikenne</a></h2>
-              <p>Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä.</p>
-              <a href="{{ "/meriliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_boat</i><span class="button__text">Meriliikenne tietolähteet</span></button></a>
+              <h2 class="h2"><a href="{{ "/meriliikenne" | prepend:site.baseurl }}" class="h-link">{{ site.t.marine-traffic[page.lang] }}</a></h2>
+              <p>{{ site.t.marine-traffic-description[page.lang] }}</p>
+              <a href="{{ site.t.marine-traffic-button.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_boat</i><span class="button__text">{{ site.t.marine-traffic-button[page.lang] }}</span></button></a>
             </div>
           </div>
         </section>

@@ -51,3 +51,244 @@ defaults:
       path: ""
     values:
       lang: "fi"
+
+# == Translations below == #
+t:
+  # Traffic types
+  tieliikenne:
+    en: "Road"
+    fi: "Tieliikenne"
+  rautatieliikenne:
+    en: "Railway"
+    fi: "Rautatieliikenne"
+  meriliikenne:
+    en: "Marine"
+    fi: "Meriliikenne"
+  kokeellinen:
+    en: "Experimental"
+    fi: "Kokeellinen"
+  
+  # Post types
+  artikkelit:
+    en: "Articles"
+    fi: "Artikkelit"
+  tapahtumat:
+    en: "Events"
+    fi: "Tapahtumat"
+  tiedotteet:
+    en: "News"
+    fi: "Tiedotteet"
+  
+  # Menu
+  menu:
+    en: "Menu"
+    fi: "Valikko"
+  search:
+    en: "Search"
+    fi: "Haku"
+  search-placeholder:
+    en: "What are you looking for?"
+    fi: "Mitä etsit?"
+  
+  # Footer
+  contact:
+    en: "Contact"
+    fi: "Yhteystiedot"
+    url:
+      en: "/en/contact"
+      fi: "/yhteystiedot"
+  person-register-policy:
+    en: "Person register policy"
+    fi: "Henkilörekisteriseloste"
+    url:
+      en: "/en/person-register-policy"
+      fi: "/henkilorekisteriseloste"
+  finnish-transport-agency-web:
+    en: "Finnish Transport Agency"
+    fi: "Liikennevirasto.fi"
+    url:
+      en: "https://www.liikennevirasto.fi/web/en"
+      fi: "https://www.liikennevirasto.fi/"
+  finnish-transport-agency-open-data:
+    en: "Finnish Transport Agency open data"
+    fi: "Liikenneviraston avoin data"
+    url:
+      en: "https://www.liikennevirasto.fi/web/en/open-data"
+      fi: "https://www.liikennevirasto.fi/avoindata"
+  finnish-open-data:
+    en: "Finnish open data"
+    fi: "Avoindata.fi"
+    url:
+      en: "https://www.avoindata.fi/data/en/organization/liikennevirasto"
+      fi: "https://www.avoindata.fi/data/fi/organization/liikennevirasto"
+  traffic-lab:
+    en: "Traffic Lab"
+    fi: "Liikennelabra.fi"
+    url:
+      en: "https://www.trafficlab.fi/"
+      fi: "https://www.liikennelabra.fi/"
+  creative-commons:
+    logo-alt:
+      en: "Creative Commons license"
+      fi: "Creative Commons -lisenssi"
+    title:
+      en: "Digitraffic website"
+      fi: "Digitraffic-sivusto"
+    text-1:
+      en: ", by "
+      fi: ", jonka tekijä on "
+    attribution:
+      en: "Finnish Transport Agency"
+      fi: "Liikennevirasto"
+      url:
+        en: "https://www.digitraffic.fi/en"
+        fi: "https://www.digitraffic.fi"
+    text-2:
+      en: ", is licensed under the "
+      fi: ", on lisensoitu "
+    license:
+      en: "Creative Commons Attribution 4.0 International license"
+      fi: "Creative Commons Nimeä 4.0 Kansainvälinen -lisenssillä"
+
+  # Github edit
+  github-edit:
+    text:
+      en: "Did you find an error? Help us "
+      fi: "Löysitkö virheen? Auta meitä "
+    link-text:
+      en: "improve this page"
+      fi: "parantamaan tätä sivua"
+
+  # Frontpage
+  apis:
+    en: "APIs"
+    fi: "Rajapinnat"
+  api-status:
+    en: "API status"
+    fi: "Rajapintojen tila"
+    url:
+      en: "/en/api-status"
+      fi: "/rajapintojen-tila"
+  frontpage-heading:
+    en: "Digitraffic"
+    fi: "Digitraffic"
+  frontpage-intro:
+    en: "Information about open data for application development from Finnish road, railway and marine traffic."
+    fi: "Ajantasaista avointa liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- ja vesiliikenteestä."
+  latest-posts:
+    en: "Latest posts"
+    fi: "Ajankohtaista"
+  loading:
+    en: "Loading"
+    fi: "Ladataan"
+  marine-traffic:
+    en: "Marine traffic"
+    fi: "Meriliikenne"
+  marine-traffic-description:
+    en: "Marine traffic APIs provide sea warnings, ship locations and their meta data, and Portnet data."
+    fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
+  marine-traffic-button:
+    en: "Marine traffic APIs"
+    fi: "Meriliikenne tietolähteet"
+    url:
+      en: "en/marine-traffic"
+      fi: "/meriliikenne"
+  news:
+    en: "News"
+    fi: "Tiedotteet"
+  railway-traffic:
+    en: "Railway traffic"
+    fi: "Rautatieliikenne"
+  railway-traffic-description:
+    en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
+    fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."
+  railway-traffic-button:
+    en: "Railway traffic APIs"
+    fi: "Rautatieliikenne tietolähteet"
+    url:
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
+  road-traffic:
+    en: "Road traffic"
+    fi: "Tieliikenne"
+  road-traffic-description:
+    en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Finnish Transport Agency."
+    fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä."
+  road-traffic-button:
+    en: "Road traffic APIs"
+    fi: "Tietoliikenne tietolähteet"
+    url:
+      en: "/en/road-traffic"
+      fi: "tieliikenne"
+  service-overview:
+    en: "Service overview"
+    fi: "Palvelun esittely"
+    url:
+      en: "/en/service-overview"
+      fi: "/palvelun-esittely"
+
+  # API status
+  recent-outages:
+    en: "Recent outages"
+    fi: "Viimeisimmät häiriöt"
+
+  # Posts
+  filter-news:
+    en: "Filter news"
+    fi: "Rajaa tiedotelistaa"
+  no-posts:
+    en: "No matching posts."
+    fi: "Ei näytettäviä julkaisuja."
+  news-amount-singular:
+    en: "news story"
+    fi: "tiedote"
+  news-amount-plural:
+    en: "news in order of date published"
+    fi: "tiedotetta julkaisujärjestyksessä"
+  tag:
+    en: "Tag"
+    fi: "Avainsana"
+  traffictype:
+    en: "Traffic type"
+    fi: "Liikennetyyppi"
+  year:
+    en: "Year"
+    fi: "Vuosi"
+
+  # Post sidebar headings
+  post-next:
+    artikkelit: "Seuraava artikkeli"
+    tapahtumat: "Seuraava tapahtuma"
+    tiedotteet: "Seuraava tiedote"
+    articles: "Next article"
+    events: "Next event"
+    news: "Next news"
+  post-previous:
+    artikkelit: "Edellinen artikkeli"
+    tapahtumat: "Edellinen tapahtuma"
+    tiedotteet: "Edellinen tiedote"
+    articles: "Previous article"
+    events: "Previous event"
+    news: "Previous news"
+  post-related:
+    artikkelit: "Liittyvät artikkelit"
+    tapahtumat: "Liittyvät tapahtumat"
+    tiedotteet: "Liittyvät tiedotteet"
+    articles: "Related articles"
+    events: "Related events"
+    news: "Related news"
+
+  # For javascript // Use camelCasing in naming
+  js:
+    loadingError:
+      en: "Error in loading data"
+      fi: "Virhe ladattaessa tietoja"
+    statusMajorOutage:
+      en: "Major outage"
+      fi: "Merkittävä katkos"
+    statusOperational:
+      en: "Operational"
+      fi: "Toiminnassa"
+    statusPartialOutage:
+      en: "Partial outage"
+      fi: "Osittainen katkos"
