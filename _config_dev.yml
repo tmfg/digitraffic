@@ -167,6 +167,24 @@ t:
     url:
       en: "/en/api-status"
       fi: "/rajapintojen-tila"
+  applications:
+    en: "Applications"
+    fi: "Sovellukset"
+    url:
+      en: "/en/applications"
+      fi: "/sovellukset"
+  applications-description:
+    en: "Many applications use data provided by Digitraffic APIs."
+    fi: "Digitrafficin tietolähteiden tarjoamaa tietoa hyödyntävät jo useat sovellukset, jotka palvelevat hyvin erilaisia liikenteeseen liittyviä tarpeita."
+  development-roadmap:
+    en: "Development roadmap"
+    fi: "Kehityssuunnitelma"
+    url:
+      en: "/en/development-roadmap"
+      fi: "kehityssuunnitelma"
+  development-roadmap-description:
+    en: "Digitraffic development goals are presented by traffic type and status so that you can see what is being planned, in development and done."
+    fi: "Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut."
   frontpage-heading:
     en: "Digitraffic"
     fi: "Digitraffic"
@@ -224,6 +242,15 @@ t:
     url:
       en: "/en/service-overview"
       fi: "/palvelun-esittely"
+  support:
+    en: "Support"
+    fi: "Tukikanavat"
+    url:
+      en: "/en/support"
+      fi: "/tukikanavat"
+  support-description:
+    en: "Public Google groups provide support and communication between developers, service provider and Finnish Transport Agency."
+    fi: "Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
 
   # API status
   recent-outages:
