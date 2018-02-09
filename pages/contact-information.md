@@ -1,13 +1,13 @@
 ---
 layout: page
-permalink: /yhteystiedot/
+permalink: /en/contact/
 section: Tuki
 searchable: true
 title: Contact information
 lang: en
 ref: contact-information
 links:
-  - ["Tukikanavat", "/tukikanavat"]
+  - ["Support channels", "/en/support-channels"]
 ---
 
 Email: digitraffic(a)liikennevirasto.fi
