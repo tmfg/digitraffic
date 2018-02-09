@@ -87,7 +87,21 @@ t:
   search-placeholder:
     en: "What are you looking for?"
     fi: "Mitä etsit?"
-  
+
+  # Menu items // Some menu items found under Frontpage
+  updates:
+    en: "Updates"
+    fi: "Ajankohtaista"
+  data-sources:
+    en: "Data sources"
+    fi: "Tietolähteet"
+  about:
+    en: "About"
+    fi: "Tietoa palvelusta"
+  support:
+    en: "Support"
+    fi: "Tuki"
+
   # Footer
   contact:
     en: "Contact"
