@@ -1,0 +1,12 @@
+{% assign page-fi = "" %}
+{% assign page-en = "" %}
+{% assign posts = site.posts | where:"ref",page.ref %}
+{% for page in posts %}
+  {% if page.lang == "fi" and page != "" %}{% assign page-fi = page %}{% endif %}
+  {% if page.lang == "en" and page != "" %}{% assign page-en = page %}{% endif %}
+{% endfor %}
+{% assign pages = site.pages | where:"ref",page.ref %}
+{% for page in pages %}
+  {% if page.lang == "fi" and page != "" %}{% assign page-fi = page %}{% endif %}
+  {% if page.lang == "en" and page != "" %}{% assign page-en = page %}{% endif %}
+{% endfor %}
