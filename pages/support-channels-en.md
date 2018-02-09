@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /tukikanavat/
+permalink: /en/support-channels/
 section: Tuki
 searchable: true
 title: Support Channels

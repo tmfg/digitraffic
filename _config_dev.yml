@@ -242,13 +242,13 @@ t:
     url:
       en: "/en/service-overview"
       fi: "/palvelun-esittely"
-  support:
-    en: "Support"
+  support-channels:
+    en: "Support channels"
     fi: "Tukikanavat"
     url:
-      en: "/en/support"
+      en: "/en/support-channels"
       fi: "/tukikanavat"
-  support-description:
+  support-channels-description:
     en: "Public Google groups provide support and communication between developers, service provider and Finnish Transport Agency."
     fi: "Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
 
