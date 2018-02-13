@@ -9,13 +9,17 @@
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
+        
+        let itemlang;
+        item.lang === "fi" | "" ? itemlang = "" : itemlang = "/" + item.lang;
+        console.log(itemlang);
 
         appendString += '<div class="posts-in-category__post">';
         
         //Title
         appendString += '<h3 class="h3 posts-in-category__post-heading"><a href="';
         if (item.category === "Kehityssuunnitelma") {
-          appendString += window.baseurl + '/kehityssuunnitelma?traffictype=' + item.traffictypes[0].toLowerCase() + '&status=' + item.status.toLowerCase();
+          appendString += window.baseurl + itemlang + '/kehityssuunnitelma?traffictype=' + item.traffictypes[0].toLowerCase() + '&status=' + item.status.toLowerCase();
         }
         else {
           appendString += window.baseurl + item.url;
@@ -47,26 +51,27 @@
             appendString += '<span class="date-type-tags__id">' + item.issuenumber + '</span>';
           }
           //Category
-          appendString += '<span class="date-type-tags__category"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '">' + item.category + '</a></span>';
+          let category = item.category.replace(/^[a-z][a-z],\s/g, ""); // Strip language from category, eg. "en, News" -> "News"
+          appendString += '<span class="date-type-tags__category"><a class="link" href="' + window.baseurl + itemlang + '/' + category.toLowerCase() + '">' + category + '</a></span>';
           //Traffictypes
           appendString += '<ul class="date-type-tags__type-list">';
-          item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
+          item.traffictypes.forEach(traffictype => { appendString += '<li class="date-type-tags__type"><a class="link" href="' + window.baseurl + itemlang + '/' + category.toLowerCase() + '?traffictype=' + traffictype.toLowerCase() + '">' + traffictype + '</a></li>'; });
           appendString += '</ul>';
           //Tags
           if (item.tags && item.tags.length > 0) {
             appendString += '<ul class="date-type-tags__tag-list">';
-            item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
+            item.tags.forEach(tag => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + itemlang + '/' + category.toLowerCase() + '?tag=' + tag.toLowerCase() + '">' + tag + '</a></li>'; });
             appendString += '</ul>';
           }
           //Environments
           if (item.environments && item.environments.length > 0) {
             appendString += '<ul class="date-type-tags__tag-list">';
-            item.environments.forEach(env => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?environment=' + env.toLowerCase() + '">' + env + '</a></li>'; });
+            item.environments.forEach(env => { appendString += '<li class="date-type-tags__tag"><a class="link" href="' + window.baseurl + itemlang + '/' + category.toLowerCase() + '?environment=' + env.toLowerCase() + '">' + env + '</a></li>'; });
             appendString += '</ul>';
           }
           //Status
           if (item.status && item.status.length > 0) {
-            appendString += '<span class="date-type-tags__status"><a class="link" href="' + window.baseurl + '/' + item.category.toLowerCase() + '?status=' + item.status.toLowerCase() + '">' + item.status + '</a></span>';
+            appendString += '<span class="date-type-tags__status"><a class="link" href="' + window.baseurl + itemlang + '/' + category.toLowerCase() + '?status=' + item.status.toLowerCase() + '">' + item.status + '</a></span>';
           }
         }
         // /Metadata
