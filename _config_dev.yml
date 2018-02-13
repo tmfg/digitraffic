@@ -102,7 +102,7 @@ t:
       en: "en/experimental"
       fi: "/kokeilut"
   about:
-    en: "About"
+    en: "About Digitraffic"
     fi: "Tietoa palvelusta"
   sign-up-application:
     en: "Sign up your application"
@@ -119,7 +119,6 @@ t:
   support:
     en: "Support"
     fi: "Tuki"
-  
 
   # Footer
   contact:
@@ -180,6 +179,14 @@ t:
     license:
       en: "Creative Commons Attribution 4.0 International license"
       fi: "Creative Commons Nimeä 4.0 Kansainvälinen -lisenssillä"
+
+  # Search
+  search-results:
+    en: "results"
+    fi: "hakutulosta"
+  search-info-text:
+    en: "Type search terms into the field above."
+    fi: "Kirjoita hakuehdot yllä olevaan kenttään."
 
   # Github edit
   github-edit:
