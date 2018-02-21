@@ -1,7 +1,7 @@
 <div class="search-opened__wrapper">
   <div class="row search-opened">
     <div class="col-xs-12">
-      <form action="{{ "/haku" | prepend:site.baseurl }}" method="get">
+      <form action="{{ site.t.search.url[page.lang] | prepend:site.baseurl }}" method="get">
         <div class="search-opened__content">
           <div class="search-opened__input-col">
             <input type="text" name="query" placeholder="{{ site.t.search-placeholder[page.lang] }}" value="" class="search-opened__input-field">

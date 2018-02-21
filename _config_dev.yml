@@ -84,6 +84,9 @@ t:
   search:
     en: "Search"
     fi: "Haku"
+    url:
+      en: "/en/search"
+      fi: "/haku"
   search-placeholder:
     en: "What are you looking for?"
     fi: "Mitä etsit?"
