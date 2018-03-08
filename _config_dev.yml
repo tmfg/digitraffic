@@ -56,12 +56,21 @@ t:
   tieliikenne:
     en: "Road"
     fi: "Tieliikenne"
+    url:
+      en: "/en/road-traffic"
+      fi: "/tieliikenne"
   rautatieliikenne:
     en: "Railway"
     fi: "Rautatieliikenne"
+    url:
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
   meriliikenne:
     en: "Marine"
     fi: "Meriliikenne"
+    url:
+      en: "/en/marine-traffic"
+      fi: "/meriliikenne"
   kokeellinen:
     en: "Experimental"
     fi: "Kokeellinen"

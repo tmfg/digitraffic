@@ -6,6 +6,8 @@ traffictypes: Rautatieliikenne
 searchable: true
 swagger-source: null
 hero-image: rail
+lang: fi
+ref: railway-traffic
 title: rata.digitraffic.fi
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:

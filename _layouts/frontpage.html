@@ -48,7 +48,7 @@ layout: compress
           <div class="row">
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="{% include url-home.html %}{{ site.t.tieliikenne[page.lang] | downcase }}" class="service-status__link">
+                <a href="{{ site.t.tieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-road" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -65,7 +65,7 @@ layout: compress
             </div>
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="{% include url-home.html %}{{ site.t.rautatieliikenne[page.lang] | downcase }}" class="service-status__link">
+                <a href="{{ site.t.rautatieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-rail" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -82,7 +82,7 @@ layout: compress
             </div>
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="{% include url-home.html %}{{ site.t.meriliikenne[page.lang] | downcase }}" class="service-status__link">
+                <a href="{{ site.t.meriliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-marine" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -226,7 +226,7 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">important_devices</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.applications[page.lang] }}</a></h2>
+              <h2 class="h2"><a href="{{ site.t.applications.url['fi'] | prepend:site.baseurl }}" class="h-link">{{ site.t.applications[page.lang] }}</a></h2>
               <p>{{ site.t.applications-description[page.lang] }}</p>
               <a href="{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">important_devices</i><span class="button__text">{{ site.t.applications[page.lang] }}</span></button></a>
             </div>

@@ -1,6 +1,6 @@
 ---
 layout: traffictype
-permalink: /tieliikenne/
+permalink: /en/road-traffic/
 section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
@@ -34,8 +34,8 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
 
 # Content
-- [REST/JSON-rajapinnat](#restjson-rajapinnat)
-    - [Kelikamerat](#kelikamerat)
+- [REST/JSON-apis](#restjson-rajapinnat)
+    - [Road weather cameras](#kelikamerat)
     - [Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot](#ajantasaiset-linkkien-sujuvuustiedot-sisältäen-matka-aikatiedot)
     - [Edellisen päivän sujuvuuden historiatiedot](#edellisen-päivän-sujuvuuden-historiatiedot)
     - [Sujuvuuden historiatiedot halutulta kuulta](#sujuvuuden-historiatiedot-halutulta-kuulta)
@@ -115,7 +115,7 @@ Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mita
 
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 
-Yksinkertainen JavaScript WebSocket -asiakassovellus:
+Simple JavaScript WebSocket - client application:
 ```
 <html>
      <head>

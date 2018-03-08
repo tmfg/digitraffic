@@ -7,6 +7,8 @@ searchable: true
 swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 hero-image: road
 title: Tieliikenne
+lang: fi
+ref: road-traffic
 intro: Avointa dataa Suomen tieverkolta.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]

@@ -1,15 +1,15 @@
 ---
 layout: traffictype
-permalink: /meriliikenne/
+permalink: en/marine-traffic/
 section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
 swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 hero-image: icebreaker
-lang: fi
+lang: en
 ref: marine-traffic
-title: Meriliikenne
-intro: Avointa dataa Suomen meriltä ja järviltä.
+title: Marine traffic
+intro: Open data from Finnish seas and lakes.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
@@ -26,7 +26,7 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
 
 - Alusten ja satamien metatiedot
 
-# Sisältö
+# Content
 - [REST/JSON-rajapinnat](#restjson-rajapinnat)
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
     - [Kaikkien laivojen seuraaminen](#kaikkien-laivojen-seuraaminen)
@@ -36,13 +36,13 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
     - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--clientti)
 - [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
 
-## REST/JSON-rajapinnat
+## REST/JSON-api
 
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
 Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
-## WebSocket-rajapinnat
+## WebSocket-api
 
 Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
 
@@ -54,9 +54,9 @@ Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
 
 ``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
 
-Viestit ovat muotoa:
+Message formats:
 
-#### Aluksen metadata-viesti
+#### Vessel metadata-message
 
 ```
 {
@@ -80,7 +80,7 @@ Viestit ovat muotoa:
 }
 ```
 
-#### Aluksen sijainti-viesti
+#### Vessel location-message
 
 ```
 {
@@ -107,7 +107,7 @@ Viestit ovat muotoa:
 }
 ```
 
-#### Yksinkertainen JavaScript WebSocket -clientti
+#### Simple JavaScript WebSocket -client
 
 ```
 <html>
