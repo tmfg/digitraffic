@@ -10,8 +10,7 @@ title: rata.digitraffic.fi
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
-  - ["Swagger-dokumentaatio", "http://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#/data"]
-  - ["http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data"]
+  - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
 # RATA.DIGITRAFFIC.FI
@@ -1193,9 +1192,13 @@ Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettä
 
 ## Käyttöehdot
 
-Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/).
-
-Digitraffic, jonka tekijä on [Liikennevirasto](http://www.liikennevirasto.fi/), on lisensoitu [Creative Commons Nimeä 4.0 Kansainvälinen](http://creativecommons.org/licenses/by/4.0/)-lisenssillä.
+Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/). Tiivistettynä Creative Commons Nimeä 4.0 -lisenssi tarkoittaa sitä, että ilmaiset sovelluksessasi saaneesi tiedot tästä rajapinnasta. Se onnistuu esimerkiksi tälläisellä html-pätkällä: 
+```
+<p>
+Tiedot haetaan Liikenneviraston <a href="https://rata.digitraffic.fi">rata.digitraffic.fi-rajapinnasta</a>.<br>
+<span>Lisenssi: <a href="http://creativecommons.org/licenses/by/4.0/">CC 4.0 BY</a></span>
+</p>
+```
 
  ![Creative Commons -lisenssi]({{ site.baseurl }}{{ "/img/rata/cc4.png" }})
 
