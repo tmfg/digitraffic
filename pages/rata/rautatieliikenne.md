@@ -89,7 +89,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Liikennepaikat](#liikennepaikat)
     1. [Operaattorit](#operaattorit)
     1. [Syyluokat](#syyluokat-1)
-    1. [Syykoodit](#syykoodit-1)v
+    1. [Syykoodit](#syykoodit-1)
     1. [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit-1)
     1. [Junatyypit](#junatyypit-1)
     1. [Raideosuudet](#raideosuudet-1)
