@@ -92,7 +92,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Raideosuudet](#raideosuudet-1)
     1. [Herätepisteet](#herätepisteet-1)
 1. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
-1. [Käyttöehdot](#käyttöehdot)
+1. [Avoimen datan käyttölupa](#avoimen-datan-käyttölupa)
 
 # Yleistä
 
