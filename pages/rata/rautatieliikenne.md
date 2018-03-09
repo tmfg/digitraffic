@@ -6,7 +6,7 @@ traffictypes: Rautatieliikenne
 searchable: true
 swagger-source: null
 hero-image: rail
-title: rata.digitraffic.fi
+title: Rautatieliikenne
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
@@ -1063,12 +1063,11 @@ Jos kyselyyn lisättäisiin versionumero [/live-trains/station/HKI?arrived_train
 
 Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettävä sitä seuraavassa kyselyssä parametrina.
 
-## Käyttöehdot
+## Avoimen datan käyttölupa
 
 Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/).
 
-Digitraffic, jonka tekijä on [Liikennevirasto](http://www.liikennevirasto.fi/), on lisensoitu [Creative Commons Nimeä 4.0 Kansainvälinen](http://creativecommons.org/licenses/by/4.0/)-lisenssillä.
+[Käyttöehdot](/kayttoehdot) -sivulla on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
- ![Creative Commons -lisenssi]({{ site.baseurl }}{{ "/img/rata/cc4.png" }})
+[Liikenneviraston avoimen datan sivustolla](https://www.liikennevirasto.fi/avoindata/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
-Tämän lisenssin antamia oikeuksia laajempia lupia voi olla saatavilla osoitteessa [http://www.liikennevirasto.fi](http://www.liikennevirasto.fi).
