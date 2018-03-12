@@ -263,7 +263,7 @@ Palauttaa yhden junan tiedot
  
  **Kuvaus**
  
- Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun versionumeron. Vastaus rajoitettu 3500 junaan.
+ Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun versionumeron. Vastaus rajoitettu 2500 junaan.
  
  **Hakuehdot**
  
