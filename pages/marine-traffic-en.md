@@ -1,6 +1,6 @@
 ---
 layout: traffictype
-permalink: en/marine-traffic/
+permalink: /en/marine-traffic/
 section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
@@ -16,41 +16,42 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
+Marine traffic information is collected from Finnish xxx systems
 Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
 
-- Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
+- Marine warnings. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
 
-- Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien aikataulutietojen kautta voidaan hakea kauppamerenkulun alusten satamatietoja
+- Harbour schedules. The data is collected from the Portnet-system 
 
-- Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä.
+- Vessel location AIS (Automatic Identification System)
 
-- Alusten ja satamien metatiedot
+- Vessel and harbour metadata
 
 # Content
-- [REST/JSON-rajapinnat](#restjson-rajapinnat)
-- [WebSocket-rajapinnat](#websocket-rajapinnat)
-    - [Kaikkien laivojen seuraaminen](#kaikkien-laivojen-seuraaminen)
-    - [Yhden laivan seuraaminen mmsi:n perusteella](#yhden-laivan-seuraaminen-mmsin-perusteella)
-    - [Aluksen metadata-viesti](#aluksen-metadata-viesti)
-    - [Aluksen sijainti-viesti](#aluksen-sijainti-viesti)
-    - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--clientti)
-- [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
+- [REST/JSON-api](#restjson-api)
+- [WebSocket-api](#websocket-api)
+    - [Tracking all vessels](#tracking-all-vessels)
+    - [Tracking a single vessel with mmsi-number](#tracking-a-single-vessel-with-mmsi-number)
+    - [Vessel metadata-message](#vessel-metadata-message)
+    - [Vessel location-message](#vessel-location-message)
+    - [Simple JavaScript WebSocket -client](#simple-javascript-websocket--client)
+- [Swagger-api](#swagger-api)
 
 ## REST/JSON-api
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
+Full Api description is located in [Swagger-documentation](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
-Sekä metadataa että dataa päivitetään reaaliaikaisesti.
+Both metadata and content is updated in realtime.
 
 ## WebSocket-api
 
-Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
+Vessel locations can be tracked from follwing WebSocket-apis:
 
-#### Kaikkien laivojen seuraaminen
+#### Tracking all vessels
 
 ``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations ```
 
-#### Yhden laivan seuraaminen mmsi:n perusteella
+#### Tracking a single vessel with mmsi-number
 
 ``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
 

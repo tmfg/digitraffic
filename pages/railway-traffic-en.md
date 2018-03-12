@@ -1,11 +1,13 @@
 ---
 layout: traffictype
-permalink: /rautatieliikenne_en/
+permalink: /en/railway-traffic/
 section: Tietolähteet
 traffictypes: Rautatieliikenne
 searchable: true
 swagger-source: null
 hero-image: rail
+ref: railway-traffic
+lang: en
 title: rata.digitraffic.fi
 intro: Timetables, delays, locations and composition of trains operating in Finland
 links:

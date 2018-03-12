@@ -8,11 +8,11 @@ lang: en
 ref: service-overview
 links:
   - - Road
-    - /en/road/
+    - /en/road-traffic/
   - - Railway
-    - /en/railway
+    - /en/railway-traffic/
   - - Marine
-    - /en/marine
+    - /en/marine-traffic/
   - - Development plan
     - /en/development-plan
   - - Applications
