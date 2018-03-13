@@ -1,12 +1,14 @@
 ---
 layout: page
-permalink: /henkilorekisteriseloste/
+permalink: /en/person-register-policy/
 section: Palvelun henkilörekisteriseloste
 searchable: true
-lang: fi
+lang: en
 ref: henkilorekisteriseloste
-title: Henkilörekisteriseloste
+title: Personal data file description
 ---
+
+## NOTE! no translation in english
 
 ## Henkilötietolain (523/1999)&nbsp;10&nbsp;§:n mukainen rekisteriseloste.
 

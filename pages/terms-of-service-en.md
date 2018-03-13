@@ -1,16 +1,18 @@
 ---
 layout: page
-permalink: /kayttoehdot/
+permalink: /en/terms-of-service/
 section: Tietoa Palvelusta
 searchable: true
-lang: fi
+lang: en
 ref: terms-of-service
-title: Käyttöehdot
+title: Terms of service
 links:
-  - ["Käyttöehdot", "/kayttoehdot"]
+  - ["Terms of service", "/en/terms-of-service"]
   - ["Liikenneviraston vanha avoimen tiedon käyttölupa", "http://www.liikennevirasto.fi/avoindata/kayttoehdot/avoimen-tietokannan-lisenssi#.Wb_QR0qCxBw"]
   - ["Merikartoitusaineiston lisenssi", "http://www.liikennevirasto.fi/avoindata/kayttoehdot/merikartoitusaineiston-lisenssi#.Wb_QeEqCxBw"]
 ---
+
+## NOTE! no translation in english
 
 Liikenneviraston avoimen datan aineistoja koskee Creative Commons 4.0 Nimeä -käyttölupa poislukien eräät merikartoitukseen liittyvät aineistot, joiden käyttölupa on Liikenneviraston merikartoitusaineiston lisenssi. Creative Commons 4.0 Nimeä on JHS 189 -suosituksen mukainen käyttölupa julkishallinnon avoimia tietoaineistoja varten. Se antaa oikeuden kopioida, muokata ja jakaa aineistoja edelleen joko alkuperäisessä tai muutetussa muodossa. Aineistoja voi myös yhdistää muihin aineistoihin ja käyttää sekä kaupallisiin että epäkaupallisiin tarkoituksiin.
 

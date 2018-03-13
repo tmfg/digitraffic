@@ -8,7 +8,7 @@ swagger-source: null
 hero-image: rail
 ref: railway-traffic
 lang: en
-title: rata.digitraffic.fi
+title: Railway traffic
 intro: Timetables, delays, locations and composition of trains operating in Finland
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]

@@ -8,7 +8,7 @@ swagger-source: null
 hero-image: rail
 lang: fi
 ref: railway-traffic
-title: rata.digitraffic.fi
+title: Rautatieliikenne
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
@@ -97,7 +97,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Raideosuudet](#raideosuudet-1)
     1. [Herätepisteet](#herätepisteet-1)
 1. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
-1. [Käyttöehdot](#käyttöehdot)
+1. [Avoimen datan käyttölupa](#avoimen-datan-käyttölupa)
 
 # Yleistä
 
@@ -1194,16 +1194,11 @@ Jos kyselyyn lisättäisiin versionumero [/live-trains/station/HKI?arrived_train
 
 Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettävä sitä seuraavassa kyselyssä parametrina.
 
-## Käyttöehdot
+## Avoimen datan käyttölupa
 
-Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/). Tiivistettynä Creative Commons Nimeä 4.0 -lisenssi tarkoittaa sitä, että ilmaiset sovelluksessasi saaneesi tiedot tästä rajapinnasta. Se onnistuu esimerkiksi tälläisellä html-pätkällä: 
-```
-<p>
-Tiedot haetaan Liikenneviraston <a href="https://rata.digitraffic.fi">rata.digitraffic.fi-rajapinnasta</a>.<br>
-<span>Lisenssi: <a href="http://creativecommons.org/licenses/by/4.0/">CC 4.0 BY</a></span>
-</p>
-```
+Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/).
 
- ![Creative Commons -lisenssi]({{ site.baseurl }}{{ "/img/rata/cc4.png" }})
+[Käyttöehdot](/kayttoehdot) -sivulla on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
-Tämän lisenssin antamia oikeuksia laajempia lupia voi olla saatavilla osoitteessa [http://www.liikennevirasto.fi](http://www.liikennevirasto.fi).
+[Liikenneviraston avoimen datan sivustolla](https://www.liikennevirasto.fi/avoindata/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
+

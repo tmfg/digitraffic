@@ -58,9 +58,6 @@ t:
   tieliikenne:
     en: "Road"
     fi: "Tieliikenne"
-    url:
-      en: "/en/road-traffic"
-      fi: "/tieliikenne"
   rautatieliikenne:
     en: "Railway"
     fi: "Rautatieliikenne"
