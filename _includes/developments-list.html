@@ -17,15 +17,18 @@
   {% endif %}
 {% endfor %}
 
-<!-- Developments amount text -->
+<!-- Developments amount text 
 {% if developments.size == 1 %}
   {% assign developments_text = 'hanke' %}
 {% else %}
   {% assign developments_text = 'hanketta' %}
 {% endif %}
 
-<h2 class="h2 developments__list-heading">Kehityshankkeet</h2>
-<div class="developments__amount"><span id="developments-amount">{{ site.developments.size }}</span> {{ developments_text }} suunnittelujärjestyksessä</div>
+skipped
+-->
+
+<h2 class="h2 developments__list-heading">{{ site.t.development-roadmap-filter[page.lang] }}</h2>
+<div class="developments__amount"><span id="developments-amount">{{ site.developments.size }}</span> {{ site.t.development-roadmap-filter.results[page.lang] }}</div>
 
 <!-- Planned -->
 {% for development in planned %}
@@ -103,5 +106,5 @@
 {% endfor %}
 
 <div class="developments__no-developments developments__no-developments--hidden">
-  Ei näytettäviä hankkeita.
+  {{ site.t.development-roadmap-filter.no-results[page.lang] }}  
 </div>

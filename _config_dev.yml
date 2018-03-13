@@ -18,6 +18,7 @@ exclude:
   - package.json
   - README.md
   - update-swagger.sh
+  - docker-entrypoint.sh
 collections:
   applications:
     output: true
@@ -225,6 +226,21 @@ t:
     url:
       en: "/en/applications"
       fi: "/sovellukset"
+  applications-filter:
+    en: "Filter applications"
+    fi: "Rajaa sovelluksia"
+    transport-type:
+      en: "Type of transportation"
+      fi: "Liikennetyyppi"
+    platform:
+      en: "Platform"
+      fi: "Käyttöympäristö"
+    results:
+      en: "applications in release order"
+      fi: "sovellusta julkaisujärjestyksessä"
+    no-results:
+      en: "No applications"
+      fi: "Ei näytettäviä sovelluksia."
   applications-description:
     en: "Many applications use data provided by Digitraffic APIs."
     fi: "Digitrafficin tietolähteiden tarjoamaa tietoa hyödyntävät jo useat sovellukset, jotka palvelevat hyvin erilaisia liikenteeseen liittyviä tarpeita."
@@ -237,6 +253,24 @@ t:
   development-roadmap-description:
     en: "Digitraffic development goals are presented by traffic type and status so that you can see what is being planned, in development and done."
     fi: "Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut."
+  development-roadmap-filter:
+    en: "Development projects"
+    fi: "Kehityshankkeet"
+    filter:
+      en: "Filter projects"
+      fi: "Rajaa hankelistaa"
+    filter-transport-type:
+      en: "Type of transportation"
+      fi: "Liikennetyyppi"
+    filter-development-phase:
+      en: "Development phase"
+      fi: "Kehitysvaihe"
+    results:
+      en: "applications in planning order"
+      fi: "hanketta suunnittelujärjestyksessä"
+    no-results:
+      en: "No development plans"
+      fi: "Ei näytettäviä hankkeita."
   frontpage-heading:
     en: "Digitraffic"
     fi: "Digitraffic"

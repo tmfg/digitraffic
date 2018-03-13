@@ -24,7 +24,7 @@
 
 <div class="row sidebar__filter-row">
     <div class="col-xs-12 sidebar__filter-section">
-      <h4 class="h4 sidebar__filter-section-heading">Käyttöympäristö</h4>
+      <h4 class="h4 sidebar__filter-section-heading">{{ site.t.applications-filter.platform[page.lang] }}</h4>
       <ul data-filtersection="environment" class="sidebar__filter-list">
         {% for environment in unique_envs %}
         <!--envlist[0] has downcased version, envlist[1] has the original spelling of environment-->

@@ -1,9 +1,6 @@
 ---
 layout: compress
-permalink: /kehityssuunnitelma/
-hero-image: train-track-straight
-title: Kehityssuunnitelma
-intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen ja tilan mukaan.
+hero-image: keyboard
 ---
 
 <!DOCTYPE html>
@@ -12,7 +9,7 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="fi">
+  <body class="body" lang="{{ page.lang}}">
     
     <!--Header-->
     {% include header.html header-classes="header--transparent" %}
@@ -35,7 +32,7 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
         <!--Breadcrumb-->
         <div class="row">
           <div class="col-xs-12 breadcrumb"><!--
-          --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+          -->{% include breadcrumb-home.html %}<!--
           --><span class="breadcrumb__item">{{ page.title }}</span>
           </div>
         </div>
@@ -43,14 +40,16 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
         <div class="row">
           <!--Text body-->
           <div class="col-xs-12 col-sm-8 text-body text-body--no-top-margin">
-            {% include developments-list.html %}
+            <h2 class="h2 applications-list__page-heading">{{ site.t.applications[page.lang]}}</h2>
+            {% include applications-list.html %}
+            <a href="{{ site.t.sign-up-application.url[page.lang] | prepend:site.baseurl }}"><button class="button applications-list__button"><i class="button__icon material-icons md-light md-lg">add_to_queue</i><span class="button__text">{{ site.t.sign-up-application[page.lang] }}</span></button></a>
           </div>
 
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
-            <h3 class="h3 sidebar__applications-filters-heading">Rajaa hankelistaa</h3>
-            {% include developments-filters-traffictype.html %}
-            {% include developments-filters-status.html %}
+            <h3 class="h3 sidebar__applications-filters-heading">{{ site.t.applications-filter[page.lang] }}</h3>
+            {% include applications-filters-traffictype.html %}
+            {% include applications-filters-environment.html %}
           </div>
 
         </div>
@@ -61,6 +60,6 @@ intro: Digitraffic-palvelun ajankohtaiset kehityshankkeet ryhmiteltynä hankkeen
     <!--footer-->
     {% include footer.html %}
 
-    <script type="text/javascript" src="{{ "/js/filter-developments.js" | prepend:site.baseurl }}" async="async"></script>
+    <script type="text/javascript" src="{{ "/js/filter-applications.js" | prepend:site.baseurl }}" async="async"></script>
   </body>
 </html>
