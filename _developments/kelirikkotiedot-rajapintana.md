@@ -1,9 +1,9 @@
 ---
-title: Kelirikkotiedot rajapintana
+title: Painorajoitustiedot rajapintana
 issue-number: DPO-337
 traffictypes:
   - Tieliikenne
-status: suunnitteilla
+status: valmis
 ---
 
-Kelirikkotiedot, muut painorajoitukset ja tietyötiedot tullaan tuomaan Digitrafficin rajapintaan häiriötiedotteiden tapaan sekä DatexII-muodossa että helpommin hyödynnettävässä JSON-muodossa.
+Painorajoitukset ja tietyötiedot tullaan tuomaan Digitrafficin rajapintaan häiriötiedotteiden tapaan DatexII-muodossa.
