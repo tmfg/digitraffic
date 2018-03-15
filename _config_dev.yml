@@ -140,12 +140,12 @@ t:
     url:
       en: "/en/contact"
       fi: "/yhteystiedot"
-  person-register-policy:
-    en: "Person register policy"
-    fi: "Henkilörekisteriseloste"
+  privacy-policy:
+    en: "Privacy policy"
+    fi: "Tietosuojaseloste"
     url:
-      en: "/en/person-register-policy"
-      fi: "/henkilorekisteriseloste"
+      en: "/en/privacy-policy"
+      fi: "/tietosuojaseloste"
   finnish-transport-agency-web:
     en: "Finnish Transport Agency"
     fi: "Liikennevirasto.fi"

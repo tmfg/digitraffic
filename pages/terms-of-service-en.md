@@ -12,40 +12,35 @@ links:
   - ["Merikartoitusaineiston lisenssi", "http://www.liikennevirasto.fi/avoindata/kayttoehdot/merikartoitusaineiston-lisenssi#.Wb_QeEqCxBw"]
 ---
 
-## NOTE! no translation in english
+Finnish Transport Agency's open data is licensed under the Creative Commons 4.0 By license except for certain maritime data, which is licensed under a separate license. Creative Commons 4.0 By is recommended by JHS-189 as an open data license for public authorities in Finland. It gives the right to distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation.
 
-Liikenneviraston avoimen datan aineistoja koskee Creative Commons 4.0 Nimeä -käyttölupa poislukien eräät merikartoitukseen liittyvät aineistot, joiden käyttölupa on Liikenneviraston merikartoitusaineiston lisenssi. Creative Commons 4.0 Nimeä on JHS 189 -suosituksen mukainen käyttölupa julkishallinnon avoimia tietoaineistoja varten. Se antaa oikeuden kopioida, muokata ja jakaa aineistoja edelleen joko alkuperäisessä tai muutetussa muodossa. Aineistoja voi myös yhdistää muihin aineistoihin ja käyttää sekä kaupallisiin että epäkaupallisiin tarkoituksiin.
+## Attribution guidelines
 
-## Ohjeita lähteen nimeämiseen
+Creative Commons 4.0 By requires that you attribute the work in the manner specified by the author of the data.  In practice this means that you must give appropriate credit, provide a link to the license, and indicate if changes were made when publishing your work.
 
-Creative Commons 4.0 Nimeä -käyttöluvan mukaan tietoaineiston lähde nimetään käyttöluvan antajan edellyttämällä tavalla. Tämä tarkoittaa käytännössä sitä, että jaettaessa käyttöluvan kohteena olevaa aineistoa edelleen, se on varustettava aineiston luojien tai muiden käyttöluvasta ilmenevien tahojen nimellä käyttöluvan myöntäjän vaatimalla kohtuullisella tavalla. Nämä tiedot voivat sisältää nimen lisäksi tai sijasta esimerkiksi pseudonyymin tai tavaramerkin.
+#### Finnish Transport Agency requires the following for attribution:
 
-#### Liikennevirasto edellyttää, että nimeämisessä noudatetaan seuraavaa käytäntöä:
+The copyright notice of the material must be preserved. The copyright notice may also include the publishing date and version number of the material, publisher name and other data that is required for identification of the material.
 
-Materiaaliin sisältyvä tekijänoikeusmerkintä (copyright notice) on säilytettävä käyttöluvasta ilmenevällä tavalla . Tekijänoikeusmerkintä voi sisältää myös materiaalin julkaisuajankohdan ja aineiston version numeron sekä julkaisijan nimen sekä muut datan identifioinnin kannalta oleelliset tiedot.
+Typical warranties, disclaimers amd limitations of liability must be preserved. If technically possible, the material must include a hyperlink to the web site of the original material.
 
-Materiaaliin sisältyvät tavanomaiset vastuuvapausehdot on säilytettävä käyttöluvasta ilmenevällä tavalla. Lähdetietoihin on sisällyttävä hyperlinkki alkuperäisen aineiston verkkosivuille, mikäli tämä on teknisesti mahdollista.
+If the material has beem modified, it must be accompanied with a notice describing the modification and a hyperlink to the website of the original material.
 
-Jos materiaalia on muokattu, se täytyy varustaa tätä koskevalla merkinnällä ja liittää muokattuun materiaaliin hyperlinkki alkuperäiseen muokkaamattomaan materiaaliin.
+The material must be accompanied with an indication that the material is licensed under the Creative Commons 4.0 By license and with a hyperlink to the license.
 
-Materiaaliin täytyy liittää Creative Commons Nimeä 4.0 -käyttölupaa koskeva merkintä ja hyperlinkki käyttölupaan.
+Finnish Transport Agency may request removal of the attribution information from your work to the extent reasonably practicable.
 
-Liikennevirasto voi aina pyytää nimeämistietojen ja tekijänoikeusmerkinnän poistamista niissä rajoissa, kun poistaminen on mahdollista.
+## Example for attribution
 
-## Esimerkkejä nimeämiseen
+Example: using rata.digiraffic.fi API data on a web page or in an application. Add the followig to your web page or to your application:
 
-### 1. esimerkki
+ Source: Finnish Transport Agency / rata.digitraffic.fi, lisence CC 4.0 BY
 
-Digiroad-aineiston käyttö osana painettua julkaisua. Julkaisussa käytettävän Digiroad-aineiston yhteyteen lisätään seuraava teksti:
+More information about attribution can be found from the  [Creative Commons website](https://creativecommons.org/).
 
-Lähde: Digiroad, Liikennevirasto. Aineisto on ladattu Liikenneviraston Katselu- ja latauspalvelusta 01.06.2015 lisenssilä CC 4.0 BY.
+## Applying old licenses
 
-### 2. esimerkki
+Finnish Transport Agency's old open data license was in use until 2014. It's still valid for materials which were downloaded when the license was in use.
 
-Rata.digitraffic.fi -rajapinnan tietojen käyttö verkkosivulla tai sovelluksessa. Sivulle tai sovellukseen lisätään seuraava teksti linkkeineen:
+Finnish Transport Agency grants all users the right to apply the Creative Commons 4.0 BY license to any material that was downloaded with the old open data license. The material does not have to be downloaded again.
 
-Liikennetietojen lähde Liikennevirasto / rata.digitraffic.fi, lisenssi CC 4.0 BY
-
-Nimeämistietojen merkintätavoista löytyy tarkempia ohjeita [Creative Commonsin verkkosivuilta](https://creativecommons.org/).
-
-Vuoteen 2014 asti Liikennevirastolla oli käytössä [Liikenneviraston avoimen tietoaineiston lisenssi](http://www.liikennevirasto.fi/documents/20473/184083/Liikenneviraston+avoimen+tietoaineiston+lisenssi+v1.0.pdf/63cba9c4-b7ee-435a-872f-053ebea179ce). Se on edelleen voimassa niille aineistoille, joiden käyttöehdoksi se oli aineiston lataushetkellä määritelty. Liikennevirasto myöntää hyödyntäjille oikeuden soveltaa näihin, Liikenneviraston avoimen tietoaineiston lisenssillä ladattuihin aineistoihin [Creative Commons 4.0](https://creativecommons.org/licenses/by/4.0/) Nimeä -käyttölupaa ilman, että aineisto tarvitsee ladata uudelleen.
