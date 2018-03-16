@@ -112,7 +112,7 @@ t:
     en: "Experimental"
     fi: "Kokeilut"
     url:
-      en: "en/experimental"
+      en: "/en/experimental"
       fi: "/kokeilut"
   about:
     en: "About Digitraffic"
@@ -132,7 +132,9 @@ t:
   support:
     en: "Support"
     fi: "Tuki"
-
+  swagger-api:
+    en: "Swagger-api"
+    fi: "Swagger-rajapintakuvaus"
   # Footer
   contact:
     en: "Contact"
@@ -271,6 +273,16 @@ t:
     no-results:
       en: "No development plans"
       fi: "Ei näytettäviä hankkeita."
+  development-roadmap-phases:
+      planned:
+        en: "planned"
+        fi: "suunnitteilla"
+      inprogress:
+        en: "inprogress"
+        fi: "toteutuksessa"
+      finished:
+        en: "finished"
+        fi: "valmis"
   frontpage-heading:
     en: "Digitraffic"
     fi: "Digitraffic"

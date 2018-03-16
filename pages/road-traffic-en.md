@@ -16,43 +16,41 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-## TODO! Translate to english
+Road traffic information is gathered from the Finnish Transport Agency (FTA) and The Centres for Economic Development, Transport and the Environment (ELY Centres) systems.
+Currently Road Digitraffic open data API's provices following information:
 
-Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
-Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
+- LAM-measurement data (Traffic Measurement System). Information is gathered from an induction loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland.
 
-- LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.
+- Current free flow speeds. Data is updated once a day.
 
-- Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
+- Traffic disorders notices. Road traffic center provides information about traffic accidents and other disorders, road work notices etc. Messages are also available in Datex2 format.
 
-- Tieliikenteen häiriötiedotteet. Tieliikennekeskuksista saatavat liikenteen ensi- ja muut häiriötiedotteet, tiedotteet tietöistä sekä kelirikkotilanteista. Viestit ovat saatavissa Datex2 formaatissa.
+- Road weather station data. Stations are gathering following information: temperature, wind, rain, relative humidity and dew point etc. Currently, there are over 350 road weather station which are mainly located in main roads. Date is updated in every minute.
 
-- Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
+- Road weather forecasts. Content is updated every five minutes.
 
-- Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
+- Road weather cameras. Cameras provides information on current traffic flow and weather conditions. Currently, there are over 470 road weather cameras.
 
-- Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
-
-- Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
+- Metadata. Road traffic measurement stations information like location (GeoJSON-format), status. Content is updated every 12 hours. 
 
 # Content
-- [REST/JSON-apis](#restjson-rajapinnat)
-    - [Road weather cameras](#kelikamerat)
-    - [Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot](#ajantasaiset-linkkien-sujuvuustiedot-sisältäen-matka-aikatiedot)
-    - [Edellisen päivän sujuvuuden historiatiedot](#edellisen-päivän-sujuvuuden-historiatiedot)
-    - [Sujuvuuden historiatiedot halutulta kuulta](#sujuvuuden-historiatiedot-halutulta-kuulta)
-    - [Vapaat nopeudet](#vapaat-nopeudet)
-    - [Ajantasaiset tiejaksojen keliennusteet](#ajantasaiset-tiejaksojen-keliennusteet)
-    - [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot)
-    - [Häiriötiedotteet](#häiriötiedotteet)
-    - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
-- [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
+- [REST/JSON-apis](#restjson-apis)
+    - [Road weather cameras](#road-weather-cameras)
+    - [Current journey times](#current-journey-times)
+    - [History data for previous day](#history-data-for-previous-day)
+    - [History data for requested month](#history-data-for-requested-month)
+    - [Current free flow speeds](#current-free-flow-speeds)
+    - [Current road weather forecasts](#current-road-weather-forecasts)
+    - [Current data from LAM stations](#current-data-from-lam-stations)
+    - [Traffic disorders](#traffic-disorders)
+    - [Status of road weather stations](#status-of-road-weather-stations)
+- [Swagger-documentation](#swagger-api)
 
 ## REST/JSON-APIs
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
+Full Api description is located in [Swagger-documentation](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
-Sekä metadataa että dataa päivitetään reaaliaikaisesti.
+Both metadata and content is updated in realtime.
 
 ### Road weather cameras
 
@@ -60,28 +58,28 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 [```http://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0150200 kuva löytyy
-osoitteesta [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
+Response message contains weather camera information and url for the camere image. For example preset image C0150200 is located in [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
 
 ![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
 
-### Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
+### Current journey times
 
-Perjantaina 29.12.2017 päättyi pääkaupunkiseudun matka-aikajärjestelmän toiminta. Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
-vastaa enää asetettuja laatuvaatimuksia Tämän vuoksi myös Digitraffic lopetti toimittamasta PKS-järjestelmään liittyvää tietoa.
+NOTE! This information is not uptated
 
-Tämän johdosta tätä rajapintaa ei enää ole saatavilla.
+12/29/2017 Data provider has shutdown journey time information system. Existing system is end of technical lifespan and does not meet requested quality requirements. 
 
-### Edellisen päivän sujuvuuden historiatiedot
+### History data for previous day 
 
-Koska uutta tietoa ei enää saavu, tämä rajapinta ei enää ole saatavilla.
+NOTE! This information is not available
 
-### Sujuvuuden historiatiedot halutulta kuulta
+### History data for requested month
 [```http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
 
-Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
+Response message contains history data for requested month.
 
-### Vapaat nopeudet
+NOTE! Last history data is from 12/2017.
+
+### Current free flow speeds
 
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
 
@@ -89,19 +87,17 @@ Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
 
-Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille.
+Response message contains currently valid free flow speeds. When winter/summer speed change occurs is message content changed. 
 
-Kun linkki- tai LAM–asema vaihtuu talvinopeusrajoituksesta kesänopeuksiin tai päinvastoin, viestin sisältö muuttuu.
+Message is updated once a day (3:30 AM EET).
 
-Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viesti on haettavissa 03:30 Suomen aikaa.
-
-### Ajantasaiset tiejaksojen keliennusteet
+### Current road weather forecasts
 
 [```http://tie.digitraffic.fi/api/v1/data/road-conditions```](http://tie.digitraffic.fi/api/v1/data/road-conditions)
 
-Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
+Response message contains road specific weather forecasts. Reports are updated every 5 minutes.
 
-### Ajantasaiset LAM mittaustiedot
+### Current data from LAM stations
 
 [```http://tie.digitraffic.fi/api/v1/data/tms-data```](http://tie.digitraffic.fi/api/v1/data/tms-data)
 
@@ -111,11 +107,11 @@ Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden m
 
 [```ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
 
-Viesti sisältää LAM (Liikenteen Automaattinen Mittaus)–asemien mittaustiedot.
+Response message contains LAM (Traffic Measurement System)–stations measurement data.
 
-Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mitattu keskinopeus molempiin suuntiin.
+Every LAM-station provides information about traffic amounts and measured average speeds.
 
-Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
+Data is updated almost in real time but information is cached. Actual update interval is one minute. 
 
 Simple JavaScript WebSocket - client application:
 ```
@@ -154,7 +150,7 @@ Simple JavaScript WebSocket - client application:
  </html>
 ```
 
-### Häiriötiedotteet
+### Traffic disorders
 
 [```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
 
@@ -162,20 +158,18 @@ Simple JavaScript WebSocket - client application:
 
 [```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId})
 
-Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittäviä tieliikenteen sujuvuuteen vaikuttavia häiriöitä. Tällaisia ovat esimerkiksi liikenneonnettomuudesta johtuvat poikkeusjärjestelyt.
+Response message contains disorder notices that have significant impact on traffic flow for example traffic accidents and temporary traffic rearrangements. 
 
-Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen.
+Disorders contains TMC-location information to identify occurance area or location.
 
 [```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
 
-### Tiesääasemien ajantasaiset mittaustiedot
+### Status of road weather stations
 
 [```http://tie.digitraffic.fi/api/v1/data/weather-data```](http://tie.digitraffic.fi/api/v1/data/weather-data)
 
 [```http://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](http://tie.digitraffic.fi/api/v1/data/weather-data/{id})
 
-Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
+Response message contains latest weather measurement data.
 
-Viestissä on kullekin tiesääasemalle kyseisen aseman anturiarvot.
-
-Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
+Data is updated almost in real time but information is cached. Actual update interval is one minute.

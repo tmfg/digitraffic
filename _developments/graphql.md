@@ -1,5 +1,7 @@
 ---
 title: GraphQL
+lang: fi
+ref: graphql
 issue-number: DPO-167
 traffictypes:
   - Rautatieliikenne

@@ -3,16 +3,19 @@
 {% assign inprogress = '' | split: ',' %}
 {% assign finished = '' | split: ',' %}
 
+{% assign current_lang = page.lang %}
+
 <!-- Loop through developments and push to arrays-->
 {% for development in site.developments %}
-  {% assign status = development.status | downcase %}
-  {% if 'suunnitteilla' == status %}
-    {% assign planned = planned | push: development %}
+  {% assign status = development.status | downcase %}  
+
+  {% if site.t.development-roadmap-phases.planned[current_lang] == status %}    
+      {% assign planned = planned | push: development %}    
   {% endif %}
-  {% if 'toteutuksessa' == status %}
+  {% if site.t.development-roadmap-phases.inprogress[current_lang] == status %}
     {% assign inprogress = inprogress | push: development %}
   {% endif %}
-  {% if 'valmis' == status %}
+  {% if site.t.development-roadmap-phases.finished[current_lang] == status %}
     {% assign finished = finished | push: development %}
   {% endif %}
 {% endfor %}

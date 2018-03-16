@@ -44,7 +44,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot)
     - [Häiriötiedotteet](#häiriötiedotteet)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
-- [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
+- [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
 

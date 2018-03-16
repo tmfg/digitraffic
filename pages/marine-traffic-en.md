@@ -16,14 +16,11 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-## TODO! translate to english
+Marine traffic information is gathered from Finnish Transport Agency's data sources. Currently open data API provices following information:
 
-Marine traffic information is collected from Finnish xxx systems
-Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
+- Marine warnings 
 
-- Marine warnings. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
-
-- Harbour schedules. The data is collected from the Portnet-system 
+- Harbour schedules (gathered from the Portnet-system)
 
 - Vessel location AIS (Automatic Identification System)
 
