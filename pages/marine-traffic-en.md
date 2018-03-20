@@ -9,7 +9,7 @@ hero-image: icebreaker
 lang: en
 ref: marine-traffic
 title: Marine traffic
-intro: Open data from Finnish seas and lakes.
+intro: Open data from Finnish waterways
 links:
   - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
@@ -27,8 +27,8 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 - Vessel and harbour metadata
 
 # Content
-- [REST/JSON-api](#restjson-api)
-- [WebSocket-api](#websocket-api)
+- [REST/JSON -API](#restjson-api)
+- [WebSocket -API](#websocket-api)
     - [Tracking all vessels](#tracking-all-vessels)
     - [Tracking a single vessel with mmsi-number](#tracking-a-single-vessel-with-mmsi-number)
     - [Vessel metadata-message](#vessel-metadata-message)
@@ -36,15 +36,15 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
     - [Simple JavaScript WebSocket -client](#simple-javascript-websocket--client)
 - [Swagger-api](#swagger-api)
 
-## REST/JSON-api
+## REST/JSON -API
 
-Full Api description is located in [Swagger-documentation](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
+Full API description is located in [Swagger-documentation](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
 Both metadata and content is updated in realtime.
 
-## WebSocket-api
+## WebSocket -API
 
-Vessel locations can be tracked from follwing WebSocket-apis:
+Vessel locations can be tracked from follwing WebSocket -API's:
 
 #### Tracking all vessels
 
