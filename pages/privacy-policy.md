@@ -8,13 +8,7 @@ ref: privacy-policy
 title: Privacy policy
 ---
 
-## NOTE! no translation in english
-
-## Henkilötietolain (523/1999)&nbsp;10&nbsp;§:n mukainen rekisteriseloste.
-
-Laatimispäivä 20.10.2017.
-
-### 1\. Rekisterinpitäjä
+### 1\. Data Controller
 
 <p>
 Liikennevirasto<br />
@@ -23,7 +17,7 @@ digitraffic@liikennevirasto.fi
 </p>
 
 
-### 2\. Yhteys rekisteriä koskevissa asioissa
+### 2\. Contact
 
 <p>
 Markku Pitkänen<br />
@@ -31,23 +25,23 @@ Raatimiehenkatu 23, 53100 Lappeenranta<br />
 markku.pitkanen@liikennevirasto.fi
 </p>
 
-### 3\. Rekisterin nimi
+### 3\. 
 
 Digitraffic -palvelu
 
-### 4\. Rekisterin käyttötarkoitus
+### 4\. Purpose
 
 Digitraffic-palvelun käytön valvonta ja häiriötilanteiden selvitys.
 
-### 5\. Rekisterin tietosisältö
+### 5\. What data do we collect?
 
 Palvelun käyttäjän ip-osoite.
 
-### 6\. Rekisterin säännönmukaiset tietolähteet
+### 6\. Data origin
 
 Digitraffic -palvelun kuormantasaajapalvelin, johon palvelun käyttäjä lähettää rajapintakutsun. 
 
-### 7\. Säännönmukaiset tietojen luovutukset
+### 7\. Sharing the data with third parties
 
 Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Liikenneviraston toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
 
@@ -66,3 +60,22 @@ Rekisterin ylläpitoon ei liity manuaalista aineistonhallintaa.
 B ATK:lla käsiteltävät tiedot<br />
 Rekisterin tietoja käsitellään Liikenneviraston tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic -palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
 </p>
+
+
+### 11\. The right of access
+
+Henkilötietolain 29 §:n mukaan rekisteröidyllä on oikeus tarkastaa rekisterissä olevat tietonsa.
+
+Tarkastuspyyntö tulee osoittaa kirjallisesti rekisterin yhteyshenkilölle (ks. kohta 2.).  Rekisteröidyn tulee esittää tarkastuspyynnössä tiedon etsimiseen tarpeelliset tiedot.
+
+
+### 12\. The right of correction
+
+Rekisteröidyllä ei ole oikeutta vaatia tietojen korjaamista.
+
+
+### 13\. Other rights
+
+Henkilötietoja ei käytetä eikä luovuteta käytettäväksi suoramainontaa, etämyyntiä ja muuta suoramarkkinointia eikä markkina- ja mielipidetutkimusta eikä henkilömatrikkelia ja sukututkimusta varten.
+
+Rekisteröidyllä ei ole muita henkilötietojen käsittelyyn liittyviä oikeuksia.
