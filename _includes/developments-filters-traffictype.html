@@ -9,7 +9,8 @@
   {% if has_road == true and has_rail == true and has_marine == true and has_experimental == true %}
     {% break %}
   {% endif %}
-  {% for traffictype in development.traffictypes %}    
+
+  {% for traffictype in development.traffictypes %}
     {% if traffictype == site.t.road-traffic[page.lang] %}
       {% assign has_road = true %}
     {% endif %}

@@ -58,12 +58,21 @@ t:
   tieliikenne:
     en: "Road"
     fi: "Tieliikenne"
+    url:
+      en: "/en/road-traffic"
+      fi: "/tieliikenne"
   rautatieliikenne:
     en: "Railway"
     fi: "Rautatieliikenne"
+    url:
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
   meriliikenne:
     en: "Marine"
     fi: "Meriliikenne"
+    url:
+      en: "/en/marine-traffic"
+      fi: "/meriliikenne"
   kokeellinen:
     en: "Experimental"
     fi: "Kokeellinen"
@@ -86,10 +95,47 @@ t:
   search:
     en: "Search"
     fi: "Haku"
+    url:
+      en: "/en/search"
+      fi: "/haku"
   search-placeholder:
     en: "What are you looking for?"
     fi: "Mitä etsit?"
-  
+
+  # Menu items // Some menu items found under Frontpage
+  updates:
+    en: "Updates"
+    fi: "Ajankohtaista"
+  data-sources:
+    en: "Data sources"
+    fi: "Tietolähteet"
+  experimental:
+    en: "Experimental"
+    fi: "Kokeilut"
+    url:
+      en: "/en/experimental"
+      fi: "/kokeilut"
+  about:
+    en: "About Digitraffic"
+    fi: "Tietoa palvelusta"
+  sign-up-application:
+    en: "Sign up your application"
+    fi: "Ilmoita oma sovellus"
+    url:
+      en: "/en/sign-up-your-application"
+      fi: "/ilmoita-oma-sovellus"
+  terms-of-service:
+    en: "Terms of service"
+    fi: "Käyttöehdot"
+    url:
+      en: "/en/terms-of-service"
+      fi: "/kayttoehdot"
+  support:
+    en: "Support"
+    fi: "Tuki"
+  swagger-api:
+    en: "Swagger-api"
+    fi: "Swagger-rajapintakuvaus"
   # Footer
   contact:
     en: "Contact"
@@ -101,7 +147,7 @@ t:
     en: "Privacy policy"
     fi: "Tietosuojaseloste"
     url:
-      en: "/privacy-policy"
+      en: "/en/privacy-policy"
       fi: "/tietosuojaseloste"
   finnish-transport-agency-web:
     en: "Finnish Transport Agency"
@@ -150,6 +196,14 @@ t:
       en: "Creative Commons Attribution 4.0 International license"
       fi: "Creative Commons Nimeä 4.0 Kansainvälinen -lisenssillä"
 
+  # Search
+  search-results:
+    en: "results"
+    fi: "hakutulosta"
+  search-info-text:
+    en: "Type search terms into the field above."
+    fi: "Kirjoita hakuehdot yllä olevaan kenttään."
+
   # Github edit
   github-edit:
     text:
@@ -169,6 +223,67 @@ t:
     url:
       en: "/en/api-status"
       fi: "/rajapintojen-tila"
+  applications:
+    en: "Applications"
+    fi: "Sovellukset"
+    url:
+      en: "/en/applications"
+      fi: "/sovellukset"
+  applications-filter:
+    en: "Filter applications"
+    fi: "Rajaa sovelluksia"
+    transport-type:
+      en: "Type of transportation"
+      fi: "Liikennetyyppi"
+    platform:
+      en: "Platform"
+      fi: "Käyttöympäristö"
+    results:
+      en: "applications in release order"
+      fi: "sovellusta julkaisujärjestyksessä"
+    no-results:
+      en: "No applications"
+      fi: "Ei näytettäviä sovelluksia."
+  applications-description:
+    en: "Many applications use data provided by Digitraffic APIs."
+    fi: "Digitrafficin tietolähteiden tarjoamaa tietoa hyödyntävät jo useat sovellukset, jotka palvelevat hyvin erilaisia liikenteeseen liittyviä tarpeita."
+  development-roadmap:
+    en: "Development roadmap"
+    fi: "Kehityssuunnitelma"
+    url:
+      en: "/en/development-roadmap"
+      fi: "/kehityssuunnitelma"
+  development-roadmap-description:
+    en: "Digitraffic development goals are presented by traffic type and status so that you can see what is being planned, in development and done."
+    fi: "Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut."
+  development-roadmap-filter:
+    en: "Development projects"
+    fi: "Kehityshankkeet"
+    filter:
+      en: "Filter projects"
+      fi: "Rajaa hankelistaa"
+    filter-transport-type:
+      en: "Type of transportation"
+      fi: "Liikennetyyppi"
+    filter-development-phase:
+      en: "Development phase"
+      fi: "Kehitysvaihe"
+    results:
+      en: "applications in planning order"
+      fi: "hanketta suunnittelujärjestyksessä"
+    no-results:
+      en: "No development plans"
+      fi: "Ei näytettäviä hankkeita."
+  development-roadmap-phases:
+      planned:
+        en: "planned"
+        fi: "suunnitteilla"
+      inprogress:
+        en: "inprogress"
+        fi: "toteutuksessa"
+      finished:
+        en: "finished"
+        fi: "valmis"
   frontpage-heading:
     en: "Digitraffic"
     fi: "Digitraffic"
@@ -184,48 +299,57 @@ t:
   marine-traffic:
     en: "Marine traffic"
     fi: "Meriliikenne"
+    url:
+      en: "/en/marine-traffic"
+      fi: "/meriliikenne"
   marine-traffic-description:
     en: "Marine traffic APIs provide sea warnings, ship locations and their meta data, and Portnet data."
     fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
   marine-traffic-button:
     en: "Marine traffic APIs"
     fi: "Meriliikenne tietolähteet"
-    url:
-      en: "en/marine-traffic"
-      fi: "/meriliikenne"
   news:
     en: "News"
     fi: "Tiedotteet"
   railway-traffic:
     en: "Railway traffic"
     fi: "Rautatieliikenne"
+    url:
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
   railway-traffic-description:
     en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
     fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."
   railway-traffic-button:
     en: "Railway traffic APIs"
     fi: "Rautatieliikenne tietolähteet"
-    url:
-      en: "/en/railway-traffic"
-      fi: "/rautatieliikenne"
   road-traffic:
     en: "Road traffic"
     fi: "Tieliikenne"
+    url:
+      en: "/en/road-traffic"
+      fi: "/tieliikenne"
   road-traffic-description:
     en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Finnish Transport Agency."
     fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä."
   road-traffic-button:
     en: "Road traffic APIs"
     fi: "Tietoliikenne tietolähteet"
-    url:
-      en: "/en/road-traffic"
-      fi: "tieliikenne"
   service-overview:
     en: "Service overview"
     fi: "Palvelun esittely"
     url:
       en: "/en/service-overview"
       fi: "/palvelun-esittely"
+  support-channels:
+    en: "Support channels"
+    fi: "Tukikanavat"
+    url:
+      en: "/en/support-channels"
+      fi: "/tukikanavat"
+  support-channels-description:
+    en: "Public Google groups provide support and communication between developers, service provider and Finnish Transport Agency."
+    fi: "Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
 
   # API status
   recent-outages:

@@ -251,7 +251,7 @@ t:
     fi: "Kehityssuunnitelma"
     url:
       en: "/en/development-roadmap"
-      fi: "kehityssuunnitelma"
+      fi: "/kehityssuunnitelma"
   development-roadmap-description:
     en: "Digitraffic development goals are presented by traffic type and status so that you can see what is being planned, in development and done."
     fi: "Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut."
@@ -327,7 +327,7 @@ t:
     fi: "Tieliikenne"
     url:
       en: "/en/road-traffic"
-      fi: "tieliikenne"
+      fi: "/tieliikenne"
   road-traffic-description:
     en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Finnish Transport Agency."
     fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä."
