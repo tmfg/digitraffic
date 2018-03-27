@@ -44,10 +44,10 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Junien tiedot (/trains)](#junien-tiedot-trains)
         - [Yhden junan tiedot](#yhden-junan-tiedot)
         - [Päivän junien tiedot](#päivän-junien-tiedot)
-        - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
-        - [Kaikkien junien seuranta (WebSocket)](#kaikkien-junien-seuranta-websocket)
-        - [Liikennepaikan seuranta (WebSocket)](#liikennepaikan-seuranta-websocket)
-        - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
+        - [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
+        - [Kaikkien junien tiedot (WebSocket)](#kaikkien-junien-tiedot-websocket)
+        - [Liikennepaikan tiedot (WebSocket)](#liikennepaikan-tiedot-websocket)
+        - [Yhden junan tiedot (WebSocket)](#yhden-junan-tiedot-websocket)
         - [GTFS](#gtfs)
         - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
     1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
@@ -255,7 +255,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
  
-### Kaikkien junien seuranta
+### Kaikkien junien tiedot
  
  URL: `/trains?version/<version>`
  
@@ -277,7 +277,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
  
-### Kaikkien junien seuranta (WebSocket)
+### Kaikkien junien tiedot (WebSocket)
  
  Esimerkki: [esimerkki](/api/v1/doc/examples/websocket-train-all.html)
  
@@ -289,7 +289,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
-### Liikennepaikan seuranta (WebSocket)
+### Liikennepaikan tiedot (WebSocket)
  
  Esimerkki: [esimerkki](/api/v1/doc/examples/websocket-train-station.html)
  
@@ -301,7 +301,7 @@ Palauttaa yhden junan tiedot
  
  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
-### Yhden junan seuranta (WebSocket)
+### Yhden junan tiedot (WebSocket)
  
  Esimerkkejä:
  - [esimerkki #1](/api/v1/doc/examples/websocket-train-specific-train-without-departure-date.html)
