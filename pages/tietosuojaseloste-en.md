@@ -25,17 +25,17 @@ Raatimiehenkatu 23, 53100 Lappeenranta<br />
 markku.pitkanen@liikennevirasto.fi
 </p>
 
-### 3\. 
+### 3\. Filing system name
 
-Digitraffic -palvelu
+Digitraffic -service
 
 ### 4\. Purpose
 
-Digitraffic-palvelun käytön valvonta ja häiriötilanteiden selvitys.
+Monitoring of the Digitraffic service usage and service problem management.
 
 ### 5\. What data do we collect?
 
-Palvelun käyttäjän ip-osoite.
+IP address of the service user.
 
 ### 6\. Data origin
 
