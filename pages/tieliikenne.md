@@ -23,6 +23,10 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Tieliikenteen häiriötiedotteet. Tieliikennekeskuksista saatavat liikenteen ensi- ja muut häiriötiedotteet, tiedotteet tietöistä sekä kelirikkotilanteista. Viestit ovat saatavissa Datex2 formaatissa.
 
+- Tieliikenteen painorajoitteet.  Viestit ovat saatavissa Datex2 formaatissa.
+
+- Tietliikenteen pitkäkestoiset tietyöt. Viestit ovat saatavissa Datex2 formaatissa.
+
 - Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
 
 - Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
@@ -41,6 +45,8 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Ajantasaiset tiejaksojen keliennusteet](#ajantasaiset-tiejaksojen-keliennusteet)
     - [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot)
     - [Häiriötiedotteet](#häiriötiedotteet)
+    - [Painorajoitteet](#painorajoitteet)
+    - [Tietyöt](#tietyöt)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
 - [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
 
@@ -152,7 +158,7 @@ Yksinkertainen JavaScript WebSocket -asiakassovellus:
 
 ### Häiriötiedotteet
 
-[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
+[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
 
 [```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month})
 
@@ -163,6 +169,26 @@ Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittävi
 Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen.
 
 [```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
+
+### Painorajoitteet
+
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
+
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}))
+
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
+
+Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantieteellisen sijainnin ilmoittamiseen.
+
+### Tietyöt
+
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
+
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}))
+
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId})
+
+Tietyöt käyttävät TMC-paikannusmerkistöä tietöiden maantieteellisen sijainnin ilmoittamiseen.
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
