@@ -39,15 +39,15 @@ IP address of the service user.
 
 ### 6\. Data origin
 
-Digitraffic -palvelun kuormantasaajapalvelin, johon palvelun käyttäjä lähettää rajapintakutsun. 
+The personal data (IP-address of the user) originates from the HTTP calls the users sends to the Digitraffic service. 
 
 ### 7\. Sharing the data with third parties
 
 Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Liikenneviraston toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
 
-### 8\. Tietojen siirto EU:n tai ETA:n ulkopuolelle
+### 8\. Personal data is transfers outside the European Economic Area of the European Union
 
-Tietoja ei siirretä EU:n tai ETA:n ulkopuolelle.
+Personal data is not transferred outside the European Economic Area or the European Union.
 
 ### 9\. Rekisterin suojauksen periaatteet
 
