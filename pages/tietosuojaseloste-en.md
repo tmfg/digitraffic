@@ -8,7 +8,7 @@ ref: privacy-policy
 title: Privacy policy
 ---
 
-### 1\. Data Controller
+### Data Controller
 
 <p>
 Liikennevirasto<br />
@@ -17,7 +17,7 @@ digitraffic@liikennevirasto.fi
 </p>
 
 
-### 2\. Contact
+### Contact
 
 <p>
 Markku Pitkänen<br />
@@ -25,36 +25,38 @@ Raatimiehenkatu 23, 53100 Lappeenranta<br />
 markku.pitkanen@liikennevirasto.fi
 </p>
 
-### 3\. Filing system name
+### Name and Contact Details of  the Data Protection Officer
+
+<p>
+  Tomi Lapinlampi <br />
+  tomi.lapinlampi@liikennevirasto.fi <br />
+  </p>
+
+### Filing system name
 
 Digitraffic -service
 
-### 4\. Purpose
+### Purposes of the processing
 
-Monitoring of the Digitraffic service usage and service problem management.
+Monitoring of the Digitraffic service usage and service problem management. The Digitraffic service is currently managed and developed by Solita Oy.
 
-### 5\. What data do we collect?
+### What data do we collect?
 
 IP address of the service user.
 
-### 6\. Data origin
+### Data origin
 
 The personal data (IP-address of the user) originates from the HTTP calls the users sends to the Digitraffic service. 
 
-### 7\. Sharing the data with third parties
+### Sharing the data with third parties
 
 Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Liikenneviraston toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
 
-### 8\. Personal data is transfers outside the European Economic Area of the European Union
+### Personal data is transfers outside the European Economic Area of the European Union
 
 Personal data is not transferred outside the European Economic Area or the European Union.
 
-### 9\. Rekisterin suojauksen periaatteet
-
-<p>
-A Manuaalinen aineisto<br />
-Rekisterin ylläpitoon ei liity manuaalista aineistonhallintaa.
-</p>
+### Technical and organisational security measures
 
 <p>
 B ATK:lla käsiteltävät tiedot<br />
@@ -62,17 +64,13 @@ Rekisterin tietoja käsitellään Liikenneviraston tietojärjestelmässä, 
 </p>
 
 
-### 11\. The right of access
+### Individual rights
 
 Henkilötietolain 29 §:n mukaan rekisteröidyllä on oikeus tarkastaa rekisterissä olevat tietonsa.
 
 Tarkastuspyyntö tulee osoittaa kirjallisesti rekisterin yhteyshenkilölle (ks. kohta 2.).  Rekisteröidyn tulee esittää tarkastuspyynnössä tiedon etsimiseen tarpeelliset tiedot.
 
-
-### 12\. The right of correction
-
-Rekisteröidyllä ei ole oikeutta vaatia tietojen korjaamista.
-
+We do not provide right of correction, since the filing system consists of logged IP addresses.
 
 ### 13\. Other rights
 
