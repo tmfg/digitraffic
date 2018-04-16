@@ -1,5 +1,5 @@
 name: Digitraffic
-baseurl: 
+baseurl:
 repository: finnishtransportagency/digitraffic
 gems:
   - jekyll-babel
@@ -20,6 +20,7 @@ exclude:
   - package.json
   - README.md
   - update-swagger.sh
+  - docker-entrypoint.sh
 collections:
   applications:
     output: true
@@ -114,7 +115,7 @@ t:
     fi: "Kokeilut"
     url:
       en: "/en/experimental"
-      fi: "/kokeilut"
+      fi: "/kokeellinen"
   about:
     en: "About Digitraffic"
     fi: "Tietoa palvelusta"

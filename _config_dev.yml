@@ -110,7 +110,7 @@ t:
     fi: "Tietolähteet"
   experimental:
     en: "Experimental"
-    fi: "Kokeellinen"
+    fi: "Kokeilut"
     url:
       en: "/en/experimental"
       fi: "/kokeellinen"
