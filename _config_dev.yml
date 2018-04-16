@@ -110,10 +110,10 @@ t:
     fi: "Tietolähteet"
   experimental:
     en: "Experimental"
-    fi: "Kokeilut"
+    fi: "Kokeellinen"
     url:
       en: "/en/experimental"
-      fi: "/kokeilut"
+      fi: "/kokeellinen"
   about:
     en: "About Digitraffic"
     fi: "Tietoa palvelusta"

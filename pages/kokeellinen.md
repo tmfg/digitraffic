@@ -1,6 +1,6 @@
 ---
 layout: traffictype
-permalink: /kokeelliset/
+permalink: /kokeellinen/
 section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
@@ -20,28 +20,15 @@ Tällä hetkellä tarjolla on vain yksi kokeellinen tietolähde.
 ## Siltojen värähtelytiedot
 
 Aurora-hanke on kansainvälisesti ainutlaatuinen älykkään automaattisen liikenteen testialue ja osaamiskeskus arktisissa olosuhteissa Tunturi-Lapissa.
-Siihen liittyvän kokeilutien siltojen värähtelyä mitataan kiihtyvyysantureilla. Näistä antureista saatava 
-mittausdata on julkisesti saatavilla osoitteesta TODO . 
+Siihen liittyvän kokeilutien siltojen värähtelyä mitataan kiihtyvyysantureilla.
 
 Data kuvaa siltojen mittauspisteiden kiihtyvyysarvoja ajan suhteen. Kiihtyvyyden arvo ei ole yksiköllinen, vaan se on mittalaitteen ilmoittama jännitearvo
 ajan funktiona. Näin ollen datasta voidaan esimerkiksi laskea taajuustietoa ilman amplitudin yksikköä.  
 
-Datan avaintiedot ovat:
-- Sillan tunniste
-- Mittauspisteen tunniste
-- Kiihtyvyysarvojen suuruus ajankohdittain
-
-Data sisältää myös mittauksien metatiedot eli:
-- Sillan sijainnin
-- Sillan nimen
-- Mittauspisteen sijainnin
-- Mittauspisteen nimen
-
-Tiedot jakautuvat tiedostoihin, joiden nimeämisessä on käytetty mallia, jossa nimen kaksi ensimmäistä kirjainta kertovat TODO ja niitä seuraavat 
-7 merkkiä edustavat TODO. Tiedostot ovat binäärisiä ja ne voidaan avata tilastollisen laskennan R-sovelluksella [TODO-LINKKI]. 
+Mittausdataa otetaan 1 minuutin verran/tiedosto (32kHz näytteenottotaajuus, 4 byteä/näyte, little endian, binäärinen).
+Tiedostot nimetään tyyliin AL1501962095, missä A=mittaus-kortin identifier (A tai B), L=kanava (L tai R) ja 1501962095=tiedoston luontiaika 
+(epoch, sekunteina)
 
 Tiedostot ovat kooltaan keskimäärin noin 7 megatavun kokoisia.
 
 Tieto kerätään ja julkaistaan kerran kuukaudessa noin kuun puolivälissä.
-
-Tarkempaa tietoa mittauksista ja niiden järjestelyistä antaa TODO.
