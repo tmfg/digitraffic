@@ -1,0 +1,25 @@
+---
+title: 'Tuotannon sovellukset päivitetty 27.2.2018 10:30 - 10:50'
+image: 
+published: true
+categories: Tiedotteet
+traffictypes:
+  - Tieliikenne
+  - Meriliikenne
+tags:
+  - Rajapinnat
+  - Ylläpito
+---
+
+Päivitimme Digitraffic-sovelluksia tuotantoympäristöön.
+
+Muutokset:
+
+TIE
+ - DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - siirretty v1-rajapintaan
+ - DPO-337 - T-LOIK painorajoitteet - beta-rajapintaan
+
+MERI
+ - DPO-415 - Talvimerenkulku siirretty v1-rajapintaan
+
+Pahoittelemme katkosta aiheutunutta haittaa.

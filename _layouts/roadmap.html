@@ -1,9 +1,6 @@
 ---
 layout: compress
-permalink: /sovellukset/
-hero-image: keyboard
-title: Sovellukset
-intro: Liikenneviraston avointa dataa ja rajapintoja käyttäviä sovelluksia
+hero-image: train-track-straight
 ---
 
 <!DOCTYPE html>
@@ -12,7 +9,7 @@ intro: Liikenneviraston avointa dataa ja rajapintoja käyttäviä sovelluksia
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="fi">
+  <body class="body" lang="{{ page.lang }}">
     
     <!--Header-->
     {% include header.html header-classes="header--transparent" %}
@@ -35,7 +32,7 @@ intro: Liikenneviraston avointa dataa ja rajapintoja käyttäviä sovelluksia
         <!--Breadcrumb-->
         <div class="row">
           <div class="col-xs-12 breadcrumb"><!--
-          --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+          -->{% include breadcrumb-home.html %}<!--          
           --><span class="breadcrumb__item">{{ page.title }}</span>
           </div>
         </div>
@@ -43,16 +40,14 @@ intro: Liikenneviraston avointa dataa ja rajapintoja käyttäviä sovelluksia
         <div class="row">
           <!--Text body-->
           <div class="col-xs-12 col-sm-8 text-body text-body--no-top-margin">
-            <h2 class="h2 applications-list__page-heading">Sovellukset</h2>
-            {% include applications-list.html %}
-            <a href="{{ "/ilmoita-oma-sovellus" | prepend:site.baseurl }}"><button class="button applications-list__button"><i class="button__icon material-icons md-light md-lg">add_to_queue</i><span class="button__text">Ilmoita oma sovellus</span></button></a>
+            {% include developments-list.html %}
           </div>
 
           <!--Sidebar-->
           <div class="col-xs-12 col-sm-4 sidebar">
-            <h3 class="h3 sidebar__applications-filters-heading">Rajaa sovelluslistaa</h3>
-            {% include applications-filters-traffictype.html %}
-            {% include applications-filters-environment.html %}
+            <h3 class="h3 sidebar__applications-filters-heading">{{ site.t.development-roadmap-filter.filter[page.lang] }}</h3>
+            {% include developments-filters-traffictype.html %}
+            {% include developments-filters-status.html %}
           </div>
 
         </div>
@@ -63,6 +58,6 @@ intro: Liikenneviraston avointa dataa ja rajapintoja käyttäviä sovelluksia
     <!--footer-->
     {% include footer.html %}
 
-    <script type="text/javascript" src="{{ "/js/filter-applications.js" | prepend:site.baseurl }}" async="async"></script>
+    <script type="text/javascript" src="{{ "/js/filter-developments.js" | prepend:site.baseurl }}" async="async"></script>
   </body>
 </html>

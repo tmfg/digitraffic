@@ -6,17 +6,18 @@
 
 <!-- Get if developments have traffictype -->
 {% for development in site.developments %}
-  {% if has_road == true and has_rail == true and has__marine == true and has__experimental == true %}
+  {% if has_road == true and has_rail == true and has_marine == true and has_experimental == true %}
     {% break %}
   {% endif %}
+
   {% for traffictype in development.traffictypes %}
-    {% if traffictype == 'Tieliikenne' %}
+    {% if traffictype == site.t.road-traffic[page.lang] %}
       {% assign has_road = true %}
     {% endif %}
-    {% if traffictype == 'Rautatieliikenne' %}
+    {% if traffictype == site.t.railway-traffic[page.lang] %}
       {% assign has_rail = true %}
     {% endif %}
-    {% if traffictype == 'Meriliikenne' %}
+    {% if traffictype == site.t.marine-traffic[page.lang] %}
       {% assign has_marine = true %}
     {% endif %}
     {% if traffictype == 'Kokeellinen' %}
@@ -27,7 +28,7 @@
 
 <div class="row sidebar__filter-row">
   <div class="col-xs-12 sidebar__filter-section">
-    <h4 class="h4 sidebar__filter-section-heading">Liikennetyyppi</h4>
+    <h4 class="h4 sidebar__filter-section-heading">{{ site.t.development-roadmap-filter.filter-transport-type[page.lang] }}</h4>
     <ul data-filtersection="traffictype" class="sidebar__filter-list">
       {% if has_road %}
       <li class="sidebar__filter-list-item">
@@ -35,20 +36,20 @@
           <div class="col-xs-10 u--no-padding">
             <div class="checkbox">
               <label>
-                <input type="checkbox" data-filtervalue="tieliikenne" data-filtertype="traffictype">
+                <input type="checkbox" data-filtervalue="{{ site.t.road-traffic[page.lang] | downcase }}" data-filtertype="traffictype">
                 <svg width="20" height="20">
                   <path class="checked" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M7,14L2,9l1.4-1.4L7,11.2l7.6-7.6L16,5L7,14z"/>
                   <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
                   <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
                 </svg>
                 <span class="checkbox__label-text">
-                  Tieliikenne
+                  {{ site.t.road-traffic[page.lang] }}
                 </span>
               </label>
             </div>
           </div>
           <div class="col-xs-2 u--no-padding sidebar__filter-amount-col">
-            <span data-filtervalue="tieliikenne" data-filtertype="traffictype" class="sidebar__filter-amount"></span>
+            <span data-filtervalue="{{ site.t.road-traffic[page.lang] | downcase }}" data-filtertype="traffictype" class="sidebar__filter-amount"></span>
           </div>
         </div>
       </li>
@@ -59,20 +60,20 @@
           <div class="col-xs-10 u--no-padding">
             <div class="checkbox">
               <label>
-                <input type="checkbox" data-filtervalue="rautatieliikenne" data-filtertype="traffictype">
+                <input type="checkbox" data-filtervalue="{{ site.t.railway-traffic[page.lang] | downcase }}" data-filtertype="traffictype">
                 <svg width="20" height="20">
                   <path class="checked" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M7,14L2,9l1.4-1.4L7,11.2l7.6-7.6L16,5L7,14z"/>
                   <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
                   <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
                 </svg>
                 <span class="checkbox__label-text">
-                  Rautatieliikenne
+                  {{ site.t.railway-traffic[page.lang] }}
                 </span>
               </label>
             </div>
           </div>
           <div class="col-xs-2 u--no-padding sidebar__filter-amount-col">
-            <span data-filtervalue="rautatieliikenne" data-filtertype="traffictype" class="sidebar__filter-amount"></span>
+            <span data-filtervalue="{{ site.t.railway-traffic[page.lang] | downcase }}" data-filtertype="traffictype" class="sidebar__filter-amount"></span>
           </div>
         </div>
       </li>
@@ -83,20 +84,20 @@
           <div class="col-xs-10 u--no-padding">
             <div class="checkbox">
               <label>
-                <input type="checkbox" data-filtervalue="meriliikenne" data-filtertype="traffictype">
+                <input type="checkbox" data-filtervalue="{{ site.t.marine-traffic[page.lang] | downcase }}" data-filtertype="traffictype">
                 <svg width="20" height="20">
                   <path class="checked" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M7,14L2,9l1.4-1.4L7,11.2l7.6-7.6L16,5L7,14z"/>
                   <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
                   <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
                 </svg>
                 <span class="checkbox__label-text">
-                  Meriliikenne
+                  {{ site.t.marine-traffic[page.lang] }}
                 </span>
               </label>
             </div>
           </div>
           <div class="col-xs-2 u--no-padding sidebar__filter-amount-col">
-            <span data-filtervalue="meriliikenne" data-filtertype="traffictype" class="sidebar__filter-amount"></span>
+            <span data-filtervalue="{{ site.t.marine-traffic[page.lang] | downcase }}" data-filtertype="traffictype" class="sidebar__filter-amount"></span>
           </div>
         </div>
       </li>
@@ -111,8 +112,8 @@
                 <path class="indeterminate" d="M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z M14,10H4V8h10V10z"/>
                 <path class="unchecked" d="M16,2v14H2V2H16 M16,0H2C0.9,0,0,0.9,0,2v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V2C18,0.9,17.1,0,16,0z"/>
               </svg>
-              <span class="checkbox__label-text">
-                Kokeellinen
+              <span class="checkbox__label-text">                
+                {{ site.t.kokeellinen[page.lang] }}
               </span>
             </label>
           </div>

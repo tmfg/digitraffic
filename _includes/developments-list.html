@@ -3,29 +3,36 @@
 {% assign inprogress = '' | split: ',' %}
 {% assign finished = '' | split: ',' %}
 
+{% assign current_lang = page.lang %}
+
 <!-- Loop through developments and push to arrays-->
 {% for development in site.developments %}
-  {% assign status = development.status | downcase %}
-  {% if 'suunnitteilla' == status %}
-    {% assign planned = planned | push: development %}
+  {% assign status = development.status | downcase %}  
+
+  {% if site.t.development-roadmap-phases.planned[current_lang] == status %}    
+      {% assign planned = planned | push: development %}    
   {% endif %}
-  {% if 'toteutuksessa' == status %}
+  {% if site.t.development-roadmap-phases.inprogress[current_lang] == status %}
     {% assign inprogress = inprogress | push: development %}
   {% endif %}
-  {% if 'valmis' == status %}
+  {% if site.t.development-roadmap-phases.finished[current_lang] == status %}
     {% assign finished = finished | push: development %}
   {% endif %}
 {% endfor %}
 
-<!-- Developments amount text -->
+<!-- Developments amount text 
 {% if developments.size == 1 %}
   {% assign developments_text = 'hanke' %}
 {% else %}
   {% assign developments_text = 'hanketta' %}
 {% endif %}
 
-<h2 class="h2 developments__list-heading">Kehityshankkeet</h2>
-<div class="developments__amount"><span id="developments-amount">{{ site.developments.size }}</span> {{ developments_text }} suunnittelujärjestyksessä</div>
+skipped
+-->
+{% assign development_url = site.t.development-roadmap.url[page.lang] %}
+
+<h2 class="h2 developments__list-heading">{{ site.t.development-roadmap-filter[page.lang] }}</h2>
+<div class="developments__amount"><span id="developments-amount">{{ site.developments.size }}</span> {{ site.t.development-roadmap-filter.results[page.lang] }}</div>
 
 <!-- Planned -->
 {% for development in planned %}
@@ -42,10 +49,10 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in development.traffictypes %}<!--
-    --><li class="date-type-tags__type"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ development_url | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
-  --><span class="date-type-tags__status"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
+  --><span class="date-type-tags__status"><a class="link" href="{{ development_url | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
   <!-- /White spaces commented --> 
   </div>
   <div class="developments__development-excerpt">{{ development.excerpt }}</div>
@@ -67,10 +74,10 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in development.traffictypes %}<!--
-    --><li class="date-type-tags__type"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ development_url | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
-  --><span class="date-type-tags__status"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
+  --><span class="date-type-tags__status"><a class="link" href="{{ development_url | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
   <!-- /White spaces commented --> 
   </div>
   <div class="developments__development-excerpt">{{ development.excerpt }}</div>
@@ -92,10 +99,10 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in development.traffictypes %}<!--
-    --><li class="date-type-tags__type"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ development_url | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
-  --><span class="date-type-tags__status"><a class="link" href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
+  --><span class="date-type-tags__status"><a class="link" href="{{ development_url | prepend:site.baseurl }}?status={{ development.status | downcase }}">{{ development.status }}</a></span>
   <!-- /White spaces commented --> 
   </div>
   <div class="developments__development-excerpt">{{ development.excerpt }}</div>
@@ -103,5 +110,5 @@
 {% endfor %}
 
 <div class="developments__no-developments developments__no-developments--hidden">
-  Ei näytettäviä hankkeita.
+  {{ site.t.development-roadmap-filter.no-results[page.lang] }}  
 </div>

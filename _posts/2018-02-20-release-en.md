@@ -1,0 +1,28 @@
+---
+title: 'Tuotannon sovellukset päivitetty 20.2.2018 10:20 - 10:40'
+lang: fi
+ref: 2018-02-20-release
+image:
+published: true
+categories: Tiedotteet
+traffictypes:
+  - Tieliikenne
+  - Meriliikenne
+tags:
+  - Rajapinnat
+  - Ylläpito
+---
+
+Päivitimme Digitraffic-sovelluksia tuotantoympäristöön.
+
+Muutokset:
+
+TIE
+ - DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - Viestintä: Tietyöt datex2-muodossa
+ - DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
+
+MERI
+ - DPO-417 - Palautetaan vain voimassa olevat väylät
+ - DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
+
+Pahoittelemme katkosta aiheutunutta haittaa.

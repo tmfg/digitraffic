@@ -3,6 +3,8 @@ layout: page
 permalink: /kayttoehdot/
 section: Tietoa Palvelusta
 searchable: true
+lang: fi
+ref: terms-of-service
 title: Käyttöehdot
 links:
   - ["Käyttöehdot", "/kayttoehdot"]

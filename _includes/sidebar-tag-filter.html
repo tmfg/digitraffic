@@ -26,7 +26,7 @@
 
 <div class="row sidebar__filter-row">
   <div class="col-xs-12 sidebar__filter-section">
-    <h4 class="h4 sidebar__filter-section-heading">Avainsana</h4>
+    <h4 class="h4 sidebar__filter-section-heading">{{ site.t.tag[page.lang] }}</h4>
     <ul data-filtersection="tag" class="sidebar__filter-list">
       {% for tag in unique_tags %}
       <li class="sidebar__filter-list-item">

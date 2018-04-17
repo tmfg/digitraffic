@@ -6,6 +6,8 @@ traffictypes: Meriliikenne
 searchable: true
 swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
 hero-image: icebreaker
+lang: fi
+ref: marine-traffic
 title: Meriliikenne
 intro: Avointa dataa Suomen meriltä ja järviltä.
 links:
@@ -32,7 +34,7 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
     - [Aluksen metadata-viesti](#aluksen-metadata-viesti)
     - [Aluksen sijainti-viesti](#aluksen-sijainti-viesti)
     - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--clientti)
-- [Swagger-rajapintakuvaus](#swagger-rajapintakuvaus)
+- [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
 

@@ -1,16 +1,14 @@
 ---
 layout: compress
-permalink: /tapahtumat/
-title: Tapahtumat
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
   <!--HTML head-->
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="fi">
+  <body class="body">
     
     <!--Header-->
     {% include header.html %}
@@ -21,7 +19,7 @@ title: Tapahtumat
       <!--Breadcrumb-->
       <div class="row">
         <div class="col-xs-12 breadcrumb"><!--
-        --><span class="breadcrumb__item"><a class="link" href="{{ "/" | prepend:site.baseurl }}">Digitraffic</a></span><!--
+        -->{% include breadcrumb-home.html %}<!--
         --><span class="breadcrumb__item">{{ page.title }}</span>
         </div>
       </div>
@@ -36,14 +34,14 @@ title: Tapahtumat
       <div class="row">
         <!--Page body-->
         <div class="col-xs-12 col-sm-8 text-body">
-          {% include events-list.html posts-singular="tapahtuma" posts-plural="tapahtumaa" %}
+          {% include posts-in-category.html category_fi="Tiedotteet" category_en="News" %}
         </div>
         
         <!--Sidebar-->
-        <div class="col-xs-12 col-sm-4 sidebar sidebar--margin-top">
+        <div class="col-xs-12 col-sm-4 sidebar">
           <div class="row">
             <div class="col-xs-12 sidebar__filters-heading-col">
-              <h3 class="h3 sidebar__filters-heading">Rajaa tapahtumalistaa</h3>
+              <h3 class="h3 sidebar__filters-heading">{{ site.t.filter-news[page.lang] }}</h3>
             </div>
           </div>
 
@@ -59,6 +57,6 @@ title: Tapahtumat
     <!--footer-->
     {% include footer.html %}
 
-    <script type="text/javascript" src="{{ "/js/filter-events.js" | prepend:site.baseurl }}" async="async"></script>
+    <script type="text/javascript" src="{{ "/js/filter-posts.js" | prepend:site.baseurl }}" async="async"></script>
   </body>
 </html>

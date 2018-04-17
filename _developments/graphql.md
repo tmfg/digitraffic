@@ -1,6 +1,8 @@
 ---
 title: GraphQL
-issue-number: DPO-162
+lang: fi
+ref: graphql
+issue-number: DPO-167
 traffictypes:
   - Rautatieliikenne
 status: suunnitteilla

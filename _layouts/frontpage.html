@@ -15,10 +15,10 @@ layout: compress
 {% endfor %}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
   {% include head.html %}
 
-  <body class="body" lang="fi">
+  <body class="body">
     {% include header.html header-classes="header--transparent" %}
 
     <content class="content content--transparent-header">
@@ -27,10 +27,10 @@ layout: compress
           <div class="hero-image__overlay">
               <div class="row">
                   <div class="col-xs">
-                      <h1 class="hero-image__heading">Digitraffic</h1>
-                      <p class="hero-image__intro">Ajantasaista avointa liikennetietoa sovelluskehitykseen Suomen tie-, rautatie- ja vesiliikenteestä</p>
+                      <h1 class="hero-image__heading">{{ site.t.frontpage-heading[page.lang] }}</h1>
+                      <p class="hero-image__intro">{{ site.t.frontpage-intro[page.lang] }}</p>
                       <div class="hero-image__button-area">
-                        <a href="{{ "/palvelun-esittely" | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">info</i><span class="button__text">Palvelun esittely</span></button></a>
+                        <a href="{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">info</i><span class="button__text">{{ site.t.service-overview[page.lang] }}</span></button></a>
                       </div>
                   </div>
               </div>
@@ -42,13 +42,13 @@ layout: compress
         <section id="service-status-section" class="content__frontpage-section">
           <div class="row">
             <div class="col-xs">
-              <h2 class="h2 u--centered service-status__section-header"><a href="{{ "/rajapintojen-tila" | prepend:site.baseurl }}" class="h-link">Rajapinnat</a></h2>
+              <h2 class="h2 u--centered service-status__section-header"><a href="{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.apis[page.lang] }}</a></h2>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="tieliikenne" class="service-status__link">
+                <a href="{{ site.t.tieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-road" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -56,8 +56,8 @@ layout: compress
                       </div>
                     </div>
                     <div class="service-status__text">
-                      <h4 class="h4 service-status__service-heading">Tieliikenne</h4>
-                      <span id="service-status-text-road" class="service-status__service-text service-status__service-text--loading">Ladataan...</span>
+                      <h4 class="h4 service-status__service-heading">{{ site.t.tieliikenne[page.lang] }}</h4>
+                      <span id="service-status-text-road" class="service-status__service-text service-status__service-text--loading">{{ site.t.loading[page.lang] }}...</span>
                     </div>
                   </div>
                 </a>
@@ -65,7 +65,7 @@ layout: compress
             </div>
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="https://rata.digitraffic.fi" class="service-status__link">
+                <a href="{{ site.t.rautatieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-rail" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -73,8 +73,8 @@ layout: compress
                       </div>
                     </div>
                     <div class="service-status__text">
-                      <h4 class="h4 service-status__service-heading">Rautatieliikenne</h4>
-                      <span id="service-status-text-rail" class="service-status__service-text service-status__service-text--loading">Ladataan...</span>
+                      <h4 class="h4 service-status__service-heading">{{ site.t.rautatieliikenne[page.lang] }}</h4>
+                      <span id="service-status-text-rail" class="service-status__service-text service-status__service-text--loading">{{ site.t.loading[page.lang] }}...</span>
                     </div>
                   </div>
                 </a>
@@ -82,7 +82,7 @@ layout: compress
             </div>
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="meriliikenne" class="service-status__link">
+                <a href="{{ site.t.meriliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-marine" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -90,8 +90,8 @@ layout: compress
                       </div>
                     </div>
                     <div class="service-status__text">
-                      <h4 class="h4 service-status__service-heading">Meriliikenne</h4>
-                      <span id="service-status-text-marine" class="service-status__service-text service-status__service-text--loading">Ladataan...</span>
+                      <h4 class="h4 service-status__service-heading">{{ site.t.meriliikenne[page.lang] }}</h4>
+                      <span id="service-status-text-marine" class="service-status__service-text service-status__service-text--loading">{{ site.t.loading[page.lang] }}...</span>
                     </div>
                   </div>
                 </a>
@@ -101,7 +101,7 @@ layout: compress
           <div class="row">
             <div class="col-xs-12">
                 <div class="service-status__button-area">
-                  <a href="{{ "/rajapintojen-tila" | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">show_chart</i><span class="button__text">Rajapintojen tila</span></button></a>
+                  <a href="{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">show_chart</i><span class="button__text">{{ site.t.api-status[page.lang] }}</span></button></a>
                 </div>
             </div>
           </div>
@@ -113,34 +113,36 @@ layout: compress
           <div class="row">
             <div class="col-xs"><!--
           -->{% if has_articles == false and has_events == false %}<!--
-            --><h2 class="h2 u--centered"><a href="{{ "/tiedotteet" | prepend:site.baseurl }}" class="h-link">Tiedotteet</a></h2><!--
+            --><h2 class="h2 u--centered"><a href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tiedotteet[page.lang] | downcase }}" class="h-link">{{ site.t.news[page.lang] }}</a></h2><!--
           -->{% else %}<!--
-            --><h2 class="h2 u--centered">Ajankohtaista</h2><!--
+            --><h2 class="h2 u--centered">{{ site.t.latest-posts[page.lang] }}</h2><!--
           -->{% endif %}
             </div>
           </div>
           <div class="row">
-            {% for post in site.posts limit:3 %}
+            {% assign posts = site.posts | where:"lang",page.lang %}
+            {% for post in posts limit:3 %}
               <div class="col-xs-12 col-sm-4 latest-item">
                 <h4 class="h4 latest-item__header-text"><a href="{{ post.url | prepend:site.baseurl }}" class="latest-item__header-link">{{ post.title }}</a></h4>
                 <div class="latest-item__meta-first">
                   <!-- White spaces commented -->
                   {% for category in post.categories %}<!--
-               -->{% assign post_category = category %}<!--
+               -->{% assign post_category = category | downcase %}<!--
                -->{% endfor %}<!--
                --><span class="latest-item__timestamp"><!--
                 --><i class="material-icons md-md date-type-tags__date-icon"><!--
-                  -->{% if post_category == 'Tiedotteet' or post_category == 'Artikkelit' %}create{% endif %}<!--
-                  -->{% if post_category == 'Tapahtumat' %}event{% endif %}<!--
+                  -->{% if post_category == 'tiedotteet' or post_category == 'artikkelit' %}create{% endif %}<!--
+                  -->{% if post_category == 'tapahtumat' %}event{% endif %}<!--
                 --></i><!--
-                -->{{ post.date | date: "%d.%m.%Y" }}<!--
+                -->{% if page.lang == "en" %}{{ post.date | date: "%-m/%-d/%Y" }}{% else %}{{ post.date | date: "%-d.%-m.%Y" }}{% endif %}<!--
               --></span><!--
                --><ul class="latest-item__content-type-list"><!--
-                 --><li class="latest-item__content-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase}}" class="link">{{ post_category }}</a></li><!--
+                 --><li class="latest-item__content-type"><a href="{% include url-home.html %}{{ post_category | downcase}}" class="link">{{ post_category }}</a></li><!--
                --></ul><!--
                --><ul class="latest-item__traffic-type-list"><!--
                  -->{% for traffictype in post.traffictypes %}<!--
-                 --><span class="latest-item__traffic-type"><a href="{{ "/" | prepend:site.baseurl }}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
+                 -->{% assign traffictype_dc = traffictype | downcase %}<!-- 
+                 --><span class="latest-item__traffic-type"><a href="{% include url-home.html %}{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
                  -->{% endfor %}<!--
                --></ul>
                 <!-- /White spaces commented -->
@@ -168,9 +170,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">directions_car</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="{{ "/tieliikenne" | prepend:site.baseurl }}" class="h-link">Tieliikenne</a></h2>
-              <p>Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä.</p>
-              <a href="{{ "/tieliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_car</i><span class="button__text">Tieliikenne tietolähteet</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.road-traffic[page.lang] }}</a></h2>
+              <p>{{ site.t.road-traffic-description[page.lang] }}</p>
+              <a href="{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_car</i><span class="button__text">{{ site.t.road-traffic-button[page.lang] }}</span></button></a>
             </div>
           </div>
           <div class="row frontpage-traffic-type">
@@ -179,9 +181,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">train</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="https://rata.digitraffic.fi" class="h-link">Rautatieliikenne</a></h2>
-              <p>Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä.</p>
-              <a href="https://rata.digitraffic.fi"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">Rautatieliikenne tietolähteet</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.railway-traffic[page.lang] }}</a></h2>
+              <p>{{ site.t.railway-traffic-description[page.lang] }}</p>
+              <a href="{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">train</i><span class="button__text">{{ site.t.railway-traffic-button[page.lang] }}</span></button></a>
             </div>
             <div class="col-sm-4 hidden-xs">
               <!--<img class="img img--full-width" src="{{ "/img/3d-img-train.svg" | prepend:site.baseurl }}" alt="Rautatieliikenne" />-->
@@ -194,9 +196,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">directions_boat</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
-              <h2 class="h2"><a href="{{ "/meriliikenne" | prepend:site.baseurl }}" class="h-link">Meriliikenne</a></h2>
-              <p>Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä.</p>
-              <a href="{{ "/meriliikenne" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_boat</i><span class="button__text">Meriliikenne tietolähteet</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.marine-traffic[page.lang] }}</a></h2>
+              <p>{{ site.t.marine-traffic-description[page.lang] }}</p>
+              <a href="{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">directions_boat</i><span class="button__text">{{ site.t.marine-traffic-button[page.lang] }}</span></button></a>
             </div>
           </div>
         </section>
@@ -206,11 +208,11 @@ layout: compress
         <section class="content__frontpage-section ">
           <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 support-description">
-              <a href="{{ "/tukikanavat" | prepend:site.baseurl }}" class="support-description__link">
+              <a href="{{ site.t.support-channels.url[page.lang] | prepend:site.baseurl }}" class="support-description__link">
                 <p class="support-description__icon-p"><i class="support-description__icon-i material-icons">help_outline</i></p>
-                <h3 class="h3 u--centered h-link">Tukikanavat</h3>
+                <h3 class="h3 u--centered h-link">{{ site.t.support-channels[page.lang] }}</h3>
               </a>
-              <p class="u--centered">Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät.</p>
+              <p class="u--centered">{{ site.t.support-channels-description[page.lang] }}</p>
             </div>
           </div>
         </section>
@@ -224,9 +226,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">important_devices</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description">
-              <h2 class="h2"><a href="{{ "/sovellukset" | prepend:site.baseurl }}" class="h-link">Sovellukset</a></h2>
-              <p>Digitrafficin tietolähteiden tarjoamaa tietoa hyödyntävät jo useat sovellukset, jotka palvelevat hyvin erilaisia liikenteeseen liittyviä tarpeita.</p>
-              <a href="{{ "/sovellukset" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">important_devices</i><span class="button__text">Sovellukset</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.applications[page.lang] }}</a></h2>
+              <p>{{ site.t.applications-description[page.lang] }}</p>
+              <a href="{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">important_devices</i><span class="button__text">{{ site.t.applications[page.lang] }}</span></button></a>
             </div>
           </div>
           <div class="row frontpage-traffic-type">
@@ -235,9 +237,9 @@ layout: compress
               <p class="frontpage-traffic-type__icon-p"><i class="frontpage-traffic-type__icon-i material-icons">explore</i></p>
             </div>
             <div class="col-xs-12 col-sm-8 frontpage-traffic-type__description frontpage-traffic-type__description--last">
-              <h2 class="h2"><a href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}" class="h-link">Kehityssuunnitelma</a></h2>
-              <p>Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut.</p>
-              <a href="{{ "/kehityssuunnitelma" | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">explore</i><span class="button__text">Kehityssuunnitelma</span></button></a>
+              <h2 class="h2"><a href="{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}" class="h-link">{{ site.t.development-roadmap[page.lang] }}</a></h2>
+              <p>{{ site.t.development-roadmap-description[page.lang] }}</p>
+              <a href="{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}"><button class="button frontpage-traffic-type__button"><i class="button__icon material-icons md-light md-lg">explore</i><span class="button__text">{{ site.t.development-roadmap[page.lang] }}</span></button></a>
             </div>
             <div class="col-sm-4 hidden-xs">
               <!--<img class="img img--full-width" src="{{ "/img/3d-img-compass.svg" | prepend:site.baseurl }}" alt="Kehityssuunnitelma" />-->
