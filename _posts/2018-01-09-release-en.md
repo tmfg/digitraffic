@@ -16,9 +16,9 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-ROAD
-- DPO-336 - LAM binary data stream split in two in LOTJU version 2.5
-  - Does not effect the data format. Station real-time data is now more recent.
-- DPO-399 - CameraStationsStatusMetadataUpdateJob does not handle obsolete data correctly
+TIE
+- DPO-336 - LAM binääritietovirta jakautuu kahdeksi LOTJU 2.5 versiossa
+  - Ei vaikuta datan formaattiin. Reaaliaika-asemien tiedot ovat nyt tuoreempia.
+- DPO-399 - CameraStationsStatusMetadataUpdateJob ei käsittele obsolete tietoa oikein
 
 We apologize for any inconvenience.

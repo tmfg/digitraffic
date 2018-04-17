@@ -1,19 +1,21 @@
 ---
 title: 'Tuotannon sovellukset päivitetty 10.4.2018 10:30 - 10:50'
-image: 
+lang: en
+ref: 2018-04-10-release
+image:
 published: true
-categories: Tiedotteet
+categories: en News
 traffictypes:
-  - Tieliikenne
+  - Road
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - APIs
+  - Admin
 ---
 
-Päivitimme Digitraffic-sovelluksia tuotantoympäristöön.
+Digitraffic production applications have been updated.
 
-Muutokset:
+Changelog:
 
-Painorajoitukset ja tietyöt siirretty v1-rajapintaan
+Weight restrictions and roadworks moved to v1-API
 
-Pahoittelemme katkosta aiheutunutta haittaa.
+We apologize for any inconvenience.

@@ -1,21 +1,20 @@
 ---
-title: 'Tuotannon sovellukset päivitetty 20.2.2018 10:20 - 10:40'
-lang: fi
+title: 'Production applications updated 20.2.2018 10:20 - 10:40'
+lang: en
 ref: 2018-02-20-release
 image:
 published: true
-categories: Tiedotteet
+categories: en News
 traffictypes:
-  - Tieliikenne
-  - Meriliikenne
+  - Road
+  - Marine
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - APIs
+  - Admin
 ---
+Digitraffic production applications have been updated.
 
-Päivitimme Digitraffic-sovelluksia tuotantoympäristöön.
-
-Muutokset:
+Changelog:
 
 TIE
  - DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - Viestintä: Tietyöt datex2-muodossa
@@ -25,4 +24,4 @@ MERI
  - DPO-417 - Palautetaan vain voimassa olevat väylät
  - DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
 
-Pahoittelemme katkosta aiheutunutta haittaa.
+We apologize for any inconvenience.

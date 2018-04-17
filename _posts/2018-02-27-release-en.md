@@ -1,19 +1,21 @@
 ---
 title: 'Tuotannon sovellukset päivitetty 27.2.2018 10:30 - 10:50'
-image: 
+lang: en
+ref: 2018-02-27-release
+image:
 published: true
-categories: Tiedotteet
+categories: en News
 traffictypes:
-  - Tieliikenne
-  - Meriliikenne
+  - Road
+  - Marine
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - APIs
+  - Admin
 ---
 
-Päivitimme Digitraffic-sovelluksia tuotantoympäristöön.
+Digitraffic production applications have been updated.
 
-Muutokset:
+Changelog:
 
 TIE
  - DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - siirretty v1-rajapintaan
@@ -22,4 +24,4 @@ TIE
 MERI
  - DPO-415 - Talvimerenkulku siirretty v1-rajapintaan
 
-Pahoittelemme katkosta aiheutunutta haittaa.
+We apologize for any inconvenience.

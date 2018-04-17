@@ -17,10 +17,10 @@ Production applications have been updated.
 
 Changelog:
 
-MARINE
-- DPO-319 - Differing datasource specifications in AIS and METADATA projects
-- DPO-329 - OracleDatasource initialization fix
-ROAD
-- DPO-363 - OPERATIONS: Image read timeout value increased
+MERI
+- DPO-319 - Toisistaan poikkeavat datasource määrittelyt AIS ja METADATA projekteissa
+- DPO-329 - OracleDatasource alustus on turhaan (ja mahdollisesti väärin) toteutettu
+TIE
+- DPO-363 - OPEROINTI: Kasvatetaan kuvien lukemisen read timeout arvoa
 
 We apologize for any inconvenience.
