@@ -16,7 +16,7 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Road traffic information is gathered from the Finnish Transport Agency (FTA) and The Centres for Economic Development, Transport and the Environment (ELY Centres) systems.
+Road traffic information is gathered from the Finnish Transport Agency (FTA) and The Centers for Economic Development, Transport and the Environment (ELY Centers) systems.
 Currently the open data API includes:
 
 - TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland.
@@ -34,7 +34,7 @@ Currently the open data API includes:
 - Metadata for all services is updated twice per day.
 
 # Content
-- [REST/JSON -API's](#restjson-apis)
+- [REST/JSON -APIs](#restjson-apis)
     - [Road weather cameras](#road-weather-cameras)
     - [Current journey times](#current-journey-times)
     - [History data for previous day](#history-data-for-previous-day)
@@ -56,13 +56,13 @@ Full API description is located in [Swagger-documentation](https://tie.digitraff
 
 [```http://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Response message contains weather camera information and URL for the camere image. For example preset image C0150200 is located in [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
+Response message contains weather camera information and URL for the camera image. For example preset image C0150200 is located in [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
 
-![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
+![Weather camera image C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
 
 ### Current journey times
 
-NOTE! This information is not uptated. The old journey time system has been shut down in the end of 2017.
+NOTE! This information is not updated. The old journey time system has been shut down in the end of 2017.
 
 ### History data for previous day 
 
@@ -109,7 +109,7 @@ Every TMS station provides information about traffic amounts and measured averag
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute. 
 
-Simple JavaScript WebSocket - client application:
+Simple JavaScript Web Socket - client application:
 ```
 <html>
      <head>
@@ -156,7 +156,7 @@ Simple JavaScript WebSocket - client application:
 
 Response message contains traffic disorders those have significant impact on traffic flow, e.g. traffic accidents and temporary traffic rearrangements. 
 
-Disorders contain TMC-location information to identify occurance area or location of the disorder.
+Disorders contain TMC location information to identify occurence area or location of the disorder.
 
 [```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
 

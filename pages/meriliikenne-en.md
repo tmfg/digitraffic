@@ -16,15 +16,15 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Marine traffic information is gathered from Finnish Transport Agency's data sources. Currently open data API provices following information:
+Marine traffic information is gathered from Finnish Transport Agency's data sources. Currently open data API provides following information:
 
 - Marine warnings 
 
-- Harbour schedules (gathered from the Portnet-system)
+- Harbor schedules (gathered from the Portnet-system)
 
 - Vessel location AIS (Automatic Identification System)
 
-- Vessel and harbour metadata
+- Vessel and harbor metadata
 
 # Content
 - [REST/JSON -API](#restjson-api)
@@ -40,11 +40,11 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 
 Full API description is located in [Swagger-documentation](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
-Both metadata and content is updated in realtime.
+Both metadata and content is updated in real time.
 
-## WebSocket -API
+## Web Socket API
 
-Vessel locations can be tracked from follwing WebSocket -API's:
+Vessel locations can be tracked from follwing Web Socket APIs:
 
 #### Tracking all vessels
 
@@ -107,7 +107,7 @@ Message formats:
 }
 ```
 
-#### Simple JavaScript WebSocket -client
+#### Simple JavaScript Web Socket client
 
 ```
 <html>
