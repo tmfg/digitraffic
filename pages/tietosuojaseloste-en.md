@@ -50,7 +50,8 @@ The personal data (IP-address of the user) originates from the HTTP calls the us
 
 ### Sharing the data with third parties
 
-Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Liikenneviraston toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
+Information is made available only to the administrator of Digitraffic service, which operates under a mandate of the Finnish Transport Agency,
+under the obligation of professional secrecy and shall be used only for monitoring data Digitraffic services and incident management.
 
 ### Personal data is transfers outside the European Economic Area of the European Union
 
@@ -59,21 +60,23 @@ Personal data is not transferred outside the European Economic Area or the Europ
 ### Technical and organisational security measures
 
 <p>
-B ATK:lla käsiteltävät tiedot<br />
-Rekisterin tietoja käsitellään Liikenneviraston tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic -palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
+B Information handled by electronic data processing<br />
+The data is held in Finnish Transport Agency's servers which conform to VAHTI regulations.
+Data is available only to Digitraffic maintenance and service desk personnel. Data is protected for its entire lifespan.
 </p>
 
 
 ### Individual rights
 
-Henkilötietolain 29 §:n mukaan rekisteröidyllä on oikeus tarkastaa rekisterissä olevat tietonsa.
+According to Finnish Henkilötietolaki 29 § the registry members have the right to check their data in the registry.
 
-Tarkastuspyyntö tulee osoittaa kirjallisesti rekisterin yhteyshenkilölle (ks. kohta 2.).  Rekisteröidyn tulee esittää tarkastuspyynnössä tiedon etsimiseen tarpeelliset tiedot.
+The written request to check one's data shall be addressed to the fore-mentioned contact (section 'Contact').
+The request must contain all necessary data to find the data from registry.
 
 We do not provide right of correction, since the filing system consists of logged IP addresses.
 
-### 13\. Other rights
+### Other rights
 
-Henkilötietoja ei käytetä eikä luovuteta käytettäväksi suoramainontaa, etämyyntiä ja muuta suoramarkkinointia eikä markkina- ja mielipidetutkimusta eikä henkilömatrikkelia ja sukututkimusta varten.
+Personal information is not used or disclosed for direct advertising, distance marketing and other direct marketing, market research and opinion polling, or personal chat and genealogy research.
 
-Rekisteröidyllä ei ole muita henkilötietojen käsittelyyn liittyviä oikeuksia.
+The Register does not have any other rights to access personal data.
