@@ -1,17 +1,57 @@
-var gulp = require('gulp');
-var shell = require('gulp-shell');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const shell = require('gulp-shell');
+const child = require('child_process');
+const gutil = require('gulp-util');
+const browserSync = require('browser-sync').create();
 
-// Task for building blog when something changed:
-gulp.task('build', shell.task(['bundle exec jekyll build --force_polling --watch --config _config_dev.yml']));
-// Or if you don't use bundle:
-// gulp.task('build', shell.task(['jekyll build --watch']));
+var messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
 
-// Task for serving blog with Browsersync
-gulp.task('serve', function () {
-    browserSync.init({server: {baseDir: '_site/'}});
-    // Reloads page when some of the already built files changed:
-    gulp.watch('_site/**/*.*').on('change', browserSync.reload);
+/**
+ * Build the Jekyll Site
+ */
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return child.spawn( 'bundle', ['exec', 'jekyll', 'build', '--config',
+        '_config_dev.yml'], {stdio: 'inherit'})
+        .on('close', done);
 });
 
-gulp.task('default', ['build', 'serve']);
+/**
+ * Rebuild Jekyll & do page reload
+ */
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
+});
+
+/**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('browser-sync', ['jekyll-build'], function() {
+    browserSync.init({server: {baseDir: '_site'}});
+});
+
+/**
+ * Watch scss files for changes & recompile
+ * Watch html/md files, run jekyll & reload BrowserSync
+ */
+gulp.task('watch', function () {
+    gulp.watch([
+        '*.html',
+        '_applications/*',
+        '_config*.yml',
+        '_developments/*',
+        '_includes/*',
+        '_layouts/*',
+        '_posts/*',
+        'css/*',
+        'data/*',
+        'favicon/*',
+        'img/**/*',
+        'js/*',
+        'pages/*'
+    ], ['jekyll-rebuild']);
+});
+
+gulp.task('default', ['browser-sync', 'watch']);
