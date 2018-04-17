@@ -1,7 +1,7 @@
 name: Digitraffic
 baseurl:
 repository: finnishtransportagency/digitraffic
-gems:
+plugins:
   - jekyll-babel
 sass:
   sass_dir: _scss
