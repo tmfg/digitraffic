@@ -64,8 +64,8 @@ t:
     en: "Railway"
     fi: "Rautatieliikenne"
     url:
-      en: "/en/railway-traffic"
-      fi: "/rautatieliikenne"
+      en: "https://rata.digitraffic.fi"
+      fi: "https://rata.digitraffic.fi"
   meriliikenne:
     en: "Marine"
     fi: "Meriliikenne"
