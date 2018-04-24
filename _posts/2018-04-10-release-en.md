@@ -1,5 +1,5 @@
 ---
-title: 'Tuotannon sovellukset päivitetty 10.4.2018 10:30 - 10:50'
+title: 'Production applications updated 10.4.2018 10:30 - 10:50'
 lang: en
 ref: 2018-04-10-release
 image:
