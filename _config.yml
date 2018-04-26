@@ -316,8 +316,8 @@ t:
     en: "Railway traffic"
     fi: "Rautatieliikenne"
     url:
-      en: "/en/railway-traffic"
-      fi: "/rautatieliikenne"
+      en: "https://rata.digitraffic.fi"
+      fi: "https://rata.digitraffic.fi"
   railway-traffic-description:
     en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
     fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."

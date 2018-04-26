@@ -10,7 +10,7 @@ links:
   - - Tieliikenne
     - /tieliikenne
   - - Rautatieliikenne
-    - /rautatieliikenne
+    - https://rata.digitraffic.fi
   - - Meriliikenne
     - /meriliikenne
   - - Kehityssuunnitelma
