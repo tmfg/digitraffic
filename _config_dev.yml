@@ -186,8 +186,8 @@ t:
       en: "Finnish Transport Agency"
       fi: "Liikennevirasto"
       url:
-        en: "https://www.digitraffic.fi/en"
-        fi: "https://www.digitraffic.fi"
+        en: "http://digitraffic.liikennevirasto.fi/en"
+        fi: "http://digitraffic.liikennevirasto.fi"
     text-2:
       en: ", is licensed under the "
       fi: ", on lisensoitu "
