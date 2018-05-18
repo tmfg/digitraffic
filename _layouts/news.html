@@ -22,7 +22,7 @@ layout: compress
       <div class="row">
         <div class="col-xs-12 breadcrumb"><!--
         -->{% include breadcrumb-home.html %}<!--
-        -->{% assign category = page.categories[0] %}{% if category == "en" %}{% assign category = page.categories[1] %}{% endif %}<span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ category | downcase }}">{{ category }}</a></span><!--
+        -->{% assign category = page.categories[0] %}{% if category == "en" %}{% assign category = page.categories[1] %}{% endif %}<span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}">{{ category }}</a></span><!--
         --><span class="breadcrumb__item">{{ page.title }}</span>
         </div>
       </div>
