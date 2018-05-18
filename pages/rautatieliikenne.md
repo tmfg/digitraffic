@@ -120,6 +120,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 21.5.2018
+    * Junan sijaintihistorian haku (/train-locations/\<departure_date>/\<train_number>)
 * 12.2.2018
     * Kokoonpanojen haku versionumeron avulla
 * 5.2.2018 
@@ -508,17 +510,22 @@ Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ### Yhden junan sijainti
 
-URL: `/train-locations/latest/<train_number>?bbox=<points>`
+URL: `/train-locations/<departure_date>/<train_number>?bbox=<points>`
 
-Esimerkki: [/train-locations/latest/1](https://rata.digitraffic.fi/api/v1/train-locations/latest/1)
+Esimerkkejä:
+* [/train-locations/latest/1](https://rata.digitraffic.fi/api/v1/train-locations/latest/1)
+* [/train-locations/2018-03-01/1](https://rata.digitraffic.fi/api/v1//train-locations/2018-03-01/1)
 
 **Kuvaus**
 
-Palauttaa junan GPS-sijainnin, jos se on ollut aktiivinen viimeisen 15 minuutin sisällä. Historiatietojen kysely tulossa myöhemmin.
+Palauttaa junan GPS-sijainnit lähtöpäivänä.
+
+Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, joka on päivittynyt viimeisen 15 minuutin sisällä.
 
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|---|---
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 	1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59. 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 	1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa | 	1,1,70,70 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
