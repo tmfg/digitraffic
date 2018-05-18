@@ -47,6 +47,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Yhden junan tiedot](#yhden-junan-tiedot)
         - [Päivän junien tiedot](#päivän-junien-tiedot)
         - [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
+        - [Junien tietojen kuunteleminen (MQTT / Sockets)](#junien-tietojen-kuunteleminen-mqtt--sockets)
         - [GTFS](#gtfs)
         - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
     1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
@@ -57,17 +58,19 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Junien GPS-sijainnit](#junan-gps-sijainnit-train-locations)
         - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
         - [Yhden junan sijainti](#yhden-junan-sijainti)
-        - [Sijainnit (MQTT)](#sijainnit-mqtt)
+        - [Sijaintien kuunteleminen (MQTT / Sockets)](#sijaintien-kuunteleminen-mqtt--sockets)
     1. [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
         - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
         - [Yhden junan seuranta](#yhden-junan-seuranta)
         - [Liikennepaikan seuranta](#liikennepaikan-seuranta)
         - [Raideosuuden seuranta](#raideosuuden-seuranta)
+        - [Kulkutietoviestien kuunteleminen (MQTT / Sockets)](#kulkutietoviestien-kuunteleminen-mqtt--sockets)
     1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
-        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)
+        - [Kokoonpanojen kuunteleminen (MQTT / Sockets](#kokoonpanojen-kuunteleminen-mqtt--sockets)
+        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)        
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
@@ -273,6 +276,20 @@ Palauttaa yhden junan tiedot
  **Paluuarvo**
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
+ 
+### Junien tietojen kuunteleminen (MQTT / Sockets)
+ 
+ Topic: `trains/<departure_date>/<train_number>/`
+ 
+ Junien toija voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
+ 
+ Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "trains/#" (kaikki tiedot) tai "trains/+/5" (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+ 
+ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
+ 
+ **Paluuarvo**
+ 
+ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
 ### GTFS
  
@@ -484,19 +501,19 @@ Palauttaa junan GPS-sijainnin, jos se on ollut aktiivinen viimeisen 15 minuutin 
 
 Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
-### Sijainnit (MQTT)
+### Sijaintien kuunteleminen (MQTT / Sockets)
 
 Topic: `train-locations/<departure_date>/<train_number>/`
 
-Sijainteja voidaan myös kuunnella aktiivisen pollauksen asemasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
+Sijainteja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
 
-Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-locations/#". Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-locations/#" (kaikki tiedot) tai "train-locations/+/5" (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
 Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
 
 **Paluuarvo**
 
-Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
+Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisiä vastauksia.
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
@@ -621,6 +638,20 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 
 Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
+### Kulkutietoviestien kuunteleminen (MQTT / Sockets)
+ 
+ Topic: `train-tracking/<departure_date>/<train_number>/`
+ 
+ Kulkutietoviestejä voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
+ 
+ Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-tracking/#" (kaikki tiedot) tai "train-tracking/+/5" (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+ 
+ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
+ 
+ **Paluuarvo**
+ 
+Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
+
 ## Kokoonpanotiedot (/compositions)
 
 Kokoonpanotietoja tulee junille 0-5 tuntia ennen junan lähtö tai pysähdystä, jossa kokoonpano muuttuu.
@@ -693,6 +724,20 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kokoonpanot, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kokoonpano.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+### Kokoonpanojen kuunteleminen (MQTT / Sockets)
+ 
+ Topic: `compositions/<departure_date>/<train_number>/`
+ 
+ Kokoonpanoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
+ 
+ Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "compositions/#" (kaikki tiedot) tai "compositions/+/5" (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+ 
+ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
+ 
+ **Paluuarvo**
+ 
+Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
 
 ### Vanhat kokoonpanot zip-paketteina
 
