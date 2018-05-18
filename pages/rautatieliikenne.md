@@ -47,9 +47,6 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Yhden junan tiedot](#yhden-junan-tiedot)
         - [Päivän junien tiedot](#päivän-junien-tiedot)
         - [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
-        - [Kaikkien junien tiedot (WebSocket)](#kaikkien-junien-tiedot-websocket)
-        - [Liikennepaikan tiedot (WebSocket)](#liikennepaikan-tiedot-websocket)
-        - [Yhden junan tiedot (WebSocket)](#yhden-junan-tiedot-websocket)
         - [GTFS](#gtfs)
         - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
     1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
@@ -66,8 +63,6 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Yhden junan seuranta](#yhden-junan-seuranta)
         - [Liikennepaikan seuranta](#liikennepaikan-seuranta)
         - [Raideosuuden seuranta](#raideosuuden-seuranta)
-        - [Kaikkien junien seuranta (WebSocket)](#kaikkien-junien-seuranta-websocket)
-        - [Yhden junan seuranta (WebSocket)](#yhden-junan-seuranta-websocket)
     1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
@@ -278,44 +273,6 @@ Palauttaa yhden junan tiedot
  **Paluuarvo**
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
- 
-### Kaikkien junien tiedot (WebSocket)
- 
- Esimerkki: [esimerkki](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-all.html)
- 
- **Kuvaus**
- 
- Websockettiin pistetään kaikki junat sitä mukaa kun ne muuttuvat.
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat)-tyyppisiä vastauksia.
- 
-### Liikennepaikan tiedot (WebSocket)
- 
- Esimerkki: [esimerkki](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-station.html)
- 
- **Kuvaus**
- 
- Websockettiin pistetään muuttunut juna, jos sillä on lähtö tai saapuminen parametrina annetulla liikennepaikalla.
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat)-tyyppisiä vastauksia.
- 
-### Yhden junan tiedot (WebSocket)
- 
- Esimerkkejä:
- - [esimerkki #1](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-specific-train-without-departure-date.html)
- - [esimerkki #1](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-specific-train.html)
- 
- **Kuvaus**
- 
- Websockettiin pistetään yhden junan juna-tyyppiset tiedot.
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
 ### GTFS
  
@@ -531,9 +488,9 @@ Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 Topic: `train-locations/<departure_date>/<train_number>/`
 
-Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-locations/#". Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+Sijainteja voidaan myös kuunnella aktiivisen pollauksen asemasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
 
-Aiemmista Websocket-toteutuksista poiketen GPS-sijainnit jaetaan MQTT:lla. MQTT-palvelin löytyy osoitteesta `rata-mqtt.digitraffic.fi:9001`. Myös ei-Websocket -yhteys on mahdollinen (portti 1883).
+Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a "train-locations/#". Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
 Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
 
@@ -547,7 +504,7 @@ Liikennepaikkakohtaisten toteumien ja ennusteiden lisäksi junaa voidaan seurata
 
 Kun juna saapuu raideosuudelle, aktivoituu raideosuuden anturi ja raideosuus varautuu kyseiselle junalle. Varatumisesta muodostuu "OCCUPY"-tyyppinen kulkutietoviesti. Junan poistuessa raideosuudelta syntyy puolestaan "RELEASE"-tyyppinen kulkutietoviesti. Kulkutietoviestit kertovat siis mitä raideosuuksia juna on varannut itselleen kuljettavaksi.
 
-Kulkutietoviestejä voi seurata kahdella tapaa. Perinteisellä REST-rajapinalla (eli kuten esimerkiksi "live-trains"-liittymää) tai WebSocketeilla (STOMP-protokolla, versiot 1.0 - 1.2).
+Kulkutietoviestejä voi seurata kahdella tapaa. Perinteisellä REST-rajapinalla (eli kuten esimerkiksi "live-trains"-liittymää) tai socketeilla (MQTT).
 
 Kulkutietoviestejä kertyy päivittäin yli 300 000. On siis hyvä miettiä halutaanko hyödyntää kulkutietoviestejä vai luvussa 1.1 kuvattuja liikennepaikkakohtaisia toteumia ja ennusteita.
 
@@ -663,32 +620,6 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 **Paluuarvo**
 
 Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
-
-### Kaikkien junien seuranta (WebSocket)
-
-Esimerkki: [esimerkki](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-running-message-all.html)
-
-**Kuvaus**
-
-Websockettiin pistetään kaikkien junien kulkutietoviestit.
-
-**Paluuarvo**
-
-Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
-
-### Yhden junan seuranta (WebSocket)
-
-Esimerkkejä:
-- [esimerkki 1](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-running-message-specific-train-without-departure-date.html)
-- [esimerkki 2](https://rata.digitraffic.fi/api/v1/doc/examples/websocket-train-running-message-specific-train.html)
-
-**Kuvaus**
-
-WebSockettiin pistetään yhden tietyn junan kulkutietoviestit. Jos departure_date jätetään tyhjäksi, ei tehdä departure_date-rajoitusta.
-
-**Paluuarvo**
-
-Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
 ## Kokoonpanotiedot (/compositions)
 
