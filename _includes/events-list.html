@@ -53,7 +53,7 @@
   --></span><!--
   --><ul class="date-type-tags__type-list"><!--
     -->{% for traffictype in event.traffictypes %}<!--
-    --><li class="date-type-tags__type"><a class="link" href="{{ "/tapahtumat" | prepend:site.baseurl }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+    --><li class="date-type-tags__type"><a class="link" href="{{ "/tapahtumat" | prepend:site.baseurl }}/?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
     -->{% endfor %}<!--
   --></ul><!--
   --><ul class="date-type-tags__tag-list"><!--
