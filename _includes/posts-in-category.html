@@ -30,7 +30,7 @@
       --></span><!--
       --><ul class="date-type-tags__type-list"><!--
         -->{% for traffictype in post.traffictypes %}<!--
-        --><li class="date-type-tags__type"><a class="link" href="{% include url-home.html %}{{ category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+        --><li class="date-type-tags__type"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
         -->{% endfor %}<!--
       --></ul><!--
       --><ul class="date-type-tags__tag-list"><!--

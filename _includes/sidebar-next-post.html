@@ -11,7 +11,7 @@
   --></span><!--
  --><ul class="sidebar__page-traffic-type-list"><!--
    -->{% for traffictype in next_post.traffictypes %}<!--
-   --><span class="sidebar__page-traffic-type"><a href="{% include url-home.html %}{{ category_dc }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
+   --><span class="sidebar__page-traffic-type"><a href="{% include url-home.html %}/{{ category_dc }}?traffictype={{ traffictype | downcase }}" class="link">{{ traffictype }}</a></span><!--
    -->{% endfor %}<!--
  --></ul><!--
 --></div>
