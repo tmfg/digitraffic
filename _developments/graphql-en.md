@@ -4,7 +4,7 @@ lang: en
 ref: graphql
 issue-number: DPO-167
 traffictypes:
-  - Railway traffic
+  - Rail
 status: planned
 ---
 
