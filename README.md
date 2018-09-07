@@ -199,7 +199,6 @@ Vaakakuva, korkeintaan 500 px leveä, optimi 480 x 270 px
 #### 4. Hero-taustakuva
 Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edited)
 
-
 ## Dev dependencies
 * Ruby, 2.4.1
   * `ruby --version`
@@ -209,10 +208,14 @@ Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edi
     * `bundle --version`
 * Node.js, 8.0.0
   * `node --version`
-* Npm, 5.3.0
+* Npm, 6.1.0
     * `npm --version`
 * Gulp, 3.9.1
     * `gulp --version`
+    
+## GitHub pages dependencies
+https://pages.github.com/versions/
+
 
 ### Install with Docker
 ```

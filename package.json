@@ -15,5 +15,8 @@
     "gulp": "^3.9.1",
     "gulp-shell": "^0.6.3",
     "lodash": "^4.17.4"
+  },
+  "dependencies": {
+    "npm": "^6.1.0"
   }
 }
