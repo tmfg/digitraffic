@@ -61,6 +61,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
         - [Yhden junan sijainti](#yhden-junan-sijainti)
         - [Sijainnit (MQTT)](#sijainnit-mqtt)
+        - [Vanhat sijainnit zip-paketteina](#vanhat-sijainnit-zip-paketteina)
     1. [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
         - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
         - [Yhden junan seuranta](#yhden-junan-seuranta)
@@ -120,6 +121,10 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 12.9.2018
+    * Vanhat GPS-sijainnit zip-paketteina
+* 13.8.2018
+    * Junan "myöhässä"-toiminallisuus    
 * 21.5.2018
     * Junan sijaintihistorian haku (/train-locations/\<departure_date>/\<train_number>)
 * 12.2.2018
@@ -551,6 +556,14 @@ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4a
 **Paluuarvo**
 
 Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
+
+### Vanhat sijainnit zip-paketteina
+
+Vanhat kokoonpanot löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
+
+Paketin sisältämä json on saman muotoista kuin muutkin [GPS-sijainti-vastaukset](#gps-sijainnit).
+
+Uusi paketti luodaan joka päivä noin kello 12:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi 11.9.2018 12:30 luodaan päivän 9.9. junat. 
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
