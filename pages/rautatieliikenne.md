@@ -559,7 +559,7 @@ Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ### Vanhat sijainnit zip-paketteina
 
-Vanhat kokoonpanot löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
+Vanhat sijainnit löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
 
 Paketin sisältämä json on saman muotoista kuin muutkin [GPS-sijainti-vastaukset](#gps-sijainnit).
 
