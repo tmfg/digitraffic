@@ -563,7 +563,7 @@ Vanhat sijainnit löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/
 
 Paketin sisältämä json on saman muotoista kuin muutkin [GPS-sijainti-vastaukset](#gps-sijainnit).
 
-Uusi paketti luodaan joka päivä noin kello 12:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi 11.9.2018 12:30 luodaan päivän 9.9. junat. 
+Uusi paketti luodaan joka päivä noin kello 15:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi 11.9.2018 15:30 luodaan päivän 9.9. junat. 
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
