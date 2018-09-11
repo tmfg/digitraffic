@@ -1,0 +1,14 @@
+---
+title: 'Rail: old train locations in zip files'
+lang: en
+ref: 2018-09-11-release
+image:
+published: true
+categories: en News
+traffictypes:
+  - Rail
+tags:
+  - APIs
+---
+
+Old train locations can now be found at [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
