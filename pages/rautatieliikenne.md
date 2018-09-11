@@ -121,7 +121,7 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
-* 11.9.2018
+* 12.9.2018
     * Vanhat GPS-sijainnit zip-paketteina
 * 21.5.2018
     * Junan sijaintihistorian haku (/train-locations/\<departure_date>/\<train_number>)
