@@ -32,3 +32,10 @@ Tiedostot nimetään tyyliin AL1501962095, missä A=mittaus-kortin identifier (A
 Tiedostot ovat kooltaan keskimäärin noin 7 megatavun kokoisia.
 
 Tieto kerätään ja julkaistaan kerran kuukaudessa noin kuun puolivälissä.
+
+Listauksen saatavilla olevista tiedostoista saa osoitteesta:
+`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/index.txt`
+
+Tiedoston voi ladata osoitteesta:
+`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/{objektin-nimi}` , jossa `{objektin-nimi}` on jokin `index.txt` -listauksessa
+ mainituista.

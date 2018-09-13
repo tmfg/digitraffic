@@ -11,9 +11,9 @@
   "author": "Tom Nuorivaara",
   "license": "",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
-    "gulp-shell": "^0.6.3",
-    "lodash": "^4.17.4"
+    "gulp-shell": "^0.6.5",
+    "lodash": "^4.17.10"
   }
 }

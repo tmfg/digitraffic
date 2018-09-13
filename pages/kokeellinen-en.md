@@ -33,3 +33,9 @@ Average file size is about 7 megabytes.
 
 Data is published once a month around middle of the month.
 
+Listing of available files can be found at:
+`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/index.txt`
+
+Each file can be loaded from url:
+`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/{object-name}` , where `{object-name}` is one of the names from `index.txt`
+listing.
