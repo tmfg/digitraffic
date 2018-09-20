@@ -551,7 +551,7 @@ Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voida
 
 Aiemmista Websocket-toteutuksista poiketen GPS-sijainnit jaetaan MQTT:lla. MQTT-palvelin löytyy osoitteesta `rata-mqtt.digitraffic.fi:9001`. Myös ei-Websocket -yhteys on mahdollinen (portti 1883).
 
-Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/52/](http://jsfiddle.net/k8sfd4an/52/)
+Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/53/](http://jsfiddle.net/k8sfd4an/53/)
 
 **Paluuarvo**
 
