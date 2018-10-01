@@ -39,6 +39,9 @@ function init() {
 
   // If Service status section exists, get service status
   document.getElementById("service-status-section") ? getServiceStatus() : '';
+
+  // If Service status for AWS section exists, get aws service status
+  document.getElementById("service-status-aws-section") ? getServiceStatusAWS() : '';
 }
 
 
@@ -414,6 +417,27 @@ function getServiceStatus() {
   // Update service status every 60 seconds
   setTimeout(getServiceStatus, 60000);
 }
+
+function getServiceStatusAWS() {
+
+  // Get service status data from api
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", updateServiceStatus);
+  oReq.open("GET", "http://status-aws-test.digitraffic.fi/api/v1/components/groups");
+  oReq.send();
+
+  // Get service incidents from api
+  if (document.getElementById("service-status-incident-list")) {
+    var oReq2 = new XMLHttpRequest();
+    oReq2.addEventListener("load", updateServiceStatusList);
+    oReq2.open("GET", "http://status-aws-test.digitraffic.fi/api/v1/incidents?per_page=3&sort=id&order=desc");
+    oReq2.send();
+  }
+
+  // Update service status every 60 seconds
+  setTimeout(getServiceStatusAWS, 60000);
+}
+
 
 function addOperationStatus(service, status) {
   //console.log(service, ":", status);
