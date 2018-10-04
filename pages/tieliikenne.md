@@ -85,6 +85,8 @@ Koska uutta tietoa ei enää saavu, tämä rajapinta ei enää ole saatavilla.
 
 Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
 
+Uutta tietoa ei enää saavu 29.12.2017 jälkeen.
+
 ### Vapaat nopeudet
 
 [```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
@@ -176,7 +178,7 @@ Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantietee
 
 [```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
 
-[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}))
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month})
 
 [```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
 
@@ -186,11 +188,13 @@ Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantiet
 
 [```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
 
-[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}))
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month})
 
 [```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId})
 
 Tietyöt käyttävät TMC-paikannusmerkistöä tietöiden maantieteellisen sijainnin ilmoittamiseen.
+
+TMC-paikkatietojen rajapintadokumentaatio: [```https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET```](https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET)
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
