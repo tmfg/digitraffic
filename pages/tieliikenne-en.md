@@ -25,6 +25,10 @@ Currently the open data API includes:
 
 - Traffic disorders. Road traffic center provides information about traffic accidents and other disorders like road works. Messages are available in Datex2 format.
 
+- Weight restrictions are available in datex2 format.
+
+- Roadworks are available in datex2 format.
+
 - Road weather station data. The road weather stations measure e.g. temperature, wind, rain, relative humidity and dew point.  Data is updated once per minute. Currently, there are over 350 road weather stations on the Finnish road network.
 
 - Road weather forecasts. Content is updated every five minutes.
@@ -34,7 +38,7 @@ Currently the open data API includes:
 - Metadata for all services is updated twice per day.
 
 # Content
-- [REST/JSON -APIs](#restjson-apis)
+- [REST/JSON APIs](#restjson-apis)
     - [Road weather cameras](#road-weather-cameras)
     - [Current journey times](#current-journey-times)
     - [History data for previous day](#history-data-for-previous-day)
@@ -43,6 +47,8 @@ Currently the open data API includes:
     - [Current road weather forecasts](#current-road-weather-forecasts)
     - [Current data from LAM stations](#current-data-from-lam-stations)
     - [Traffic disorders](#traffic-disorders)
+    - [Weight restrictions](#weight-restrictions)
+    - [Roadworks](#roadworks)
     - [Status of road weather stations](#status-of-road-weather-stations)
 - [Swagger-documentation](#swagger-api)
 
@@ -56,7 +62,7 @@ Full API description is located in [Swagger-documentation](https://tie.digitraff
 
 [```http://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Response message contains weather camera information and URL for the camera image. For example preset image C0150200 is located in [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
+Response message contains weather camera information and URL for the camera image. For example preset image C0150200 is located at [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
 
 ![Weather camera image C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
 
@@ -159,6 +165,29 @@ Response message contains traffic disorders those have significant impact on tra
 Disorders contain TMC location information to identify occurence area or location of the disorder.
 
 [```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
+
+### Weight restrictions
+
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
+
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month})
+
+[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
+
+Weight restrictions use the TMC location information to identify the affected area or location of the weight restriction.
+
+### Roadworks
+
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
+
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month})
+
+[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId})
+
+The dataset is updated three times per day, at 08:00, at 12:00 and at 16:00 (local Finnish time)
+
+The location of the road works is presented with the TMC location data. The location data is available also through the Digitraffic API:
+[```https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET```](https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET)
 
 ### Status of road weather stations
 
