@@ -27,7 +27,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Tieliikenteen painorajoitteet.  Viestit ovat saatavissa Datex2 formaatissa.
 
-- Tietliikenteen pitkäkestoiset tietyöt. Viestit ovat saatavissa Datex2 formaatissa.
+- Tieliikenteen pitkäkestoiset tietyöt. Viestit ovat saatavissa Datex2 formaatissa.
 
 - Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
 
