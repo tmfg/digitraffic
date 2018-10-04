@@ -1,6 +1,6 @@
 ---
 ---
-/***Write javascript under this line***/
+/***This is https://jekyllrb.com/docs/front-matter/ Write javascript under this line***/
 
 // Init parallax elements
 var parallaxElements;
