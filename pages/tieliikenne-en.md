@@ -105,9 +105,9 @@ Response message contains road specific weather forecasts. Reports are updated e
 
 [```http://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
 
-[```ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata```](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata)
+[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata)
 
-[```ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
+[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
 
 Response message contains TMS (Traffic Measurement System)–stations measurement data.
 
@@ -116,41 +116,8 @@ Every TMS station provides information about traffic amounts and measured averag
 Data is updated almost in real time but information is cached. Actual update interval is one minute. 
 
 Simple JavaScript Web Socket - client application:
-```
-<html>
-     <head>
-         <title>Testiclient for lam sensor values</title>
-         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
-         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
 
-         <script>
-             function connect() {
-                 var url = "ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata";
-                 var socket = new WebSocket(url);
-                 socket.onopen = function (event) {
-                     console.info('Socket is open');
-                 }
-                 socket.onmessage = function(message) {
-                     addMessage(message);
-                 };
-             }
-             function addMessage(message) {
-                 var text = convert(message);
-                 $(".messages").append(text);
-                 $(".messages").append('\n');
-             }
-             function convert(message) {
-                 return JSON.stringify(JSON.parse(message.data));
-             }
-             connect();
-         </script>
-     </head>
-     <body>
-         <b>All messages:</b>
-         <pre class="messages"></pre>
-     </body>
- </html>
-```
+[```https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html```](https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html)
 
 ### Traffic disorders
 

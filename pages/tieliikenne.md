@@ -113,9 +113,9 @@ Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden m
 
 [```http://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
 
-[```ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata```](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata)
+[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata)
 
-[```ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
+[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
 
 Viesti sisältää LAM (Liikenteen Automaattinen Mittaus)–asemien mittaustiedot.
 
@@ -124,41 +124,8 @@ Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mita
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 
 Yksinkertainen JavaScript WebSocket -asiakassovellus:
-```
-<html>
-     <head>
-         <title>Testiclient for lam sensor values</title>
-         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
-         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
 
-         <script>
-             function connect() {
-                 var url = "ws://tie.digitraffic.fi/api/v1/plain-websockets/tmsdata";
-                 var socket = new WebSocket(url);
-                 socket.onopen = function (event) {
-                     console.info('Socket is open');
-                 }
-                 socket.onmessage = function(message) {
-                     addMessage(message);
-                 };
-             }
-             function addMessage(message) {
-                 var text = convert(message);
-                 $(".messages").append(text);
-                 $(".messages").append('\n');
-             }
-             function convert(message) {
-                 return JSON.stringify(JSON.parse(message.data));
-             }
-             connect();
-         </script>
-     </head>
-     <body>
-         <b>All messages:</b>
-         <pre class="messages"></pre>
-     </body>
- </html>
-```
+[```https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html```](https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html)
 
 ### Häiriötiedotteet
 
