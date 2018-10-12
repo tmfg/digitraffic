@@ -29,4 +29,4 @@ Before end of year 2018 a new API will be available with AmazonMQ.
 More protocols will be supported and subscriptions allows clients to receive data they are interested in.
 
 The new API is in test and can be tested using the following example client:
-[```https://github.com/finnishtransportagency/digitraffic-ais/blob/DPO-375_postgresql/src/test/html/testMqtt.html```](https://github.com/finnishtransportagency/digitraffic-ais/blob/DPO-375_postgresql/src/test/html/testMqtt.html)
+[```https://github.com/finnishtransportagency/digitraffic-ais/blob/develop/src/test/html/testMqtt.html```](https://github.com/finnishtransportagency/digitraffic-ais/blob/develop/src/test/html/testMqtt.html)

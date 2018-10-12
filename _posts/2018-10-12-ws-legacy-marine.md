@@ -27,5 +27,5 @@ Väliaikaista rajapintaa pääsee testaamaan esimerkkikoodilla:
 Vuoden loppuun mennessä tilalle tulee AmazonMQ.  Näin saadaan tuki useammalle protokollalle sekä mahdollisuus vastaanottaa vain itseä kiinnostavia viestejä.
 
 Uutta AmazonMQ (MQTT) endpointtia pääsee kokeilemaan testiympäristössä esimerkkikoodilla:
-[```https://github.com/finnishtransportagency/digitraffic-ais/blob/DPO-375_postgresql/src/test/html/testMqtt.html```](https://github.com/finnishtransportagency/digitraffic-ais/blob/DPO-375_postgresql/src/test/html/testMqtt.html)
+[```https://github.com/finnishtransportagency/digitraffic-ais/blob/develop/src/test/html/testMqtt.html```](https://github.com/finnishtransportagency/digitraffic-ais/blob/develop/src/test/html/testMqtt.html)
 
