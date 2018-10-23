@@ -35,7 +35,7 @@
       --></ul><!--
       --><ul class="date-type-tags__tag-list"><!--
         -->{% for tag in post.tags %}<!--
-        --><li class="date-type-tags__tag"><a class="link" href="{{ "/" | prepend:site.baseurl }}{{ category[0] | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
+        --><li class="date-type-tags__tag"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
         -->{% endfor %}<!--
       --></ul>
       <!-- /White spaces commented --> 
