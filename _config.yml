@@ -63,7 +63,7 @@ t:
       en: "/en/road-traffic"
       fi: "/tieliikenne"
   rautatieliikenne:
-    en: "Railway"
+    en: "Rail"
     fi: "Rautatieliikenne"
     url:
       en: "https://rata.digitraffic.fi"
