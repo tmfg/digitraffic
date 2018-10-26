@@ -673,7 +673,7 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ### Kulkutietoviestien kuunteleminen (MQTT / Sockets)
  
- Topic: `train-tracking/<departure_date>/<train_number>/`
+ Topic: `train-tracking/<departure_date>/<train_number>/<type>/<station>/<track_section>/<previous_station>/<next_station>/<previous_track_section>/<next_track_section>/`
  
  Kulkutietoviestejä voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
  
@@ -760,7 +760,7 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 ### Kokoonpanojen kuunteleminen (MQTT / Sockets)
  
- Topic: `compositions/<departure_date>/<train_number>/`
+ Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
  
  Kokoonpanoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
  
