@@ -64,12 +64,12 @@ Alla esimerkkejä mahdollisista tilauksista:
 
 #### Kaikkien laivojen sìjainnit
 
-``` vessels/*/locations ```
+``` vessels/+/locations ```
 
 #### Yhden laivan seuraaminen mmsi:n perusteella
 
 ``` 
-    vessels/<mmsi>/*          # yhden laivan sijainnit ja metadata
+    vessels/<mmsi>/+          # yhden laivan sijainnit ja metadata
     vessels/<mmsi>/locations  # yhden laivan sijainnit
   ```
 

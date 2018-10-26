@@ -64,12 +64,12 @@ Examples:
 
 #### Tracking all locations
 
-``` vessels/*/locations ```
+``` vessels/+/locations ```
 
 #### Tracking a single vessel with mmsi-number
 
 ``` 
-     vessels/<mmsi>/*          # single vessel locations and metadata
+     vessels/<mmsi>/+          # single vessel locations and metadata
      vessels/<mmsi>/locations  # single vessel locations
 ```
 
