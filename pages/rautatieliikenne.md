@@ -293,7 +293,8 @@ Palauttaa yhden junan tiedot
  
  Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
  
- Junien toija voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
+ Junien tietoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja 
+ tietoja tietystä topic:sta.
  
  Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `trains/#` (kaikki tiedot) tai `trains/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices).
  
@@ -306,6 +307,8 @@ Palauttaa yhden junan tiedot
 ### Liikennepaikan junien tietojen kuunteleminen (MQTT / Sockets)
   
   Topic: `trains-by-station/<station>/`
+  
+  Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/a9dgjm10/1/](http://jsfiddle.net/a9dgjm10/1/)
     
   **Paluuarvo**
   
@@ -677,9 +680,9 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
  
  Kulkutietoviestejä voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
  
- Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `train-tracking/#` (kaikki tiedot) tai `train-tracking/+/5` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+ Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `train-tracking/#` (kaikki tiedot) tai `train-tracking/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
  
- Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
+ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/2/](http://jsfiddle.net/cb2uj7kg/2/)
  
  **Paluuarvo**
  
@@ -764,9 +767,9 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
  
  Kokoonpanoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
  
- Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `compositions/#` (kaikki tiedot) tai `compositions/+/5` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+ Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `compositions/#` (kaikki tiedot) tai `compositions/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
  
- Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/5/](http://jsfiddle.net/k8sfd4an/5/)
+ Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/3/](http://jsfiddle.net/cb2uj7kg/3/)
  
  **Paluuarvo**
  
