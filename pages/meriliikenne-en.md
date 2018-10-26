@@ -29,7 +29,9 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 # Content
 - [REST/JSON -API](#restjson-api)
 - [WebSocket -API](#websocket-api)
-    - [Tracking all vessels](#tracking-all-vessels)
+    - [Topics](#topics)
+    - [Tracking all data](#tracking-all-data)
+    - [Tracking all locations](#tracking-all-locations)
     - [Tracking a single vessel with mmsi-number](#tracking-a-single-vessel-with-mmsi-number)
     - [Vessel metadata-message](#vessel-metadata-message)
     - [Vessel location-message](#vessel-location-message)
@@ -44,15 +46,32 @@ Both metadata and content is updated in real time.
 
 ## Web Socket API
 
-Vessel locations can be tracked from follwing Web Socket APIs:
+Vessel locations can be tracked from following Web Socket APIs.  Protocol is mqtt-over-websocket.  This allows
+you to subscibe only those topics you are interested in.
 
-#### Tracking all vessels
+#### Topics
 
-``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations ```
+Topics are constructed like this:
+- vessels/\<mmsi\>/metadata
+- vessels/\<mmsi\>/locations
+- vessels/status
+
+Examples:
+
+#### Tracking all data
+
+``` vessels/# ```
+
+#### Tracking all locations
+
+``` vessels/*/locations ```
 
 #### Tracking a single vessel with mmsi-number
 
-``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
+``` 
+     vessels/<mmsi>/*          # single vessel locations and metadata
+     vessels/<mmsi>/locations  # single vessel locations
+```
 
 Message formats:
 
