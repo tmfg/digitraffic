@@ -46,7 +46,7 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 ## WebSocket-rajapinnat
 
-Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protookolla on mqtt-over-websocket, joka mahdollistaa
+Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protookolla on MQTT over WebSockets, joka mahdollistaa
 ainoastaan haluttujen tietojen vastaanoton topicien avulla
 
 #### Topicit

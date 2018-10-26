@@ -46,7 +46,7 @@ Both metadata and content is updated in real time.
 
 ## Web Socket API
 
-Vessel locations can be tracked from following Web Socket APIs.  Protocol is mqtt-over-websocket.  This allows
+Vessel locations can be tracked from following Web Socket APIs.  Protocol is MQTT over WebSockets.  This allows
 you to subscibe only those topics you are interested in.
 
 #### Topics
