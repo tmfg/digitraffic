@@ -29,7 +29,9 @@ Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun t
 # Sisältö
 - [REST/JSON-rajapinnat](#restjson-rajapinnat)
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
-    - [Kaikkien laivojen seuraaminen](#kaikkien-laivojen-seuraaminen)
+    - [Topicit](#topicit)
+    - [Kaiken mahdollisen datan tilaaminen](#kaiken-mahdollisen-datan-tilaaminen)
+    - [Kaikkien laivojen sìjainnit](#kaikkien-laivojen-sìjainnit)
     - [Yhden laivan seuraaminen mmsi:n perusteella](#yhden-laivan-seuraaminen-mmsin-perusteella)
     - [Aluksen metadata-viesti](#aluksen-metadata-viesti)
     - [Aluksen sijainti-viesti](#aluksen-sijainti-viesti)
@@ -44,15 +46,32 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 ## WebSocket-rajapinnat
 
-Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista:
+Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protookolla on mqtt-over-websocket, joka mahdollistaa
+ainoastaan haluttujen tietojen vastaanoton topicien avulla
 
-#### Kaikkien laivojen seuraaminen
+#### Topicit
 
-``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations ```
+Topicit ovat seuraavanlaista muotoa:
+- vessels/\<mmsi\>/metadata
+- vessels/\<mmsi\>/locations
+- vessels/status
+
+Alla esimerkkejä mahdollisista tilauksista:
+
+#### Kaiken mahdollisen datan tilaaminen
+
+```vessels/# ```
+
+#### Kaikkien laivojen sìjainnit
+
+``` vessels/*/locations ```
 
 #### Yhden laivan seuraaminen mmsi:n perusteella
 
-``` ws://meri.digitraffic.fi/api/v1/plain-websockets/locations/{mmsi} ```
+``` 
+    vessels/<mmsi>/*          # yhden laivan sijainnit ja metadata
+    vessels/<mmsi>/locations  # yhden laivan sijainnit
+  ```
 
 Viestit ovat muotoa:
 
@@ -112,51 +131,93 @@ Viestit ovat muotoa:
 ```
 <html>
 <head>
-  <title>Testiclient for vessel locations</title>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.min.js"></script>
+    <title>Testiclient for vessel locations</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js"></script>
 
-  <script>
+    <script>
+        const lines = [];
+        var messageCount = 0;
+        let client;
 
-    var lines = [];
+        function connect() {
+            console.log('trying to connect marine mqtt...');
 
-    function connect() {
-      console.log('trying to connect...');
-      var socket = new WebSocket('ws://meri-test.digitraffic.fi/api/v1/plain-websockets/locations');
-      console.info('Socket is ' + socket.readyState);
-      socket.onopen = function (event) {
-        console.info('Socket is open');
-      }
-      socket.onmessage = function(message) {
-        addMessage(JSON.parse(message.data));
-        updateList();
-      };
-    }
+            client = new Paho.MQTT.Client("meri-aws-mqtt.digitraffic.fi", 61619, 'testclient_' + Date.now());
 
-    function addMessage(message) {
-      var text = convert(message);
+            client.onConnectionLost = function (response) {
+                console.info(Date.now() + ' Connection lost:' + response.errorMessage);
+            };
 
-      if (lines.length > 50) {
-          lines.shift();
-      }
+            client.onMessageArrived = function(message) {
+                messageCount++;
 
-      lines.push(text);
-    }
+                addMessage(message);
 
-    function updateList() {
-      $(".locations").html(lines.join('<br/>'));
-    }
+                updateList();
+            };
 
-    function convert(message) {
-      return JSON.stringify(message);
-    }
+            const connectionProperties = {
+                onSuccess:onConnect,
+                mqttVersion:4,
+                useSSL:true,
+                userName:"digitraffic",
+                password:"digitrafficPassword"
+            };
 
-    connect();
-  </script>
+            client.connect(connectionProperties);
+
+            window.setInterval(logMessageCount, 60*1000);
+        }
+
+        function logMessageCount() {
+            console.info(Date.now() + ' ' + messageCount + ' messages per minute');
+            messageCount = 0;
+        }
+
+        function onConnect() {
+            console.info(Date.now() + ' Connection open');
+
+            client.subscribe("vessels/#");
+        }
+
+        function addMessage(message) {
+            const text = convert(message);
+
+            if (lines.length > 100) {
+                lines.shift();
+            }
+
+            lines.push(text);
+        }
+
+        function updateList() {
+            $(".messages").html(lines.join('<br/>'));
+        }
+
+        function convert(message) {
+            const content = message.payloadString;
+            const topic = message.destinationName;
+            const time = Date.now();
+            const json = JSON.parse(content);
+            let deltaMs;
+
+            if (typeof json.properties === "undefined") {
+                deltaMs = time - json.timestamp;
+            } else {
+                deltaMs = time - json.properties.timestampExternal;
+            }
+
+            return "{ now: " + time + ", &Delta;timeMs: " + deltaMs + ", topic: \"" + topic + "\", content: " + content + " }";
+        }
+
+        connect();
+    </script>
 </head>
 <body>
-  Vessel locations:
-  <div class="locations" />
+    Messages:
+    <div class="messages" />
 </body>
 </html>
+
 ```
