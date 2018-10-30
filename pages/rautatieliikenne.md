@@ -120,6 +120,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 30.10.2018
+    * Kaikki paitsi metadata-tiedot saatavilla MQTT:n kautta
 * 12.9.2018
     * Vanhat GPS-sijainnit zip-paketteina
 * 13.8.2018
