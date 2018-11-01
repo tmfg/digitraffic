@@ -293,28 +293,28 @@ Palauttaa yhden junan tiedot
  
 ### Junien tietojen kuunteleminen (MQTT / Sockets)
  
- Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
- 
- Portit: `1883` (normaali) `9001` (WebSockets)
- 
- Junien tietoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja 
- tietoja tietystä topic:sta.
- 
- Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `trains/#` (kaikki tiedot) tai `trains/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices).
- 
- Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
+Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
+
+Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
+
+Junien tietoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja 
+tietoja tietystä topic:sta.
+
+Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `trains/#` (kaikki tiedot) tai `trains/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices).
+
+Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
  
  **Paluuarvo**
  
  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
 ### Liikennepaikan junien tietojen kuunteleminen (MQTT / Sockets)
-  
-  Topic: `trains-by-station/<station>/`
-  
-  Portit: `1883` (normaali) `9001` (WebSockets)
-  
-  Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/a9dgjm10/1/](http://jsfiddle.net/a9dgjm10/1/)
+
+Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
+
+Topic: `trains-by-station/<station>/`
+
+Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/a9dgjm10/1/](http://jsfiddle.net/a9dgjm10/1/)
     
   **Paluuarvo**
   
@@ -537,9 +537,9 @@ Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ### Sijaintien kuunteleminen (MQTT / Sockets)
 
-Topic: `train-locations/<departure_date>/<train_number>/`
+Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
 
-Portit: `1883` (normaali) `9001` (WebSockets)
+Topic: `train-locations/<departure_date>/<train_number>/`
 
 Sijainteja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
 
@@ -683,10 +683,10 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 ### Kulkutietoviestien kuunteleminen (MQTT / Sockets)
+
+Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
  
 Topic: `train-tracking/<departure_date>/<train_number>/<type>/<station>/<track_section>/<previous_station>/<next_station>/<previous_track_section>/<next_track_section>/`
-
-Portit: `1883` (normaali) `9001` (WebSockets)
 
 Kulkutietoviestejä voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
 
@@ -773,15 +773,15 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 ### Kokoonpanojen kuunteleminen (MQTT / Sockets)
  
- Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
- 
- Portit: `1883` (normaali) `9001` (WebSockets)
- 
- Kokoonpanoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
- 
- Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `compositions/#` (kaikki tiedot) tai `compositions/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
- 
- Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/3/](http://jsfiddle.net/cb2uj7kg/3/)
+Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
+
+Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>` 
+
+Kokoonpanoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
+
+Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `compositions/#` (kaikki tiedot) tai `compositions/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+
+Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/3/](http://jsfiddle.net/cb2uj7kg/3/)
  
  **Paluuarvo**
  
