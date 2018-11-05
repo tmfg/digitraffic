@@ -1,5 +1,5 @@
 ---
-title: 'Test environment migrates to AWS 29th Ort 2018'
+title: 'Test environment migrates to AWS 29th of October 2018'
 categories: en News
 image:
 lang: en
