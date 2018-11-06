@@ -967,7 +967,7 @@ Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [ko
 
 ### GraphQL-kysely omassa sovelluksessa
 
-GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/?`.
+GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/graphiql/?`.
 
 HTTP-pyyntöön tulee lisätä otsikko `Content-Type: application/json`
 
