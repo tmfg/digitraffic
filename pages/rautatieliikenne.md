@@ -81,7 +81,8 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
         - [Junatyypit](#junatyypit)
         - [Raideosuudet](#raideosuudet)
-        - [Herätepisteet](#herätepisteet)       
+        - [Herätepisteet](#herätepisteet)
+        - [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)              
     1. [GraphQL](#graphql) 
 1. [Vastaustyypit](#vastaustyypit)
     1. [Junat](#junat)
@@ -96,6 +97,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Junatyypit](#junatyypit-1)
     1. [Raideosuudet](#raideosuudet-1)
     1. [Herätepisteet](#herätepisteet-1)
+    1. [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)
 1. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
 1. [Avoimen datan käyttölupa](#avoimen-datan-käyttölupa)
 
@@ -899,6 +901,22 @@ Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määrit
 
 Palauttaa [Herätepisteet](#herätepisteet)-tyyppisen vastauksen.
 
+### Aikataulukaudet ja muutosajankohdat
+
+URL: [metadata/time-table-periods](https://rata.digitraffic.fi/api/v1/metadata/time-table-periods)
+
+**Kuvaus**
+
+Aikataulukausi kuvaa ajanjaksoa, jolle haetaan säännöllisiä aikatauluja. Junan aikataulu on säännöllinen, jos sen [vastauksessa](#junat) on mukana arvo `timetableType:"REGULAR"`.
+
+Muutosajankohta on aikajakso aikataulukauden sisällä, jolloin jäljellä olevaan aikataulukauteen voidaan hakea muutoksia.
+
+Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta eli sitä voiko se enää muuttua. Jos juna esimerkiksi lähtee 1.2.2018 ja seuraava muutosajankohta on 1.3.2018, junan aikataulu ei voi enää muuttua.
+
+**Paluuarvo**
+
+Palauttaa [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat-1)-tyyppisen vastauksen.
+
 ## GraphQL
 
 GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin ja yhdistelyyn. GraphQL:än avulla voidaan esimerkiksi rajata mukaan vain tietyt json-kentät tai filtteröidä vastausta käyttäen mitä tahansa vastauksesta löytyvää json-kenttää. 
@@ -1171,29 +1189,42 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 
 ### Raideosuudet
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden liikennepaikan lyhenne. Lista liikennepaikoista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSectionCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden tunnus. Yksilöivä tieto.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden liikennepaikan lyhenne. Lista liikennepaikoista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSectionCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden tunnus. Yksilöivä tieto*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) ranges ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden sijainnit. Raideosuudella voi olla monta sijaintia, jos se sijaitsee usealla eri ratanumerolla.*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id : positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin yksilöivä numero*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) startLocation ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin alkukohta*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ratanumero*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina rataverkon nollapisteestä.*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus kilometreistä.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) startLocation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin alkukohta*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ratanumero*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres: positive integer ![Info]({{ site.baseurl }}{{"/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina rataverkon nollapisteestä.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus kilometreistä.*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endLocation ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin loppukohta*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ratanumero*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina radan alkuosasta*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus kilometreistä.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ratanumero*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina radan alkuosasta*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus kilometreistä.*
 
 ### Herätepisteet
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Herätepisteen yksilöivä numero.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageTrackSection ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin raideosuus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageStationShortCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin liikennepaikka*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageNextStationShortCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin seuraava liikennepaikka*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Herätepisteen yksilöivä numero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageTrackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin raideosuus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageStationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin liikennepaikka*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageNextStationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin seuraava liikennepaikka*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin tyyppi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRowStationShortCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulurivin liikennepaikka*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRowType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulurivin tyyppi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) offset ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kuinka paljon aikaa sekunteina kulkutietoviestin aikaleimaan lisätään, jotta saadaan aikataulurivin toteuma*
+
+### Aikataulukaudet ja muutosajankohdat
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden yksilöivä numero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden alkupäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveTo: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden loppupäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityAllocationConfirmDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Päivämäärä jolloin viranomainen tekee päätöksen kapasiteettihakemukselle*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin kapasiteettihakemuksia aikataulukaudelle otetaan vastaan*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) changeDates ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden muutosajankohdat*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan yksilöivä numero*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan alkupäivämäärä*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin kapasiteettihakemuksia muutosajankohtaan otetaan vastaan*
 
 ## Versionumeroiden käyttö
 
