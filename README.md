@@ -169,7 +169,7 @@ Julkaistu tiedote näkyy sivustolla muutaman minuutin kuluttua.
 ### Aikaisemmin julkaistun julkaisun muokkaaminen
 Voit muokata aikasemmin julkaistuja julkaisuja samaan tapaan kuin sisältösivuja, ks. [Sisältösivujen päivitys](#sisältösivujen-päivitys). Avaa julkaisu klikkaamalla sen otsikkoa `_posts`-kansiossa. Tämän jälkeen voit muokata sisältöä ja meta dataa, kuten uutta lisättäessä.
 
-#### Otiskon muokkaaminen
+#### Otskon muokkaaminen
 Jo julkaistun julkaisun otsikko näkyy nyt sisältöeditorin yläpuolella. Muokkaa julkaisun otsikkoa klikkaamalla otsikkoa ja kirjoittamalla uusi otiskko vanhan tilalle.
 
 #### Päivämäärän muokkaaminen
