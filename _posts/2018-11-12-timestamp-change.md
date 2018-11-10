@@ -3,7 +3,7 @@ title: 'Aikaleimojen muutos 6.11.2018'
 categories: Tiedotteet
 image: 
 lang: fi
-published: false
+published: true
 ref: 2018-11-12-timestamp-change
 traffictypes:
   - Tieliikenne
@@ -17,7 +17,7 @@ tags:
 
 Digitrafficin tie- ja meriliikenteen rajapinnat siirtyvät AWS-pilvipalveluun 6.11.2018. 
 Siirron yhteydessä rajapintojen käyttämä tapa kellonaikojen ilmoittamiseen muuttui merkittävästi.
-Muutoksen viestintä rajapintojen hyödyntäjille epäonnistui, jonka seurauksena useiden hyödyntäjien sovellukset eivät
+Muutoksen viestintä rajapintojen hyödyntäjille oli riittämätöntä, jonka seurauksena useiden hyödyntäjien sovellukset eivät
 osanneet tulkita muuttuneita aikaleimoja oikein.
 
 Tämän tyyppiset, mahdollisesti sovellusongelmia aiheuttavat rajapintamuutokset ovat harvinaisia
