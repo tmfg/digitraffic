@@ -3,7 +3,7 @@ title: 'Tmestamp change 6.11.2018'
 categories: Tiedotteet
 image: 
 lang: en
-published: false
+published: true
 ref: 2018-11-12-timestamp-change
 traffictypes:
   - Tieliikenne
