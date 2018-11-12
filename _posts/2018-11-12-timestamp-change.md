@@ -24,7 +24,7 @@ Tämän tyyppiset, mahdollisesti sovellusongelmia aiheuttavat rajapintamuutokset
 ja niitä pyritään lähtökohtaisesti välttämään. Liikennevirasto on ryhtynyt toimiin, jotta viestintä vastaavissa tilanteissa
 olisi jatkossa riittävää. Liikennevirasto pahoittelee hyödyntäjille aiheutunutta ylimääräistä vaivaa.
 
-#### Aikaleimojen muutoksen kuvaus
+#### Aikaleimojen muutoksen kuvaus ja aikaleimojen tulkinta
 
 Ennen muutosta aikaleimat olivat Suomen paikallista aikaa. Muutoksen jälkeen ajat ilmoitetaan [koordinoidussa yleisajassa (UTC)](https://fi.wikipedia.org/wiki/ISO_8601#Aika).
 
@@ -36,3 +36,5 @@ Ennen muutosta ajat ilmoitettiin esimerkiksi muodossa
 
 Uusi formaatti samalle aikaleimalle on:
 `2018-11-06T12:51:00Z`
+
+Rajapintoja hyödyntävissä sovelluksissa aikaleimat kannattaa tulkita aikaleimojen käsittelyyn tarkoitetuilla kirjastoilla tai funktioilla. Aikaleimojen tulkinta esimerkiksi merkkijonojen käsittelyyn tarkoitetuilla menetelmillä on virhealtista.
