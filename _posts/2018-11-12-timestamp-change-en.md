@@ -1,5 +1,5 @@
 ---
-title: 'Tmestamp change 6.11.2018'
+title: 'Timestamp change 6.11.2018'
 categories: Tiedotteet
 image: 
 lang: en
