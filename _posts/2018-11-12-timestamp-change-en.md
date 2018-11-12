@@ -13,7 +13,7 @@ tags:
   - Ylläpito
 ---
 
-#### Singificant changes in API timestamps
+#### Significant changes in API timestamps
 
 The road and marine API's of Digitraffic were migrated to AWS cloud service on 6.11.2018.
 Alongside the migration the timestamp format used by the API's was significantly changed.
