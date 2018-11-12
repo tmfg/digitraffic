@@ -22,7 +22,7 @@ The communication regarding the change was insufficient and several API users we
 These kind of API changes are rare and the Finnish Transport Agency (FTA) tries to avoid them. The FTA has taken action to ensure
 adequate communications regarding API changes in the future. The FTA is sorry for any inconvinience caused for the API users.
 
-#### Timestamp change, technical details
+#### Timestamp change, technical details and handling the timestamps
 
 Before the migration the API timestamps were in Finnish local time. After the change the timestamps are in UTC.
 
@@ -34,3 +34,5 @@ Before the change the timestamp was e.g.
 
 The new format for the same timestamp is
 `2018-11-06T12:51:00Z`
+
+In application development the timestamps should be handled with libraries or functions spesifically designed for timestamp handling. Using timestamps with other methodts, e.g. with functions designed for string handling is prone to errors. 
