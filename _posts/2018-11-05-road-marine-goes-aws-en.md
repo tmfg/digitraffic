@@ -27,5 +27,5 @@ Otherwise the environment should behave identically.
 The migration was planned 30th of October, but it was postponed due to some problems in data sources.
 
 Websocket changes were annouced earlier in 
-[2018-10-12-ws-legacy-marine](http://digitraffic.liikennevirasto.fi/en/news/2018/10/12/ws-legacy-marine-en.html)
+[2018-10-12-ws-legacy-marine](http://www.digitraffic.fi/en/news/2018/10/12/ws-legacy-marine-en.html)
 article.

@@ -29,5 +29,5 @@ Muilta osin ympäristöjen pitäisi toimia identtisesti.
 Palvelun piti siirtyä AWS:aan jo viikkoa aiemmin, mutta siirto viivästyi lähdejärjestelmähäiriöiden vuoksi.
 
 Websocket-rajapintojen muutoksista tiedotettiin jo aiemmin
-[2018-10-12-ws-legacy-marine](http://digitraffic.liikennevirasto.fi/tiedotteet/2018/10/12/ws-legacy-marine.html) 
+[2018-10-12-ws-legacy-marine](http://www.digitraffic.fi/tiedotteet/2018/10/12/ws-legacy-marine.html) 
 artikkelissa.

@@ -5,7 +5,7 @@ intro: Tämä on esimerkkisivu sovelluksesta.
 logo: 
 developer:
   - Kaisa Kehittäjä
-  - http://digitraffic.liikennevirasto.fi
+  - http://www.digitraffic.fi
 traffictypes: 
   - Tieliikenne
   - Meriliikenne
