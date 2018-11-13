@@ -38,10 +38,10 @@ function init() {
   getPageLanguage();
 
   // If Service status section exists, get service status
-  document.getElementById("service-status-section") ? getServiceStatus("http://status.digitraffic.fi") : '';
+  document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi") : '';
 
   // If Service status for AWS section exists, get aws service status
-  document.getElementById("service-status-aws-section") ? getServiceStatus("http://status-aws-test.digitraffic.fi") : '';
+  document.getElementById("service-status-aws-section") ? getServiceStatus("https://status-aws-test.digitraffic.fi") : '';
 }
 
 

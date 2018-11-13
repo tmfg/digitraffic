@@ -10,7 +10,7 @@
         $( document ).ready(function() {
             console.log( "document loaded" );
 
-            var cachetAPI = "http://status.digitraffic.fi/api/v1/components/groups";
+            var cachetAPI = "https://status.digitraffic.fi/api/v1/components/groups";
             $.getJSON( cachetAPI )
                 .done(function( json ) {
                     console.log( "JSON Data: ", json.data );
