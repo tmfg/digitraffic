@@ -122,6 +122,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 16.11.2018
+    * Aikataulukaudet ja muutosajankohdat
 * 30.10.2018
     * Kaikki paitsi metadata-tiedot saatavilla MQTT:n kautta
 * 12.9.2018
