@@ -911,7 +911,7 @@ URL: [metadata/time-table-periods](https://rata.digitraffic.fi/api/v1/metadata/t
 
 Aikataulukausi kuvaa ajanjaksoa, jolle haetaan säännöllisiä aikatauluja. Junan aikataulu on säännöllinen, jos sen [vastauksessa](#junat) on mukana arvo `timetableType:"REGULAR"`.
 
-Muutosajankohta on aikajakso aikataulukauden sisällä, jolloin jäljellä olevaan aikataulukauteen voidaan hakea muutoksia.
+Muutosajankohta on ajankohta aikataulukauden sisällä, jolloin jäljellä olevaan aikataulukauteen voidaan hakea muutoksia.
 
 Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta eli sitä voiko se enää muuttua. Jos juna esimerkiksi lähtee 1.2.2018 ja seuraava muutosajankohta on 1.3.2018, junan aikataulu ei voi enää muuttua.
 
