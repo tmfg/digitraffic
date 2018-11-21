@@ -2,7 +2,7 @@
 title: Weight restrictions from api
 issue-number: DPO-337
 traffictypes:
-  - road traffic
+  - Road traffic
 status: finished
 ---
 
