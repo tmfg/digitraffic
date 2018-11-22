@@ -4,7 +4,7 @@ lang: fi
 ref: navigational_buoys
 issue-number: DPO-442
 traffictypes:
-  - Marine traffic
+  - Meriliikenne
 status: suunnitteilla
 ---
 

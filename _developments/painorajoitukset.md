@@ -2,7 +2,7 @@
 title: Painorajoitukset ja tietyöt
 issue-number: DPO-337
 traffictypes:
-  - Road traffic
+  - Tieliikenne
 status: valmis
 ---
 
