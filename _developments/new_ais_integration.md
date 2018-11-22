@@ -6,4 +6,4 @@ traffictypes:
 status: suunnitteilla
 ---
 
-Nykyinen AIS-lähde poistuu jollakin aikavälillä, joten ais-tiedot pitää integroida uudesta lähteestä. 
+Nykyinen AIS-lähde poistuu jollakin aikavälillä, joten ais-tiedot pitää integroida uudesta lähteestä. Muutoksen ei pitäisi näkyä loppukäyttäjille.
