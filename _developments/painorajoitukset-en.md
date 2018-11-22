@@ -1,5 +1,5 @@
 ---
-title: Weight restrictions from api
+title: Weight restrictions and road works
 issue-number: DPO-337
 traffictypes:
   - Road traffic
