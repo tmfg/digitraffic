@@ -6,7 +6,7 @@
   <div class="sidebar__metadata"><!--
   -->{% assign post_category = prev_post.categories[0] %}<!--
   --><span class="sidebar__page-timestamp"><!--
-    -->{% include post-date.html %}<!--
+    -->{% include sidebar-post-date.html date=prev_post.date %}<!--
   --></span><!--
    --><ul class="sidebar__page-traffic-type-list"><!--
      -->{% for traffictype in prev_post.traffictypes %}<!--

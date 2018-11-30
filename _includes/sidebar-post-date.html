@@ -1,0 +1,7 @@
+<i class="material-icons md-md date-type-tags__date-icon"><!--
+-->{% if category == site.t.tiedotteet[page.lang] or post_category == site.t.artikkelit[page.lang] %}create{% endif %}<!--
+-->{% if category == site.t.tapahtumat[page.lang] %}event{% endif %}<!--
+--></i><!--
+-->{% if category == site.t.tiedotteet[page.lang] or post_category == site.t.artikkelit[page.lang] %}{% if page.lang == "en" %}{{ include.date | date: "%-m/%-d/%Y" }}{% else %}{{ include.date | date: "%-d.%-m.%Y" }}{% endif %}{% endif %}<!--
+-->{% if category == site.t.tapahtumat[page.lang] %}{% if page.lang == "en" %}{{ include.date | date: "%-m/%-d/%Y" }}{% else %}{{ include.date | date: "%-d.%-m.%Y" }}{% endif %}{% endif %}
+<p>PLAA</p>
