@@ -1,6 +1,6 @@
 ---
 title: 'Ongoing issues with Portnet data'
-categories: Tiedotteet
+categories: en News
 image: 
 lang: en
 published: true

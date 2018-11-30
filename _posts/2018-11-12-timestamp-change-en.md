@@ -1,6 +1,6 @@
 ---
 title: 'Timestamp change 6.11.2018'
-categories: Tiedotteet
+categories: en News
 image: 
 lang: en
 published: true
