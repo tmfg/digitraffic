@@ -6,11 +6,11 @@ lang: en
 published: true
 ref: 2018-11-12-timestamp-change
 traffictypes:
-  - Tieliikenne
-  - Meriliikenne
+  - Road
+  - Marine
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - Apis
+  - Admin
 ---
 
 #### Significant changes in API timestamps
