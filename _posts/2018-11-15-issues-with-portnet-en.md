@@ -6,10 +6,10 @@ lang: en
 published: true
 ref: 2018-11-15-issues-with-portnet
 traffictypes:
-  - Meriliikenne
+  - Marine
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - Apis
+  - Admin
 ---
 
 #### Portnet port visits affected
