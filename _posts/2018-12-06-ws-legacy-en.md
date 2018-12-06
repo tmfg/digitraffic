@@ -4,7 +4,7 @@ categories: en News
 image:
 lang: en
 published: true
-ref: 2018-12-07-ws-legacy
+ref: 2018-12-06-ws-legacy
 traffictypes:
   - Road
   - Marine
