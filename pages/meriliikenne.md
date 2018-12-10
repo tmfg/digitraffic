@@ -49,6 +49,11 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa
 ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
+Tuotannon osoite on wss://meri.digitraffic.fi:61619/mqtt
+Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 61619, esimerkki alempana.
+
+Testin osoite vastaavasti meri-test.digitraffic.fi
+
 #### Topicit
 
 Topicit ovat seuraavanlaista muotoa:
@@ -126,7 +131,7 @@ Viestit ovat muotoa:
 }
 ```
 
-#### Yksinkertainen JavaScript WebSocket -clientti
+#### Yksinkertainen JavaScript WebSocket -client
 
 ```
 <html>
@@ -143,7 +148,7 @@ Viestit ovat muotoa:
         function connect() {
             console.log('trying to connect marine mqtt...');
 
-            client = new Paho.MQTT.Client("meri-aws-mqtt.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);

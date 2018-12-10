@@ -49,6 +49,11 @@ Both metadata and content is updated in real time.
 Vessel locations can be tracked from following Web Socket APIs.  Protocol is MQTT over WebSockets.  This allows
 you to subscibe only those topics you are interested in.
 
+Production address is wss://meri.digitraffic.fi:61619/mqtt
+When using Paho JS-client the address is plain meri.digitraffic.fi and port 61619, see example below.  
+
+Address for test is meri-test.digitraffic.fi
+
 #### Topics
 
 Topics are constructed like this:
@@ -143,7 +148,7 @@ Message formats:
         function connect() {
             console.log('trying to connect marine mqtt...');
 
-            client = new Paho.MQTT.Client("meri-aws-mqtt.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
