@@ -50,6 +50,7 @@ Vessel locations can be tracked from following Web Socket APIs.  Protocol is MQT
 you to subscibe only those topics you are interested in.
 
 Production address is wss://meri.digitraffic.fi:61619/mqtt
+
 When using Paho JS-client the address is plain meri.digitraffic.fi and port 61619, see example below.  
 
 Address for test is meri-test.digitraffic.fi

@@ -50,6 +50,7 @@ Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla
 ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
 Tuotannon osoite on wss://meri.digitraffic.fi:61619/mqtt
+
 Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 61619, esimerkki alempana.
 
 Testin osoite vastaavasti meri-test.digitraffic.fi
