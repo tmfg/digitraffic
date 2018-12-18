@@ -39,6 +39,8 @@ Palvelun käyttäjän ip-osoite ja rajapintakutsut, joita ip-osoitteesta on te
 
 ### 6\. Tietojen säilytysaika
 
+Lokitietoja säilytetään soveltuvan lainsäädännön ja Viestintäviraston ohjeen [Lokien keräys ja käyttö](https://www.viestintavirasto.fi/attachments/tietoturva/Lokitusohje.pdf) mukaisesti.
+
 ### 7\. Rekisterin säännönmukaiset tietolähteet
 
 HTTP-pyynnöt, joita käyttäjä lähettää rajapintapalveluun.
@@ -78,5 +80,7 @@ Rekisteröidyllä ei ole oikeutta vaatia tietojen korjaamista.
 ### 13\. Muut henkilötietojen käsittelyyn liittyvät oikeudet
 
 Henkilötietoja ei käytetä eikä luovuteta käytettäväksi suoramainontaa, etämyyntiä ja muuta suoramarkkinointia eikä markkina- ja mielipidetutkimusta eikä henkilömatrikkelia ja sukututkimusta varten.
+
+Rekisteröidyllä on oikeus tehdä valitus valvontaviranomaiselle.
 
 Rekisteröidyllä ei ole muita henkilötietojen käsittelyyn liittyviä oikeuksia.
