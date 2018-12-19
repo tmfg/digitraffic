@@ -18,7 +18,7 @@ links:
   - - Sovellukset
     - /sovellukset
   - - Käyttöehdot
-    - https://www.liikennevirasto.fi/avoindata/kayttoehdot
+    - /kayttoehdot
   - - Liikenneviraston avoin data
     - https://www.liikennevirasto.fi/avoindata
 published: true
