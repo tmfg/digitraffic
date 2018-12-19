@@ -23,6 +23,7 @@ layout: compress
               <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
             </div>
           </div>
+          <div class="header-line header-line__{% if page.ref contains 'road' %}road{% elsif page.ref contains 'marine' %}marine{% elsif page.ref contains 'rail' %}rail{% else %}gradient{% endif %}"></div>
         </div>
       </section>
     
