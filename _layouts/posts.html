@@ -9,50 +9,63 @@ layout: compress
 
   <!--HTML body-->
   <body class="body">
-    
+
     <!--Header-->
-    {% include header.html %}
-    
+    {% include header.html header-classes="header--transparent" %}
+
     <!--Content-->
-    <div class="content content--padded">
-
-      <!--Breadcrumb-->
-      <div class="row">
-        <div class="col-xs-12 breadcrumb"><!--
-        -->{% include breadcrumb-home.html %}<!--
-        --><span class="breadcrumb__item">{{ page.title }}</span>
-        </div>
-      </div>
-
-      <!--Title-->
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="h1 h1--page-top posts-in-category__page-heading">{{ page.title }}</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <!--Page body-->
-        <div class="col-xs-12 col-sm-8 text-body">
-          {% include posts-in-category.html category_fi="Tiedotteet" category_en="News" %}
-        </div>
-        
-        <!--Sidebar-->
-        <div class="col-xs-12 col-sm-4 sidebar">
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
           <div class="row">
-            <div class="col-xs-12 sidebar__filters-heading-col">
-              <h3 class="h3 sidebar__filters-heading">{{ site.t.filter-news[page.lang] }}</h3>
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
             </div>
           </div>
+          {% include header-line.html %}
+        </div>
+      </section>
 
-          {% include sidebar-year-filter.html category=page.title %}
-          {% include sidebar-traffictype-filter.html category=page.title %}
-          {% include sidebar-tag-filter.html category=page.title %}
-
+      <div class="content__section-under-hero content--padded content--github-edit">
+        <!--Breadcrumb-->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          -->{% include breadcrumb-home.html %}<!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
         </div>
 
+        <!--Title-->
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="h1 h1--page-top posts-in-category__page-heading">{{ page.title }}</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <!--Page body-->
+          <div class="col-xs-12 col-sm-8 text-body">
+            {% include posts-in-category.html category_fi="Tiedotteet" category_en="News" %}
+          </div>
+
+          <!--Sidebar-->
+          <div class="col-xs-12 col-sm-4 sidebar">
+            <div class="row">
+              <div class="col-xs-12 sidebar__filters-heading-col">
+                <h3 class="h3 sidebar__filters-heading">{{ site.t.filter-news[page.lang] }}</h3>
+              </div>
+            </div>
+
+            {% include sidebar-year-filter.html category=page.title %}
+            {% include sidebar-traffictype-filter.html category=page.title %}
+            {% include sidebar-tag-filter.html category=page.title %}
+
+          </div>
+
+        </div>
       </div>
-    </div>
+    </content>
 
     <!--footer-->
     {% include footer.html %}

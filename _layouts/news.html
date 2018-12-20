@@ -5,97 +5,110 @@ layout: compress
 {% include next-and-previous-post-in-category.html %}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
   <!--HTML head-->
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="{{ page.lang }}">
+  <body class="body">
     
     <!--Header-->
     {% include header.html %}
     
     <!--Content-->
-    <div class="content content--padded content--github-edit">
-
-      <!--Breadcrumb-->
-      <div class="row">
-        <div class="col-xs-12 breadcrumb"><!--
-        -->{% include breadcrumb-home.html %}<!--
-        -->{% assign category = page.categories[0] %}{% if category == "en" %}{% assign category = page.categories[1] %}{% endif %}<span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}">{{ category }}</a></span><!--
-        --><span class="breadcrumb__item">{{ page.title }}</span>
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+          {% include header-line.html %}
         </div>
-      </div>
+      </section>
 
-      <!--Artice-->
-      <article>
-      
-        <!--Title-->
+      <div class="content__section-under-hero content--padded content--github-edit">
+
+        <!--Breadcrumb-->
         <div class="row">
-          <div class="col-xs-12">
-            <h1 class="h1 h1--page-top">{{ page.title }}</h1>
+          <div class="col-xs-12 breadcrumb"><!--
+          -->{% include breadcrumb-home.html %}<!--
+          -->{% assign category = page.categories[0] %}{% if category == "en" %}{% assign category = page.categories[1] %}{% endif %}<span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}">{{ category }}</a></span><!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
           </div>
         </div>
 
-        <!--Cover image-->
-        {% if page.image != null and page.image != empty %}
-        <div class="row">
-          <div class="col-xs-12 cover-image">
-            <img src="{{ "/img/" | prepend:site.baseurl }}{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
-          </div>
-        </div>
-        {% endif %}
+        <!--Artice-->
+        <article>
 
-        <div class="row">
-          <!--Text body-->
-          <div class="col-xs-12 col-sm-8 text-body">
-            
-            <!--Date, type, tags-->
-            <div class="row">
-              <div class="col-xs-12 u--no-padding">
-                <div class="date-type-tags">
-                  <!-- White spaces commented -->
-                  <span class="date-type-tags__date"><!--
-                -->{% include post-date.html %}<!--
-                --></span><!--
-               --><ul class="date-type-tags__type-list"><!--
-                 -->{% for traffictype in page.traffictypes %}<!--
-                 --><li class="date-type-tags__type"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
-                 -->{% endfor %}<!--
-               --></ul><!--
-               --><ul class="date-type-tags__tag-list"><!--
-                 -->{% for tag in page.tags %}<!--
-                 --><li class="date-type-tags__tag"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
-                 -->{% endfor %}<!--
-               --></ul>
-                <!-- /White spaces commented --> 
+          <!--Title-->
+          <div class="row">
+            <div class="col-xs-12">
+              <h1 class="h1 h1--page-top">{{ page.title }}</h1>
+            </div>
+          </div>
+
+          <!--Cover image-->
+          {% if page.image != null and page.image != empty %}
+          <div class="row">
+            <div class="col-xs-12 cover-image">
+              <img src="{{ "/img/" | prepend:site.baseurl }}{{ page.image }}" alt="Kuva: {{ page.title }}" class="img img--full-width">
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="row">
+            <!--Text body-->
+            <div class="col-xs-12 col-sm-8 text-body">
+
+              <!--Date, type, tags-->
+              <div class="row">
+                <div class="col-xs-12 u--no-padding">
+                  <div class="date-type-tags">
+                    <!-- White spaces commented -->
+                    <span class="date-type-tags__date"><!--
+                  -->{% include post-date.html %}<!--
+                  --></span><!--
+                 --><ul class="date-type-tags__type-list"><!--
+                   -->{% for traffictype in page.traffictypes %}<!--
+                   --><li class="date-type-tags__type"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}?traffictype={{ traffictype | downcase }}">{{ traffictype }}</a></li><!--
+                   -->{% endfor %}<!--
+                 --></ul><!--
+                 --><ul class="date-type-tags__tag-list"><!--
+                   -->{% for tag in page.tags %}<!--
+                   --><li class="date-type-tags__tag"><a class="link" href="{% include url-home.html %}/{{ category | downcase }}?tag={{ tag | downcase }}">{{ tag }}</a></li><!--
+                   -->{% endfor %}<!--
+                 --></ul>
+                  <!-- /White spaces commented -->
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!--Text content-->
-            <div class="row">
-              <div class="col-xs-12 jekyll-content u--no-padding">
-                {{ content }}
+              <!--Text content-->
+              <div class="row">
+                <div class="col-xs-12 jekyll-content u--no-padding">
+                  {{ content }}
+                </div>
               </div>
+
+            </div>
+
+            <!--Sidebar-->
+            <div class="col-xs-12 col-sm-4 sidebar">
+              <!--Next post-->
+              {% include sidebar-next-post.html %}
+              <!--Previous post-->
+              {% include sidebar-previous-post.html %}
+              <!--Related posts-->
+              {% include sidebar-related-posts.html %}
             </div>
 
           </div>
-
-          <!--Sidebar-->
-          <div class="col-xs-12 col-sm-4 sidebar">
-            <!--Next post-->
-            {% include sidebar-next-post.html %}
-            <!--Previous post-->
-            {% include sidebar-previous-post.html %}
-            <!--Related posts-->
-            {% include sidebar-related-posts.html %}
-          </div>
-
-        </div>
-      </article>
-
-    </div>
+        </article>
+      </div>
+    </content>
 
     <!-- Github edit link -->
     {% include github-edit.html %}

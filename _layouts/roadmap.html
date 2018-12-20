@@ -4,16 +4,16 @@ hero-image: train-track-straight
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
   <!--HTML head-->
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="{{ page.lang }}">
-    
+  <body class="body">
+
     <!--Header-->
     {% include header.html header-classes="header--transparent" %}
-    
+
     <!--Content-->
     <content class="content content--transparent-header">
       <section class="hero-image hero-image--{{ page.hero-image }}">
@@ -24,15 +24,16 @@ hero-image: train-track-straight
               <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
             </div>
           </div>
+          {% include header-line.html %}
         </div>
       </section>
-    
+
       <div class="content__section-under-hero content--padded">
 
         <!--Breadcrumb-->
         <div class="row">
           <div class="col-xs-12 breadcrumb"><!--
-          -->{% include breadcrumb-home.html %}<!--          
+          -->{% include breadcrumb-home.html %}<!--
           --><span class="breadcrumb__item">{{ page.title }}</span>
           </div>
         </div>

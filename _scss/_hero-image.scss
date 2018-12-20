@@ -76,6 +76,11 @@
       &__railway-traffic, &__rail {
         background-color: $rail-color;
       }
+
+      &__gradient {
+        background-color: rgb(52, 51, 161);
+        background-image: linear-gradient(90deg, rgb(52, 51, 161), rgb(236, 0, 140));
+      }
     }
   }
 
@@ -126,5 +131,5 @@
   width: 100%;
   height: 0.7rem;
   background-color: rgb(52, 51, 161);
-  background-image: linear-gradient(90deg, rgb(52, 51, 161), rgb(236, 0, 140))
+  background-image: linear-gradient(90deg, rgb(52, 51, 161), rgb(236, 0, 140));
 }
