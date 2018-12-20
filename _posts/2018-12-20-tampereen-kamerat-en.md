@@ -1,6 +1,6 @@
 ---
 title: 'Distribution of weather and traffic camera images from Tampere'
-categories: Tiedotteet
+categories: en News
 image: 
 lang: en
 published: true
