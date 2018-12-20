@@ -3,18 +3,31 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">>
+<html lang="{{ page.lang }}">
   <!--HTML head-->
   {% include head.html %}
 
   <!--HTML body-->
   <body class="body">
-    
+
     <!--Header-->
-    {% include header.html %}
-    
+    {% include header.html header-classes="header--transparent" %}
+
     <!--Content-->
-    <div class="content content--padded">
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+          {% include header-line.html %}
+        </div>
+      </section>
+
+      <div class="content__section-under-hero content--padded content--github-edit">
         <div class="row">
           <!--Text body-->
           <div class="col-xs-12">
@@ -42,7 +55,8 @@ layout: compress
             </div>
           </div>
         </div>
-    </div>
+      </div>
+    </content>
 
     <!--footer-->
     {% include footer.html %}
