@@ -12,7 +12,7 @@ links:
 
 Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.
 
-Sähköposti: 
+Sähköposti: digitraffic@tmfg.fi
 
 Facebook: [www.facebook.com/OpenDigitraffic](https://www.facebook.com/OpenDigitraffic/)
 
