@@ -10,7 +10,7 @@ links:
   - ["Support channels", "/en/support-channels"]
 ---
 
-Email: 
+Email: digitraffic@tmfg.fi
 
 Facebook: [www.facebook.com/OpenDigitraffic](https://www.facebook.com/OpenDigitraffic/)
 
