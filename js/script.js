@@ -33,7 +33,7 @@ function init() {
 
   // Add .header--scrolled if landed in the middle of page
   headerScrolled();
-  
+
   // Get page language for translations
   getPageLanguage();
 
@@ -51,7 +51,7 @@ window.onscroll = () => {
   // Add parallax effect
   parallax();
   parallaxFooter();
-  
+
   // Add .header--scrolled when scrolling page, remove when scrolled to top
   headerScrolled();
 }
@@ -62,11 +62,19 @@ function addEventListeners() {
   let searchElement = document.body.querySelector(".header-menu__item--search");
   let languageElement = document.body.querySelector(".header-menu__item--language");
   let outsideMenu = document.body.querySelector(".content");
-  
-  menuElement.addEventListener("click", toggleMenu);
+
+  if (menuElement) {
+      menuElement.addEventListener("click", toggleMenu);
+  }
+    if (searchElement) {
   searchElement.addEventListener("click", toggleSearch);
-  languageElement.addEventListener("click", toggleLanguage);
-  outsideMenu.addEventListener("click", closeMenuSearchLanguage);
+    }
+    if (languageElement) {
+languageElement.addEventListener("click", toggleLanguage);
+    }
+    if (outsideMenu) {
+        outsideMenu.addEventListener("click", closeMenuSearchLanguage);
+    }
 }
 
 // Add .header--scrolled when scrolling page, remove when scrolled to top
@@ -86,7 +94,7 @@ function headerScrolled() {
 // Toggle menu function
 function toggleMenu() {
   const headerClasses = document.body.querySelector(".header").classList;
-  
+
   // Toggle menu
   if (headerClasses.contains("header--menu-opened")) {
     closeMenu();
@@ -143,7 +151,7 @@ function toggleLanguage() {
 // Close menu, search and language
 function closeMenuSearchLanguage() {
   const headerClasses = document.body.querySelector(".header").classList;
-  
+
   if (headerClasses.contains("header--menu-opened")) {
     closeMenu();
   }
