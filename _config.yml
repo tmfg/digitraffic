@@ -331,7 +331,7 @@ t:
     url:
       en: "/en/road-traffic"
       fi: "/tieliikenne"
-  road-traffic-description:Liikennevirasto
+  road-traffic-description:
     en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Traffic Management Finland."
     fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Traffic Management Finlandin ylläpitämistä tiedonkeruujärjestelmistä."
   road-traffic-button:
