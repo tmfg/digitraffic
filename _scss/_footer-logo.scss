@@ -1,7 +1,15 @@
 .footer-logo {
-  
+
+  height: 8.3rem;
+
+  &__organization {
+    width: 10rem;
+    padding: 0;
+  }
+
   &__service {
     width: 14rem;
     padding: $margin-xssm $margin-md;
+    height: 100%;
   }
 }

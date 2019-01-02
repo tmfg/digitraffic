@@ -3,16 +3,16 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
   <!--HTML head-->
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="fi">
-    
+  <body class="body">
+
     <!--Header-->
     {% include header.html header-classes="header--transparent" %}
-    
+
     <!--Content-->
     <content class="content content--transparent-header">
       <section class="hero-image hero-image--{{ page.hero-image }}">
@@ -23,9 +23,10 @@ layout: compress
               <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
             </div>
           </div>
+          {% include header-line.html %}
         </div>
       </section>
-    
+
       <div class="content__section-under-hero content--padded content--github-edit">
 
         <!--Breadcrumb-->

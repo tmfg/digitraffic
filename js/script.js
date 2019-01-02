@@ -427,14 +427,14 @@ function addOperationStatus(service, status) {
 
   // Clean previous status
   classes.remove(
-    "service-status__icon-circle-bottom--operational",
+    `service-status__icon-circle-bottom--operational__${service}`,
     "service-status__icon-circle-bottom--partial-outage",
     "service-status__icon-circle-bottom--major-outage"
   );
 
   // Update status
   if (status === "operational") {
-    classes.add("service-status__icon-circle-bottom--operational");
+    classes.add(`service-status__icon-circle-bottom--operational__${service}`);
     statusText.textContent = t.statusOperational[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
   } else if (status === "partial outage") {

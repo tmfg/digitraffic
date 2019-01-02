@@ -11,12 +11,13 @@ lang: fi
 ref: road-traffic
 intro: Avointa dataa Suomen tieverkolta.
 links:
-  - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
+  - ["Väylä", "https://vayla.fi"]
+  - ["Traffic Management Finland","https://tmfg.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Tieliikenteen tiedot syntyvät Liikenneviraston ja ELY-keskusten hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
+Tieliikenteen tiedot syntyvät Traffic Management Finlandin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
 Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea.

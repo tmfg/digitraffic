@@ -30,10 +30,17 @@ layout: compress
                       <h1 class="hero-image__heading">{{ site.t.frontpage-heading[page.lang] }}</h1>
                       <p class="hero-image__intro">{{ site.t.frontpage-intro[page.lang] }}</p>
                       <div class="hero-image__button-area">
-                        <a href="{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">info</i><span class="button__text">{{ site.t.service-overview[page.lang] }}</span></button></a>
+                        <a href="{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">
+                          <button class="button">
+                            <i class="button__icon material-icons md-light md-lg">info</i>
+                            <span class="button__text">{{ site.t.service-overview[page.lang] }}</span>
+                            <div class="gradient" />
+                          </button>
+                        </a>
                       </div>
                   </div>
               </div>
+              {% include header-line.html %}
           </div>
       </section>
       <!--Service status-->

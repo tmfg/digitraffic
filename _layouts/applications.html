@@ -4,12 +4,12 @@ hero-image: keyboard
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
   <!--HTML head-->
   {% include head.html %}
 
   <!--HTML body-->
-  <body class="body" lang="{{ page.lang}}">
+  <body class="body">
     
     <!--Header-->
     {% include header.html header-classes="header--transparent" %}
@@ -24,6 +24,7 @@ hero-image: keyboard
               <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
             </div>
           </div>
+          {% include header-line.html %}
         </div>
       </section>
     

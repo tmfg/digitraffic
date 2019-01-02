@@ -2,6 +2,7 @@ name: Digitraffic
 title: Digitraffic
 baseurl:
 repository: finnishtransportagency/digitraffic
+incremental: true
 plugins:
   - jekyll-babel
 sass:

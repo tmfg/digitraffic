@@ -11,12 +11,13 @@ ref: marine-traffic
 title: Meriliikenne
 intro: Avointa dataa Suomen meriltä ja järviltä.
 links:
-  - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
+  - ["Väylä", "https://vayla.fi"]
+  - ["Traffic Management Finland", "https://tmfg.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Meriliikenteen tiedot syntyvät Liikenneviraston operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
+Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
 
 - Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
 

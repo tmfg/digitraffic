@@ -36,10 +36,32 @@
     }
 
     &--operational {
-      background-color: $green;
 
-      .service-status__icon-circle {
-        box-shadow: 0px 0px 10px $green;
+      &__road {
+        box-shadow: 0px 0px 10px $road-color;
+        background-color: $road-color;
+
+        .service-status__icon-circle {
+          box-shadow: 0px 0px 10px $road-color;
+        }
+      }
+
+      &__rail {
+        box-shadow: 0px 0px 10px $rail-color;
+        background-color: $rail-color;
+
+        .service-status__icon-circle {
+          box-shadow: 0px 0px 10px $rail-color;
+        }
+      }
+
+      &__marine {
+        box-shadow: 0px 0px 10px $marine-color;
+        background-color: $marine-color;
+
+        .service-status__icon-circle {
+          box-shadow: 0px 0px 10px $marine-color;
+        }
       }
     }
 
