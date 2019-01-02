@@ -2,7 +2,7 @@
 FROM ubuntu:18.04
 
 
-#Install all the reuirements
+#Install all the requirements
 RUN apt-get update
 
 RUN apt-get install -y locales
