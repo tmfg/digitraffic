@@ -14,4 +14,6 @@ tags:
   - Ylläpito
 ---
 
-tähän tiedote
+Digitraffic-palvelu siirtyy 1.1.2019 Traffic Management Finland Oy:n vastuulle.
+
+Rajapinnat ja niiden käyttöehdot sekä palvelun tukikanavat säilyvät ennallaan.
