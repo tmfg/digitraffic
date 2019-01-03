@@ -38,29 +38,29 @@
     &--operational {
 
       &__road {
-        box-shadow: 0px 0px 10px $road-color;
-        background-color: $road-color;
+        box-shadow: 0px 0px 10px $green;
+        background-color: $green;
 
         .service-status__icon-circle {
-          box-shadow: 0px 0px 10px $road-color;
+          box-shadow: 0px 0px 10px $green;
         }
       }
 
       &__rail {
-        box-shadow: 0px 0px 10px $rail-color;
-        background-color: $rail-color;
+        box-shadow: 0px 0px 10px $green;
+        background-color: $green;
 
         .service-status__icon-circle {
-          box-shadow: 0px 0px 10px $rail-color;
+          box-shadow: 0px 0px 10px $green;
         }
       }
 
       &__marine {
-        box-shadow: 0px 0px 10px $marine-color;
-        background-color: $marine-color;
+        box-shadow: 0px 0px 10px $green;
+        background-color: $green;
 
         .service-status__icon-circle {
-          box-shadow: 0px 0px 10px $marine-color;
+          box-shadow: 0px 0px 10px $green;
         }
       }
     }
