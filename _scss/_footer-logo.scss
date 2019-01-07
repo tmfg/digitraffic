@@ -9,7 +9,20 @@
 
   &__service {
     width: 14rem;
-    padding: $margin-xssm $margin-md;
+    padding: $margin-xxxs $margin-xxxs;
     height: 100%;
+  }
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: $max-width-sm) {
+    height: 4.1rem;
+
+    &__organization {
+      width: 5rem;
+    }
+
+    &__service {
+      width: 12rem;
+    }
   }
 }

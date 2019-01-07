@@ -28,20 +28,14 @@
 
     &__organization {
       height: 50px;
-      width: 72px;
+      width: 70px;
       padding: $margin-xxs 0;
     }
 
     &__service {
       height: 50px;
-      width: 199px;
-      padding: 1em;
-    }
-  }
-
-  @media screen and (max-width: 380px) {
-    &__service {
       width: 150px;
+      padding: 1em;
     }
   }
 }
@@ -53,8 +47,8 @@
   transition: $transition-faster;
 
   &__organization {
-    height: 80px;
-    width: 70px;
+    height: 50px;
+    width: 54px;
     padding: $margin-xxs 0;
     transition: $transition-faster;
   }
@@ -69,6 +63,10 @@
   @media screen and (max-width: 380px) {
     &__service {
       width: 150px;
+    }
+
+    &__organization {
+      width: 54px;
     }
   }
 }
