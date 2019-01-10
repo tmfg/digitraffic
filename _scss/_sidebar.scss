@@ -161,7 +161,8 @@
   }
 
   /* Media queries for different screen sizes */
-  @media screen and (min-width: $min-width-sm) {
+  @media screen and (max-width: 767px) {
     padding-left: $margin-xssm;
+    order: -2;
   }
 }
