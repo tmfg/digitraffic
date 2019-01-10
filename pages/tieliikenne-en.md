@@ -131,6 +131,11 @@ Response message contains traffic disorders those have significant impact on tra
 
 Disorders contain TMC location information to identify occurence area or location of the disorder.
 
+NB! Dates are include in multiple formats. Under published tag, there is utc 
+and localtime fields that are in UTC (Zulu) time. Other times are in local time 
+with offset from the UTC. Best practice is to use some library that can parse 
+date and times properly with any offset from ISO 8601 date format.
+
 [```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
 
 ### Weight restrictions
@@ -142,6 +147,11 @@ Disorders contain TMC location information to identify occurence area or locatio
 [```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
 
 Weight restrictions use the TMC location information to identify the affected area or location of the weight restriction.
+
+NB! Dates are include in multiple formats. Under published tag, there is utc 
+and localtime fields that are in UTC (Zulu) time. Other times are in local time 
+with offset from the UTC. Best practice is to use some library that can parse 
+date and times properly with any offset from ISO 8601 date format.
 
 ### Roadworks
 
@@ -155,6 +165,11 @@ The dataset is updated three times per day, at 08:00, at 12:00 and at 16:00 (loc
 
 The location of the road works is presented with the TMC location data. The location data is available also through the Digitraffic API:
 [```https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET```](https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET)
+
+NB! Dates are include in multiple formats. Under published tag, there is utc 
+and localtime fields that are in UTC (Zulu) time. Other times are in local time 
+with offset from the UTC. Best practice is to use some library that can parse 
+date and times properly with any offset from ISO 8601 date format.
 
 ### Status of road weather stations
 

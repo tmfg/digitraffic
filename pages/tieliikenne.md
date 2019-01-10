@@ -140,6 +140,14 @@ Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittävi
 
 Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen.
 
+HUOM! Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
+Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
+on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen 
+Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen
+poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa
+käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä
+tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
+
 [```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
 
 ### Painorajoitteet
@@ -152,6 +160,14 @@ Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantietee
 
 Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantieteellisen sijainnin ilmoittamiseen.
 
+HUOM! Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
+Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
+on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen 
+Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen
+poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa
+käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä
+tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
+
 ### Tietyöt
 
 [```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
@@ -163,6 +179,14 @@ Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantiet
 Tietyöt käyttävät TMC-paikannusmerkistöä tietöiden maantieteellisen sijainnin ilmoittamiseen.
 
 TMC-paikkatietojen rajapintadokumentaatio: [```https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET```](https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET)
+
+HUOM! Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
+Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
+on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen 
+Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen
+poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa
+käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä
+tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
