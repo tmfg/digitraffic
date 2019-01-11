@@ -35,7 +35,7 @@ Digitraffic-palvelun käytön valvonta ja häiriötilanteiden selvitys.
 
 ### 5\. Rekisterin tietosisältö
 
-Palvelun käyttäjän ip\-osoite ja rajapintakutsut, joita ip-osoitteesta on tehty sekä tieto rajapintakutsun onnistumisesta (HTTP-paluukoodi) sekä aikaleima kullekin kutsulle.
+Palvelun käyttäjän ip-osoite ja rajapintakutsut, joita ip-osoitteesta on tehty sekä tieto rajapintakutsun onnistumisesta (HTTP-paluukoodi) sekä aikaleima kullekin kutsulle.
 
 ### 6\. Tietojen säilytysaika
 
@@ -62,7 +62,7 @@ Rekisterin ylläpitoon ei liity manuaalista aineistonhallintaa.
 
 <p>
 B ATK:lla käsiteltävät tiedot<br />
-Rekisterin tietoja käsitellään Traffic Management Finlandin tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic -palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
+Rekisterin tietoja käsitellään Traffic Management Finlandin tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic-palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
 </p>
 
 ### 11\. Tarkastusoikeus
