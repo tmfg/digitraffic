@@ -417,3 +417,8 @@ t:
     statusPartialOutage:
       en: "Partial outage"
       fi: "Osittainen katkos"
+
+  # Footer note of supported browsers
+  supported-browsers:
+    en: "The site is designed to work with the latest versions of the most common modern browsers, such as Chrome, Firefox, Microsoft Edge and Safari. IE is not supported."
+    fi: "Sivusto on suunniteltu toimimaan yleisimpien modernien selainten uusimmilla versioilla, kuten Chrome, Firefox, Microsoft Edge ja Safari. IE ei ole tuettu."
