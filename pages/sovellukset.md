@@ -5,5 +5,5 @@ searchable: true
 lang: fi
 ref: applications
 title: Sovellukset
-intro: Liikenneviraston avointa dataa ja rajapintoja käyttäviä sovelluksia
+intro: Traffic Management Finlandin avointa dataa ja rajapintoja käyttäviä sovelluksia
 ---

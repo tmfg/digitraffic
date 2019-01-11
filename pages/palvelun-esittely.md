@@ -19,8 +19,8 @@ links:
     - /sovellukset
   - - Käyttöehdot
     - /kayttoehdot
-  - - Liikenneviraston avoin data
-    - https://www.liikennevirasto.fi/avoindata
+  - - Väylän avoin data
+    - https://vayla.fi/avoindata
 published: true
 ---
 

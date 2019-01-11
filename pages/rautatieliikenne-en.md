@@ -11,7 +11,9 @@ lang: en
 title: Railway traffic
 intro: Timetables, delays, locations and composition of trains operating in Finland
 links:
-  - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
+  - ["Väylä", "https://vayla.fi"]
+  - ["Traffic Management Finland", "https://tmfg.fi"]
+  - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
 # RATA.DIGITRAFFIC.FI

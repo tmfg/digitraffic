@@ -33,8 +33,8 @@ links:
     - /sisäisen-sivun-polku
   - - Linkin teksti
     - http://www.ulkoisen-linkin-osoite.fi
-  - - Liikennevirasto
-    - http://www.liikennevirasto.fi
+  - - Traffic Management Finland
+    - https://tmfg.fi/
   - - http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
 ```
 
@@ -43,8 +43,8 @@ Yksi linkki sisältää sivupalkissa näkyvän tekstin ja linkin osoitteen. Osoi
 Linkin teksti ja osoite ovat listassa peräkkäin. Tekstin edessä on kaksi väliviivaa `- -` ja osoitteen perässä vain yksi `-`.
 
 ```
-- - Liikennevirasto
-  - http://www.liikennevirasto.fi
+- - Traffic Management Finland
+  - https://tmfg.fi/
 ```
 
 Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyttää itse osoite tekstinä, lisätään vain yksi rivi jossa on edessä kaksi väliviivaa `- -`.

@@ -11,23 +11,23 @@ title: Tietosuojaseloste
 ### 1\. Rekisterinpitäjä
 
 <p>
-Liikennevirasto<br />
-Opastinsilta 12 A, 00520 Helsinki<br />
-digitraffic@liikennevirasto.fi
+Traffic Management Finland<br />
+Palkkatilanportti 1, 00240 Helsinki<br />
+digitraffic@tmfg.fi
 </p>
 
 
 ### 2\. Yhteys rekisteriä koskevissa asioissa
 
 <p>
-Markku Pitkänen<br />
-Raatimiehenkatu 23, 53100 Lappeenranta<br />
-markku.pitkanen@liikennevirasto.fi
+Mika Ahvenainen<br />
+Palkkatilanportti 1, 00240 Helsinki<br />
+digitraffic@tmfg.fi
 </p>
 
 ### 3\. Rekisterin nimi
 
-Digitraffic -palvelu
+Digitraffic-palvelu
 
 ### 4\. Rekisterin käyttötarkoitus
 
@@ -35,7 +35,7 @@ Digitraffic-palvelun käytön valvonta ja häiriötilanteiden selvitys.
 
 ### 5\. Rekisterin tietosisältö
 
-Palvelun käyttäjän ip-osoite ja rajapintakutsut, joita ip-osoitteesta on tehty sekä tieto rajapintakutsun onnistumisesta (HTTP-paluukoodi) sekä aikaleima kullekin kutsulle.
+Palvelun käyttäjän ip\-osoite ja rajapintakutsut, joita ip-osoitteesta on tehty sekä tieto rajapintakutsun onnistumisesta (HTTP-paluukoodi) sekä aikaleima kullekin kutsulle.
 
 ### 6\. Tietojen säilytysaika
 
@@ -47,7 +47,7 @@ HTTP-pyynnöt, joita käyttäjä lähettää rajapintapalveluun.
 
 ### 8\. Säännönmukaiset tietojen luovutukset
 
-Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Liikenneviraston toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
+Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Traffic Management Finlandin toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
 
 ### 9\. Tietojen siirto EU:n tai ETA:n ulkopuolelle
 
@@ -62,7 +62,7 @@ Rekisterin ylläpitoon ei liity manuaalista aineistonhallintaa.
 
 <p>
 B ATK:lla käsiteltävät tiedot<br />
-Rekisterin tietoja käsitellään Liikenneviraston tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic -palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
+Rekisterin tietoja käsitellään Traffic Management Finlandin tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic -palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
 </p>
 
 ### 11\. Tarkastusoikeus

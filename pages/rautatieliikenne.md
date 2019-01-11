@@ -11,7 +11,8 @@ ref: railway-traffic
 title: Rautatieliikenne
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
-  - ["Liikennevirasto", "http://www.liikennevirasto.fi"]
+  - ["Väylä", "https://vayla.fi"]
+  - ["Traffic Management Finland", "https://tmfg.fi"]
   - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
@@ -1258,5 +1259,5 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](ht
 
 [Käyttöehdot](/kayttoehdot) -sivulla on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
-[Liikenneviraston avoimen datan sivustolla](https://www.liikennevirasto.fi/avoindata/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
+[Väylän avoimen datan sivustolla](https://vayla.fi/avoindata/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 

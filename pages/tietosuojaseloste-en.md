@@ -11,26 +11,26 @@ title: Privacy policy
 ### Data Controller
 
 <p>
-Liikennevirasto<br />
-Opastinsilta 12 A, 00520 Helsinki<br />
-digitraffic@liikennevirasto.fi
+Traffic Management Finland<br />
+Palkkatilanportti 1, 00240 Helsinki<br />
+digitraffic@tmfg.fi
 </p>
 
 
 ### Contact
 
 <p>
-Markku Pitkänen<br />
-Raatimiehenkatu 23, 53100 Lappeenranta<br />
-markku.pitkanen@liikennevirasto.fi
+Mika Ahvenainen<br />
+Palkkatilanportti 1, 00240 Helsinki<br />
+digitraffic@tmfg.fi
 </p>
 
-### Name and Contact Details of  the Data Protection Officer
+### Name and Contact Details of the Data Protection Officer
 
 <p>
   Tomi Lapinlampi <br />
-  tomi.lapinlampi@liikennevirasto.fi <br />
-  </p>
+  digitraffic@tmfg.fi <br />
+</p>
 
 ### Filing system name
 
