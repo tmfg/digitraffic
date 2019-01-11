@@ -161,6 +161,14 @@
   }
 
   /* Media queries for different screen sizes */
+  @media screen and (min-width: $min-width-sm) {
+    padding-left: $margin-xssm;
+  }
+}
+
+.sidebar-filter {
+  /* Media queries for different screen sizes.
+     Filters in sidebar to top on mobile screen */
   @media screen and (max-width: 767px) {
     order: -2;
   }
