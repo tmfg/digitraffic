@@ -1,5 +1,5 @@
 ---
-layout: rata
+layout: traffictype
 permalink: /rautatieliikenne/
 section: Tietolähteet
 traffictypes: Rautatieliikenne

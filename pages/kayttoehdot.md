@@ -36,6 +36,6 @@ Traffic Management Finland voi aina pyytää nimeämistietojen ja tekijänoikeus
 
 Rata.digitraffic.fi -rajapinnan tietojen käyttö verkkosivulla tai sovelluksessa. Sivulle tai sovellukseen lisätään seuraava teksti linkkeineen:
 
-Liikennetietojen lähde Traffic Management Finland / rata.digitraffic.fi, lisenssi CC 4.0 BY
+Liikennetietojen lähde Traffic Management Finland / digitraffic.fi, lisenssi CC 4.0 BY
 
 Nimeämistietojen merkintätavoista löytyy tarkempia ohjeita [Creative Commonsin verkkosivuilta](https://creativecommons.org/).

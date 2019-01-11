@@ -63,11 +63,11 @@ t:
       en: "/en/road-traffic"
       fi: "/tieliikenne"
   rautatieliikenne:
-    en: "Railway"
+    en: "Rail"
     fi: "Rautatieliikenne"
     url:
-      en: "https://rata.digitraffic.fi"
-      fi: "https://rata.digitraffic.fi"
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
   meriliikenne:
     en: "Marine"
     fi: "Meriliikenne"
@@ -135,7 +135,7 @@ t:
     en: "Support"
     fi: "Tuki"
   swagger-api:
-    en: "Swagger-api"
+    en: "Swagger API specification"
     fi: "Swagger-rajapintakuvaus"
   # Footer
   contact:
@@ -151,23 +151,23 @@ t:
       en: "/en/privacy-policy"
       fi: "/tietosuojaseloste"
   finnish-transport-agency-web:
-    en: "Finnish Transport Agency"
-    fi: "Liikennevirasto.fi"
+    en: "Finnish Transport Infrastructure Agency"
+    fi: "Väylä"
     url:
-      en: "https://www.liikennevirasto.fi/web/en"
-      fi: "https://www.liikennevirasto.fi/"
+      en: "https://vayla.fi/web/en"
+      fi: "https://vayla.fi/"
   finnish-transport-agency-open-data:
-    en: "Finnish Transport Agency open data"
-    fi: "Liikenneviraston avoin data"
+    en: "Finnish Transport Infrastructure Agency open data"
+    fi: "Väylän avoin data"
     url:
-      en: "https://www.liikennevirasto.fi/web/en/open-data"
-      fi: "https://www.liikennevirasto.fi/avoindata"
+      en: "https://vayla.fi/web/en/open-data"
+      fi: "https://vayla.fi/avoindata"
   finnish-open-data:
     en: "Finnish open data"
     fi: "Avoindata.fi"
     url:
-      en: "https://www.avoindata.fi/data/en/organization/liikennevirasto"
-      fi: "https://www.avoindata.fi/data/fi/organization/liikennevirasto"
+      en: "https://www.avoindata.fi/data/en/organization/vayla"
+      fi: "https://www.avoindata.fi/data/fi/organization/vayla"
   traffic-lab:
     en: "Traffic Lab"
     fi: "Liikennelabra.fi"
@@ -185,8 +185,8 @@ t:
       en: ", by "
       fi: ", jonka tekijä on "
     attribution:
-      en: "Finnish Transport Agency"
-      fi: "Liikennevirasto"
+      en: "Traffic Management Finland"
+      fi: "Traffic Management Finland"
       url:
         en: "http://www.digitraffic.fi/en"
         fi: "http://www.digitraffic.fi"
@@ -316,8 +316,8 @@ t:
     en: "Railway traffic"
     fi: "Rautatieliikenne"
     url:
-      en: "https://rata.digitraffic.fi"
-      fi: "https://rata.digitraffic.fi"
+      en: "/en/railway-traffic"
+      fi: "/rautatieliikenne"
   railway-traffic-description:
     en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
     fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."
@@ -331,8 +331,8 @@ t:
       en: "/en/road-traffic"
       fi: "/tieliikenne"
   road-traffic-description:
-    en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Finnish Transport Agency."
-    fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Liikenneviraston ylläpitämistä tiedonkeruujärjestelmistä."
+    en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Traffic Management Finland."
+    fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Traffic Management Finlandin ylläpitämistä tiedonkeruujärjestelmistä."
   road-traffic-button:
     en: "Road traffic APIs"
     fi: "Tietoliikenne tietolähteet"
@@ -349,8 +349,8 @@ t:
       en: "/en/support-channels"
       fi: "/tukikanavat"
   support-channels-description:
-    en: "Public Google groups provide support and communication between developers, service provider and Finnish Transport Agency."
-    fi: "Kehittäjien, palvelun ylläpitäjän ja Liikenneviraston väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
+    en: "Public Google groups provide support and communication between developers, service provider and Traffic Management Finland."
+    fi: "Kehittäjien, palvelun ylläpitäjän ja Traffic Management Finlandin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
 
   # API status
   recent-outages:
