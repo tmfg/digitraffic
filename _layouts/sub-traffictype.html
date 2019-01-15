@@ -32,8 +32,9 @@ layout: compress
         <!--Breadcrumb-->
         <div class="row">
           <div class="col-xs-12 breadcrumb"><!--
-          -->{% include breadcrumb-home.html %}<!--
-          --><span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ site.t.tieliikenne.url[page.lang] }}">{{ site.t.tieliikenne[page.lang] }}</a></span><!--
+          -->{% include breadcrumb-home.html %}<!--          
+          -->{% assign cuturl = page.lang | prepend: "/" %}<!--
+          --><span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ site.t.tieliikenne.url[page.lang] | remove_first: cuturl }}">{{ site.t.road-traffic[page.lang] }}</a></span><!--
           --><span class="breadcrumb__item">{{ page.title }}</span>
           </div>
         </div>
