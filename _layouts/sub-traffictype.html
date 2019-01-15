@@ -1,0 +1,66 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+  <!--HTML head-->
+  {% include head.html %}
+
+  <!--HTML body-->
+  <body class="body">
+
+    <!--Header-->
+    {% include header.html header-classes="header--transparent" %}
+
+    <!--Content-->
+    <content class="content content--transparent-header">
+      <section class="hero-image hero-image--{{ page.hero-image }}">
+        <div class="hero-image__overlay">
+          <div class="row">
+            <div class="col-xs">
+              <h1 class="hero-image__heading">{{ page.title }}</h1>
+              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+            </div>
+          </div>
+          {% include header-line.html %}
+        </div>
+      </section>
+
+      <div class="content__section-under-hero content--padded content--github-edit">
+
+        <!--Breadcrumb-->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          -->{% include breadcrumb-home.html %}<!--
+          --><span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ site.t.tieliikenne.url[page.lang] }}">{{ site.t.tieliikenne[page.lang] }}</a></span><!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
+        </div>
+
+        <!--Artice-->
+        <article>
+          <div class="row">
+            <!--Text body-->
+            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+              {{ content }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              {% if page.swagger-source.size > 0 %}{% include swagger-ui.html %}{% endif %}
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </content>
+
+    <!-- Github edit link -->
+    {% include github-edit.html %}
+
+    <!--footer-->
+    {% include footer.html %}
+
+  </body>
+</html>

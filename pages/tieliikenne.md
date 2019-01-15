@@ -138,7 +138,7 @@ Yksinkertainen JavaScript WebSocket -asiakassovellus:
 
 Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittäviä tieliikenteen sujuvuuteen vaikuttavia häiriöitä. Tällaisia ovat esimerkiksi liikenneonnettomuudesta johtuvat poikkeusjärjestelyt.
 
-Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen.
+Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannusmerkistöstä löytyy [täältä](paikannusnimisto).
 
 Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
 Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
@@ -158,7 +158,7 @@ tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 [```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
 
-Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantieteellisen sijainnin ilmoittamiseen.
+Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannusmerkistöstä löytyy [täältä](paikannusnimisto).
 
 Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
 Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
@@ -176,7 +176,7 @@ tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 [```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId})
 
-Tietyöt käyttävät TMC-paikannusmerkistöä tietöiden maantieteellisen sijainnin ilmoittamiseen.
+Tietyöt käyttävät TMC-paikannusmerkistöä tietöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannusmerkistöstä löytyy [täältä](paikannusnimisto).
 
 TMC-paikkatietojen rajapintadokumentaatio: [```https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET```](https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET)
 
