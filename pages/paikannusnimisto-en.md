@@ -22,7 +22,7 @@ _First column (no quantifier):_ Each event has been examined and it has been dec
 
 _Second column (quantifier = 1):_ For all events where the quantifiers are numbers without a unit  (type 0 and 1 - see Alert C standard) the sentences are finished - either using or not using the number. 
 
-If the Finnish words in the sentence signalises the number (=1) then no number is included in the sen-tence (E.g. "Q lane(s) blocked" transformed into Finnish is "kaista suljettu"  - "Q kaistaa suljettu " in plu-ral). 
+If the Finnish words in the sentence signalises the number (=1) then no number is included in the sen-tence (E.g. "Q lane(s) blocked" transformed into Finnish is "kaista suljettu"  - "Q kaistaa suljettu " in plural). 
 
 For all other quantifier types the Q is maintained in the event list (E.g. "closed for heavy vehicles (over Q)").
 
