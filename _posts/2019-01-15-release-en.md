@@ -17,7 +17,7 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-658 - Datex2-rajapintojen dokumentointi aikaleimojen osalta
-Swagger-tekstejä päivitetty(TMF)
+- DPO-658 - Datex2-rajapintojen dokumentointi aikaleimojen osalta
+- Swagger-tekstejä päivitetty(TMF)
 
 We apologize for any inconvenience.

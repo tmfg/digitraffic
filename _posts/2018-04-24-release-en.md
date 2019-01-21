@@ -16,6 +16,6 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-392 org.quartz-scheduler updated to version 2.3.0
+- DPO-392 org.quartz-scheduler updated to version 2.3.0
 
 We apologize for any inconvenience.

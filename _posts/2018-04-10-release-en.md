@@ -16,6 +16,6 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-Weight restrictions and roadworks moved to v1-API
+- Weight restrictions and roadworks moved to v1-API
 
 We apologize for any inconvenience.

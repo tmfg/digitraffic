@@ -17,12 +17,9 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-651 - Jenkinsiin SchemaSpy jobi
-
-DPO-610 - NGINX conffin versiotieto näkyville johonkin location / endpointtiin
-
-DPO-603 - Poistetaan websocket-rajapinnat koodeista
-
-DPO-486 - Portcall rajapintojen kokorajaus täytyy dokumentoida
+- DPO-651 - Jenkinsiin SchemaSpy jobi
+- DPO-610 - NGINX conffin versiotieto näkyville johonkin location / endpointtiin
+- DPO-603 - Poistetaan websocket-rajapinnat koodeista
+- DPO-486 - Portcall rajapintojen kokorajaus täytyy dokumentoida
 
 We apologize for any inconvenience.

@@ -16,6 +16,6 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-681 Kameroiden metatiedot eivät päivity: duplicate key
+- DPO-681 Kameroiden metatiedot eivät päivity: duplicate key
 
 We apologize for any inconvenience.

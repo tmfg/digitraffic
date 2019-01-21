@@ -16,7 +16,7 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-696 - Tiesääaseminen data ei päivity, jos yksikin datan sisältämä asema puuttuu - korjataan asemien päivitys kestämään tämä tilanne
-DPO-555 - Sivustolla oleva meripuolen swagger rajapintakuvaus ilmoittaa errorista sivun lopussa
+- DPO-696 - Tiesääaseminen data ei päivity, jos yksikin datan sisältämä asema puuttuu - korjataan asemien päivitys kestämään tämä tilanne
+- DPO-555 - Sivustolla oleva meripuolen swagger rajapintakuvaus ilmoittaa errorista sivun lopussa
 
 We apologize for any inconvenience.

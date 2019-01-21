@@ -16,12 +16,9 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-545 - WinterNavigationService.getWinterNavigationShips on hidas koka-ympäristössä
-
-DPO-348 - Tiepuolen Websocketin statistiikan lokitus ja visualisointi Kibanaan
-
-DPO-458 - Binääriviestit käyttöön kuvaviesteille ja tiesäälle
-
-DPO-513 - LOTJU Binääriprotokollan korvaamat vanhat xml-skemat poistetaan
+- DPO-545 - WinterNavigationService.getWinterNavigationShips on hidas koka-ympäristössä
+- DPO-348 - Tiepuolen Websocketin statistiikan lokitus ja visualisointi Kibanaan
+- DPO-458 - Binääriviestit käyttöön kuvaviesteille ja tiesäälle
+- DPO-513 - LOTJU Binääriprotokollan korvaamat vanhat xml-skemat poistetaan
 
 We apologize for any inconvenience.

@@ -16,10 +16,8 @@ Digitraffic production applications have been updated.
 
 Changelog:
 
-DPO-487 - Portcall rajapintoihin from parametrin lisäksi to, jolloin saadaan tehtyä aikarajaus
-
-DPO-458 - Binääriviestit käyttöön kuvaviesteille ja tiesäälle
-
-DPO-348 - Tiepuolen Websocketin statistiikan lokitus ja visualisointi Kibanaan
+- DPO-487 - Portcall rajapintoihin from parametrin lisäksi to, jolloin saadaan tehtyä aikarajaus
+- DPO-458 - Binääriviestit käyttöön kuvaviesteille ja tiesäälle
+- DPO-348 - Tiepuolen Websocketin statistiikan lokitus ja visualisointi Kibanaan
 
 We apologize for any inconvenience.
