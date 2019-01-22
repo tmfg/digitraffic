@@ -123,6 +123,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 22.1.2019
+    * Suojattu MQTT-yhteys
 * 16.11.2018
     * Aikataulukaudet ja muutosajankohdat
 * 30.10.2018
