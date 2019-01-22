@@ -36,7 +36,7 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
     - [Yhden laivan seuraaminen mmsi:n perusteella](#yhden-laivan-seuraaminen-mmsin-perusteella)
     - [Aluksen metadata-viesti](#aluksen-metadata-viesti)
     - [Aluksen sijainti-viesti](#aluksen-sijainti-viesti)
-    - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--clientti)
+    - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
 - [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
@@ -51,6 +51,10 @@ Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla
 ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
 Tuotannon osoite on wss://meri.digitraffic.fi:61619/mqtt
+
+Kirjautuessa tulee käyttää SSL-yhteyttä.  Lisäksi palveluun täytyy kirjautua seuraavin tiedoin:
+* userName:digitraffic
+* password:digitrafficPassword
 
 Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 61619, esimerkki alempana.
 
