@@ -36,7 +36,7 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
     - [Tracking a single vessel with mmsi-number](#tracking-a-single-vessel-with-mmsi-number)
     - [Vessel metadata-message](#vessel-metadata-message)
     - [Vessel location-message](#vessel-location-message)
-    - [Simple JavaScript WebSocket -client](#simple-javascript-websocket-client)
+    - [Simple JavaScript Web Socket -client](#simple-javascript-web-socket-client)
 - [Swagger-api](#swagger-api)
 
 ## REST/JSON -API
