@@ -36,7 +36,7 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
     - [Tracking a single vessel with mmsi-number](#tracking-a-single-vessel-with-mmsi-number)
     - [Vessel metadata-message](#vessel-metadata-message)
     - [Vessel location-message](#vessel-location-message)
-    - [Simple JavaScript WebSocket -client](#simple-javascript-websocket--client)
+    - [Simple JavaScript WebSocket -client](#simple-javascript-websocket-client)
 - [Swagger-api](#swagger-api)
 
 ## REST/JSON -API
@@ -51,6 +51,10 @@ Vessel locations can be tracked from following Web Socket APIs.  Protocol is MQT
 you to subscibe only those topics you are interested in.
 
 Production address is wss://meri.digitraffic.fi:61619/mqtt
+
+You must use SSL when connecting.  Also, you need to use following credentials:
+* userName:digitraffic
+* password:digitrafficPassword
 
 When using Paho JS-client the address is plain meri.digitraffic.fi and port 61619, see example below.  
 
