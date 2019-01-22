@@ -933,9 +933,9 @@ Aktiivisen hakemisen sijasta dataa voidaan myös kuunnella. Tähän käytetään
 
 MQTT vastaa kolmesta portista
 
-1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/) 
-1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:9001. Esimerkki: [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
-1. Normaalin TCP-yhteyden kautta osoitteessa rata.digitraffic.fi:80. Esimerkki: [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
+1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/) 
+1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [http://jsfiddle.net/nj9dg6hp/](http://jsfiddle.net/nj9dg6hp/)
+1. Normaalin TCP-yhteyden kautta osoitteessa rata.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
 
 MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen junan kokoonpanoa topicista `compositions/+/5/#`. Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
@@ -943,7 +943,7 @@ MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voida
 
 Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
 
-Esimerkki: [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
+Esimerkki: [http://jsfiddle.net/q07ad2hb/](http://jsfiddle.net/q07ad2hb/)
 
 **Paluuarvo**
 
@@ -953,7 +953,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 Topic: `trains-by-station/<station>/`
 
-Esimerkki: [http://jsfiddle.net/a9dgjm10/1/](http://jsfiddle.net/a9dgjm10/1/)
+Esimerkki: [http://jsfiddle.net/bkeav28u/](http://jsfiddle.net/bkeav28u/)
 
 **Paluuarvo**
 
@@ -963,7 +963,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 Topic: `train-locations/<departure_date>/<train_number>/`
 
-Esimerkki: [http://jsfiddle.net/k8sfd4an/53/](http://jsfiddle.net/k8sfd4an/53/)
+Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/)
 
 **Paluuarvo**
 
@@ -983,7 +983,7 @@ Palauttaa [kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
 Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
 
-Esimerkki: [http://jsfiddle.net/cb2uj7kg/3/](http://jsfiddle.net/cb2uj7kg/3/)
+Esimerkki: [http://jsfiddle.net/3k4e8wyf/](http://jsfiddle.net/3k4e8wyf/)
 
 **Paluuarvo**
 
