@@ -7,6 +7,7 @@ published: true
 ref: 2019-01-22-release
 traffictypes:
   - Road
+  - Marine
 tags:
   - APIs
   - Admin
