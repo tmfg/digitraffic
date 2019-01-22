@@ -826,7 +826,7 @@ Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määrit
 
 **Paluuarvo**
 
-Palauttaa [Herätepisteet](#herätepisteet)-tyyppisen vastauksen.
+Palauttaa [Herätepisteet](#herätepisteet-1)-tyyppisen vastauksen.
 
 ### Aikataulukaudet ja muutosajankohdat
 
