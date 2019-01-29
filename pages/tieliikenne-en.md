@@ -51,6 +51,9 @@ Currently the open data API includes:
     - [Weight restrictions](#weight-restrictions)
     - [Roadworks](#roadworks)
     - [Status of road weather stations](#status-of-road-weather-stations)
+- [WebSocket -API](#websocket-api)
+    - [Topics](#topics)
+    - [Simple JavaScript Web Socket -client](#simple-javascript-web-socket-client)
 - [Swagger-documentation](#swagger-api)
 
 ## REST/JSON -APIs
@@ -106,19 +109,11 @@ Response message contains road specific weather forecasts. Reports are updated e
 
 [```http://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
 
-[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata)
-
-[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
-
 Response message contains TMS (Traffic Measurement System)–stations measurement data.
 
 Every TMS station provides information about traffic amounts and measured average speeds.
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute. 
-
-Simple JavaScript Web Socket - client application:
-
-[```https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html```](https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html)
 
 ### Traffic disorders
 
@@ -183,3 +178,137 @@ date and times properly with any offset from ISO 8601 date format.
 Response message contains latest weather measurement data.
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute.
+
+## WebSocket API
+
+TMC-data can be tracked from following Web Socket APIs. Protocol is MQTT over WebSockets. This allows
+you to subscibe only those topics you are interested in.
+
+Production address is wss://tie.digitraffic.fi:61619/mqtt
+
+You must use SSL when connecting. Also, you need to use following credentials:
+* userName:digitraffic
+* password:digitrafficPassword
+
+When using Paho JS-client the address is plain tie.digitraffic.fi and port 61619, see example below.  
+
+Address for test is tie-test.digitraffic.fi
+
+#### Topics
+
+Topics are constructed like this:
+
+- tms/\<roadStationId>/\<sensorId\>
+- tms/status
+- weather/\<roadStationId>/\<sensorId\>
+- weather/status
+
+#### TMS-message
+
+```
+{
+  "id": 5122,
+  "roadStationId": 23307,
+  "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1",
+  "oldName":" averageSpeed1",
+  "shortName": "km/h1",
+  "sensorValue": 84,
+  "sensorUnit":" km/h",
+  "measuredTime": "2019-01-23T08:25:02Z"
+}
+```
+
+#### Weather-message
+
+```
+{
+  "id": 1,
+  "roadStationId": 1158,
+  "name": "ILMA",
+  "oldName": "airtemperature1",
+  "shortName": "Ilma ",
+  "sensorValue": -2.2,
+  "sensorUnit": "°C",
+  "measuredTime": "2019-01-23T08:35:00Z"
+}
+
+```
+
+#### Simple JavaScript Web Socket client
+
+```
+<html>
+<head>
+    <title>Test mqtt tms-messages</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js"></script>
+
+    <script>
+        'use strict';
+        const lines = [];
+        let messagesLastMinuteCount = 0, client;
+
+        function connect() {
+            console.log('trying to connect to road mqtt...');
+
+            client = new Paho.MQTT.Client("tie-aws-mqtt-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
+
+            client.onConnectionLost = function (response) {
+                console.info(Date.now() + ' Connection lost:' + response.errorMessage);
+            };
+            client.onMessageArrived = function(message) {
+                messagesLastMinuteCount++;
+
+                addMessage(JSON.parse(message.payloadString));
+
+                updateList();
+            };
+
+            const connectionProperties = {
+                onSuccess:onConnect,
+                mqttVersion:4,
+                useSSL:true,
+                userName:"digitraffic",
+                password:"digitrafficPassword"
+            };
+
+            client.connect(connectionProperties);
+
+            window.setInterval(logMessageCount, 60*1000);
+        }
+
+        function logMessageCount() {
+            console.info(Date.now() + ' ' + messagesLastMinuteCount + ' messages per minute');
+            $("#messagesPerMinute").text(messagesLastMinuteCount);
+            messagesLastMinuteCount = 0;
+        }
+
+        function onConnect() {
+            console.info(Date.now() + ' Connection open');
+            client.subscribe("tms/#");
+        }
+
+        function addMessage(message) {
+            const text = JSON.stringify(message);
+
+            if (lines.length > 100) {
+                lines.shift();
+            }
+
+            lines.push(text);
+        }
+
+        function updateList() {
+            $(".messages").html(lines.join('<br/>'));
+        }
+
+        connect();
+    </script>
+</head>
+<body>
+Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minute):
+<div class="messages" />
+</body>
+</html>
+
+```

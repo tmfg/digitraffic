@@ -51,6 +51,9 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Painorajoitteet](#painorajoitteet)
     - [Tietyöt](#tietyöt)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
+- [WebSocket-rajapinnat](#websocket-rajapinnat)
+    - [Topicit](#topicit)
+    - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
 - [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
@@ -114,19 +117,11 @@ Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden m
 
 [```http://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
 
-[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata)
-
-[```ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id}```](ws://tie-legacy.digitraffic.fi/api/v1/plain-websockets/tmsdata/{lam-station-id})
-
 Viesti sisältää LAM (Liikenteen Automaattinen Mittaus)–asemien mittaustiedot.
 
 Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mitattu keskinopeus molempiin suuntiin.
 
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
-
-Yksinkertainen JavaScript WebSocket -asiakassovellus:
-
-[```https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html```](https://github.com/finnishtransportagency/digitraffic-metadata/blob/develop/src/test/html/testWsLams.html)
 
 ### Häiriötiedotteet
 
@@ -199,3 +194,135 @@ Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
 Viestissä on kullekin tiesääasemalle kyseisen aseman anturiarvot.
 
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
+
+## WebSocket-rajapinnat
+
+REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa TMC-asemien tietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
+
+Tuotannon osoite on wss://tie.digitraffic.fi:61619/mqtt
+
+Kirjautuessa tulee käyttää SSL-yhteyttä.  Lisäksi palveluun täytyy kirjautua seuraavin tiedoin:
+* userName:digitraffic
+* password:digitrafficPassword
+
+Pahon JS-clientia käyttäessä osoite on pelkkä tie.digitraffic.fi ja portti 61619, esimerkki alempana.
+
+Testin osoite on vastaavasti tie-test.digitraffic.fi
+
+#### Topicit
+
+Tarjolla on topicit liikenteen seurantaan (tms) ja säätietojen keräämiseen (weather). Topicit ovat seuraavanlaista muotoa:
+
+- tms/\<roadStationId>/\<sensorId\>
+- tms/status
+- weather/\<roadStationId>/\<sensorId\>
+- weather/status
+
+#### TMS-viesti
+
+```
+{
+  "id": 5122,
+  "roadStationId": 23307,
+  "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1",
+  "oldName":" averageSpeed1",
+  "shortName": "km/h1",
+  "sensorValue": 84,
+  "sensorUnit":" km/h",
+  "measuredTime": "2019-01-23T08:25:02Z"
+}
+```
+
+#### Weather-viesti
+
+```
+{
+  "id": 1,
+  "roadStationId": 1158,
+  "name": "ILMA",
+  "oldName": "airtemperature1",
+  "shortName": "Ilma ",
+  "sensorValue": -2.2,
+  "sensorUnit": "°C",
+  "measuredTime": "2019-01-23T08:35:00Z"
+}
+
+```
+
+#### Yksinkertainen JavaScript WebSocket -client
+
+```
+<html>
+<head>
+    <title>Test mqtt tms-messages</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js"></script>
+
+    <script>
+        'use strict';
+        const lines = [];
+        let messagesLastMinuteCount = 0, client;
+
+        function connect() {
+            console.log('trying to connect to road mqtt...');
+
+            client = new Paho.MQTT.Client("tie-aws-mqtt-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
+
+            client.onConnectionLost = function (response) {
+                console.info(Date.now() + ' Connection lost:' + response.errorMessage);
+            };
+            client.onMessageArrived = function(message) {
+                messagesLastMinuteCount++;
+
+                addMessage(JSON.parse(message.payloadString));
+
+                updateList();
+            };
+
+            const connectionProperties = {
+                onSuccess:onConnect,
+                mqttVersion:4,
+                useSSL:true,
+                userName:"digitraffic",
+                password:"digitrafficPassword"
+            };
+
+            client.connect(connectionProperties);
+
+            window.setInterval(logMessageCount, 60*1000);
+        }
+
+        function logMessageCount() {
+            console.info(Date.now() + ' ' + messagesLastMinuteCount + ' messages per minute');
+            $("#messagesPerMinute").text(messagesLastMinuteCount);
+            messagesLastMinuteCount = 0;
+        }
+
+        function onConnect() {
+            console.info(Date.now() + ' Connection open');
+            client.subscribe("tms/#");
+        }
+
+        function addMessage(message) {
+            const text = JSON.stringify(message);
+
+            if (lines.length > 100) {
+                lines.shift();
+            }
+
+            lines.push(text);
+        }
+
+        function updateList() {
+            $(".messages").html(lines.join('<br/>'));
+        }
+
+        connect();
+    </script>
+</head>
+<body>
+Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minute):
+<div class="messages" />
+</body>
+</html>
+```
