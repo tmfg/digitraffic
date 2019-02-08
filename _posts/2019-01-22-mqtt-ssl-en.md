@@ -1,5 +1,5 @@
 ---
-title: 'Rata: suojattu MQTT käyttöön (SSL)'
+title: 'Rata: suojattu MQTT kÃ¶yttÃ¶Ã¶n (SSL)'
 categories: en News
 image: 
 lang: en
@@ -11,8 +11,8 @@ tags:
   - APIs
 ---
 
-MQTT:sta on saatavilla SSL-suojattu versio. Tämä on tarpeellinen esimerkiksi, kun käytetään MQTT:tä https-sivustolta.
+MQTT:sta on saatavilla SSL-suojattu versio. Tï¿½mï¿½ on tarpeellinen esimerkiksi, kun kï¿½ytetï¿½ï¿½n MQTT:tï¿½ https-sivustolta.
 
-SSL-versio MQTT:stä pyörii portissa 443. Osoite on rata.digitraffic.fi
+SSL-versio MQTT:stï¿½ pyï¿½rii portissa 443. Osoite on rata.digitraffic.fi
 
-Esimerkki toteutuksesta: http://jsfiddle.net/f9v342oc/
+Esimerkki toteutuksesta: [http://jsfiddle.net/f9v342oc/]()
