@@ -16,7 +16,7 @@ links:
   - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
-# RATA.DIGITRAFFIC.FI
+# www.digitraffic.fi/rautatieliikenne/
 
 Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Traffic Management Finland ja tietolähteenä toimii Traffic Management Finlandin ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset sekä matkustajainformaatiojärjestelmä MIKU.
 
@@ -43,13 +43,11 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Toteutetut ominaisuudet](#toteutetut-ominaisuudet)
     1. [HTTPS](#https)
     1. [Dataa tukevat rajapinnat](#dataa-tukevat-rajapinnat)
-1. [Rajapinnat](#rajapinnat)
+1. [REST-rajapinnat](#rajapinnat)
     1. [Junien tiedot (/trains)](#junien-tiedot-trains)
         - [Yhden junan tiedot](#yhden-junan-tiedot)
         - [Päivän junien tiedot](#päivän-junien-tiedot)
         - [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
-        - [Junien tietojen kuunteleminen (MQTT / Sockets)](#junien-tietojen-kuunteleminen-mqtt--sockets)
-        - [Liikennepaikan junien tietojen kuunteleminen (MQTT / Sockets)](#liikennepaikan-junien-tietojen-kuunteleminen-mqtt--sockets)
         - [GTFS](#gtfs)
         - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
     1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
@@ -60,19 +58,16 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Junien GPS-sijainnit](#junan-gps-sijainnit-train-locations)
         - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
         - [Yhden junan sijainti](#yhden-junan-sijainti)
-        - [Sijaintien kuunteleminen (MQTT / Sockets)](#sijaintien-kuunteleminen-mqtt--sockets)
         - [Vanhat sijainnit zip-paketteina](#vanhat-sijainnit-zip-paketteina)
     1. [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
         - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
         - [Yhden junan seuranta](#yhden-junan-seuranta)
         - [Liikennepaikan seuranta](#liikennepaikan-seuranta)
         - [Raideosuuden seuranta](#raideosuuden-seuranta)
-        - [Kulkutietoviestien kuunteleminen (MQTT / Sockets)](#kulkutietoviestien-kuunteleminen-mqtt--sockets)
     1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
-        - [Kokoonpanojen kuunteleminen (MQTT / Sockets](#kokoonpanojen-kuunteleminen-mqtt--sockets)
         - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)        
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
@@ -85,6 +80,12 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Herätepisteet](#herätepisteet)
         - [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)              
     1. [GraphQL](#graphql) 
+1. [WebSocket (MQTT)](#websocket-mqtt)
+    1. [Yleistä MQTT:stä](#yleistä-mqttstä)
+    1. [Junien kuuntelu](#junien-kuuntelu)
+    1. [Kokoonpanojen kuuntelu](#kokoonpanojen-kuuntelu)
+    1. [GPS-sijaintien kuuntelu](#gps-sijaintien-kuuntelu)
+    1. [Kulkutietoviestien kuuntelu](#kulkutietoviestien-kuuntelu)    
 1. [Vastaustyypit](#vastaustyypit)
     1. [Junat](#junat)
     1. [Kokoonpanot](#kokoonpanot)
@@ -297,35 +298,6 @@ Palauttaa yhden junan tiedot
  **Paluuarvo**
  
  Palauttaa [junat](#junat)-tyyppisen vastauksen.
- 
-### Junien tietojen kuunteleminen (MQTT / Sockets)
- 
-Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
-
-Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
-
-Junien tietoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja 
-tietoja tietystä topic:sta.
-
-Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `trains/#` (kaikki tiedot) tai `trains/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices).
-
-Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat)-tyyppisiä vastauksia.
- 
-### Liikennepaikan junien tietojen kuunteleminen (MQTT / Sockets)
-
-Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
-
-Topic: `trains-by-station/<station>/`
-
-Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/a9dgjm10/1/](http://jsfiddle.net/a9dgjm10/1/)
-    
-  **Paluuarvo**
-  
-  Palauttaa [junat](#junat)-tyyppisiä vastauksia.
  
 ### GTFS
  
@@ -542,22 +514,6 @@ Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, 
 
 Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
-### Sijaintien kuunteleminen (MQTT / Sockets)
-
-Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
-
-Topic: `train-locations/<departure_date>/<train_number>/`
-
-Sijainteja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
-
-Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `train-locations/#` (kaikki tiedot) tai `train-locations/+/5` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
-
-Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/k8sfd4an/53/](http://jsfiddle.net/k8sfd4an/53/)
-
-**Paluuarvo**
-
-Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisiä vastauksia.
-
 ### Vanhat sijainnit zip-paketteina
 
 Vanhat sijainnit löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
@@ -689,22 +645,6 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 
 Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
-### Kulkutietoviestien kuunteleminen (MQTT / Sockets)
-
-Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
- 
-Topic: `train-tracking/<departure_date>/<train_number>/<type>/<station>/<track_section>/<previous_station>/<next_station>/<previous_track_section>/<next_track_section>/`
-
-Kulkutietoviestejä voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
-
-Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `train-tracking/#` (kaikki tiedot) tai `train-tracking/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
-
-Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/2/](http://jsfiddle.net/cb2uj7kg/2/)
- 
- **Paluuarvo**
- 
-Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
-
 ## Kokoonpanotiedot (/compositions)
 
 Kokoonpanotietoja tulee junille 0-5 tuntia ennen junan lähtö tai pysähdystä, jossa kokoonpano muuttuu.
@@ -777,22 +717,6 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kokoonpanot, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kokoonpano.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
-
-### Kokoonpanojen kuunteleminen (MQTT / Sockets)
- 
-Osoite `rata-mqtt.digitraffic.fi`, portit: `1883` (normaali), `9001` (WebSockets)
-
-Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>` 
-
-Kokoonpanoja voidaan myös kuunnella aktiivisen pollauksen sijasta. Tähän käytetään MQTT-protokollaa, jossa kuunnellaan haluttuja tietoja tietystä topic:sta.
-
-Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella topic:a `compositions/#` (kaikki tiedot) tai `compositions/+/5/#` (yksittäisen junan tiedot). Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
-
-Esimerkkitoteutus Websocketilla löytyy osoitteesta [http://jsfiddle.net/cb2uj7kg/3/](http://jsfiddle.net/cb2uj7kg/3/)
- 
- **Paluuarvo**
- 
-Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
 
 ### Vanhat kokoonpanot zip-paketteina
 
@@ -904,7 +828,7 @@ Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määrit
 
 **Paluuarvo**
 
-Palauttaa [Herätepisteet](#herätepisteet)-tyyppisen vastauksen.
+Palauttaa [Herätepisteet](#herätepisteet-1)-tyyppisen vastauksen.
 
 ### Aikataulukaudet ja muutosajankohdat
 
@@ -1003,7 +927,69 @@ Kokonaisuudessaan homma näyttää REST-pluginissa tältä:
 
 ![GraphQL Postmanissa]({{ site.baseurl }}{{ "/img/rata/graphql.png" }})
 
+## WebSocket (MQTT)
 
+Aktiivisen hakemisen sijasta dataa voidaan myös kuunnella. Tähän käytetään MQTT-protokollaa.
+
+### Yleistä MQTT:stä
+
+MQTT vastaa kolmesta portista
+
+1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/) 
+1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [http://jsfiddle.net/nj9dg6hp/](http://jsfiddle.net/nj9dg6hp/)
+1. Normaalin TCP-yhteyden kautta osoitteessa rata.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
+
+MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen junan kokoonpanoa topicista `compositions/+/5/#`. Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+
+### Junien kuuntelu
+
+Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
+
+Esimerkki: [http://jsfiddle.net/q07ad2hb/](http://jsfiddle.net/q07ad2hb/)
+
+**Paluuarvo**
+
+Palauttaa [junat](#junat)-tyyppisiä vastauksia.
+
+### Liikennepaikan junien kuuntelu
+
+Topic: `trains-by-station/<station>/`
+
+Esimerkki: [http://jsfiddle.net/bkeav28u/](http://jsfiddle.net/bkeav28u/)
+
+**Paluuarvo**
+
+Palauttaa [junat](#junat)-tyyppisiä vastauksia.
+
+### GPS-sijaintien kuuntelu
+
+Topic: `train-locations/<departure_date>/<train_number>/`
+
+Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/)
+
+**Paluuarvo**
+
+Palauttaa [kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
+
+### Kulkutietoviestien kuuntelu
+
+Topic: `train-tracking/<departure_date>/<train_number>/<type>/<station>/<track_section>/<previous_station>/<next_station>/<previous_track_section>/<next_track_section>`
+
+Esimerkki: [http://jsfiddle.net/cb2uj7kg/2/](http://jsfiddle.net/cb2uj7kg/2/)
+
+**Paluuarvo**
+
+Palauttaa [kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
+
+### Kokoonpanojen kuuntelu
+
+Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
+
+Esimerkki: [http://jsfiddle.net/3k4e8wyf/](http://jsfiddle.net/3k4e8wyf/)
+
+**Paluuarvo**
+
+Palauttaa [kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
 
 ## Vastaustyypit
 
