@@ -15,4 +15,4 @@ MQTT:sta on saatavilla SSL-suojattu versio. T�m� on tarpeellinen esimerkiksi
 
 SSL-versio MQTT:st� py�rii portissa 443. Osoite on rata.digitraffic.fi
 
-Esimerkki toteutuksesta: [http://jsfiddle.net/f9v342oc/]()
+Esimerkki toteutuksesta: [http://jsfiddle.net/f9v342oc/](http://jsfiddle.net/f9v342oc/)
