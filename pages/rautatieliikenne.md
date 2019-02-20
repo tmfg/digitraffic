@@ -42,7 +42,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
     1. [Toteutetut ominaisuudet](#toteutetut-ominaisuudet)
     1. [HTTPS](#https)
-    1. [Dataa tukevat rajapinnat](#dataa-tukevat-rajapinnat)
+    1. [Dataa tukevat rajapinnat / työkalut](#dataa-tukevat-rajapinnat--työkalut)
 1. [REST-rajapinnat](#rajapinnat)
     1. [Junien tiedot (/trains)](#junien-tiedot-trains)
         - [Yhden junan tiedot](#yhden-junan-tiedot)
@@ -193,10 +193,14 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä.
 
-## Dataa tukevat rajapinnat
+## Dataa tukevat rajapinnat / työkalut
 
-* [https://rata.digitraffic.fi/infra-api/](https://rata.digitraffic.fi/infra-api/), josta löytyy Suomen rautatieverkon yksityiskohtainen kuvaus.
-* [https://rata.digitraffic.fi/jeti-api/](https://rata.digitraffic.fi/jeti-api/), josta löytyy tietoja rataverkkoon kohdistuvista huoltotöistä.    
+* [https://rata.digitraffic.fi/infra-api/](https://rata.digitraffic.fi/infra-api/)
+    * Rajapinta, josta löytyy Suomen rautatieverkon yksityiskohtainen kuvaus
+* [https://rata.digitraffic.fi/jeti-api/](https://rata.digitraffic.fi/jeti-api/)
+    * Rajapinta, josta löytyy tietoja rataverkkoon kohdistuvista huoltotöistä
+* [https://rata.digitraffic.fi/history/](https://rata.digitraffic.fi/history/)
+    * Työkalu, jolla voi tarkastella missä tilassa jokin juna tai kokoonpano oli tiettynä ajanhetkenä    
 
 # Rajapinnat
 
