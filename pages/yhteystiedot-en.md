@@ -10,6 +10,10 @@ links:
   - ["Support channels", "/en/support-channels"]
 ---
 
+On this page you will find the contact details for the Digitraffic.
+
+If you have a support request, please contact via the Google Group for that data type. Google Groups can be found at [Support channels](/en/support-channels)-page.
+
 Email: digitraffic@tmfg.fi
 
 Facebook: [www.facebook.com/OpenDigitraffic](https://www.facebook.com/OpenDigitraffic/)
