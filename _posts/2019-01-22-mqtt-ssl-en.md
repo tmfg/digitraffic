@@ -1,5 +1,5 @@
 ---
-title: 'Rata: suojattu MQTT köyttöön (SSL)'
+title: 'Rail: MQTT usable trough SSL'
 categories: en News
 image: 
 lang: en
@@ -11,8 +11,4 @@ tags:
   - APIs
 ---
 
-MQTT:sta on saatavilla SSL-suojattu versio. Tämä on tarpeellinen esimerkiksi, kun käytetään MQTT:tä https-sivustolta.
-
-SSL-versio MQTT:stä pyörii portissa 443. Osoite on rata.digitraffic.fi
-
-Esimerkki toteutuksesta: [http://jsfiddle.net/f9v342oc/](http://jsfiddle.net/f9v342oc/)
+MQTT can now be used trough SSL. See example: [http://jsfiddle.net/f9v342oc/](http://jsfiddle.net/f9v342oc/)
