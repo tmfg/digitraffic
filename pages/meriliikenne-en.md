@@ -23,7 +23,7 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 
 - Harbor schedules (gathered from the Portnet-system)
 
-- Vessel location AIS (Automatic Identification System)
+- Vessel location AIS (Automatic Identification System). [Additional info](ais)
 
 - Vessel and harbor metadata
 
