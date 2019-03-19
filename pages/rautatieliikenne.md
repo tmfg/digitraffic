@@ -283,7 +283,7 @@ Palauttaa yhden junan tiedot
  
 ### Kaikkien junien tiedot
  
- URL: `/trains?version/<version>`
+ URL: `/trains?version`
  
  Esimerkki: [/trains?version=1234567891234](https://rata.digitraffic.fi/api/v1/trains?version=1234567891234)
  
