@@ -480,7 +480,7 @@ URL: `/train-locations/latest?bbox=<points>`
 
 **Kuvaus**
 
-Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 minuutin sisällä. Historiatietojen kysely tulossa myöhemmin.
+Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 minuutin sisällä.
 
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|---|--- 
