@@ -1,5 +1,5 @@
 ---
-title: 'LOTJU service break 26th of Match at 10 AM - 2 PM (EET)'
+title: 'LOTJU service break 26th of March at 10 AM - 2 PM (EET)'
 image: 
 published: true
 categories: en News
