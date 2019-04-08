@@ -3,7 +3,7 @@ title: Uusi AIS-integraatio
 issue-number: DPO-578
 traffictypes:
   - Meriliikenne
-status: suunnitteilla
+status: valmis
 ---
 
 Nykyinen AIS-lähde poistuu jollakin aikavälillä, joten ais-tiedot pitää integroida uudesta lähteestä. Muutoksen ei pitäisi näkyä loppukäyttäjille.
