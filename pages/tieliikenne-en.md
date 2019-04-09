@@ -62,13 +62,17 @@ Full API description is located in [Swagger-documentation](https://tie.digitraff
 
 ### Road weather cameras
 
-[```http://tie.digitraffic.fi/api/v1/data/camera-data```](http://tie.digitraffic.fi/api/v1/data/camera-data)
+[```https://tie.digitraffic.fi/api/v1/data/camera-data```](https://tie.digitraffic.fi/api/v1/data/camera-data)
 
-[```http://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http://tie.digitraffic.fi/api/v1/data/camera-data/{id})
+[```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](https://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Response message contains weather camera information and URL for the camera image. For example preset image C0150200 is located at [http://weathercam.digitraffic.fi/C0150200.jpg](http://weathercam.digitraffic.fi/C0150200.jpg).
+Response message contains weather camera information and URL for the camera image. For example preset image C0150200 is located at 
+[https://weathercam.digitraffic.fi/C0150200.jpg](https://weathercam.digitraffic.fi/C0150200.jpg).
 
 ![Weather camera image C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
+
+Related metadata:
+[```https://tie.digitraffic.fi/api/v1/metadata/camera-stations```](https://tie.digitraffic.fi/api/v1/metadata/camera-stations)
 
 ### Current journey times
 
@@ -79,7 +83,7 @@ NOTE! This information is not updated. The old journey time system has been shut
 NOTE! This information is not available
 
 ### History data for requested month
-[```http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
+[```https://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
 
 Response message contains history data for requested month.
 
@@ -87,41 +91,57 @@ NOTE! Last history data is from 12/2017.
 
 ### Current free flow speeds
 
-[```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
+[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds)
 
-[```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id}```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/link/{id})
-
-[```http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](http://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
+[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id})
 
 Response message contains currently valid free flow speeds. The free flow speeds are changed when the summer and winter speed limits are activated on the road network.
 
 Message is updated once a day (3:30 AM EET).
 
+Related metadata:
+[```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
+
 ### Current road weather forecasts
 
-[```http://tie.digitraffic.fi/api/v1/data/road-conditions```](http://tie.digitraffic.fi/api/v1/data/road-conditions)
+[```https://tie.digitraffic.fi/api/v1/data/road-conditions```](https://tie.digitraffic.fi/api/v1/data/road-conditions)
 
 Response message contains road specific weather forecasts. Reports are updated every 5 minutes.
 
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
+
 ### Current data from LAM stations
 
-[```http://tie.digitraffic.fi/api/v1/data/tms-data```](http://tie.digitraffic.fi/api/v1/data/tms-data)
+[```https://tie.digitraffic.fi/api/v1/data/tms-data```](https://tie.digitraffic.fi/api/v1/data/tms-data)
 
-[```http://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](http://tie.digitraffic.fi/api/v1/data/tms-data/{id})
+[```http:s//tie.digitraffic.fi/api/v1/data/tms-data/{id}```](https://tie.digitraffic.fi/api/v1/data/tms-data/{id})
 
 Response message contains TMS (Traffic Measurement System)–stations measurement data.
 
 Every TMS station provides information about traffic amounts and measured average speeds.
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute. 
+Real time data can be read from WebSocket. 
+
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v1/metadata/tms-sensors)
 
 ### Traffic disorders
 
-[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
+[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
 
-[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month})
+[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month})
 
-[```http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId})
+[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId})
 
 Response message contains traffic disorders those have significant impact on traffic flow, e.g. traffic accidents and temporary traffic rearrangements. 
 
@@ -132,15 +152,21 @@ and localtime fields that are in UTC (Zulu) time. Other times are in local time
 with offset from the UTC. Best practice is to use some library that can parse 
 date and times properly with any offset from ISO 8601 date format.
 
-[```http://tie.digitraffic.fi/api/v1/metadata/locations```](http://tie.digitraffic.fi/api/v1/metadata/locations)
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
 
 ### Weight restrictions
 
-[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
+[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
 
-[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month})
+[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month})
 
-[```http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
+[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId})
 
 Weight restrictions use the TMC location information to identify the affected area or location of the weight restriction. Get detailed location description from [here](tmc-data).
 
@@ -149,35 +175,55 @@ and localtime fields that are in UTC (Zulu) time. Other times are in local time
 with offset from the UTC. Best practice is to use some library that can parse 
 date and times properly with any offset from ISO 8601 date format.
 
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+
 ### Roadworks
 
-[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
+[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
 
-[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month})
+[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month})
 
-[```http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId})
+[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId})
 
 The dataset is updated three times per day, at 08:00, at 12:00 and at 16:00 (local Finnish time)
 
 Roadworks contains the TMC location information to identify the affected area or location of the roadwork. Get detailed location description from [here](tmc-data).
-
-The location of the road works is presented with the TMC location data. The location data is available also through the Digitraffic API:
-[```https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET```](https://tie.digitraffic.fi/api/v1/data/documentation/swagger-ui.html#!/metadata/locationsUsingGET)
 
 Dates are include in multiple formats. Under published tag, there is utc 
 and localtime fields that are in UTC (Zulu) time. Other times are in local time 
 with offset from the UTC. Best practice is to use some library that can parse 
 date and times properly with any offset from ISO 8601 date format.
 
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+
 ### Status of road weather stations
 
-[```http://tie.digitraffic.fi/api/v1/data/weather-data```](http://tie.digitraffic.fi/api/v1/data/weather-data)
+[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data)
 
-[```http://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](http://tie.digitraffic.fi/api/v1/data/weather-data/{id})
+[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id})
 
 Response message contains latest weather measurement data.
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute.
+Real time data can be read from WebSocket. 
+
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
+
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
 
 ## WebSocket API
 
