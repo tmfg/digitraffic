@@ -29,6 +29,10 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 
 # Content
 - [REST/JSON -API](#restjson-api)
+    - [Nautical warnings](#nautical-warnings)
+    - [Port calls](#port-calls)
+    - [Vessel locations](#vessel-locations)
+    - [Dirways](#dirways)
 - [WebSocket -API](#websocket-api)
     - [Topics](#topics)
     - [Tracking all data](#tracking-all-data)
@@ -44,6 +48,50 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 Full API description is located in [Swagger-documentation](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
 Both metadata and content is updated in real time.
+
+### Nautical warnings
+
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings```](https://meri.digitraffic.fi/api/v1/nautical-warnings)
+
+Nautical warnings are fetched from POOKI.
+
+At this time there is no metadata available.
+
+### Port calls
+
+[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls)
+
+Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet).
+
+Related metadata:
+
+[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations)
+
+[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details)
+
+[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions)
+
+### Vessel locations
+
+[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
+
+Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.
+
+Related metadata:
+
+[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels)
+
+### Dirways
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways)
+
+Dirways are fetched from [Baltice](http://baltice.org).
+
+Related metadata:
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports)
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
 
 ## Web Socket API
 

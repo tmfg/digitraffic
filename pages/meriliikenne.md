@@ -29,6 +29,10 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
 
 # Sisältö
 - [REST/JSON-rajapinnat](#restjson-rajapinnat)
+    - [Merivaroitukset](#merivaroitukset)
+    - [Satamakäynnit](#satamakäynnit)
+    - [Alusten sijaintitiedot](#alusten-sijaintitiedot)
+    - [Talvimerenkulun avustustiedot](#talvimerenkulun-avustustiedot)
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
     - [Topicit](#topicit)
     - [Kaiken mahdollisen datan tilaaminen](#kaiken-mahdollisen-datan-tilaaminen)
@@ -44,6 +48,50 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
 
 Sekä metadataa että dataa päivitetään reaaliaikaisesti.
+
+### Merivaroitukset
+
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings```](https://meri.digitraffic.fi/api/v1/nautical-warnings)
+
+Merivaroitukset haetaan POOKI-järjestelmästä.
+
+Merivaroituksiin liittyvää metadataa ei ole digitrafficista saatavilla.
+
+### Satamakäynnit
+
+[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls)
+
+Satamakäynnit haetaan [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet) -järjestelmästä.
+
+Metadatat:
+
+[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations)
+
+[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details)
+
+[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions)
+
+### Alusten sijaintitiedot
+
+[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
+
+Alusten sijaintitiedot ja metatiedot kerätään laivojen lähettämien AIS-viestien perusteella.
+
+Metadatat:
+
+[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels)
+
+### Talvimerenkulun avustustiedot
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways)
+
+Avustustiedot haetaan [Baltice](http://baltice.org) -järjestelmästä.
+
+Metadatat:
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports)
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
 
 ## WebSocket-rajapinnat
 
