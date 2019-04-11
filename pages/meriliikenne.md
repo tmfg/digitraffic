@@ -51,7 +51,7 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 ### Merivaroitukset
 
-[```https://meri.digitraffic.fi/api/v1/nautical-warnings```](https://meri.digitraffic.fi/api/v1/nautical-warnings)
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published)
 
 Merivaroitukset haetaan POOKI-järjestelmästä.
 

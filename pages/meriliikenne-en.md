@@ -51,7 +51,7 @@ Both metadata and content is updated in real time.
 
 ### Nautical warnings
 
-[```https://meri.digitraffic.fi/api/v1/nautical-warnings```](https://meri.digitraffic.fi/api/v1/nautical-warnings)
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published)
 
 Nautical warnings are fetched from POOKI.
 
