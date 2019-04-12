@@ -114,7 +114,7 @@ Metadatat:
 
 ### Ajantasaiset tiejaksojen keliennusteet
 
-[```http://tie.digitraffic.fi/api/v1/data/road-conditions```](http://tie.digitraffic.fi/api/v1/data/road-conditions)
+[```https://tie.digitraffic.fi/api/v1/data/road-conditions```](https://tie.digitraffic.fi/api/v1/data/road-conditions)
 
 Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
 

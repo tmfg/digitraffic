@@ -137,7 +137,7 @@ Related metadata:
 
 ### Traffic disorders
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](http://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
+[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2)
 
 [```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month})
 
@@ -162,7 +162,7 @@ Related metadata:
 
 ### Weight restrictions
 
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](http://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
+[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2)
 
 [```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month})
 
@@ -185,7 +185,7 @@ Related metadata:
 
 ### Roadworks
 
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
+[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2)
 
 [```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month})
 
