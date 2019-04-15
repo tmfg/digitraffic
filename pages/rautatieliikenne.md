@@ -20,6 +20,8 @@ links:
 
 Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Traffic Management Finland ja tietolähteenä toimii Traffic Management Finlandin ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset sekä matkustajainformaatiojärjestelmä MIKU.
 
+Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien tiedoissa voi olla puutteita tai virheitä, tietoa ei aina saada tai tieto jää jostakin syystä välittymättä avoimeen dataan. Arkaluonteisia tietoja ei tuoda avoimeen dataan lainkaan. Näistä syistä emme suosittele aineiston käyttämistä turvallisuuskriittisissä sovelluksissa.
+
 ![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{ site.baseurl }}{{ "/img/rata/reaali.png" }}) ![LOKI]({{ site.baseurl }}{{ "/img/rata/loki.png" }})
 
 Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraaviin kysymyksiin:
