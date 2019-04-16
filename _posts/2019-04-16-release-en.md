@@ -1,5 +1,5 @@
 ---
-title: 'Production applications updated on 16th of April 2019 at 10:00 AM – 11:00 PM (EET)'
+title: 'Production applications updated on 16th of April 2019 at 10:00 AM – 11:00 AM (EET)'
 categories: en News
 image:
 lang: en
