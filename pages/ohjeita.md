@@ -15,7 +15,7 @@ Tälle sivulle on kerätty ohjeistusta ja tietoa rajapinnoista ja niiden käytö
 # Cache
 
 Suurin osa rajapintojen kutsuista on cachetettu edustapalvelimilla.  Tämän takia palveluita ei ole hyötyä kutsua liian usein, koska 
-cachesta palautuva vastaus ei muutu.  Suurimmassa osassa palveluita cachen ikä on yksi minuutti.
+cachesta palautuva vastaus ei muutu.  Cachen ikä on määritelty HTTP-headerissa `cache-control`, esimerkiksi `cache-control: max-age=60`.
 
 Tämä saattaa myös aiheuttaa omituiselta tuntuvia aikaleimoja, kun samaa palvelua kutsuu eri parametreilla.  Esimerkiksi:
 
