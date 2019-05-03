@@ -2,7 +2,7 @@
 layout: traffictype
 hero-image: code
 permalink: /ohjeita/
-section: Tietolähteet
+section: TietolÃ¤hteet
 searchable: true
 lang: fi
 ref: instructions
@@ -10,24 +10,25 @@ title: Ohjeita
 intro: Ohjeita ohjelmoijille
 ---
 
-Tälle sivulle on kerätty ohjeistusta ja tietoa rajapinnoista ja niiden käytöstä.
+TÃ¤lle sivulle on kerÃ¤tty ohjeistusta ja tietoa rajapinnoista ja niiden kÃ¤ytÃ¶stÃ¤.
 
 # Cache
 
-Suurin osa rajapintojen kutsuista on cachetettu edustapalvelimilla.  Tämän takia palveluita ei ole hyötyä kutsua liian usein, koska 
-cachesta palautuva vastaus ei muutu.  Suurimmassa osassa palveluita cachen ikä on yksi minuutti.
+Suurin osa rajapintojen kutsuista on cachetettu edustapalvelimilla.  TÃ¤mÃ¤n takia palveluita ei ole hyÃ¶tyÃ¤ kutsua liian usein, koska 
+cachesta palautuva vastaus ei muutu.  Suurimmassa osassa palveluita cachen ikÃ¤ on yksi minuutti.
 
-Tämä saattaa myös aiheuttaa omituiselta tuntuvia aikaleimoja, kun samaa palvelua kutsuu eri parametreilla.  Esimerkiksi:
+TÃ¤mÃ¤ saattaa myÃ¶s aiheuttaa omituiselta tuntuvia aikaleimoja, kun samaa palvelua kutsuu eri parametreilla.  Esimerkiksi:
 
-[```https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true```](https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true)
-[```https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false```](https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false)
+`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true`
 
-Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen eri aikoina.
+`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false`
+
+NÃ¤istÃ¤ voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen eri aikoina.
 
 # Pakkaus
 
-Pakkausta kannattaa käyttää, sillä data on hyvin pakkautuvaa ja tällä säästää kaistaa ja aikaa. Pakkauksen käyttöönotto riippuu hieman 
-käytetystä tekniikasta.  
+Pakkausta kannattaa kÃ¤yttÃ¤Ã¤, sillÃ¤ data on hyvin pakkautuvaa ja tÃ¤llÃ¤ sÃ¤Ã¤stÃ¤Ã¤ kaistaa ja aikaa. Pakkauksen kÃ¤yttÃ¶Ã¶notto riippuu hieman 
+kÃ¤ytetystÃ¤ tekniikasta.  
 
 ## curl
 

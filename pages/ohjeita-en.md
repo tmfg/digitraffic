@@ -2,7 +2,7 @@
 layout: traffictype
 hero-image: code
 permalink: /en/ohjeita/
-section: Tietol‰hteet
+section: Tietol√§hteet
 searchable: true
 lang: en
 ref: instructions
@@ -19,8 +19,9 @@ of the caches are one minute long.
 
 This might lead to some oddities with updated timestamps. For example:
 
-[```https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true```](https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true)
-[```https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false```](https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false)
+`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true`
+
+`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false`
 
 These two might return a different _dataUpdatedTime_ because the calls were cached at different time.
 
