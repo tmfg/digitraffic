@@ -77,7 +77,7 @@ t:
   kokeellinen:
     en: "Experimental"
     fi: "Kokeellinen"
-  
+
   # Post types
   artikkelit:
     en: "Articles"
@@ -88,7 +88,7 @@ t:
   tiedotteet:
     en: "News"
     fi: "Tiedotteet"
-  
+
   # Menu
   menu:
     en: "Menu"
@@ -351,7 +351,12 @@ t:
   support-channels-description:
     en: "Public Google groups provide support and communication between developers, service provider and Traffic Management Finland."
     fi: "Kehittäjien, palvelun ylläpitäjän ja Traffic Management Finlandin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
-
+  support-channels-information:
+    en: "Information and instructions for using api"
+    fi: "Ohjeita ja lisätietoa rajapintojen käyttöön"
+    url:
+      en: "/en/instructions"
+      fi: "/ohjeita"
   # API status
   recent-outages:
     en: "Recent outages"

@@ -1,7 +1,7 @@
 ---
 layout: traffictype
 hero-image: code
-permalink: /en/ohjeita/
+permalink: /en/instructions/
 section: Tietolähteet
 searchable: true
 lang: en
