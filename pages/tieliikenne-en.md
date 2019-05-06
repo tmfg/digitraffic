@@ -66,10 +66,10 @@ Full API description is located in [Swagger-documentation](https://tie.digitraff
 
 [```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](https://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Response message contains weather camera information and URL for the camera image. For example preset image C0150200 is located at 
-[https://weathercam.digitraffic.fi/C0150200.jpg](https://weathercam.digitraffic.fi/C0150200.jpg).
+Response message contains weather camera information and URL for the camera image. For example preset image C0450701 is located at 
+[https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg).
 
-![Weather camera image C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
+![Weather camera image C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
 Related metadata:
 [```https://tie.digitraffic.fi/api/v1/metadata/camera-stations```](https://tie.digitraffic.fi/api/v1/metadata/camera-stations)
