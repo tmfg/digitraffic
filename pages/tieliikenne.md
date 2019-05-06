@@ -68,8 +68,8 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 [```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http:s//tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
-Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0150200 kuva löytyy
-osoitteesta [https://weathercam.digitraffic.fi/C0150200.jpg](https://weathercam.digitraffic.fi/C0150200.jpg).
+Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0450701 kuva löytyy
+osoitteesta [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg).
 
 ![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
 
