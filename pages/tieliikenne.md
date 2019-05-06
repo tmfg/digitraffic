@@ -71,7 +71,7 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0450701 kuva löytyy
 osoitteesta [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg).
 
-![Kelikamerakuva C0150200](https://weathercam.digitraffic.fi/C0150200.jpg)
+![Kelikamerakuva C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
 Metadatat:
 
