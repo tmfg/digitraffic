@@ -70,7 +70,8 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
-        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)        
+        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)   
+    1. [Kulkutievarukset (/routesets)](#kulkutievaraukset-routesets)     
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
@@ -731,6 +732,65 @@ Vanhat kokoonpanot löytyvät zip-paketteina osoittesta [/api/v1/compositions/du
 Paketin sisältämä json on saman muotoista kuin muutkin [kokoonpano-vastaukset](#kokoonpanot).
 
 Uusi paketti luodaan joka kuun viides päivä. 
+
+## Kulkutievaraukset (/routesets)
+
+Jotta juna voi kulkea eteenpäin, sen tarvitsee varata edestään turvallinen kulkutie. Kulkutievaraukset kertovat yksityiskohtaisesti (raideosuus/opastin/vaihe-tasolla), millainen kulkutie edestä on varattu.
+
+### Kaikkien kulkutievarauksien seuranta
+
+URL: `/routesets?version=<version>`
+
+Esimerkki: [/routesets?version=12349873459128375](https://rata.digitraffic.fi/api/v1/routesets?version=12349873459128375)
+
+**Kuvaus**
+
+Palauttaa kaikki kulkutievaraukset, jotka ovat uudempia kuin `version`
+
+**Paluuarvo**
+
+Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen.
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
+  |---|---|---|--- |--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kulkutievaraukset, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kulkutievaraus.
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+### Yhden junan kulkutievaraukset
+
+URL: `/routesets/<departure_date>/<train_number>`
+
+Esimerkki: [/routesets/2019-05-20/1](https://rata.digitraffic.fi/api/v1/routesets/2019-05-20/1)
+
+**Kuvaus**
+
+Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä.
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Selitys|
+|---|---|---|--- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
+
+### Liikennepaikan kulkutievaraukset
+
+URL: `/routesets/station/<station>/<departure_date>`
+
+Esimerkki: [/routesets/station/JY/2019-05-20](https://rata.digitraffic.fi/api/v1/routesets/station/JY/2019-05-20)
+
+**Kuvaus**
+
+Palauttaa liikennepaikan kulkutievaraukset.
 
 ## Metatiedot (/metadata)
 
