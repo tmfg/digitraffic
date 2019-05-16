@@ -749,7 +749,7 @@ Palauttaa kaikki kulkutievaraukset, jotka ovat uudempia kuin `version`
 
 **Paluuarvo**
 
-Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen.
+Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä `version`-kentän mukaan nousevasti.
 
 **Hakuehdot**
 
@@ -771,7 +771,7 @@ Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Selitys|
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
 |---|---|---|--- 
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
@@ -780,7 +780,7 @@ Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä.
 
 **Paluuarvo**
 
-Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
+Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen.
 
 ### Liikennepaikan kulkutievaraukset
 
@@ -791,6 +791,19 @@ Esimerkki: [/routesets/station/JY/2019-05-20](https://rata.digitraffic.fi/api/v1
 **Kuvaus**
 
 Palauttaa liikennepaikan kulkutievaraukset.
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutievaraukseen liittyvän junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutievaraukset ilman lähtöpäivämäärää ajalta 00:00 - 24:00.
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä nousevasti `messageTime`- ja `sectionOrder`-kentän mukaan
 
 ## Metatiedot (/metadata)
 
@@ -1178,6 +1191,19 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextStation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella juna aiemmin oli.*
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) previousStation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"}}) *Liikennepaikan tunniste, jonka alueelle juna ajaa seuraavaksi.*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman tyyppi. OCCUPY tarkoittaa, että juna varasi raideosuuden. RELEASE tarkoittaa, että juna vapautti raideosuuden.*
+
+### Kulkutievaraukset
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutievaraus on viimeksi muuttunut*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) messageTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin kulkutievaraus on luettu*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routeType: character  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varauksen tyyppi. T=junakulkutie, S=vaihtokulkutie ja C=kulkutien purkaminen
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) clientSystem: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutievarauksen luoneen kauko-ohjausjärjestelmän nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routesections ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista raideosuuksista/vaihteista/elementeistä, jotka on varattu kulkutieksi*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sectionId: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varattavan osuuden tunnus*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationCode: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikka, jossa varaus sijaitsee*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialTrackId: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raiteen kaupallinen tunnus*        
 
 ### Liikennepaikat
 
