@@ -71,7 +71,10 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
         - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)   
-    1. [Kulkutievarukset (/routesets)](#kulkutievaraukset-routesets)     
+    1. [Kulkutievarukset (/routesets)](#kulkutievaraukset-routesets)
+        - [Kaikkien kulkutievarauksien seuranta](#kaikkien-kulkutievarauksien-seuranta)
+        - [Yhden junan kulkutievaraukset](#yhden-junan-kulkutievaraukset)
+        - [Liikennepaikan kulkutievaraukset](#liikennepaikan-kulkutievaraukset)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
@@ -88,7 +91,8 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Junien kuuntelu](#junien-kuuntelu)
     1. [Kokoonpanojen kuuntelu](#kokoonpanojen-kuuntelu)
     1. [GPS-sijaintien kuuntelu](#gps-sijaintien-kuuntelu)
-    1. [Kulkutietoviestien kuuntelu](#kulkutietoviestien-kuuntelu)    
+    1. [Kulkutietoviestien kuuntelu](#kulkutietoviestien-kuuntelu)
+    1. [Kulkutievarauksien kuntelu](#kulkutievarauksien-kuuntelu)
 1. [Vastaustyypit](#vastaustyypit)
     1. [Junat](#junat)
     1. [Kokoonpanot](#kokoonpanot)
@@ -127,6 +131,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 20.5.2019
+    * Kulkutievaraukset (routeset-viestit)
 * 22.1.2019
     * Suojattu MQTT-yhteys
 * 16.11.2018
@@ -1060,6 +1066,16 @@ Esimerkki: [http://jsfiddle.net/cb2uj7kg/2/](http://jsfiddle.net/cb2uj7kg/2/)
 
 Palauttaa [kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
+### Kulkutievarauksien kuuntelu
+
+Topic: `routesets/<departure_date>/<train_number>`
+
+Esimerkki: [http://jsfiddle.net/ytx5n9m1/](http://jsfiddle.net/ytx5n9m1/)
+
+**Paluuarvo**
+
+Palauttaa [kulkutievaraukset](#kulkutievaraukset)-tyyppisiä vastauksia.
+
 ### Kokoonpanojen kuuntelu
 
 Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
@@ -1190,7 +1206,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella raideosuus on. Lista liikennepaikoista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextStation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella juna aiemmin oli.*
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) previousStation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"}}) *Liikennepaikan tunniste, jonka alueelle juna ajaa seuraavaksi.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman tyyppi. OCCUPY tarkoittaa, että juna varasi raideosuuden. RELEASE tarkoittaa, että juna vapautti raideosuuden.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman tyyppi. `OCCUPY` tarkoittaa, että juna varasi raideosuuden. `RELEASE` tarkoittaa, että juna vapautti raideosuuden.*
 
 ### Kulkutievaraukset
 
@@ -1198,7 +1214,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) messageTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin kulkutievaraus on luettu*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routeType: character  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varauksen tyyppi. T=junakulkutie, S=vaihtokulkutie ja C=kulkutien purkaminen
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routeType: character  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varauksen tyyppi. `T`=junakulkutie, `S`=vaihtokulkutie ja `C`=kulkutien purkaminen*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) clientSystem: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutievarauksen luoneen kauko-ohjausjärjestelmän nimi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routesections ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista raideosuuksista/vaihteista/elementeistä, jotka on varattu kulkutieksi*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sectionId: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varattavan osuuden tunnus*
@@ -1214,7 +1230,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan maakohtainen UIC-koodi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) latitude: decimal  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan latitude "WGS 84"-muodossa*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) longitude: decimal  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan longitudi "WGS 84"-muodossa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tyyppi. STATION = asema, STOPPING_POINT = seisake, TURNOUT_IN_THE_OPEN_LINE = linjavaihde*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tyyppi. `STATION` = asema, `STOPPING_POINT` = seisake, `TURNOUT_IN_THE_OPEN_LINE` = linjavaihde*
 
 ### Operaattorit
 
