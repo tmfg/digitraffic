@@ -773,7 +773,7 @@ Esimerkki: [/routesets/2019-05-20/1](https://rata.digitraffic.fi/api/v1/routeset
 
 **Kuvaus**
 
-Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä.
+Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä järjestettynä nousevasti `messageTime`- ja `sectionOrder`-kentän mukaan
 
 **Hakuehdot**
 
