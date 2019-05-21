@@ -33,14 +33,18 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
     - [Satamakäynnit](#satamakäynnit)
     - [Alusten sijaintitiedot](#alusten-sijaintitiedot)
     - [Talvimerenkulun avustustiedot](#talvimerenkulun-avustustiedot)
-- [WebSocket-rajapinnat](#websocket-rajapinnat)
+    - [Älypoijudata](#älypoijudata-sse-beta)
+- [MQTT WebSocket -rajapinnat](#mqtt-websocket--rajapinnat)
     - [Topicit](#topicit)
-    - [Kaiken mahdollisen datan tilaaminen](#kaiken-mahdollisen-datan-tilaaminen)
-    - [Kaikkien laivojen sìjainnit](#kaikkien-laivojen-sìjainnit)
-    - [Yhden laivan seuraaminen mmsi:n perusteella](#yhden-laivan-seuraaminen-mmsin-perusteella)
-    - [Aluksen metadata-viesti](#aluksen-metadata-viesti)
-    - [Aluksen sijainti-viesti](#aluksen-sijainti-viesti)
-    - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
+        - [Alusten topicit](#alusten-topicit)
+            - [Esimerkkejä alusten viestitilauksista](#esimerkkejä-alusten-viestitilauksista)
+            - [Alusten viestimuodot](#alusten-viestimuodot)
+            - [Aluksen metadata -viesti](#aluksen-metadata-viesti)
+            - [Alusten sijainti -viesti](#aluksen-sijainti--viesti)            
+        - [SSE topicit](#sse-topicit)
+            - [Esimerkkejä SSE-viestitilauksista](#esimerkkej-sse-viestitilauksista)
+            - [SSE-data -viesti](#sse-data--viesti)
+    - [Yksinkertainen JavaScript MQTT WebSocket -clientti](#yksinkertainen-javascript-mqtt-websocket--client)
 - [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
@@ -93,9 +97,15 @@ Metadatat:
 
 [```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
 
-## WebSocket-rajapinnat
+### Älypoijudata (SSE) (BETA)
 
-Laivojen sijainteja voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa
+Data + metadata:
+
+[```https://meri.digitraffic.fi/api/beta/sse/latest```](https://meri.digitraffic.fi/api/beta/sse/latest)
+
+## MQTT WebSocket -rajapinnat
+
+Laivojen sijainteja ja älypoijudataa voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa
 ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
 Tuotannon osoite on wss://meri.digitraffic.fi:61619/mqtt
@@ -108,31 +118,28 @@ Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 
 
 Testin osoite vastaavasti meri-test.digitraffic.fi
 
-#### Topicit
+### Topicit
+
+#### Alusten topicit
 
 Topicit ovat seuraavanlaista muotoa:
-- vessels/\<mmsi\>/metadata
-- vessels/\<mmsi\>/locations
-- vessels/status
 
-Alla esimerkkejä mahdollisista tilauksista:
+- ```vessels/<mmsi>/metadata```
+- ```vessels/<mmsi>/locations```
+- ```vessels/status```
 
-#### Kaiken mahdollisen datan tilaaminen
+#### Esimerkkejä alusten viestitilauksista
 
-``` vessels/# ```
+```
+vessels/#                 # Kaiken mahdollisen datan tilaaminen
+vessels/+/locations       # Kaikkien alusten sìjainnit
+vessels/+/metadata        # Kaikkien alusten metadatat
+vessels/<mmsi>/+          # Yhden aluksen sijainnit ja metadata
+vessels/<mmsi>/locations  # Yhden aluksen sijainnit
+vessels/<mmsi>/metadata n # Yhden aluksen metadata
+```
 
-#### Kaikkien laivojen sìjainnit
-
-``` vessels/+/locations ```
-
-#### Yhden laivan seuraaminen mmsi:n perusteella
-
-``` 
-    vessels/<mmsi>/+          # yhden laivan sijainnit ja metadata
-    vessels/<mmsi>/locations  # yhden laivan sijainnit
-  ```
-
-Viestit ovat muotoa:
+#### Alusten viestimuodot
 
 #### Aluksen metadata-viesti
 
@@ -158,7 +165,7 @@ Viestit ovat muotoa:
 }
 ```
 
-#### Aluksen sijainti-viesti
+#### Aluksen sijainti -viesti
 
 ```
 {
@@ -185,7 +192,48 @@ Viestit ovat muotoa:
 }
 ```
 
-#### Yksinkertainen JavaScript WebSocket -client
+#### SSE topicit
+
+Topicit ovat seuraavanlaista muotoa:
+
+- ```sse/status```
+- ```sse/site/<site-id>``` 
+
+#### Esimerkkejä SSE-viestitilauksista
+
+```
+sse/#                       # Kaiken mahdollisen datan tilaaminen
+sse/status                  # Status viestien tilaaminen
+sse/site/+                  # Kaikkien asemien datan tilaaminen
+sse/site/<site-id>          # Yhden aseman datan tilaaminen
+```
+
+#### SSE-data -viesti
+
+```
+{
+    "siteNumber" : 8659,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 21.37694, 61.64541 ]
+    },
+    "properties" : {
+      "siteName" : "Kelloniemi_2",
+      "siteType" : "FLOATING",
+      "lastUpdate" : "2019-05-21T09:02:10Z",
+      "seaState" : "CALM",
+      "trend" : "NO_CHANGE",
+      "windWaveDir" : 200,
+      "confidence" : "GOOD",
+      "heelAngle" : 2.2,
+      "lightStatus" : "OFF",
+      "temperature" : 28
+    }
+}
+```
+
+#### Yksinkertainen JavaScript MQTT WebSocket -client
 
 ```
 <html>
