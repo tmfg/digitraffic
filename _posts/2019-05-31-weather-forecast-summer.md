@@ -1,4 +1,3 @@
-
 ---
 title: 'Keliennusteet kesätauolla 1.6.–31.8.2019'
 image: 
@@ -15,4 +14,3 @@ tags:
 Sääennusteet menevät kesätauolle, jolloin data jää viimeiseen saatuun arvoon. 
 
 Pahoittelemme tästä aiheutuvaa haittaa ja myöhäistä ilmoitusaikaa.
-
