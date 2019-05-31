@@ -4,8 +4,9 @@ categories: en News
 image:
 lang: en
 published: false
-ref: 2019-05-21-release
+ref: 2019-06-06-release
 traffictypes:
+  - Road
   - Marine
 tags:
   - APIs
