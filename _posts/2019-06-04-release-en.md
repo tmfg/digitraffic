@@ -1,23 +1,23 @@
 ---
-title: 'Tuotannon sovellukset päivitetty 6.6.2019 10:00 - 12:00'
-categories: Tiedotteet
-image: 
-lang: fi
+title: 'Production applications updated on 4th of June 2019 at 10:00 AM – 12:00 PM (EET)'
+categories: en News
+image:
+lang: en
 published: false
-ref: 2019-06-06-release
+ref: 2019-06-04-release
 traffictypes:
-  - Tieliikenne
-  - Meriliikenne
+  - Road
+  - Marine
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - APIs
+  - Admin
 ---
 
-Päivitimme Digitraffic-sovelluksia tuotantoympäristöön.
+Digitraffic production applications have been updated.
 
-Muutokset:
+Changelog:
 
-TIE
+ROAD
 
 - DPO-700 road-web toistuva 500 Internal Server Error
 - DPO-425 Controller kaikille raw.githubista tuleville schemoille 
@@ -27,9 +27,9 @@ TIE
 - DPO-806 Geometryssä type (point, linestring) duplikoituu
 
 
-MERI
+MARINE
 
 - DPO-442 - Merenkulun älypoijudata - BETA -> tuotanto 
 
 
-Pahoittelemme katkosta aiheutunutta haittaa.
+We apologize for any inconvenience.
