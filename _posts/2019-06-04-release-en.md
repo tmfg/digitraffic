@@ -3,7 +3,7 @@ title: 'Production applications updated on 4th of June 2019 at 10:00 AM – 12:0
 categories: en News
 image:
 lang: en
-published: false
+published: true
 ref: 2019-06-04-release
 traffictypes:
   - Road
