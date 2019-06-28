@@ -209,7 +209,9 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
 * [https://rata.digitraffic.fi/jeti-api/](https://rata.digitraffic.fi/jeti-api/)
     * Rajapinta, josta löytyy tietoja rataverkkoon kohdistuvista huoltotöistä
 * [https://rata.digitraffic.fi/history/](https://rata.digitraffic.fi/history/)
-    * Työkalu, jolla voi tarkastella missä tilassa jokin juna tai kokoonpano oli tiettynä ajanhetkenä    
+    * Työkalu, jolla voi tarkastella missä tilassa jokin juna tai kokoonpano oli tiettynä ajanhetkenä   
+* [https://rata.digitraffic.fi/vuosisuunnitelmat/](https://rata.digitraffic.fi/vuosisuunnitelmat/)  
+    * Työkalu, jolla voi tarkastella ratatöiden vuosisuunnitelmia   
 
 # Rajapinnat
 
