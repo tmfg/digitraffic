@@ -21,13 +21,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install nodejs
 RUN node -v
 RUN npm -v
 
-# Add files to install required Ruby gems and Node packages
-#COPY Gemfile Gemfile.lock _config_dev.yml package.json  /
-COPY Gemfile package.json package-lock.json _config_dev.yml /
 # Entrypoint
 COPY docker-entrypoint.sh /
 
-#ENV BUNDLE_GEMFILE /Gemfile
+# Add additional files to install required Ruby gems and Node packages
+# to make docker container startup faster
+COPY Gemfile package.json package-lock.json _config_dev.yml /
 
 RUN printf "\nInstalling required node packages. Please wait..."
 RUN npm install

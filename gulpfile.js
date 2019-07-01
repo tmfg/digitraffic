@@ -43,6 +43,7 @@ function watchFiles() {
             '_includes/*',
             '_layouts/*',
             '_posts/*',
+            '_scss/*',
             'css/*',
             'data/*',
             'favicon/*',
