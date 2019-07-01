@@ -23,12 +23,11 @@ exclude:
   - package-lock.json
   - package.json
   - README.md
-  - update-swagger.sh
   - docker-entrypoint.sh
   - .idea
-  - build-and-start-in-docker.sh
-  - build-docker-image.sh
   - Dockerfile
+  - build-and-run-in-docker.sh
+  - build-docker-image.sh
   - run-in-docker.sh
 collections:
   applications:
