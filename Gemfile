@@ -1,7 +1,4 @@
 # frozen_string_literal: true
-source "https://rubygems.org"
-
-gem 'rb-fsevent', '0.9.8'
 
 # The updating to keep in par with Github-pages Jekyll
 # See:
@@ -11,3 +8,4 @@ gem 'rb-fsevent', '0.9.8'
 # Run `bundle update` to catch up.
 source 'https://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
+gem 'rb-fsevent', '0.10.3'

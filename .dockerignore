@@ -1,2 +1,6 @@
 *
 !docker-entrypoint.sh
+!Gemfile
+!package.json
+!package-lock.json
+!_config_dev.yml

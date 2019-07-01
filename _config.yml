@@ -1,9 +1,12 @@
 name: Digitraffic
 title: Digitraffic
 baseurl:
-repository: finnishtransportagency/digitraffic
-plugins:
+repository: tmfg/digitraffic
+encoding: utf-8
+
+plugins_dir:
   - jekyll-babel
+
 sass:
   sass_dir: _scss
   style: compressed
@@ -22,6 +25,11 @@ exclude:
   - README.md
   - update-swagger.sh
   - docker-entrypoint.sh
+  - .idea
+  - build-and-start-in-docker.sh
+  - build-docker-image.sh
+  - Dockerfile
+  - run-in-docker.sh
 collections:
   applications:
     output: true
