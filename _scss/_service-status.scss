@@ -122,7 +122,7 @@
   }
 
   &__link:hover .service-status__service-heading {
-    @extend .h-link:hover;
+    @extend .h-link, :hover;
     transition: $transition-moderate;
   }
 

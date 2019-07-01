@@ -18,7 +18,7 @@
     }
 
     &--last {
-      @extend .developments__development:last-child;
+      @extend .developments__development, :last-child
     }
 
     &--hidden {
