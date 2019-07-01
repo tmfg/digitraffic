@@ -1,57 +1,59 @@
+"use strict";
+
 const gulp = require('gulp');
-const shell = require('gulp-shell');
-const child = require('child_process');
-const gutil = require('gulp-util');
-const browserSync = require('browser-sync').create();
+const cp = require('child_process');
+const browsersync = require('browser-sync').create();
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
-/**
- * Build the Jekyll Site
- */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return child.spawn( 'bundle', ['exec', 'jekyll', 'build', '--config',
-        '_config_dev.yml'], {stdio: 'inherit'})
-        .on('close', done);
-});
+// BrowserSync
+function browserSync(done) {
+    browsersync.init({
+        server: {
+            baseDir: "./_site/"
+        },
+        port: 3000,
+        open: false
+    });
+    done();
+}
 
-/**
- * Rebuild Jekyll & do page reload
- */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
-});
+// BrowserSync Reload
+function browserSyncReload(done) {
+    browsersync.reload();
+    done();
+}
 
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['jekyll-build'], function() {
-    browserSync.init({server: {baseDir: '_site'}});
-});
+// Jekyll
+function jekyll() {
+    browsersync.notify(messages.jekyllBuild);
+    return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml'], { stdio: "inherit" });
+}
 
-/**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
- */
-gulp.task('watch', function () {
-    gulp.watch([
-        '*.html',
-        '_applications/*',
-        '_config*.yml',
-        '_developments/*',
-        '_includes/*',
-        '_layouts/*',
-        '_posts/*',
-        'css/*',
-        'data/*',
-        'favicon/*',
-        'img/**/*',
-        'js/*',
-        'pages/*'
-    ], ['jekyll-rebuild']);
-});
+// Watch files
+function watchFiles() {
+    gulp.watch(
+        [
+            '*.html',
+            '_applications/*',
+            '_config*.yml',
+            './**/_developments/*',
+            '_includes/*',
+            '_layouts/*',
+            '_posts/*',
+            'css/*',
+            'data/*',
+            'favicon/*',
+            'img/**/*',
+            'js/*',
+            'pages/*'
+        ],
+        gulp.series(jekyll, browserSyncReload)
+    );
+}
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.series(browserSync, watchFiles, function() {
+    // default task code here
+}));

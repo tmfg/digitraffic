@@ -2,18 +2,19 @@
   "name": "digitraffic-jekyll",
   "version": "1.0.0",
   "description": "Digitraffic",
+  "repository": "tmfg/digitraffic",
+  "author": "Tom Nuorivaara & Digitraffic",
+  "license": "CC-BY-4.0",
   "main": "index.js",
   "scripts": {
     "build": "bundle exec jekyll build",
     "dev": "gulp",
     "test": ""
   },
-  "author": "Tom Nuorivaara",
-  "license": "",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "gulp": "^3.9.1",
-    "gulp-shell": "^0.6.5",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-shell": "^0.7.1",
     "lodash": "^4.17.11",
     "extend": "^3.0.2"
   }
