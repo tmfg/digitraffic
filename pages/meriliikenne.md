@@ -33,7 +33,7 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
     - [Satamakäynnit](#satamakäynnit)
     - [Alusten sijaintitiedot](#alusten-sijaintitiedot)
     - [Talvimerenkulun avustustiedot](#talvimerenkulun-avustustiedot)
-    - [Älypoijudata](#älypoijudata-sse-beta)
+    - [Älypoijudata](#älypoijudata-sse)
 - [MQTT WebSocket -rajapinnat](#mqtt-websocket--rajapinnat)
     - [Topicit](#topicit)
         - [Alusten topicit](#alusten-topicit)
@@ -97,11 +97,15 @@ Metadatat:
 
 [```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
 
-### Älypoijudata (SSE) (BETA)
+### Älypoijudata (SSE)
 
 Data + metadata:
 
-[```https://meri.digitraffic.fi/api/beta/sse/latest```](https://meri.digitraffic.fi/api/beta/sse/latest)
+[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest)
+
+Älypoijudata haetaan TLSC-järjestelmästä, joka kerää ja analysoi älypoijujen lähettämää dataa julkaistavaan muotoon.
+
+Data päivitetään 30 minuutin välein.
 
 ## MQTT WebSocket -rajapinnat
 

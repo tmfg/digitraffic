@@ -33,7 +33,7 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
     - [Port calls](#port-calls)
     - [Vessel locations](#vessel-locations)
     - [Dirways](#dirways)
-    - [Sea state estimation (SSE) (BETA)](#sea-state-estimation-sse-beta)
+    - [Sea state estimation (SSE)](#sea-state-estimation-sse)
 - [WebSocket -API](#websocket-api)
     - [Topics](#topics)
         - [Vessel topics](#vessel-topics)
@@ -97,11 +97,15 @@ Related metadata:
 
 [```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
 
-### Sea state estimation (SSE) (BETA)
+### Sea state estimation (SSE)
 
 Data + metadata:
 
-[```https://meri.digitraffic.fi/api/beta/sse/latest```](https://meri.digitraffic.fi/api/beta/sse/latest)
+[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest)
+
+Sea state estimation data is fetched from TLSC-server, that gathers and analyzes data send by AtoN sites. 
+
+Data is updated every 30 minutes.
 
 ## WebSocket API
 
