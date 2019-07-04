@@ -45,7 +45,8 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Edellisen päivän sujuvuuden historiatiedot](#edellisen-päivän-sujuvuuden-historiatiedot)
     - [Sujuvuuden historiatiedot halutulta kuulta](#sujuvuuden-historiatiedot-halutulta-kuulta)
     - [Vapaat nopeudet](#vapaat-nopeudet)
-    - [Ajantasaiset tiejaksojen keliennusteet](#ajantasaiset-tiejaksojen-keliennusteet)
+    - [Ajantasaiset tiejaksojen keliennusteet (v1)](#ajantasaiset-tiejaksojen-keliennusteet-v1)
+    - [Ajantasaiset tiejaksojen keliennusteet (v2)](#ajantasaiset-tiejaksojen-keliennusteet-v2)
     - [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot)
     - [Häiriötiedotteet](#häiriötiedotteet)
     - [Painorajoitteet](#painorajoitteet)
@@ -112,7 +113,7 @@ Metadatat:
 
 [```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
 
-### Ajantasaiset tiejaksojen keliennusteet
+### Ajantasaiset tiejaksojen keliennusteet (v1)
 
 [```https://tie.digitraffic.fi/api/v1/data/road-conditions```](https://tie.digitraffic.fi/api/v1/data/road-conditions)
 
@@ -125,6 +126,31 @@ Metadatat:
 [```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
 
 [```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
+
+### Ajantasaiset tiejaksojen keliennusteet (v2)
+
+Keliennusteet v2 sisältää tarkemmat tiejaksot kuin v1.
+
+[```https://tie.digitraffic.fi/api/v2/data/road-conditions```](https://tie.digitraffic.fi/api/v2/data/road-conditions)
+
+Tiejaksokohtaiset keliennusteet. Keliennusteet päivitetään viiden minuutin välein.
+
+[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
+
+Tiejaksokohtaiset keliennusteet halutulta alueelta.
+
+[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/{roadNumber})
+
+Tiejaksokohtaiset keliennusteet halutulta tieltä.
+
+
+Metadatat:
+
+[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections)
+
+[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
+
+[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber})
 
 ### Ajantasaiset LAM mittaustiedot
 

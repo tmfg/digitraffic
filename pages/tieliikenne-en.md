@@ -45,7 +45,8 @@ Currently the open data API includes:
     - [History data for previous day](#history-data-for-previous-day)
     - [History data for requested month](#history-data-for-requested-month)
     - [Current free flow speeds](#current-free-flow-speeds)
-    - [Current road weather forecasts](#current-road-weather-forecasts)
+    - [Current road weather forecasts (v1)](#current-road-weather-forecasts-v1)
+    - [Current road weather forecasts (v2)](#current-road-weather-forecasts-v2)
     - [Current data from LAM stations](#current-data-from-lam-stations)
     - [Traffic disorders](#traffic-disorders)
     - [Weight restrictions](#weight-restrictions)
@@ -102,7 +103,7 @@ Message is updated once a day (3:30 AM EET).
 Related metadata:
 [```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
 
-### Current road weather forecasts
+### Current road weather forecasts (v1)
 
 [```https://tie.digitraffic.fi/api/v1/data/road-conditions```](https://tie.digitraffic.fi/api/v1/data/road-conditions)
 
@@ -115,6 +116,34 @@ Related metadata:
 [```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
 
 [```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
+
+
+### Current road weather forecasts (v2)
+
+Road weather forecasts v2 contains more detailed road sections than older v1.
+
+[```https://tie.digitraffic.fi/api/v2/data/road-conditions```](https://tie.digitraffic.fi/api/v2/data/road-conditions)
+
+Road specific weather forecasts. Reports are updated every 5 minutes.
+
+[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
+
+Road specific weather forecasts for given area.
+
+[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/{roadNumber})
+
+Road specific weather forecasts for given road.
+
+
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections)
+
+[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
+
+[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber})
+
+
 
 ### Current data from LAM stations
 
