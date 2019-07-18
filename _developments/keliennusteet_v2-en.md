@@ -5,7 +5,7 @@ ref: keliennusteet_v2
 issue-number: DPO-566
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 ---
 
 Road conditions version 2 data is planned to be published on Digitraffic API. The new version provides higher resolution for road segments and there are higher number of forecast points.

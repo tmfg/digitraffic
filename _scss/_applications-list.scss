@@ -20,7 +20,7 @@
     }
 
     &--last {
-      @extend .applications-list__application:last-child;
+      @extend .applications-list__application, :last-child;
     }
 
     &--hidden {

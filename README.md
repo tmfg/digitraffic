@@ -208,13 +208,15 @@ docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app my/digitraffic:latest
 
 or one-liner `docker build . -t my/digitraffic; docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app my/digitraffic:latest`
 
+or the script: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
+
 ## In addition
 
-Additionally this repository contains a [Wiki](https://github.com/finnishtransportagency/digitraffic/wiki) for [Finnish transport agency](http://www.fta.fi)'s road digitraffic service. 
+Additionally this repository contains a [Wiki](https://github.com/tmfg/digitraffic/wiki) for [Traffic Management Finland](https://tmfg.fi)'s road digitraffic service. 
 
 The wiki source can be cloned with:
  ````bash
- git clone https://github.com/finnishtransportagency/digitraffic.wiki.git
+ git clone https://github.com/tmfg/digitraffic.wiki.git
  ````
 
 ## Keeping up to date

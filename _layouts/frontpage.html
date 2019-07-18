@@ -148,7 +148,7 @@ layout: compress
                --></ul><!--
                --><ul class="latest-item__traffic-type-list"><!--
                  -->{% for traffictype in post.traffictypes %}<!--
-                 -->{% assign traffictype_dc = traffictype | downcase %}<!-- 
+                 -->{% assign traffictype_dc = traffictype | downcase %}<!--
                  --><span class="latest-item__traffic-type"><a href="{% include url-home.html %}/{{ post_category | downcase }}?traffictype={{ traffictype | downcase }}" class="latest-item__traffic-type-link link">{{ traffictype }}</a></span><!--
                  -->{% endfor %}<!--
                --></ul>
@@ -215,11 +215,14 @@ layout: compress
         <section class="content__frontpage-section ">
           <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 support-description">
+              <p class="support-description__icon-p"><i class="support-description__icon-i material-icons">help_outline</i></p>
               <a href="{{ site.t.support-channels.url[page.lang] | prepend:site.baseurl }}" class="support-description__link">
-                <p class="support-description__icon-p"><i class="support-description__icon-i material-icons">help_outline</i></p>
                 <h3 class="h3 u--centered h-link">{{ site.t.support-channels[page.lang] }}</h3>
               </a>
               <p class="u--centered">{{ site.t.support-channels-description[page.lang] }}</p>
+              <a href="{{ site.t.support-channels-information.url[page.lang] | prepend:site.baseurl }}" class="support-description__link">
+                <h3 class="h3 u--centered h-link">{{ site.t.support-channels-information[page.lang] }}</h3>
+              </a>
             </div>
           </div>
         </section>

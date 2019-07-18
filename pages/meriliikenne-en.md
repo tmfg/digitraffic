@@ -28,15 +28,23 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 - Vessel and harbor metadata
 
 # Content
-- [REST/JSON -API](#restjson-api)
+- [REST/JSON -API](#restjson--api)
+    - [Nautical warnings](#nautical-warnings)
+    - [Port calls](#port-calls)
+    - [Vessel locations](#vessel-locations)
+    - [Dirways](#dirways)
+    - [Sea state estimation (SSE)](#sea-state-estimation-sse)
 - [WebSocket -API](#websocket-api)
     - [Topics](#topics)
-    - [Tracking all data](#tracking-all-data)
-    - [Tracking all locations](#tracking-all-locations)
-    - [Tracking a single vessel with mmsi-number](#tracking-a-single-vessel-with-mmsi-number)
-    - [Vessel metadata-message](#vessel-metadata-message)
-    - [Vessel location-message](#vessel-location-message)
-    - [Simple JavaScript Web Socket -client](#simple-javascript-web-socket-client)
+        - [Vessel topics](#vessel-topics)
+            - [Examples of tracking vessels data](#examples-of-tracking-vessels-data)
+            - [Vessel message formats](#vessel-message-formats)
+            - [Vessel metadata -message](#vessel-metadata--message)
+            - [Vessel location -message](#vessel-location--message)
+        - [SSE-topics](#sse-topics)
+            - [Examples of tracking SSE data](#examples-of-tracking-sse-data)
+            - [SSE-data -message](#sse-data--message)
+    - [Simple JavaScript MQTT WebSocket -client](#simple-javascript-mqtt-websocket-client)
 - [Swagger-api](#swagger-api)
 
 ## REST/JSON -API
@@ -45,9 +53,63 @@ Full API description is located in [Swagger-documentation](https://meri.digitraf
 
 Both metadata and content is updated in real time.
 
-## Web Socket API
+### Nautical warnings
 
-Vessel locations can be tracked from following Web Socket APIs.  Protocol is MQTT over WebSockets.  This allows
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published)
+
+Nautical warnings are fetched from POOKI.
+
+At this time there is no metadata available.
+
+### Port calls
+
+[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls)
+
+Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet).
+
+Related metadata:
+
+[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations)
+
+[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details)
+
+[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions)
+
+### Vessel locations
+
+[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
+
+Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.
+
+Related metadata:
+
+[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels)
+
+### Dirways
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways)
+
+Dirways are fetched from [Baltice](http://baltice.org).
+
+Related metadata:
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports)
+
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
+
+### Sea state estimation (SSE)
+
+Data + metadata:
+
+[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest)
+
+Sea state estimation data is fetched from TLSC-server, that gathers and analyzes data send by AtoN sites. 
+
+Data is updated every 30 minutes.
+
+## WebSocket API
+
+Vessel locations can be tracked from following WebSocket APIs.  Protocol is MQTT over WebSockets.  This allows
 you to subscibe only those topics you are interested in.
 
 Production address is wss://meri.digitraffic.fi:61619/mqtt
@@ -60,33 +122,30 @@ When using Paho JS-client the address is plain meri.digitraffic.fi and port 6161
 
 Address for test is meri-test.digitraffic.fi
 
-#### Topics
+### Topics
+
+#### Vessel topics
 
 Topics are constructed like this:
-- vessels/\<mmsi\>/metadata
-- vessels/\<mmsi\>/locations
-- vessels/status
 
-Examples:
+- ```vessels/\<mmsi\>/metadata```
+- ```vessels/\<mmsi\>/locations```
+- ```vessels/status```
 
-#### Tracking all data
+#### Examples of tracking vessels data
 
-``` vessels/# ```
-
-#### Tracking all locations
-
-``` vessels/+/locations ```
-
-#### Tracking a single vessel with mmsi-number
-
-``` 
-     vessels/<mmsi>/+          # single vessel locations and metadata
-     vessels/<mmsi>/locations  # single vessel locations
+```
+vessels/#                 # Tracking all data
+vessels/+/locations       # Tracking all locations
+vessels/+/metadata        # Tracking all metadata
+vessels/<mmsi>/+          # Single vessel locations and metadata
+vessels/<mmsi>/locations  # Single vessel locations
+vessels/<mmsi>/metadata   # Single vessel metadata
 ```
 
-Message formats:
+#### Vessel message formats
 
-#### Vessel metadata-message
+#### Vessel metadata -message
 
 ```
 {
@@ -110,7 +169,7 @@ Message formats:
 }
 ```
 
-#### Vessel location-message
+#### Vessel location -message
 
 ```
 {
@@ -136,8 +195,49 @@ Message formats:
   }
 }
 ```
+#### SSE topics
 
-#### Simple JavaScript Web Socket client
+Topics are constructed like this:
+
+- ```sse/status```
+- ```sse/site/<site-id>``` 
+
+#### Examples of tracking SSE-data
+
+```
+sse/#                       # Tracking all data
+sse/status                  # Tracking status messages
+sse/site/+                  # Tracking all sites data
+sse/site/<site-id>          # Tracking single site data
+```
+
+#### SSE-data -message
+
+```
+{
+    "siteNumber" : 8659,
+    "type" : "Feature",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 21.37694, 61.64541 ]
+    },
+    "properties" : {
+      "siteName" : "Kelloniemi_2",
+      "siteType" : "FLOATING",
+      "lastUpdate" : "2019-05-21T09:02:10Z",
+      "seaState" : "CALM",
+      "trend" : "NO_CHANGE",
+      "windWaveDir" : 200,
+      "confidence" : "GOOD",
+      "heelAngle" : 2.2,
+      "lightStatus" : "OFF",
+      "temperature" : 28
+    }
+}
+```
+
+
+#### Simple JavaScript MQTT WebSocket client
 
 ```
 <html>

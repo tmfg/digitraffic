@@ -1,51 +1,47 @@
-#Use ubuntu as a base image
-FROM ubuntu:18.04
+FROM ruby:2.5.3
 
+# Installa and set locales
+RUN apt-get -qq update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y locales && \
+    rm -rf /var/lib/apt/lists/* && \
+    localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
-#Install all the requirements
-RUN apt-get update
-
-RUN apt-get install -y locales
-
-ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_TYPE en_US.UTF-8
 
-RUN locale-gen en_US.UTF-8
-
-RUN apt-get install -y curl git build-essential \
-    software-properties-common
-RUN apt-get install -y zlib1g-dev libssl-dev libreadline-dev \
-    libyaml-dev libcurl4-openssl-dev \
-    libffi-dev \
-    libcurl4-openssl-dev
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && apt-get install -y nodejs yarn
-
-#Setup ENV variables
-ENV PATH /usr/local/src/rbenv/shims:/usr/local/src/rbenv/bin:$PATH
-ENV RBENV_ROOT /usr/local/src/rbenv
-ENV RUBY_VERSION 2.5.1
-ENV CONFIGURE_OPTS --disable-install-doc
-
-
-RUN git clone https://github.com/rbenv/rbenv.git ${RBENV_ROOT} \
-    && git clone https://github.com/rbenv/ruby-build.git ${RBENV_ROOT}/plugins/ruby-build \
-    && ${RBENV_ROOT}/plugins/ruby-build/install.sh
-
-RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
-
-RUN rbenv install $RUBY_VERSION \
-&&  rbenv global $RUBY_VERSION
+# Install node and npm from deb.nodesource.com as version in stretch repo is outdated
+RUN apt-get -qq update && \
+    apt-get install curl software-properties-common -y
 RUN gem install bundler
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN DEBIAN_FRONTEND=noninteractive apt-get install nodejs
 
-# Add files
+RUN node -v
+RUN npm -v
+
+# Entrypoint
 COPY docker-entrypoint.sh /
 
+# Add additional files to install required Ruby gems and Node packages
+# to make docker container startup faster
+COPY Gemfile package.json package-lock.json _config_dev.yml /
+
+RUN printf "\nInstalling required node packages. Please wait..."
+RUN npm install
+
+RUN printf "\nInstalling required Ruby gems. Please wait..."
+RUN bundle install
+
+RUN apt-get clean && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 WORKDIR /app
+
+# To buil image and run node browser-sync
+#ENTRYPOINT ["bundle", "exec"]
+#CMD ["jekyll", "serve", "--config", "_config_dev.yml", "--host=0.0.0.0"]
 
 # CMD
 ENTRYPOINT ["/docker-entrypoint.sh"]
