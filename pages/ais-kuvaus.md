@@ -11,6 +11,8 @@ ref: ais-messages
 intro: Viestien vastaanotto ja muokkaus
 ---
 
+AIS-järjestelmä (Automatic Identification System) on laivojen ja alusten tunnistamiseen ja sijainnin määrittämiseen käytettävä järjestelmä. AIS tarjoaa laivoille keinon vaihtaa ja välittää läheisten laivojen kanssa elektronisesti alustietoja kuten tunnistustiedot, sijainti, suunta ja nopeus.
+
 Digitraffic palvelusta on saatavilla A-luokan sijainti- ja metadata-viestejä. Osalla viestejä suoritetaan suodatusta ja alustyypin muunnosta.
 
 ## Kalastusalusten suodatus

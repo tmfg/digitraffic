@@ -11,6 +11,8 @@ ref: ais-messages
 intro: Message filtering and modification
 ---
 
+The automatic identification system (AIS) is an automatic tracking system on ships and vessels. It provides information such as unique identification, position, course, and speed. AIS is intended to allow ships to view marine traffic in their area and to be seen by that traffic.
+
 Digitraffic service provides A class position and metadata messages. Some AIS-messages are filtered or modified.
 
 ## Fishing vessels
