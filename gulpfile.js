@@ -54,7 +54,7 @@ function watchFiles() {
         gulp.series(jekyll, browserSyncReload)
     );
 }
-
-gulp.task('default', gulp.series(browserSync, watchFiles, function() {
+// jekyll here to generate also on startup
+gulp.task('default', gulp.series(jekyll, browserSync, watchFiles, function() {
     // default task code here
 }));
