@@ -12,6 +12,7 @@ echo
 echo "Installing required node packages. Please wait..."
 echo
 npm install
+npm audit fix
 
 #bundle exec jekyll serve --config _config_dev.yml --host=0.0.0.0 &
 npm run dev &
