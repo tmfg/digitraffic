@@ -6,7 +6,7 @@ issue-number: DPO-678
 traffictypes:
   - Road traffic
   - Marine traffic
-status: inprogress
+status: planned
 ---
 
 Some parts of Digitraffic data is to be retained in archived for possible future use. That's why we are developing a service where our users can load the history data.
