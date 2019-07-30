@@ -27,6 +27,7 @@ ROAD
 - DPO-845 Sivustolta puuttuu v2 keliennusteiden dokumentaatio
 - DPO-846 Statuspalvelu hälyttää aika-ajoin data-rajapinnan aikaleimojen olevan myöhässä kuvien aikaleimoihin verrattuna
 - DPO-849 Kelikamerakuvien data-rajapinta palauttaa eri aikaleiman kuin kuvan HTTP-headerissa
+- DPO-853 - Elasticsearch: Cannot index event
 
 MARINE
 
