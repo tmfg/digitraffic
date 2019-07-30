@@ -3,7 +3,7 @@ title: 'Production applications updated on 30th of July 2019 at 10:00 AM – 12:
 categories: en News
 image:
 lang: en
-published: false
+published: true
 ref: 2019-07-30-release
 traffictypes:
   - Road
@@ -20,6 +20,8 @@ Changelog:
 ROAD
 
 - DPO-293 Rajapintojen dokumentaation parannus
+- DPO-393 Tuotannossa outoja "Sonja for datex2" konfiguraatioita
+- DPO-796 Konfiguraatioiden tarkastus: liikennevirasto.fi -> vayla.fi
 - DPO-802 Tarkennettun keliennustepalvelun dokumentaation parannus
 - DPO-809 Pitäisi lisätä GeoJSONia palauttaviin rajapintoihin produces header: "application/geo+json"
 - DPO-845 Sivustolta puuttuu v2 keliennusteiden dokumentaatio
@@ -29,6 +31,7 @@ ROAD
 MARINE
 
 - DPO-293 Rajapintojen dokumentaation parannus
+- DPO-796 Konfiguraatioiden tarkastus: liikennevirasto.fi -> vayla.fi
 - DPO-802 Tarkennettun keliennustepalvelun dokumentaation parannus
 - DPO-809 Pitäisi lisätä GeoJSONia palauttaviin rajapintoihin produces header: "application/geo+json"
 
