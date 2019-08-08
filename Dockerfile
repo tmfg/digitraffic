@@ -30,6 +30,7 @@ COPY Gemfile package.json package-lock.json _config_dev.yml /
 
 RUN printf "\nInstalling required node packages. Please wait..."
 RUN npm install
+RUN npm update --save
 RUN npm audit fix
 
 RUN printf "\nInstalling required Ruby gems. Please wait..."
