@@ -17,7 +17,7 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
-Road traffic information is gathered from the operational traffic management systems of Intelligent Traffic Management Finland Ltd (a subsidiary of traffic Management Finland).
+Road traffic information is gathered from the operational traffic management systems of ITM Finland Ltd (a subsidiary of Traffic Management Finland).
 Currently the open data API includes:
 
 - TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland.
