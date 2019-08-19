@@ -343,7 +343,7 @@ t:
     fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Traffic Management Finlandin ylläpitämistä tiedonkeruujärjestelmistä."
   road-traffic-button:
     en: "Road traffic APIs"
-    fi: "Tietoliikenne tietolähteet"
+    fi: "Tieliikenne tietolähteet"
   service-overview:
     en: "Service overview"
     fi: "Palvelun esittely"
