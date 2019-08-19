@@ -131,6 +131,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 19.8.2019
+    * Sijainnilliset vastaukset saa puhtaassa GeoJSON-muodossa
 * 20.5.2019
     * Kulkutievaraukset (routeset-viestit)
 * 22.1.2019
@@ -488,6 +490,7 @@ URL: `/train-locations/latest?bbox=<points>`
 
 * Esimerkki 1: [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
 * Esimerkki 2: [/train-locations/latest?bbox=20,60,35,70](https://rata.digitraffic.fi/api/v1/train-locations/latest?bbox=20,60,35,70)
+* Esimerkki 2: [/train-locations.geojson/latest?bbox=20,60,35,70](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=20,60,35,70)
 
 **Kuvaus**
 
@@ -535,7 +538,16 @@ Vanhat sijainnit löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/
 
 Paketin sisältämä json on saman muotoista kuin muutkin [GPS-sijainti-vastaukset](#gps-sijainnit).
 
-Uusi paketti luodaan joka päivä noin kello 15:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi 11.9.2018 15:30 luodaan päivän 9.9. junat. 
+Uusi paketti luodaan joka päivä noin kello 15:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi 11.9.2018 15:30 luodaan päivän 9.9. junat.
+
+### Sijainnit GeoJSON-muodossa
+
+Lisää osoitteen perään `.geojson`
+
+Esimerkkejä:
+
+*  [/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
+*  [/train-locations.geojson/latest/1](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/1)
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
@@ -819,7 +831,9 @@ Palvelun metatietojen hakurajapinta.
 
 ### Liikennepaikkatiedot
 
-URL: [metadata/stations](https://rata.digitraffic.fi/api/v1/metadata/stations)
+URL:
+* [metadata/stations](https://rata.digitraffic.fi/api/v1/metadata/stations)
+* [metadata/stations.geojson](https://rata.digitraffic.fi/api/v1/metadata/stations.geojson)
 
 **Kuvaus**
 
