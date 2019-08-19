@@ -14,5 +14,5 @@ tags:
 Data is avaiable as GeoJson by adding `.geojson` to the url
 
 Examples:
-* [https://rata.digitraffic.fi/api/v1/metadata/stations.geojson]()
-* [https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest]()
+* [https://rata.digitraffic.fi/api/v1/metadata/stations.geojson](https://rata.digitraffic.fi/api/v1/metadata/stations.geojson)
+* [https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
