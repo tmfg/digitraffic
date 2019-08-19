@@ -1206,7 +1206,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin sijainti on luettu*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: number[] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainti numeroparina*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: geojson ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainti GeoJSON-muodossa*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) speed: number ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan nopeus*
     
 ### Kulkutietoviestit
