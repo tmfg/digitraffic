@@ -910,7 +910,7 @@ Palauttaa listan palvelussa käytössä olevista junalajeista (esim. Cargo, Long
 
 **Paluuarvo**
 
-Palauttaa [Junalajit](#junalajit)-tyyppisen vastauksen.
+Palauttaa [Junalajit](#junalajit-1)-tyyppisen vastauksen.
 
 ### Junatyypit
 
@@ -922,7 +922,7 @@ Palauttaa listan palvelussa käytössä olevista junatyypeista (esim. IC, P, P).
 
 **Paluuarvo**
 
-Palauttaa [Junatyypit](#junatyypit)-tyyppisen vastauksen.
+Palauttaa [Junatyypit](#junatyypit-1)-tyyppisen vastauksen.
 
 ### Raideosuudet
 
