@@ -81,6 +81,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Syyluokat](#syyluokat)
         - [Syykoodit](#syykoodit)
         - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
+        - [Junalajit](#junalajit)
         - [Junatyypit](#junatyypit)
         - [Raideosuudet](#raideosuudet)
         - [Herätepisteet](#herätepisteet)
