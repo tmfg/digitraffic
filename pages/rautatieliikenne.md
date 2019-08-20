@@ -103,6 +103,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Syyluokat](#syyluokat-1)
     1. [Syykoodit](#syykoodit-1)
     1. [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit-1)
+    1. [Junalajit](#junalajit-1)
     1. [Junatyypit](#junatyypit-1)
     1. [Raideosuudet](#raideosuudet-1)
     1. [Herätepisteet](#herätepisteet-1)
@@ -131,6 +132,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 20.8.2019
+    * Liikennepaikan junia mahdollista suodattaa lunalajilla (matkustajajunien erottelu tavarajunista)
 * 19.8.2019
     * Sijainnilliset vastaukset saa puhtaassa GeoJSON-muodossa
 * 20.5.2019
@@ -896,7 +899,7 @@ Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. K
 
 Palauttaa [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)-tyyppisen vastauksen.
 
-### Junalaji
+### Junalajit
 
 URL: [metadata/train-categories](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
 
