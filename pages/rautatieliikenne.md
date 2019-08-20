@@ -349,6 +349,7 @@ Uusi paketti luodaan joka kuun viides päivä.
  Esimerkkejä:
  - [/live-trains/station/HKI](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI)
  - [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false)
+ - [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false&train_categories=Commuter](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false&train_categories=Commuter)
  
  **Kuvaus**
  
@@ -372,7 +373,8 @@ Versionumerohaulla ei palauteta junasta tietoa, mikäli junan tiedot eivät ole 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departed_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta lähtenyttä junaa palautetaan maksimissaan.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | departing_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta lähtevää junaa palautetaan maksimissaan.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping | true/false | false | true | Palautetaanko aseman ohi pysähtymättä ajavat junat.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | traffic_categories | string |  | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajaus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
    
@@ -384,7 +386,9 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 URL: `/live-trains/station/<station_shortcode>?minutes_before_departure=<minutes_before_departure>&minutes_after_departure=<minutes_after_departure>&minutes_before_arrival=<minutes_before_arrival>&minutes_after_arrival=<minutes_after_arrival>&version=<change_number>&includeNonstopping=<includeNonstopping`
 
-Esimerkiksi: [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15)
+Esimerkkejä:
+- [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15)
+- [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15&train_categories=Commuter](https://rata.digitraffic.fi/api/v1//live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15&train_categories=Commuter)
 
 **Kuvaus**
 
@@ -408,6 +412,7 @@ Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole mu
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| minutes_before_arrival | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään ennen sen saapumista.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| minutes_after_arrival | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään sen saapumisen jälkeen.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping | true/false | false | true | Palautetaanko aseman ohi pysähtymättä ajavat junat.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | traffic_categories | string |  | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -891,6 +896,18 @@ Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. K
 
 Palauttaa [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)-tyyppisen vastauksen.
 
+### Junalaji
+
+URL: [metadata/train-categories](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
+
+**Kuvaus**
+
+Palauttaa listan palvelussa käytössä olevista junalajeista (esim. Cargo, Long-distance, Commuter). 
+
+**Paluuarvo**
+
+Palauttaa [Junalajit](#junalajit)-tyyppisen vastauksen.
+
 ### Junatyypit
 
 URL: [metadata/train-types](https://rata.digitraffic.fi/api/v1/metadata/train-types)
@@ -1295,6 +1312,10 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Suomenkielinen käännös*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Englanninkielinen käännös*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ruotsinkielinen käännös*
+
+### Junalajit
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junalajin nimi*
 
 ### Junatyypit
 
