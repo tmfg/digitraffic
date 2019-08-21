@@ -221,6 +221,8 @@ The wiki source can be cloned with:
 
 ## Keeping up to date
 
+Command `bunde update` is excecuted every time docker image is build or started so it will do updates.
+
 - https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#step-2-install-jekyll-using-bundler
 - https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 - https://pages.github.com/versions/
