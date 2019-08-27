@@ -1396,5 +1396,5 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](ht
 
 [Käyttöehdot](/kayttoehdot) -sivulla on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
-[Väylän avoimen datan sivustolla](https://vayla.fi/avoindata/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
+[TMFG:n avoimen datan sivustolla](https://www.tmfg.fi/fi/tmfg/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
