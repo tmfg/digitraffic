@@ -55,7 +55,7 @@ Currently the open data API includes:
 - [WebSocket -API](#websocket-api)
     - [Topics](#topics)
     - [Simple JavaScript Web Socket -client](#simple-javascript-web-socket-client)
-- [Restrictions](#restictions)    
+- [Restrictions](#restrictions)    
 - [Swagger-documentation](#swagger-api)
 
 ## REST/JSON -APIs
