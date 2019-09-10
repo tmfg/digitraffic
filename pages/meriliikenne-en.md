@@ -335,4 +335,4 @@ sse/site/<site-id>          # Tracking single site data
 
 ## Restrictions
 
-Request to /mqtt -address are restricted to 5 requests a minute per ip-address.
+Requests to /mqtt -address are restricted to 5 requests a minute per ip-address.

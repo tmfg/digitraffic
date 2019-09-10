@@ -55,6 +55,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
     - [Topicit](#topicit)
     - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
+- [Käyttörajoitukset](#käyttörajoitukset)    
 - [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
@@ -401,3 +402,13 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 </body>
 </html>
 ```
+
+## Käyttörajoitukset
+
+Pyyntöjä /mqtt -osoitteeseen on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 5 pyyntöä minuutissa.
+
+Pyyntöjä yksittäiseen kamerakuvaan(weathercam.digitraffic.fi) on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä 
+maksimissaan 100 pyyntöä minuutissa yksittäiseen kamerakuvaan.
+
+Pyyntöjä /api/v2 -URLeihin on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 10 pyyntöä minuutissa 
+yksittäiseen osoitteeseen. 
