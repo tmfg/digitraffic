@@ -45,6 +45,7 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
             - [Esimerkkejä SSE-viestitilauksista](#esimerkkej-sse-viestitilauksista)
             - [SSE-data -viesti](#sse-data--viesti)
     - [Yksinkertainen JavaScript MQTT WebSocket -clientti](#yksinkertainen-javascript-mqtt-websocket--client)
+- [Käyttörajoitukset](#käyttörajoitukset)    
 - [Swagger-rajapintakuvaus](#swagger-api)
 
 ## REST/JSON-rajapinnat
@@ -331,3 +332,7 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
 </body>
 </html>
 ```
+
+## Käyttörajoitukset
+
+Pyyntöjä /mqtt -osoitteeseen on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 5 pyyntöä minuutissa.  

@@ -45,6 +45,7 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
             - [Examples of tracking SSE data](#examples-of-tracking-sse-data)
             - [SSE-data -message](#sse-data--message)
     - [Simple JavaScript MQTT WebSocket -client](#simple-javascript-mqtt-websocket-client)
+- [Restrictions](#restrictions)    
 - [Swagger-api](#swagger-api)
 
 ## REST/JSON -API
@@ -331,3 +332,7 @@ sse/site/<site-id>          # Tracking single site data
 </body>
 </html>
 ```
+
+## Restrictions
+
+Request to /mqtt -address are restricted to 5 requests a minute per ip-address.
