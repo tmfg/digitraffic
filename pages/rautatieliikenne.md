@@ -252,7 +252,7 @@ Automaattinen ennusteen laskeminen perustuu toteutuneisiin toteumiin. Historiast
 
 ### Yhden junan tiedot
 
-URL: `/trains/<train_number>?departure_date=<departure_date>&version=<version>`
+URL: `/trains/<departure_date>/<train_number>`
 
 Esimerkkejä
 - [/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1)
