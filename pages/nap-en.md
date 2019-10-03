@@ -30,4 +30,4 @@ Data sources from other traffic data providers listed here are based on the prov
 * **Language(s):** English
 * **Price:** License and fee. 
 * **Download url:** https://developer.tomtom.com/intermediate-traffic-service/intermediate-traffic-service 
-* **Feedback link / email | E-mail address:** tomtomtrafficcentre@groups.tomtom.com <br> Contact information is not publicly available
+* **Feedback link / email | E-mail address:** tomtomtrafficcentre@groups.tomtom.com Contact information is not publicly available.
