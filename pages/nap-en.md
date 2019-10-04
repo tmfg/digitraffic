@@ -2,7 +2,7 @@
 layout: traffictype
 permalink: /en/NAP/
 section: Tietolähteet
-traffictypes: Tieliikenne
+traffictypes: NAP
 searchable: true
 hero-image: road
 title: NAP
