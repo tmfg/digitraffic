@@ -13,7 +13,7 @@ intro: Data from other traffic data producers
 
 Data sources from other traffic data providers listed here are based on the providers own notifications following the EU ITS Directive 2010/40/EU.
 
-# TomTom                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+# TomTom
 
 | Metadata element | Content
 | --- | ---
