@@ -123,6 +123,12 @@ t:
     url:
       en: "/en/experimental"
       fi: "/kokeellinen"
+  nap:
+    en: "NAP"
+    fi: "NAP"
+    url:
+      en: "/en/NAP"
+      fi: "/en/NAP"
   about:
     en: "About Digitraffic"
     fi: "Tietoa palvelusta"
