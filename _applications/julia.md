@@ -7,7 +7,7 @@ developer:
 traffictypes: 
   - Rautatieliikenne
 environments:
-  - Verkkopalvelu
+  - Web
 language: Suomi (FIN)
 price: Ilmainen
 download-url: https://julia.dy.fi

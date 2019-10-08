@@ -10,7 +10,7 @@ traffictypes:
 environments:
   - iOS
   - Android
-  - Verkkopalvelu
+  - Web
 language: Suomi (FIN), Ruotsi (SWE), Englanti (EN), Venäjä (RUS)
 price: Ilmainen
 download-url: http://tassa.fi/lataa

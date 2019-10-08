@@ -39,7 +39,7 @@ Currently the open data API includes:
 - Metadata for all services is updated twice per day.
 
 # Content
-- [REST/JSON APIs](#restjson-apis)
+- [REST/JSON APIs](#restjson--apis)
     - [Road weather cameras](#road-weather-cameras)
     - [Current journey times](#current-journey-times)
     - [History data for previous day](#history-data-for-previous-day)

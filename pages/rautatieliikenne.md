@@ -16,8 +16,6 @@ links:
   - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
-# www.digitraffic.fi/rautatieliikenne/
-
 Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Traffic Management Finland ja tietolähteenä toimii Traffic Management Finlandin ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset sekä matkustajainformaatiojärjestelmä MIKU.
 
 Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien tiedoissa voi olla puutteita tai virheitä, tietoa ei aina saada tai tieto jää jostakin syystä välittymättä avoimeen dataan. Arkaluonteisia tietoja ei tuoda avoimeen dataan lainkaan. Näistä syistä emme suosittele aineiston käyttämistä turvallisuuskriittisissä sovelluksissa.

@@ -7,7 +7,7 @@ developer:
 traffictypes: 
   - Tieliikenne
 environments:
-  - Verkkopalvelu
+  - Web
 language: Suomi (FIN)
 price: Ilmainen
 download-url: http://roadweatherfinland.azurewebsites.net/

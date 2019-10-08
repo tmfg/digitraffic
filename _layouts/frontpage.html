@@ -30,7 +30,7 @@ layout: compress
                       <h1 class="hero-image__heading">{{ site.t.frontpage-heading[page.lang] }}</h1>
                       <p class="hero-image__intro">{{ site.t.frontpage-intro[page.lang] }}</p>
                       <div class="hero-image__button-area">
-                        <a href="{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">
+                        <a href="/{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">
                           <button class="button">
                             <i class="button__icon material-icons md-light md-lg">info</i>
                             <span class="button__text">{{ site.t.service-overview[page.lang] }}</span>
@@ -55,7 +55,7 @@ layout: compress
           <div class="row">
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="{{ site.t.tieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
+                <a href="/{{ site.t.tieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link_">
                   <div class="service-status__content">
                     <div id="service-status-circle-road" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -72,7 +72,7 @@ layout: compress
             </div>
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="{{ site.t.rautatieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
+                <a href="/{{ site.t.rautatieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-rail" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">
@@ -89,7 +89,7 @@ layout: compress
             </div>
             <div class="col-xs-12 col-sm-4">
               <div class="service-status__column">
-                <a href="{{ site.t.meriliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
+                <a href="/{{ site.t.meriliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
                     <div id="service-status-circle-marine" class="service-status__icon-circle-bottom">
                       <div class="service-status__icon-circle">

@@ -67,20 +67,20 @@ t:
     en: "Road"
     fi: "Tieliikenne"
     url:
-      en: "/en/road-traffic"
-      fi: "/tieliikenne"
+      en: "en/road-traffic"
+      fi: "tieliikenne"
   rautatieliikenne:
     en: "Rail"
     fi: "Rautatieliikenne"
     url:
-      en: "/en/railway-traffic"
-      fi: "/rautatieliikenne"
+      en: "en/railway-traffic"
+      fi: "rautatieliikenne"
   meriliikenne:
     en: "Marine"
     fi: "Meriliikenne"
     url:
-      en: "/en/marine-traffic"
-      fi: "/meriliikenne"
+      en: "en/marine-traffic"
+      fi: "meriliikenne"
   kokeellinen:
     en: "Experimental"
     fi: "Kokeellinen"
@@ -104,8 +104,8 @@ t:
     en: "Search"
     fi: "Haku"
     url:
-      en: "/en/search"
-      fi: "/haku"
+      en: "en/search"
+      fi: "haku"
   search-placeholder:
     en: "What are you looking for?"
     fi: "Mitä etsit?"
@@ -121,14 +121,14 @@ t:
     en: "Experimental"
     fi: "Kokeilut"
     url:
-      en: "/en/experimental"
-      fi: "/kokeellinen"
+      en: "en/experimental"
+      fi: "kokeellinen"
   nap:
     en: "NAP"
     fi: "NAP"
     url:
-      en: "/en/NAP"
-      fi: "/en/NAP"
+      en: "en/NAP"
+      fi: "en/NAP"
   about:
     en: "About Digitraffic"
     fi: "Tietoa palvelusta"
@@ -136,14 +136,14 @@ t:
     en: "Sign up your application"
     fi: "Ilmoita oma sovellus"
     url:
-      en: "/en/sign-up-your-application"
-      fi: "/ilmoita-oma-sovellus"
+      en: "en/sign-up-your-application"
+      fi: "ilmoita-oma-sovellus"
   terms-of-service:
     en: "Terms of service"
     fi: "Käyttöehdot"
     url:
-      en: "/en/terms-of-service"
-      fi: "/kayttoehdot"
+      en: "en/terms-of-service"
+      fi: "kayttoehdot"
   support:
     en: "Support"
     fi: "Tuki"
@@ -155,14 +155,14 @@ t:
     en: "Contact"
     fi: "Yhteystiedot"
     url:
-      en: "/en/contact"
-      fi: "/yhteystiedot"
+      en: "en/contact"
+      fi: "yhteystiedot"
   privacy-policy:
     en: "Privacy policy"
     fi: "Tietosuojaseloste"
     url:
-      en: "/en/privacy-policy"
-      fi: "/tietosuojaseloste"
+      en: "en/privacy-policy"
+      fi: "tietosuojaseloste"
   finnish-transport-agency-web:
     en: "Finnish Transport Infrastructure Agency"
     fi: "Väylä"
@@ -235,14 +235,14 @@ t:
     en: "API status"
     fi: "Rajapintojen tila"
     url:
-      en: "/en/api-status"
-      fi: "/rajapintojen-tila"
+      en: "en/api-status"
+      fi: "rajapintojen-tila"
   applications:
     en: "Applications"
     fi: "Sovellukset"
     url:
-      en: "/en/applications"
-      fi: "/sovellukset"
+      en: "en/applications"
+      fi: "sovellukset"
   applications-filter:
     en: "Filter applications"
     fi: "Rajaa sovelluksia"
@@ -265,8 +265,8 @@ t:
     en: "Development roadmap"
     fi: "Kehityssuunnitelma"
     url:
-      en: "/en/development-roadmap"
-      fi: "/kehityssuunnitelma"
+      en: "en/development-roadmap"
+      fi: "kehityssuunnitelma"
   development-roadmap-description:
     en: "Digitraffic development goals are presented by traffic type and status so that you can see what is being planned, in development and done."
     fi: "Digitrafficin kehittämisen tavoitteet esitetään liikennelajeittain ja hankekohtaisen tilan mukaan, jotta voit seurata mitä on suunnitteilla, toteutuksessa ja valmistunut."
@@ -314,8 +314,8 @@ t:
     en: "Marine traffic"
     fi: "Meriliikenne"
     url:
-      en: "/en/marine-traffic"
-      fi: "/meriliikenne"
+      en: "en/marine-traffic"
+      fi: "meriliikenne"
   marine-traffic-description:
     en: "Marine traffic APIs provide sea warnings, ship locations and their meta data, and Portnet data."
     fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
@@ -329,8 +329,8 @@ t:
     en: "Railway traffic"
     fi: "Rautatieliikenne"
     url:
-      en: "/en/railway-traffic"
-      fi: "/rautatieliikenne"
+      en: "en/railway-traffic"
+      fi: "rautatieliikenne"
   railway-traffic-description:
     en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
     fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."
@@ -341,8 +341,8 @@ t:
     en: "Road traffic"
     fi: "Tieliikenne"
     url:
-      en: "/en/road-traffic"
-      fi: "/tieliikenne"
+      en: "en/road-traffic"
+      fi: "tieliikenne"
   road-traffic-description:
     en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Traffic Management Finland."
     fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Traffic Management Finlandin ylläpitämistä tiedonkeruujärjestelmistä."
@@ -353,14 +353,14 @@ t:
     en: "Service overview"
     fi: "Palvelun esittely"
     url:
-      en: "/en/service-overview"
-      fi: "/palvelun-esittely"
+      en: "en/service-overview"
+      fi: "palvelun-esittely"
   support-channels:
     en: "Support channels"
     fi: "Tukikanavat"
     url:
-      en: "/en/support-channels"
-      fi: "/tukikanavat"
+      en: "en/support-channels"
+      fi: "tukikanavat"
   support-channels-description:
     en: "Public Google groups provide support and communication between developers, service provider and Traffic Management Finland."
     fi: "Kehittäjien, palvelun ylläpitäjän ja Traffic Management Finlandin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
@@ -368,8 +368,8 @@ t:
     en: "Information and instructions for using api"
     fi: "Ohjeita ja lisätietoa rajapintojen käyttöön"
     url:
-      en: "/en/instructions"
-      fi: "/ohjeita"
+      en: "en/instructions"
+      fi: "ohjeita"
 
   # API status
   recent-outages:

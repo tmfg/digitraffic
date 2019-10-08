@@ -23,7 +23,7 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
 
 - Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien aikataulutietojen kautta voidaan hakea kauppamerenkulun alusten satamatietoja
 
-- Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä. [Lisätietoa](ais)
+- Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä. [Lisätietoa](ais).
 
 - Alusten ja satamien metatiedot
 
@@ -80,7 +80,7 @@ Metadatat:
 
 [```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
 
-Alusten sijaintitiedot ja metatiedot kerätään laivojen lähettämien AIS-viestien perusteella.
+Alusten sijaintitiedot ja metatiedot kerätään laivojen lähettämien AIS-viestien perusteella. ([Lisätietoa](ais)).
 
 Metadatat:
 

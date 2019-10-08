@@ -35,7 +35,7 @@ layout: compress
           -->{% include breadcrumb-home.html %}<!--
           -->{% assign traffic_type = page.traffictypes | downcase %}<!--
           -->{% assign parent_url = site.t[traffic_type].url[page.lang] %}<!--          
-          --><span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ parent_url | remove_first: '/en' }}">
+          --><span class="breadcrumb__item"><a class="link" href="{% include url-home.html %}{{ parent_url | remove_first: 'en/' }}">
           {{ site.t[traffic_type][page.lang] }}</a></span><!--
           --><span class="breadcrumb__item">{{ page.title }}</span>
           </div>

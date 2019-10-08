@@ -1,6 +1,6 @@
 ---
 layout: traffictype
-permalink: /en/marine-traffic/
+permalink: en/marine-traffic/
 section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
@@ -23,7 +23,7 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 
 - Harbor schedules (gathered from the Portnet-system)
 
-- Vessel location AIS (Automatic Identification System). [Additional info](ais)
+- Vessel location AIS (Automatic Identification System). [Additional info](ais).
 
 - Vessel and harbor metadata
 
@@ -80,7 +80,7 @@ Related metadata:
 
 [```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
 
-Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.
+Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.  [Additional info](ais).
 
 Related metadata:
 

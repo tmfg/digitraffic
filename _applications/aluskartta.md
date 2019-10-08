@@ -9,7 +9,7 @@ traffictypes:
   - Meriliikenne
 environments:
   - Android
-  - Verkkopalvelu
+  - Web
 language: Suomi (FIN)
 price: Ilmainen
 download-url: https://play.google.com/store/apps/details?id=net.maanpuolustus.aluskartta

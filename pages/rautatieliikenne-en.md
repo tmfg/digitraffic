@@ -16,8 +16,6 @@ links:
   - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
-# RATA.DIGITRAFFIC.FI
-
 The purpose of this service is to share data of trains operating in Finland. The service is operated by Finnish Transport agency (FTA). The data is sourced from the following applications used in traffic controlling and capacity management: 
 
 ![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{ site.baseurl }}{{ "/img/rata/reaali.png" }}) ![LOKI]({{ site.baseurl }}{{ "/img/rata/loki.png" }})
