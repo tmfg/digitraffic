@@ -5,7 +5,7 @@ ref: muuttuvatnopeusrajoitukset
 issue-number: DPO-864
 traffictypes:
   - Tieliikenne
-status: suunnitteilla
+status: toteutuksessa
 ---
  
 Toteutetaan rajapinta muuttuville nopeusrajoituksille ja info-tauluille. Rajapintaan tullaan myöhemmin lisäämään tietoa varoituksista, muista liikennemerkeistä ja kaistojen/tunneleiden tilasta.
