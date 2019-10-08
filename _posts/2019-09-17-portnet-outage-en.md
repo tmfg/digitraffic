@@ -9,7 +9,7 @@ traffictypes:
   - Marine
 tags:
   - Admin
-  - Apis
+  - APIs
 ---
 
 There is a service break on the PORTNET integration on 17th of September due to PORTNET version upgrade.

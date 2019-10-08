@@ -9,7 +9,7 @@ traffictypes:
   - Road
 tags:
   - Admin
-  - Apis
+  - APIs
 ---
 
 There is a service break on LOTJU on 3rd of September at 10 AM - 2 PM due to LOTJU version 2.12.4 upgrade.
