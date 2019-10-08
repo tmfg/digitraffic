@@ -8,7 +8,7 @@ ref: 2018-11-15-issues-with-portnet
 traffictypes:
   - Marine
 tags:
-  - Apis
+  - APIs
   - Admin
 ---
 

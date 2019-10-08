@@ -9,7 +9,7 @@ traffictypes:
   - Road
 tags:
   - Admin
-  - Apis
+  - APIs
 ---
 
 A planned server maintenance break occurs on tuesday 27th of November at 10 AM - 1 PM (EET). 

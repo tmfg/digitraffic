@@ -10,7 +10,7 @@ traffictypes:
   - Marine
 tags:
   - Admin
-  - Apis
+  - APIs
 ---
 
 A planned network upgrade break occurs on saturday 24th of November at 4 PM - 9 PM (EET). 
