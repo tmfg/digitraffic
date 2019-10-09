@@ -68,7 +68,7 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 [```https://tie.digitraffic.fi/api/v1/data/camera-data```](https://tie.digitraffic.fi/api/v1/data/camera-data)
 
-[```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](http:s//tie.digitraffic.fi/api/v1/data/camera-data/{id})
+[```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](https://tie.digitraffic.fi/api/v1/data/camera-data/{id})
 
 Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0450701 kuva löytyy
 osoitteesta [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg).
