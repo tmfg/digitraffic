@@ -30,6 +30,13 @@ Digitraffic viittaa sanana digitaaliseen liikenteeseen eli liikennettä esittäv
 ![Kelikamerakuva Tie 12 Tampere, Rantatunnelin suu, itä. ](https://weathercam.digitraffic.fi/C0460900.jpg)
 **Kelikamerakuva Tie 12 Tampere, Rantatunnelin suu, itä.**
 
-Digitrafficin kehitys alkoi vuonna 2002 VTT:n ja TKK:n [projektista](http://virtual.vtt.fi/virtual/proj6/fits/julkaisut/hanke3/FITS_30.pdf), jossa   tavoitteena oli  tuottaa  entistä  parempia  liikennetelematiikan palveluja. Käynnistysvaiheen jälkeen Digitraffic siirtyi Tiehallinnon ja sittemmin Kaakkois-Suomen ELY-keskuksen hoitoon. Liikennevirasto vastasi palvelun ylläpidosta ja kehityksestä vuosina 2014-2018, jolloin Digitrafficin hyödyntäjäsopimuksista luovuttiin, palvelu siirrettiin pilvipalveluun, tietosisällöstä tehtiin avointa dataa ja palvelu laajennettiin kattamaan rautatie- ja meriliikenteen tietoja. 
+Digitrafficin kehitys alkoi vuonna 2002 VTT:n ja TKK:n [projektista](http://virtual.vtt.fi/virtual/proj6/fits/julkaisut/hanke3/FITS_30.pdf), 
+jossa tavoitteena oli  tuottaa  entistä  parempia  liikennetelematiikan palveluja. Käynnistysvaiheen jälkeen Digitraffic siirtyi Tiehallinnon ja
+sittemmin Kaakkois-Suomen ELY-keskuksen hoitoon. Liikennevirasto vastasi palvelun ylläpidosta ja kehityksestä vuosina 2014-2018, jolloin Digitrafficin 
+hyödyntäjäsopimuksista luovuttiin, palvelu siirrettiin pilvipalveluun, tietosisällöstä tehtiin avointa dataa ja palvelu laajennettiin kattamaan 
+rautatie- ja meriliikenteen tietoja. 
 
-Digitrafficin jakelemat tiedot perustuvat Traffic Management Finlandin, Väyläviraston ja Liikenne- ja viestintävirasto Traficomin  keräämään liikenne- ja olosuhdetietoon. Tietoja kerätään operatiivista toimintaa varten ja jaetaan hyödynnettäväksi avoimen datan periaatteiden mukaisesti. Tietojen hyödyntäminen on maksutonta eikä edellytä sopimusta Traffic Management Finlandin kanssa, mutta tiedon hyödyntäjän on noudatettava avoimen datan [käyttöehtoja]({{ site.t.terms-of-service.url[page.lang] | prepend:site.baseurl }}).
+Digitrafficin jakelemat tiedot perustuvat Traffic Management Finlandin, Väyläviraston ja Liikenne- ja viestintävirasto Traficomin  keräämään 
+liikenne- ja olosuhdetietoon. Tietoja kerätään operatiivista toimintaa varten ja jaetaan hyödynnettäväksi avoimen datan periaatteiden mukaisesti. 
+Tietojen hyödyntäminen on maksutonta eikä edellytä sopimusta Traffic Management Finlandin kanssa, mutta tiedon hyödyntäjän on noudatettava avoimen 
+datan [käyttöehtoja](/{{ site.t.terms-of-service.url[page.lang] | prepend:site.baseurl }}).
