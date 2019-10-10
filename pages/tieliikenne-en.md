@@ -42,8 +42,6 @@ Currently the open data API includes:
 - [REST/JSON APIs](#restjson--apis)
     - [Road weather cameras](#road-weather-cameras)
     - [Current journey times](#current-journey-times)
-    - [History data for previous day](#history-data-for-previous-day)
-    - [History data for requested month](#history-data-for-requested-month)
     - [Current free flow speeds](#current-free-flow-speeds)
     - [Current road weather forecasts (v1)](#current-road-weather-forecasts-v1)
     - [Current road weather forecasts (v2)](#current-road-weather-forecasts-v2)
@@ -80,16 +78,7 @@ Related metadata:
 
 NOTE! This information is not updated. The old journey time system has been shut down in the end of 2017.
 
-### History data for previous day 
-
-NOTE! This information is not available
-
-### History data for requested month
-[```https://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
-
-Response message contains history data for requested month.
-
-NOTE! Last history data is from 12/2017.
+Old history data can be downloaded from the following [link](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html).
 
 ### Current free flow speeds
 
@@ -102,6 +91,7 @@ Response message contains currently valid free flow speeds. The free flow speeds
 Message is updated once a day (3:30 AM EET).
 
 Related metadata:
+
 [```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
 
 ### Current road weather forecasts (v1)

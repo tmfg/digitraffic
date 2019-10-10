@@ -42,8 +42,6 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 - [REST/JSON-rajapinnat](#restjson-rajapinnat)
     - [Kelikamerat](#kelikamerat)
     - [Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot](#ajantasaiset-linkkien-sujuvuustiedot-sisältäen-matka-aikatiedot)
-    - [Edellisen päivän sujuvuuden historiatiedot](#edellisen-päivän-sujuvuuden-historiatiedot)
-    - [Sujuvuuden historiatiedot halutulta kuulta](#sujuvuuden-historiatiedot-halutulta-kuulta)
     - [Vapaat nopeudet](#vapaat-nopeudet)
     - [Ajantasaiset tiejaksojen keliennusteet (v1)](#ajantasaiset-tiejaksojen-keliennusteet-v1)
     - [Ajantasaiset tiejaksojen keliennusteet (v2)](#ajantasaiset-tiejaksojen-keliennusteet-v2)
@@ -84,19 +82,7 @@ Metadatat:
 Perjantaina 29.12.2017 päättyi pääkaupunkiseudun matka-aikajärjestelmän toiminta. Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
 vastaa enää asetettuja laatuvaatimuksia Tämän vuoksi myös Digitraffic lopetti toimittamasta PKS-järjestelmään liittyvää tietoa.
 
-Tämän johdosta tätä rajapintaa ei enää ole saatavilla.
-
-### Edellisen päivän sujuvuuden historiatiedot
-
-Koska uutta tietoa ei enää saavu, tämä rajapinta ei enää ole saatavilla.
-
-### Sujuvuuden historiatiedot halutulta kuulta
-
-[```https://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/fluency-history/{id}?year={year}&month={month})
-
-Viesti sisältää halutun linkin yhden kuukauden kaikki historiatiedot.
-
-Uutta tietoa ei enää saavu 29.12.2017 jälkeen.
+Vanhat sujuvuuden historiatiedot ovat saatavilla [täältä](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html).
 
 ### Vapaat nopeudet
 
