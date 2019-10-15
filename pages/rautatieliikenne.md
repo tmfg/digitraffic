@@ -134,6 +134,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 15.10.2019
+    * Rajapinta, josta voi hakea junien ja kokoonpanojen versiohistorian
 * 20.8.2019
     * Liikennepaikan junia mahdollista suodattaa lunalajilla (matkustajajunien erottelu tavarajunista)
 * 19.8.2019
