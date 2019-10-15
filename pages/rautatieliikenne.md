@@ -349,7 +349,7 @@ Uusi paketti luodaan joka kuun viides päivä.
  
 ### Junan versiohistoria
  
- URL: `/history/trains/{departure_date}/{train_number}`
+ URL: `/trains/history/{departure_date}/{train_number}`
  
  Esimerkki: [/trains/history/2019-10-14/1](https://rata.digitraffic.fi/api/v1/trains/history/2019-10-14/1)
  
