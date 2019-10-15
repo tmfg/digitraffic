@@ -792,7 +792,7 @@ Uusi paketti luodaan joka kuun viides päivä.
 
 URL: `/compositions/history/<departure_date>/<train_number>`
 
-Esimerkki: [/compositions/history/2017-01-01/1](https://rata.digitraffic.fi/api/v1/compositions/history/2017-01-01/1)
+Esimerkki: [/compositions/history/2019-01-01/1](https://rata.digitraffic.fi/api/v1/compositions/history/2019-01-01/1)
 
 **Kuvaus**
 
