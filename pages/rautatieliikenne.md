@@ -355,7 +355,7 @@ Uusi paketti luodaan joka kuun viides päivä.
  
  **Kuvaus**
  
- Palauttaa junan kaikki versiot
+ Palauttaa junan kaikki versiot. Historiatietoa säilytetään tallessa 14 päivää
  
 **Hakuehdot**
 
@@ -796,7 +796,7 @@ Esimerkki: [/compositions/history/2017-01-01/1](https://rata.digitraffic.fi/api/
 
 **Kuvaus**
 
-Palauttaa junan kokoonpanojen kaikki versiot
+Palauttaa junan kokoonpanojen kaikki versiot. Historiatietoa säilytetään tallessa 14 päivää
 
 **Hakuehdot**
 
