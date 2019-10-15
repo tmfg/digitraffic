@@ -1,18 +1,19 @@
 ---
-title: 'Rail: data avaiable as GeoOJson'
+title: 'Rail: trains and compositions version history API available'
 categories: en News
 image: 
 lang: en
 published: true
-ref: 2019-08-19-release-en
+ref: 2019-10-15-release-en
 traffictypes:
   - Rail
 tags:
   - APIs
 ---
 
-Data is avaiable as GeoJson by adding `.geojson` to the url
+trains and compositions version history API available
 
 Examples:
-* [https://rata.digitraffic.fi/api/v1/metadata/stations.geojson](https://rata.digitraffic.fi/api/v1/metadata/stations.geojson)
-* [https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
+* [https://rata.digitraffic.fi/api/v1/trains/history/2019-10-15/1](https://rata.digitraffic.fi/api/v1/trains/history/2019-10-15/1)
+* [https://rata.digitraffic.fi/api/v1/compositions/history/2019-10-15/1](https://rata.digitraffic.fi/api/v1/compositions/history/2019-10-15/1)
+
