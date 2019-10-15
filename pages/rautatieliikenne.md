@@ -50,6 +50,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
         - [GTFS](#gtfs)
         - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
+        - [Junan versiohistoria](#junan-versiohistoria)
     1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
         - [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-lukumäärärajoitus)
         - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
@@ -69,6 +70,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
         - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)   
+        - [Kokoonpanojen versiohistoria](#kokoonpanojen-versiohistoria)
     1. [Kulkutievarukset (/routesets)](#kulkutievaraukset-routesets)
         - [Kaikkien kulkutievarauksien seuranta](#kaikkien-kulkutievarauksien-seuranta)
         - [Yhden junan kulkutievaraukset](#yhden-junan-kulkutievaraukset)
@@ -107,6 +109,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
     1. [Raideosuudet](#raideosuudet-1)
     1. [Herätepisteet](#herätepisteet-1)
     1. [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)
+    1. [Versiohistoria](#versiohistoria)
 1. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
 1. [Avoimen datan käyttölupa](#avoimen-datan-käyttölupa)
 
@@ -1409,6 +1412,15 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan yksilöivä numero*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan alkupäivämäärä*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin kapasiteettihakemuksia muutosajankohtaan otetaan vastaan*
+
+### Versiohistoria
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versiotiedon yksilöivät tiedot*
+  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumero*
+  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä*
+  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fetchDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki, jolloin versio on syntynyt*  
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) json: json ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Version json-sisältö*
 
 ## Versionumeroiden käyttö
 
