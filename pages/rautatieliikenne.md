@@ -340,7 +340,30 @@ Vanhojen junien tiedot löytyvät zip-paketteina osoittesta [/api/v1/trains/dump
 
 Paketin sisältämä json on saman muotoista kuin muutkin [juna-vastaukset](#junat).
 
-Uusi paketti luodaan joka kuun viides päivä. 
+Uusi paketti luodaan joka kuun viides päivä.
+ 
+### Junan versiohistoria
+ 
+ URL: `/history/trains/{departure_date}/{train_number}`
+ 
+ Esimerkki: [/trains/history/2019-10-14/1](https://rata.digitraffic.fi/api/v1/trains/history/2019-10-14/1)
+ 
+ **Kuvaus**
+ 
+ Palauttaa junan kaikki versiot
+ 
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
+| --- | --- | --- | --- | ---
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. 
+  
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+ 
+ **Paluuarvo**
+ 
+ Palauttaa [versiohistoria](#versiohistoria)-tyyppisen vastauksen, jossa json-kenttä on muotoa [junat](#junat).
  
 ## Aktiivisten junien seuranta (/live-trains)
  
@@ -759,6 +782,29 @@ Vanhat kokoonpanot löytyvät zip-paketteina osoittesta [/api/v1/compositions/du
 Paketin sisältämä json on saman muotoista kuin muutkin [kokoonpano-vastaukset](#kokoonpanot).
 
 Uusi paketti luodaan joka kuun viides päivä. 
+
+### Kokoonpanojen versiohistoria
+
+URL: `/compositions/history/<departure_date>/<train_number>`
+
+Esimerkki: [/compositions/history/2017-01-01/1](https://rata.digitraffic.fi/api/v1/compositions/history/2017-01-01/1)
+
+**Kuvaus**
+
+Palauttaa junan kokoonpanojen kaikki versiot
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Selitys|
+|---|---|---|--- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [versiohistoria](#versiohistoria)-tyyppisen vastauksen, jossa json-kenttä on muotoa [kokoonpanot](#kokoonpanot).
 
 ## Kulkutievaraukset (/routesets)
 
