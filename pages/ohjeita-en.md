@@ -12,7 +12,7 @@ intro: Instructions for coding
 
 In here you can find information and instructions about apis and how to use them.
 
-# Cache
+# [Cache](#cache)
 
 Most of the service calls are cached.  Therefore, there is no gain calling the services too often, as the response will not change.  Most
 of the caches are one minute long.
@@ -25,24 +25,24 @@ This might lead to some oddities with updated timestamps. For example:
 
 These two might return a different _dataUpdatedTime_ because the calls were cached at different time.
 
-# Compression
+# [Compression](#compression)
 
 Using compression is highly recommended.  The data compress well and you can save bandwith and time.  How to use compression is dependant
 of the tools and frameworks you are using.
 
-## curl
+# [cURL](#curl)
 
 ```
 curl -H 'Accept-Encoding: gzip' -H 'Connection: close' --compress https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
-## wget
+# [Wget](#wget)
 
 ```
 wget --header='Accept-Encoding: gzip' --header='Connection: close' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
-## Java RestTemplate
+# [Java RestTemplate](#java-resttemplate)
 
 ```
 final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());

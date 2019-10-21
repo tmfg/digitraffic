@@ -12,7 +12,7 @@ intro: Ohjeita ohjelmoijille
 
 Tälle sivulle on kerätty ohjeistusta ja tietoa rajapinnoista ja niiden käytöstä.
 
-# Cache
+# [Cache](#cache)
 
 Suurin osa rajapintojen kutsuista on cachetettu edustapalvelimilla.  Tämän takia palveluita ei ole hyötyä kutsua liian usein, koska 
 cachesta palautuva vastaus ei muutu.  Cachen ikä on määritelty HTTP-headerissa `cache-control`, esimerkiksi `cache-control: max-age=60`.
@@ -25,24 +25,24 @@ Tämä saattaa myös aiheuttaa omituiselta tuntuvia aikaleimoja, kun samaa palve
 
 Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen eri aikoina.
 
-# Pakkaus
+# [Pakkaus](#pakkaus)
 
 Pakkausta kannattaa käyttää, sillä data on hyvin pakkautuvaa ja tällä säästää kaistaa ja aikaa. Pakkauksen käyttöönotto riippuu hieman 
 käytetystä tekniikasta.  
 
-## curl
+# [cURL](#curl)
 
 ```
 curl -H 'Accept-Encoding: gzip' -H 'Connection: close' --compress https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
-## wget
+# [Wget](#wget)
 
 ```
 wget --header='Accept-Encoding: gzip' --header='Connection: close' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
-## Java RestTemplate
+# [Java RestTemplate](#java-resttemplate)
 
 ```
 final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
