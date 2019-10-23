@@ -10,6 +10,11 @@ title: Ohjeita
 intro: Ohjeita ohjelmoijille
 ---
 
+Sisällysluettelo
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+
 # [Cache](#cache)
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  
 __V__: Suurin osa rajapintojen kutsuista on cachetettu edustapalvelimilla.  Tämän takia palveluita ei ole hyötyä kutsua liian usein, koska 

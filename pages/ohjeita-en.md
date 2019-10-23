@@ -10,6 +10,10 @@ title: Instructions
 intro: Instructions for coding
 ---
 
+Table of contents
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 # [Cache](#cache)
 __Q__: Why do APIs often return the same response?  
 __A__: Most of the service calls are cached.  Therefore, there is no gain calling the services too often, as the response will not change.  Most
