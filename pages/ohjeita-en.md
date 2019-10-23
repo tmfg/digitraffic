@@ -64,6 +64,6 @@ final String output = restTemplate.getForObject("https://tie.digitraffic.fi/api/
 __Q__: Why do some of my API requests fail with code 429?  
 __A__: Some APIs can be called with a certain amount in a certain time window. The API contents are not updated more often than the API can be called.  
 
-# [Authentication in weathercam requests](#weathercam-authentication)
+# [Authentication in weathercam requests](#authentication-in-weathercam-requests)
 __Q__: Why do my weathercam API requests fail with code 400?  
 __A__: Check if you using the Authorization header in your requests. Using this header will cause weathercam requests to fail.  

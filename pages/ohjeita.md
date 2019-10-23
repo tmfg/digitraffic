@@ -60,10 +60,10 @@ final RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
 final String output = restTemplate.getForObject("https://tie.digitraffic.fi/api/v1/data/tms-data?testi=testi", String.class);
 ```
 
-# [Pyyntömäärien rajoittaminen](#pyyntomaarien-rajoittaminen)
+# [Pyyntömäärien rajoittaminen](#pyynt%C3%B6m%C3%A4%C3%A4rien-rajoittaminen)
 __K__: Miksi HTTP-pyyntöihini vastataan koodilla 429?  
 __V__: Osaa rajapinnoista voidaan kutsua tietyn aikaikkunan sisällä vain tietyn kutsumäärän verran. Rajapintojen sisältö ei päivity useammin kuin niitä on mahdollista kutsua.  
 
-# [Autentikaatio kelikamerakuvien haussa](#kelikamera-autentikaatio)
+# [Autentikaatio kelikamerakuvien haussa](#autentikaatio-kelikamerakuvien-haussa)
 __K__: Miksi kelikamerakuvia hakeviin HTTP-pyyntöihini vastataan koodilla 400?  
 __V__: Digitraffic ei tue Authorization-otsikkoa kelikamerakuvien haussa, älä käytä sitä pyynnöissä.
