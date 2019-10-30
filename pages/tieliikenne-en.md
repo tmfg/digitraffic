@@ -20,7 +20,7 @@ links:
 Road traffic information is gathered from the operational traffic management systems of ITM Finland Ltd (a subsidiary of Traffic Management Finland).
 Currently the open data API includes:
 
-- TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland.
+- TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland. The [TMS documentation](lam) contains descriptions of TMS data.
 
 - Current free flow speeds. Data is updated once a day.
 
