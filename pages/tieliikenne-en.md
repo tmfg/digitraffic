@@ -260,6 +260,10 @@ Warning sign types(in Finnish):
 
 [```https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions)
 
+Warning sign images:
+
+[```https://vayla.fi/tieverkko/liikennemerkit```](https://vayla.fi/tieverkko/liikennemerkit)
+
 ## WebSocket API
 
 TMC-data can be tracked from following Web Socket APIs. Protocol is MQTT over WebSockets. This allows
