@@ -273,7 +273,7 @@ Varoitusmerkkien tyypit:
 
 [```https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions)
 
-Varoitusmerkkien kuvina:
+Varoitusmerkit kuvina:
 
 [```https://vayla.fi/tieverkko/liikennemerkit```](https://vayla.fi/tieverkko/liikennemerkit)
 
