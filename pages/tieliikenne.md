@@ -271,7 +271,7 @@ nopeusrajoitukset sekä varoitusmerkit.
 
 Varoitusmerkkien tyypit:
 
-[```https://tie.digitraffic.fi/api/v2/metadata/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/code-descriptions)
+[```https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions)
 
 ## WebSocket-rajapinnat
 

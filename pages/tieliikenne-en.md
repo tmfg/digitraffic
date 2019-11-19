@@ -258,7 +258,7 @@ Response message contains latest variable sign data.  Currenty supported sign ty
 
 Warning sign types(in Finnish):
 
-[```https://tie.digitraffic.fi/api/v2/metadata/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/code-descriptions)
+[```https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions)
 
 ## WebSocket API
 
