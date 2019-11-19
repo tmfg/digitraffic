@@ -50,6 +50,7 @@ Currently the open data API includes:
     - [Weight restrictions](#weight-restrictions)
     - [Roadworks](#roadworks)
     - [Status of road weather stations](#status-of-road-weather-stations)
+    - [Variable signs](#variable-signs)
 - [WebSocket -API](#websocket-api)
     - [Topics](#topics)
     - [Simple JavaScript Web Socket -client](#simple-javascript-web-socket-client)
@@ -244,6 +245,20 @@ Related metadata:
 [```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
 
 [```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+
+### Variable signs
+
+[```https://tie.digitraffic.fi/api/v2/data/variable-signs```](https://tie.digitraffic.fi/api/v2/data/variable-signs)
+
+[```https://tie.digitraffic.fi/api/v2/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/{id})
+
+[```https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id})
+
+Response message contains latest variable sign data.  Currenty supported sign types are speed limits and warnings.
+
+Warning sign types(in Finnish):
+
+[```https://tie.digitraffic.fi/api/v2/metadata/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/code-descriptions)
 
 ## WebSocket API
 

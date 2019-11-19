@@ -50,6 +50,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Painorajoitteet](#painorajoitteet)
     - [Tietyöt](#tietyöt)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
+    - [Muuttuvien liikennemerkkien tiedot](#muuttuvien-liikennemerkkien-tiedot)
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
     - [Topicit](#topicit)
     - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
@@ -256,6 +257,21 @@ Metadatat:
 [```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
 
 [```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+
+### Muuttuvien liikennemerkkien tiedot
+
+[```https://tie.digitraffic.fi/api/v2/data/variable-signs```](https://tie.digitraffic.fi/api/v2/data/variable-signs)
+
+[```https://tie.digitraffic.fi/api/v2/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/{id})
+
+[```https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id})
+
+Viesti sisältää muuttuvan liikennemerkin viimeisimmän tilan.  Tällä hetkellä tuettuja merkkejä ovat muuttuvat 
+nopeusrajoitukset sekä varoitusmerkit.
+
+Varoitusmerkkien tyypit:
+
+[```https://tie.digitraffic.fi/api/v2/metadata/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/code-descriptions)
 
 ## WebSocket-rajapinnat
 
