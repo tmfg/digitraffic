@@ -1108,7 +1108,7 @@ MQTT vastaa kolmesta portista
 
 1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/) 
 1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [http://jsfiddle.net/nj9dg6hp/](http://jsfiddle.net/nj9dg6hp/)
-1. Normaalin TCP-yhteyden kautta osoitteessa rata.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
+1. Normaalin TCP-yhteyden kautta osoitteessa rata-mqtt.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
 
 MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen junan kokoonpanoa topicista `compositions/+/5/#`. Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
