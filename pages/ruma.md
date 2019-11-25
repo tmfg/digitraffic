@@ -7,7 +7,7 @@ searchable: true
 hero-image: rail
 title: RUMA
 lang: fi
-ref: tms
+ref: ruma
 intro: RUMA-järjestelmän tiedot
 ---
 
