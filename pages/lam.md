@@ -22,7 +22,7 @@ Alla on lisätietoa antureista.
 | Anturin tunniste | Nimi | Yksikkö | Selite
 | --- | --- | --- | ---
 | 5152<br>5125 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2 | km/h | Keskinopeus viimeiseltä viideltä minuutilta.
-| 5158<br>5161 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2 | % vapaasta nopeudesta | Keskinopeuden prosenttiosuus määritellystä tien vapaasta nopeudesta viimeisen viiden minuutin ajalta.<br>(= KESKINOPEUS_5MIN_LIUKUVA_SUUNTA<1&#124;2> / VVAPAAS<1&#124;2> * 100)<br>Arvovastaavuudet:<br>0 – 10 Seisoo<br>10 – 25 Pysähtelee<br>25 – 75 Hidasta<br>75 – 90 Jonoutunut<br>90 – 100 Sujuvaa 
+| 5158<br>5161 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2 | % vapaasta nopeudesta | Keskinopeuden prosenttiosuus määritellystä tien vapaasta nopeudesta viimeisen viiden minuutin ajalta.<br>Arvovastaavuudet:<br><code>0 – 10 Seisoo<br>10 – 25 Pysähtelee<br>25 – 75 Hidasta<br>75 – 90 Jonoutunut<br>90 – 100 Sujuvaa</code>
 | 5056<br>5057 | KESKINOPEUS_60MIN_KIINTEA_SUUNTA1  KESKINOPEUS_60MIN_KIINTEA_SUUNTA2 | km/h | Keskinopeus ilmoitetun 60 min aikavaikaikkunalta.
 | 5058<br>5061 | KESKINOPEUS_5MIN_KIINTEA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_KIINTEA_SUUNTA2_VVAPAAS2 | % vapaasta nopeudesta | Keskinopeuden prosenttiosuus määritellystä tien vapaasta nopeudesta ilmoitetulta 5 min aikaväliltä. Arvovastaavuudet: ks. yllä KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1.
 | 5116<br>5119 | OHITUKSET_5MIN_LIUKUVA_SUUNTA1  OHITUKSET_5MIN_LIUKUVA_SUUNTA2 | kpl/h | Viimeisen 5 minuutin automäärä ekstrapoloituna tunti määräksi. Eli paljonko autoja kulkisi tunnissa, jos virta pysyisi samana kuin viimeisen viiden minuutin aikana.
