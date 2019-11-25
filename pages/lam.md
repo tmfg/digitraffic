@@ -29,8 +29,8 @@ Alla on lisätietoa antureista.
 | 5164<br>5168 | OHITUKSET_5MIN_LIUKUVA_SUUNTA1_MS1  OHITUKSET_5MIN_LIUKUVA_SUUNTA2_MS2 | % maksimista | Viimeisen 5 minuutin (tunti määräksi ekstrapoloidun) automäärän prosenttiosuus maksimimäärästä (MS1/MS2).
 | 5064<br>5068 | OHITUKSET_5MIN_KIINTEA_ SUUNTA1_MS1  OHITUKSET_5MIN_KIINTEA_SUUNTA2_MS2 | % maksimista | Ilmoitetun 5 minuutin aikavälin (tunti määräksi ekstrapoloidun) automäärän prosenttiosuus maksimimäärästä (MS1/MS2).
 | 5054<br>5055 | OHITUKSET_60MIN_KIINTEA_SUUNTA1 OHITUKSET_60MIN_KIINTEA_SUUNTA2 | kpl/h | Ilmoitetun 60 minuutin aikavälin automäärä.
-| 5054<br>5055<br>5067<br>5071 | OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1  OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2 | % maksimista | Ilmoitetun 60 minuutin aikavälin automäärän prosenttiosuus maksimimäärästä (MS1/MS2).
-
+| 5067<br>5071 | OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1  OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2 | % maksimista | Ilmoitetun 60 minuutin aikavälin automäärän prosenttiosuus maksimimäärästä (MS1/MS2).
+ 
 # Anturivakiot
 Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioiden arvoja. Huomaathan että vakioiden arvot vaihtelevat asemakohtaisesti, tarkista arvot täältä: [https://tie.digitraffic.fi/api/v1/data/tms-sensor-constants](https://tie.digitraffic.fi/api/v1/data/tms-sensor-constants).
 
