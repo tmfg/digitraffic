@@ -8,4 +8,4 @@ traffictypes:
 status: toteutuksessa
 ---
 
-Palauteväylän palautteiden jakaminen Open311-määrittelyn mukaisista rajapinnoista.  Lisätietoa palauteväyläst osoitteessa [https://liikenne.palautevayla.fi/feedbacks](https://liikenne.palautevayla.fi/feedbacks)
+Palauteväylän palautteiden jakaminen Open311-määrittelyn mukaisista rajapinnoista.  Lisätietoa palauteväylästä osoitteessa [https://liikenne.palautevayla.fi/feedbacks](https://liikenne.palautevayla.fi/feedbacks)
