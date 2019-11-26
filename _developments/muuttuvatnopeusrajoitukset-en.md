@@ -5,7 +5,7 @@ ref: muuttuvatnopeusrajoitukset
 issue-number: DPO-864
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 ---
 
 Variable speed limit signs and information boards are planned to be published on Digitraffic API.
