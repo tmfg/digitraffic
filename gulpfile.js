@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const cp = require('child_process');
 const browsersync = require('browser-sync').create();
+const del = require('del');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -32,6 +33,11 @@ function jekyll() {
     return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml'], { stdio: "inherit" });
 }
 
+// Clean output dir
+function clean() {
+    return del('_site/**', {force:true});
+}
+
 // Watch files
 function watchFiles() {
     gulp.watch(
@@ -51,10 +57,10 @@ function watchFiles() {
             'js/*',
             'pages/*'
         ],
-        gulp.series(jekyll, browserSyncReload)
+        gulp.series(clean, jekyll, browserSyncReload)
     );
 }
 // jekyll here to generate also on startup
-gulp.task('default', gulp.series(jekyll, browserSync, watchFiles, function() {
+gulp.task('default', gulp.series(clean, jekyll, browserSync, watchFiles, function() {
     // default task code here
 }));

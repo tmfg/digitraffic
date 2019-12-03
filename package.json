@@ -17,6 +17,7 @@
     "gulp": "^4.0.2",
     "gulp-shell": "^0.7.1",
     "lodash": "^4.17.15",
-    "lodash.template": ">=4.5.0"
+    "lodash.template": ">=4.5.0",
+    "del": ">=5.1.0"
   }
 }
