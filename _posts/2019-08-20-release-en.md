@@ -4,7 +4,7 @@ categories: en News
 image: 
 lang: en
 published: true
-ref: 2019-08-20-release-en
+ref: 2019-08-20-release
 traffictypes:
   - Rail
 tags:
