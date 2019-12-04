@@ -73,6 +73,6 @@ __Q__: Why do my weathercam API requests fail with code 400?
 __A__: Check if you using the Authorization header in your requests. Using this header will cause weathercam requests to fail.  
 
 # [MQTT disconnects](#mqtt_disconnects)
-__Q__: Why does my mqtt-connection keep disconnecting?
+__Q__: Why does my mqtt-connection keep disconnecting?  
 __A__: You have not subscribed any topic or subscribed only topics that have infrequent messages. 
 Subscribe also to relevan status-topic(tms/status, weather/status or vessels/status).
