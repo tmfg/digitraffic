@@ -336,7 +336,7 @@ Topics are constructed like this:
         function connect() {
             console.log('trying to connect to road mqtt...');
 
-            client = new Paho.MQTT.Client("tie-aws-mqtt-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            client = new Paho.MQTT.Client("tie-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
