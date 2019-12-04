@@ -402,6 +402,6 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 
 Requests to /mqtt -address are restricted to 5 requests a minute per ip-address.
 
-Requests to a single weather camera image(weathercam.digitraffic.fi) are restricted to 60 requests a minute per ip-address.
+Requests to a single weather camera image(weathercam.digitraffic.fi) are restricted to 20 requests a minute per ip-address.
 
-Requests to a single /api/v2 URL are restricted to to 10 requests a minute per ip-address
+Requests to a single version 2 or newer api are restricted to to 10 requests a minute per ip-address.

@@ -72,3 +72,8 @@ __V__: Osaa rajapinnoista voidaan kutsua tietyn aikaikkunan sisällä vain tiety
 # [Autentikaatio kelikamerakuvien haussa](#autentikaatio-kelikamerakuvien-haussa)
 __K__: Miksi kelikamerakuvia hakeviin HTTP-pyyntöihini vastataan koodilla 400?  
 __V__: Digitraffic ei tue Authorization-otsikkoa kelikamerakuvien haussa, älä käytä sitä pyynnöissä.
+
+# [MQTT-yhteys katkeaa](#mqtt-yhteys-katkeaa)
+__K__: Miksi mqtt-yhteys tuntuu katkeavan koko ajan?
+__V__: Jos et ole tilannut(subscribe) aiheita(topic) tai niistä ei tule viestejä, niin yhteys saattaa katketa.  
+Tilaa silloin myös status-topic(tms/status, weather/status, vessels/status).0
