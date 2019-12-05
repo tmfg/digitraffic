@@ -31,7 +31,7 @@ Traffic Management Finland may request removal of the attribution information fr
 
 Example: using rata.digiraffic.fi API data on a web page or in an application. Add the followig to your web page or to your application:
 
- Source: Traffic Management Finland / digitraffic.fi, lisence CC 4.0 BY
+ Source: Traffic Management Finland / digitraffic.fi, license CC 4.0 BY
 
 More information about attribution can be found from the  [Creative Commons website](https://creativecommons.org/).
 
