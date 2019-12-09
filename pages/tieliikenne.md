@@ -11,10 +11,8 @@ lang: fi
 ref: road-traffic
 intro: Avointa dataa Suomen tieverkolta.
 links:
-  - ["Väylä", "https://vayla.fi"]
-  - ["Traffic Management Finland","https://tmfg.fi"]
-  - ["Swagger-UI", "https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
-  - ["Swagger-kuvaus", "https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
+  - - Väylä
+    - https://vayla.fi
 ---
 
 Tieliikenteen tiedot syntyvät Traffic Management Finlandin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
