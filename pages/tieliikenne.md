@@ -13,8 +13,8 @@ intro: Avointa dataa Suomen tieverkolta.
 links:
   - ["Väylä", "https://vayla.fi"]
   - ["Traffic Management Finland","https://tmfg.fi"]
-  - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
-  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
+  - ["Swagger-UI", "https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
+  - ["Swagger-kuvaus", "https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
 Tieliikenteen tiedot syntyvät Traffic Management Finlandin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
@@ -76,7 +76,7 @@ osoitteesta [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/camera-stations```](https://tie.digitraffic.fi/api/v1/metadata/camera-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations)
 
 ### Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
@@ -99,7 +99,7 @@ Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viest
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations)
 
 ### Ajantasaiset tiejaksojen keliennusteet (v1)
 
@@ -109,11 +109,11 @@ Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden m
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections)
 
 ### Ajantasaiset tiejaksojen keliennusteet (v2)
 
@@ -155,9 +155,9 @@ Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v1/metadata/tms-sensors)
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v3/metadata/tms-sensors)
 
 ### Häiriötiedotteet
 
@@ -181,11 +181,11 @@ tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
 ### Painorajoitteet
 
@@ -207,11 +207,11 @@ tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
 ### Tietyöt
 
@@ -233,11 +233,11 @@ tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
@@ -254,9 +254,9 @@ Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors)
 
 ### Muuttuvien liikennemerkkien tiedot
 

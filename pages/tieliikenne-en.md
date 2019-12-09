@@ -13,8 +13,8 @@ intro: Open data from Finnish roads.
 links:
   - ["Väylä", "https://vayla.fi"]
   - ["Traffic Management Finland","https://tmfg.fi"]
-  - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
-  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
+  - ["Swagger-UI", "https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
+  - ["Swagger-kuvaus", "https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
 Road traffic information is gathered from the operational traffic management systems of ITM Finland Ltd (a subsidiary of Traffic Management Finland).
@@ -73,7 +73,7 @@ Response message contains weather camera information and URL for the camera imag
 ![Weather camera image C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
 Related metadata:
-[```https://tie.digitraffic.fi/api/v1/metadata/camera-stations```](https://tie.digitraffic.fi/api/v1/metadata/camera-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations)
 
 ### Current journey times
 
@@ -93,7 +93,7 @@ Message is updated once a day (3:30 AM EET).
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations)
 
 ### Current road weather forecasts (v1)
 
@@ -103,11 +103,11 @@ Response message contains road specific weather forecasts. Reports are updated e
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections)
 
 
 ### Current road weather forecasts (v2)
@@ -152,9 +152,9 @@ Real time data can be read from WebSocket.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/tms-stations```](https://tie.digitraffic.fi/api/v1/metadata/tms-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v1/metadata/tms-sensors)
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v3/metadata/tms-sensors)
 
 ### Traffic disorders
 
@@ -175,11 +175,11 @@ date and times properly with any offset from ISO 8601 date format.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
 ### Weight restrictions
 
@@ -198,11 +198,11 @@ date and times properly with any offset from ISO 8601 date format.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
 ### Roadworks
 
@@ -223,11 +223,11 @@ date and times properly with any offset from ISO 8601 date format.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-versions```](https://tie.digitraffic.fi/api/v1/metadata/location-versions)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations-types```](https://tie.digitraffic.fi/api/v1/metadata/location-types)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/locations```](https://tie.digitraffic.fi/api/v1/metadata/locations)
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
 ### Status of road weather stations
 
@@ -242,9 +242,9 @@ Real time data can be read from WebSocket.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations)
 
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors)
 
 ### Variable signs
 
