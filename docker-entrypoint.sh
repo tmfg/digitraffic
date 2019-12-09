@@ -6,6 +6,7 @@ trap "echo Exiting...; kill -TERM -1; exit" SIGINT SIGTERM
 echo
 echo "Installing required Ruby gems. Please wait..."
 echo
+gem install bundler
 bundle install
 bundle update
 echo

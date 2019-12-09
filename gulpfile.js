@@ -3,7 +3,8 @@
 const gulp = require('gulp');
 const cp = require('child_process');
 const browsersync = require('browser-sync').create();
-const del = require('del');
+const { src, dest } = require('gulp');
+const clean = require('gulp-clean');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -30,12 +31,22 @@ function browserSyncReload(done) {
 // Jekyll
 function jekyll() {
     browsersync.notify(messages.jekyllBuild);
-    return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml'], { stdio: "inherit" });
+    return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml', '-d', '_site_tmp'], { stdio: "inherit" });
 }
 
-// Clean output dir
-function clean() {
-    return del('_site/**', {force:true});
+// Copy generated content to _site folder where it is served
+function updateSite() {
+    return src('_site_tmp/**/*', { buffer: false , allowEmpty: true }).pipe(dest('_site'));
+}
+
+// Clean tmp folder for generated site
+function cleanTmp() {
+    return src('_site_tmp/*', { read: false, allowEmpty: true}).pipe(clean());
+}
+
+// Clean _site folder for old data
+function cleanTgt() {
+    return src('_site/*', {read: false, allowEmpty: true}).pipe(clean());
 }
 
 // Watch files
@@ -57,10 +68,10 @@ function watchFiles() {
             'js/*',
             'pages/*'
         ],
-        gulp.series(clean, jekyll, browserSyncReload)
+        gulp.series(cleanTmp, jekyll, cleanTgt, updateSite, browserSyncReload)
     );
 }
 // jekyll here to generate also on startup
-gulp.task('default', gulp.series(clean, jekyll, browserSync, watchFiles, function() {
+gulp.task('default', gulp.series(cleanTmp, jekyll, cleanTgt, updateSite, browserSync, watchFiles, function() {
     // default task code here
 }));
