@@ -1124,7 +1124,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 ### Liikennepaikan junien kuuntelu
 
-Topic: `trains-by-station/<station>/`
+Topic: `trains-by-station/<station>`
 
 Esimerkki: [http://jsfiddle.net/bkeav28u/](http://jsfiddle.net/bkeav28u/)
 
@@ -1134,7 +1134,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 ### GPS-sijaintien kuuntelu
 
-Topic: `train-locations/<departure_date>/<train_number>/`
+Topic: `train-locations/<departure_date>/<train_number>`
 
 Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/)
 
