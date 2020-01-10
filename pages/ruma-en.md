@@ -6,7 +6,7 @@ traffictypes: Rataliikenne
 searchable: true
 hero-image: rail
 title: RUMA
-lang: fi
+lang: en
 ref: ruma
 intro: RUMA system data
 ---
