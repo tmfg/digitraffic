@@ -14,21 +14,20 @@ intro: RUMA-järjestelmän tiedot
 RUMA-järjestelmällä suunnitellaan ja toteutetaan ratatöitä ratatyöilmoitusten, eli RT-ilmoitusten avulla. RUMA:lla ilmoitetaan myös liikenteen rajoitteista LR-ilmoitusten avulla.
 
 # RT-ilmoitus
-RT-ilmoitus sisältää perustietojen (kuvaus, ratatyötunnus jne) lisäksi ratatyön kohteen. Kohteita voi olla useampia ja ne ovat eri tyyppisiä. Alla on yritetty kuvata kohteiden käsitemallin hierarkiaa:
+RT-ilmoitus sisältää perustietojen (kuvaus jne) lisäksi ratatyön kohteen. Kohteita voi olla useampia ja ne ovat eri tyyppisiä. Alla on yritetty kuvata kohteiden käsitemallin hierarkiaa:
 ```
 RT-ilmoitus
 │   Kuvaus: Raidevirtapiirityöt
-│   Ratatyötunnus: 43823
 │
 └───Työnosa
     │   Numero: 1
     │   Kuvaus: Virtapiirimittaus
     │
-    └───Kohde
-        │   Liikennepaikka tai -väli: x.x.xxx.LIVI.INFRA.39.119030
+    └───Kohde: Tampere
+        │   Liikennepaikka tai -väli: x.x.xxx.LIVI.INFRA.39.119274
         │   Tyyppi: TYONKOHDE
         │
-        └───Tunnusväli
+        └───Tunnusväli: TPE V0070 - TPE V0060 (008)
         │   │
         │   └───Elementtiväli
         │       │   Elementti 1: x.x.xxx.LIVI.INFRA.24.118652
@@ -39,7 +38,7 @@ RT-ilmoitus
         │               Infratyyppi: Baliisi
         │               Infra-id: x.x.xxx.LIVI.INFRA.11.1036487
         │
-        └───Tunnusväli
+        └───Tunnusväli TPE V0041
                Elementti: x.x.xxx.LIVI.INFRA.24.118630
 ```
 
