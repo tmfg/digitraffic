@@ -70,11 +70,11 @@ Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenk
 
 Related metadata:
 
-[```https://meri.digitraffic.fi/api/v2/metadata/locations```](https://meri.digitraffic.fi/api/v2/metadata/locations)
+[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations)
 
-[```https://meri.digitraffic.fi/api/v2/metadata/vessel-details```](https://meri.digitraffic.fi/api/v2/metadata/vessel-details)
+[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details)
 
-[```https://meri.digitraffic.fi/api/v2/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v2/metadata/code-descriptions)
+[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions)
 
 ### Vessel locations
 
