@@ -107,11 +107,11 @@ Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden m
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations)
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
 
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors)
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
 
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections)
+[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
 
 ### Ajantasaiset tiejaksojen keliennusteet (v2)
 
@@ -132,11 +132,11 @@ Tiejaksokohtaiset keliennusteet halutulta tieltä.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections)
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections)
 
-[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
 
-[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber})
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber})
 
 ### Ajantasaiset LAM mittaustiedot
 

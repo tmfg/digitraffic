@@ -103,11 +103,11 @@ Response message contains road specific weather forecasts. Reports are updated e
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations)
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations)
 
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors)
+[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors)
 
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections)
+[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections)
 
 
 ### Current road weather forecasts (v2)
@@ -129,11 +129,11 @@ Road specific weather forecasts for given road.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections)
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections)
 
-[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude})
 
-[```https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v2/metadata/forecast-sections/{roadNumber})
+[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber})
 
 
 
