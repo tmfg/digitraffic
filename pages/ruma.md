@@ -24,22 +24,22 @@ RT-ilmoitus
     │   Aloituspäivä: 12.3.2020
     │
     └───Kohde: Tampere
-        │   Liikennepaikka tai -väli: x.x.xxx.LIVI.INFRA.39.119274
+        │   Liikennepaikka tai -väli: 1.2.246.586.1.39.119274
         │   Tyyppi: TYONKOHDE
         │
         └───Tunnusväli: TPE V0070 - TPE V0060 (008)
         │   │
         │   └───Elementtiväli
-        │       │   Elementti 1: x.x.xxx.LIVI.INFRA.24.118652
-        │       │   Elementti 2: x.x.xxx.LIVI.INFRA.24.118640
-        │       │   Raide: x.x.xxx.LIVI.INFRA.44.121862
+        │       │   Elementti 1: 1.2.246.586.1.24.118652
+        │       │   Elementti 2: 1.2.246.586.1.24.118640
+        │       │   Raide: 1.2.246.586.1.44.121862
         │       │
         │       └───Tarkenne
         │               Infratyyppi: Baliisi
-        │               Infra-id: x.x.xxx.LIVI.INFRA.11.1036487
+        │               Infra-id: 1.2.246.586.1.11.1036487
         │
         └───Tunnusväli TPE V0041
-               Elementti: x.x.xxx.LIVI.INFRA.24.118630
+               Elementti: 1.2.246.586.1.24.118630
 ```
 
 ## Työnosa

@@ -25,22 +25,22 @@ Track work notification
     │   Starting day: 12.3.2020
     │
     └───Location: Tampere
-        │   Operating point or section between operating points: x.x.xxx.LIVI.INFRA.39.119274
+        │   Operating point or section between operating points: 1.2.246.586.1.39.119274
         │   Type: WORK
         │
         └───Identifier range: TPE V0070 - TPE V0060 (008)
         │   │
         │   └───Element range
-        │       │   Element 1: x.x.xxx.LIVI.INFRA.24.118652
-        │       │   Element 2: x.x.xxx.LIVI.INFRA.24.118640
-        │       │   Track: x.x.xxx.LIVI.INFRA.44.121862
+        │       │   Element 1: 1.2.246.586.1.24.118652
+        │       │   Element 2: 1.2.246.586.1.24.118640
+        │       │   Track: 1.2.246.586.1.44.121862
         │       │
         │       └───Specifier
         │               Infra type: Balise
-        │               Infra-id: x.x.xxx.LIVI.INFRA.11.1036487
+        │               Infra-id: 1.2.246.586.1.11.1036487
         │
         └───Identifier range TPE V0041
-               Elementti: x.x.xxx.LIVI.INFRA.24.118630
+               Elementti: 1.2.246.586.1.24.118630
 ```
 
 ## Work part
