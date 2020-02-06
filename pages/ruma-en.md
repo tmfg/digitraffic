@@ -22,7 +22,7 @@ Track work notification
 │
 └───Work part
     │   Index: 1
-    │   Description: Track circuit measurement
+    │   Starting day: 12.3.2020
     │
     └───Location: Tampere
         │   Operating point or section between operating points: x.x.xxx.LIVI.INFRA.39.119274

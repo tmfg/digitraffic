@@ -21,7 +21,7 @@ RT-ilmoitus
 │
 └───Työnosa
     │   Numero: 1
-    │   Kuvaus: Virtapiirimittaus
+    │   Aloituspäivä: 12.3.2020
     │
     └───Kohde: Tampere
         │   Liikennepaikka tai -väli: x.x.xxx.LIVI.INFRA.39.119274
