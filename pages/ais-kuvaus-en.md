@@ -23,18 +23,15 @@ All fishing vessels (vessel type 30) are filtered out from the AIS-messages.
 
 Vessel types and cargo descriptions are modified with following rules.
 
-| Original value | Modified value 
-| < 10 | 0
-| 10 - 19 | 10
-| 20 - 29 | 20
-| 30 - 39 | keep original value
-| 40 - 49 | 40
-| 50 - 59 | keep original value
-| 60 - 69 | 60
-| 70 - 79 | 70
-| 80 - 89 | 80
-| 90 - 99 | 90
-| > 99 | 0
-
-
-
+| Original value | Modified value | Vessel type
+| < 10 | 0 | Not used
+| 10 - 19 | 10 | Reserved for future use
+| 20 - 29 | 20 | Wing in ground (WIG)
+| 30 - 39 | keep original value | 31 - 32 Tug (towing)<br>33 Dredging, underwater operations<br>34 diving operations<br>35 Military<br>36 Sailing<br>37 Pleasure craft
+| 40 - 49 | 40 | High speed craft (HSC)
+| 50 - 59 | keep original value | 50 Pilot<br>51 Search and rescue<br>52 Tug<br>53 Port tender<br>54 Anti pollution<br>55 Law enforcement<br>56 - 59 Other
+| 60 - 69 | 60 | Passenger
+| 70 - 79 | 70 | Cargo
+| 80 - 89 | 80 | Tanker
+| 90 - 99 | 90 | Other
+| > 99 | 0 | Reserved for future use

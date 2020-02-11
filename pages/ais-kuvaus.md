@@ -23,15 +23,15 @@ Kaikki kalastusalukset (alustyyppi 30) ovat suodatettu pois aineistosta.
 
 Alusten tyyppi/lastikuvaus muunnetaan seuraavan taulukon mukaisesti yleisiksi alustyypeiksi.
 
-| Alkuperäinen arvo | Muunnettu arvo 
-| < 10 | 0
-| 10 - 19 | 10
-| 20 - 29 | 20
-| 30 - 39 | Ei muunnosta
-| 40 - 49 | 40
-| 50 - 59 | Ei muunnosta
-| 60 - 69 | 60
-| 70 - 79 | 70
-| 80 - 89 | 80
-| 90 - 99 | 90
-| > 99 | 0
+| Alkuperäinen arvo | Muunnettu arvo | Aluksen tyyppi
+| < 10 | 0 | Ei käytössä
+| 10 - 19 | 10 | Varattu tulevaisuuden laajennuksille
+| 20 - 29 | 20 | Patosiipialus (WIG)
+| 30 - 39 | Ei muunnosta | 31 - 32 Hinaaja (hinaus käynnissä)<br>33 Ruoppaus/vedenalainen toiminta<br>34 Sukellustoiminta<br>35 Sota-alus<br>36 Purjealus<br>37 Huvialus
+| 40 - 49 | 40 | Pika-alus (HSC)
+| 50 - 59 | Ei muunnosta | 50 Luotsi<br>51 Pelastusalus<br>52 Hinaaja<br>53 Yhteysalus<br>54 Ympäristövahinkojen torjunta<br>55 Viranomainen<br>56 - 59 Muu tyyppi
+| 60 - 69 | 60 | Matkustajalaiva
+| 70 - 79 | 70 | Rahtialus
+| 80 - 89 | 80 | Tankkeri
+| 90 - 99 | 90 | Muu alus
+| > 99 | 0 | Varattu tulevaisuuden laajennuksille
