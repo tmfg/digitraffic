@@ -75,6 +75,17 @@ Response message contains weather camera information and URL for the camera imag
 Related metadata:
 [```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations)
 
+Weather camera image history for the last 24 hours.
+
+History can be fetched by API call:
+[```https://tie.digitraffic.fi/api/v2/data/camera-history/history?id={preset or camera id}```](https://tie.digitraffic.fi/api/v2/data/camera-history/history?id=C0450701)
+
+API call returns links to history images. You can also give time to get single image of given moment. 
+
+History presence tells if history exists for given time interval and it can be fetched by API call:
+[```https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?id={preset or camera id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?cameraOrPresetId=C0450701)
+
+
 ### Current journey times
 
 NOTE! This information is not updated. The old journey time system has been shut down in the end of 2017.
