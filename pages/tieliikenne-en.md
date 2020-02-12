@@ -78,11 +78,13 @@ Related metadata:
 Weather camera image history for the last 24 hours.
 
 History can be fetched by API call:
+
 [```https://tie.digitraffic.fi/api/v2/data/camera-history/history?id={preset or camera id}```](https://tie.digitraffic.fi/api/v2/data/camera-history/history?id=C0450701)
 
 API call returns links to history images. You can also give time to get single image of given moment. 
 
 History presence tells if history exists for given time interval and it can be fetched by API call:
+
 [```https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?id={preset or camera id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?cameraOrPresetId=C0450701)
 
 

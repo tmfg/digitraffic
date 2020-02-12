@@ -79,11 +79,13 @@ Metadatat:
 Kelikamerakuvien viimeisen 24 h historia
 
 Haluttujen kameroiden ja/tai esiasentojen historia sadaan rajapinnasta:
+
 [```https://tie.digitraffic.fi/api/v2/data/camera-history/history?id={kameran tai esiasennon id}```](https://tie.digitraffic.fi/api/v2/data/camera-history/history?id=C0450701)
 
 Rajapinta palauttaa linkit menneisiin kuviin. Pyynnölle voi antaa parametriksi myös ajanhetken miltä haluaa viimeisimmän kuvan, jolloin palautetaan vain yksi historiakuva esiasentoa kohden. 
 
-Historian olemassaoloa haluttuna aikavälillä voikysyä rajapinnasta: 
+Historian olemassaoloa haluttuna aikavälillä voikysyä rajapinnasta:
+
 [```https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?id={kamera tai esiasento id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?cameraOrPresetId=C0450701)
 
 ### Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
