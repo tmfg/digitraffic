@@ -41,6 +41,7 @@ Currently the open data API includes:
 # Content
 - [REST/JSON APIs](#restjson--apis)
     - [Road weather cameras](#road-weather-cameras)
+    - [Weather camera image history for the last 24 hours](#weather-camera-image-history-for-the-last-24-hours)
     - [Current journey times](#current-journey-times)
     - [Current free flow speeds](#current-free-flow-speeds)
     - [Current road weather forecasts (v1)](#current-road-weather-forecasts-v1)
@@ -75,7 +76,7 @@ Response message contains weather camera information and URL for the camera imag
 Related metadata:
 [```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations)
 
-Weather camera image history for the last 24 hours.
+### Weather camera image history for the last 24 hours
 
 History can be fetched by API call:
 

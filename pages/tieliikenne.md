@@ -39,6 +39,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 # Sisältö
 - [REST/JSON-rajapinnat](#restjson-rajapinnat)
     - [Kelikamerat](#kelikamerat)
+    - [Kelikamerakuvien viimeisen 24 h historia](#kelikamerakuvien-viimeisen-24-h-historia)
     - [Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot](#ajantasaiset-linkkien-sujuvuustiedot-sisältäen-matka-aikatiedot)
     - [Vapaat nopeudet](#vapaat-nopeudet)
     - [Ajantasaiset tiejaksojen keliennusteet (v1)](#ajantasaiset-tiejaksojen-keliennusteet-v1)
@@ -76,7 +77,7 @@ Metadatat:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations)
 
-Kelikamerakuvien viimeisen 24 h historia
+### Kelikamerakuvien viimeisen 24 h historia
 
 Haluttujen kameroiden ja/tai esiasentojen historia sadaan rajapinnasta:
 
