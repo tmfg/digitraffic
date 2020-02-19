@@ -7,6 +7,6 @@ traffictypes:
   - Meriliikenne
 status: suunnitteilla
 ---
- 
+
 Merenkulun turvalaitevikojen jakaminen Digitrafficissa on suunnitteilla. 
 Datan tuottaja on Väylä.
