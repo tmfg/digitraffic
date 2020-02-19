@@ -4,7 +4,7 @@ lang: en
 ref: merenkulun_turvalaiteviat
 issue-number: DPO-881
 traffictypes:
-  - Meriliikenne
+  - Marine traffic
 status: suunnitteilla
 ---
 
