@@ -1,0 +1,11 @@
+---
+title: Liikenteen rajoite-ilmoitus
+lang: fi
+ref: ruma
+issue-number: DPO-897
+traffictypes:
+  - Rautatieliikenne
+status: toteutuksessa
+---
+
+RUMA-järjestelmän liikenteen rajoite-ilmoitukset tullaan julkaisemaan Digitrafficissä. Lisätietoa RUMA:sta [https://tmfg.fi/fi/finrail/ruma](https://tmfg.fi/fi/finrail/ruma)
