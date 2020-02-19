@@ -1,7 +1,7 @@
 ---
 title: Liikenteen rajoite-ilmoitus
 lang: fi
-ref: ruma
+ref: ruma-lr
 issue-number: DPO-897
 traffictypes:
   - Rautatieliikenne

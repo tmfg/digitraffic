@@ -1,7 +1,7 @@
 ---
 title: Traffic restriction notification
 lang: en
-ref: ruma
+ref: ruma-lr
 issue-number: DPO-897
 traffictypes:
   - Railway traffic

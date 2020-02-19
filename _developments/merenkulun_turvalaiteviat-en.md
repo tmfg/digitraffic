@@ -1,7 +1,7 @@
 ---
 title: Faults of maritime navigation aids
 lang: fi
-ref: sillat_sulut
+ref: merenkulun_turvalaiteviat
 issue-number: DPO-881
 traffictypes:
   - Meriliikenne
