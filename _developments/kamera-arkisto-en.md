@@ -5,7 +5,7 @@ ref: kelikamerakuvat
 issue-number: DPO-718
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 ---
 
 API for archived road weather cameras (last 24h)

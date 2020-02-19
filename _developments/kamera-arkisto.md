@@ -5,7 +5,7 @@ ref: kelikamerakuvat
 issue-number: DPO-718
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 ---
 
 Digitraffic tarjoaa rajapinnan hakea kelikamerakuvia viimeisen 24h:n ajalta.
