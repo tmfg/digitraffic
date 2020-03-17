@@ -14,10 +14,9 @@ intro: RUMA-järjestelmän tiedot
 RUMA-järjestelmällä suunnitellaan ja toteutetaan ratatöitä ratatyöilmoitusten, eli RT-ilmoitusten avulla. RUMA:lla ilmoitetaan myös liikenteen rajoitteista LR-ilmoitusten avulla.
 
 # RT-ilmoitus
-RT-ilmoitus sisältää perustietojen (kuvaus jne) lisäksi ratatyön kohteen. Kohteita voi olla useampia ja ne ovat eri tyyppisiä. Alla on yritetty kuvata kohteiden käsitemallin hierarkiaa:
+RT-ilmoitus sisältää perustietojen lisäksi ratatyön kohteen. Kohteita voi olla useampia ja ne ovat eri tyyppisiä. Alla on yritetty kuvata kohteiden käsitemallin hierarkiaa:
 ```
 RT-ilmoitus
-│   Kuvaus: Raidevirtapiirityöt
 │
 └───Työnosa
     │   Numero: 1
@@ -44,6 +43,21 @@ RT-ilmoitus
 
 ## Työnosa
 Työnosa kuvaa ratatyön loogista osaa. Työnosaan liittyy aina vähintään yksi kohde. Työnosat ovat numeroituja.
+
+# LR-ilmoitus
+LR-ilmoitus sisältää perustietojen lisäksi mahdollisen linkin RT-ilmoitukseen sekä rajoitteen tyypin. Rajoitetyyppejä ovat:  
+- Suljettu liikennöinniltä
+- Suljettu sähkövetokalustolta
+- Tilapäinen nopeusrajoitus
+- Akselipaino max
+- JKV-rakennusalue
+- Vaihteen lukitus
+- Tulityön vaara-alue
+
+LR-ilmoitus liittyy ratainfraan (kohteet) suoraan eikä työnosien kautta kuten RT-ilmoitus.
+
+# Työn tai rajoituksen kohteet
+Alla on kuvattu käsitteet joiden avulla RT- ja LR-ilmoitukset liittyvät ratainfraan.
 
 ## Kohde
 Kohde liittyy aina joko liikennepaikkaan tai liikennepaikkaväliin. Kohteen tyyppi kuvaa työn tai rajoituksen tyyppiä, sallitut arvot ovat TYONKOHDE, TULITYO, NOPEUSRAJOITUS.  
