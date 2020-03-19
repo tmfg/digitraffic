@@ -22,7 +22,7 @@ NordicWay 2 aims at enhancing traffic safety through Cooperative Intelligent Tra
 
 In Finland, the Finnish Transport Agency is implementing the NordicWay2 project’s Finnish activities together with the Finnish Transport Safety Agency Trafi. The project is also part of the Finnish Traffic Lab collaboration. The Finnish deployment of the project comprises two activities: the C-ITS deployment pilot and the Arctic Challenge study concerning road transport automation in arctic snowy and icy conditions.
 
-For more information, see [```https://nordicway.net```]
+For more information, see [```https://nordicway.net```](https://nordicway.net)
 
 [```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
 
