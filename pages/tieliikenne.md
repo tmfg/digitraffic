@@ -300,7 +300,7 @@ Varoitusmerkit kuvina:
 Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia,
 ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
 
-Tietojen lähde: `<author>` / NordicWay2, CC 4.0 BY
+Tietojen lähde: \<author\> / NordicWay2, CC 4.0 BY
 
 Tietojen lähde: Vaisala Oy / NordicWay2, CC 4.0 BY
 
