@@ -15,7 +15,27 @@ Kokeelliset tietolähteet tarjoavat erilaisten kokeellisten hankkeiden tietoja a
 Kokeellisuus tarkoittaa sitä, että tiedot ovat tarjolla mahdollisesti rajatun ajan ja niiden saatavuus, ajantasaisuus ja sisältö voi muuttua 
 odottamatta.
 
-Tällä hetkellä tarjolla on vain yksi kokeellinen tietolähde.
+Tällä hetkellä tarjolla ovat seuraavat kokeellisen tietolähteet.
+
+## Nordicway2-tiedotteet
+
+NordicWay2 -hankkeessa tavoitellaan turvallisempaa liikennettä maiden rajojen yli toimivien olosuhde- ja häiriöviestipalveluiden avulla sekä tutkitaan tieliikenteen automaatiota arktisissa olosuhteissa. Hanke saa rahoitusta Euroopan Komission Verkkojen Eurooppa -ohjelmasta vuosina 2017-2020. Hankkeen toteuttavat yhteistyössä Suomen, Ruotsin, Norjan ja Tanskan tieviranomaiset sekä yritykset. Suomessa NordicWay2:n toteuttajina ovat Liikennevirasto ja Liikenteen turvallisuusvirasto Trafi. Hanke on jatkoa vuosien 2015-2017 NordicWay-hankkeelle ja lisäksi se on osa Liikennelabra-yhteistyötä.
+
+Hankkeen aikana Suomessa toteutetaan tuotantokokeilu, jossa rakennetaan toimintamalleja Suomen olosuhteisiin sopivien tieliikenteen olosuhde- ja häiriöviestien, kuten sääolosuhteiden ja vaaranpaikojen jakamiseen. Tuotantokokeilussa viestejä välitetään tienkäyttäjille matkaviestiverkossa.
+
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
+
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
+
+Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia,
+ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
+
+Tietojen lähde: \<author\> / NordicWay2, CC 4.0 BY
+
+Tietojen lähde: Vaisala Oy / NordicWay2, CC 4.0 BY
+
+Tietojen lähde: InfoTripla Oy / NordicWay2, CC 4.0 BY
+
 
 ## Siltojen värähtelytiedot
 

@@ -34,8 +34,6 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
 
-- Nordicway2 olosuhde- ja häiriöviestit.
-
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
 
 # Sisältö
@@ -52,7 +50,6 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Tietyöt](#tietyöt)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
     - [Muuttuvien liikennemerkkien tiedot](#muuttuvien-liikennemerkkien-tiedot)
-    - [Nordcway2 tiedotteet](#nordicway2-tiedotteet)
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
     - [Topicit](#topicit)
     - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
@@ -290,21 +287,6 @@ Varoitusmerkkien tyypit:
 Varoitusmerkit kuvina:
 
 [```https://vayla.fi/tieverkko/liikennemerkit```](https://vayla.fi/tieverkko/liikennemerkit)
-
-### Nordicway2-tiedotteet
-
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
-
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
-
-Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia,
-ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
-
-Tietojen lähde: \<author\> / NordicWay2, CC 4.0 BY
-
-Tietojen lähde: Vaisala Oy / NordicWay2, CC 4.0 BY
-
-Tietojen lähde: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
 ## WebSocket-rajapinnat
 
