@@ -291,7 +291,9 @@ Response message contains ongoing notifications in GeoJSON.  You can also limit 
 Notifications have many authors and source must be attributed accordingly:
 
 Source: <author> / NordicWay2, CC 4.0 BY
+
 Source: Vaisala Oy / NordicWay2, CC 4.0 BY
+
 Source: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
 

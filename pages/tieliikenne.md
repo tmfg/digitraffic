@@ -301,7 +301,9 @@ Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdol
 ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
 
 Tietojen lähde: <author> / NordicWay2, CC 4.0 BY
+
 Tietojen lähde: Vaisala Oy / NordicWay2, CC 4.0 BY
+
 Tietojen lähde: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
 ## WebSocket-rajapinnat
