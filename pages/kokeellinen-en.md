@@ -14,7 +14,27 @@ intro: Data from various experimental road projects
 Experimental data sources offer data from various projects. The data is open for everyone.
 Being experimental means that availability, contents and freshness of data may vary.
 
-Currently there is only one experimental source.
+Currently there are following experimental sources.
+
+## Nordicway2-notifications
+
+NordicWay 2 aims at enhancing traffic safety through Cooperative Intelligent Transport Systems (C-ITS). The project is European Commission Connecting Europe Facility-funded between 2017 and 2020, and it is implemented by the National Road Authorities of Finland, Norway, Sweden and Denmark as well as private companies and research centres.
+
+In Finland, the Finnish Transport Agency is implementing the NordicWay2 project’s Finnish activities together with the Finnish Transport Safety Agency Trafi. The project is also part of the Finnish Traffic Lab collaboration. The Finnish deployment of the project comprises two activities: the C-ITS deployment pilot and the Arctic Challenge study concerning road transport automation in arctic snowy and icy conditions.
+
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
+
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
+
+Response message contains ongoing notifications in GeoJSON.  You can also limit searching by author.
+Notifications have many authors and source must be attributed accordingly:
+
+Source: \<author\> / NordicWay2, CC 4.0 BY
+
+Source: Vaisala Oy / NordicWay2, CC 4.0 BY
+
+Source: InfoTripla Oy / NordicWay2, CC 4.0 BY
+
 
 ## Bridge vibrations
 

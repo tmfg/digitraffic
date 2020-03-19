@@ -36,8 +36,6 @@ Currently the open data API includes:
 
 - Road weather cameras. Cameras provide information on current traffic flow and weather conditions. Currently, there are over 470 road weather cameras.
 
-- Nordicway2 weather conditions and hazard information notifications.
-
 - Metadata for all services is updated twice per day.
 
 # Content
@@ -54,7 +52,6 @@ Currently the open data API includes:
     - [Roadworks](#roadworks)
     - [Status of road weather stations](#status-of-road-weather-stations)
     - [Variable signs](#variable-signs)
-    - [Nordicway2 notifications](#nordicway2-notifications)
 - [WebSocket -API](#websocket-api)
     - [Topics](#topics)
     - [Simple JavaScript Web Socket -client](#simple-javascript-web-socket-client)
@@ -280,21 +277,6 @@ Warning sign types(in Finnish):
 Warning sign images:
 
 [```https://vayla.fi/tieverkko/liikennemerkit```](https://vayla.fi/tieverkko/liikennemerkit)
-
-### Nordicway2-notifications
-
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
-
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
-
-Response message contains ongoing notifications in GeoJSON.  You can also limit searching by author.
-Notifications have many authors and source must be attributed accordingly:
-
-Source: \<author\> / NordicWay2, CC 4.0 BY
-
-Source: Vaisala Oy / NordicWay2, CC 4.0 BY
-
-Source: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
 
 ## WebSocket API
