@@ -52,7 +52,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
     - [Tietyöt](#tietyöt)
     - [Tiesääasemien ajantasaiset mittaustiedot](#tiesääasemien-ajantasaiset-mittaustiedot)
     - [Muuttuvien liikennemerkkien tiedot](#muuttuvien-liikennemerkkien-tiedot)
-    - [Nordcway2_tiedotteet](#nordicway2-tiedotteet)
+    - [Nordcway2 tiedotteet](#nordicway2-tiedotteet)
 - [WebSocket-rajapinnat](#websocket-rajapinnat)
     - [Topicit](#topicit)
     - [Yksinkertainen JavaScript WebSocket -clientti](#yksinkertainen-javascript-websocket--client)
@@ -293,9 +293,9 @@ Varoitusmerkit kuvina:
 
 ### Nordicway2-tiedotteet
 
-[```http://tie.digitraffic.fi/api/beta/nw2/annotations```](http://tie.digitraffic.fi/api/beta/nw2/annotations)
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
 
-[```http://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](http://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
 
 Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia,
 ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:

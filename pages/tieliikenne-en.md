@@ -283,9 +283,9 @@ Warning sign images:
 
 ### Nordicway2-notifications
 
-[```http://tie.digitraffic.fi/api/beta/nw2/annotations```](http://tie.digitraffic.fi/api/beta/nw2/annotations)
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
 
-[```http://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](http://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
+[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
 
 Response message contains ongoing notifications in GeoJSON.  You can also limit searching by author.
 Notifications have many authors and source must be attributed accordingly:
