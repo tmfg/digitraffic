@@ -23,6 +23,8 @@ NordicWay2 -hankkeessa tavoitellaan turvallisempaa liikennettä maiden rajojen y
 
 Hankkeen aikana Suomessa toteutetaan tuotantokokeilu, jossa rakennetaan toimintamalleja Suomen olosuhteisiin sopivien tieliikenteen olosuhde- ja häiriöviestien, kuten sääolosuhteiden ja vaaranpaikojen jakamiseen. Tuotantokokeilussa viestejä välitetään tienkäyttäjille matkaviestiverkossa.
 
+Lisätietoja täältä: [```https://nordicway.net```]
+
 [```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
 
 [```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
