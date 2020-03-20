@@ -29,14 +29,11 @@ Lisätietoja täältä: [```https://www.nordicway.net```](https://www.nordicway.
 
 [```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
 
-Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia,
-ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
+Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia, ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
 
 Tietojen lähde: \<author\> / NordicWay2, CC 4.0 BY
 
-Tietojen lähde: Vaisala Oy / NordicWay2, CC 4.0 BY
-
-Tietojen lähde: InfoTripla Oy / NordicWay2, CC 4.0 BY
+esimerkiksi: Tietojen lähde: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
 
 ## Siltojen värähtelytiedot
