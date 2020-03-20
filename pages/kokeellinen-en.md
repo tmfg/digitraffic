@@ -33,8 +33,7 @@ Notifications have many authors and source must be attributed accordingly:
 
 Source: \<author\> / NordicWay2, CC 4.0 BY
 
-Source: Vaisala Oy / NordicWay2, CC 4.0 BY
-
+For example:
 Source: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
 
