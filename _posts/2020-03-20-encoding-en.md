@@ -23,3 +23,5 @@ Compression provides significant advantages:
 2) Faster requests
 
 To use HTTP compression, please include "Accept-Encoding: gzip" header in your request. Most libraries do this automatically.
+
+Attention! Uncompressed requests will be restricted starting from 24.3.2020. Requests from a single IP address will be restricted to a certain amount of requests per minute. When the request amount is exceeded subsequent requests will receive the HTTP response code 429.
