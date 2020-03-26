@@ -237,7 +237,7 @@ Rajapinta on jaettu seitsemään osaan:
 * [Kulkutietoviestit (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
 * [Kokoopanotiedot (/compositions)](#kokoonpanotiedot-compositions)
 * [Metatiedot (/metadata)](#metatiedot-metadata)
-* [Ratatyö- ja liikenteen rajoite-tiedot #ratatyö-ja-liikenteen-rajoitetiedot]
+* [Ratatyö- ja liikenteen rajoite-tiedot](#ratatyötiedot-ja-liikenteen-rajoitetiedot)
 
 Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
 
