@@ -85,7 +85,8 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Junatyypit](#junatyypit)
         - [Raideosuudet](#raideosuudet)
         - [Herätepisteet](#herätepisteet)
-        - [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)              
+        - [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)
+    1. [Ratatyötiedot ja liikenteen rajoitetiedot](#ratatyötiedot-ja-liikenteen-rajoitetiedot)
     1. [GraphQL](#graphql) 
 1. [WebSocket (MQTT)](#websocket-mqtt)
     1. [Yleistä MQTT:stä](#yleistä-mqttstä)
@@ -134,6 +135,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 26.3.2020
+    * Rajapinnat ratatyö- ja liikenteen rajoite-ilmoituksille
 * 15.10.2019
     * Rajapinta, josta voi hakea junien ja kokoonpanojen versiohistorian
 * 20.8.2019
@@ -226,7 +229,7 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
 
 Avoimen datan rajapinta tarjoaa sekä on REST- että WebSocket-rajapinnat, joiden vastaukset ovat JSON-formaattia. Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
 
-Rajapinta on jaettu kuuteen osaan:
+Rajapinta on jaettu seitsemään osaan:
 
 * [Junien tiedot (/trains)](#junien-tiedot-trains)
 * [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains))
@@ -234,6 +237,7 @@ Rajapinta on jaettu kuuteen osaan:
 * [Kulkutietoviestit (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
 * [Kokoopanotiedot (/compositions)](#kokoonpanotiedot-compositions)
 * [Metatiedot (/metadata)](#metatiedot-metadata)
+* [Ratatyö- ja liikenteen rajoite-tiedot #ratatyö-ja-liikenteen-rajoitetiedot]
 
 Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
 
@@ -1016,6 +1020,11 @@ Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta e
 **Paluuarvo**
 
 Palauttaa [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat-1)-tyyppisen vastauksen.
+
+## Ratatyötiedot ja liikenteen rajoitetiedot
+
+Ratatyöilmoitukset ja liikenteen rajoite-ilmoitukset ovat peräisin RUMA-järjestelmästä. Kuvaus tietosisällöstä löytyy [täältä]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }}).
+Rajapinnan tarkemmat tiedot löytyvät [Swagger-dokumentaatiosta](https://rata.digitraffic.fi/swagger/index.html)
 
 ## GraphQL
 
