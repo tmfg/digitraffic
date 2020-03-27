@@ -952,6 +952,8 @@ Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisi√
 
 URL: `/trackwork-notifications/<id>`
 
+Esimerkki: [/trackwork-notifications/1.2.246.586.7.1.166700](https://rata.digitraffic.fi/api/v1/trackwork-notifications/1.2.246.586.7.1.166700)
+
 **Kuvaus**
 Palauttaa tietyn ilmoituksen kaikki versiot. 
 
@@ -967,6 +969,8 @@ Palauttaa tietyn ilmoituksen kaikki versiot.
 #### Rataty√∂ilmoitusten tietyn version palautus
 
 URL: `/trackwork-notifications/<id>/<version>`
+
+Esimerkki: [/trackwork-notifications/1.2.246.586.7.1.166700/5](https://rata.digitraffic.fi/api/v1/trackwork-notifications/1.2.246.586.7.1.166700/5)
 
 **Kuvaus**
 Palauttaa tietyn ilmoituksen tietyn version. 
@@ -1032,6 +1036,8 @@ Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisi√
 
 URL: `/trafficrestriction-notifications/<id>`
 
+Esimerkki: [/trafficrestriction-notifications/1.2.246.586.7.2.102883](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications/1.2.246.586.7.2.102883)
+
 **Kuvaus**
 Palauttaa tietyn ilmoituksen kaikki versiot. 
 
@@ -1047,6 +1053,8 @@ Palauttaa tietyn ilmoituksen kaikki versiot.
 #### Liikenteen rajoite-ilmoituksen tietyn version palautus
 
 URL: `/trafficrestriction-notifications/<id>/<version>`
+
+Esimerkki: [/trafficrestriction-notifications/1.2.246.586.7.2.102883/1](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications/1.2.246.586.7.2.102883/1)
 
 **Kuvaus**
 Palauttaa tietyn ilmoituksen tietyn version. 
