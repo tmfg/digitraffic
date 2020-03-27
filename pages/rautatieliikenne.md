@@ -71,10 +71,11 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
         - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)   
         - [Kokoonpanojen versiohistoria](#kokoonpanojen-versiohistoria)
-    1. [Kulkutievarukset (/routesets)](#kulkutievaraukset-routesets)
+    1. [Kulkutievaraukset (/routesets)](#kulkutievaraukset-routesets)
         - [Kaikkien kulkutievarauksien seuranta](#kaikkien-kulkutievarauksien-seuranta)
         - [Yhden junan kulkutievaraukset](#yhden-junan-kulkutievaraukset)
         - [Liikennepaikan kulkutievaraukset](#liikennepaikan-kulkutievaraukset)
+    1. [Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (/trafficrestriction-notifications)](#ratatyötiedot-trackwork-notifications-ja-liikenteen-rajoitetiedot-trafficrestriction-notifications)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
@@ -86,7 +87,6 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Raideosuudet](#raideosuudet)
         - [Herätepisteet](#herätepisteet)
         - [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)
-    1. [Ratatyötiedot ja liikenteen rajoitetiedot](#ratatyötiedot-ja-liikenteen-rajoitetiedot)
     1. [GraphQL](#graphql) 
 1. [WebSocket (MQTT)](#websocket-mqtt)
     1. [Yleistä MQTT:stä](#yleistä-mqttstä)
@@ -229,15 +229,16 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
 
 Avoimen datan rajapinta tarjoaa sekä on REST- että WebSocket-rajapinnat, joiden vastaukset ovat JSON-formaattia. Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
 
-Rajapinta on jaettu seitsemään osaan:
+Rajapinta on jaettu kahdeksaan osaan:
 
 * [Junien tiedot (/trains)](#junien-tiedot-trains)
 * [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains))
 * [Junan GPS-sijainnit (/train-locations)](#junan-gps-sijainnit-train-locations)
 * [Kulkutietoviestit (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
 * [Kokoopanotiedot (/compositions)](#kokoonpanotiedot-compositions)
+* [Kulkutievaraukset (/routesets)](#kulkutievaraukset-routesets)
+* [Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (/trafficrestriction-notifications)](#ratatyötiedot-trackwork-notifications-ja-liikenteen-rajoitetiedot-trafficrestriction-notifications)
 * [Metatiedot (/metadata)](#metatiedot-metadata)
-* [Ratatyö- ja liikenteen rajoite-tiedot](#ratatyötiedot-ja-liikenteen-rajoitetiedot)
 
 Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
 
@@ -887,6 +888,11 @@ Palauttaa liikennepaikan kulkutievaraukset.
 
 Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä nousevasti `messageTime`- ja `sectionOrder`-kentän mukaan
 
+## Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (trafficrestriction-notifications)
+
+Ratatyöilmoitukset ja liikenteen rajoite-ilmoitukset ovat peräisin RUMA-järjestelmästä. Kuvaus tietosisällöstä löytyy [täältä]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }}).
+Rajapinnan tarkemmat tiedot löytyvät [Swagger-dokumentaatiosta](https://rata.digitraffic.fi/swagger/index.html)
+
 ## Metatiedot (/metadata)
 
 Palvelun metatietojen hakurajapinta.
@@ -1020,11 +1026,6 @@ Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta e
 **Paluuarvo**
 
 Palauttaa [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat-1)-tyyppisen vastauksen.
-
-## Ratatyötiedot ja liikenteen rajoitetiedot
-
-Ratatyöilmoitukset ja liikenteen rajoite-ilmoitukset ovat peräisin RUMA-järjestelmästä. Kuvaus tietosisällöstä löytyy [täältä]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }}).
-Rajapinnan tarkemmat tiedot löytyvät [Swagger-dokumentaatiosta](https://rata.digitraffic.fi/swagger/index.html)
 
 ## GraphQL
 
