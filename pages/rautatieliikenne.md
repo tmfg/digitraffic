@@ -76,6 +76,14 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#k
         - [Yhden junan kulkutievaraukset](#yhden-junan-kulkutievaraukset)
         - [Liikennepaikan kulkutievaraukset](#liikennepaikan-kulkutievaraukset)
     1. [Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (/trafficrestriction-notifications)](#ratatyötiedot-trackwork-notifications-ja-liikenteen-rajoitetiedot-trafficrestriction-notifications)
+        - [Ratatyöilmoitusten haku aikavälillä](#ratatyöilmoitusten-haku-aikavälillä)
+        - [Ratatyöilmoitusten uusimpien versioiden haku aikavälillä](#ratatyöilmoitusten-uusimpien-versioiden-haku-aikavälillä)
+        - [Ratatyöilmoitusten kaikkien versioiden palautus](#ratatyöilmoitusten-kaikkien-versioiden-palautus)
+        - [Ratatyöilmoitusten tietyn version palautus](#ratatyöilmoitusten-tietyn-version-palautus)
+        - [Liikenteen rajoite-ilmoitusten haku aikavälillä](#liikenteen-rajoite-ilmoitusten-haku-aikavälillä)
+        - [Liikenteen rajoite-ilmoitusten uusimpien versioiden haku aikavälillä](#liikenteen-rajoite-ilmoitusten-uusimpien-versioiden-haku-aikavälillä)
+        - [Liikenteen rajoite-ilmoituksen kaikkien versioiden palautus](#liikenteen-rajoite-ilmoituksen-kaikkien-versioiden-palautus)
+        - [Liikenteen rajoite-ilmoituksen tietyn version palautus](#liikenteen-rajoite-ilmoituksen-tietyn-version-palautus)
     1. [Metatiedot (/metadata)](#metatiedot-metadata)
         - [Liikennepaikkatiedot](#liikennepaikkatiedot)
         - [Operaattoritiedot](#operaattoritiedot)
@@ -891,7 +899,167 @@ Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjeste
 ## Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (trafficrestriction-notifications)
 
 Ratatyöilmoitukset ja liikenteen rajoite-ilmoitukset ovat peräisin RUMA-järjestelmästä. Kuvaus tietosisällöstä löytyy [täältä]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }}).
-Rajapinnan tarkemmat tiedot löytyvät [Swagger-dokumentaatiosta](https://rata.digitraffic.fi/swagger/index.html)
+
+### Ratatyöilmoitukset
+
+Ratatyöilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda kaikkia tietoje, joten peräkkäiset versiot voivat olla tietosisällöltään identtisiä.  
+
+#### Ratatyöilmoitusten haku aikavälillä
+
+URL: `/trackwork-notifications.{json/geojson}`
+
+Esimerkki: [/trackwork-notifications.json?state=ACTIVE](https://rata.digitraffic.fi/api/v1/trackwork-notifications.json?state=ACTIVE)
+
+**Kuvaus**
+Palauttaa ratatyöilmoitukset JSON tai GeoJSON-muodossa. Annettava aikaväli rajaa ilmoituksia version luontihetken eli *modified*-kentän perusteella.
+Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio. 
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| state | string | "ACTIVE" | Ilmoituksen tila, arvot: SENT, ACTIVE, PASSIVE, FINISHED. Oletusarvo ACTIVE.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+
+#### Ratatyöilmoitusten uusimpien versioiden haku aikavälillä
+
+URL: `/trackwork-notifications/status`
+
+Esimerkki: [/trackwork-notifications/status](https://rata.digitraffic.fi/api/v1/trackwork-notifications/status)
+
+**Kuvaus**
+Palauttaa aikavälille osuvien ilmoituksen tunnisteet ja uusimmat versiot.
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä nousevasti `modified`- ja `id`-kentän mukaan.
+
+
+#### Ratatyöilmoitusten kaikkien versioiden palautus
+
+URL: `/trackwork-notifications/<id>`
+
+**Kuvaus**
+Palauttaa tietyn ilmoituksen kaikki versiot. 
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+
+#### Ratatyöilmoitusten tietyn version palautus
+
+URL: `/trackwork-notifications/<id>/<version>`
+
+**Kuvaus**
+Palauttaa tietyn ilmoituksen tietyn version. 
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+
+### Liikenteen rajoite-ilmoitukset
+
+Liikenteen rajoite-ilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda kaikkia tietoje, joten peräkkäiset versiot voivat olla tietosisällöltään identtisiä.  
+
+#### Liikenteen rajoite-ilmoitusten haku aikavälillä
+
+URL: `/trafficrestriction-notifications.{json/geojson}`
+
+Esimerkki: [/trafficrestriction-notifications.json?state=SENT](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications.json?state=SENT)
+
+**Kuvaus**
+Palauttaa ilmoitukset JSON tai GeoJSON-muodossa. Annettava aikaväli rajaa ilmoituksia version luontihetken eli *modified*-kentän perusteella.
+Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio. 
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| state | string | "ACTIVE" | Liikenteen ilmoituksen tila, arvot: SENT, FINISHED. Oletusarvo SENT.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+
+#### Liikenteen rajoite-ilmoitusten uusimpien versioiden haku aikavälillä
+
+URL: `/trafficrestriction-notifications/status`
+
+Esimerkki: [/trafficrestriction-notifications/status](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications/status)
+
+**Kuvaus**
+Palauttaa aikavälille osuvien ilmoitusten tunnisteet ja uusimmat versiot.
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä nousevasti `modified`- ja `id`-kentän mukaan.
+
+
+#### Liikenteen rajoite-ilmoituksen kaikkien versioiden palautus
+
+URL: `/trafficrestriction-notifications/<id>`
+
+**Kuvaus**
+Palauttaa tietyn ilmoituksen kaikki versiot. 
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+
+#### Liikenteen rajoite-ilmoituksen tietyn version palautus
+
+URL: `/trafficrestriction-notifications/<id>/<version>`
+
+**Kuvaus**
+Palauttaa tietyn ilmoituksen tietyn version. 
+
+**Hakuehdot**
+
+|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
+|---|---|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+ 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+
 
 ## Metatiedot (/metadata)
 
@@ -1433,6 +1601,14 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
   * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä*
   * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fetchDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki, jolloin versio on syntynyt*  
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) json: json ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Version json-sisältö*
+
+
+### Ilmoituksen status
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ilmoituksen yksilöivä OID-tunniste*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Uusin versionumero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) modified: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Uusimman version muokkausaika*
+
 
 ## Versionumeroiden käyttö
 
