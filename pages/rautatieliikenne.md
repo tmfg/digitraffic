@@ -34,7 +34,7 @@ Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraa
 
 Saatavilla on myös [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/index.html)
 
-Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#käyttöehdot).
+Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#avoimen-datan-käyttölupa).
 
 # Sisältö
 1. [Yleistä](#yleistä)
