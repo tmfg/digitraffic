@@ -5,7 +5,7 @@ ref: open311
 issue-number: DPO-923
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 ---
 
 Palauteväylän palautteiden jakaminen Open311-määrittelyn mukaisista rajapinnoista.  Lisätietoa palauteväylästä osoitteessa [https://liikenne.palautevayla.fi/feedbacks](https://liikenne.palautevayla.fi/feedbacks)

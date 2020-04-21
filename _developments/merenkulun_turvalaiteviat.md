@@ -5,8 +5,7 @@ ref: merenkulun_turvalaiteviat
 issue-number: DPO-881
 traffictypes:
   - Meriliikenne
-status: suunnitteilla
+status: toteutuksessa
 ---
 
-Merenkulun turvalaitevikojen jakaminen Digitrafficissa on suunnitteilla. 
-Datan tuottaja on Väylä.
+Rajapinta merenkulun turvalaitevikojen jakamiseen Digitrafficissa. Datan tuottaja on Väylä.

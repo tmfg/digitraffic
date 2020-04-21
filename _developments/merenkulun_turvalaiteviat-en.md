@@ -5,7 +5,7 @@ ref: merenkulun_turvalaiteviat
 issue-number: DPO-881
 traffictypes:
   - Marine traffic
-status: planned
+status: inprogress
 ---
 
 Faults of maritime navigation aids are planned to be published on Digitraffic API.
