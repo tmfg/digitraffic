@@ -6,6 +6,7 @@ issue-number: DPO-469
 traffictypes:
   - Tieliikenne
 status: toteutuksessa
+date: 2019-04-08
 ---
 
 Teiden kunnossapidon työkoneiden seurantatiedon jakaminen Digitrafficissa. Työkoneiden seurantatiedot tuodaan HARJA-järjestelmästä ja ne on tarkoitus jakaa GeoJSON-muodossa.

@@ -20,6 +20,11 @@
   {% endif %}
 {% endfor %}
 
+<!-- Loop through all arrays and sort by date -->
+{% assign planned = (planned | sort: 'date') | reverse %}
+{% assign inprogress = (inprogress | sort: 'date') | reverse %}
+{% assign finished = (finished | sort: 'date' ) | reverse %}
+
 <!-- Developments amount text 
 {% if developments.size == 1 %}
   {% assign developments_text = 'hanke' %}
@@ -29,6 +34,7 @@
 
 skipped
 -->
+
 {% assign development_url = site.t.development-roadmap.url[page.lang] %}
 
 <h2 class="h2 developments__list-heading">{{ site.t.development-roadmap-filter[page.lang] }}</h2>
@@ -44,6 +50,10 @@ skipped
   <h3 class="h3 developments__development-heading">{{ development.title }}</h3>
   <div class="date-type-tags">
   <!-- White spaces commented -->
+    <span class="date-type-tags__date"><!--
+    --><i class="material-icons md-md date-type-tags__date-icon">create</i><!--
+    -->{% if page.lang == "en" %}{{ development.date | date: "%-m/%-d/%Y" }}{% else %}{{ development.date | date: "%-d.%-m.%Y" }}{% endif %}<!--
+  --></span>
     <span class="date-type-tags__id"><!--
     -->{{ development.issue-number }}<!--
   --></span><!--
@@ -69,6 +79,10 @@ skipped
   <h3 class="h3 developments__development-heading">{{ development.title }}</h3>
   <div class="date-type-tags">
   <!-- White spaces commented -->
+    <span class="date-type-tags__date"><!--
+    --><i class="material-icons md-md date-type-tags__date-icon">create</i><!--
+    -->{% if page.lang == "en" %}{{ development.date | date: "%-m/%-d/%Y" }}{% else %}{{ development.date | date: "%-d.%-m.%Y" }}{% endif %}<!--
+  --></span>
     <span class="date-type-tags__id"><!--
     -->{{ development.issue-number }}<!--
   --></span><!--
@@ -94,6 +108,10 @@ skipped
   <h3 class="h3 developments__development-heading">{{ development.title }}</h3>
   <div class="date-type-tags">
   <!-- White spaces commented -->
+    <span class="date-type-tags__date"><!--
+    --><i class="material-icons md-md date-type-tags__date-icon">create</i><!--
+    -->{% if page.lang == "en" %}{{ development.date | date: "%-m/%-d/%Y" }}{% else %}{{ development.date | date: "%-d.%-m.%Y" }}{% endif %}<!--
+  --></span>
     <span class="date-type-tags__id"><!--
     -->{{ development.issue-number }}<!--
   --></span><!--

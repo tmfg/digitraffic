@@ -6,6 +6,7 @@ issue-number: DPO-881
 traffictypes:
   - Marine traffic
 status: inprogress
+date: 2020-02-19
 ---
 
 Faults of maritime navigation aids are planned to be published on Digitraffic API.

@@ -4,6 +4,7 @@ issue-number: DPO-578
 traffictypes:
   - Marine traffic
 status: finished
+date: 2018-11-22
 ---
 
 

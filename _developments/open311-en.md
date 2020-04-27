@@ -6,6 +6,7 @@ issue-number: DPO-923
 traffictypes:
   - Road traffic
 status: finished
+date: 2019-11-26
 ---
 
 Civic issue tracking with Open311-specification API.  More information [https://liikenne.palautevayla.fi/feedbacks](https://liikenne.palautevayla.fi/feedbacks)

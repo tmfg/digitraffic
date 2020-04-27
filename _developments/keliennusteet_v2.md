@@ -6,6 +6,7 @@ issue-number: DPO-566
 traffictypes:
   - Tieliikenne
 status: valmis
+date: 2018-11-21
 ---
 
 Keliennustepalvelun version 2 datan jakaminen Digitraffic-rajapinnassa on suunnitteilla. Uudessa versiossa segmentteihin jaetun tieverkon resoluutio on korkeampi kuin aiemmassa ja ennustepisteitä on enemmän.
