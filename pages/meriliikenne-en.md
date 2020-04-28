@@ -17,6 +17,13 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
+<h2 id="content">Content</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+## General info
+
 Marine traffic information is gathered from Finnish Transport Agency's data sources. Currently open data API provides following information:
 
 - Marine warnings 
@@ -27,27 +34,6 @@ Marine traffic information is gathered from Finnish Transport Agency's data sour
 
 - Vessel and harbor metadata
 
-# Content
-- [REST/JSON -API](#restjson--api)
-    - [Nautical warnings](#nautical-warnings)
-    - [Port calls](#port-calls)
-    - [Vessel locations](#vessel-locations)
-    - [Dirways](#dirways)
-    - [Sea state estimation (SSE)](#sea-state-estimation-sse)
-- [WebSocket -API](#websocket-api)
-    - [Topics](#topics)
-        - [Vessel topics](#vessel-topics)
-            - [Examples of tracking vessels data](#examples-of-tracking-vessels-data)
-            - [Vessel message formats](#vessel-message-formats)
-            - [Vessel metadata -message](#vessel-metadata--message)
-            - [Vessel location -message](#vessel-location--message)
-        - [SSE-topics](#sse-topics)
-            - [Examples of tracking SSE data](#examples-of-tracking-sse-data)
-            - [SSE-data -message](#sse-data--message)
-    - [Simple JavaScript MQTT WebSocket -client](#simple-javascript-mqtt-websocket-client)
-- [Restrictions](#restrictions)    
-- [Swagger-api](#swagger-api)
-
 ## REST/JSON -API
 
 Full API description is located in [Swagger-documentation](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
@@ -56,7 +42,7 @@ Both metadata and content is updated in real time.
 
 ### Nautical warnings
 
-[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published)
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published){:target="_blank"}
 
 Nautical warnings are fetched from POOKI.
 
@@ -64,45 +50,45 @@ At this time there is no metadata available.
 
 ### Port calls
 
-[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls)
+[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls){:target="_blank"}
 
-Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet).
+Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"}.
 
 Related metadata:
 
-[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations)
+[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details)
+[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions)
+[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions){:target="_blank"}
 
 ### Vessel locations
 
-[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
+[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest){:target="_blank"}
 
 Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.  [Additional info](ais).
 
 Related metadata:
 
-[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels)
+[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels){:target="_blank"}
 
 ### Dirways
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways)
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways){:target="_blank"}
 
-Dirways are fetched from [Baltice](http://baltice.org).
+Dirways are fetched from [Baltice](http://baltice.org){:target="_blank"}.
 
 Related metadata:
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports)
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships){:target="_blank"}
 
 ### Sea state estimation (SSE)
 
 Data + metadata:
 
-[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest)
+[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest){:target="_blank"}
 
 Sea state estimation data is fetched from TLSC-server, that gathers and analyzes data send by AtoN sites. 
 
@@ -336,3 +322,6 @@ sse/site/<site-id>          # Tracking single site data
 ## Restrictions
 
 Requests to /mqtt -address are restricted to 5 requests a minute per ip-address.
+
+## Swagger API specification
+<!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->

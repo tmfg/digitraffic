@@ -17,6 +17,13 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
 ---
 
+<h2 id="sisältö">Sisältö</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+## Yleistä tietoa
+
 Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
 
 - Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
@@ -27,27 +34,6 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
 
 - Alusten ja satamien metatiedot
 
-# Sisältö
-- [REST/JSON-rajapinnat](#restjson-rajapinnat)
-    - [Merivaroitukset](#merivaroitukset)
-    - [Satamakäynnit](#satamakäynnit)
-    - [Alusten sijaintitiedot](#alusten-sijaintitiedot)
-    - [Talvimerenkulun avustustiedot](#talvimerenkulun-avustustiedot)
-    - [Älypoijudata](#älypoijudata-sse)
-- [MQTT WebSocket -rajapinnat](#mqtt-websocket--rajapinnat)
-    - [Topicit](#topicit)
-        - [Alusten topicit](#alusten-topicit)
-            - [Esimerkkejä alusten viestitilauksista](#esimerkkejä-alusten-viestitilauksista)
-            - [Alusten viestimuodot](#alusten-viestimuodot)
-            - [Aluksen metadata -viesti](#aluksen-metadata-viesti)
-            - [Alusten sijainti -viesti](#aluksen-sijainti--viesti)            
-        - [SSE topicit](#sse-topicit)
-            - [Esimerkkejä SSE-viestitilauksista](#esimerkkej-sse-viestitilauksista)
-            - [SSE-data -viesti](#sse-data--viesti)
-    - [Yksinkertainen JavaScript MQTT WebSocket -clientti](#yksinkertainen-javascript-mqtt-websocket--client)
-- [Käyttörajoitukset](#käyttörajoitukset)    
-- [Swagger-rajapintakuvaus](#swagger-api)
-
 ## REST/JSON-rajapinnat
 
 Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
@@ -56,7 +42,7 @@ Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 
 ### Merivaroitukset
 
-[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published)
+[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published){:target="_blank"}
 
 Merivaroitukset haetaan POOKI-järjestelmästä.
 
@@ -64,45 +50,45 @@ Merivaroituksiin liittyvää metadataa ei ole digitrafficista saatavilla.
 
 ### Satamakäynnit
 
-[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls)
+[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls){:target="_blank"}
 
-Satamakäynnit haetaan [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet) -järjestelmästä.
+Satamakäynnit haetaan [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"} -järjestelmästä.
 
 Metadatat:
 
-[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations)
+[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details)
+[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions)
+[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions){:target="_blank"}
 
 ### Alusten sijaintitiedot
 
-[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest)
+[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest){:target="_blank"}
 
 Alusten sijaintitiedot ja metatiedot kerätään laivojen lähettämien AIS-viestien perusteella. ([Lisätietoa](ais)).
 
 Metadatat:
 
-[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels)
+[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels){:target="_blank"}
 
 ### Talvimerenkulun avustustiedot
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways)
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways){:target="_blank"}
 
-Avustustiedot haetaan [Baltice](http://baltice.org) -järjestelmästä.
+Avustustiedot haetaan [Baltice](http://baltice.org){:target="_blank"} -järjestelmästä.
 
 Metadatat:
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports)
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships)
+[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships){:target="_blank"}
 
 ### Älypoijudata (SSE)
 
 Data + metadata:
 
-[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest)
+[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest){:target="_blank"}
 
 Älypoijudata haetaan TLSC-järjestelmästä, joka kerää ja analysoi älypoijujen lähettämää dataa julkaistavaan muotoon.
 
@@ -335,4 +321,7 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
 
 ## Käyttörajoitukset
 
-Pyyntöjä /mqtt -osoitteeseen on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 5 pyyntöä minuutissa.  
+Pyyntöjä /mqtt -osoitteeseen on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 5 pyyntöä minuutissa.
+
+## Swagger-rajapintakuvaus
+<!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->  
