@@ -4,7 +4,7 @@ permalink: /meriliikenne/
 section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
-swagger-source: https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
+swagger-source: https://meri.digitraffic.fi/swagger/swagger-spec.json
 hero-image: icebreaker
 lang: fi
 ref: marine-traffic
@@ -13,8 +13,8 @@ intro: Avointa dataa Suomen meriltä ja järviltä.
 links:
   - ["Väylä", "https://vayla.fi"]
   - ["Traffic Management Finland", "https://tmfg.fi"]
-  - ["Swagger-UI", "https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
-  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
+  - ["Swagger-UI", "https://meri.digitraffic.fi/swagger/"]
+  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
 ---
 
 <h2 id="sisältö">Sisältö</h2>
@@ -36,7 +36,7 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väylän operoimissa ammattimer
 
 ## REST/JSON-rajapinnat
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
+Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/swagger/){:target="_blank"}
 
 Sekä metadataa että dataa päivitetään reaaliaikaisesti.
 

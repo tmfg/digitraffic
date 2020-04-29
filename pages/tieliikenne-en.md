@@ -4,7 +4,7 @@ permalink: /en/road-traffic/
 section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
-swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
+swagger-source: https://tie.digitraffic.fi/swagger/swagger-spec.json
 hero-image: road
 title: Road traffic
 lang: en
@@ -13,8 +13,8 @@ intro: Open data from Finnish roads.
 links:
   - ["Väylä", "https://vayla.fi"]
   - ["Traffic Management Finland","https://tmfg.fi"]
-  - ["Swagger-UI", "https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/"]
-  - ["Swagger-kuvaus", "https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api"]
+  - ["Swagger-UI", "https://tie.digitraffic.fi/swagger/"]
+  - ["Swagger-kuvaus", "https://tie.digitraffic.fi/swagger/swagger-spec.json"]
 ---
 
 <h2 id="content">Content</h2>
@@ -47,7 +47,7 @@ Currently the open data API includes:
 
 ## REST/JSON -APIs
 
-Full API description is located in [Swagger-documentation](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html){:target="_blank"}
+Full API description is located in [Swagger-documentation](https://tie.digitraffic.fi/swagger/){:target="_blank"}
 
 ### Road weather cameras
 

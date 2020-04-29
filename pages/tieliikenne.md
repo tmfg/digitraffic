@@ -4,7 +4,7 @@ permalink: /tieliikenne/
 section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
-swagger-source: https://tie.digitraffic.fi/api/v1/metadata/documentation/v2/api-docs?group=metadata-api
+swagger-source: https://tie.digitraffic.fi/swagger/swagger-spec.json
 hero-image: road
 title: Tieliikenne
 lang: fi
