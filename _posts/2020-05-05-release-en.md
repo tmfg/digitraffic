@@ -1,10 +1,10 @@
 ---
-title: 'Production applications updated on 28th of April 2020 at 10:00 AM – 12:00 PM (EET)'
+title: 'Production applications updated on 5th of May 2020 at 10:00 AM – 12:00 PM (EET)'
 categories: en News
 image:
 lang: en
 published: true
-ref: 2020-04-28-release
+ref: 2020-05-05-release
 traffictypes:
   - Road
 tags:
