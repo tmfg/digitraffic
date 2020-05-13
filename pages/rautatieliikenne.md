@@ -143,6 +143,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 13.5.2020
+    * Kalustoyksikkönumero lähiliikenteen sähkömoottorijunille
 * 26.3.2020
     * Rajapinnat ratatyö- ja liikenteen rajoite-ilmoituksille
 * 15.10.2019
@@ -1438,11 +1440,13 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "DEPARTURE" ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) locomotives  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kokoonpanon veturit*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})vehicleNumber ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Veturin yksilöivä kalustoyksikkönumero. Saatavilla vain sarjatunnuksille `Sm1`, `Sm2`, `Sm4` ja `Sm5`. Lisätietoa [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin paikka kokoonpanossa. Pienin numero on junan kärjessä*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) locomotiveType: SR1, SR2, ...  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin tyyppi*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) powerType: Diesel, Sähkö, ...  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin vetovoimalaji*
     * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) wagons  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) 
     *Kokoonpanon vaunut*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})vehicleNumber ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Vaunun yksilöivä kalustoyksikkönumero. Saatavilla vain sarjatunnuksille `Sm1`, `Sm2`, `Sm4` ja `Sm5`. Lisätietoa [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})location: integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun paikka kokoonpanossa. Pienin numero on junan kärjessä*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})salesNumber: 0-99 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun myyntinumero. Lukee esimerkiksi matkustajan junalipussa. 0 jos ei tiedossa.*
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})length: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun pituus senttimetreinä*
@@ -1452,8 +1456,8 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})video : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa videonäyttömahdollisuus*
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})luggage : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa matkatavarasäilytysmahdollisuus*
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})smoking : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Saako vaunussa tupakoida*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})disabled : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa invalidiystävällinen*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta. Lisätietoa http://fi.wikipedia.org/wiki/Sarjatunnus*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})disabled : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunu invalidiystävällinen*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta. Lisätietoa [http://fi.wikipedia.org/wiki/Sarjatunnus](http://fi.wikipedia.org/wiki/Sarjatunnus)*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) totalLength: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokonaispituus metreissä*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) maximumSpeed: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokoonpanolle ilmoitettu maksiminopeus kilometreina tunnissa*
     
