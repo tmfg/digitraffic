@@ -11,7 +11,7 @@ ref: railway-traffic
 title: Rautatieliikenne
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
-  - ["Väylä", "https://vayla.fi"]
+  - ["Väylävirasto", "https://vayla.fi"]
   - ["Traffic Management Finland", "https://tmfg.fi"]
   - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
