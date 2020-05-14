@@ -11,7 +11,7 @@ ref: marine-traffic
 title: Marine traffic
 intro: Open data from Finnish waterways
 links:
-  - ["Väylä", "https://vayla.fi"]
+  - ["Finnish Transport Infrastructure Agency", "https://vayla.fi"]
   - ["Traffic Management Finland", "https://tmfg.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/swagger/"]
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
@@ -24,7 +24,7 @@ links:
 
 ## General info
 
-Marine traffic information is gathered from Finnish Transport Agency's data sources. Currently open data API provides following information:
+Marine traffic information is gathered from Finnish Transport Infrastructure Agency's data sources. Currently open data API provides following information:
 
 - Marine warnings 
 

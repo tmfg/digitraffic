@@ -19,7 +19,7 @@ links:
     - /sovellukset
   - - Käyttöehdot
     - /kayttoehdot
-  - - Väylän avoin data
+  - - Väyläviraston avoin data
     - https://vayla.fi/avoindata
 published: true
 ---

@@ -11,7 +11,7 @@ lang: fi
 ref: road-traffic
 intro: Avointa dataa Suomen tieverkolta.
 links:
-  - - Väylä
+  - - Väylävirasto
     - https://vayla.fi
 ---
 

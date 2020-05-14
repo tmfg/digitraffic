@@ -165,13 +165,13 @@ t:
       fi: "tietosuojaseloste"
   finnish-transport-agency-web:
     en: "Finnish Transport Infrastructure Agency"
-    fi: "Väylä"
+    fi: "Väylävirasto"
     url:
       en: "https://vayla.fi/web/en"
       fi: "https://vayla.fi/"
   finnish-transport-agency-open-data:
     en: "Finnish Transport Infrastructure Agency open data"
-    fi: "Väylän avoin data"
+    fi: "Väyläviraston avoin data"
     url:
       en: "https://vayla.fi/web/en/open-data"
       fi: "https://vayla.fi/avoindata"

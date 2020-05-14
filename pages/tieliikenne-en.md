@@ -11,7 +11,7 @@ lang: en
 ref: road-traffic
 intro: Open data from Finnish roads.
 links:
-  - ["Väylä", "https://vayla.fi"]
+  - ["Väylävirasto", "https://vayla.fi"]
   - ["Traffic Management Finland","https://tmfg.fi"]
   - ["Swagger-UI", "https://tie.digitraffic.fi/swagger/"]
   - ["Swagger-kuvaus", "https://tie.digitraffic.fi/swagger/swagger-spec.json"]
