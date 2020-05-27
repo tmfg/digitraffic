@@ -20,5 +20,6 @@
     "lodash.template": ">=4.5.0",
     "del": ">=5.1.0",
     "gulp-clean": ">=0.4.0"
-  }
+  },
+  "dependencies": {}
 }
