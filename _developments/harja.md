@@ -5,7 +5,7 @@ ref: harja
 issue-number: DPO-469
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2019-04-08
 ---
 
