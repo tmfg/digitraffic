@@ -10,5 +10,5 @@ date: 2020-04-16
 ---
 
 Distribution of real-time location and operation information for maintenance vehicles with MQTT protocol.
-More information about the data can be read from here 
+More information about the data can be read from  
 [Digitraffic > Road traffic > Road maintenance information](/en/road-traffic/#road-maintenance-information).
