@@ -269,6 +269,21 @@ Related metadata:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
 
+
+#### Sensor history for the last 24 hours
+
+Sensor history from the weather road station can be fetched by API call:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+
+Single sensor history can be fetched by API call:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
+
+Time interval can be adjusted with from={ISO 8061 -time} and to={ISO 8061 -time} parameters. 
+
+History for the last 24 hours is currently only in beta-API.
+
 ### Variable signs
 
 [```https://tie.digitraffic.fi/api/v2/data/variable-signs```](https://tie.digitraffic.fi/api/v2/data/variable-signs){:target="_blank"}
