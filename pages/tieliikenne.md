@@ -348,23 +348,25 @@ REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa
 Tuotannon osoite on wss://tie.digitraffic.fi:61619/mqtt
 
 Kirjautuessa tulee käyttää SSL-yhteyttä.  Lisäksi palveluun täytyy kirjautua seuraavin tiedoin:
-* userName:digitraffic
-* password:digitrafficPassword
+* userName: ```digitraffic```
+* password: ```digitrafficPassword```
 
-Pahon JS-clientia käyttäessä osoite on pelkkä tie.digitraffic.fi ja portti 61619, esimerkki alempana.
+Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja portti ```61619```, esimerkki alempana.
 
-Testin osoite on vastaavasti tie-test.digitraffic.fi
+Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
 
-#### Topicit
+### Topicit
 
-Tarjolla on topicit liikenteen seurantaan (tms) ja säätietojen keräämiseen (weather). Topicit ovat seuraavanlaista muotoa:
+Voit korvata ```<id>```-osan ```#```-merkillä, jolloin kuunnellaan koko joukon viestejä. Esim. ```tms/#```
 
-- tms/\<roadStationId>/\<sensorId\>
-- tms/status
-- weather/\<roadStationId>/\<sensorId\>
-- weather/status
+Topicit ovat seuraavanlaista muotoa.
 
-#### TMS-viesti
+#### Ajantasaiset LAM mittaustiedot 
+
+- ```tms/<roadStationId>/<sensorId>```
+- ```tms/status```
+
+##### TMS-viesti
 
 ```
 {
@@ -379,7 +381,12 @@ Tarjolla on topicit liikenteen seurantaan (tms) ja säätietojen keräämiseen (
 }
 ```
 
-#### Weather-viesti
+#### Tiesääasemien ajantasaiset mittaustiedot
+
+- ```weather/<roadStationId>/<sensorId>```
+- ```weather/status```
+
+##### Sääaseman mittaustieto-viesti
 
 ```
 {
@@ -392,7 +399,35 @@ Tarjolla on topicit liikenteen seurantaan (tms) ja säätietojen keräämiseen (
   "sensorUnit": "°C",
   "measuredTime": "2019-01-23T08:35:00Z"
 }
+```
 
+#### Maanteiden kunnossapitotiedot
+
+- ```maintenance/tracking/<trackingId>```
+- ```maintenance/tracking/status```
+
+##### Kunnossapitoviesti
+
+```
+{
+  "type": "Feature",
+  "properties": {
+    "id": 247694,
+    "time": "2020-06-08T13:23:52Z",
+    "tasks": [
+      "PAVING"
+    ],
+    "direction": 72
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      25.689415,
+      62.598124,
+      0
+    ]
+  }
+}
 ```
 
 #### Yksinkertainen JavaScript WebSocket -client

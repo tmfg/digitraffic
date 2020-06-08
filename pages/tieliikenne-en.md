@@ -138,7 +138,7 @@ Related metadata:
 
 
 
-### Current data from LAM stations
+### Current data from TMS stations
 
 [```https://tie.digitraffic.fi/api/v1/data/tms-data```](https://tie.digitraffic.fi/api/v1/data/tms-data){:target="_blank"}
 
@@ -252,7 +252,7 @@ Related metadata:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
 
-### Status of road weather stations
+### Current data of road weather stations
 
 [```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
 
@@ -340,23 +340,25 @@ you to subscibe only those topics you are interested in.
 Production address is wss://tie.digitraffic.fi:61619/mqtt
 
 You must use SSL when connecting. Also, you need to use following credentials:
-* userName:digitraffic
-* password:digitrafficPassword
+* userName: ```digitraffic```
+* password: ```digitrafficPassword```
 
-When using Paho JS-client the address is plain tie.digitraffic.fi and port 61619, see example below.  
+When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port ```61619```, see example below.  
 
-Address for test is tie-test.digitraffic.fi
+Address for test is ```tie-test.digitraffic.fi```.
 
-#### Topics
+### Topics
 
-Topics are constructed like this:
+You can replace ```<id>```-part in topic with ```#```-character to listen all messages. E.g.. ```tms/#```
 
-- tms/\<roadStationId>/\<sensorId\>
-- tms/status
-- weather/\<roadStationId>/\<sensorId\>
-- weather/status
+Topics are constructed like shown below.
 
-#### TMS-message
+#### Current data from TMS stations 
+
+- ```tms/<roadStationId>/<sensorId>```
+- ```tms/status```
+
+##### TMS station sensor measurement message
 
 ```
 {
@@ -371,7 +373,12 @@ Topics are constructed like this:
 }
 ```
 
-#### Weather-message
+#### Current data of road weather stations
+
+- ```weather/<roadStationId>/<sensorId>```
+- ```weather/status```
+
+##### Weather station sensor measurement message
 
 ```
 {
@@ -384,7 +391,35 @@ Topics are constructed like this:
   "sensorUnit": "°C",
   "measuredTime": "2019-01-23T08:35:00Z"
 }
+```
 
+#### Road maintenance information
+
+- ```maintenance/tracking/<trackingId>```
+- ```maintenance/tracking/status```
+
+##### Road maintenance tracking message
+
+```
+{
+  "type": "Feature",
+  "properties": {
+    "id": 247694,
+    "time": "2020-06-08T13:23:52Z",
+    "tasks": [
+      "PAVING"
+    ],
+    "direction": 72
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      25.689415,
+      62.598124,
+      0
+    ]
+  }
+}
 ```
 
 #### Simple JavaScript Web Socket client
