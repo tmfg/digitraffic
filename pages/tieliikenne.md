@@ -67,7 +67,7 @@ Metadatat:
 
 ### Kelikamerakuvien viimeisen 24 h historia
 
-Haluttujen kameroiden ja/tai esiasentojen historia sadaan rajapinnasta:
+Haluttujen kameroiden ja/tai esiasentojen historia saadaan rajapinnasta:
 
 [```https://tie.digitraffic.fi/api/v2/data/camera-history/history?id={kameran tai esiasennon id}```](https://tie.digitraffic.fi/api/v2/data/camera-history/history?id=C0450701){:target="_blank"}
 
@@ -278,6 +278,21 @@ Metadatat:
 [```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
 
 [```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
+
+
+#### Viimeisen 24h historia
+
+Halutun tiesääaseman kaikkien anturien datan saa rajapinnasta:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+
+Yksittäisen anturin datan saa rajapinnasta:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
+
+Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja to={ISO 8061 -aika} parametreillä. Oletuksena ilman from-parametriä kyselyt palauttavat vain viimeisimmän tunnin datan.
+
+24h historia on vielä tarjolla vain beta-rajapintana.
 
 ### Muuttuvien liikennemerkkien tiedot
 
