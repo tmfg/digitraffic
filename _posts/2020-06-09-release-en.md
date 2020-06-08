@@ -19,6 +19,6 @@ Changelog:
 ROAD
 
 - DPO-1079 HARJA työkoneen seurantatiedon jakaminen MQTT:lla 
-    -  More info at [Digitraffic > Tieliikenne > Maanteiden-kunnossapitotiedot](/en/road-traffic/#road-maintenance-information-1)'
+    -  More info at [Digitraffic > Road traffic > WebSocket API > Topics > Road maintenance information](/en/road-traffic/#road-maintenance-information-1)'
 
 We apologize for any inconvenience.
