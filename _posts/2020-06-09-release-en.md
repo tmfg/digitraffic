@@ -1,5 +1,5 @@
 ---
-title: 'Production applications updated on 8th of May 2020 at 10:00 AM – 12:00 PM (EET)'
+title: 'Production applications updated on 9th of June 2020 at 10:00 AM – 12:00 PM (EET)'
 categories: en News
 image:
 lang: en
