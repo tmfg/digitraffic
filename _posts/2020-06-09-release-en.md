@@ -3,7 +3,7 @@ title: 'Production applications updated on 8th of May 2020 at 10:00 AM – 12:00
 categories: en News
 image:
 lang: en
-published: false
+published: true
 ref: 2020-06-09-release
 traffictypes:
   - Road
