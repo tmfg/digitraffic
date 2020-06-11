@@ -17,7 +17,7 @@ links:
   - ["Swagger-kuvaus", "https://tie.digitraffic.fi/swagger/swagger-spec.json"]
 ---
 
-<h2 id="content">Content</h2>
+<h2 id="contents">Contents</h2>
 
 * Do not remove this line (it will not be displayed)
 {:toc}
