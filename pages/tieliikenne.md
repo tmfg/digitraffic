@@ -358,7 +358,7 @@ Rajapinta palauttaa ajoneuvojen suorittamien tehtävien tarkemmat selitteet.
 
 ## WebSocket-rajapinnat
 
-REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa TMC-asemien tietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
+REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa tieliikenteen automaattisten mittaustietojen (LAM), tiesääasemien tietojen sekä maanteiden kunnossapitotietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
 Tuotannon osoite on wss://tie.digitraffic.fi:61619/mqtt
 
