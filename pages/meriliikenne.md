@@ -94,6 +94,15 @@ Data + metadata:
 
 Data päivitetään 30 minuutin välein.
 
+### Siltojen ja sulkujen häiriötiedotteet
+
+
+[```https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions```](https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions){:target="_blank"}
+
+Siltojen ja sulkujen häiriötiedotteet haetaan POOKI-järjestelmästä.
+
+Data päivitetään 10 minuutin välein.
+
 ## MQTT WebSocket -rajapinnat
 
 Laivojen sijainteja ja älypoijudataa voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa
