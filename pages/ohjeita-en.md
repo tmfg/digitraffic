@@ -28,6 +28,15 @@ Most libraries include this header automatically.
 
 If compression is not allowed in the request, the service returns error code `406`.
 
+### Example with cURL
+```
+curl -H 'Accept-Encoding: gzip'
+```
+### Example with Wget
+```
+wget --header='Accept-Encoding: gzip'
+```
+
 ## Restricting requests  
 
 To reduce the load caused by unnecessary and excessive queries, there is a limit on the number of requests for the interfaces.
@@ -77,19 +86,6 @@ This might lead to some oddities with updated timestamps. For example:
 `https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false`
 
 These two might return a different _dataUpdatedTime_ because the calls were cached at different time.
-
-# Compression
-__Q__: How can I request data in a more efficient way?  
-__A__: Using compression is highly recommended.  The data compress well and you can save bandwith and time.  How to use compression is dependant
-of the tools and frameworks you are using.
-### cURL
-```
-curl -H 'Accept-Encoding: gzip'
-```
-### Wget
-```
-wget --header='Accept-Encoding: gzip'
-```
 
 # cURL
 __Q__: How do I call the APIs with [cURL](https://curl.haxx.se/)?  

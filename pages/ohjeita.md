@@ -29,6 +29,16 @@ Useimmat kirjastot lisäävät otsikkotiedon automaattisesti.
 
 Jos pakkausta ei ole sallittu pyynnössä, palvelu palauttaa virhekoodin `406`.
 
+### Esimerkki cURL:lla
+```
+curl -H 'Accept-Encoding: gzip'
+```
+### Esimerkki Wget:llä
+```
+wget --header='Accept-Encoding: gzip'
+```
+
+
 ## Pyyntöjen rajoittaminen  
 
 Turhien ja liiallisten kyselyjen aiheuttaman kuormituksen vähentämiseksi rajapinnoissa on käytössä pyyntöjen määrän rajoitus. 
@@ -78,19 +88,6 @@ Tämä saattaa myös aiheuttaa omituiselta tuntuvia aikaleimoja, kun samaa palve
 `https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false`
 
 Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen eri aikoina.
-
-# Pakkaus
-__K__: Miten saan ladattua dataa nopeammin ja tehokkaammin?  
-__V__: Kannattaa käyttää pakkausta, sillä data on hyvin pakkautuvaa ja tällä säästää kaistaa ja aikaa. Pakkauksen käyttöönotto riippuu hieman 
-käytetystä tekniikasta.
-### cURL
-```
-curl -H 'Accept-Encoding: gzip'
-```
-### Wget
-```
-wget --header='Accept-Encoding: gzip'
-```
 
 # cURL
 __K__: Miten kutsun rajapintoja [cURLilla](https://curl.haxx.se/)?  
