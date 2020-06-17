@@ -5,8 +5,8 @@ ref: sillat_sulut
 issue-number: DPO-798
 traffictypes:
   - Marine traffic
-status: inprogress
-date: 2020-03-27
+status: finished
+date: 2020-06-17
 ---
 
 Faults and other disruption information of bridges and locks are planned to be published on Digitraffic API.
