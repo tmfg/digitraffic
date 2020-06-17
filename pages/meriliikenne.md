@@ -321,7 +321,7 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
 
 ## Käyttörajoitukset
 
-Pyyntöjä /mqtt -osoitteeseen on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 5 pyyntöä minuutissa.
+Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
 
 ## Swagger-rajapintakuvaus
 <!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->  

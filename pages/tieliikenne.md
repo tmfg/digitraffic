@@ -525,13 +525,7 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 
 ## Käyttörajoitukset
 
-Pyyntöjä /mqtt -osoitteeseen on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 5 pyyntöä minuutissa.
-
-Pyyntöjä yksittäiseen kamerakuvaan(weathercam.digitraffic.fi) on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä 
-maksimissaan 20 pyyntöä minuutissa yksittäiseen kamerakuvaan.
-
-Pyyntöjä version 2 ja uudempiin rajapintoihin on rajoitettu niin, että yhdestä ip-osoitteesta voi tehdä maksimissaan 10 pyyntöä minuutissa 
-yksittäiseen osoitteeseen.
+Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
 
 ## Swagger-rajapintakuvaus
 <!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->

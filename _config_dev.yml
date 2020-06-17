@@ -11,22 +11,26 @@ plugins_dir:
 sass:
   sass_dir: _scss
 compress_html:
-  clippings: all
+
 exclude:
-  - docs
-  - digitraffic.iml
-  - Gemfile
-  - gulpfile.js
-  - metadata
-  - node_modules
-  - package-lock.json
-  - package.json
-  - README.md
-  - docker-entrypoint.sh
   - .idea
-  - Dockerfile
+  - docs
+  - _site
+  - _site_tmp
+  - node_modules
+  - .dockerignore
+  - .gitignore
   - build-and-run-in-docker.sh
   - build-docker-image.sh
+  - digitraffic.iml
+  - docker-entrypoint.sh
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - README.md
   - run-in-docker.sh
 collections:
   applications:
@@ -365,7 +369,7 @@ t:
     en: "Public Google groups provide support and communication between developers, service provider and Traffic Management Finland."
     fi: "Kehittäjien, palvelun ylläpitäjän ja Traffic Management Finlandin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
   support-channels-information:
-    en: "Information and instructions for using api"
+    en: "Information and instructions for using APIs"
     fi: "Ohjeita ja lisätietoa rajapintojen käyttöön"
     url:
       en: "en/instructions"

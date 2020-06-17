@@ -31,7 +31,7 @@ function browserSyncReload(done) {
 // Jekyll
 function jekyll() {
     browsersync.notify(messages.jekyllBuild);
-    return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml', '-d', '_site_tmp'], { stdio: "inherit" });
+    return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml', '-d', '_site', '--profile'], { stdio: "inherit" });
 }
 
 // Copy generated content to _site folder where it is served
@@ -68,10 +68,11 @@ function watchFiles() {
             'js/*',
             'pages/*'
         ],
-        gulp.series(cleanTmp, jekyll, cleanTgt, updateSite, browserSyncReload)
+        gulp.series(jekyll, browserSyncReload)
+        // gulp.series(cleanTmp, jekyll, cleanTgt, updateSite, browserSyncReload)
     );
 }
 // jekyll here to generate also on startup
-gulp.task('default', gulp.series(cleanTmp, jekyll, cleanTgt, updateSite, browserSync, watchFiles, function() {
+gulp.task('default', gulp.series(jekyll, browserSync, watchFiles, function() {
     // default task code here
 }));
