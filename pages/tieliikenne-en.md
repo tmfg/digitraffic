@@ -518,11 +518,7 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 
 ## Restrictions
 
-Requests to /mqtt -address are restricted to 5 requests a minute per ip-address.
-
-Requests to a single weather camera image(weathercam.digitraffic.fi) are restricted to 20 requests a minute per ip-address.
-
-Requests to a single version 2 or newer api are restricted to to 10 requests a minute per ip-address.
+See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
 
 ## Swagger API specification
 <!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->

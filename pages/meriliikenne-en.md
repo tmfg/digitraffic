@@ -321,7 +321,7 @@ sse/site/<site-id>          # Tracking single site data
 
 ## Restrictions
 
-Requests to /mqtt -address are restricted to 5 requests a minute per ip-address.
+See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
 
 ## Swagger API specification
 <!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->
