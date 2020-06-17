@@ -14,20 +14,24 @@ compress_html:
   clippings: all
   comments: all
 exclude:
-  - docs
-  - digitraffic.iml
-  - Gemfile
-  - gulpfile.js
-  - metadata
-  - node_modules
-  - package-lock.json
-  - package.json
-  - README.md
-  - docker-entrypoint.sh
   - .idea
-  - Dockerfile
+  - docs
+  - _site
+  - _site_tmp
+  - node_modules
+  - .dockerignore
+  - .gitignore
   - build-and-run-in-docker.sh
   - build-docker-image.sh
+  - digitraffic.iml
+  - docker-entrypoint.sh
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - README.md
   - run-in-docker.sh
 collections:
   applications:
