@@ -51,6 +51,7 @@ The documentation of each API explains how often each interface content is updat
 | **V1-APIs**                 | -                 |
 | **> V1-APIs**               | 60                | IP + URL
 
+<!-- 
 ## Headers to identify the application
 
 We hope that API users will use the HTTP headers described below in all HTTP requests.
@@ -73,6 +74,7 @@ The Digitraffic-User header should include an identifiable user party. Below you
 
 `Digitraffic-User: <party>`  
 `Digitraffic-User: TMFG`
+-->
 
 # Cache
 __Q__: Why do APIs often return the same response?  

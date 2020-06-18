@@ -53,6 +53,7 @@ Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö p�
 | **V1-rajapinnat**     | -                 |
 | **> V1-rajapinnat**   | 60                | IP + URL
 
+<!---
 ## Sovelluksen yksilöivät otsikkotiedot
 
 Toivomme, että rajapintojen käyttäjät käyttäisivät kaikissa HTTP-pyynnöissä alla kuvattuja HTTP-otsikkotietoja. 
@@ -75,6 +76,7 @@ Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjä. Alla esi
 
 `Digitraffic-User: <käyttäjätaho>`  
 `Digitraffic-User: TMFG`
+-->
 
 # Cache
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  
