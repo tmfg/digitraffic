@@ -53,7 +53,6 @@ Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö p�
 | **V1-rajapinnat**     | -                 |
 | **> V1-rajapinnat**   | 60                | IP + URL
 
-<!---
 ## Sovelluksen yksilöivät otsikkotiedot
 
 Toivomme, että rajapintojen käyttäjät käyttäisivät kaikissa HTTP-pyynnöissä alla kuvattuja HTTP-otsikkotietoja. 
@@ -62,21 +61,21 @@ Esimerkkinä voisi olla ohjelmointivirhe, joka aiheuttaa huomattavan kuorman tek
 Jos alla mainitut tiedot ovat kunnossa, pystymme tunnistamaan osapuolen ja välittämään tiedon mahdollisesta ongelmasta 
 sovelluksessa kehittäjälle tai ylläpitäjälle.
 
-### User-Agent
+### Digitraffic-User -otsikko
 
-User-Agent -otsikkon tulisi olla [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3) -kohdan mukainen 
+Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/tai sovellus. Alla esimerkkejä.
+  
+`Digitraffic-User: TMFG`  
+`Digitraffic-User: Liikennetilanne`  
+`Digitraffic-User: TMFG/Liikennetilanne`  
+
+### User-Agent -otsikko
+
+Mikäli sovelluksessa on mahdollista asettaa User-Agent -otsikkotieto, tulisi sen olla [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3) -kohdan mukainen 
 sisältäen vähintään sovelluksen nimen ja version. Alla esimerkkejä.
 
 `User-Agent: <sovellus>/<versio>`  
-`User-Agent: Digitraffic Map/0.1`
-
-### Digitraffic-User
-
-Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjä. Alla esimerkkejä.
-
-`Digitraffic-User: <käyttäjätaho>`  
-`Digitraffic-User: TMFG`
--->
+`User-Agent: Liikennetilanne/1.0`
 
 # Cache
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  

@@ -51,7 +51,6 @@ The documentation of each API explains how often each interface content is updat
 | **V1-APIs**                 | -                 |
 | **> V1-APIs**               | 60                | IP + URL
 
-<!-- 
 ## Headers to identify the application
 
 We hope that API users will use the HTTP headers described below in all HTTP requests.
@@ -60,21 +59,22 @@ An example could be a programming error that causes a considerable load by makin
 If the information listed below is in order, we are able to identify the API user in question and to notify 
 the application developer or administrator.
 
+### Digitraffic-User
+
+The Digitraffic-User header should include an identifiable user party and/or application. Below you can find examples.
+
+`Digitraffic-User: TMFG`  
+`Digitraffic-User: Liikennetilanne`  
+`Digitraffic-User: TMFG/Liikennetilanne`  
+
 ### User-Agent
 
-The User-Agent header should be in accordance with [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3)
+If it is possible to set the User-Agent header in the application, it should be in accordance with [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3)
 including at least the name and version of the application. Below you can find examples.
 
 `User-Agent: <application>/<version>`  
-`User-Agent: Digitraffic Map/0.1`
+`User-Agent: Liikennetilanne/1.0`
 
-### Digitraffic-User
-
-The Digitraffic-User header should include an identifiable user party. Below you can find examples.
-
-`Digitraffic-User: <party>`  
-`Digitraffic-User: TMFG`
--->
 
 # Cache
 __Q__: Why do APIs often return the same response?  
