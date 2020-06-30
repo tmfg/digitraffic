@@ -34,21 +34,6 @@ function jekyll() {
     return cp.spawn("bundle", ["exec", "jekyll", "build", '--config', '_config_dev.yml', '-d', '_site', '--profile'], { stdio: "inherit" });
 }
 
-// Copy generated content to _site folder where it is served
-function updateSite() {
-    return src('_site_tmp/**/*', { buffer: false , allowEmpty: true }).pipe(dest('_site'));
-}
-
-// Clean tmp folder for generated site
-function cleanTmp() {
-    return src('_site_tmp/*', { read: false, allowEmpty: true}).pipe(clean());
-}
-
-// Clean _site folder for old data
-function cleanTgt() {
-    return src('_site/*', {read: false, allowEmpty: true}).pipe(clean());
-}
-
 // Watch files
 function watchFiles() {
     gulp.watch(

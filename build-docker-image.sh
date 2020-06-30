@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build . -t my/digitraffic
+docker build . -t digitraffic-pages

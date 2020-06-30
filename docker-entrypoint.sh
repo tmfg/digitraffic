@@ -4,14 +4,12 @@
 trap "echo Exiting...; kill -TERM -1; exit" SIGINT SIGTERM
 
 echo
-echo "Installing required Ruby gems. Please wait..."
-echo
-gem install bundler
+echo "Installing/updating required Ruby gems."
 bundle install
 bundle update
+
 echo
-echo "Installing required node packages. Please wait..."
-echo
+echo "Installing/updating required node packages. Please wait..."
 npm install
 npm update --save
 npm audit

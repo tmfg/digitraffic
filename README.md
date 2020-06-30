@@ -202,11 +202,11 @@ Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edi
 
 ### Install with Docker
 ```
-docker build . -t my/digitraffic
-docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app my/digitraffic:latest
+docker build . -t digitraffic-pages
+docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest
 ```
 
-or one-liner `docker build . -t my/digitraffic; docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app my/digitraffic:latest`
+or one-liner `docker build . -t digitraffic-pages; docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest`
 
 or the script: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
 
@@ -221,7 +221,7 @@ The wiki source can be cloned with:
 
 ## Keeping up to date
 
-Command `bunde update` is excecuted every time docker image is build or started so it will do updates.
+Command `bunde update` is excecuted every time docker container is started so it will do updates.
 
 - https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#step-2-install-jekyll-using-bundler
 - https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
