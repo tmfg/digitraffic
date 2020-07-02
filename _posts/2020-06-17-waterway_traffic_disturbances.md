@@ -1,10 +1,10 @@
 ---
-title: 'Siltojen ja sulkujen häiriötiedotteiden data saatavilla'
+title: 'Vesiliikenteen häiröiden data saatavilla'
 categories: Tiedotteet
 image:
 lang: fi
 published: true
-ref: 2020-06-17-bridge-lock-disruptions
+ref: 2020-06-17-waterway_traffic_disturbances
 traffictypes:
   - Meriliikenne
 tags:

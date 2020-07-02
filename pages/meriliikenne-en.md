@@ -94,11 +94,11 @@ Sea state estimation data is fetched from TLSC-server, that gathers and analyzes
 
 Data is updated every 30 minutes.
 
-### Bridge and lock disruptions
+### Disturbances in waterway traffic 
 
 [```https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions```](https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions){:target="_blank"}
 
-Bridge and lock disruptions are fetched from POOKI.
+Waterway traffic disturbances are fetched from POOKI.
 
 Data is updated every 10 minutes.
 

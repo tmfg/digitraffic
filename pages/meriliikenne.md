@@ -94,12 +94,12 @@ Data + metadata:
 
 Data päivitetään 30 minuutin välein.
 
-### Siltojen ja sulkujen häiriötiedotteet
+### Vesiliikenteen häiriöt
 
 
 [```https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions```](https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions){:target="_blank"}
 
-Siltojen ja sulkujen häiriötiedotteet haetaan POOKI-järjestelmästä.
+Vesiliikenteen häiriöt haetaan POOKI-järjestelmästä.
 
 Data päivitetään 10 minuutin välein.
 
