@@ -43,13 +43,15 @@ To reduce the load caused by unnecessary and excessive queries, there is a limit
 When the number of requests exceeds the set limit, the service returns error code `429`.
 The documentation of each API explains how often each interface content is updated.
 
-**Restrictions on road and marine:**  
+**Restrictions:**  
 
 | **Target / interface**      | **Max requests / min** | **Limit**
-| **MQTT**                    | 5                 | IP
-| **Weather camera images**   | 10                | IP + URL
-| **V1-APIs**                 | -                 |
-| **> V1-APIs**               | 60                | IP + URL
+|-----------------------|-------------------|-------------|
+| **General restriction**   | 60                | IP + URL    
+| **MQTT**              | 5                 | IP          
+| **Weather camera images**   | 10                | IP + URL    
+| **tie/meri.digitraffic.fi V1-interfaces**     | &infin;                 |             
+| **infra- and jeti-api**     | &infin;                 |             
 
 ## Headers to identify the application
 
