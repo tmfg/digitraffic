@@ -45,13 +45,15 @@ Turhien ja liiallisten kyselyjen aiheuttaman kuormituksen vähentämiseksi rajap
 Kun pyyntöjen määrä ylittää asetetun raja-arvon, palvelu palauttaa virhekoodin `429`. 
 Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö päivittyy.  
 
-**Käyttörajoitukset tie- ja meriliikenteessä:**  
+**Käyttörajoitukset:**  
 
-| **Kohde / rajapinta** | **Max kpl / min** | **Rajaus**
-| **MQTT**              | 5                 | IP
-| **Kelikamerakuvat**   | 10                | IP + URL
-| **V1-rajapinnat**     | -                 |
-| **> V1-rajapinnat**   | 60                | IP + URL
+| **Kohde / rajapinta** | **Max kpl / min** | **Rajaus**  |
+|-----------------------|-------------------|-------------|
+| **Yleisrajoitus**   | 60                | IP + URL    |
+| **MQTT**              | 5                 | IP          |
+| **Kelikamerakuvat**   | 10                | IP + URL    |
+| **tie/meri.digitraffic.fi:n V1-rajapinnat**     | &infin;                 |             |
+| **infra- ja jeti-api**     | &infin;                 |             |
 
 ## Sovelluksen yksilöivät otsikkotiedot
 
