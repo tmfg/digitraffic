@@ -292,7 +292,7 @@ History for the last 24 hours is currently only in beta-API.
 
 [```https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}){:target="_blank"}
 
-Response message contains latest variable sign data.  Currenty supported sign types are speed limits and warnings.
+Response message contains latest variable sign data.  Currenty supported sign types are speed limits and warnings. Digitraffic publishes the data only from the master device of a device group. Data from slave devices on the left side of the road or on ramps is not available.
 
 Warning sign types(in Finnish):
 
