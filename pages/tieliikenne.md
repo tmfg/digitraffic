@@ -303,7 +303,7 @@ Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja 
 [```https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}){:target="_blank"}
 
 Viesti sisältää muuttuvan liikennemerkin viimeisimmän tilan.  Tällä hetkellä tuettuja merkkejä ovat muuttuvat 
-nopeusrajoitukset sekä varoitusmerkit.
+nopeusrajoitukset sekä varoitusmerkit. Digitraffic julkaisee tilatiedot vain laiteryhmän master-laitteesta. Tämä tarkoittaa sitä, että ajoradan vasemmalla puolella olevan merkin ja mahdollisen ramppimerkin tietoja ei välitetä erikseen.
 
 Varoitusmerkkien tyypit:
 
