@@ -562,7 +562,7 @@ URL: `/train-locations/<departure_date>/<train_number>?bbox=<points>`
 
 Esimerkkejä:
 * [/train-locations/latest/1](https://rata.digitraffic.fi/api/v1/train-locations/latest/1)
-* [/train-locations/2018-03-01/1](https://rata.digitraffic.fi/api/v1//train-locations/2018-03-01/1)
+* [/train-locations/2018-03-01/1](https://rata.digitraffic.fi/api/v1/train-locations/2018-03-01/1)
 
 **Kuvaus**
 
