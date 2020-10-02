@@ -925,7 +925,7 @@ Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 
 #### Ratatyöilmoitusten uusimpien versioiden haku aikavälillä
@@ -944,7 +944,7 @@ Palauttaa aikavälille osuvien ilmoituksen tunnisteet ja uusimmat versiot.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä nousevasti `modified`- ja `id`-kentän mukaan.
@@ -965,7 +965,7 @@ Palauttaa tietyn ilmoituksen kaikki versiot.
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 
 #### Ratatyöilmoitusten tietyn version palautus
@@ -983,7 +983,7 @@ Palauttaa tietyn ilmoituksen tietyn version.
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 
 ### Liikenteen rajoite-ilmoitukset
@@ -1009,7 +1009,7 @@ Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 
 #### Liikenteen rajoite-ilmoitusten uusimpien versioiden haku aikavälillä
@@ -1028,7 +1028,7 @@ Palauttaa aikavälille osuvien ilmoitusten tunnisteet ja uusimmat versiot.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä nousevasti `modified`- ja `id`-kentän mukaan.
@@ -1049,7 +1049,7 @@ Palauttaa tietyn ilmoituksen kaikki versiot.
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 
 #### Liikenteen rajoite-ilmoituksen tietyn version palautus
@@ -1067,7 +1067,7 @@ Palauttaa tietyn ilmoituksen tietyn version.
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 
 
