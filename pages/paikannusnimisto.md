@@ -31,13 +31,13 @@ Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisu
 
 ### Rajapintajakelu
 Paikannuspisteistön sertifioimattomat versiot ovat saatavilla myös rajapintojen kautta:
-- Paikannuspisteisteet https://tie.digitraffic.fi/api/v3/metadata/locations
+- Paikannuspisteisteet (https://tie.digitraffic.fi/api/v3/metadata/locations)
 
-- Aineistoversiot https://tie.digitraffic.fi/api/v3/metadata/locations-versions
+- Aineistoversiot (https://tie.digitraffic.fi/api/v3/metadata/locations-versions)
 
-- Paikannuspisteiden tyypit https://tie.digitraffic.fi/api/v3/metadata/locations-types
+- Paikannuspisteiden tyypit (https://tie.digitraffic.fi/api/v3/metadata/locations-types)
 
-Rajapinnat on dokumentoitu Swaggeriin https://tie.digitraffic.fi/swagger/#/
+Rajapinnat on dokumentoitu Swaggeriin (https://tie.digitraffic.fi/swagger/#/)
 
 ## Aineiston kuvaus
 ### Teiden nimeäminen
