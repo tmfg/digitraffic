@@ -8,7 +8,7 @@ hero-image: road
 title: TMC/ALERT-C
 lang: fi
 ref: tmc-data
-intro: DatexII muotoisten liikennetiedotteiden sijainnin ilmoittamiseen käytettävä TMC/ALERT-C paikannuspisteistö
+intro: Suomen liikennetiedottamisessa käytettävä paikannuspisteistö
 ---
 
 <h2 id="sisältö">Sisältö</h2>
