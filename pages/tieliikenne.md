@@ -221,6 +221,10 @@ Tietyöt käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteel
 Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
 Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
+### TMC/ALERT-C paikannuspisteistö
+
+Häiriötiedotteiden, painorajoitusten ja tietöiden maantieteellisen sijainnin ilmoittamiseen käytetään TMC/ALERT-C -paikannuspisteistöä. Lisätietoa [täällä](paikannusnimisto).
+
 ### Tiesääasemien ajantasaiset mittaustiedot
 
 [```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
