@@ -11,7 +11,24 @@ ref: tmc-data
 intro: Paikannusnimistön nimeämisohje
 ---
 
-Tähän on koottu ohjeita kuinka eri paikkojen nimeäminen tapahtuu. Suomessa käytössä oleva nimeäminen ei ole osa yleistä paikannusnimistö-standardia.
+<h2 id="sisältö">Sisältö</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+Tänne on koottu ohjeita kuinka eri paikkojen nimeäminen tapahtuu. Suomessa käytössä oleva nimeäminen ei ole osa yleistä paikannusnimistö-standardia.
+
+## TMC/ALERT-C paikannuspisteistö
+
+RDS-TMC (Traffic Message Channel) on tieliikenteen liikennetiedotuspalvelu, joka välittää liikennetiedotteita analogisten radiolähetysten ohessa käytettävällä RDS-tekniikalla. Liikennetiedotteet sisältävät hyödyllistä ja ajantasaista tietoa tietöistä, onnettomuuksista, ruuhkista ja kelistä. Tiedotteiden hyödyntämiseen tarvitaan TMC/ALERT-C -aineisto, jonka ylläpidosta ja jakelusta Suomessa vastaa Traffic Management Finlandin tytäryhtiö ITM Finland. TMC:n kehityksestä vastaa TISA Forum.
+
+### Sertifioitu aineisto
+Suomen paikannustietokantaa ylläpidetään jatkuvasti ja se sertifioidaan TISA Forumin toimesta vuosittain. Viimeisin sertifioitu versio on saatavilla [täältä](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.
+
+### Sertifioimaton aineisto  
+
+ITM Finlandin tiedotuksessa käyttämä TMC-nimistö päivittyy useamman kerran vuodessa, eli myös sertifiointien välissä.  Tarvittaessa sertifioimattomat väliversiot ovat toistaiseksi ladattavissa [täältä](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.  
+Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisun rakenteesta - rakenne-erot on kirjattu erilliseen dokumenttiin. Dokumentaatio on ladattavissa [täältä](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.  
 
 ## Teiden nimeäminen
 

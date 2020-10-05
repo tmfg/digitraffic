@@ -12,7 +12,25 @@ intro: Finnish RDS-TMC event list and location table
 
 ---
 
+<h2 id="sisältö">Contents</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 This note describes the Finnish location and event tables including which decisions have been made concerning items, which are not part of the Location referencing standards. It also includes recommendations for the composition of messages.
+
+## TMC/ALERT-C location data
+
+RDS-TMC is a traffic message channel, which relays traffic information through analog FM radio's RDS channel. Traffic information includes useful and real time data about road works, accidents, traffic jams and weather. The TMC/ALERT-C material is necessary when using the traffic information. ITM Finland (a subsidiary of Traffic Management Finland) is responsible for administration and distribution of the Finnish TMC data. TMC is developed by the Tisa Forum.
+
+### Certified content
+
+The Finnish TMC location database is constantly updated and certified yearly by TISA forum. The latest certified version of the database can be downloaded [here](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.
+
+### Non-certified content
+
+For incident broadcasting ITM Finland uses more frequently exported versions of the database. If these intermediate non-certified versions are needed they can be downloaded [here](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.  
+The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described [here](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.
 
 ## Event list
 
