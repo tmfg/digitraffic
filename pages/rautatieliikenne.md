@@ -1215,10 +1215,14 @@ Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/s
 
 Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 * filtterin (tai useampia) `where`-parametrilla
-* järjestyksen `orderBy`-parametrilla
+* järjestyksen (tai useampia) `orderBy`-parametrilla
 * kappalemäärän `skip`- ja `take`-parametrilla 
 
-Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
+### Rajoituksia
+
+* Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
+* Kyselyssä ei saa olla sama käsite kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
+* `contains`:a ei voi käyttää kahdesti samassa argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {gt: 50}}}}}}` on laiton
 
 ### Esimerkkejä
 
@@ -1246,6 +1250,36 @@ Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRun
     commuterLineid
     operator {
       shortCode
+    }
+  }
+}
+```
+
+#### Kulussa olevat junat järjestetynä operaattorilla ja junanumerolla [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(orderBy%3A%20%5B%7Boperator%3A%7BshortCode%3AASCENDING%7D%7D%2C%7BtrainNumber%3AASCENDING%7D%5D)%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)
+```
+{
+  currentlyRunningTrains(orderBy: [{operator:{shortCode:ASCENDING}},{trainNumber:ASCENDING}]) {
+    operator {
+      shortCode
+    }
+    trainNumber
+  }
+}
+```
+
+#### Junat, jotka kulkevat Ylöjärven kautta [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20"2020-10-06"%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Beq%3A"YLÖ"%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+```
+{
+  trainsByDepartureDate(departureDate: "2020-10-06", 
+    where: {timeTableRows:{contains:{station:{shortCode:{eq:"YLÖ"}}}}}
+    ) {
+    trainNumber
+    departureDate
+    timeTableRows {
+      station {
+        name
+        uicCode
+      }
     }
   }
 }
