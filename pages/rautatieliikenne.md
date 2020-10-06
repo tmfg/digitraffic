@@ -141,6 +141,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 13.10.2020
+    * GraphQL:n v2, jossa dataa pystyy käsittelemään monipuolisemmin
 * 13.5.2020
     * Kalustoyksikkönumero lähiliikenteen sähkömoottorijunille
 * 26.3.2020
@@ -1298,7 +1300,7 @@ Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
 
 Kysely kokonaisuudessaan curl:lla:
 ```
-curl 'https://rata-beta.digitraffic.fi/api/v2/graphql/graphql' -H 'content-type: application/json'   --data-binary '{"query":"{\n  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {\n    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}'   --compressed
+curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' -H 'content-type: application/json'   --data-binary '{"query":"{\n  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {\n    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}'   --compressed
 ```
 
 ## WebSocket (MQTT)
