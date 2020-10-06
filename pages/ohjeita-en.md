@@ -19,7 +19,7 @@ intro: Instructions for coding
 
 Instructions in force from 1st of June 2020
 
-## HTTPS vs HTTP
+## HTTPS- vs HTTP-protocol
 
 All APIs of Digitraffic supports HTTPS-protocol, so there is no reason to use unencrypted HTTP-protocol.
 Unencrypted HTTP-requests are redirected to use HTTPS with ```HTTP/1.1 301 Moved Permanently``` -response code and
