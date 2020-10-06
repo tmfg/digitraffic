@@ -1305,7 +1305,7 @@ Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
 
 Kysely kokonaisuudessaan curl:lla:
 ```
-curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' -H 'content-type: application/json'   --data-binary '{"query":"{\n  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {\n    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}'   --compressed
+curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' --compressed -H 'content-type: application/json' --data-binary '{"query":"{\n  currentlyRunningTrains(where: {operator: {shortCode: {equals: \"vr\"}}}) {\n    trainNumber\n    departureDate\n    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {\n      speed\n      timestamp\n      location\n    }\n  }\n}","variables":null,"operationName":null}'
 ```
 
 ## WebSocket (MQTT)
