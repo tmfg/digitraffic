@@ -23,8 +23,9 @@ intro: Ohjeita ohjelmoijille
 ## HTTPS- vai HTTP-protokolla
 
 Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, ei siis syytä käyttää salaamatonta HTTP-protokollaa. 
-Salaamattomat HTTP-pyynnöt ohjataan käyttämään HTTPS:ää ```HTTP/1.1 301 Moved Permanently``` -vastauksella ja 
-```Location``` -otsikkotiedolla, jossa kerrotaa HTTPS-osoite. 
+Tällä hetkellä salaamattomat HTTP-pyynnöt kelikamerakuviin ohjataan käyttämään HTTPS:ää ```HTTP/1.1 301 Moved Permanently``` -vastauksella ja 
+```Location``` -otsikkotiedolla, jossa kerrotaa uusi HTTPS-osoite. 
+On mahdollista, että tulevaisuudessa kaikki ```HTTP```-liikenne ohjataan käyttämään ```HTTPS```-protokollaa. 
 Lisätietoa ```HTTP 301``` -vastauksesta [https://en.wikipedia.org/wiki/HTTP_301](https://en.wikipedia.org/wiki/HTTP_301) -sivulla.
 
 
