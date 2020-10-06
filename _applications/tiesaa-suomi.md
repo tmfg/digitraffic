@@ -10,7 +10,7 @@ environments:
   - Web
 language: Suomi (FIN)
 price: Ilmainen
-download-url: http://roadweatherfinland.azurewebsites.net/
+download-url: https://roadweatherfinland.azurewebsites.net/
 feedback-url: mailto:tosaarin@gmail.com
 ---
 
@@ -24,4 +24,4 @@ Ominaisuuksina
 - Lämpötilojen värikoodaus ja min/max lämpötilat valitulta alueelta 
 - Optimoitu suorituskyky ja tietojen ajantasaisuuden validointi
 
-[![Tiesää Suomi esittely]({{ site.baseurl }}{{ "/img/tiesaa-suomi/tiesaa-suomi-mainos.png" }})](http://roadweatherfinland.azurewebsites.net/){:target="_blank"}
+[![Tiesää Suomi esittely]({{ site.baseurl }}{{ "/img/tiesaa-suomi/tiesaa-suomi-mainos.png" }})](https://roadweatherfinland.azurewebsites.net/){:target="_blank"}

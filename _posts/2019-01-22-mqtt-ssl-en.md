@@ -11,4 +11,4 @@ tags:
   - APIs
 ---
 
-MQTT can now be used trough SSL. See example: [http://jsfiddle.net/f9v342oc/](http://jsfiddle.net/f9v342oc/)
+MQTT can now be used trough SSL. See example: [https://jsfiddle.net/f9v342oc/](https://jsfiddle.net/f9v342oc/)

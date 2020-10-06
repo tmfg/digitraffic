@@ -24,9 +24,9 @@ Before the change the timestamp was e.g.
 `2018-11-06T15:51:00+03:00`
 The new format for the same timestamp is
 `2018-11-06T12:51:00Z`
-More information: [2018-11-12-timestamp-change](http://www.digitraffic.fi/en/news/2018/11/12/timestamp-change-en.html)
+More information: [2018-11-12-timestamp-change](https://www.digitraffic.fi/en/news/2018/11/12/timestamp-change-en.html)
 
 * Our new database engine is Postgres. This may have some minor effect in result ordering.
  
 Please read also about the changes in the Websocket endpoints: 
-[2018-10-12-ws-legacy-marine](http://www.digitraffic.fi/en/news/2018/10/12/ws-legacy-marine-en.html)
+[2018-10-12-ws-legacy-marine](https://www.digitraffic.fi/en/news/2018/10/12/ws-legacy-marine-en.html)

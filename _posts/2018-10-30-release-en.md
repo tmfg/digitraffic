@@ -13,8 +13,8 @@ tags:
 
 See examples: 
 
-[http://jsfiddle.net/cb2uj7kg/](http://jsfiddle.net/cb2uj7kg/)
-[http://jsfiddle.net/a9dgjm10/1/](http://jsfiddle.net/a9dgjm10/1/)
-[http://jsfiddle.net/k8sfd4an/53/](http://jsfiddle.net/k8sfd4an/53/)
-[http://jsfiddle.net/cb2uj7kg/2/](http://jsfiddle.net/cb2uj7kg/2/)
-[http://jsfiddle.net/cb2uj7kg/3/](http://jsfiddle.net/cb2uj7kg/3/)
+[https://jsfiddle.net/cb2uj7kg/](https://jsfiddle.net/cb2uj7kg/)
+[https://jsfiddle.net/a9dgjm10/1/](https://jsfiddle.net/a9dgjm10/1/)
+[https://jsfiddle.net/k8sfd4an/53/](https://jsfiddle.net/k8sfd4an/53/)
+[https://jsfiddle.net/cb2uj7kg/2/](https://jsfiddle.net/cb2uj7kg/2/)
+[https://jsfiddle.net/cb2uj7kg/3/](https://jsfiddle.net/cb2uj7kg/3/)

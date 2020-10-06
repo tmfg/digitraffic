@@ -32,4 +32,4 @@ Using the data from this service, it is possible to answer the following questio
 
 English version of this documentation only consists of a [Swagger documentation](https://rata.digitraffic.fi/swagger/index.html).
 
-Data is licensed under [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/)
+Data is licensed under [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
