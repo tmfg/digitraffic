@@ -1216,7 +1216,7 @@ GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa 
 Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi kaikki mahdolliset kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
 
 Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
-* filtterin (tai useampia) `where`-parametrilla
+* filtterin (tai useampia) `where`-parametrilla    
 * järjestyksen (tai useampia) `orderBy`-parametrilla
 * kappalemäärän `skip`- ja `take`-parametrilla 
 
@@ -1224,17 +1224,17 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 
 * Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
 * Kyselyssä ei saa olla sama käsite kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
-* `contains`:a ei voi käyttää kahdesti samassa argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {gt: 50}}}}}}` on laiton
+* `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {gt: 50}}}}}}` on laiton
 
 ### Esimerkkejä
 
-#### Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Beq%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7Bgt%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+#### Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 ```
 {
-  currentlyRunningTrains(where: {operator: {shortCode: {eq: "vr"}}}) {
+  currentlyRunningTrains(where: {operator: {shortCode: {equals: "vr"}}}) {
     trainNumber
     departureDate
-    trainLocations(where: {speed: {gt: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {
+    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {
       speed
       timestamp
       location
@@ -1243,10 +1243,14 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 }
 ```
 
-#### Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%222020-10-05%22%2C%20where%3A%20%7Band%3A%20%5B%7Boperator%3A%20%7BshortCode%3A%20%7Beq%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bne%3A%20%22Z%22%7D%7D%5D%7D%2C%20orderBy%3A%7BtrainNumber%3ADESCENDING%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+#### Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(%0A%20%20%20%20departureDate%3A%20%222020-10-05%22%2C%20%0A%20%20%20%20where%3A%20%7Band%3A%20%5B%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bunequals%3A%20%22Z%22%7D%7D%5D%7D%2C%20%0A%20%20%20%20orderBy%3A%20%7BtrainNumber%3A%20DESCENDING%7D)%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 ```
 {
-  trainsByDepartureDate(departureDate:"2020-10-05", where: {and: [{operator: {shortCode: {eq: "vr"}}}, {commuterLineid: {ne: "Z"}}]}, orderBy:{trainNumber:DESCENDING}) {
+  trainsByDepartureDate(
+    departureDate: "2020-10-05", 
+    where: {and: [ {operator: {shortCode: {equals: "vr"}}}, {commuterLineid: {unequals: "Z"}}]}, 
+    orderBy: {trainNumber: DESCENDING}) 
+  {
     trainNumber
     departureDate
     commuterLineid
@@ -1272,9 +1276,10 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 #### Junat, jotka kulkevat Ylöjärven kautta [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20"2020-10-06"%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Beq%3A"YLÖ"%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
 ```
 {
-  trainsByDepartureDate(departureDate: "2020-10-06", 
-    where: {timeTableRows:{contains:{station:{shortCode:{eq:"YLÖ"}}}}}
-    ) {
+  trainsByDepartureDate(
+    departureDate: "2020-10-06", 
+    where: {timeTableRows:{contains:{station:{shortCode:{equals:"YLÖ"}}}}}) 
+  {
     trainNumber
     departureDate
     timeTableRows {
