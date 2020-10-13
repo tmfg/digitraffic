@@ -32,7 +32,7 @@ Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraa
 * Mitä palveluita vaunut tarjoavat?
 * Oliko juna aikataulussa esimerkiksi kaksi kuukautta sitten?
 
-Saatavilla on myös [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/index.html)
+Saatavilla on [GraphQL-rajapinta](https://www.digitraffic.fi/rautatieliikenne/#graphql) sekä [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/index.html) 
 
 Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#avoimen-datan-käyttölupa).
 
