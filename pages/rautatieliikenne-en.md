@@ -30,6 +30,82 @@ Using the data from this service, it is possible to answer the following questio
 * What kind of services does a train provide?
 * Was my train on schedule for example two months ago?
 
-English version of this documentation only consists of a [Swagger documentation](https://rata.digitraffic.fi/swagger/index.html).
+English version of the documentation page contains only GraphQL and Swagger (in a short form). You might get more information using Google Translate with the [Finnish documentation](https://www.digitraffic.fi/rautatieliikenne/)
+
+# GraphQL
+
+* [GraphiQL](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
+* [Schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)
+
+## Examples
+
+#### All trains from operator "vr" and their latest locations with speed over 30 km/h [Try](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+```
+{
+  currentlyRunningTrains(where: {operator: {shortCode: {equals: "vr"}}}) {
+    trainNumber
+    departureDate
+    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {
+      speed
+      timestamp
+      location
+    }
+  }
+}
+```
+
+#### All trains from a specific departure date, with operator "vr" and "commuter line" not equal to "Z", ordered by train number [Try](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(%0A%20%20%20%20departureDate%3A%20%222020-10-05%22%2C%20%0A%20%20%20%20where%3A%20%7Band%3A%20%5B%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bunequals%3A%20%22Z%22%7D%7D%5D%7D%2C%20%0A%20%20%20%20orderBy%3A%20%7BtrainNumber%3A%20DESCENDING%7D)%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+```
+{
+  trainsByDepartureDate(
+    departureDate: "2020-10-05", 
+    where: {and: [ {operator: {shortCode: {equals: "vr"}}}, {commuterLineid: {unequals: "Z"}}]}, 
+    orderBy: {trainNumber: DESCENDING}) 
+  {
+    trainNumber
+    departureDate
+    commuterLineid
+    operator {
+      shortCode
+    }
+  }
+}
+```
+
+#### All running trains ordered by operator and train number [Try](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(orderBy%3A%20%5B%7Boperator%3A%7BshortCode%3AASCENDING%7D%7D%2C%7BtrainNumber%3AASCENDING%7D%5D)%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)
+```
+{
+  currentlyRunningTrains(orderBy: [{operator:{shortCode:ASCENDING}},{trainNumber:ASCENDING}]) {
+    operator {
+      shortCode
+    }
+    trainNumber
+  }
+}
+```
+
+#### Trains that pass trough "YLÖ" [Try](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20%222020-10-06%22%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Bequals%3A%22YL%C3%96%22%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+```
+{
+  trainsByDepartureDate(departureDate: "2020-10-06", 
+    where: {timeTableRows:{contains:{station:{shortCode:{equals:"YLÖ"}}}}}
+    ) {
+    trainNumber
+    departureDate
+    timeTableRows {
+      station {
+        name
+        uicCode
+      }
+    }
+  }
+}
+``` 
+
+# Swagger 
+
+[Swagger documentation](https://rata.digitraffic.fi/swagger/index.html).
+
+
 
 Data is licensed under [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
