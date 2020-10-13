@@ -34,8 +34,9 @@ English version of the documentation page contains only GraphQL and Swagger (in 
 
 # GraphQL
 
-* [GraphiQL](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
-* [Schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)
+Resources:
+* [GraphiQL](https://rata.digitraffic.fi/api/v2/graphql/graphiql), online tool for testing and developing GraphQL-queries
+* [Schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg), contains available Queries, Types etc.
 
 ## Examples
 
