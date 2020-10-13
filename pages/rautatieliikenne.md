@@ -141,6 +141,8 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 
 ## Toteutetut ominaisuudet
 
+* 13.10.2020
+    * GraphQL:n v2, jossa dataa pystyy käsittelemään monipuolisemmin
 * 13.5.2020
     * Kalustoyksikkönumero lähiliikenteen sähkömoottorijunille
 * 26.3.2020
@@ -1207,65 +1209,84 @@ Palauttaa [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajanko
 
 ## GraphQL
 
-GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin ja yhdistelyyn. GraphQL:än avulla voidaan esimerkiksi rajata mukaan vain tietyt json-kentät tai filtteröidä vastausta käyttäen mitä tahansa vastauksesta löytyvää json-kenttää. 
+GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin, järjestämiseen ja yhdistelyyn. GraphQL:n avulla voidaan esimerkiksi rajata mukaan vain tietyt kentät tai filtteröidä vastausta käyttäen lähes mitä tahansa vastauksesta löytyvää kenttää. 
 
-GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v1/graphql/graphiql](https://rata.digitraffic.fi/api/v1/graphql/graphiql)
+GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v2/graphql/graphiql](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
 
-Jokaista kyselyä voidaan filtteröidä `where`-parametrillä, joka on [json-query](https://www.npmjs.com/package/json-query) -tyyppinen string.
+Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi mahdolliset kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
+
+Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
+* filtterin (tai useampia) `where`-parametrilla    
+* järjestyksen (tai useampia) `orderBy`-parametrilla
+* kappalemäärän `skip`- ja `take`-parametrilla 
+
+### Rajoituksia
+
+* Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
+* Kyselyssä ei saa olla sama käsite kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
+* `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {greaterThan: 50}}}}}}` on laiton
 
 ### Esimerkkejä
 
-Vain tiettyjen kenttien (junanumero ja operaattori) poiminta vastaukseen: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
-
+#### Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 ```
 {
-  viewer {
-    getStationsTrainsUsingGET(station: "HKI") {
-      trainNumber
-      operatorShortCode
+  currentlyRunningTrains(where: {operator: {shortCode: {equals: "vr"}}}) {
+    trainNumber
+    departureDate
+    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {
+      speed
+      timestamp
+      location
     }
   }
 }
 ```
 
-Sisällön filtteröinti (vain U-junat): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*commuterLineID%3DU%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20commuterLineID%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
-
+#### Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(%0A%20%20%20%20departureDate%3A%20%222020-10-05%22%2C%20%0A%20%20%20%20where%3A%20%7Band%3A%20%5B%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bunequals%3A%20%22Z%22%7D%7D%5D%7D%2C%20%0A%20%20%20%20orderBy%3A%20%7BtrainNumber%3A%20DESCENDING%7D)%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 ```
 {
-  viewer {
-    getStationsTrainsUsingGET(station: "HKI", where:"[*commuterLineID=U]") {
-      trainNumber
-      commuterLineID
+  trainsByDepartureDate(
+    departureDate: "2020-10-05", 
+    where: {and: [ {operator: {shortCode: {equals: "vr"}}}, {commuterLineid: {unequals: "Z"}}]}, 
+    orderBy: {trainNumber: DESCENDING}) 
+  {
+    trainNumber
+    departureDate
+    commuterLineid
+    operator {
+      shortCode
     }
   }
 }
 ```
 
-Ensimmäisen alkion poiminta: [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getStationsTrainsUsingGET(station%3A%20%22HKI%22%2C%20where%3A%22%5B*%5D%5B0%5D%22)%20%7B%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20operatorShortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
-
+#### Kulussa olevat junat järjestetynä operaattorilla ja junanumerolla [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(orderBy%3A%20%5B%7Boperator%3A%7BshortCode%3AASCENDING%7D%7D%2C%7BtrainNumber%3AASCENDING%7D%5D)%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)
 ```
 {
-  viewer {
-    getStationsTrainsUsingGET(station: "HKI", where:"[*][0]") {
-      trainNumber
-      operatorShortCode
+  currentlyRunningTrains(orderBy: [{operator:{shortCode:ASCENDING}},{trainNumber:ASCENDING}]) {
+    operator {
+      shortCode
     }
+    trainNumber
   }
 }
 ```
 
-Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [kokeile](https://rata.digitraffic.fi/api/v1/graphql/graphiql?query=%7B%0A%20%20viewer%20%7B%0A%20%20%20%20getTrainByTrainNumberAndDepartureDateUsingGET(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20departureDate%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%20%20trainType%0A%20%20%20%20%7D%0A%20%20%20%20getCompositionByTrainNumberAndDepartureDateUsingGET(train_number%3A%20%221%22%2C%20departure_date%3A%20%222017-12-28%22)%20%7B%0A%20%20%20%20%20%20departureDate%0A%20%20%20%20%20%20trainNumber%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+#### Junat, jotka kulkevat Ylöjärven kautta [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20"2020-10-06"%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Beq%3A"YLÖ"%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
 ```
 {
-  viewer {
-    getTrainByTrainNumberAndDepartureDateUsingGET(train_number: "1", departure_date: "2017-12-28") {
-      departureDate
-      trainNumber
-      trainType
-    }
-    getCompositionByTrainNumberAndDepartureDateUsingGET(train_number: "1", departure_date: "2017-12-28") {
-      departureDate
-      trainNumber
+  trainsByDepartureDate(
+    departureDate: "2020-10-06", 
+    where: {timeTableRows:{contains:{station:{shortCode:{equals:"YLÖ"}}}}}) 
+  {
+    trainNumber
+    departureDate
+    timeTableRows {
+      station {
+        name
+        uicCode
+      }
     }
   }
 }
@@ -1273,18 +1294,19 @@ Kyselyiden yhdistäminen (junan aikataulu ja kokoonpano samassa kyselyssä): [ko
 
 ### GraphQL-kysely omassa sovelluksessa
 
-GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/graphiql/?`.
+GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/graphiql/?`
 
-HTTP-pyyntöön tulee lisätä otsikko `Content-Type: application/json`
+HTTP-pyyntöön tulee lisätä otsikot `Content-Type: application/json` ja `Accept-Encoding: gzip`
 
 Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
 ```
-{"query":"{  viewer  {    getCompositionsByDepartureDateUsingGET(departure_date:\"2017-12-26\", where:\"[*trainType=S]\"){      trainType trainNumber    }  } }"}
+{"query":"{  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}
 ```
 
-Kokonaisuudessaan homma näyttää REST-pluginissa tältä:
-
-![GraphQL Postmanissa]({{ site.baseurl }}{{ "/img/rata/graphql.png" }})
+Kysely kokonaisuudessaan curl:lla:
+```
+curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' --compressed -H 'content-type: application/json' --data-binary '{"query":"{\n  currentlyRunningTrains(where: {operator: {shortCode: {equals: \"vr\"}}}) {\n    trainNumber\n    departureDate\n    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {\n      speed\n      timestamp\n      location\n    }\n  }\n}","variables":null,"operationName":null}'
+```
 
 ## WebSocket (MQTT)
 
