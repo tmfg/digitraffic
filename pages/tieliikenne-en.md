@@ -252,6 +252,10 @@ Related metadata:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
 
+### TMC/ALERT-C location data
+
+TMC/ALERT-C material contains location data which is used in Traffic information such as road works, accidents, traffic jams and weather. More information can be found [here](tmc-data).
+
 ### Current data of road weather stations
 
 [```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}

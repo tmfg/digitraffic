@@ -23,14 +23,28 @@ This note describes the Finnish location and event tables including which decisi
 
 RDS-TMC is a traffic message channel, which relays traffic information through analog FM radio's RDS channel. Traffic information includes useful and real time data about road works, accidents, traffic jams and weather. The TMC/ALERT-C material is necessary when using the traffic information. ITM Finland (a subsidiary of Traffic Management Finland) is responsible for administration and distribution of the Finnish TMC data. TMC is developed by the Tisa Forum.
 
-### Certified content
+The Finnish TMC location database is constantly updated and certified yearly by TISA forum. For incident broadcasting ITM Finland uses more frequently exported versions of the database. Both certified and these intermediate non-certified versions are downloadable via Digitraffic-service.
 
-The Finnish TMC location database is constantly updated and certified yearly by TISA forum. The latest certified version of the database can be downloaded [here](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.
+### Downloadable content
 
-### Non-certified content
+- [The latest certified version](https://tie-test.digitraffic.fi/tmc/index.html?prefix=certified){:target="_blank"}
 
-For incident broadcasting ITM Finland uses more frequently exported versions of the database. If these intermediate non-certified versions are needed they can be downloaded [here](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.  
-The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described [here](https://tie-test.digitraffic.fi/tmc/list.html){:target="_blank"}.
+- [Non-certified versions](https://tie-test.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
+
+
+The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described [here](https://tie-test.digitraffic.fi/tmc/index.html){:target="_blank"}.
+
+### Api-content
+
+Non-certified location content is available also via API-calls:
+
+- Locations [https://tie.digitraffic.fi/api/v3/metadata/locations](https://tie.digitraffic.fi/api/v3/metadata/locations)
+
+- Content versions [https://tie.digitraffic.fi/api/v3/metadata/locations-versions](https://tie.digitraffic.fi/api/v3/metadata/locations-versions)
+
+- Location types [https://tie.digitraffic.fi/api/v3/metadata/locations-types](https://tie.digitraffic.fi/api/v3/metadata/locations-types)
+
+Full API description is located in Swagger-documentation [https://tie.digitraffic.fi/swagger/#/](https://tie.digitraffic.fi/swagger/#/)
 
 ## Event list
 
