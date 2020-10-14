@@ -1293,7 +1293,7 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 
 ### GraphQL-kysely omassa sovelluksessa
 
-GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/graphiql/?`
+GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v2/graphql/graphql`
 
 HTTP-pyyntöön tulee lisätä otsikot `Content-Type: application/json` ja `Accept-Encoding: gzip`
 
