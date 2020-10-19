@@ -43,7 +43,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#a
     1. [Toteutetut ominaisuudet](#toteutetut-ominaisuudet)
     1. [HTTPS](#https)
     1. [Dataa tukevat rajapinnat / työkalut](#dataa-tukevat-rajapinnat--työkalut)
-1. [REST-rajapinnat](#rajapinnat)
+1. [REST-rajapinnat](#rest-rajapinnat)
     1. [GraphQL](#graphql) 
     1. [Junien tiedot (/trains)](#junien-tiedot-trains)
         - [Yhden junan tiedot](#yhden-junan-tiedot)
