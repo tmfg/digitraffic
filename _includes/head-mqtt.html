@@ -53,8 +53,12 @@
     }
 
     function disconnect() {
-      if (client && client.isConnected) {
-        client.disconnect();
+      try {
+        if (client && client.isConnected) {
+          client.disconnect();
+        }
+      } catch(err) {
+        console.error(err.message);
       }
     }
 

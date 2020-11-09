@@ -6,14 +6,11 @@ section: Tietolähteet
 searchable: true
 lang: fi
 ref: instructions
-title: MQTT client
-intro: MQTT client
+title: Sample MQTT client
 ---
 
-<h2 id="sisalto">Sisältö</h2>
-
 <div>
-    <select id="domain" name="domain">
+    Host: <select id="domain" name="domain">
         <option value="tie-test.digitraffic.fi">tie-test.digitraffic.fi</option>
         <option value="tie.digitraffic.fi">tie.digitraffic.fi</option>
         <option value="meri-test.digitraffic.fi">meri-test.digitraffic.fi</option>
@@ -25,6 +22,7 @@ intro: MQTT client
     <button onclick="disconnect()"> Disconnect </button>
 </div>
 
-<pre>Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minute):</pre>
-<pre id="messages" style="font-size: small"/>
+Messages (<span id="messagesPerMinute">0</span> messages per minute):
+
+<pre id="messages" style="font-size: small" ></pre>
 
