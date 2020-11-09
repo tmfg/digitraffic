@@ -20,6 +20,8 @@
     const port = 443;
     let topic = "tms/#";
 
+    window.setInterval(logMessageCount, 60*1000);
+
     function connect() {
       const clientId = "testclient_" + Date.now();
       console.log("Trying to connect to road mqtt " + host + ":" + port + " Topic: " + topic + " client id: " + clientId);
@@ -48,8 +50,6 @@
       };
 
       client.connect(connectionProperties);
-
-      window.setInterval(logMessageCount, 60*1000);
     }
 
     function disconnect() {
@@ -87,8 +87,10 @@
       host=$("#domain").val();
       topic=$("#topic").val();
 
+      messagesLastMinuteCount = 0;
       $("#messages").html('');
       $("#messagesPerMinute").text(0);
+
       disconnect();
       lines = [];
       connect();

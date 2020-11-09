@@ -25,7 +25,6 @@ intro: MQTT client
     <button onclick="disconnect()"> Disconnect </button>
 </div>
 
-Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minute):
-
-<div id="messages" style="font-size: small" />
+<pre>Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minute):</pre>
+<pre id="messages" style="font-size: small"/>
 
