@@ -31,9 +31,9 @@ Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisu
 
 ### Rajapintajakelu
 Paikannuspisteistön sertifioimattomat versiot ovat saatavilla myös rajapintojen kautta:
-- Paikannuspisteisteet [https://tie.digitraffic.fi/api/v3/metadata/locations](https://tie.digitraffic.fi/api/v3/metadata/locations)
+- Paikannuspisteet [https://tie.digitraffic.fi/api/v3/metadata/locations](https://tie.digitraffic.fi/api/v3/metadata/locations)
 
-- Aineistoversiot [https://tie.digitraffic.fi/api/v3/metadata/locations-versions](https://tie.digitraffic.fi/api/v3/metadata/locations-versions)
+- Aineistoversiot [https://tie.digitraffic.fi/api/v3/metadata/location-versions](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
 
 - Paikannuspisteiden tyypit [https://tie.digitraffic.fi/api/v3/metadata/locations-types](https://tie.digitraffic.fi/api/v3/metadata/locations-types)
 
