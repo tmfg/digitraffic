@@ -72,7 +72,7 @@
     function addMessage(message) {
       const text = JSON.stringify(message);
 
-      if (lines.length > 100) {
+      while (lines.length > 100) {
         lines.shift();
       }
 
