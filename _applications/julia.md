@@ -10,7 +10,8 @@ environments:
   - Web
 language: Suomi (FIN)
 price: Ilmainen
-download-url: https://julia.dy.fi
+download-urls:
+  - https://julia.dy.fi
 feedback-url:
 ---
 

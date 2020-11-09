@@ -15,7 +15,8 @@ environments:
   - iOS
 language: Suomi (FIN)
 price: 1,99€
-download-url: https://tmfg.fi/
+download-urls: 
+  - https://tmfg.fi/
 feedback-url: https://tmfg.fi/fi/tmfg-0
 ---
 

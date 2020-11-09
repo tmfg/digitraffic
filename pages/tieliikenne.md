@@ -381,8 +381,9 @@ Topicit ovat seuraavanlaista muotoa.
 }
 ```
 
-#### Maanteiden kunnossapitotiedot
+#### Maanteiden kunnossapitotiedon viimeisin sijainti
 
+- ```maintenance/tracking/#```
 - ```maintenance/tracking/<trackingId>```
 - ```maintenance/tracking/status```
 

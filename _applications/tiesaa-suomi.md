@@ -10,7 +10,8 @@ environments:
   - Web
 language: Suomi (FIN)
 price: Ilmainen
-download-url: https://roadweatherfinland.azurewebsites.net/
+download-urls: 
+  - https://roadweatherfinland.azurewebsites.net/
 feedback-url: mailto:tosaarin@gmail.com
 ---
 

@@ -12,7 +12,8 @@ environments:
   - Web
 language: Suomi (FIN)
 price: Ilmainen
-download-url: https://play.google.com/store/apps/details?id=net.maanpuolustus.aluskartta
+download-urls:
+  - https://play.google.com/store/apps/details?id=net.maanpuolustus.aluskartta
 feedback-url: mailto:info@maanpuolustus.net
 ---
 

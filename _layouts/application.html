@@ -115,11 +115,13 @@ layout: compress
               </div>
               {% endif %}
 
-              <!--Latauslinkki-->
-              {% if page.download-url %}
+              <!--Latauslinkit-->
+              {% if page.download-urls %}
               <div class="sidebar__application-property">
                 <h4 class="h4 sidebar__application-property-heading">Latauslinkki</h4>
-                <a href="{{ page.download-url }}" target="_blank" class="link">{{ page.download-url }}</a>
+                {% for url in page.download-urls %}
+                <a href="{{ url }}" target="_blank" class="link">{{ url }}</a>
+                {% endfor %}
               </div>
               {% endif %}
 

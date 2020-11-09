@@ -412,8 +412,9 @@ Topics are constructed like shown below.
 }
 ```
 
-#### Road maintenance information
+#### Road maintenance information of latest location
 
+- ```maintenance/tracking/#```
 - ```maintenance/tracking/<trackingId>```
 - ```maintenance/tracking/status```
 

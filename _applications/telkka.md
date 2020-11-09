@@ -11,7 +11,8 @@ environments:
   - Web
 language: Suomi (FIN), Englanti (EN)
 price: Maksullinen, useita vaihtoehtoja (kuukausimaksu/kertamaksu kaudeksi)
-download-url: https://play.google.com/store/apps/details?id=com.telkka&hl=fi
+download-urls: 
+  - https://play.google.com/store/apps/details?id=com.telkka&hl=fi
 feedback-url: mailto:android.timo@gmail.com
 ---
 
