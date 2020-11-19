@@ -23,11 +23,11 @@ RDS-TMC (Traffic Message Channel) on tieliikenteen liikennetiedotuspalvelu, joka
 Suomen paikannuspisteaineistoa ylläpidetään jatkuvasti ja se sertifioidaan [TISA](https://tisa.org/):n toimesta vuosittain. ITM Finlandin liikennetiedotuksessa käyttämä paikannuspisteistö päivittyy useamman kerran vuodessa, eli myös sertifiointien välissä. Myös sertifioimattomat versiot ovat ladattavissa Digitraffic-palvelun kautta.
 
 ### Ladattavat aineistot
-- [Viimeisin sertifioitu aineisto](https://tie-test.digitraffic.fi/tmc/index.html?prefix=certified){:target="_blank"}
+- [Viimeisin sertifioitu aineisto](https://tie.digitraffic.fi/tmc/index.html?prefix=certified){:target="_blank"}
 
-- [Sertifioimattomat aineistoversiot ](https://tie-test.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
+- [Sertifioimattomat aineistoversiot ](https://tie.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
 
-Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisun rakenteesta - rakenne-erot on kirjattu erilliseen dokumenttiin. Dokumentaatio on ladattavissa [täältä](https://tie-test.digitraffic.fi/tmc/index.html){:target="_blank"}.
+Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisun rakenteesta - rakenne-erot on kirjattu erilliseen dokumenttiin. Dokumentaatio on ladattavissa [täältä](https://tie.digitraffic.fi/tmc/index.html){:target="_blank"}.
 
 ### Rajapintajakelu
 Paikannuspisteistön sertifioimattomat versiot ovat saatavilla myös rajapintojen kautta:

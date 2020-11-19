@@ -27,12 +27,12 @@ The Finnish TMC location database is constantly updated and certified yearly by 
 
 ### Downloadable content
 
-- [The latest certified version](https://tie-test.digitraffic.fi/tmc/index.html?prefix=certified){:target="_blank"}
+- [The latest certified version](https://tie.digitraffic.fi/tmc/index.html?prefix=certified){:target="_blank"}
 
-- [Non-certified versions](https://tie-test.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
+- [Non-certified versions](https://tie.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
 
 
-The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described [here](https://tie-test.digitraffic.fi/tmc/index.html){:target="_blank"}.
+The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described [here](https://tie.digitraffic.fi/tmc/index.html){:target="_blank"}.
 
 ### Api-content
 
