@@ -12,8 +12,8 @@
     "test": ""
   },
   "devDependencies": {
-    "browser-sync": "^2.26.12",
-    "del": ">=5.1.0",
+    "browser-sync": "^2.26.13",
+    "del": "^6.0.0",
     "extend": "^3.0.2",
     "gulp": "^4.0.2",
     "gulp-clean": ">=0.4.0",
