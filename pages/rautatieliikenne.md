@@ -57,7 +57,7 @@ Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#a
         - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
         - [Reittiperusteinen haku](#reittiperusteinen-haku)
         - [Kohta lähtevien tai saapuvien junien seuranta](#kohta-lähtevien-tai-saapuvien-junien-seuranta)
-    1. [Junien GPS-sijainnit](#junan-gps-sijainnit-train-locations)
+    1. [Junien GPS-sijainnit (/train-locations)](#junan-gps-sijainnit-train-locations)
         - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
         - [Yhden junan sijainti](#yhden-junan-sijainti)
         - [Vanhat sijainnit zip-paketteina](#vanhat-sijainnit-zip-paketteina)
