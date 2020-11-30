@@ -1,7 +1,11 @@
 <header class="header {{ include.header-classes }}">
   <div class="header__content-wrapper">
     <div class="row header__content">
-      {% include header__logo.html %}
+      <span class="col-xs-8 title">
+        <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}" class="header__link">
+          Lorem ipsum
+        </a>
+      </span>
       {% include header__menu.html %}
     </div>
   </div>

@@ -4,21 +4,21 @@
   justify-content: flex-end;
   align-items: center;
   height: inherit;
-  margin:  21px 0 22px 0;
+  margin: 21px 0 22px 0;
   transition: $transition-faster;
-  
+
   /* Elements */
   &__list {
     list-style-type: none;
     margin: 0;
     padding: $margin-xs 0;
   }
-  
+
   &__item {
-    display: inline-block;
+    display: flex;
+    align-items: flex-end;
     margin-left: $margin-xs;
-    font-size: $font-size-xs;
-    text-transform: uppercase;
+    font-size: $font-size-md;
     cursor: pointer;
     user-select: none;
 
@@ -26,13 +26,12 @@
       margin-left: 0;
     }
   }
-  
+
   &__icon {
-    padding: $icon-padding-y $icon-padding-x;
-    color: $header-icon-color;
+    margin-left: $margin-xxs;
 
     &--menu-close {
-      color: $blue-light;
+      color: $black;
       display: none;
     }
 
@@ -46,33 +45,34 @@
       display: none;
     }
   }
-  
+
   &__item-text {
     vertical-align: 0.1rem;
+    font-size: $base-font-size;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: right;
   }
 
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     height: 50px;
     margin: 0;
-    
+
     &__list {
-      padding: 13px 0 12px 0;  
+      padding: 13px 0 12px 0;
     }
-    
+
     &__item {
       margin-left: $margin-xxxs;
-      
+
       &:last-child .header-menu__icon {
         padding-right: 0;
       }
     }
-    
-    &__item-text {
-      display: none;
-    }
   }
- 
+
   @media screen and (max-width: 420px) {
     &__item {
       &--search {
@@ -102,18 +102,18 @@
 /* Show / hide menu */
 .header--menu-opened {
   .header-menu__item--menu {
-    color: $gray-153;
+    color: $header-text-color;
   }
 
   .header-menu__icon {
     &--menu-close {
       display: inline-block;
     }
-  
+
     &--menu {
       display: none;
     }
-  } 
+  }
 }
 
 /* Show / hide search */
@@ -126,11 +126,11 @@
     &--search-close {
       display: inline-block;
     }
-  
+
     &--search {
       display: none;
     }
-  } 
+  }
 }
 
 /* Show / hide language */
@@ -143,9 +143,9 @@
     &--language-close {
       display: inline-block;
     }
-  
+
     &--language {
       display: none;
     }
-  } 
+  }
 }

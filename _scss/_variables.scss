@@ -58,11 +58,12 @@ $heading-letter-spacing: 0;
 $code-font-family: 'Source Code Pro', monospace;
 
 /* Header */
-$header-background-color: #666;
+$header-background-color: $gray-68-100;
 $header-text-color: $white;
 $header-icon-color: $white;
 $language--active-color: $white;
 $header-margin-y: 1rem;
+$header-font-family: 'Public Sans', sans-serif;
 
 /* Content */
 $content-max-width: 1600px;
