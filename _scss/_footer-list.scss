@@ -5,6 +5,7 @@
   /* Elements */
   &__item {
     padding: $margin-xxs 0;
+    list-style-type: none;
 
     &:first-child {
       padding-top: $margin-xxxs;

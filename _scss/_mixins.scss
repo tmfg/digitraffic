@@ -6,13 +6,14 @@
   color: $base-font-color;
 }
 
-@mixin heading($font-size: 3rem, $font-weight: 500, $color: $gray-68, $letter-spacing:$heading-letter-spacing) {
+@mixin heading($font-size: 3rem, $font-weight: 500, $color: $gray-68, $letter-spacing:$heading-letter-spacing, $word-break: break-word) {
   font-family: $heading-font-family;
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $base-line-height;
   letter-spacing: $letter-spacing;
   color: $color;
+  word-break: $word-break;
 }
 
 @mixin mobile-font-size($font-size: 1rem) {
@@ -43,4 +44,11 @@
   @media screen and (max-width: $max-width-sm) {
     @include mobile-font-size(0.75rem);
   }
+}
+
+@mixin logo-text {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.27px;
 }

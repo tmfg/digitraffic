@@ -2,6 +2,7 @@
   color: $blue-dark;
   text-decoration: none;
   transition: $transition-fast;
+  word-break: break-word;
   
   &:link, &:visited {
     color: $blue-dark;

@@ -1,10 +1,18 @@
 .copyright {
+  .footer--white & {
+    $header-background-color: $white !global;
+    $header-text-color: $black !global;
+  }
+
   box-sizing: border-box;
   padding: $margin-sm $margin-sm $margin-xxs $margin-sm;
-  background-color: $gray-68;
-  font-size: $font-size-sm;
+  background-color: $header-background-color;
   text-align: center;
-  color: $gray-153;
+  color: $header-text-color;
+
+  svg {
+    fill: $text;
+  }
 
   &__img {
     height: 3rem;
@@ -14,9 +22,8 @@
 
   &__text {
     a {
-      color: $gray-200;
-
-      &:hover, focus {
+      &:hover,
+      focus {
         text-decoration: underline;
       }
     }

@@ -94,7 +94,7 @@
   }
 
   &__intro {
-    @include heading(2.25rem, 100, $white, -0.05rem);
+    @include heading(2.25rem, 100, $white, -0.05rem, break-word);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     max-width: 65rem;
     padding: 0 $content-padding;

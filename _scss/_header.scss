@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  width: calc(100%);
+  width: 100%;
   background-color: $header-background-color;
   color: $header-text-color;
   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
@@ -144,10 +144,7 @@
     }
 
     .title {
-      font-weight: 800;
-      font-size: 18px;
-      line-height: 20px;
-      letter-spacing: -0.27px;
+      @include logo-text;
     }
   }
 

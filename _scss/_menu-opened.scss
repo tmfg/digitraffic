@@ -24,7 +24,6 @@
   }
 
   &__list-item {
-    font-size: 0.875rem;
     margin-top: $margin-xssm;
   }
 
@@ -60,13 +59,6 @@
 
     > * {
       padding: 0;
-    }
-  }
-
-  /* Media queries for different screen sizes */
-  @media screen and (max-width: $max-width-sm) {
-    &__list-item {
-      @include mobile-font-size(0.75rem);
     }
   }
 }
