@@ -45,18 +45,18 @@
   }
 
   input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px $white inset;
   }
-  
+
   &__button {
     background: none;
     border: none;
     margin-left: $margin-xs;
     cursor: pointer;
   }
-  
+
   &__button-icon {
     font-size: 2.25rem;
     color: $gray-102;
@@ -65,5 +65,35 @@
 
   &__results {
     margin-bottom: $margin-lg;
+  }
+}
+.search-v2 {
+  display: none;
+
+  .header--menu-opened & {
+    display: flex;
+  }
+
+  width: 100%;
+  height: $margin-smmd;
+  border: 1px solid $gray-148;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: $margin-xs;
+
+  > svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  > input {
+    border: 0;
+    width: 100%;
+    font-family: $header-font-family;
+    font-size: $font-size-md;
+    line-height: $base-line-height;
   }
 }

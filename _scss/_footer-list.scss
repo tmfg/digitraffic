@@ -1,5 +1,7 @@
 .footer-list {
-
+  .header--white & {
+    $header-text-color: $black !global;
+  }
   /* Elements */
   &__item {
     padding: $margin-xxs 0;
@@ -10,15 +12,18 @@
   }
 
   &__link {
-    color: $white;
+    font-size: $base-font-size;
+    letter-spacing: 0;
+    line-height: 20px;
+    color: $header-text-color;
     text-decoration: none;
 
     &:link, &:visited {
-      color: $white;
+      color: $header-text-color;
     }
 
     &:hover {
-      color: $white;
+      color: $header-text-color;
       text-decoration: underline;
     }
 

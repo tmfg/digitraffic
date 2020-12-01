@@ -14,50 +14,63 @@
 
 <div class="menu-opened__wrapper">
   <div class="row menu-opened">
-    <div class="col-xs-12 menu-opened__language-mobile">
-      <p><i class="menu-opened__language-icon material-icons md-lg">language</i></p>
-      <ul>
-        <li class="menu-opened__language-option"><a class="menu-opened__link" href="{% if page-fi != "" %}{{ page-fi.url | prepend:site.baseurl }}{% else %}{{ "/" | prepend:site.baseurl }}{% endif %}">FI - Suomi</a></li>
-        <li class="menu-opened__language-option"><a class="menu-opened__link" href="{% if page-en != "" %}{{ page-en.url | prepend:site.baseurl }}{% else %}{{ "/en" | prepend:site.baseurl }}{% endif %}">EN - English</a></li>
-      </ul>
+    <div class="menu-opened__item">
+      <div class="col-xs-12 col-sm-3">
+        <h4 class="h4 menu-opened__heading">{{ site.t.updates[page.lang] }}</h4>
+        <ul class="menu-opened__list">
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}">{{ site.t.api-status[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tiedotteet[page.lang] | downcase }}">{{ site.t.news[page.lang] }}</a></li>
+          {% if has_articles == true %}<li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.artikkelit[page.lang] | downcase }}">{{ site.t.artikkelit[page.lang] }}</a></li>{% endif %}
+          {% if has_events == true %}<li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tapahtumat[page.lang] | downcase }}">{{ site.t.tapahtumat[page.lang] }}</a></li>{% endif %}
+        </ul>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-3">
-      <h4 class="h4 menu-opened__heading">{{ site.t.updates[page.lang] }}</h4>
-      <ul class="menu-opened__list">
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}">{{ site.t.api-status[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tiedotteet[page.lang] | downcase }}">{{ site.t.news[page.lang] }}</a></li>
-        {% if has_articles == true %}<li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.artikkelit[page.lang] | downcase }}">{{ site.t.artikkelit[page.lang] }}</a></li>{% endif %}
-        {% if has_events == true %}<li class="menu-opened__list-item"><a class="menu-opened__link" href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tapahtumat[page.lang] | downcase }}">{{ site.t.tapahtumat[page.lang] }}</a></li>{% endif %}
-      </ul>
+    <div class="menu-opened__item">
+      <div class="col-xs-12 col-sm-3">
+        <h4 class="h4 menu-opened__heading">{{ site.t.data-sources[page.lang] }}</h4>
+        <ul class="menu-opened__list">
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}">{{ site.t.road-traffic[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}">{{ site.t.railway-traffic[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}">{{ site.t.marine-traffic[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.experimental.url[page.lang] | prepend:site.baseurl }}">{{ site.t.experimental[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.nap.url[page.lang] | prepend:site.baseurl }}">{{ site.t.nap[page.lang] }}</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-3">
-      <h4 class="h4 menu-opened__heading">{{ site.t.data-sources[page.lang] }}</h4>
-      <ul class="menu-opened__list">
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}">{{ site.t.road-traffic[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}">{{ site.t.railway-traffic[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}">{{ site.t.marine-traffic[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.experimental.url[page.lang] | prepend:site.baseurl }}">{{ site.t.experimental[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.nap.url[page.lang] | prepend:site.baseurl }}">{{ site.t.nap[page.lang] }}</a></li>
-      </ul>
+    <div class="menu-opened__item">
+      <div class="col-xs-12 col-sm-3">
+        <h4 class="h4 menu-opened__heading">{{ site.t.about[page.lang] }}</h4>
+        <ul class="menu-opened__list">
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">{{ site.t.service-overview[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}">{{ site.t.development-roadmap[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}">{{ site.t.applications[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.sign-up-application.url[page.lang] | prepend:site.baseurl }}">{{ site.t.sign-up-application[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.terms-of-service.url[page.lang] | prepend:site.baseurl }}">{{ site.t.terms-of-service[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.privacy-policy.url[page.lang] | prepend:site.baseurl }}">{{ site.t.privacy-policy[page.lang] }}</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-3">
-      <h4 class="h4 menu-opened__heading">{{ site.t.about[page.lang] }}</h4>
-      <ul class="menu-opened__list">
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">{{ site.t.service-overview[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}">{{ site.t.development-roadmap[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}">{{ site.t.applications[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.sign-up-application.url[page.lang] | prepend:site.baseurl }}">{{ site.t.sign-up-application[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.terms-of-service.url[page.lang] | prepend:site.baseurl }}">{{ site.t.terms-of-service[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.privacy-policy.url[page.lang] | prepend:site.baseurl }}">{{ site.t.privacy-policy[page.lang] }}</a></li>
-      </ul>
+    <div class="menu-opened__item">
+      <div class="col-xs-12 col-sm-3">
+        <h4 class="h4 menu-opened__heading">{{ site.t.support[page.lang] }}</h4>
+        <ul class="menu-opened__list">
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.support-channels.url[page.lang] | prepend:site.baseurl }}">{{ site.t.support-channels[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.support-channels-information.url[page.lang] | prepend:site.baseurl }}">{{ site.t.support-channels-information[page.lang] }}</a></li>
+          <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.contact.url[page.lang] | prepend:site.baseurl }}">{{ site.t.contact[page.lang] }}</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-3">
-      <h4 class="h4 menu-opened__heading">{{ site.t.support[page.lang] }}</h4>
-      <ul class="menu-opened__list">
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.support-channels.url[page.lang] | prepend:site.baseurl }}">{{ site.t.support-channels[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.support-channels-information.url[page.lang] | prepend:site.baseurl }}">{{ site.t.support-channels-information[page.lang] }}</a></li>
-        <li class="menu-opened__list-item"><a class="menu-opened__link" href="/{{ site.t.contact.url[page.lang] | prepend:site.baseurl }}">{{ site.t.contact[page.lang] }}</a></li>
-      </ul>
+    <div class="menu-opened__item">
+      <div class="col-xs-12 menu-opened__language-mobile">
+        <ul>
+          {% if page.lang != "fi" %}
+            <li class="menu-opened__language-option"><a class="menu-opened__link" href="{% if page-fi != "" %}{{ page-fi.url | prepend:site.baseurl }}{% else %}{{ "/" | prepend:site.baseurl }}{% endif %}">Suomeksi</a></li>
+          {% endif %}
+          {% if page.lang != "en" %}
+            <li class="menu-opened__language-option"><a class="menu-opened__link" href="{% if page-en != "" %}{{ page-en.url | prepend:site.baseurl }}{% else %}{{ "/en" | prepend:site.baseurl }}{% endif %}">In English</a></li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>

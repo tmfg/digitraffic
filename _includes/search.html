@@ -1,0 +1,12 @@
+<form
+  action="/{{ site.t.search.url[page.lang] | prepend:site.baseurl }}"
+  class="search-v2"
+  method="get"
+>
+  {% include search.svg %}
+  <input
+    name="query"
+    class="search-v2__input"
+    placeholder="{{ site.t.search-placeholder[page.lang] }}"
+  />
+</form>

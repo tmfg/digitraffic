@@ -139,6 +139,10 @@
     margin: 0 auto;
     align-items: center;
 
+    .header--menu-opened & {
+      border-bottom: 1px $gray-211 solid;
+    }
+
     .title {
       font-weight: 800;
       font-size: 18px;

@@ -1,10 +1,9 @@
 .menu-opened {
-  padding: $margin-sm $content-padding $margin-lg;
+  padding: 0;
   box-sizing: border-box;
   max-width: $content-max-width;
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 99px);
   margin: 0 auto;
-  border-top: 2px solid $gray-102;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   display: none;
@@ -13,7 +12,7 @@
   /* Elements */
   &__wrapper {
     width: 100%;
-    background-color: $gray-68-0;
+    background-color: $header-background-color;
   }
 
   &__heading {
@@ -35,7 +34,12 @@
 
   &__language-mobile {
     margin-top: $margin-xs;
-    display: none;
+    ul {
+      display: flex;
+      li:not(:first-of-type) {
+        margin-left: 20px;
+      }
+    }
   }
 
   &__language-icon {
@@ -44,32 +48,25 @@
 
   &__language-option {
     list-style-type: none;
-    margin-top: $margin-xssm;
+  }
+
+  &__item {
+    padding: 0 $margin-xs $margin-xs $margin-xs;
+    width: 100%;
+
+    &:not(:first-of-type) {
+      border-top: 1px $gray-211 solid;
+    }
+
+    > * {
+      padding: 0;
+    }
   }
 
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
-
-    &__heading {
-      margin-top: $margin-md;
-    }
-
     &__list-item {
       @include mobile-font-size(0.75rem);
-    }
-  }
-
-  @media screen and (min-width: 421px) and (max-width: $max-width-sm) {
-    /*
-    & div:nth-child(2) .menu-opened__heading {
-      margin-top: $margin-xs;
-    }
-    */
-  }
-
-  @media screen and (max-width: 420px) {
-    &__language-mobile {
-      display: block;
     }
   }
 }
@@ -82,7 +79,7 @@
   transition: $transition-fast;
 
   &__wrapper {
-    background-color: $gray-68-0;
+    background-color: $header-background-color;
   }
 }
 
@@ -93,7 +90,7 @@
   transition: $transition-fast;
 
   &__wrapper {
-    background-color: $gray-68-100;
+    background-color: $header-background-color;
   }
 }
 
@@ -104,6 +101,6 @@
   transition: $transition-faster;
 
   &__wrapper {
-    background-color: $gray-68-0;
+    background-color: $header-background-color;
   }
 }
