@@ -1,5 +1,5 @@
 <div class="col-sm-2">
-  <button id="myButton" class="language-dropdown">
+  <button id="language-dropdown" class="language-dropdown">
     {% include globe.svg %}
     <span>
       {% if page.lang == "fi" %}
@@ -35,7 +35,7 @@
 <script>
   const template = document.getElementById('template');
 
-  tippy('#myButton', {
+  tippy('#language-dropdown', {
     allowHTML: true,
     content: template.innerHTML,
     interactive: true,
