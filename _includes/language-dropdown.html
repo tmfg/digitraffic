@@ -1,0 +1,48 @@
+<div class="col-sm-2">
+  <button id="myButton" class="language-dropdown">
+    {% include globe.svg %}
+    <span>Suomeksi</span>
+    <span class="chevron-down">{% include chevron-down.svg %}</span>
+    <span class="chevron-up">{% include chevron-up.svg %}</span>
+  </button>
+</div>
+
+<div id="template" style="display: none;">
+  {% include language-menu-controller.html %}
+  <ul>
+    <li class="menu-opened__language-option">
+      <a class="menu-opened__link"
+        href="{% if page-fi != "" %}{{ page-fi.url | prepend:site.baseurl }}{% else %}{{ "/" | prepend:site.baseurl }}{% endif %}">
+        Suomeksi
+      </a>
+    </li>
+    <li class="menu-opened__language-option">
+      <a class="menu-opened__link"
+        href="{% if page-en != "" %}{{ page-en.url | prepend:site.baseurl }}{% else %}{{ "/en" | prepend:site.baseurl }}{% endif %}">
+        In English
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  const template = document.getElementById('template');
+
+  tippy('#myButton', {
+    allowHTML: true,
+    content: template.innerHTML,
+    interactive: true,
+    popperOptions: {
+      modifiers: [
+        {
+          name: 'arrow',
+          options: {
+            padding: 87,
+          },
+        },
+      ],
+    },
+    theme: 'digitraffic',
+    trigger: 'click',
+  });
+</script>

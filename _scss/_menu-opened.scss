@@ -61,6 +61,12 @@
       padding: 0;
     }
   }
+
+  @media screen and (min-width: $min-width-sm) {
+    &__wrapper {
+      display: none;
+    }
+  }
 }
 
 /* Show / hide menu */

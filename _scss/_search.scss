@@ -96,4 +96,10 @@
     font-size: $font-size-md;
     line-height: $base-line-height;
   }
+  @media screen and (min-width: $min-width-sm) {
+    & {
+      display: flex;
+      margin-bottom: 0;
+    }
+  }
 }

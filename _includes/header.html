@@ -1,13 +1,22 @@
 <header class="header {{ include.header-classes }}">
   <div class="header__content-wrapper">
     <div class="row header__content">
-      <span class="col-xs-8 title">
+      <span class="col-xs-8 col-sm-2 title">
         <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}" class="header__link">
           Lorem ipsum
         </a>
       </span>
+      <div class="col-xs header__main">
+        <div class="row">
+          <span class="header__top-link">Ajankohtaista</span>
+          <span class="header__top-link">Tietolähteet</span>
+          <span class="header__top-link">Tietoa palvelusta</span>
+          <span class="header__top-link">Tuki</span>
+        </div>
+      </div>
       {% include header__menu.html %}
       {% include search.html %}
+      {% include language-dropdown.html %}
     </div>
   </div>
   {% include header__menu-opened.html %}

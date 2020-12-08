@@ -86,6 +86,10 @@
       }
     }
   }
+
+  @media screen and (min-width: $min-width-sm) {
+    display: none;
+  }
 }
 
 .header--scrolled .header-menu {

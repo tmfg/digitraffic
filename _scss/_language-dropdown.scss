@@ -1,0 +1,183 @@
+.language-dropdown {
+  // reset button styles
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  background: none;
+  border: none;
+  &:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+  display: none;
+  font-weight: 600;
+
+  > svg {
+    width: $font-size-md;
+    margin-right: 4px;
+  }
+
+  .chevron-down {
+    height: 16px;
+    display: inline-block;
+
+    > svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .chevron-up {
+    height: 16px;
+    display: none;
+
+    > svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .chevron-down {
+      display: none;
+    }
+
+    .chevron-up {
+      display: inline-block;
+    }
+  }
+
+  @media screen and (min-width: $min-width-sm) {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+  }
+}
+
+.tippy-box[data-theme~="digitraffic"] {
+  .header--white & {
+    $header-background-color: $white !global;
+    $header-text-color: $black !global;
+  }
+
+  background-color: $header-background-color;
+  color: $header-text-color;
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: $header-background-color;
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: $header-background-color;
+  }
+
+  &[data-placement^="left"] > .tippy-arrow::before {
+    border-left-color: $header-background-color;
+  }
+
+  &[data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: $header-background-color;
+  }
+}
+
+// borders https://github.com/atomiks/tippyjs/blob/master/src/scss/border.scss
+.tippy-box {
+  border: 1px $border solid;
+
+  &[data-placement^="top"] > .tippy-arrow {
+    &::after {
+      border-top-color: inherit;
+      border-width: 8px 8px 0;
+      bottom: -8px;
+      left: 0;
+    }
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow {
+    // make arrow smaller
+    &::before {
+      top: -5px;
+      border-width: 0 5px 5px;
+    }
+
+    &::after {
+      border-bottom-color: inherit;
+      // make arrow smaller
+      border-width: 0 5px 5px;
+      top: -6px;
+      left: 0;
+    }
+  }
+
+  &[data-placement^="left"] > .tippy-arrow {
+    &::after {
+      border-left-color: inherit;
+      border-width: 8px 0 8px 8px;
+      right: -8px;
+      top: 0;
+    }
+  }
+
+  &[data-placement^="right"] > .tippy-arrow {
+    &::after {
+      border-width: 8px 8px 8px 0;
+      left: -8px;
+      top: 0;
+      border-right-color: inherit;
+    }
+  }
+
+  &[data-placement^="top"]
+    > .tippy-svg-arrow
+    > svg:first-child:not(:last-child) {
+    top: 17px;
+  }
+
+  &[data-placement^="bottom"]
+    > .tippy-svg-arrow
+    > svg:first-child:not(:last-child) {
+    bottom: 17px;
+  }
+
+  &[data-placement^="left"]
+    > .tippy-svg-arrow
+    > svg:first-child:not(:last-child) {
+    left: 12px;
+  }
+
+  &[data-placement^="right"]
+    > .tippy-svg-arrow
+    > svg:first-child:not(:last-child) {
+    right: 12px;
+  }
+}
+
+.tippy-arrow {
+  & {
+    border-color: inherit;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+
+.tippy-content {
+  padding: 0;
+  ul {
+    > li {
+      padding: $margin-xxsxs $margin-xs;
+      &:not(:first-child) {
+        border-top: 1px $border solid;
+      }
+    }
+  }
+}

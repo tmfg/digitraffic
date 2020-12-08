@@ -134,7 +134,7 @@
 
   &__content {
     height: 100px;
-    padding: 0 $content-padding;
+    padding: $margin-xxs $margin-sm;
     max-width: $content-max-width;
     margin: 0 auto;
     align-items: center;
@@ -157,11 +157,31 @@
     }
   }
 
+  &__main {
+    display: none;
+
+    .header__top-link {
+      &:not(:first-child) {
+        margin-left: $margin-xssm;
+      }
+    }
+
+    @media screen and (min-width: $min-width-sm) {
+      display: block;
+    }
+  }
+
   /* Media queries for different screen sizes */
   @media screen and (max-width: $max-width-sm) {
     &__content {
       height: 50px;
       padding: 0 $content-padding-mobile;
+    }
+  }
+
+  @media screen and (min-width: $min-width-sm) {
+    &__menu {
+      display: none;
     }
   }
 }
