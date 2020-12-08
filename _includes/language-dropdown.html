@@ -1,7 +1,14 @@
 <div class="col-sm-2">
   <button id="myButton" class="language-dropdown">
     {% include globe.svg %}
-    <span>Suomeksi</span>
+    <span>
+      {% if page.lang == "fi" %}
+        Suomeksi
+      {% endif %}
+      {% if page.lang == "en" %}
+        In English
+      {% endif %}
+    </span>
     <span class="chevron-down">{% include chevron-down.svg %}</span>
     <span class="chevron-up">{% include chevron-up.svg %}</span>
   </button>
