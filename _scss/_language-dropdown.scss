@@ -1,19 +1,5 @@
 .language-dropdown {
   #language-dropdown__button {
-    // reset button styles
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 0;
-    overflow: visible;
-    text-transform: none;
-    -webkit-appearance: button;
-    background: none;
-    border: none;
-    &:-moz-focusring {
-      outline: 1px dotted ButtonText;
-    }
-
     display: none;
     font-weight: 600;
 
@@ -143,43 +129,12 @@
   }
 
   .tippy-content {
-    padding: 0;
-
     ul {
-      list-style-type: none;
-
       > li {
-        padding: $margin-xxsxs $margin-xs;
         &:not(:first-child) {
           border-top: 1px $border solid;
         }
       }
     }
-  }
-}
-
-.tippy-box[data-theme~="digitraffic"] {
-  .header--white & {
-    $header-background-color: $white !global;
-    $header-text-color: $black !global;
-  }
-
-  background-color: $header-background-color;
-  color: $header-text-color;
-
-  &[data-placement^="top"] > .tippy-arrow::before {
-    border-top-color: $header-background-color;
-  }
-
-  &[data-placement^="bottom"] > .tippy-arrow::before {
-    border-bottom-color: $header-background-color;
-  }
-
-  &[data-placement^="left"] > .tippy-arrow::before {
-    border-left-color: $header-background-color;
-  }
-
-  &[data-placement^="right"] > .tippy-arrow::before {
-    border-right-color: $header-background-color;
   }
 }

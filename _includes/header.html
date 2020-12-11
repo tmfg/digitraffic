@@ -8,10 +8,50 @@
       </span>
       <div class="col-xs header__main">
         <div class="row">
-          <span class="header__top-link">Ajankohtaista</span>
-          <span class="header__top-link">Tietolähteet</span>
-          <span class="header__top-link">Tietoa palvelusta</span>
-          <span class="header__top-link">Tuki</span>
+          <div class="col-sm">
+            <span class="header__top-link">
+              <div class="dropdown">
+                <button id="dropdown__button--updates">
+                  <span>
+                    {{ site.t.updates[page.lang] }}
+                  </span>
+                </button>
+              </div>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="header__top-link">
+              <div class="dropdown">
+                <button id="dropdown__button--sources">
+                  <span>
+                    {{ site.t.data-sources[page.lang] }}
+                  </span>
+                </button>
+              </div>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="header__top-link">
+              <div class="dropdown">
+                <button id="dropdown__button--about">
+                  <span>
+                    {{ site.t.about[page.lang] }}
+                  </span>
+                </button>
+              </div>
+            </span>
+          </div>
+          <div class="col-sm">
+            <span class="header__top-link">
+              <div class="dropdown">
+                <button id="dropdown__button--support">
+                  <span>
+                    {{ site.t.support[page.lang] }}
+                  </span>
+                </button>
+              </div>
+            </span>
+          </div>
         </div>
       </div>
       {% include header__menu.html %}
@@ -23,3 +63,155 @@
   {% include header__search-opened.html %}
   {% include header__language-opened.html %}
 </header>
+
+<div id="updates-dropdown-template" style="display: none;">
+  <ul class="">
+    <li class="">
+      <a class="" href="/{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.api-status[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class=""
+        href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tiedotteet[page.lang] | downcase }}">
+        {{ site.t.news[page.lang] }}
+      </a>
+    </li>
+    {% if has_articles == true %}
+    <li class="">
+      <a class=""
+        href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.artikkelit[page.lang] | downcase }}">
+        {{ site.t.artikkelit[page.lang] }}
+      </a>
+    </li>
+    {% endif %}
+    {% if has_events == true %}
+    <li class="">
+      <a class=""
+        href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tapahtumat[page.lang] | downcase }}">
+        {{ site.t.tapahtumat[page.lang] }}
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>
+
+<div id="sources-dropdown-template" style="display: none;">
+  <ul class="">
+    <li class="">
+      <a class="" href="/{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.road-traffic[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.railway-traffic[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.marine-traffic[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.experimental.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.experimental[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.nap.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.nap[page.lang] }}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div id="about-dropdown-template" style="display: none;">
+  <ul class="">
+    <li class="">
+      <a class="" href="/{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.service-overview[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.development-roadmap[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.applications[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.sign-up-application.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.sign-up-application[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.terms-of-service.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.terms-of-service[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.privacy-policy.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.privacy-policy[page.lang] }}
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="support-dropdown-template" style="display: none;">
+  <ul class="">
+    <li class="">
+      <a class="" href="/{{ site.t.support-channels.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.support-channels[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.support-channels-information.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.support-channels-information[page.lang] }}
+      </a>
+    </li>
+    <li class="">
+      <a class="" href="/{{ site.t.contact.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.contact[page.lang] }}
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="3-dropdown-template" style="display: none;"></div>
+
+<script>
+  tippy('#dropdown__button--updates', {
+    allowHTML: true,
+    arrow: false,
+    content: document.getElementById('updates-dropdown-template').innerHTML,
+    interactive: true,
+    offset: [0, 0],
+    theme: 'digitraffic',
+  });
+  tippy('#dropdown__button--sources', {
+    allowHTML: true,
+    arrow: false,
+    content: document.getElementById('sources-dropdown-template').innerHTML,
+    interactive: true,
+    offset: [0, 0],
+    theme: 'digitraffic',
+  });
+  tippy('#dropdown__button--about', {
+    allowHTML: true,
+    arrow: false,
+    content: document.getElementById('about-dropdown-template').innerHTML,
+    interactive: true,
+    offset: [0, 0],
+    theme: 'digitraffic',
+  });
+  tippy('#dropdown__button--support', {
+    allowHTML: true,
+    arrow: false,
+    content: document.getElementById('support-dropdown-template').innerHTML,
+    interactive: true,
+    offset: [0, 0],
+    theme: 'digitraffic',
+  });
+</script>

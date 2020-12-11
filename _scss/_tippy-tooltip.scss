@@ -1,0 +1,25 @@
+.tippy-box[data-theme~="digitraffic"] {
+  .header--white & {
+    $header-background-color: $white !global;
+    $header-text-color: $black !global;
+  }
+
+  background-color: $header-background-color;
+  color: $header-text-color;
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: $header-background-color;
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: $header-background-color;
+  }
+
+  &[data-placement^="left"] > .tippy-arrow::before {
+    border-left-color: $header-background-color;
+  }
+
+  &[data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: $header-background-color;
+  }
+}
