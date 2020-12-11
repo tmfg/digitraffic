@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  
+
   /* Text */
   color: $white;
   text-align: center;
@@ -13,92 +13,99 @@
   /* Background images */
   // Frontpage
   &--code {
-    background-image: url('../img/hero-img-code.jpg');
+    background-image: url("../img/hero-img-code.jpg");
   }
-  
+
   &--escalator {
-    background-image: url('../img/hero-img-escalator.jpg');
+    background-image: url("../img/hero-img-escalator.jpg");
   }
-  
+
   &--frontpage {
-    background-image: url('../img/hero-img-road.jpg');
+    background-image: url("../img/hero-img-road.jpg");
+    height: 400px;
   }
 
   &--icebreaker {
-    background-image: url('../img/hero-img-icebreaker.jpg');
+    background-image: url("../img/hero-img-icebreaker.jpg");
   }
 
   &--keyboard {
-    background-image: url('../img/hero-img-keyboard.jpg');
+    background-image: url("../img/hero-img-keyboard.jpg");
   }
 
   &--laptop {
-    background-image: url('../img/hero-img-laptop.jpg');
+    background-image: url("../img/hero-img-laptop.jpg");
   }
 
   &--locomotive-cab {
-    background-image: url('../img/hero-img-locomotive-cab.jpg');
+    background-image: url("../img/hero-img-locomotive-cab.jpg");
   }
-  
+
   &--marine {
-    background-image: url('../img/hero-img-ship.jpg');
+    background-image: url("../img/hero-img-ship.jpg");
   }
-  
+
   &--rail {
-    background-image: url('../img/hero-img-train-track.jpg');
+    background-image: url("../img/hero-img-train-track.jpg");
   }
 
   &--road {
-    background-image: url('../img/hero-img-intersection.jpg');
+    background-image: url("../img/hero-img-intersection.jpg");
   }
 
   &--train-track-straight {
-    background-image: url('../img/hero-img-train-track-straight.jpg');
+    background-image: url("../img/hero-img-train-track-straight.jpg");
   }
 
   /* Overlay */
   &__overlay {
     background: linear-gradient(90deg, $blue-darker-80 0%, $black-80 100%);
 
-
     .header-line {
       width: 100%;
       height: 0.7rem;
 
-      &__road-traffic, &__road {
+      &__road-traffic,
+      &__road {
         background-color: $road-color;
       }
 
-      &__marine-traffic, &__marine {
+      &__marine-traffic,
+      &__marine {
         background-color: $marine-color;
       }
 
-      &__railway-traffic, &__rail {
+      &__railway-traffic,
+      &__rail {
         background-color: $rail-color;
       }
 
       &__gradient {
         background-color: rgb(52, 51, 161);
-        background-image: linear-gradient(90deg, rgb(52, 51, 161), rgb(236, 0, 140));
+        background-image: linear-gradient(
+          90deg,
+          rgb(52, 51, 161),
+          rgb(236, 0, 140)
+        );
       }
     }
   }
 
   /* Elements */
   &__heading {
-    @include heading(6rem, 100, $white, -0.05rem);
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    @include heading(6rem, 100, $black, -0.05rem);
     padding: 0 $content-padding;
-    margin: $margin-xxl auto 0 auto;
+    margin: $margin-sm auto 0 auto;
     line-height: 1.1;
+    text-align: center;
   }
 
   &__intro {
-    @include heading(2.25rem, 100, $white, -0.05rem, break-word);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    @include heading(2.25rem, 100, $black, -0.05rem, break-word);
     max-width: 65rem;
     padding: 0 $content-padding;
     margin: $margin-xs auto $margin-md;
+    text-align: center;
 
     &--no-buttons {
       margin: $margin-sm auto $margin-md;
