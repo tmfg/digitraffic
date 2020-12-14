@@ -5,7 +5,7 @@ ref: painorajoitukset-ja-tietyot-json
 issue-number: DPO-252
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 date: 2020-11-16
 ---
 

@@ -5,7 +5,7 @@ ref: painorajoitukset-ja-tietyot-json
 issue-number: DPO-252
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2020-11-16
 ---
 
