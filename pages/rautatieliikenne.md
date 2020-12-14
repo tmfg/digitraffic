@@ -284,7 +284,7 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 ### Rajoituksia
 
 * Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
-* Kyselyssä ei saa olla sama käsite kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
+* Kyselyssä ei saa olla sama kenttä kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
 * `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {greaterThan: 50}}}}}}` on laiton
 
 ### Esimerkkejä
