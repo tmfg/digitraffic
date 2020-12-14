@@ -23,6 +23,7 @@
   &--frontpage {
     background-image: url("../img/hero-img-road.jpg");
     height: 400px;
+    z-index: -1;
   }
 
   &--icebreaker {
