@@ -23,3 +23,35 @@
     border-right-color: $header-background-color;
   }
 }
+
+.tippy-box[data-theme~="fintraffic"] {
+  background-color: $black;
+  left: $margin-xs;
+
+  ul {
+    li {
+      position: relative;
+
+      &.active {
+        &::after {
+          content: "";
+          background-color: $white;
+          width: 3px;
+          height: calc(100% - 1px);
+          position: absolute;
+          right: 0px;
+          top: 1px;
+        }
+
+        > a {
+          opacity: 0.8;
+        }
+      }
+
+      a {
+        color: $white;
+        border-top: 1px rgba(255, 255, 255, 0.25) solid;
+      }
+    }
+  }
+}

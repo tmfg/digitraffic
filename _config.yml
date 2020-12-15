@@ -114,6 +114,35 @@ t:
     en: "What are you looking for?"
     fi: "Mitä etsit?"
 
+  # services dropdown
+  services:
+    en: "Services"
+    fi: "Palvelut"
+  traffic-situation:
+    en: "Traffic Situation"
+    fi: "Liikennetilannepalvelu"
+  feedback-channel:
+    en: "Feedback Channel"
+    fi: "Palauteväylä"
+  train-departures:
+    en: "Train Departures"
+    fi: "Junalähdöt"
+  station-info:
+    en: "Station Info"
+    fi: "Asemainfo"
+  drone-register:
+    en: "Drone Register"
+    fi: "Dronerekisteri"
+  digitraffic:
+    en: "Digitraffic"
+    fi: "Digitraffic"
+  digitransit:
+    en: "Digitransit"
+    fi: "Digitransit"
+  nap:
+    en: "NAP"
+    fi: "NAP"
+
   # Menu items // Some menu items found under Frontpage
   updates:
     en: "Updates"

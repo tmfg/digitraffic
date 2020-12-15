@@ -1,0 +1,114 @@
+.fintraffic-header {
+  background-color: $black;
+  padding: $margin-xxs $margin-xs;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  font-family: $header-font-family;
+
+  * {
+    color: $white;
+  }
+
+  #fintraffic-logo {
+    width: 106px;
+  }
+
+  #services-dropdown__button {
+    display: flex;
+    align-items: center;
+
+    &[aria-expanded="true"] {
+      text-decoration: underline;
+    }
+  }
+
+  &__links {
+    display: none;
+    margin-left: $margin-xssm;
+
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        &:not(:first-child) {
+          margin-left: $margin-xssm;
+        }
+
+        &.active {
+          position: relative;
+
+          .upwards-arrow {
+            &::before {
+              content: "";
+              position: absolute;
+              left: 50%;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent white transparent;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $min-width-md) {
+      & {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (min-width: $min-width-md) {
+    & {
+      justify-content: flex-start;
+      padding-left: $margin-sm;
+      padding-right: $margin-sm;
+    }
+  }
+}
+
+.services-dropdown {
+  &__chevron-down {
+    height: 16px;
+    display: inline-block;
+
+    [aria-expanded="true"] & {
+      display: none;
+    }
+
+    > svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &__chevron-up {
+    height: 16px;
+    display: none;
+
+    [aria-expanded="true"] & {
+      display: inline-block;
+    }
+
+    > svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &__chevron-up,
+  &__chevron-down {
+    margin-left: $margin-xxxs;
+  }
+
+  @media screen and (min-width: $min-width-md) {
+    & {
+      display: none;
+    }
+  }
+}

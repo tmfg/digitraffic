@@ -1,0 +1,33 @@
+<header class="fintraffic-header">
+  {% include Fintraffic_vaakalogo_valkoinen.svg %}
+  <div class="fintraffic-header__links">
+    {% include fintraffic-links.html %}
+  </div>
+  <div class="dropdown services-dropdown">
+    <button id="services-dropdown__button">
+      <span>
+        {{ site.t.services[page.lang]}}
+      </span>
+      <span class="services-dropdown__chevron-down">{% include chevron-down.svg %}</span>
+      <span class="services-dropdown__chevron-up">{% include chevron-up.svg %}</span>
+    </button>
+  </div>
+</header>
+
+<div id="services-options" style="display: none;">
+  {% include fintraffic-links.html %}
+</div>
+
+<script>
+  const servicesOptionsTemplate = document.getElementById('services-options');
+
+  tippy('#services-dropdown__button', {
+    allowHTML: true,
+    arrow: false,
+    content: servicesOptionsTemplate.innerHTML,
+    interactive: true,
+    placement: 'bottom-start',
+    theme: 'fintraffic',
+    trigger: 'click',
+  });
+</script>
