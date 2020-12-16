@@ -2,7 +2,7 @@
   padding: 0;
   box-sizing: border-box;
   max-width: $content-max-width;
-  max-height: calc(100vh - 99px);
+  max-height: calc(100vh - 150px);
   margin: 0 auto;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -62,7 +62,7 @@
     }
   }
 
-  @media screen and (min-width: $min-width-sm) {
+  @media screen and (min-width: $min-width-md) {
     &__wrapper {
       display: none;
     }

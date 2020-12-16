@@ -14,6 +14,7 @@
   transition: $transition-faster;
   transform: translate3d(0, 0, 100px);
   font-family: $header-font-family;
+  height: 56px;
 
   // Prevent scroll stuttering on Chrome
   -webkit-transform: translateZ(100);
@@ -40,10 +41,6 @@
     background-color: $header-background-color;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
 
-    .header__content {
-      height: 50px;
-    }
-
     .header__content-wrapper--menu-closing,
     .header__content-wrapper--search-closing,
     .header__content-wrapper--language-closing {
@@ -66,6 +63,7 @@
     transition: $transition-fast;
 
     .header__content-wrapper {
+      height: auto;
       background-color: $header-background-color;
     }
   }
@@ -128,15 +126,16 @@
 
   /* Elements */
   &__content-wrapper {
+    height: 100%;
     width: calc(100%);
   }
 
   &__content {
-    height: 100px;
-    padding: $margin-xxs $margin-sm;
+    padding: 0 $content-padding-mobile;
     max-width: $content-max-width;
     margin: 0 auto;
     align-items: center;
+    align-content: center;
 
     .header--menu-opened & {
       border-bottom: 1px $gray-211 solid;
@@ -144,6 +143,13 @@
 
     .title {
       @include logo-text;
+      padding-left: 0;
+      padding-right: 0;
+      flex-grow: 0;
+
+      & + * {
+        padding-left: $margin-xssm;
+      }
     }
   }
 
@@ -174,20 +180,23 @@
       }
     }
 
-    @media screen and (min-width: $min-width-sm) {
+    @media screen and (min-width: $min-width-md) {
       display: block;
     }
   }
 
+  &__menu {
+    padding-right: 0;
+  }
+
   /* Media queries for different screen sizes */
-  @media screen and (max-width: $max-width-sm) {
+  @media screen and (min-width: $min-width-md) {
     &__content {
-      height: 50px;
-      padding: 0 $content-padding-mobile;
+      padding: $margin-xxs $margin-sm;
     }
   }
 
-  @media screen and (min-width: $min-width-sm) {
+  @media screen and (min-width: $min-width-md) {
     &__menu {
       display: none;
     }

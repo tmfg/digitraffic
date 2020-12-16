@@ -67,6 +67,7 @@
     margin-bottom: $margin-lg;
   }
 }
+
 .search-v2 {
   display: none;
 
@@ -80,6 +81,7 @@
   border-radius: 20px;
   padding: 10px;
   margin-bottom: $margin-xs;
+  margin-top: $margin-xs;
 
   > svg {
     width: 20px;
@@ -96,10 +98,13 @@
     font-size: $font-size-md;
     line-height: $base-line-height;
   }
-  @media screen and (min-width: $min-width-sm) {
+
+  @media screen and (min-width: $min-width-md) {
     & {
       display: flex;
       margin-bottom: 0;
+      margin-top: 0;
+      max-width: 240px;
     }
   }
 }

@@ -2,57 +2,49 @@
 <header class="header {{ include.header-classes }}">
   <div class="header__content-wrapper">
     <div class="row header__content">
-      <span class="col-xs-8 col-sm-2 title">
+      <span class="col-xs-8 col-md title">
         <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}" class="header__link">
           {{ site.title }}
         </a>
       </span>
       <div class="col-xs header__main">
         <div class="row">
-          <div class="col-sm">
-            <span class="header__top-link">
-              <div class="dropdown">
-                <button id="dropdown__button--updates">
-                  <span>
-                    {{ site.t.updates[page.lang] }}
-                  </span>
-                </button>
-              </div>
-            </span>
-          </div>
-          <div class="col-sm">
-            <span class="header__top-link">
-              <div class="dropdown">
-                <button id="dropdown__button--sources">
-                  <span>
-                    {{ site.t.data-sources[page.lang] }}
-                  </span>
-                </button>
-              </div>
-            </span>
-          </div>
-          <div class="col-sm">
-            <span class="header__top-link">
-              <div class="dropdown">
-                <button id="dropdown__button--about">
-                  <span>
-                    {{ site.t.about[page.lang] }}
-                  </span>
-                </button>
-              </div>
-            </span>
-          </div>
-          <div class="col-sm">
-            <span class="header__top-link">
-              <div class="dropdown">
-                <button id="dropdown__button--support">
-                  <span>
-                    {{ site.t.support[page.lang] }}
-                  </span>
-                </button>
-              </div>
-            </span>
-          </div>
+          <span class="header__top-link">
+            <div class="dropdown">
+              <button id="dropdown__button--updates">
+                <span>
+                  {{ site.t.updates[page.lang] }}
+                </span>
+              </button>
+            </div>
+          </span>
+          <span class="header__top-link">
+            <div class="dropdown">
+              <button id="dropdown__button--sources">
+                <span>
+                  {{ site.t.data-sources[page.lang] }}
+                </span>
+              </button>
+            </div>
+          </span>
+          <span class="header__top-link">
+            <div class="dropdown">
+              <button id="dropdown__button--about">
+                <span>
+                  {{ site.t.about[page.lang] }}
+                </span>
+              </button>
+            </div>
+          </span>
+          <span class="header__top-link">
+            <div class="dropdown">
+              <button id="dropdown__button--support">
+                <span>
+                  {{ site.t.support[page.lang] }}
+                </span>
+              </button>
+            </div>
+          </span>
         </div>
       </div>
       {% include header__menu.html %}
@@ -187,7 +179,7 @@
     arrow: false,
     content: document.getElementById('updates-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 0],
+    offset: [0, 19],
     theme: 'digitraffic',
   });
   tippy('#dropdown__button--sources', {
@@ -195,7 +187,7 @@
     arrow: false,
     content: document.getElementById('sources-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 0],
+    offset: [0, 19],
     theme: 'digitraffic',
   });
   tippy('#dropdown__button--about', {
@@ -203,7 +195,7 @@
     arrow: false,
     content: document.getElementById('about-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 0],
+    offset: [0, 19],
     theme: 'digitraffic',
   });
   tippy('#dropdown__button--support', {
@@ -211,7 +203,7 @@
     arrow: false,
     content: document.getElementById('support-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 0],
+    offset: [0, 19],
     theme: 'digitraffic',
   });
 </script>

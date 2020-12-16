@@ -1,4 +1,9 @@
 .language-dropdown {
+  flex-grow: 0;
+  padding-left: $margin-xssm;
+  padding-right: 0;
+  white-space: nowrap;
+
   #language-dropdown__button {
     display: none;
     font-weight: 600;
@@ -8,7 +13,7 @@
       margin-right: 4px;
     }
 
-    @media screen and (min-width: $min-width-sm) {
+    @media screen and (min-width: $min-width-md) {
       display: flex;
       align-items: center;
       text-decoration: underline;
@@ -42,6 +47,12 @@
       width: 16px;
     }
   }
+
+  &__chevron-up,
+  &__chevron-down {
+    margin-left: $margin-xxxs;
+  }
+
   // borders https://github.com/atomiks/tippyjs/blob/master/src/scss/border.scss
   .tippy-box {
     border: 1px $border solid;
