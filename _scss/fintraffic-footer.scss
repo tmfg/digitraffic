@@ -1,0 +1,75 @@
+.fintraffic-footer {
+  color: $white;
+  background-color: $black;
+  padding-left: $margin-20;
+  padding-right: $margin-20;
+  font-family: $header-font-family;
+  line-height: 2;
+
+  a {
+    color: inherit;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  &__top-bar {
+    height: 62px;
+    border-bottom: 1px rgba(255, 255, 255, 0.25) solid;
+    margin-bottom: $margin-20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: $min-width-sm) {
+      & {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  &__links {
+    margin-bottom: $margin-28;
+
+    @media screen and (min-width: $min-width-sm) {
+      & {
+        margin-bottom: 0;
+        display: grid;
+        grid-template-columns: min-content min-content;
+        gap: 0 $margin-md;
+      }
+    }
+  }
+
+  &__fintraffic-links {
+    margin-bottom: $margin-28;
+
+    @media screen and (min-width: $min-width-sm) {
+      & ul {
+        list-style-type: none;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0 $margin-md;
+      }
+    }
+  }
+
+  &__icons {
+    padding-bottom: $margin-28;
+
+    svg:not(:first-child) {
+      margin-left: $margin-20;
+    }
+  }
+
+  @media screen and (min-width: $min-width-sm) {
+    & {
+      height: 238px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}

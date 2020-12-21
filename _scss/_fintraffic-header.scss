@@ -1,3 +1,7 @@
+#fintraffic-logo {
+  width: 106px;
+}
+
 .fintraffic-header {
   background-color: $black;
   padding: $margin-xxs $margin-xs;
@@ -10,10 +14,6 @@
 
   * {
     color: $white;
-  }
-
-  #fintraffic-logo {
-    width: 106px;
   }
 
   #services-dropdown__button {

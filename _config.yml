@@ -242,6 +242,15 @@ t:
     license:
       en: "Creative Commons Attribution 4.0 International license"
       fi: "Creative Commons Nimeä 4.0 Kansainvälinen -lisenssillä"
+  fintraffic-privacy-policy:
+    en: "Privacy Policy"
+    fi: "Tietosuoja"
+  accessibility:
+    en: "Accessibility"
+    fi: "Saavutettavuus"
+  feedback:
+    en: "Feedback"
+    fi: "Palaute"
 
   # Search
   search-results:

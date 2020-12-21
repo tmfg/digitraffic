@@ -1,2 +1,30 @@
-<footer>
+<footer class="fintraffic-footer">
+  <div class="row fintraffic-footer__top-bar">
+      {% include Fintraffic_vaakalogo_valkoinen.svg %}
+      <a href="https://www.fintraffic.fi">
+        fintraffic.fi
+      </a>
+  </div>
+  <div class="fintraffic-footer__links">
+    <div class="fintraffic-footer__fintraffic-links">
+      {% include fintraffic-links.html %}
+    </div>
+    <ul>
+      <li>
+        <a href="#">{{ site.t.fintraffic-privacy-policy[page.lang]}}</a>
+      </li>
+      <li>
+        <a href="#">{{ site.t.accessibility[page.lang]}}</a>
+      </li>
+      <li>
+        <a href="#">{{ site.t.feedback[page.lang]}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="fintraffic-footer__icons">
+    {% include facebook.svg %}
+    {% include twitter.svg %}
+    {% include instagram.svg %}
+    {% include youtube.svg %}
+  </div>
 </footer>
