@@ -1,5 +1,5 @@
 /* Base values */
-$base-font-family: 'Roboto', Arial, sans-serif;
+$base-font-family: 'Public Sans', sans-serif;
 $base-font-color: $gray-68;
 $base-font-size: 16px;
 $base-font-size-n: 16;
@@ -54,7 +54,6 @@ $max-width-lg: nth(nth($breakpoints, 3), 2) - 1px;
 $body-background-color: $white;
 
 /* Headings */
-$heading-font-family: 'Montserrat', Arial, sans-serif;
 $heading-letter-spacing: 0;
 
 /* Code */
@@ -66,7 +65,6 @@ $header-text-color: $white;
 $header-icon-color: $white;
 $language--active-color: $white;
 $header-margin-y: 1rem;
-$header-font-family: 'Public Sans', sans-serif;
 
 /* Content */
 $content-max-width: 1600px;

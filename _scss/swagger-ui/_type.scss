@@ -14,7 +14,7 @@
 
 @mixin text_headline($color: $base-font-color)
 {
-    font-family: $heading-font-family;
+    font-family: $base-font-family;
 
     color: $color;
 }

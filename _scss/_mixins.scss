@@ -7,7 +7,7 @@
 }
 
 @mixin heading($font-size: 3rem, $font-weight: 500, $color: $gray-68, $letter-spacing:$heading-letter-spacing, $word-break: break-word) {
-  font-family: $heading-font-family;
+  font-family: $base-font-family;
   font-size: $font-size;
   font-weight: $font-weight;
   line-height: $base-line-height;

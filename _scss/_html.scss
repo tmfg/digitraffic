@@ -1,3 +1,7 @@
 html {
   font-size: $base-font-size;
+
+  * {
+    font-family: $base-font-family;
+  }
 }
