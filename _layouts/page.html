@@ -15,17 +15,12 @@ layout: compress
 
     <!--Content-->
     <content class="content">
-      <section class="hero-image hero-image--{{ page.hero-image }}">
-        <div class="hero-image__overlay">
-          <div class="row">
-            <div class="col-xs">
-              <h1 class="hero-image__heading">{{ page.title }}</h1>
-              <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
-            </div>
-          </div>
-          {% include header-line.html %}
+      <div class="row">
+        <div class="col-xs">
+          <h1 class="hero-image__heading">{{ page.title }}</h1>
+          <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
         </div>
-      </section>
+      </div>
 
       <div class="content__section-under-hero content--padded content--github-edit">
 
