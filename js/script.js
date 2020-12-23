@@ -61,6 +61,9 @@ function addEventListeners() {
   let languageElement = document.body.querySelector(".header-menu__item--language");
   let outsideMenu = document.body.querySelector(".content");
 
+  window.addEventListener('resize', updateViewportElements);
+  updateViewportElements();
+
   if (menuElement) {
       menuElement.addEventListener("click", toggleMenu);
   }
@@ -73,6 +76,11 @@ languageElement.addEventListener("click", toggleLanguage);
     if (outsideMenu) {
         outsideMenu.addEventListener("click", closeMenuSearchLanguage);
     }
+}
+
+function updateViewportElements() {
+  const container = document.querySelector('.menu-opened');
+  container.style.height = `calc(${window.innerHeight}px - 150px)`;
 }
 
 // Add .header--scrolled when scrolling page, remove when scrolled to top
