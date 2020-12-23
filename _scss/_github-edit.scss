@@ -8,6 +8,10 @@
     background-color: $gray-241;
     transform: translateY(2rem);
     margin-top: -2rem;
+
+    .header--menu-opened ~ & {
+      display: none;
+    }
   }
 
   &__icon {
