@@ -119,7 +119,7 @@ t:
     fi: "Palvelut"
   traffic-situation:
     en: "Traffic Situation"
-    fi: "Liikennetilannepalvelu"
+    fi: "Liikennetilanne"
   feedback-channel:
     en: "Feedback Channel"
     fi: "Palauteväylä"
