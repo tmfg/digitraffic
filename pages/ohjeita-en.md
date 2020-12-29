@@ -65,9 +65,9 @@ the application developer or administrator.
 
 The Digitraffic-User header should include an identifiable user party and/or application. Below you can find examples.
 
-`Digitraffic-User: TMFG`  
+`Digitraffic-User: Fintraffic`  
 `Digitraffic-User: Liikennetilanne`  
-`Digitraffic-User: TMFG/Liikennetilanne`  
+`Digitraffic-User: Fintraffic/Liikennetilanne`  
 
 ### User-Agent
 

@@ -1,5 +1,5 @@
 ---
-title: 'Digitraffic will be operated by Fintraffic Ltd'
+title: 'Digitraffic will be operated by Fintraffic'
 categories: en News
 image: 
 lang: en
@@ -14,6 +14,6 @@ tags:
   - Ylläpito
 ---
 
-Starting from the 1st of January 2019 Digitraffic will be operated by Fintraffic Ltd. 
+Starting from the 1st of January 2019 Digitraffic will be operated by Fintraffic. 
 
 APIs and terms of use as well as support channels will remain as they are
