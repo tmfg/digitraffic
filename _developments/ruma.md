@@ -9,4 +9,4 @@ status: valmis
 date: 2019-10-21
 ---
 
-RUMA-järjestelmän ratatyöilmoitukset tullaan julkaisemaan Digitrafficissä. Lisätietoa RUMA:sta [https://tmfg.fi/fi/finrail/ruma](https://tmfg.fi/fi/finrail/ruma)
+RUMA-järjestelmän ratatyöilmoitukset tullaan julkaisemaan Digitrafficissä. Lisätietoa RUMA:sta [https://fintraffic.fi/fi/finrail/ruma](https://fintraffic.fi/fi/finrail/ruma)

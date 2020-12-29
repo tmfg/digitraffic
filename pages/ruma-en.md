@@ -84,4 +84,4 @@ Below are Infra-API signal types designated in RUMA as limiting. Other signal ty
 pa, pa2, pav, ps, ps2, ps2v, psv, ra, rp, su, rd, y4, ye, ys, yse, ysj, ysje, ysjv, ysv, ysve, yv
 ```
 
-[RUMA system page](https://tmfg.fi/fi/finrail/ruma) (in Finnish)
+[RUMA system page](https://fintraffic.fi/fi/finrail/ruma) (in Finnish)

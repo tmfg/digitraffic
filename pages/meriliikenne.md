@@ -12,7 +12,7 @@ title: Meriliikenne
 intro: Avointa dataa Suomen meriltä ja järviltä.
 links:
   - ["Väylävirasto", "https://vayla.fi"]
-  - ["Traffic Management Finland", "https://tmfg.fi"]
+  - ["Fintraffic", "https://fintraffic.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/swagger/"]
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
 ---

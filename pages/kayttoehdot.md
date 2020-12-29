@@ -11,13 +11,13 @@ links:
  
 ---
 
-Traffic Management Finlandin avoimen datan aineistoja koskee Creative Commons 4.0 Nimeä -käyttölupa. Creative Commons 4.0 Nimeä on JHS 189 -suosituksen mukainen käyttölupa julkishallinnon avoimia tietoaineistoja varten. Se antaa oikeuden kopioida, muokata ja jakaa aineistoja edelleen joko alkuperäisessä tai muutetussa muodossa. Aineistoja voi myös yhdistää muihin aineistoihin ja käyttää sekä kaupallisiin että epäkaupallisiin tarkoituksiin.
+Fintrafficin avoimen datan aineistoja koskee Creative Commons 4.0 Nimeä -käyttölupa. Creative Commons 4.0 Nimeä on JHS 189 -suosituksen mukainen käyttölupa julkishallinnon avoimia tietoaineistoja varten. Se antaa oikeuden kopioida, muokata ja jakaa aineistoja edelleen joko alkuperäisessä tai muutetussa muodossa. Aineistoja voi myös yhdistää muihin aineistoihin ja käyttää sekä kaupallisiin että epäkaupallisiin tarkoituksiin.
 
 ## Ohjeita lähteen nimeämiseen
 
 Creative Commons 4.0 Nimeä -käyttöluvan mukaan tietoaineiston lähde nimetään käyttöluvan antajan edellyttämällä tavalla. Tämä tarkoittaa käytännössä sitä, että jaettaessa käyttöluvan kohteena olevaa aineistoa edelleen, se on varustettava aineiston luojien tai muiden käyttöluvasta ilmenevien tahojen nimellä käyttöluvan myöntäjän vaatimalla kohtuullisella tavalla. Nämä tiedot voivat sisältää nimen lisäksi tai sijasta esimerkiksi pseudonyymin tai tavaramerkin.
 
-#### Traffic Management Finland edellyttää, että nimeämisessä noudatetaan seuraavaa käytäntöä:
+#### Fintraffic edellyttää, että nimeämisessä noudatetaan seuraavaa käytäntöä:
 
 Materiaaliin sisältyvä tekijänoikeusmerkintä (copyright notice) on säilytettävä käyttöluvasta ilmenevällä tavalla . Tekijänoikeusmerkintä voi sisältää myös materiaalin julkaisuajankohdan ja aineiston version numeron sekä julkaisijan nimen sekä muut datan identifioinnin kannalta oleelliset tiedot.
 
@@ -27,7 +27,7 @@ Jos materiaalia on muokattu, se täytyy varustaa tätä koskevalla merkinnällä
 
 Materiaaliin täytyy liittää Creative Commons Nimeä 4.0 -käyttölupaa koskeva merkintä ja hyperlinkki käyttölupaan.
 
-Traffic Management Finland voi aina pyytää nimeämistietojen ja tekijänoikeusmerkinnän poistamista niissä rajoissa, kun poistaminen on mahdollista.
+Fintraffic voi aina pyytää nimeämistietojen ja tekijänoikeusmerkinnän poistamista niissä rajoissa, kun poistaminen on mahdollista.
 
 ## Esimerkkejä nimeämiseen
 
@@ -36,6 +36,6 @@ Traffic Management Finland voi aina pyytää nimeämistietojen ja tekijänoikeus
 
 Rata.digitraffic.fi -rajapinnan tietojen käyttö verkkosivulla tai sovelluksessa. Sivulle tai sovellukseen lisätään seuraava teksti linkkeineen:
 
-Liikennetietojen lähde Traffic Management Finland / digitraffic.fi, lisenssi CC 4.0 BY
+Liikennetietojen lähde Fintraffic / digitraffic.fi, lisenssi CC 4.0 BY
 
 Nimeämistietojen merkintätavoista löytyy tarkempia ohjeita [Creative Commonsin verkkosivuilta](https://creativecommons.org/).

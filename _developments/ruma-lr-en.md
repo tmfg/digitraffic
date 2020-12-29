@@ -9,4 +9,4 @@ status: finished
 date: 2020-02-19
 ---
 
-Traffic restriction notifications from RUMA will be published via Digitraffic. More info about RUMA (in Finnish) [https://tmfg.fi//finrail/ruma](https://tmfg.fi/fi/finrail/ruma)
+Traffic restriction notifications from RUMA will be published via Digitraffic. More info about RUMA (in Finnish) [https://fintraffic.fi//finrail/ruma](https://fintraffic.fi/fi/finrail/ruma)

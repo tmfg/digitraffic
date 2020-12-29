@@ -231,8 +231,8 @@ t:
       en: ", by "
       fi: ", jonka tekijä on "
     attribution:
-      en: "Traffic Management Finland"
-      fi: "Traffic Management Finland"
+      en: "Fintraffic"
+      fi: "Fintraffic"
       url:
         en: "http://www.digitraffic.fi/en"
         fi: "http://www.digitraffic.fi"
@@ -386,8 +386,8 @@ t:
       en: "en/road-traffic"
       fi: "tieliikenne"
   road-traffic-description:
-    en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Traffic Management Finland."
-    fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Traffic Management Finlandin ylläpitämistä tiedonkeruujärjestelmistä."
+    en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Fintraffic."
+    fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Fintrafficin ylläpitämistä tiedonkeruujärjestelmistä."
   road-traffic-button:
     en: "Road traffic APIs"
     fi: "Tieliikenne tietolähteet"
@@ -404,8 +404,8 @@ t:
       en: "en/support-channels"
       fi: "tukikanavat"
   support-channels-description:
-    en: "Public Google groups provide support and communication between developers, service provider and Traffic Management Finland."
-    fi: "Kehittäjien, palvelun ylläpitäjän ja Traffic Management Finlandin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
+    en: "Public Google groups provide support and communication between developers, service provider and Fintraffic."
+    fi: "Kehittäjien, palvelun ylläpitäjän ja Fintrafficin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
   support-channels-information:
     en: "Information and instructions for using APIs"
     fi: "Ohjeita ja lisätietoa rajapintojen käyttöön"

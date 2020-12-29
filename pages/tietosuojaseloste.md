@@ -11,9 +11,9 @@ title: Tietosuojaseloste
 ### 1\. Rekisterinpitäjä
 
 <p>
-Traffic Management Finland<br />
+Fintraffic<br />
 Palkkatilanportti 1, 00240 Helsinki<br />
-digitraffic@tmfg.fi
+digitraffic@fintraffic.fi
 </p>
 
 
@@ -22,7 +22,7 @@ digitraffic@tmfg.fi
 <p>
 Mika Ahvenainen<br />
 Palkkatilanportti 1, 00240 Helsinki<br />
-digitraffic@tmfg.fi
+digitraffic@fintraffic.fi
 </p>
 
 ### 3\. Rekisterin nimi
@@ -47,7 +47,7 @@ HTTP-pyynnöt, joita käyttäjä lähettää rajapintapalveluun.
 
 ### 8\. Säännönmukaiset tietojen luovutukset
 
-Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Traffic Management Finlandin toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
+Tietoja luovutetaan ainoastaan Digitraffic-palvelun ylläpitäjälle, joka toimii tehtävässään Fintrafficin toimeksiannosta, salassapitovelvollisuuden alaisena ja saa käyttää tietoja ainoastaan Digitraffic-palvelun valvontaan ja häiriötilanteiden selvitykseen.
 
 ### 9\. Tietojen siirto EU:n tai ETA:n ulkopuolelle
 
@@ -62,7 +62,7 @@ Rekisterin ylläpitoon ei liity manuaalista aineistonhallintaa.
 
 <p>
 B ATK:lla käsiteltävät tiedot<br />
-Rekisterin tietoja käsitellään Traffic Management Finlandin tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic-palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
+Rekisterin tietoja käsitellään Fintrafficin tietojärjestelmässä, joka täytää VAHTI-tietoturvamääräysten vaatimukset. Vain Digitraffic-palvelun ylläpitoa ja tiedottamista tekevät henkilöt saavat käyttöoikeuden tietoihin. Tietoja käsitellään suojattuna koko tiedon elinkaaren ajan.
 </p>
 
 ### 11\. Tarkastusoikeus

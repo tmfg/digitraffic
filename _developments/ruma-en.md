@@ -9,4 +9,4 @@ status: finished
 date: 2019-10-21
 ---
 
-Track work notices from RUMA will be published via Digitraffic. More info about RUMA (in Finnish) [https://tmfg.fi//finrail/ruma](https://tmfg.fi/fi/finrail/ruma)
+Track work notices from RUMA will be published via Digitraffic. More info about RUMA (in Finnish) [https://fintraffic.fi//finrail/ruma](https://fintraffic.fi/fi/finrail/ruma)

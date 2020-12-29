@@ -12,11 +12,11 @@ title: Railway traffic
 intro: Timetables, delays, locations and composition of trains operating in Finland
 links:
   - ["Finnish Transport Infrastructure Agency", "https://vayla.fi"]
-  - ["Traffic Management Finland", "https://tmfg.fi"]
+  - ["Fintraffic", "https://fintraffic.fi"]
   - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
 ---
 
-The purpose of this service is to share data of trains operating in Finland. The service is operated by Traffic Management Finland. The data is sourced from the following applications used in traffic controlling and capacity management: 
+The purpose of this service is to share data of trains operating in Finland. The service is operated by Fintraffic. The data is sourced from the following applications used in traffic controlling and capacity management: 
 
 ![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{ site.baseurl }}{{ "/img/rata/reaali.png" }}) ![LOKI]({{ site.baseurl }}{{ "/img/rata/loki.png" }})
 

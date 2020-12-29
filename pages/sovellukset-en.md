@@ -5,5 +5,5 @@ searchable: true
 lang: en
 ref: applications
 title: Applications
-intro: Applications using open data provided by the Traffic Management Finland.
+intro: Applications using open data provided by the Fintraffic.
 ---

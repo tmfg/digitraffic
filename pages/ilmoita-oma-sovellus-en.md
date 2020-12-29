@@ -11,7 +11,7 @@ links:
   - ["Terms of service", "/en/terms-of-service/"]
 ---
 
-You can sign up your application with following information via email to digitraffic(a)tmfg.fi or sending pull request to [GitHub](https://github.com/finnishtransportagency/digitraffic).
+You can sign up your application with following information via email to digitraffic(a)fintraffic.fi or sending pull request to [GitHub](https://github.com/finnishtransportagency/digitraffic).
 
 ## Required information
 * Application name

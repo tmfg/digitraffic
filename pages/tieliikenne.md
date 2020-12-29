@@ -22,7 +22,7 @@ links:
 
 ## Yleistä tietoa
 
-Tieliikenteen tiedot syntyvät Traffic Management Finlandin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
+Tieliikenteen tiedot syntyvät Fintrafficin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
 Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea. [LAM-dokumentaatioon](lam) on kerätty LAM-dataan liittyviä selitteitä.

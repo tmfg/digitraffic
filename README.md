@@ -33,8 +33,8 @@ links:
     - /sisäisen-sivun-polku
   - - Linkin teksti
     - http://www.ulkoisen-linkin-osoite.fi
-  - - Traffic Management Finland
-    - https://tmfg.fi/
+  - - Fintraffic
+    - https://fintraffic.fi/
   - - http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
 ```
 
@@ -43,8 +43,8 @@ Yksi linkki sisältää sivupalkissa näkyvän tekstin ja linkin osoitteen. Osoi
 Linkin teksti ja osoite ovat listassa peräkkäin. Tekstin edessä on kaksi väliviivaa `- -` ja osoitteen perässä vain yksi `-`.
 
 ```
-- - Traffic Management Finland
-  - https://tmfg.fi/
+- - Fintraffic
+  - https://fintraffic.fi/
 ```
 
 Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyttää itse osoite tekstinä, lisätään vain yksi rivi jossa on edessä kaksi väliviivaa `- -`.
@@ -212,7 +212,7 @@ or the script: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` 
 
 ## In addition
 
-Additionally this repository contains a [Wiki](https://github.com/tmfg/digitraffic/wiki) for [Traffic Management Finland](https://tmfg.fi)'s road digitraffic service. 
+Additionally this repository contains a [Wiki](https://github.com/tmfg/digitraffic/wiki) for [Fintraffic](https://fintraffic.fi)'s road digitraffic service. 
 
 The wiki source can be cloned with:
  ````bash

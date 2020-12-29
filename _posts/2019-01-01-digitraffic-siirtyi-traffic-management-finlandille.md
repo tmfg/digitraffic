@@ -1,5 +1,5 @@
 ---
-title: 'Digitraffic siirtyi Traffic Management Finlandille'
+title: 'Digitraffic siirtyi Fintrafficille'
 categories: Tiedotteet
 image: 
 lang: fi
@@ -14,6 +14,6 @@ tags:
   - Ylläpito
 ---
 
-Digitraffic-palvelu siirtyy 1.1.2019 Traffic Management Finland Oy:n vastuulle.
+Digitraffic-palvelu siirtyy 1.1.2019 Fintraffic Oy:n vastuulle.
 
 Rajapinnat ja niiden käyttöehdot sekä palvelun tukikanavat säilyvät ennallaan.

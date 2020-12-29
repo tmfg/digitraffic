@@ -84,4 +84,4 @@ Alla Infra-API -opastintyypit jotka luokitellaan RUMA:ssa rajaaviksi, loput opas
 pa, pa2, pav, ps, ps2, ps2v, psv, ra, rp, su, rd, y4, ye, ys, yse, ysj, ysje, ysjv, ysv, ysve, yv
 ```
 
-[RUMA-järjestelmän sivusto](https://tmfg.fi/fi/finrail/ruma)
+[RUMA-järjestelmän sivusto](https://fintraffic.fi/fi/finrail/ruma)

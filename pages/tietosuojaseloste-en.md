@@ -11,9 +11,9 @@ title: Privacy policy
 ### Data Controller
 
 <p>
-Traffic Management Finland<br />
+Fintraffic<br />
 Palkkatilanportti 1, 00240 Helsinki<br />
-digitraffic@tmfg.fi
+digitraffic@fintraffic.fi
 </p>
 
 
@@ -22,14 +22,14 @@ digitraffic@tmfg.fi
 <p>
 Mika Ahvenainen<br />
 Palkkatilanportti 1, 00240 Helsinki<br />
-digitraffic@tmfg.fi
+digitraffic@fintraffic.fi
 </p>
 
 ### Name and Contact Details of the Data Protection Officer
 
 <p>
   Tomi Lapinlampi <br />
-  digitraffic@tmfg.fi <br />
+  digitraffic@fintraffic.fi <br />
 </p>
 
 ### Filing system name

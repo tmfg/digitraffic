@@ -12,7 +12,7 @@ title: Marine traffic
 intro: Open data from Finnish waterways
 links:
   - ["Finnish Transport Infrastructure Agency", "https://vayla.fi"]
-  - ["Traffic Management Finland", "https://tmfg.fi"]
+  - ["Fintraffic", "https://fintraffic.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/swagger/"]
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
 ---

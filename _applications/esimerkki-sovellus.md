@@ -15,8 +15,8 @@ environments:
   - iOS
 language: Suomi (FIN)
 price: 1,99€
-download-url: https://tmfg.fi/
-feedback-url: https://tmfg.fi/fi/tmfg-0
+download-url: https://fintraffic.fi/
+feedback-url: https://fintraffic.fi/fi/fintraffic-0
 ---
 
 Tähän tulee tietoa sovelluksesta. Ensimmäinen kappale on muotoiltu isommalla fontilla.
