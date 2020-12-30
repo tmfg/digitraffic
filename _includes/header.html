@@ -1,4 +1,25 @@
 {% include fintraffic-header.html %}
+
+{% assign news = site.t.news[page.lang] | downcase %}
+{% assign api-status = site.t.api-status.url[page.lang] %}
+
+{% assign road-traffic = site.t.road-traffic.url[page.lang] %}
+{% assign railway-traffic = site.t.railway-traffic.url[page.lang] %}
+{% assign marine-traffic = site.t.marine-traffic.url[page.lang] %}
+{% assign experimental = site.t.experimental.url[page.lang] %}
+{% assign nap = site.t.nap.url[page.lang] %}
+
+{% assign service-overview = site.t.service-overview.url[page.lang] %}
+{% assign development-roadmap = site.t.development-roadmap.url[page.lang] %}
+{% assign applications = site.t.applications.url[page.lang] %}
+{% assign sign-up-application = site.t.sign-up-application.url[page.lang] %}
+{% assign terms-of-service = site.t.terms-of-service.url[page.lang] %}
+{% assign privacy-policy = site.t.privacy-policy.url[page.lang] %}
+
+{% assign support-channels = site.t.support-channels.url[page.lang] %}
+{% assign support-channels-information = site.t.support-channels-information.url[page.lang] %}
+{% assign contact = site.t.contact.url[page.lang] %}
+
 <header class="header {{ include.header-classes }}">
   <div class="header__content-wrapper">
     <div class="row header__content">
@@ -8,40 +29,85 @@
         </a>
       </span>
       <div class="col-xs header__main">
-        <div class="row">
+        <div class="row middle-md">
           <span class="header__top-link">
-            <div class="dropdown">
+            <div class="
+              dropdown 
+              {%
+               if page.url contains news 
+               or page.url contains api-status 
+              %}
+                active
+              {% endif %}
+            ">
               <button id="dropdown__button--updates">
                 <span>
                   {{ site.t.updates[page.lang] }}
                 </span>
+                <span class="dropdown__chevron-down">{% include chevron-down.svg %}</span>
+                <span class="dropdown__chevron-up">{% include chevron-up.svg %}</span>
               </button>
             </div>
           </span>
           <span class="header__top-link">
-            <div class="dropdown">
+            <div class="
+              dropdown 
+              {% if page.url contains road-traffic
+                 or page.url contains railway-traffic
+                 or page.url contains marine-traffic
+                 or page.url contains experimental
+                 or page.url contains nap 
+              %}
+                active
+              {% endif %}
+            ">
               <button id="dropdown__button--sources">
                 <span>
                   {{ site.t.data-sources[page.lang] }}
                 </span>
+                <span class="dropdown__chevron-down">{% include chevron-down.svg %}</span>
+                <span class="dropdown__chevron-up">{% include chevron-up.svg %}</span>
               </button>
             </div>
           </span>
           <span class="header__top-link">
-            <div class="dropdown">
+            <div class="
+              dropdown
+              {% if page.url contains service-overview
+                or page.url contains development-roadmap
+                or page.url contains applications
+                or page.url contains sign-up-application
+                or page.url contains terms-of-service
+                or page.url contains privacy-policy
+             %}
+               active
+             {% endif %}
+            ">
               <button id="dropdown__button--about">
                 <span>
                   {{ site.t.about[page.lang] }}
                 </span>
+                <span class="dropdown__chevron-down">{% include chevron-down.svg %}</span>
+                <span class="dropdown__chevron-up">{% include chevron-up.svg %}</span>
               </button>
             </div>
           </span>
           <span class="header__top-link">
-            <div class="dropdown">
+            <div class="
+              dropdown 
+              {% if page.url contains support-channels
+                 or page.url contains support-channels-information
+                 or page.url contains contact
+              %}
+                active
+              {% endif %}
+            ">
               <button id="dropdown__button--support">
                 <span>
                   {{ site.t.support[page.lang] }}
                 </span>
+                <span class="dropdown__chevron-down">{% include chevron-down.svg %}</span>
+                <span class="dropdown__chevron-up">{% include chevron-up.svg %}</span>
               </button>
             </div>
           </span>
@@ -59,12 +125,12 @@
 
 <div id="updates-dropdown-template" style="display: none;">
   <ul class="">
-    <li class="">
+    <li class="{% if page.url contains api-status %}active{% endif %}">
       <a class="" href="/{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.api-status[page.lang] }}
       </a>
     </li>
-    <li class="">
+    <li class="{% if page.url contains news %}active{% endif %}">
       <a class=""
         href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tiedotteet[page.lang] | downcase }}">
         {{ site.t.news[page.lang] }}
@@ -91,27 +157,27 @@
 
 <div id="sources-dropdown-template" style="display: none;">
   <ul class="">
-    <li class="">
+    <li class="{% if page.url contains road-traffic %}active{% endif %}">
       <a class="" href="/{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.road-traffic[page.lang] }}
       </a>
     </li>
-    <li class="">
+    <li class="{% if page.url contains railway-traffic %}active{% endif %}">
       <a class="" href="/{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.railway-traffic[page.lang] }}
       </a>
     </li>
-    <li class="">
+    <li class="{% if page.url contains marine-traffic %}active{% endif %}">
       <a class="" href="/{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.marine-traffic[page.lang] }}
       </a>
     </li>
-    <li class="">
+    <li class="{% if page.url contains experimental %}active{% endif %}">
       <a class="" href="/{{ site.t.experimental.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.experimental[page.lang] }}
       </a>
     </li>
-    <li class="">
+    <li class="{% if page.url contains nap %}active{% endif %}">
       <a class="" href="/{{ site.t.nap.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.nap[page.lang] }}
       </a>
@@ -121,33 +187,33 @@
 
 <div id="about-dropdown-template" style="display: none;">
   <ul class="">
-    <li class="">
-      <a class="" href="/{{ site.t.service-overview.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains service-overview %}active{% endif %}">
+      <a class="" href="/{{ service-overview | prepend:site.baseurl }}">
         {{ site.t.service-overview[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.development-roadmap.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains development-roadmap %}active{% endif %}">
+      <a class="" href="/{{ development-roadmap | prepend:site.baseurl }}">
         {{ site.t.development-roadmap[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.applications.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains applications %}active{% endif %}">
+      <a class="" href="/{{ applications | prepend:site.baseurl }}">
         {{ site.t.applications[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.sign-up-application.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains sign-up-application %}active{% endif %}">
+      <a class="" href="/{{ sign-up-application | prepend:site.baseurl }}">
         {{ site.t.sign-up-application[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.terms-of-service.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains terms-of-service %}active{% endif %}">
+      <a class="" href="/{{ terms-of-service | prepend:site.baseurl }}">
         {{ site.t.terms-of-service[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.privacy-policy.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains privacy-policy %}active{% endif %}">
+      <a class="" href="/{{ privacy-policy | prepend:site.baseurl }}">
         {{ site.t.privacy-policy[page.lang] }}
       </a>
     </li>
@@ -155,18 +221,18 @@
 </div>
 <div id="support-dropdown-template" style="display: none;">
   <ul class="">
-    <li class="">
-      <a class="" href="/{{ site.t.support-channels.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains support-channels %}active{% endif %}">
+      <a class="" href="/{{ support-channels | prepend:site.baseurl }}">
         {{ site.t.support-channels[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.support-channels-information.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains support-channels-information %}active{% endif %}">
+      <a class="" href="/{{ support-channels-information | prepend:site.baseurl }}">
         {{ site.t.support-channels-information[page.lang] }}
       </a>
     </li>
-    <li class="">
-      <a class="" href="/{{ site.t.contact.url[page.lang] | prepend:site.baseurl }}">
+    <li class="{% if page.url contains contact %}active{% endif %}">
+      <a class="" href="/{{ contact | prepend:site.baseurl }}">
         {{ site.t.contact[page.lang] }}
       </a>
     </li>
@@ -179,31 +245,39 @@
     arrow: false,
     content: document.getElementById('updates-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 19],
+    offset: [0, 0],
+    placement: 'bottom-start',
     theme: 'digitraffic',
+    trigger: 'click',
   });
   tippy('#dropdown__button--sources', {
     allowHTML: true,
     arrow: false,
     content: document.getElementById('sources-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 19],
+    offset: [0, 0],
+    placement: 'bottom-start',
     theme: 'digitraffic',
+    trigger: 'click',
   });
   tippy('#dropdown__button--about', {
     allowHTML: true,
     arrow: false,
     content: document.getElementById('about-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 19],
+    offset: [0, 0],
+    placement: 'bottom-start',
     theme: 'digitraffic',
+    trigger: 'click',
   });
   tippy('#dropdown__button--support', {
     allowHTML: true,
     arrow: false,
     content: document.getElementById('support-dropdown-template').innerHTML,
     interactive: true,
-    offset: [0, 19],
+    offset: [0, 0],
+    placement: 'bottom-start',
     theme: 'digitraffic',
+    trigger: 'click',
   });
 </script>

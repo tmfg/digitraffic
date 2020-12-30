@@ -20,42 +20,10 @@
     }
   }
 
-  &__chevron-down {
-    height: 16px;
-    display: inline-block;
-
-    [aria-expanded="true"] & {
-      display: none;
-    }
-
-    > svg {
-      height: 16px;
-      width: 16px;
-    }
-  }
-
-  &__chevron-up {
-    height: 16px;
-    display: none;
-
-    [aria-expanded="true"] & {
-      display: inline-block;
-    }
-
-    > svg {
-      height: 16px;
-      width: 16px;
-    }
-  }
-
-  &__chevron-up,
-  &__chevron-down {
-    margin-left: $margin-xxxs;
-  }
-
   // borders https://github.com/atomiks/tippyjs/blob/master/src/scss/border.scss
   .tippy-box {
-    border: 1px $border solid;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 
     &[data-placement^="top"] > .tippy-arrow {
       &::after {
@@ -136,16 +104,6 @@
       position: absolute;
       border-color: transparent;
       border-style: solid;
-    }
-  }
-
-  .tippy-content {
-    ul {
-      > li {
-        &:not(:first-child) {
-          border-top: 1px $border solid;
-        }
-      }
     }
   }
 }

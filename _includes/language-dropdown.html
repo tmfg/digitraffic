@@ -9,8 +9,8 @@
         In English
       {% endif %}
     </span>
-    <span class="language-dropdown__chevron-down">{% include chevron-down.svg %}</span>
-    <span class="language-dropdown__chevron-up">{% include chevron-up.svg %}</span>
+    <span class="dropdown__chevron-down">{% include chevron-down.svg %}</span>
+    <span class="dropdown__chevron-up">{% include chevron-up.svg %}</span>
   </button>
 </div>
 
@@ -41,6 +41,7 @@
     allowHTML: true,
     content: languageOptionsTemplate.innerHTML,
     interactive: true,
+    placement: 'bottom-end',
     popperOptions: {
       modifiers: [
         {

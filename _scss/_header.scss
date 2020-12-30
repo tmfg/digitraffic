@@ -14,7 +14,8 @@
   transition: $transition-faster;
   transform: translate3d(0, 0, 100px);
   font-family: $base-font-family;
-  height: 56px;
+  font-size: $font-size-17;
+  height: $header-height;
 
   // Prevent scroll stuttering on Chrome
   -webkit-transform: translateZ(100);

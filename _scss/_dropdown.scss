@@ -15,6 +15,16 @@
     }
 
     font-weight: 600;
+
+    .header__top-link & {
+      display: flex;
+      align-items: center;
+      height: $header-height;
+    }
+
+    @at-root .active#{&} {
+      border-bottom: 2px $black solid;
+    }
   }
 
   ul {
@@ -37,7 +47,62 @@
       }
     }
   }
+
   .tippy-content {
     padding: 0;
+
+    ul {
+      > li {
+        &:not(:first-child) {
+          border-top: 1px $border solid;
+        }
+      }
+
+      li.active {
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__chevron-down {
+    height: 16px;
+    display: inline-block;
+
+    [aria-expanded="true"] & {
+      display: none;
+    }
+
+    > svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &__chevron-up {
+    height: 16px;
+    display: none;
+
+    [aria-expanded="true"] & {
+      display: inline-block;
+    }
+
+    > svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &__chevron-up,
+  &__chevron-down {
+    margin-left: $margin-xxxs;
+  }
+
+  .tippy-box {
+    max-width: 400px !important;
+    border: 1px $border solid;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
