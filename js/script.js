@@ -61,9 +61,6 @@ function addEventListeners() {
   let languageElement = document.body.querySelector(".header-menu__item--language");
   let outsideMenu = document.body.querySelector(".content");
 
-  window.addEventListener('resize', updateViewportElements);
-  updateViewportElements();
-
   if (menuElement) {
       menuElement.addEventListener("click", toggleMenu);
   }
@@ -76,11 +73,6 @@ languageElement.addEventListener("click", toggleLanguage);
     if (outsideMenu) {
         outsideMenu.addEventListener("click", closeMenuSearchLanguage);
     }
-}
-
-function updateViewportElements() {
-  const container = document.querySelector('.menu-opened');
-  container.style.height = `calc(${window.innerHeight}px - 150px)`;
 }
 
 // Add .header--scrolled when scrolling page, remove when scrolled to top
@@ -178,7 +170,7 @@ function openMenu() {
   const bodyClasses = document.body.classList;
 
   headerClasses.add("header--menu-opening");
-  bodyClasses.add("u--disable-scroll-mobile");
+  // bodyClasses.add("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.add("header--menu-opened");
     headerClasses.remove("header--menu-opening");
@@ -196,7 +188,7 @@ function closeMenu() {
   headerClasses.add("header--menu-closing");
   headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
   headerClasses.remove("header--menu-opened");
-  bodyClasses.remove("u--disable-scroll-mobile");
+  // bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.remove("header--menu-closing");
     },
@@ -217,7 +209,7 @@ function closeMenuQuick() {
 
   headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--menu-opened");
-  bodyClasses.remove("u--disable-scroll-mobile");
+  // bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerContentWrapperClasses.remove("header__content-wrapper--menu-switching");
     },
@@ -232,7 +224,7 @@ function openSearch() {
   const bodyClasses = document.body.classList;
 
   headerClasses.add("header--search-opening");
-  bodyClasses.add("u--disable-scroll-mobile");
+  // bodyClasses.add("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.add("header--search-opened");
     headerClasses.remove("header--search-opening");
@@ -251,7 +243,7 @@ function closeSearch() {
   headerClasses.add("header--search-closing");
   headerContentWrapperClasses.add("header__content-wrapper--search-closing");
   headerClasses.remove("header--search-opened");
-  bodyClasses.remove("u--disable-scroll-mobile");
+  // bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.remove("header--search-closing");
     },
@@ -272,7 +264,7 @@ function closeSearchQuick() {
 
   headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--search-opened");
-  bodyClasses.remove("u--disable-scroll-mobile");
+  // bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerContentWrapperClasses.remove("header__content-wrapper--menu-switching");
     },
@@ -287,7 +279,7 @@ function openLanguage() {
   const bodyClasses = document.body.classList;
 
   headerClasses.add("header--language-opening");
-  bodyClasses.add("u--disable-scroll-mobile");
+  // bodyClasses.add("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.add("header--language-opened");
     headerClasses.remove("header--language-opening");
@@ -305,7 +297,7 @@ function closeLanguage() {
   headerClasses.add("header--language-closing");
   headerContentWrapperClasses.add("header__content-wrapper--language-closing");
   headerClasses.remove("header--language-opened");
-  bodyClasses.remove("u--disable-scroll-mobile");
+  // bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerClasses.remove("header--language-closing");
     },
@@ -326,7 +318,7 @@ function closeLanguageQuick() {
 
   headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--language-opened");
-  bodyClasses.remove("u--disable-scroll-mobile");
+  // bodyClasses.remove("u--disable-scroll-mobile");
   setTimeout( () => {
     headerContentWrapperClasses.remove("header__content-wrapper--menu-switching");
     },

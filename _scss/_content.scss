@@ -3,10 +3,6 @@
   min-height: calc(100vh - 344px);
   max-width: $content-max-width;
 
-  .header--menu-opened ~ & {
-    display: none;
-  }
-
   /* Elements */
   &__frontpage-section-wrapper {
     width: 100%;
