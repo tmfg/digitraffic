@@ -40,6 +40,7 @@
 
   &__excerpt {
     margin-top: $margin-xssm;
+    overflow-x: scroll;
   }
 
   &__no-posts {

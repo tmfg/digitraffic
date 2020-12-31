@@ -5,8 +5,12 @@
     margin-top: 0;
   }
 
-  a:not(.swagger-method-link) {
-    @extend .link;
+  a {
+    word-break: break-word;
+
+    &:not(.swagger-method-link) {
+      @extend .link;
+    }
   }
 
   blockquote {
@@ -62,7 +66,8 @@
 
   p {
     margin-bottom: $margin-xssm;
-    }
+    word-break: break-word;
+  }
 
   & > p:first-child {
     @extend .intro;
@@ -72,6 +77,9 @@
     padding: 0;
     margin: 0 0 $margin-sm;
     border-collapse: collapse;
+    max-width: 100%;
+    overflow-x: scroll;
+    display: block;
 
     th {
       background-color: $gray-241;
@@ -92,6 +100,10 @@
 
     ul {
       margin-bottom: 0;
+    }
+
+    li {
+      word-break: break-word;
     }
   }
 
