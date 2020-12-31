@@ -149,6 +149,7 @@
 
   &__incident-list {
     list-style-type: none;
+    overflow-x: scroll;
   }
 
   &__incident-list-item {
