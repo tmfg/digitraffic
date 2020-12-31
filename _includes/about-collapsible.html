@@ -1,0 +1,57 @@
+<div x-data="collapsible()" class="collapsible">
+  <div 
+    @click="toggle"
+    class="
+      collapsible__header
+      {%
+        if page.url contains service-overview
+        or page.url contains development-roadmap
+        or page.url contains applications
+        or page.url contains sign-up-application
+        or page.url contains terms-of-service
+        or page.url contains privacy-policy
+      %}
+        active
+      {% endif %}
+    ">
+    <span class="collapsible__title">
+      {{ site.t.about[page.lang] }}
+    </span>
+    <button class="collapsible__toggle">
+      <div x-show="isOpen() === false" class="collapsible__icon">{% include chevron-down.svg %}</div>
+      <div x-show="isOpen()" class="collapsible__icon">{% include chevron-up.svg %}</div>
+    </button>
+  </div>
+  <ul x-show="isOpen()" class="collapsible__container">
+    <li class="collapsible__item {% if page.url contains service-overview %}active{% endif %}">
+      <a class="" href="/{{ service-overview | prepend:site.baseurl }}">
+        {{ site.t.service-overview[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains development-roadmap %}active{% endif %}">
+      <a class="" href="/{{ development-roadmap | prepend:site.baseurl }}">
+        {{ site.t.development-roadmap[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains applications %}active{% endif %}">
+      <a class="" href="/{{ applications | prepend:site.baseurl }}">
+        {{ site.t.applications[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains sign-up-application %}active{% endif %}">
+      <a class="" href="/{{ sign-up-application | prepend:site.baseurl }}">
+        {{ site.t.sign-up-application[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains terms-of-service %}active{% endif %}">
+      <a class="" href="/{{ terms-of-service | prepend:site.baseurl }}">
+        {{ site.t.terms-of-service[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains privacy-policy %}active{% endif %}">
+      <a class="" href="/{{ privacy-policy | prepend:site.baseurl }}">
+        {{ site.t.privacy-policy[page.lang] }}
+      </a>
+    </li>
+  </ul>
+</div>

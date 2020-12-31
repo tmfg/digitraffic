@@ -67,7 +67,6 @@
   }
 
   &__chevron-down {
-    height: 16px;
     display: inline-block;
 
     [aria-expanded="true"] & {
@@ -75,13 +74,10 @@
     }
 
     > svg {
-      height: 16px;
-      width: 16px;
     }
   }
 
   &__chevron-up {
-    height: 16px;
     display: none;
 
     [aria-expanded="true"] & {
@@ -89,8 +85,6 @@
     }
 
     > svg {
-      height: 16px;
-      width: 16px;
     }
   }
 

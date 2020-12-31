@@ -1,0 +1,52 @@
+<div x-data="collapsible()" class="collapsible">
+  <div @click="toggle" class="
+      collapsible__header
+      {%
+        if page.url contains news
+        or page.url contains api-status
+      %}
+        active
+      {% endif %}
+    ">
+    <span class="collapsible__title">
+      {{ site.t.updates[page.lang] }}
+    </span>
+    <button class="collapsible__toggle">
+      <div x-show="isOpen() === false" class="collapsible__icon">{% include chevron-down.svg %}</div>
+      <div x-show="isOpen()" class="collapsible__icon">{% include chevron-up.svg %}</div>
+    </button>
+  </div>
+  <ul x-show="isOpen()" class="collapsible__container">
+    <li class="
+        collapsible__item
+        {% if page.url contains api-status %}active{% endif %}
+    ">
+      <a href="/{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.api-status[page.lang] }}
+      </a>
+    </li>
+    <li class="
+        collapsible__item
+        {% if page.url contains news %}active{% endif %}
+    ">
+      <a href="{{ " /" | prepend:site.baseurl }}{% if page.lang !="fi" %}{{ page.lang }}/{% endif %}{{
+        site.t.tiedotteet[page.lang] | downcase }}">
+        {{ site.t.news[page.lang] }}
+      </a>
+    </li>
+    {% if has_articles == true %}
+    <li class="collapsible__item">
+      <a href="{{ " /" | prepend:site.baseurl }}{% if page.lang !="fi" %}{{ page.lang }}/{% endif %}{{
+        site.t.artikkelit[page.lang] | downcase }}">
+        {{ site.t.artikkelit[page.lang] }}
+      </a>
+    </li>{% endif %}
+    {% if has_events == true %}
+    <li class="collapsible__item">
+      <a href="{{ " /" | prepend:site.baseurl }}{% if page.lang !="fi" %}{{ page.lang }}/{% endif %}{{
+        site.t.tapahtumat[page.lang] | downcase }}">
+        {{ site.t.tapahtumat[page.lang] }}
+      </a>
+    </li>{% endif %}
+  </ul>
+</div>

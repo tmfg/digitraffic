@@ -70,7 +70,7 @@
 
 /* Show / hide menu */
 .header--menu-opening .menu-opened {
-  display: flex;
+  display: block;
   opacity: 0;
   transform: translateY(-20px);
   transition: $transition-fast;
@@ -81,7 +81,7 @@
 }
 
 .header--menu-opened .menu-opened {
-  display: flex;
+  display: block;
   opacity: 1;
   transform: translateY(0);
   transition: $transition-fast;
@@ -92,7 +92,7 @@
 }
 
 .header--menu-closing .menu-opened {
-  display: flex;
+  display: block;
   opacity: 0;
   transform: translateY(0);
   transition: $transition-faster;

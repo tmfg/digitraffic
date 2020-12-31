@@ -1,0 +1,49 @@
+<div x-data="collapsible()" class="collapsible">
+  <div @click="toggle" class="
+      collapsible__header
+      {%
+        if page.url contains road-traffic
+        or page.url contains railway-traffic
+        or page.url contains marine-traffic
+        or page.url contains experimental
+        or page.url contains nap 
+      %}
+        active
+      {% endif %}
+    ">
+    <span class="collapsible__title">
+      {{ site.t.data-sources[page.lang] }}
+    </span>
+    <button class="collapsible__toggle">
+      <div x-show="isOpen() === false" class="collapsible__icon">{% include chevron-down.svg %}</div>
+      <div x-show="isOpen()" class="collapsible__icon">{% include chevron-up.svg %}</div>
+    </button>
+  </div>
+  <ul x-show="isOpen()" class="collapsible__container">
+    <li class="collapsible__item {% if page.url contains road-traffic %}active{% endif %}">
+      <a class="" href="/{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.road-traffic[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains railway-traffic %}active{% endif %}">
+      <a class="" href="/{{ site.t.railway-traffic.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.railway-traffic[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains marine-traffic %}active{% endif %}">
+      <a class="" href="/{{ site.t.marine-traffic.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.marine-traffic[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains experimental %}active{% endif %}">
+      <a class="" href="/{{ site.t.experimental.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.experimental[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains nap %}active{% endif %}">
+      <a class="" href="/{{ site.t.nap.url[page.lang] | prepend:site.baseurl }}">
+        {{ site.t.nap[page.lang] }}
+      </a>
+    </li>
+  </ul>
+</div>

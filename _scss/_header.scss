@@ -138,10 +138,6 @@
     align-items: center;
     align-content: center;
 
-    .header--menu-opened & {
-      border-bottom: 1px $gray-211 solid;
-    }
-
     .title {
       @include logo-text;
       padding-left: 0;

@@ -1,24 +1,5 @@
 {% include fintraffic-header.html %}
-
-{% assign news = site.t.news[page.lang] | downcase %}
-{% assign api-status = site.t.api-status.url[page.lang] %}
-
-{% assign road-traffic = site.t.road-traffic.url[page.lang] %}
-{% assign railway-traffic = site.t.railway-traffic.url[page.lang] %}
-{% assign marine-traffic = site.t.marine-traffic.url[page.lang] %}
-{% assign experimental = site.t.experimental.url[page.lang] %}
-{% assign nap = site.t.nap.url[page.lang] %}
-
-{% assign service-overview = site.t.service-overview.url[page.lang] %}
-{% assign development-roadmap = site.t.development-roadmap.url[page.lang] %}
-{% assign applications = site.t.applications.url[page.lang] %}
-{% assign sign-up-application = site.t.sign-up-application.url[page.lang] %}
-{% assign terms-of-service = site.t.terms-of-service.url[page.lang] %}
-{% assign privacy-policy = site.t.privacy-policy.url[page.lang] %}
-
-{% assign support-channels = site.t.support-channels.url[page.lang] %}
-{% assign support-channels-information = site.t.support-channels-information.url[page.lang] %}
-{% assign contact = site.t.contact.url[page.lang] %}
+{% include active-link-controller.html %}
 
 <header class="header {{ include.header-classes }}">
   <div class="header__content-wrapper">

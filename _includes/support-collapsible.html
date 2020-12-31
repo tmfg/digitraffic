@@ -1,0 +1,37 @@
+<div x-data="collapsible()" class="collapsible">
+  <div @click="toggle" class="
+      collapsible__header
+      {% 
+        if page.url contains support-channels
+        or page.url contains support-channels-information
+        or page.url contains contact
+      %}
+        active
+      {% endif %}
+    ">
+    <span class="collapsible__title">
+      {{ site.t.support[page.lang] }}
+    </span>
+    <button class="collapsible__toggle">
+      <div x-show="isOpen() === false" class="collapsible__icon">{% include chevron-down.svg %}</div>
+      <div x-show="isOpen()" class="collapsible__icon">{% include chevron-up.svg %}</div>
+    </button>
+  </div>
+  <ul x-show="isOpen()" class="collapsible__container">
+    <li class="collapsible__item {% if page.url contains support-channels %}active{% endif %}">
+      <a class="" href="/{{ support-channels | prepend:site.baseurl }}">
+        {{ site.t.support-channels[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains support-channels-information %}active{% endif %}">
+      <a class="" href="/{{ support-channels-information | prepend:site.baseurl }}">
+        {{ site.t.support-channels-information[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains contact %}active{% endif %}">
+      <a class="" href="/{{ contact | prepend:site.baseurl }}">
+        {{ site.t.contact[page.lang] }}
+      </a>
+    </li>
+  </ul>
+</div>
