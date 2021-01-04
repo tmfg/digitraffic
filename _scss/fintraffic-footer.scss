@@ -1,10 +1,9 @@
 .fintraffic-footer {
   color: $white;
   background-color: $black;
-  padding-left: $margin-20;
-  padding-right: $margin-20;
+  padding-left: $margin-xs;
+  padding-right: $margin-xs;
   font-family: $base-font-family;
-  line-height: 2;
 
   a {
     color: inherit;
@@ -15,9 +14,9 @@
   }
 
   &__top-bar {
-    height: 62px;
+    height: 58px;
     border-bottom: 1px rgba(255, 255, 255, 0.25) solid;
-    margin-bottom: $margin-20;
+    margin-bottom: $margin-xs;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,11 +29,12 @@
   }
 
   &__links {
-    margin-bottom: $margin-28;
+    margin-bottom: $margin-xssm;
 
     @media screen and (min-width: $min-width-sm) {
       & {
-        margin-bottom: 0;
+        margin-bottom: $margin-md + $margin-xxs;
+        padding-bottom: $margin-xs;
         display: grid;
         grid-template-columns: min-content min-content;
         gap: 0 $margin-md;
@@ -43,33 +43,67 @@
   }
 
   &__fintraffic-links {
-    margin-bottom: $margin-28;
+    margin-bottom: $margin-xs;
+
+    li {
+      // first three list items
+      &:nth-child(-n + 3) {
+        font-weight: 600;
+      }
+      &:nth-child(3) {
+        margin-bottom: $margin-xs;
+
+        @media screen and (min-width: $min-width-sm) {
+          & {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
 
     @media screen and (min-width: $min-width-sm) {
+      & {
+        margin-bottom: 0;
+      }
+
       & ul {
         list-style-type: none;
         display: grid;
         grid-auto-flow: column;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(3, max-content);
         gap: 0 $margin-md;
       }
     }
   }
 
   &__icons {
-    padding-bottom: $margin-28;
+    display: flex;
+    padding-bottom: $margin-xs;
 
-    svg:not(:first-child) {
-      margin-left: $margin-20;
+    @media screen and (min-width: $min-width-sm) {
+      margin-left: $margin-md;
+    }
+
+    a {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: $margin-xs;
+      }
+
+      > svg {
+        display: block;
+      }
     }
   }
 
   @media screen and (min-width: $min-width-sm) {
     & {
-      height: 238px;
+      // height: 238px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      padding-left: $margin-sm;
+      padding-right: $margin-sm;
     }
   }
 }
