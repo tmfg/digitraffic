@@ -1,7 +1,7 @@
 # digitraffic
 
 ## Sisältösivujen päivitys
-Sisältösivut löytyvät `pages`-kansiosta. Muokattavissa olevat sivut ovat `.md`-päätteisiä. Sivujen sisältöä voi muokata [prose.io](http://prose.io/)-palvelulla. Navigoi palvelussa pages-kansioon ja haluttuun sisältösivuun. Avaa sisältösivu prosessa. Voit muokata sivun sisältöä avautuvassa tekstieditorissa.
+Sisältösivut löytyvät `pages`-kansiosta. Muokattavissa olevat sivut ovat `.md`-päätteisiä. Sivujen sisältöä voi muokata [prose.io](https://prose.io/) -palvelulla. Navigoi palvelussa pages-kansioon ja haluttuun sisältösivuun. Avaa sisältösivu prosessa. Voit muokata sivun sisältöä avautuvassa tekstieditorissa.
 
 Voit tyylitellä tekstiä, otsikoita, listoja ja lainauksia maalaamalla tyyliteltävän tekstin ja valitsemalla tyylin tekstieditorin ylälaidassa olevan tyylin painikkeesta. Editori kirjoittaa valitun tekstin *Markdown*-merkintätavalla suoraan tekstiin. Voit käyttää [Markdownia](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) myös kirjoittamalla merkinnät suoraan tekstin sekaan.
 
@@ -50,7 +50,7 @@ Linkin teksti ja osoite ovat listassa peräkkäin. Tekstin edessä on kaksi väl
 Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyttää itse osoite tekstinä, lisätään vain yksi rivi jossa on edessä kaksi väliviivaa `- -`.
 
 ```
-- - http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
+- - https://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
 ```
 
 **HUOM!** Älä muokkaa muita Meta Datan tietoja!
@@ -59,7 +59,7 @@ Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyt
 ## Tiedotteiden, artikkelien ja tapahtumien julkaisu
 
 ### Uuden tiedotteen tai artikkelin julkaisu
-Tiedotteet, artikkelit ja tapahtumat sijaitsevat `_posts`-kansiossa ja ovat `.md`-päätteisiä tiedostoja. Tiedotteita voit julkaista ja muokata [prose.io](http://prose.io/)-palvelulla. Navigoi palvelussa _posts-kansioon ja valitse `NEW FILE` ruudun ylälaidasta hakukentän oikealta puolelta.
+Tiedotteet, artikkelit ja tapahtumat sijaitsevat `_posts`-kansiossa ja ovat `.md`-päätteisiä tiedostoja. Tiedotteita voit julkaista ja muokata [prose.io](https://prose.io/)-palvelulla. Navigoi palvelussa _posts-kansioon ja valitse `NEW FILE` ruudun ylälaidasta hakukentän oikealta puolelta.
 
 #### Julkaisun tiedoston nimeäminen ja päivämäärän asettaminen
 Kirjoita julkaisulle otsikko klikkaamalla sivun ylälaidassa olevaa kenttää, jossa on placeholder-tekstinä luontipäivämäärää vastaava `_posts/2017-09-22-your-filename.md` tyylinen teksti. Voit kirjoittaa tämän tekstin tilalle halutun tiedostonimen, jonka alussa on julkaisun päivämäärä. Esimerkiksi, jos julkaisun päivämäärä on 26.9.2017 ja otiskoksi tulee "Vanhat rajapinnat suljetaan", voi tiedostonimeksi antaa `_posts/2017-09-26-vanhat-rajapinnat-suljetaan.md`.

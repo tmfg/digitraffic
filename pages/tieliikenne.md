@@ -178,23 +178,10 @@ V1
 
 Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittäviä tieliikenteen sujuvuuteen vaikuttavia häiriöitä. Tällaisia ovat esimerkiksi liikenneonnettomuudesta johtuvat poikkeusjärjestelyt.
 
-Häiriötiedotteet käyttävät TMC-paikannusmerkistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannusmerkistöstä löytyy [täältä](paikannusnimisto).
+Häiriötiedotteet käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannuspisteaineistosta löytyy [täältä](paikannusnimisto).
 
 Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
-Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
-on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen 
-Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen
-poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa
-käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä
-tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
-
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
+Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykkeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 ### Painorajoitteet
 
@@ -210,23 +197,10 @@ V1
 
 [```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}){:target="_blank"}
 
-Painorajoitteet käyttävät TMC-paikannusmerkistöä painorajoitteiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannusmerkistöstä löytyy [täältä](paikannusnimisto).
+Painorajoitteet käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannuspisteaineistosta löytyy [täältä](paikannusnimisto).
 
 Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
-Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
-on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen 
-Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen
-poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa
-käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä
-tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
-
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
+Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykkeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaakäyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millätahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
 ### Tietyöt
 
@@ -236,29 +210,20 @@ V2
 
 V1
 
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](http://tie.digitraffic.fi/api/v1/data/roadworks-datex2){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2){:target="_blank"}
 
 [```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
 
 [```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}){:target="_blank"}
 
-Tietyöt käyttävät TMC-paikannusmerkistöä tietöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannusmerkistöstä löytyy [täältä](paikannusnimisto).
+Tietyöt käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannuspisteaineistosta löytyy [täältä](paikannusnimisto).
 
 Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
-Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö 
-on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen 
-Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen
-poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa
-käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä
-tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
+Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
-Metadatat:
+### TMC/ALERT-C paikannuspisteistö
 
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
+Häiriötiedotteiden, painorajoitusten ja tietöiden maantieteellisen sijainnin ilmoittamiseen käytetään TMC/ALERT-C -paikannuspisteistöä. Lisätietoa [täällä](paikannusnimisto).
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
@@ -416,8 +381,9 @@ Topicit ovat seuraavanlaista muotoa.
 }
 ```
 
-#### Maanteiden kunnossapitotiedot
+#### Maanteiden kunnossapitotiedon viimeisin sijainti
 
+- ```maintenance/tracking/#```
 - ```maintenance/tracking/<trackingId>```
 - ```maintenance/tracking/status```
 

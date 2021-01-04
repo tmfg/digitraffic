@@ -5,7 +5,7 @@ intro: Tämä on esimerkkisivu sovelluksesta.
 logo: 
 developer:
   - Kaisa Kehittäjä
-  - http://www.digitraffic.fi
+  - https://www.digitraffic.fi
 traffictypes: 
   - Tieliikenne
   - Meriliikenne
@@ -15,7 +15,8 @@ environments:
   - iOS
 language: Suomi (FIN)
 price: 1,99€
-download-url: https://fintraffic.fi/
+download-urls: 
+  - https://fintraffic.fi/
 feedback-url: https://fintraffic.fi/fi/fintraffic-0
 ---
 

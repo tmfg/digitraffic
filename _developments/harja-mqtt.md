@@ -5,7 +5,7 @@ ref: harja-mqtt
 issue-number: DPO-1079
 traffictypes:
   - Tieliikenne
-status: suunnitteilla
+status: valmis
 date: 2020-04-16
 ---
 

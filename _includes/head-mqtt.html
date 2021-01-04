@@ -1,0 +1,104 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% if page.title and page.title != "" %}{{ page.title }} | {% endif %}Digitraffic - Traffic Management Finland</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto:400,700|Source+Code+Pro|Montserrat:100,200,400,500,600,700,800" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ "/css/style.css" | prepend:site.baseurl }}">
+  {% include favicon.html %}
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" ></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.js"></script>
+  <!-- https://cdnjs.com/libraries/paho-mqtt/1.1.0
+       https://github.com/eclipse/paho.mqtt.javascript -->
+  <script>
+    'use strict';
+    let lines = [];
+    let messagesLastMinuteCount = 0, client;
+    let host = "tie-test.digitraffic.fi";
+    const port = 443;
+    let topic = "tms/#";
+
+    window.setInterval(logMessageCount, 60*1000);
+
+    function connect() {
+      const clientId = "testclient_" + Date.now();
+      console.log("Trying to connect to road mqtt " + host + ":" + port + " Topic: " + topic + " client id: " + clientId);
+
+      client = new Paho.Client(host, port, clientId);
+
+      client.onConnectionLost = function (response) {
+        console.info(Date.now() + ' Connection lost:' + response.errorMessage);
+      };
+      client.onMessageArrived = function(message) {
+        messagesLastMinuteCount++;
+
+        addMessage(JSON.parse(message.payloadString));
+
+        updateList();
+      };
+
+      const connectionProperties = {
+        onSuccess:onConnect,
+        reconnect: true,
+        cleanSession:false,
+        mqttVersion:4,
+        useSSL:true,
+        userName:"digitraffic",
+        password:"digitrafficPassword"
+      };
+
+      client.connect(connectionProperties);
+    }
+
+    function disconnect() {
+      try {
+        if (client && client.isConnected) {
+          client.disconnect();
+        }
+      } catch(err) {
+        console.error(err.message);
+      }
+    }
+
+    function logMessageCount() {
+      console.info(Date.now() + ' ' + messagesLastMinuteCount + ' messages per minute');
+      $("#messagesPerMinute").text(messagesLastMinuteCount);
+      messagesLastMinuteCount = 0;
+    }
+
+    function onConnect() {
+      console.info(Date.now() + ' Connection open. Subscribing to topic ' + topic);
+      client.subscribe(topic);
+    }
+
+    function addMessage(message) {
+      const text = JSON.stringify(message);
+
+      while (lines.length > 100) {
+        lines.shift();
+      }
+
+      lines.push(text);
+    }
+
+    function updateList() {
+      $("#messages").html(lines.join('<br/>'));
+    }
+
+    function updateTopic() {
+      host=$("#domain").val();
+      topic=$("#topic").val();
+
+      messagesLastMinuteCount = 0;
+      $("#messages").html('');
+      $("#messagesPerMinute").text(0);
+
+      disconnect();
+      lines = [];
+      connect();
+    }
+  </script>
+  {% include google-analytics.html %}
+</head>

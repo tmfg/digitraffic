@@ -20,6 +20,15 @@ intro: Ohjeita ohjelmoijille
 
 1.6.2020 alkaen voimassa olevat ohjeet
 
+## HTTPS- vai HTTP-protokolla
+
+Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, ei siis syytä käyttää salaamatonta HTTP-protokollaa. 
+Tällä hetkellä salaamattomat HTTP-pyynnöt kelikamerakuviin ohjataan käyttämään HTTPS:ää ```HTTP/1.1 301 Moved Permanently``` -vastauksella ja 
+```Location``` -otsikkotiedolla, jossa kerrotaa uusi HTTPS-osoite. 
+On mahdollista, että tulevaisuudessa kaikki liikenne ohjataan käyttämään ```HTTPS```-protokollaa. 
+Lisätietoa ```HTTP 301``` -vastauksesta [https://en.wikipedia.org/wiki/HTTP_301](https://en.wikipedia.org/wiki/HTTP_301) -sivulla.
+
+
 ## Pakkaus  
 
 Pakkauksen käyttö on pakollista kaikissa rajapinnoissa lukuunottamatta kelikamerakuvia. 
@@ -37,7 +46,6 @@ curl -H 'Accept-Encoding: gzip'
 ```
 wget --header='Accept-Encoding: gzip'
 ```
-
 
 ## Pyyntöjen rajoittaminen  
 

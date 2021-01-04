@@ -24,12 +24,12 @@ Ennen muutosta ajat ilmoitettiin esimerkiksi muodossa
 `2018-11-06T15:51:00+03:00`
 Uusi formaatti samalle aikaleimalle on:
 `2018-11-06T12:51:00Z`
-Lisätietoja: [2018-11-12-timestamp-change](http://www.digitraffic.fi/tiedotteet/2018/11/12/timestamp-change.html)
+Lisätietoja: [2018-11-12-timestamp-change](https://www.digitraffic.fi/tiedotteet/2018/11/12/timestamp-change.html)
 * Uudessa ympäristössä tietokantamoottori vaihtuu Postgres:iin, joten on mahdollista, että
 joissakin tulosjoukoissa vastausten järjestys hieman muuttuu.
  
 Muilta osin ympäristöjen pitäisi toimia identtisesti.
 
 Lue myös tiedote  Websocket-rajapintojen muutoksista
-[2018-10-12-ws-legacy-marine](http://www.digitraffic.fi/tiedotteet/2018/10/12/ws-legacy-marine.html) 
+[2018-10-12-ws-legacy-marine](https://www.digitraffic.fi/tiedotteet/2018/10/12/ws-legacy-marine.html) 
 sivulla.

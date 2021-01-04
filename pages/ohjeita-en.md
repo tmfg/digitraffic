@@ -19,6 +19,13 @@ intro: Instructions for coding
 
 Instructions in force from 1st of June 2020
 
+## HTTPS- vs HTTP-protocol
+
+All APIs of Digitraffic supports HTTPS-protocol, so there is no reason to use unencrypted HTTP-protocol.
+At the moment unencrypted HTTP-requests to weather camera images are redirected to use HTTPS with ```HTTP/1.1 301 Moved Permanently``` -response code and
+```Location``` -header with the new https-address. In the future it is possible that all traffic will be redirected to use ```HTTPS```-protocol.
+More information of ```HTTP 301``` at [https://en.wikipedia.org/wiki/HTTP_301](https://en.wikipedia.org/wiki/HTTP_301).
+
 ## Compression  
 
 The use of compression is mandatory on all interfaces except for weather camera images.

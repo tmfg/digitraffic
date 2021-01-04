@@ -32,106 +32,95 @@ Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraa
 * Mitä palveluita vaunut tarjoavat?
 * Oliko juna aikataulussa esimerkiksi kaksi kuukautta sitten?
 
-Saatavilla on myös [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/index.html)
+Saatavilla on [GraphQL-rajapinta](https://www.digitraffic.fi/rautatieliikenne/#graphql) sekä [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/index.html) 
 
 Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#avoimen-datan-käyttölupa).
 
 # Sisältö
-1. [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
-2. [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
-3. [Toteutetut ominaisuudet](#toteutetut-ominaisuudet)
-4. [HTTPS](#https)
-5. [Dataa tukevat rajapinnat / työkalut](#dataa-tukevat-rajapinnat--työkalut)
-6. [Junien tiedot (/trains)](#junien-tiedot-trains)
-   1. [Yhden junan tiedot](#yhden-junan-tiedot)
-   2. [Päivän junien tiedot](#päivän-junien-tiedot)
-   3. [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
-   4. [GTFS](#gtfs)
-   5. [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
-   6. [Junan versiohistoria](#junan-versiohistoria)
-7. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
-   1. [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-lukumäärärajoitus)
-   2. [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
-   3. [Reittiperusteinen haku](#reittiperusteinen-haku)
-   4. [Kohta lähtevien tai saapuvien junien seuranta](#kohta-lähtevien-tai-saapuvien-junien-seuranta)
-8. [Junan GPS-sijainnit (/train-locations)](#junan-gps-sijainnit-train-locations)
-   1. [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
-   2. [Yhden junan sijainti](#yhden-junan-sijainti)
-   3. [Vanhat sijainnit zip-paketteina](#vanhat-sijainnit-zip-paketteina)
-   4. [Sijainnit GeoJSON-muodossa](#sijainnit-geojson-muodossa)
-9. [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
-   1. [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
-   2. [Yhden junan seuranta](#yhden-junan-seuranta)
-   3. [Liikennepaikan seuranta](#liikennepaikan-seuranta)
-   4. [Raideosuuden seuranta](#raideosuuden-seuranta)
-10. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
-   1. [Junan kokoonpanohaku](#junan-kokoonpanohaku)
-   2. [Junien kokoonpanohaku](#junien-kokoonpanohaku)
-   3. [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
-   4. [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)
-   5. [Kokoonpanojen versiohistoria](#kokoonpanojen-versiohistoria)
-11. [Kulkutievaraukset (/routesets)](#kulkutievaraukset-routesets)
-   1. [Kaikkien kulkutievarauksien seuranta](#kaikkien-kulkutievarauksien-seuranta)
-   2. [Yhden junan kulkutievaraukset](#yhden-junan-kulkutievaraukset)
-   3. [Liikennepaikan kulkutievaraukset](#liikennepaikan-kulkutievaraukset)
-12. [Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (trafficrestriction-notifications)](#ratatyötiedot-trackwork-notifications-ja-liikenteen-rajoitetiedot-trafficrestriction-notifications)
-   1. [Ratatyöilmoitukset](#ratatyöilmoitukset)
-      1. [Ratatyöilmoitusten haku aikavälillä](#ratatyöilmoitusten-haku-aikavälillä)
-      2. [Ratatyöilmoitusten uusimpien versioiden haku aikavälillä](#ratatyöilmoitusten-uusimpien-versioiden-haku-aikavälillä)
-      3. [Ratatyöilmoitusten kaikkien versioiden palautus](#ratatyöilmoitusten-kaikkien-versioiden-palautus)
-      4. [Ratatyöilmoitusten tietyn version palautus](#ratatyöilmoitusten-tietyn-version-palautus)
-   2. [Liikenteen rajoite-ilmoitukset](#liikenteen-rajoite-ilmoitukset)
-      1. [Liikenteen rajoite-ilmoitusten haku aikavälillä](#liikenteen-rajoite-ilmoitusten-haku-aikavälillä)
-      2. [Liikenteen rajoite-ilmoitusten uusimpien versioiden haku aikavälillä](#liikenteen-rajoite-ilmoitusten-uusimpien-versioiden-haku-aikavälillä)
-      3. [Liikenteen rajoite-ilmoituksen kaikkien versioiden palautus](#liikenteen-rajoite-ilmoituksen-kaikkien-versioiden-palautus)
-      4. [Liikenteen rajoite-ilmoituksen tietyn version palautus](#liikenteen-rajoite-ilmoituksen-tietyn-version-palautus)
-13. [Metatiedot (/metadata)](#metatiedot-metadata)
-   1. [Liikennepaikkatiedot](#liikennepaikkatiedot)
-   2. [Operaattoritiedot](#operaattoritiedot)
-   3. [Syyluokat](#syyluokat)
-   4. [Syykoodit](#syykoodit)
-   5. [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
-   6. [Junalajit](#junalajit)
-   7. [Junatyypit](#junatyypit)
-   8. [Raideosuudet](#raideosuudet)
-   9. [Herätepisteet](#herätepisteet)
-   10. [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)
-14. [GraphQL](#graphql)
-   1. [Rajoituksia](#rajoituksia)
-   2. [Esimerkkejä](#esimerkkejä)
-      1. [Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h kokeile%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)](#kaikki-kulussa-olevat-vrn-junat-ja-niille-viimeisin-sijainti-jossa-nopeus-on-yli-30-kmh-kokeile)
-      2. [Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan kokeile%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)](#kaikki-junat-tietyltä-päivämäärältä-joiden-operaattori-on-vr-ja-lähilinjaliikennetunnus-ei-ole-z-järjestettynä-laskevasti-junanumeron-mukaan-kokeile)
-      3. [Kulussa olevat junat järjestetynä operaattorilla ja junanumerolla kokeile%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)](#kulussa-olevat-junat-järjestetynä-operaattorilla-ja-junanumerolla-kokeile)
-      4. [Junat, jotka kulkevat Ylöjärven kautta kokeile%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)](#junat-jotka-kulkevat-ylöjärven-kautta-kokeile)
-   3. [GraphQL-kysely omassa sovelluksessa](#graphql-kysely-omassa-sovelluksessa)
-15. [WebSocket (MQTT)](#websocket-mqtt)
-   1. [Yleistä MQTT:stä](#yleistä-mqttstä)
-   2. [Junien kuuntelu](#junien-kuuntelu)
-   3. [Liikennepaikan junien kuuntelu](#liikennepaikan-junien-kuuntelu)
-   4. [GPS-sijaintien kuuntelu](#gps-sijaintien-kuuntelu)
-   5. [Kulkutietoviestien kuuntelu](#kulkutietoviestien-kuuntelu)
-   6. [Kulkutievarauksien kuuntelu](#kulkutievarauksien-kuuntelu)
-   7. [Kokoonpanojen kuuntelu](#kokoonpanojen-kuuntelu)
-16. [Vastaustyypit](#vastaustyypit)
-   1. [Junat](#junat)
-   2. [Kokoonpanot](#kokoonpanot)
-   3. [GPS-sijainnit](#gps-sijainnit)
-   4. [Kulkutietoviestit](#kulkutietoviestit)
-   5. [Kulkutievaraukset](#kulkutievaraukset)
-   6. [Liikennepaikat](#liikennepaikat)
-   7. [Operaattorit](#operaattorit)
-   8. [Syyluokat](#syyluokat-1)
-   9. [Syykoodit](#syykoodit-1)
-   10. [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit-1)
-   11. [Junalajit](#junalajit-1)
-   12. [Junatyypit](#junatyypit-1)
-   13. [Raideosuudet](#raideosuudet-1)
-   14. [Herätepisteet](#herätepisteet-1)
-   15. [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat-1)
-   16. [Versiohistoria](#versiohistoria)
-   17. [Ilmoituksen status](#ilmoituksen-status)
-17. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
-18. [Avoimen datan käyttölupa](#avoimen-datan-käyttölupa)
+1. [Yleistä](#yleistä)
+    1. [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
+    1. [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
+    1. [Toteutetut ominaisuudet](#toteutetut-ominaisuudet)
+    1. [HTTPS](#https)
+    1. [Dataa tukevat rajapinnat / työkalut](#dataa-tukevat-rajapinnat--työkalut)
+1. [REST-rajapinnat](#rest-rajapinnat)
+    1. [GraphQL](#graphql) 
+    1. [Junien tiedot (/trains)](#junien-tiedot-trains)
+        - [Yhden junan tiedot](#yhden-junan-tiedot)
+        - [Päivän junien tiedot](#päivän-junien-tiedot)
+        - [Kaikkien junien tiedot](#kaikkien-junien-tiedot)
+        - [GTFS](#gtfs)
+        - [Vanhat junat zip-paketteina](#vanhat-junat-zip-paketteina)
+        - [Junan versiohistoria](#junan-versiohistoria)
+    1. [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains)
+        - [Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-lukumäärärajoitus)
+        - [Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)](#liikennepaikan-saapuvat-ja-lähtevät-junat-aikavälirajoitus)
+        - [Reittiperusteinen haku](#reittiperusteinen-haku)
+        - [Kohta lähtevien tai saapuvien junien seuranta](#kohta-lähtevien-tai-saapuvien-junien-seuranta)
+    1. [Junien GPS-sijainnit (/train-locations)](#junan-gps-sijainnit-train-locations)
+        - [Kaikkien junien sijainnit](#kaikkien-junien-sijainnit)
+        - [Yhden junan sijainti](#yhden-junan-sijainti)
+        - [Vanhat sijainnit zip-paketteina](#vanhat-sijainnit-zip-paketteina)
+    1. [Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)](#tarkempi-seuranta-kulkutietoviestien-avulla-train-tracking)
+        - [Kaikkien junien seuranta](#kaikkien-junien-seuranta)
+        - [Yhden junan seuranta](#yhden-junan-seuranta)
+        - [Liikennepaikan seuranta](#liikennepaikan-seuranta)
+        - [Raideosuuden seuranta](#raideosuuden-seuranta)
+    1. [Kokoonpanotiedot (/compositions)](#kokoonpanotiedot-compositions)
+        - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
+        - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
+        - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
+        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)   
+        - [Kokoonpanojen versiohistoria](#kokoonpanojen-versiohistoria)
+    1. [Kulkutievaraukset (/routesets)](#kulkutievaraukset-routesets)
+        - [Kaikkien kulkutievarauksien seuranta](#kaikkien-kulkutievarauksien-seuranta)
+        - [Yhden junan kulkutievaraukset](#yhden-junan-kulkutievaraukset)
+        - [Liikennepaikan kulkutievaraukset](#liikennepaikan-kulkutievaraukset)
+    1. [Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (/trafficrestriction-notifications)](#ratatyötiedot-trackwork-notifications-ja-liikenteen-rajoitetiedot-trafficrestriction-notifications)
+        - [Ratatyöilmoitusten haku aikavälillä](#ratatyöilmoitusten-haku-aikavälillä)
+        - [Ratatyöilmoitusten uusimpien versioiden haku aikavälillä](#ratatyöilmoitusten-uusimpien-versioiden-haku-aikavälillä)
+        - [Ratatyöilmoitusten kaikkien versioiden palautus](#ratatyöilmoitusten-kaikkien-versioiden-palautus)
+        - [Ratatyöilmoitusten tietyn version palautus](#ratatyöilmoitusten-tietyn-version-palautus)
+        - [Liikenteen rajoite-ilmoitusten haku aikavälillä](#liikenteen-rajoite-ilmoitusten-haku-aikavälillä)
+        - [Liikenteen rajoite-ilmoitusten uusimpien versioiden haku aikavälillä](#liikenteen-rajoite-ilmoitusten-uusimpien-versioiden-haku-aikavälillä)
+        - [Liikenteen rajoite-ilmoituksen kaikkien versioiden palautus](#liikenteen-rajoite-ilmoituksen-kaikkien-versioiden-palautus)
+        - [Liikenteen rajoite-ilmoituksen tietyn version palautus](#liikenteen-rajoite-ilmoituksen-tietyn-version-palautus)
+    1. [Metatiedot (/metadata)](#metatiedot-metadata)
+        - [Liikennepaikkatiedot](#liikennepaikkatiedot)
+        - [Operaattoritiedot](#operaattoritiedot)
+        - [Syyluokat](#syyluokat)
+        - [Syykoodit](#syykoodit)
+        - [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit)
+        - [Junalajit](#junalajit)
+        - [Junatyypit](#junatyypit)
+        - [Raideosuudet](#raideosuudet)
+        - [Herätepisteet](#herätepisteet)
+        - [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)    
+1. [WebSocket (MQTT)](#websocket-mqtt)
+    1. [Yleistä MQTT:stä](#yleistä-mqttstä)
+    1. [Junien kuuntelu](#junien-kuuntelu)
+    1. [Kokoonpanojen kuuntelu](#kokoonpanojen-kuuntelu)
+    1. [GPS-sijaintien kuuntelu](#gps-sijaintien-kuuntelu)
+    1. [Kulkutietoviestien kuuntelu](#kulkutietoviestien-kuuntelu)
+    1. [Kulkutievarauksien kuntelu](#kulkutievarauksien-kuuntelu)
+1. [Vastaustyypit](#vastaustyypit)
+    1. [Junat](#junat)
+    1. [Kokoonpanot](#kokoonpanot)
+    1. [GPS-sijainnit](#gps-sijainnit)
+    1. [Kulkutietoviestit](#kulkutietoviestit)
+    1. [Liikennepaikat](#liikennepaikat)
+    1. [Operaattorit](#operaattorit)
+    1. [Syyluokat](#syyluokat-1)
+    1. [Syykoodit](#syykoodit-1)
+    1. [Kolmannen tason syykoodit](#kolmannen-tason-syykoodit-1)
+    1. [Junalajit](#junalajit-1)
+    1. [Junatyypit](#junatyypit-1)
+    1. [Raideosuudet](#raideosuudet-1)
+    1. [Herätepisteet](#herätepisteet-1)
+    1. [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat)
+    1. [Versiohistoria](#versiohistoria)
+1. [Versionumeroiden käyttö](#versionumeroiden-käyttö)
+1. [Avoimen datan käyttölupa](#avoimen-datan-käyttölupa)
 
 # Yleistä
 
@@ -246,11 +235,17 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
 * [https://rata.digitraffic.fi/vuosisuunnitelmat/](https://rata.digitraffic.fi/vuosisuunnitelmat/)  
     * Työkalu, jolla voi tarkastella ratatöiden vuosisuunnitelmia   
 
-# Rajapinnat
+# REST-rajapinnat
 
-Avoimen datan rajapinta tarjoaa sekä on REST- että WebSocket-rajapinnat, joiden vastaukset ovat JSON-formaattia. Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
+Rest-rajapintoja on kahta eri tyyyppiä: 
+ 1. [GraphQL](#graphql)-rajapinta
+ 2. Staattiset rajapinnat
+ 
+[GraphQL](#graphql)-rajapinta tarjoaa mahdollisuuden valita miten tietoa filtteröidään, järjestetään ja mitä kenttiä otetaan mukaan vastaukseen
 
-Rajapinta on jaettu kahdeksaan osaan:
+Staattiset rajapinnat palauttavat tiedot aina samassa formaatissa. Tietojen filtteröinti, järjestäminen ja kenttien määrittely ei ole mahdollista 
+
+Staattiset rajapinta on jaettu kahdeksaan osaan:
 
 * [Junien tiedot (/trains)](#junien-tiedot-trains)
 * [Aktiivisten junien seuranta (/live-trains)](#aktiivisten-junien-seuranta-live-trains))
@@ -263,6 +258,8 @@ Rajapinta on jaettu kahdeksaan osaan:
 
 Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
 
+Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
+
 Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [http://rata.digitraffic.fi/api/v1/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
 
 Kaikki aikaleimat ovat [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601):n mukaisia (esimerkiksi `2018-03-28T04:35:00.000Z`). Huomaa, että aikaleimoissa aikavyökkeenä on `Z` eli ne ovat [UTC-aikaa](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), eivät Suomen aikaa.
@@ -270,6 +267,106 @@ Kaikki aikaleimat ovat [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601):n muka
 Rajapinnan käytössä on yhtäaikaiseen käyttöön liittyviä rajoituksia. Yhdestä ip-osoitteesta voi olla maksimissaan 25 yhtäaikaista yhteyttä. Rajoituksen ylittyessä palvelu antaa HTTP 429 -virheen.
 
 Palvelun tilaa voi seurata osoitteessa [https://nodeping.com/reports/statusevents/Q8FN33750I](https://nodeping.com/reports/statusevents/Q8FN33750I).
+
+## GraphQL
+
+GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin, järjestämiseen ja yhdistelyyn. GraphQL:n avulla voidaan esimerkiksi rajata mukaan vain tietyt kentät tai filtteröidä vastausta käyttäen lähes mitä tahansa vastauksesta löytyvää kenttää. 
+
+GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v2/graphql/graphiql](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
+
+Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi mahdolliset kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
+
+Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
+* filtterin (tai useampia) `where`-parametrilla    
+* järjestyksen (tai useampia) `orderBy`-parametrilla
+* kappalemäärän `skip`- ja `take`-parametrilla 
+
+### Rajoituksia
+
+* Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
+* Kyselyssä ei saa olla sama kenttä kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
+* `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {greaterThan: 50}}}}}}` on laiton
+
+### Esimerkkejä
+
+#### Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+```
+{
+  currentlyRunningTrains(where: {operator: {shortCode: {equals: "vr"}}}) {
+    trainNumber
+    departureDate
+    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {
+      speed
+      timestamp
+      location
+    }
+  }
+}
+```
+
+#### Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(%0A%20%20%20%20departureDate%3A%20%222020-10-05%22%2C%20%0A%20%20%20%20where%3A%20%7Band%3A%20%5B%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bunequals%3A%20%22Z%22%7D%7D%5D%7D%2C%20%0A%20%20%20%20orderBy%3A%20%7BtrainNumber%3A%20DESCENDING%7D)%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+```
+{
+  trainsByDepartureDate(
+    departureDate: "2020-10-05", 
+    where: {and: [ {operator: {shortCode: {equals: "vr"}}}, {commuterLineid: {unequals: "Z"}}]}, 
+    orderBy: {trainNumber: DESCENDING}) 
+  {
+    trainNumber
+    departureDate
+    commuterLineid
+    operator {
+      shortCode
+    }
+  }
+}
+```
+
+#### Kulussa olevat junat järjestetynä operaattorilla ja junanumerolla [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(orderBy%3A%20%5B%7Boperator%3A%7BshortCode%3AASCENDING%7D%7D%2C%7BtrainNumber%3AASCENDING%7D%5D)%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)
+```
+{
+  currentlyRunningTrains(orderBy: [{operator:{shortCode:ASCENDING}},{trainNumber:ASCENDING}]) {
+    operator {
+      shortCode
+    }
+    trainNumber
+  }
+}
+```
+
+#### Junat, jotka kulkevat Ylöjärven kautta [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20%222020-10-06%22%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Bequals%3A%22YL%C3%96%22%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+```
+{
+  trainsByDepartureDate(departureDate: "2020-10-06", 
+    where: {timeTableRows:{contains:{station:{shortCode:{equals:"YLÖ"}}}}}
+    ) {
+    trainNumber
+    departureDate
+    timeTableRows {
+      station {
+        name
+        uicCode
+      }
+    }
+  }
+}
+```
+
+### GraphQL-kysely omassa sovelluksessa
+
+GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v2/graphql/graphql`
+
+HTTP-pyyntöön tulee lisätä otsikot `Content-Type: application/json` ja `Accept-Encoding: gzip`
+
+Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
+```
+{"query":"{  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}
+```
+
+Kysely kokonaisuudessaan curl:lla:
+```
+curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' --compressed -H 'content-type: application/json' --data-binary '{"query":"{\n  currentlyRunningTrains(where: {operator: {shortCode: {equals: \"vr\"}}}) {\n    trainNumber\n    departureDate\n    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {\n      speed\n      timestamp\n      location\n    }\n  }\n}","variables":null,"operationName":null}'
+```
 
 ## Junien tiedot (/trains)
 
@@ -1217,107 +1314,6 @@ Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta e
 **Paluuarvo**
 
 Palauttaa [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajankohdat-1)-tyyppisen vastauksen.
-
-## GraphQL
-
-GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin, järjestämiseen ja yhdistelyyn. GraphQL:n avulla voidaan esimerkiksi rajata mukaan vain tietyt kentät tai filtteröidä vastausta käyttäen lähes mitä tahansa vastauksesta löytyvää kenttää. 
-
-GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v2/graphql/graphiql](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
-
-Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi mahdolliset kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
-
-Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
-* filtterin (tai useampia) `where`-parametrilla    
-* järjestyksen (tai useampia) `orderBy`-parametrilla
-* kappalemäärän `skip`- ja `take`-parametrilla 
-
-### Rajoituksia
-
-* Kysely voi palauttaa maksimissaan 250 "juuririviä" eli esimerkiksi currentlyRunningTrains-kysely palauttaa maksimissaan 250 junan tiedot. Jos halutaan junat [250...500], voidaan käyttää `skip`-parametria
-* Kyselyssä ei saa olla sama käsite kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
-* `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {greaterThan: 50}}}}}}` on laiton
-
-### Esimerkkejä
-
-#### Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
-```
-{
-  currentlyRunningTrains(where: {operator: {shortCode: {equals: "vr"}}}) {
-    trainNumber
-    departureDate
-    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {
-      speed
-      timestamp
-      location
-    }
-  }
-}
-```
-
-#### Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(%0A%20%20%20%20departureDate%3A%20%222020-10-05%22%2C%20%0A%20%20%20%20where%3A%20%7Band%3A%20%5B%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bunequals%3A%20%22Z%22%7D%7D%5D%7D%2C%20%0A%20%20%20%20orderBy%3A%20%7BtrainNumber%3A%20DESCENDING%7D)%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
-```
-{
-  trainsByDepartureDate(
-    departureDate: "2020-10-05", 
-    where: {and: [ {operator: {shortCode: {equals: "vr"}}}, {commuterLineid: {unequals: "Z"}}]}, 
-    orderBy: {trainNumber: DESCENDING}) 
-  {
-    trainNumber
-    departureDate
-    commuterLineid
-    operator {
-      shortCode
-    }
-  }
-}
-```
-
-#### Kulussa olevat junat järjestetynä operaattorilla ja junanumerolla [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(orderBy%3A%20%5B%7Boperator%3A%7BshortCode%3AASCENDING%7D%7D%2C%7BtrainNumber%3AASCENDING%7D%5D)%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)
-```
-{
-  currentlyRunningTrains(orderBy: [{operator:{shortCode:ASCENDING}},{trainNumber:ASCENDING}]) {
-    operator {
-      shortCode
-    }
-    trainNumber
-  }
-}
-```
-
-#### Junat, jotka kulkevat Ylöjärven kautta [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20"2020-10-06"%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Beq%3A"YLÖ"%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
-```
-{
-  trainsByDepartureDate(
-    departureDate: "2020-10-06", 
-    where: {timeTableRows:{contains:{station:{shortCode:{equals:"YLÖ"}}}}}) 
-  {
-    trainNumber
-    departureDate
-    timeTableRows {
-      station {
-        name
-        uicCode
-      }
-    }
-  }
-}
-```
-
-### GraphQL-kysely omassa sovelluksessa
-
-GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v1/graphql/graphiql/?`
-
-HTTP-pyyntöön tulee lisätä otsikot `Content-Type: application/json` ja `Accept-Encoding: gzip`
-
-Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
-```
-{"query":"{  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}
-```
-
-Kysely kokonaisuudessaan curl:lla:
-```
-curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' --compressed -H 'content-type: application/json' --data-binary '{"query":"{\n  currentlyRunningTrains(where: {operator: {shortCode: {equals: \"vr\"}}}) {\n    trainNumber\n    departureDate\n    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {\n      speed\n      timestamp\n      location\n    }\n  }\n}","variables":null,"operationName":null}'
-```
 
 ## WebSocket (MQTT)
 

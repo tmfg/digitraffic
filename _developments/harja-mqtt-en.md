@@ -5,7 +5,7 @@ ref: harja-mqtt
 issue-number: DPO-1079
 traffictypes:
   - Road traffic
-status: planned
+status: finished
 date: 2020-04-16
 ---
 
