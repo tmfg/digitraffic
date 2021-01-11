@@ -15,7 +15,7 @@
     </a>
   </li>
   <li class="active">
-    <a href="#">
+    <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}">
       {{ site.t.digitraffic[page.lang]}}
     </a>
     <div class="upwards-arrow"></div>
