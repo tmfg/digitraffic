@@ -37,7 +37,7 @@ function init() {
   getPageLanguage();
 
   // If Service status section exists, get service status
-  document.getElementById("service-status-section") ? getServiceStatus("http://status.digitraffic.fi") : '';
+  document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi") : '';
 }
 
 
