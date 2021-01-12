@@ -37,10 +37,7 @@ function init() {
   getPageLanguage();
 
   // If Service status section exists, get service status
-  document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi") : '';
-
-  // If Service status for AWS section exists, get aws service status
-  document.getElementById("service-status-aws-section") ? getServiceStatus("https://status-aws-test.digitraffic.fi") : '';
+  document.getElementById("service-status-section") ? getServiceStatus("https://digitraffic1.statuspage.io") : '';
 }
 
 
@@ -355,10 +352,36 @@ function elementInViewport(el) {
   );
 }
 
+const componentGroups = ['road', 'marine', 'rail'];
+const serviceChildComponentHealthThreshold = 50;
+const statusOperational = 'operational';
+const statusPartialOutage = 'partial_outage';
+const statusMajorOutage = 'major_outage';
+
+function serviceIsHealthy(serviceStatus) {
+  return serviceStatus.toLowerCase() === statusOperational;
+}
+
+function getChildComponentHealthPercentage(service, allComponents) {
+  const childComponents = allComponents.filter(c => service.components.includes(c.id));
+  const healthyComponents = childComponents.filter(c => serviceIsHealthy(c.status));
+  return Math.ceil(healthyComponents.length / childComponents.length * 100);
+}
+
 function updateServiceStatus() {
   // Add updated service status info to each service
-  JSON.parse(this.responseText).data.forEach(service => {
-    addOperationStatus(service.name.toLowerCase(), service.lowest_human_status.toLowerCase());
+  const components = JSON.parse(this.responseText).components;
+  components.filter(c => componentGroups.includes(c.name.toLowerCase())).forEach(service => {
+    if (serviceIsHealthy(service.status)) {
+      addOperationStatus(service.name.toLowerCase(), statusOperational);
+    } else {
+      const childComponentHealthPercentage = getChildComponentHealthPercentage(service, components);
+      if (childComponentHealthPercentage > serviceChildComponentHealthThreshold) {
+        addOperationStatus(service.name.toLowerCase(), statusPartialOutage);
+      } else {
+        addOperationStatus(service.name.toLowerCase(), statusMajorOutage);
+      }
+    }
   });
 }
 
@@ -374,12 +397,9 @@ function updateServiceStatusList() {
   }
 
   // Add list of service status incidents to incident list
-  JSON.parse(this.responseText).data.forEach(function (incident) {
-    if (incident.status === 0) {
-      addIncidentToList(incident.scheduled_at, incident.name, incident.message, statusList, templateItem);
-    } else {
-      addIncidentToList(incident.created_at, incident.name, incident.message, statusList, templateItem);
-    }
+  JSON.parse(this.responseText).incidents.forEach(function (incident) {
+    const newestUpdate = incident.incident_updates[0];
+    addIncidentToList(newestUpdate.created_at, incident.name, newestUpdate.body, statusList, templateItem);
   });
 }
 
@@ -396,14 +416,14 @@ function getServiceStatus(baseUrl) {
   // Get service status data from api
   var oReq = new XMLHttpRequest();
   oReq.addEventListener("load", updateServiceStatus);
-  oReq.open("GET", baseUrl + "/api/v1/components/groups");
+  oReq.open("GET", baseUrl + "/api/v2/components.json");
   oReq.send();
 
   // Get service incidents from api
   if (document.getElementById("service-status-incident-list")) {
     var oReq2 = new XMLHttpRequest();
     oReq2.addEventListener("load", updateServiceStatusList);
-    oReq2.open("GET", baseUrl + "/api/v1/incidents?per_page=3&sort=id&order=desc");
+    oReq2.open("GET", baseUrl + "/api/v2/incidents.json");
     oReq2.send();
   }
 
@@ -430,12 +450,12 @@ function addOperationStatus(service, status) {
     classes.add(`service-status__icon-circle-bottom--operational__${service}`);
     statusText.textContent = t.statusOperational[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
-  } else if (status === "partial outage") {
+  } else if (status === "partial_outage") {
     classes.add("service-status__icon-circle-bottom--partial-outage");
     statusText.textContent = t.statusPartialOutage[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
   }
-  else if (status === "major outage") {
+  else if (status === "major_outage") {
     classes.add("service-status__icon-circle-bottom--major-outage");
     statusText.textContent = t.statusMajorOutage[pageLang];
     statusText.classList.remove("service-status__service-text--loading");
@@ -447,9 +467,12 @@ function addOperationStatus(service, status) {
 }
 
 function addIncidentToList(created_at, name, message, statusList, templateItem) {
-  //console.log(name, message);
-
+  const createdAtDate = new Date(created_at);
+  const createdDateString = createdAtDate.getDate()  + "." +
+      (createdAtDate.getMonth() + 1) + "." +
+      createdAtDate.getFullYear() + " " +
+      createdAtDate.getHours() + ":" + createdAtDate.getMinutes();
   var newItem = templateItem.cloneNode(true);
-  newItem.innerHTML = "<h4>" + name + "</h4><span class='service-status__incident-list-timestamp'>" + created_at + "</span><span>" + message + "</span>";
+  newItem.innerHTML = "<h4>" + name + "</h4><span class='service-status__incident-list-timestamp'>" + createdDateString + "</span><span>" + message + "</span>";
   statusList.appendChild(newItem);
 }
