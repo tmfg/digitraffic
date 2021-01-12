@@ -9,7 +9,7 @@ title: Terms of service
 links:
 ---
 
-Fintraffic's open data is licensed under the Creative Commons 4.0 By license except for certain maritime data, which is licensed under a separate license. Creative Commons 4.0 By is recommended by JHS-189 as an open data license for public authorities in Finland. It gives the right to distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation.
+Fintraffic's open data is licensed under the Creative Commons 4.0 By license. It gives the right to distribute, remix, tweak, and build upon our data, even commercially, as long as you credit the source for the original creation.
 
 ## Attribution guidelines
 

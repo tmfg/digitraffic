@@ -11,7 +11,7 @@ links:
  
 ---
 
-Fintrafficin avoimen datan aineistoja koskee Creative Commons 4.0 Nimeä -käyttölupa. Creative Commons 4.0 Nimeä on JHS 189 -suosituksen mukainen käyttölupa julkishallinnon avoimia tietoaineistoja varten. Se antaa oikeuden kopioida, muokata ja jakaa aineistoja edelleen joko alkuperäisessä tai muutetussa muodossa. Aineistoja voi myös yhdistää muihin aineistoihin ja käyttää sekä kaupallisiin että epäkaupallisiin tarkoituksiin.
+Fintrafficin avoimen datan aineistoja koskee Creative Commons 4.0 Nimeä -käyttölupa. Se antaa oikeuden kopioida, muokata ja jakaa aineistoja edelleen joko alkuperäisessä tai muutetussa muodossa. Aineistoja voi myös yhdistää muihin aineistoihin ja käyttää sekä kaupallisiin että epäkaupallisiin tarkoituksiin.
 
 ## Ohjeita lähteen nimeämiseen
 
