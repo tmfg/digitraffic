@@ -1283,7 +1283,7 @@ Lista ei kata kaikkia kulkutietoviesteissä esiintyviä raideosuuksia. Datan laa
 
 **Paluuarvo**
 
-Palauttaa [Raideosuudet](#raideosuudet)-tyyppisen vastauksen.
+Palauttaa [Raideosuudet](#raideosuudet-1)-tyyppisen vastauksen.
 
 ### Herätepisteet
 
