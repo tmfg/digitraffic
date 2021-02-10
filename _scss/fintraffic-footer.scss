@@ -36,7 +36,7 @@
         margin-bottom: $margin-md + $margin-xxs;
         padding-bottom: $margin-xs;
         display: grid;
-        grid-template-columns: min-content min-content;
+        grid-template-columns: max-content min-content;
         gap: 0 $margin-md;
       }
     }
@@ -46,11 +46,11 @@
     margin-bottom: $margin-xs;
 
     li {
-      // first three list items
-      &:nth-child(-n + 3) {
+      // first four list items
+      &:nth-child(-n + 4) {
         font-weight: 600;
       }
-      &:nth-child(3) {
+      &:nth-child(4) {
         margin-bottom: $margin-xs;
 
         @media screen and (min-width: $min-width-sm) {
@@ -70,7 +70,7 @@
         list-style-type: none;
         display: grid;
         grid-auto-flow: column;
-        grid-template-rows: repeat(3, max-content);
+        grid-template-rows: repeat(4, max-content);
         gap: 0 $margin-md;
       }
     }
