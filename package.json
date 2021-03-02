@@ -12,13 +12,13 @@
     "test": ""
   },
   "devDependencies": {
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "extend": "^3.0.2",
     "gulp": "^4.0.2",
     "gulp-clean": ">=0.4.0",
     "gulp-shell": "^0.8.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "lodash.template": ">=4.5.0"
   },
   "dependencies": {}
