@@ -5,7 +5,7 @@ ref: datex2muuttuvatmerkit
 issue-number: DPO-905
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2020-04-01
 ---
 

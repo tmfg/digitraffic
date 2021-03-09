@@ -5,7 +5,7 @@ ref: datex2muuttuvatmerkit
 issue-number: DPO-905
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 date: 2020-04-01
 ---
 
