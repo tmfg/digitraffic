@@ -1,5 +1,5 @@
 ---
-title: 'Päivityksiä liikennetiedotteisiin'
+title: 'Traffic messages updates'
 image:
 published: true
 categories: en News
