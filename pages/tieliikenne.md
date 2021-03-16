@@ -150,7 +150,7 @@ Liikennetiedotteita on mahdollista hakea DATEX II -standardin mukaisessa formaat
 joka noudattaa GeoJSON-standardia. Näin olle Simppeli JSON sisältää myös tiedotteen geometrian toisin kuin DATEX II.
 Simppeli JSON voidaa hakea myös ilman aluegeometrioita, jolloin siirrettävän datan määrä vähenee, sillä aluegeometriat ovat kohtuullisen suuria.
 Aluegeometriat on mahdollista hakea erillisen rajapinnan kautta yksitellen tai kaikki kerralla paikallista tallennusta varten
-ja yhdistää sitten rajapinnan tarjoamaan Simppeliin JSON -viestiin. Simppeeli JSON -viesti voi siis pyytää myös aluegeometrioiden kanssa, 
+ja yhdistää sitten rajapinnan tarjoamaan Simppeliin JSON -viestiin. Simppeeli JSON -viestin voi siis pyytää myös aluegeometrioiden kanssa, 
 mutta siirrettävän datan määrä on monin kertainen. 
 
 Liikennetiedotteet käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. 
