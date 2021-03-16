@@ -67,13 +67,13 @@ Related metadata:
 
 History can be fetched by API call:
 
-[```https://tie.digitraffic.fi/api/v2/data/camera-history/history?id={preset or camera id}```](https://tie.digitraffic.fi/api/v2/data/camera-history/history?id=C0450701){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/camera-history/history?id={preset or camera id}```](https://tie.digitraffic.fi/api/v3/data/camera-history/history?id=C0450701){:target="_blank"}
 
 API call returns links to history images. You can also give time to get single image of given moment. 
 
 History presence tells if history exists for given time interval and it can be fetched by API call:
 
-[```https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?id={preset or camera id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
+[```https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?id={preset or camera id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
 
 
 ### Current journey times
@@ -96,34 +96,20 @@ Related metadata:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
 
-### Current road weather forecasts (v1)
+### Current road weather forecasts
 
-[```https://tie.digitraffic.fi/api/v1/data/road-conditions```](https://tie.digitraffic.fi/api/v1/data/road-conditions){:target="_blank"}
-
-Response message contains road specific weather forecasts. Reports are updated every 5 minutes.
-
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections){:target="_blank"}
+Message contains road sections weather forecasts. Reports are updated every 5 minutes.
 
 
-### Current road weather forecasts (v2)
+[```https://tie.digitraffic.fi/api/v3/data/road-conditions```](https://tie.digitraffic.fi/api/v3/data/road-conditions){:target="_blank"}
 
-Road weather forecasts v2 contains more detailed road sections than older v1.
+Road specific weather forecasts.
 
-[```https://tie.digitraffic.fi/api/v2/data/road-conditions```](https://tie.digitraffic.fi/api/v2/data/road-conditions){:target="_blank"}
-
-Road specific weather forecasts. Reports are updated every 5 minutes.
-
-[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/22/50/27/60){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/22/50/27/60){:target="_blank"}
 
 Road specific weather forecasts for given area.
 
-[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/25){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/25){:target="_blank"}
 
 Road specific weather forecasts for given road.
 
@@ -157,104 +143,129 @@ Related metadata:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v3/metadata/tms-sensors){:target="_blank"}
 
-### Traffic incidents
+### Traffic messages
 
-V2 Datex2
+Traffic messages are possible to get in standard DATEX II and Simple JSON -formats. Simple JSON is based on GeoJSON specification.
+JSON format is possibel to get without area geometries to save time and bandwidth as they are quite large. 
+Area geometries can be cached locally from specific API for geometries.
 
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.xml```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.xml){:target="_blank"}
+Roadworks contains TMC/ALERT-C locations to identify the affected area or location of the announcement. 
+More information at [TMC/ALERT-C location data](#tmcalert-c-location-data) 
 
-V2 JSON
+Dates in message texts are include in multiple formats. Fixed date time fields are in ISO 8601 date format and in UTC (Zulu) time. 
+Best practice is to use some library that can parse date and times properly with any offset from ISO 8601 date format.
 
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.json```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.json){:target="_blank"}
+#### Types of traffic messages 
+* **Exempted transport** `EXEMPTED_TRANSPORT`
+  * Message contains information of transports causing disruptions for other road users. 
+* **Road work** `ROAD_WORK`
+  * Message contains information of road works including progress and disruptions for other road users.
+* **Traffic announcement** `TRAFFIC_ANNOUNCEMENT`
+  * Message contains traffic incidents those have significant impact on traffic flow, e.g. traffic accidents and temporary traffic rearrangements.
+* **Weight restriction** `WEIGHT_RESTRICTION`
+  * Message contains weight restriction limiting usage of the roads.
 
-V1
+#### Traffic messages DATEX II -APIs
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
+#### Traffic messages Simpele JSON -APIs
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
-Response message contains traffic incidents those have significant impact on traffic flow, e.g. traffic accidents and temporary traffic rearrangements. 
+#### Traffic messages area geometries
 
-Incident contain TMC location information to identify occurence area or location of the disorder. Get detailed location description from [here](tmc-data).
+Traffic message can contain area geometries that can be found from JSON-path:
+``properties.announcements[x].locationDetails.areaLocation.areas[x].locationCode`` 
+If value of API-parameter `includeAreaGeometry` is `false` the geometry is not returned in JSON-response.
+It is better pactice to cache geometries locally and get them from local cache than to get them every time
+from the API.
 
-Dates are include in multiple formats. Under published tag, there is utc 
-and localtime fields that are in UTC (Zulu) time. Other times are in local time 
-with offset from the UTC. Best practice is to use some library that can parse 
-date and times properly with any offset from ISO 8601 date format.
+<details>
+  <summary>Open an example of Simple JSON traffic message that contains ALERT-C area geometry with location code 27:</summary>
+    <pre>
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "situationId": "GUID50379079",
+        "situationType": "TRAFFIC_ANNOUNCEMENT",
+        "trafficAnnouncementType": "general",
+        "version": 1,
+        "releaseTime": "2021-01-31T15:57:29.105Z",
+        "announcements": [
+          {
+            "language": "FI",
+            "title": "Liikennetiedote. ",
+            "location": {
+              "countryCode": 6,
+              "locationTableNumber": 17,
+              "locationTableVersion": "1.11.37",
+              "description": "Lappi Norjan vastaiset rajanylityspaikat."
+            },
+            "locationDetails": {
+              "areaLocation": {
+                "areas": [
+                  {
+                    "name": "Lappi",
+                    "locationCode": 27,
+                    "type": "PROVINCE"
+                  }
+                ]
+              }
+            },
+            "features": [
+              {
+                "name": "Liikenne pysäytetään"
+              }
+            ],
+            "roadWorkPhases": [],
+            "comment": "Rajoituksia henkilöliikenteen rajanylitykseen Norjan suuntaan:
+Polmak, Karigasniemi ja Kivilompolo suljettu klo 21:00-09:00.
 
-Related metadata:
+Näätämö suljettu 24/7
+Utsjoki suljettu 24/7
+Kilpisjärvi avoinna 24/7
 
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
+Lisätietoa Norjaan matkustamisesta on osoitteessa www.entrynorway.no",
+            "timeAndDuration": {
+              "startTime": "2021-01-06T14:58:00Z"
+            },
+            "additionalInformation": "Liikenne- ja kelitiedot verkossa: https://liikennetilanne.fintraffic.fi/",
+            "sender": "Fintraffic Tieliikennekeskus Oulu"
+          }
+        ],
+        "contact": {
+          "phone": "02002100",
+          "email": "oulu.liikennekeskus@fintraffic.fi"
+        }
+      }
+    }
+    </pre>
+</details>
+<br/>
+Area geometries are served from the API:
+* Geometry with ALERT-C location code 27: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false){:target="_blank"}
+* All geometries: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
-
-### Weight restrictions
-
-V2
-
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/weight-restriction.xml```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/weight-restriction.xml){:target="_blank"}
-
-V1
-
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}){:target="_blank"}
-
-Weight restrictions use the TMC location information to identify the affected area or location of the weight restriction. Get detailed location description from [here](tmc-data).
-
-Dates are include in multiple formats. Under published tag, there is utc 
-and localtime fields that are in UTC (Zulu) time. Other times are in local time 
-with offset from the UTC. Best practice is to use some library that can parse 
-date and times properly with any offset from ISO 8601 date format.
-
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
-
-### Roadworks
-
-V2
-
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/roadwork.xml```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/roadwork.xml){:target="_blank"}
-
-V1
-
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}){:target="_blank"}
-
-The dataset is updated three times per day, at 08:00, at 12:00 and at 16:00 (local Finnish time)
-
-Roadworks contains the TMC location information to identify the affected area or location of the roadwork. Get detailed location description from [here](tmc-data).
-
-Dates are include in multiple formats. Under published tag, there is utc 
-and localtime fields that are in UTC (Zulu) time. Other times are in local time 
-with offset from the UTC. Best practice is to use some library that can parse 
-date and times properly with any offset from ISO 8601 date format.
-
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
 
 ### TMC/ALERT-C location data
 
-TMC/ALERT-C material contains location data which is used in Traffic information such as road works, accidents, traffic jams and weather. More information can be found [here](tmc-data).
+TMC/ALERT-C material contains location data which is used in Traffic information such as road works, accidents, traffic jams and weather. 
+More information can be found at [TMC Data](tmc-data) -page.
+
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
+
 
 ### Current data of road weather stations
 
@@ -290,11 +301,11 @@ History for the last 24 hours is currently only in beta-API.
 
 ### Variable signs
 
-[```https://tie.digitraffic.fi/api/v2/data/variable-signs```](https://tie.digitraffic.fi/api/v2/data/variable-signs){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/variable-signs```](https://tie.digitraffic.fi/api/v3/data/variable-signs){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v2/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/{id}){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}){:target="_blank"}
 
 Response message contains latest variable sign data.  Currenty supported sign types are speed limits and warnings. Digitraffic publishes the data only from the master device of a device group. Data from slave devices on the left side of the road or on ramps is not available.
 
@@ -322,7 +333,7 @@ The Finnish Transport Infrastructure Agency is also preparing publication of mai
 
 The API returns the latest location and task information received from the maintenance vehicles.
 
-[```https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/latest```](https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/latest){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/latest```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/latest){:target="_blank"}
 
 #### Vehicle tracking data
 
@@ -337,18 +348,18 @@ A new tracking object is created whenever:
  
 These treatments eliminate the largest possible errors in the data generated by the vehicles.
 
-[```https://tie.digitraffic.fi/api/v2/data/maintenance/trackings```](https://tie.digitraffic.fi/api/v2/data/maintenance/trackings){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings){:target="_blank"}
 
 #### Vehicle task types
 
 The API returns more detailed explanations of the tasks performed by the vehicles.
 
-[```https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/tasks```](https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/tasks){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/tasks```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/tasks){:target="_blank"}
 
 
 #### Swagger descriptions of the APIs
 
-[```https://tie.digitraffic.fi/swagger/#/Data v2```](https://tie.digitraffic.fi/swagger/#/Data%20v2){:target="_blank"}
+[```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
 
 
 ## WebSocket API

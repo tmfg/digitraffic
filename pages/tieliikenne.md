@@ -69,13 +69,13 @@ Metadatat:
 
 Haluttujen kameroiden ja/tai esiasentojen historia saadaan rajapinnasta:
 
-[```https://tie.digitraffic.fi/api/v2/data/camera-history/history?id={kameran tai esiasennon id}```](https://tie.digitraffic.fi/api/v2/data/camera-history/history?id=C0450701){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/camera-history/history?id={kameran tai esiasennon id}```](https://tie.digitraffic.fi/api/v3/data/camera-history/history?id=C0450701){:target="_blank"}
 
 Rajapinta palauttaa linkit menneisiin kuviin. Pyynnölle voi antaa parametriksi myös ajanhetken miltä haluaa viimeisimmän kuvan, jolloin palautetaan vain yksi historiakuva esiasentoa kohden. 
 
 Historian olemassaoloa haluttuna aikavälillä voikysyä rajapinnasta:
 
-[```https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?id={kamera tai esiasento id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v2/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
+[```https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?id={kamera tai esiasento id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
 
 ### Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
@@ -100,33 +100,19 @@ Metadatat:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
 
-### Ajantasaiset tiejaksojen keliennusteet (v1)
-
-[```https://tie.digitraffic.fi/api/v1/data/road-conditions```](https://tie.digitraffic.fi/api/v1/data/road-conditions){:target="_blank"}
+### Ajantasaiset tiejaksojen keliennusteet
 
 Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
 
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-stations```](https://tie.digitraffic.fi/api/v1/metadata/weather-stations){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v1/metadata/weather-sensors){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v1/metadata/forecast-sections){:target="_blank"}
-
-### Ajantasaiset tiejaksojen keliennusteet (v2)
-
-Keliennusteet v2 sisältää tarkemmat tiejaksot kuin v1.
-
-[```https://tie.digitraffic.fi/api/v2/data/road-conditions```](https://tie.digitraffic.fi/api/v2/data/road-conditions){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/road-conditions```](https://tie.digitraffic.fi/api/v3/data/road-conditions){:target="_blank"}
 
 Tiejaksokohtaiset keliennusteet. Keliennusteet päivitetään viiden minuutin välein.
 
-[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/22/50/27/60){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/22/50/27/60){:target="_blank"}
 
 Tiejaksokohtaiset keliennusteet halutulta alueelta.
 
-[```https://tie.digitraffic.fi/api/v2/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v2/data/road-conditions/25){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/25){:target="_blank"}
 
 Tiejaksokohtaiset keliennusteet halutulta tieltä.
 
@@ -158,72 +144,131 @@ Metadatat:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v3/metadata/tms-sensors){:target="_blank"}
 
-### Häiriötiedotteet
+### Liikennetiedotteet
 
-V2 Datex2
+Liikennetiedotteita on mahdollista hakea DATEX II -standardin mukaisessa formaatissa sekä yksinkertaisemmassa Simppeli JSON -muodossa,
+joka noudattaa GeoJSON-standardia. Simppeli JSON voidaa hakea ilman suuria aluegeometrioita, jolloin nämä aluegeometriat on mahdollista 
+hakea erillisen rajapinnan kautta talteen. Aluegeometriat ovat kohtuullisen suuria, joten tällä säästetään aikaa ja kaistaa.  
 
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.xml```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.xml){:target="_blank"}
+Liikennetiedotteet käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. 
+Lisää tietoa löytyy kohdasta [TMC/ALERT-C paikannuspisteistö](#tmcalert-c-paikannuspisteistö)
 
-V2 JSON
+Viestien teksteissä olevat päivämäärien ja aikojen muoto voi vaihdella. 
+Viestien aikakenttät noudattavat ISO 8601 aikamuotoa ja ilmoitetaan UTC (Zulu) -aikana.
+Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.json```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/traffic-incident.json){:target="_blank"}
+#### Liikennetiedotteiden tyypit 
+* **Erikoiskuljetus** `EXEMPTED_TRANSPORT`
+  * Viesti sisältää tietoa teillä kulkevista erikoiskuljetuksista, jotka vaikuttavat muihin tiellä liikkujiin. 
+* **Tietyö** `ROAD_WORK`
+  * Viesti sisältää tietoa tietöiden eteemisestä ja aiheuttamista muutoksista liikenteelle.
+* **Liikennetiedote** `TRAFFIC_ANNOUNCEMENT`
+  * Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittäviä tieliikenteen sujuvuuteen vaikuttavia häiriöitä. Tällaisia ovat esimerkiksi liikenneonnettomuudesta johtuvat poikkeusjärjestelyt.
+* **Painorajoitus** `WEIGHT_RESTRICTION`
+  * Viesti sisältää poikkeuksellisia teiden käyttöä rajoittavia painorajoituksia.
 
-V1
+#### Liikennetiedotteiden DATEX II -muotoisen datan rajapinnat
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
+#### Liikennetiedotteiden Simppelin JSON -muotoisen datan rajapinnat
 
-[```https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/traffic-disorders-datex2/{situationId}){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
-Viesti sisältää tieliikenteen häiriötiedotteita, jotka koskevat merkittäviä tieliikenteen sujuvuuteen vaikuttavia häiriöitä. Tällaisia ovat esimerkiksi liikenneonnettomuudesta johtuvat poikkeusjärjestelyt.
+#### Liikennetiedotteiden aluegeometriat
 
-Häiriötiedotteet käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannuspisteaineistosta löytyy [täältä](paikannusnimisto).
+Liikennetiedote voi sisältää aluegeometrioita, jotka lötyvät JSON-polusta: 
+``properties.announcements[x].locationDetails.areaLocation.areas[x].locationCode`` 
+Mikäli rajapintakutsun `includeAreaGeometry` -parametrin arvo on `false` jätetään vastauksen GeoJSON geometria
+palauttamatta. Geometriat kannataa mieluummin hakea talteen paikallisesti
+alla kerrotusta rajapinnasta, eikä hakea niitä joka kerta erikseen.
 
-Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
-Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykkeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
+<details>
+  <summary>Avaa esimerkki Simppeli JSON liikennetiedotteesta, jossa ALERT-C aluegeometria sijainti koodilla 27:</summary>
+    <pre>
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "situationId": "GUID50379079",
+        "situationType": "TRAFFIC_ANNOUNCEMENT",
+        "trafficAnnouncementType": "general",
+        "version": 1,
+        "releaseTime": "2021-01-31T15:57:29.105Z",
+        "announcements": [
+          {
+            "language": "FI",
+            "title": "Liikennetiedote. ",
+            "location": {
+              "countryCode": 6,
+              "locationTableNumber": 17,
+              "locationTableVersion": "1.11.37",
+              "description": "Lappi Norjan vastaiset rajanylityspaikat."
+            },
+            "locationDetails": {
+              "areaLocation": {
+                "areas": [
+                  {
+                    "name": "Lappi",
+                    "locationCode": 27,
+                    "type": "PROVINCE"
+                  }
+                ]
+              }
+            },
+            "features": [
+              {
+                "name": "Liikenne pysäytetään"
+              }
+            ],
+            "roadWorkPhases": [],
+            "comment": "Rajoituksia henkilöliikenteen rajanylitykseen Norjan suuntaan:
+Polmak, Karigasniemi ja Kivilompolo suljettu klo 21:00-09:00.
 
-### Painorajoitteet
+Näätämö suljettu 24/7
+Utsjoki suljettu 24/7
+Kilpisjärvi avoinna 24/7
 
-V2
+Lisätietoa Norjaan matkustamisesta on osoitteessa www.entrynorway.no",
+            "timeAndDuration": {
+              "startTime": "2021-01-06T14:58:00Z"
+            },
+            "additionalInformation": "Liikenne- ja kelitiedot verkossa: https://liikennetilanne.fintraffic.fi/",
+            "sender": "Fintraffic Tieliikennekeskus Oulu"
+          }
+        ],
+        "contact": {
+          "phone": "02002100",
+          "email": "oulu.liikennekeskus@fintraffic.fi"
+        }
+      }
+    }
+    </pre>
+</details>
+<br/>
 
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/weight-restriction.xml```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/weight-restriction.xml){:target="_blank"}
-
-V1
-
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/weight-restrictions-datex2/{situationId}){:target="_blank"}
-
-Painorajoitteet käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannuspisteaineistosta löytyy [täältä](paikannusnimisto).
-
-Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
-Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykkeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaakäyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millätahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
-
-### Tietyöt
-
-V2
-
-[```https://tie.digitraffic.fi/api/v2/data/traffic-datex2/roadwork.xml```](https://tie.digitraffic.fi/api/v2/data/traffic-datex2/roadwork.xml){:target="_blank"}
-
-V1
-
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/history?situationId={situationId}&year={year}&month={month}){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}```](https://tie.digitraffic.fi/api/v1/data/roadworks-datex2/{situationId}){:target="_blank"}
-
-Tietyöt käyttävät TMC/ALERT-C paikannuspisteistöä häiriöiden maantieteellisen sijainnin ilmoittamiseen. Tarkempi kuvaus paikannuspisteaineistosta löytyy [täältä](paikannusnimisto).
-
-Viesteissä olevat päivämäärien muoto vaihtelee sen paikasta riippuen. 
-Viestin published-tagin alla on utc ja localtime -aikakentät, joden sisältö on käytännössä sama ja ilmoitetaan UTC (Zulu) -aikana. Muut ajat varsinaisen Datex2-viestin sisällä ovat paikallista aikaa ja sisältävät täten aikavyöhykeen poikkeaman UTC-ajasta. Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleiskäyttöistä kirjastoa, joka osaa parsia ajan oikein millä tahansa aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
+Aluegeometriat löytyvät rajapinnasta:
+* ALERT-C alue sijainti koodilla 27: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false){:target="_blank"}
+* Kaikki alueet: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false){:target="_blank"}
 
 ### TMC/ALERT-C paikannuspisteistö
 
-Häiriötiedotteiden, painorajoitusten ja tietöiden maantieteellisen sijainnin ilmoittamiseen käytetään TMC/ALERT-C -paikannuspisteistöä. Lisätietoa [täällä](paikannusnimisto).
+Häiriötiedotteiden, painorajoitusten ja tietöiden maantieteellisen sijainnin ilmoittamiseen käytetään TMC/ALERT-C -paikannuspisteistöä. Lisätietoa täällä.
+Lisätietoa löytyy [TMC/ALERT-C](paikannusnimisto) -sivulta.
+
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
+
+
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
@@ -261,18 +306,18 @@ Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja 
 
 ### Muuttuvien liikennemerkkien tiedot
 
-[```https://tie.digitraffic.fi/api/v2/data/variable-signs```](https://tie.digitraffic.fi/api/v2/data/variable-signs){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/variable-signs```](https://tie.digitraffic.fi/api/v3/data/variable-signs){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v2/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/{id}){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v2/data/variable-signs/history/{id}){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}){:target="_blank"}
 
 Viesti sisältää muuttuvan liikennemerkin viimeisimmän tilan.  Tällä hetkellä tuettuja merkkejä ovat muuttuvat 
 nopeusrajoitukset sekä varoitusmerkit. Digitraffic julkaisee tilatiedot vain laiteryhmän master-laitteesta. Tämä tarkoittaa sitä, että ajoradan vasemmalla puolella olevan merkin ja mahdollisen ramppimerkin tietoja ei välitetä erikseen.
 
 Varoitusmerkkien tyypit:
 
-[```https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v3/metadata/variable-signs/code-descriptions){:target="_blank"}
 
 Varoitusmerkit kuvina:
 
@@ -293,7 +338,7 @@ Väylävirasto valmistelee myös vuorokautta vanhempien kunnossapidon toteumatie
 
 Rajapinta palauttaa viimeisimmät kunnossapitoajoneuvoista vastaanotetut sijainti- ja tehtävätiedot
 
-[```https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/latest```](https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/latest){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/latest```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/latest){:target="_blank"}
 
 #### Ajoneuvojen seurantadata
 
@@ -308,18 +353,18 @@ Uusi viivakohde muodostetaan aina kun:
  
 Näillä käsittelyllä poistetaan suurimmat ajoneuvojen tuottamassa datassa mahdollisesti esiintyvät virheet.
 
-[```https://tie.digitraffic.fi/api/v2/data/maintenance/trackings```](https://tie.digitraffic.fi/api/v2/data/maintenance/trackings){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings){:target="_blank"}
 
 #### Ajoneuvojen tehtävätyypit
 
 Rajapinta palauttaa ajoneuvojen suorittamien tehtävien tarkemmat selitteet.
 
-[```https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/tasks```](https://tie.digitraffic.fi/api/v2/data/maintenance/trackings/tasks){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/tasks```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/tasks){:target="_blank"}
 
 
 #### Rajapintojen Swagger kuvaus
 
-[```https://tie.digitraffic.fi/swagger/#/Data v2```](https://tie.digitraffic.fi/swagger/#/Data%20v2){:target="_blank"}
+[```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
 
 ## WebSocket-rajapinnat
 
