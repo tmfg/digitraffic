@@ -145,11 +145,13 @@ Related metadata:
 
 ### Traffic messages
 
-Traffic messages are possible to get in standard DATEX II and Simple JSON -formats. Simple JSON is based on GeoJSON specification.
-JSON format is possibel to get without area geometries to save time and bandwidth as they are quite large. 
-Area geometries can be cached locally from specific API for geometries.
+Traffic messages are possible to get in standard DATEX II and Simple JSON -formats that is based on GeoJSON specification.
+Because of that JSON format contains also the geometries of the traffic messages unlike DATEX II.
+It is possible to get JSON formatted traffic messages also without area geometries to save time and bandwidth as the areas are quite large. 
+The area geometries can be then cached locally from specific API for geometries eiter getting them one by one or all at once.
+This makes a big difference in size of the messages that have an area geometry.
 
-Roadworks contains TMC/ALERT-C locations to identify the affected area or location of the announcement. 
+Traffic messages contains TMC/ALERT-C locations to identify the affected area or location of the announcement. 
 More information at [TMC/ALERT-C location data](#tmcalert-c-location-data) 
 
 Dates in message texts are include in multiple formats. Fixed date time fields are in ISO 8601 date format and in UTC (Zulu) time. 
@@ -184,8 +186,7 @@ Best practice is to use some library that can parse date and times properly with
 Traffic message can contain area geometries that can be found from JSON-path:
 ``properties.announcements[x].locationDetails.areaLocation.areas[x].locationCode`` 
 If value of API-parameter `includeAreaGeometry` is `false` the geometry is not returned in JSON-response.
-It is better pactice to cache geometries locally and get them from local cache than to get them every time
-from the API.
+It is better practice caching geometries locally and get them from a local cache than to get them every time from the API.
 
 <details>
   <summary>Open an example of Simple JSON traffic message that contains ALERT-C area geometry with location code 27:</summary>
