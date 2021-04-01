@@ -266,7 +266,7 @@ Kaikki aikaleimat ovat [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601):n muka
 
 Rajapinnan käytössä on yhtäaikaiseen käyttöön liittyviä rajoituksia. Yhdestä ip-osoitteesta voi olla maksimissaan 25 yhtäaikaista yhteyttä. Rajoituksen ylittyessä palvelu antaa HTTP 429 -virheen.
 
-Palvelun tilaa voi seurata osoitteessa [https://nodeping.com/reports/statusevents/Q8FN33750I](https://nodeping.com/reports/statusevents/Q8FN33750I).
+Palvelun tilaa voi seurata osoitteessa [https://status.digitraffic.fi/](https://status.digitraffic.fi/).
 
 ## GraphQL
 
