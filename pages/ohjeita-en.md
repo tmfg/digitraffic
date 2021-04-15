@@ -68,6 +68,15 @@ An example could be a programming error that causes a considerable load by makin
 If the information listed below is in order, we are able to identify the API user in question and to notify 
 the application developer or administrator.
 
+### Attention!
+Don't send any PII (personally identifiable information) via the headers!
+If you want to be identified as owner of multiple apps, use a nickname e.g.  
+`
+Digitraffic-User: Trainguy/FoobarApp 1.0
+`
+
+If you want to be contact for e.g. excessive request amount, please sign up on our webpage [https://www.digitraffic.fi/en/sign-up-your-application/](https://www.digitraffic.fi/en/sign-up-your-application/).
+
 ### Digitraffic-User
 
 The Digitraffic-User header should include an identifiable user party and/or application. Below you can find examples.

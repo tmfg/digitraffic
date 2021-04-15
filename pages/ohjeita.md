@@ -71,6 +71,15 @@ Esimerkkinä voisi olla ohjelmointivirhe, joka aiheuttaa huomattavan kuorman tek
 Jos alla mainitut tiedot ovat kunnossa, pystymme tunnistamaan osapuolen ja välittämään tiedon mahdollisesta ongelmasta 
 sovelluksessa kehittäjälle tai ylläpitäjälle.
 
+### Huomio!
+Älä lähetä mitään henkilötietoja kuten nimeä tai sähköpostiosoitetta otsikkotietojen mukana!
+Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
+`
+Digitraffic-User: Junamies/FoobarApp 1.0
+`
+
+Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntimäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/). 
+
 ### Digitraffic-User -otsikko
 
 Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/tai sovellus. Alla esimerkkejä.
