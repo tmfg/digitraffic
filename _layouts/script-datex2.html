@@ -1,0 +1,208 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+  <!--HTML head-->
+  {% include script-datex2.html %}
+
+  <!--HTML body-->
+  <body class="body">
+
+    <!--Header-->
+    {% include header.html header-classes="header--white" %}
+
+    <!--Content-->
+    <content class="content">
+      <div class="row">
+        <div class="col-xs">
+          <h1 class="hero-image__heading">{{ page.title }}</h1>
+          <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+        </div>
+      </div>
+
+      <div class="content__section-under-hero content--padded content--github-edit">
+
+        <!--Breadcrumb-->
+        <div class="row">
+          <div class="col-xs-12 breadcrumb"><!--
+          -->{% include breadcrumb-home.html %}<!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+          </div>
+        </div>
+
+        <!--Article-->
+        <content>
+          <div class="row">
+            <!--Text content-->
+            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+              {{ content }}
+            </div>
+          </div>
+
+          <div class="row">
+            <!--Tables-->
+            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+              <table class="table" id="traffic-incident"></table>
+                
+              <table class="table" id="roadwork"></table>
+
+              <table class="table" id="weight-restriction"></table>
+
+            </div>
+          </div>
+        </content>
+
+      </div>
+    </content>
+
+    <!-- Github edit link -->
+    {% include github-edit.html %}
+
+    <!--footer-->
+    {% include footer.html %}
+    
+    <script type="text/javascript">
+        'use strict';
+        const datexUrl = "https://tie.digitraffic.fi/api/v2/data/traffic-datex2/";
+        const type_road = "roadwork";
+        const type_incident = "traffic-incident";
+        const type_restriction = "weight-restriction";
+        const format = ".json";
+
+        function initTable(datexType, tableTitle) {            
+              $("#" + datexType).append([
+                $("<colgroup>").append([
+                  $("<col>", {"class": "datex2-col1"}),
+                  $("<col>", {"class": "datex2-col2"}),
+                  $("<col>", {"class": "datex2-col3"}),
+                  $("<col>", {"class": "datex2-col3"}),
+                  $("<col>", {"class": "datex2-col4"})
+                ]),
+                $("<thead/>").append([
+                  $("<tr/>", {"class": "row"}).append([
+                            $("<th/>", {"class": "datex2-col3", "colspan": 2}).text(tableTitle),
+                            $("<th/>", {"class": "datex2-col5", "id": "date_" + datexType, "colspan": 3}).text("-")
+                  ]),
+                  $("<tr/>", {"class": "row"}).append([
+                            $("<th/>", {"class": "datex2-col1"}).text("GUID"),
+                            $("<th/>", {"class": "datex2-col2"}).text("Ver"),
+                            $("<th/>", {"class": "datex2-col3"}).text("Start"),
+                            $("<th/>", {"class": "datex2-col3"}).text("End / Open"),
+                            $("<th/>", {"class": "datex2-col4"}).text("Title")
+                  ])
+                ]),
+                $("<tbody/>")
+              ]);
+        };
+
+        function loadContent(requestType) {
+          let xmlhttp = new XMLHttpRequest();
+
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              try {
+                processResponse(JSON.parse(this.responseText), requestType);
+              } catch(e) {
+                console.log(e);
+              }
+            }
+          };
+
+          xmlhttp.onerror = function() {
+            console.log(this);
+          };
+
+          xmlhttp.open("GET", datexUrl + requestType + format, true);
+          xmlhttp.send();
+        };
+
+        function processResponse(resp, requestType) {
+            if (resp) {
+                console.log(resp);
+
+                $("#date_" + requestType).text("Updated: " + toLocalDate(resp.dataUpdatedTime));
+
+                for (var item of resp.features) {
+                    addMessage(requestType, item);
+                }
+            }
+        };
+
+        function addMessage(clazz, message) {
+            let warn = "";
+            let start = "-";
+            let end = "-";
+
+            let timeDur = getDateTime(message.properties.announcements);
+
+            if (timeDur) {
+                start = toLocalDate(timeDur.startTime);
+
+                if (timeDur.endTime) {
+                    end = toLocalDate(timeDur.endTime);
+
+                    if (Date.parse(timeDur.endTime) < new Date().getTime()) {
+                        warn = " warn";
+                    }
+                } else {
+                  let tmp = Math.round((new Date().getTime() - Date.parse(timeDur.startTime)) / 86400000);
+
+                  end = tmp + " day(s)";
+
+                  if (tmp > 14) {
+                    warn = " warn";
+                  }
+                }
+            }
+
+            $('#' + clazz + ' > tbody:last-child').append(
+                $('<tr/>', {"class": "row"}).append([
+                    $('<td/>', {"class": "datex2-col1"}).text(message.properties.situationId),
+                    $('<td/>', {"class": "datex2-col2"}).text(message.properties.version),
+                    $('<td/>', {"class": "datex2-col3"}).text(start),
+                    $('<td/>', {"class": "datex2-col3" + warn}).text(end),
+                    $('<td/>', {"class": "datex2-col4"}).text(getTitle(message.properties.announcements))
+                ])
+            )
+        };
+
+        function toLocalDate(utc) {
+          return new Date(utc).toLocaleString();
+        };
+
+        function getDateTime(announcements) {
+            for (var ann of announcements) {
+                if (ann.timeAndDuration) {
+                    return ann.timeAndDuration;
+                }
+            }
+
+            return null;
+        };
+
+        function getTitle(announcements) {
+            for (var ann of announcements) {
+                if (ann.title) {
+                    return ann.title;
+                }
+            }
+
+            return "-";
+        };
+
+        function loadDatex2() {
+          console.info("load datex2");
+
+          initTable(type_incident, "Traffic incidents");
+          initTable(type_road, "Roadworks");
+          initTable(type_restriction, "Weight restrictions");
+
+          loadContent(type_incident);
+          loadContent(type_road);
+          loadContent(type_restriction);
+        };
+    </script>
+  </body>
+</html>

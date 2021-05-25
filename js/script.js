@@ -38,6 +38,10 @@ function init() {
 
   // If Service status section exists, get service status
   document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi") : '';
+
+  if (typeof loadDatex2 === "function") {
+    loadDatex2();
+  }
 }
 
 
