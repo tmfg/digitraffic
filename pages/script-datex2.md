@@ -2,10 +2,10 @@
 layout: script-datex2
 hero-image: code
 permalink: /ohjeita/script-datex2/
-title: Datex2-tiedotteiden ajantasaisuus
+title: Validity of traffic messages
 lang: fi
 ref: Datex2-status
-intro: Datex2-viestien tila
+intro: State of traffic messages
 ---
 
 

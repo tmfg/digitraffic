@@ -1,22 +1,47 @@
 
+
+.datex2-col-1-2 {
+	width: 15%;
+}
+.datex2-col-3-7 {
+	width: 85%;
+}
+
 .datex2-col1 {
-	width: 14%;
+	width: 10%;
 }
 
 .datex2-col2 {
-	width: 6%;
+	width: 5%;
 }
 
 .datex2-col3 {
-	width: 20%;
+	width: 15%;
+	font-family: monospace;
+	white-space: nowrap;
 }
 
 .datex2-col4 {
-	width: 40%;
+	width: 25%;
+	font-family: monospace;
+	white-space: nowrap;
 }
 
 .datex2-col5 {
-	width: 80%;
+	width: 35%;
+	font-family: monospace;
+}
+
+.datex2-col6 {
+	width: 5%;
+	font-family: monospace;
+	white-space: nowrap;
+}
+
+.datex2-col7 {
+	width: 5%;
+	font-family: monospace;
+	white-space: nowrap;
 }
 
 .warn {
