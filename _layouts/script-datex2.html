@@ -1,5 +1,5 @@
 ---
-layout: compress
+layout: uncompressed
 ---
 
 <!DOCTYPE html>
@@ -174,17 +174,17 @@ layout: compress
             }
 
             $('#' + clazz + ' > tbody:last-child').append(
-                $('<tr/>', {"class": "row"}).append([
+                $('<tr/>', {"class": "row" + warn}).append([
                     $('<td/>', {"class": "datex2-col1"}).text(message.properties.situationId),
                     $('<td/>', {"class": "datex2-col2"}).text(message.properties.version),
                     $('<td/>', {"class": "datex2-col3"}).text(start),
                     $('<td/>', {"class": "datex2-col4" + warn}).text(end),
                     $('<td/>', {"class": "datex2-col5"}).text(getTitle(message.properties.announcements)),
                     $('<td/>', {"class": "datex2-col6"}).append(
-                            $('<a />', {"href": TRAFFIC_MESSAGES_DATEX2_URL + "/" + message.properties.situationId }).text("xml")
+                            $('<a />', {"href": TRAFFIC_MESSAGES_DATEX2_URL + "/" + message.properties.situationId + "?latest=true" }).text("xml")
                     ),
                     $('<td/>', {"class": "datex2-col7"}).append(
-                            $('<a />', {"href": TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId }).text("json")
+                            $('<a />', {"href": TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + "?latest=true" }).text("json")
                     )
                 ])
             )
