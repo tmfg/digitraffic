@@ -41,7 +41,10 @@ function init() {
 
   if (typeof loadDatex2 === "function") {
     loadDatex2();
+  } else if (typeof loadTWC === "function") {
+    loadTWC();
   }
+
 }
 
 
