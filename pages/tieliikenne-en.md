@@ -17,11 +17,6 @@ links:
   - ["Swagger-kuvaus", "https://tie.digitraffic.fi/swagger/swagger-spec.json"]
 ---
 
-<h2 id="contents">Contents</h2>
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
 ## General info
 
 Road traffic information is gathered from the operational traffic management systems of ITM Finland Ltd (a subsidiary of Fintraffic).
@@ -44,6 +39,13 @@ Currently the open data API includes:
 - Road weather cameras. Cameras provide information on current traffic flow and weather conditions. Currently, there are over 470 road weather cameras.
 
 - Metadata for all services is updated twice per day
+
+
+<h2 id="contents">Contents</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 
 ## REST/JSON -APIs
 

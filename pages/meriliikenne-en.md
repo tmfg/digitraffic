@@ -17,11 +17,6 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
 ---
 
-<h2 id="content">Content</h2>
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
 ## General info
 
 Marine traffic information is gathered from Finnish Transport Infrastructure Agency's data sources. Currently open data API provides following information:
@@ -33,6 +28,13 @@ Marine traffic information is gathered from Finnish Transport Infrastructure Age
 - Vessel location AIS (Automatic Identification System). [Additional info](ais).
 
 - Vessel and harbor metadata
+
+
+<h2 id="content">Content</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 
 ## REST/JSON -API
 

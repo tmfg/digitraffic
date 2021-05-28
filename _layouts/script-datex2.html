@@ -154,10 +154,10 @@ layout: uncompressed
             let timeDur = getDateTime(message.properties.announcements);
             if (timeDur) {
 
-                start = toLocalIsoDate(timeDur.startTime);
+                start = toIsoLocalDate(timeDur.startTime);
 
                 if (timeDur.endTime) {
-                    end = toLocalIsoDate(timeDur.endTime);
+                    end = toIsoLocalDate(timeDur.endTime);
                     let days = Math.round((Date.parse(timeDur.endTime) - Date.parse(timeDur.startTime)) / 86400000);
 
                     end = end + " (" + days + " days)";
@@ -193,19 +193,6 @@ layout: uncompressed
                     )
                 ])
             )
-        };
-
-        function toLocalDate(utc) {
-          return new Date(utc).toLocaleString("fi-FI");
-        };
-
-        function toLocalIsoDate(utc) {
-          const utcDateMs = new Date(utc).getTime();
-          const offsetMs = new Date().getTimezoneOffset() * 60 * 1000 * -1;
-          const localMs = utcDateMs + offsetMs;
-          const localDateTime = new Date(localMs);
-          const isoLocalDateTimeStr = localDateTime.toISOString().slice(0, 19).replace('T', ' ');
-          return isoLocalDateTimeStr;
         };
 
         function getDateTime(announcements) {

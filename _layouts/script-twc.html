@@ -145,7 +145,7 @@ layout: uncompressed
             if (resp) {
                 console.log("TMS response:", resp);
 
-                $("#date_" + TYPE_TMS).text("Last update: " + toLocalDate(resp.dataUpdatedTime));
+                $("#date_" + TYPE_TMS).text("Last update: " + toIsoLocalDate(resp.dataUpdatedTime));
 
                 let time = new Date().getTime();
 
@@ -159,7 +159,7 @@ layout: uncompressed
             if (resp) {
                 console.log("WEATHER response:", resp);
 
-                $("#date_" + TYPE_WEATHER).text("Last update: " + toLocalDate(resp.dataUpdatedTime));
+                $("#date_" + TYPE_WEATHER).text("Last update: " + toIsoLocalDate(resp.dataUpdatedTime));
 
                 let time = new Date().getTime();
 
@@ -173,7 +173,7 @@ layout: uncompressed
             if (resp) {
                 console.log("CAMERA response:", resp);
 
-                $("#date_" + TYPE_CAMERA).text("Last update: " + toLocalDate(resp.dataUpdatedTime));
+                $("#date_" + TYPE_CAMERA).text("Last update: " + toIsoLocalDate(resp.dataUpdatedTime));
 
                 let time = new Date().getTime();
 
@@ -212,18 +212,14 @@ layout: uncompressed
             var latest = $("#" + field + "latest");
 
             if (latest.text() == "-" || measured > Date.parse(latest.text())) {
-                latest.text(new Date(measured).toLocaleString());
+                latest.text(toIsoLocalDate(new Date(measured)));
             }
 
             var oldest = $("#" + field + "oldest");
 
             if (oldest.text() == "-" || measured < Date.parse(oldest.text())) {
-                oldest.text(new Date(measured).toLocaleString());
+                oldest.text(toIsoLocalDate(measured));
             }
-        };
-
-        function toLocalDate(utc) {
-          return new Date(utc).toLocaleString("fi-FI");
         };
 
         function loadTWC() {

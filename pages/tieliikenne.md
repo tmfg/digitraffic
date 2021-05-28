@@ -15,11 +15,6 @@ links:
     - https://vayla.fi
 ---
 
-<h2 id="sisältö">Sisältö</h2>
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
 ## Yleistä tietoa
 
 Tieliikenteen tiedot syntyvät Fintrafficin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
@@ -41,7 +36,14 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
 
-- Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein. 
+- Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein.
+
+
+<h2 id="sisältö">Sisältö</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 
 ## REST/JSON-rajapinnat
 #### Rajapintojen Swagger kuvaus

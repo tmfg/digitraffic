@@ -18,5 +18,24 @@
 
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.js"></script>
+  <!-- https://cdnjs.com/libraries/paho-mqtt/1.1.0
+       https://github.com/eclipse/paho.mqtt.javascript -->
+
+  <script type="text/javascript">
+    function toIsoLocalDate(utc) {
+      const utcDateMs = new Date(utc).getTime();
+      const offsetMs = new Date().getTimezoneOffset() * 60 * 1000 * -1;
+      const localMs = utcDateMs + offsetMs;
+      const localDateTime = new Date(localMs);
+      const isoLocalDateTimeStr = localDateTime.toISOString().slice(0, 19).replace('T', ' ');
+      return isoLocalDateTimeStr;
+    };
+
+    function toLocalDate(utc) {
+      return new Date(utc).toLocaleString("fi-FI");
+    };
+  </script>
+
   {% include google-analytics.html %}
 </head>

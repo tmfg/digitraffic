@@ -17,11 +17,6 @@ links:
   - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
 ---
 
-<h2 id="sisältö">Sisältö</h2>
-
-* Do not remove this line (it will not be displayed)
-{:toc}
-
 ## Yleistä tietoa
 
 Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
@@ -33,6 +28,13 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa amm
 - Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä. [Lisätietoa](ais).
 
 - Alusten ja satamien metatiedot
+
+
+<h2 id="sisältö">Sisältö</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 
 ## REST/JSON-rajapinnat
 
