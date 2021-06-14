@@ -67,6 +67,11 @@ Metadatat:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations){:target="_blank"}
 
+Metadatasta kannattaa huomioida ainakin alla olevat kentät, joista voi päätellä onko kamera tai esiasento keruussa.
+
+- Kameran kentät ```state``` ja ```collectionStatus```
+- Esiasennon kenttä ```inCollection```
+
 ### Kelikamerakuvien viimeisen 24 h historia
 
 Haluttujen kameroiden ja/tai esiasentojen historia saadaan rajapinnasta:
@@ -92,11 +97,11 @@ Vanhat sujuvuuden historiatiedot ovat saatavilla [täältä](https://tie.digitra
 
 [```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
 
-Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille.
+Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet LAM – asemille (linkeille tietoa ei ole enää saatavilla, joten ne ovat tyjät).
 
-Kun linkki- tai LAM–asema vaihtuu talvinopeusrajoituksesta kesänopeuksiin tai päinvastoin, viestin sisältö muuttuu.
+Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa ja ovat haettavissa aamulla kello kuuden jälkeen Suomen aikaa. Data kuitenkin päivitty huomattavasti harvemmin.
 
-Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa. Päivitetty viesti on haettavissa 03:30 Suomen aikaa.
+Jatkossa vapaat nopeudet tarjotaan suoraan [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot) -metadata-rajapinnassa.
 
 Metadatat:
 

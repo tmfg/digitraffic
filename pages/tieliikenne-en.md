@@ -63,7 +63,13 @@ Response message contains weather camera information and URL for the camera imag
 ![Weather camera image C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
 Related metadata:
+
 [```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations){:target="_blank"}
+
+You should check from the metadata at the least field below to make sure the camera or preset is in collection.
+
+- Camera fields ```state``` and ```collectionStatus```
+- Preset field ```inCollection```
 
 ### Weather camera image history for the last 24 hours
 
@@ -90,9 +96,11 @@ Old history data can be downloaded from the following [link](https://tie.digitra
 
 [```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
 
-Response message contains currently valid free flow speeds. The free flow speeds are changed when the summer and winter speed limits are activated on the road network.
+Response message contains currently valid free flow speeds.
 
-Message is updated once a day (3:30 AM EET).
+Message is updated once a day and it ready be loaded after 6:00 AM EET. The actual data is updated much less frequently.
+
+This api will be deprecated at some point and the same information can be read from [Current data from TMS stations](#current-data-from-tms-stations) -metadata-api.
 
 Related metadata:
 
