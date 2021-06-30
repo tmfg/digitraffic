@@ -35,6 +35,13 @@ layout: compress
         <div class="row">
           <div class="col-xs-12">
             <h1 class="h1 h1--page-top posts-in-category__page-heading">{{ page.title }}</h1>
+
+            <!-- Optional content -->
+            {% unless page.content == empty %}
+            <div class="col-xs-12 col-sm-8 text-body">
+              {{ page.content }}
+            </div>
+            {% endunless %}
           </div>
         </div>
 
