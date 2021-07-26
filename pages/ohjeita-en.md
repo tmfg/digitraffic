@@ -141,3 +141,25 @@ __A__: Check if you using the Authorization header in your requests. Using this 
 __Q__: Why does my mqtt-connection keep disconnecting?  
 __A__: You have not subscribed any topic or subscribed only topics that have infrequent messages. 
 Subscribe also to relevan status-topic(tms/status, weather/status or vessels/status).
+
+# Avoiding unnecessary data transfer in weather camera requests
+The response for a weather camera request returns the HTTP header **ETag**. The ETag value can be used in the **If-None-Match** HTTP header. If the image is updated it will be returned with the HTTP return code 200. If the image is not updated no image will be returned and the HTTP return code will be 304.
+
+curl example:
+```
+# Fetch the image with a GET request and retrieve the ETag value (-v switch)
+curl -v https://weathercam.digitraffic.fi/C0450701.jpg
+> HTTP/2 200
+> content-type: image/jpeg
+> etag: "920d5a54a98cca804825af6894d778a4"
+
+# Request the image again (note the double quotes in the etag value)
+curl -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+> HTTP/2 304
+# Image not updated
+
+# New request after e.g. 5 minutes
+curl -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+> HTTP/2 200
+# The updated image is returned
+```
