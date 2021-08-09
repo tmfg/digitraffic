@@ -49,6 +49,10 @@ $half-gutter-width: $gutter-width * .5;
   margin-left: $gutter-compensation;
 }
 
+.row.nowrap {
+  @include flex-wrap(nowrap);
+}
+
 .row.reverse {
   @include flex-direction(row-reverse);
 }

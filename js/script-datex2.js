@@ -20,11 +20,11 @@ function initTable(datexType, tableTitle) {
           $("<col>", {"class": "datex2-col8"})
         ]),
         $("<thead/>").append([
-          $("<tr/>", {"class": "row"}).append([
+          $("<tr/>", {"class": "row.nowrap"}).append([
                     $("<th/>", {"class": "datex2-col-1-2", "colspan": 2}).text(tableTitle),
                     $("<th/>", {"class": "datex2-col-3-8", "id": "date_" + datexType, "colspan": 6}).text("-")
           ]),
-          $("<tr/>", {"class": "row"}).append([
+          $("<tr/>", {"class": "row.nowrap"}).append([
                     $("<th/>", {"class": "datex2-col1"}).text("GUID"),
                     $("<th/>", {"class": "datex2-col2"}).text("Ver"),
                     $("<th/>", {"class": "datex2-col3"}).text("Start"),
@@ -109,7 +109,7 @@ function addMessage(clazz, message) {
     }
 
     $('#' + clazz + ' > tbody:last-child').append(
-        $('<tr/>', {"class": "row" + warn}).append([
+        $('<tr/>', {"class": "row.nowrap" + warn}).append([
             $('<td/>', {"class": "datex2-col1"}).text(message.properties.situationId),
             $('<td/>', {"class": "datex2-col2"}).text(message.properties.version),
             $('<td/>', {"class": "datex2-col3"}).text(start),
