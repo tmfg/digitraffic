@@ -1,5 +1,5 @@
 # https://pages.github.com/versions/
-FROM ruby:2.5.8
+FROM ruby:2.7.4
 
 # Installa and set locales
 RUN apt-get -qq update && \
@@ -16,7 +16,7 @@ ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=dontWarn
 RUN apt-get -qq update && \
     apt-get install curl software-properties-common -y
 # Install node and npm from deb.nodesource.com as version in stretch repo is outdated
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN DEBIAN_FRONTEND=noninteractive apt-get install nodejs
 
 # Entrypoint
