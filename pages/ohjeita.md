@@ -172,7 +172,7 @@ Tilaa silloin myös status-topic(tms/status, weather/status, vessels/status).
 Kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käyttää ETagin arvoa **If-None-Match** -otsikossa. Mikäli kuva on päivittynyt se palautuu HTTP-paluukoodin 200 kera. Mikäli kuva ei ole päivittynyt mitään kuvaa ei palauteta ja HTTP-paluukoodi on 304.
 
 curl-esimerkki:
-```
+```bash
 # HUOM! Digitraffic-User -otsikko on jätetty tässä ei-olennaisena pois, muistathan käyttää sitä.
 
 # Haetaan kuva GET-pyynnöllä ja otetaan ETag-arvo talteen (vipu -v)
