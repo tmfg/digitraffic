@@ -5,6 +5,7 @@ section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
 swagger-source: https://tie.digitraffic.fi/swagger/swagger-spec.json
+swagger-link: https://tie.digitraffic.fi/swagger/
 hero-image: road
 title: Tieliikenne
 lang: fi
@@ -20,21 +21,21 @@ links:
 Tieliikenteen tiedot syntyvät Fintrafficin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
 Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
-- LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea. [LAM-dokumentaatioon](lam) on kerätty LAM-dataan liittyviä selitteitä.
-
-- Ajantasaiset vapaat nopeudet. Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet sekä linkeille että LAM – asemille. Tiedot päivittyvät kerran vuorokaudessa.
-
-- Tieliikenteen häiriötiedotteet. Tieliikennekeskuksista saatavat liikenteen ensi- ja muut häiriötiedotteet, tiedotteet tietöistä sekä kelirikkotilanteista. Viestit ovat saatavissa Datex2 formaatissa.
-
-- Tieliikenteen painorajoitteet.  Viestit ovat saatavissa Datex2 formaatissa.
-
-- Tieliikenteen pitkäkestoiset tietyöt. Viestit ovat saatavissa Datex2 formaatissa.
+- Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
 
 - Tiesääasemien tiedot. Tiesääasemat mittaavat tavallisten säätietojen (ilman lämpötilan ja suhteellinen kosteus, kastepistelämpötila, sade ja tuulitiedot jne) lisäksi tietoa tienpinnan tilasta erityisten tienpinta-anturien avulla. Suomen maanteillä on yli 350 tiesääasemapistettä, jotka sijaitsevat yleensä pääteiden varsilla. Rajapinnan kautta on noudettavissa tiesääasemien keräämät mittaustiedot, jotka päivittyvät minuutin välein.
 
 - Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
 
-- Kelikamerat. Keli- ja liikennekameroiden kuvista saadaan tietoa tienpinnan tilasta sekä liikennetilanteesta. Rajapinnan kautta on haettavissa kaikkien julkisten kelikameroiden tiedot ja osoitelinkit mistä kelikameroiden kuvat löytyvät. Kameroita on käytössä reilut 470 kappaletta.
+- LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea. [LAM-dokumentaatioon](lam) on kerätty LAM-dataan liittyviä selitteitä.
+
+- Liikennetiedotteet. Tieliikenteen häiriötiedotteet, painorajoitukset, tietyöt ja erikoiskuljetukset ovat saatavissa Datex2 sekä Simppeli-JSON -muodossa.  
+
+- TMC/ALERT-C paikannuspisteistö, jota käytetään mm. liikennetiedotteissa.
+
+- Muuttuvien liikennemerkkien tiedot
+
+- Maanteiden kunnossapitotiedot
 
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein.
 
@@ -46,11 +47,10 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 
 ## REST/JSON-rajapinnat
-#### Rajapintojen Swagger kuvaus
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://tie.digitraffic.fi/swagger/){:target="_blank"}
+### Rajapintojen Swagger-kuvaukset
 
-Sekä metadataa että dataa päivitetään reaaliaikaisesti.
+Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta]({{page.swagger-link}}){:target="_blank"}
 
 ### Kelikamerat
 
@@ -72,6 +72,7 @@ Metadatasta kannattaa huomioida ainakin alla olevat kentät, joista voi päätel
 - Kameran kentät ```state``` ja ```collectionStatus```
 - Esiasennon kenttä ```inCollection```
 
+
 ### Kelikamerakuvien viimeisen 24 h historia
 
 Haluttujen kameroiden ja/tai esiasentojen historia saadaan rajapinnasta:
@@ -84,28 +85,41 @@ Historian olemassaoloa haluttuna aikavälillä voikysyä rajapinnasta:
 
 [```https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?id={kamera tai esiasento id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
 
-### Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot
 
-Perjantaina 29.12.2017 päättyi pääkaupunkiseudun matka-aikajärjestelmän toiminta. Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
-vastaa enää asetettuja laatuvaatimuksia Tämän vuoksi myös Digitraffic lopetti toimittamasta PKS-järjestelmään liittyvää tietoa.
+### Tiesääasemien ajantasaiset mittaustiedot
 
-Vanhat sujuvuuden historiatiedot ovat saatavilla [täältä](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html){:target="_blank"}.
+[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
 
-### Vapaat nopeudet
+[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id}){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds){:target="_blank"}
+Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
 
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
+Viestissä on kullekin tiesääasemalle kyseisen aseman anturiarvot.
 
-Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet LAM – asemille (linkeille tietoa ei ole enää saatavilla, joten ne ovat tyjät).
-
-Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa ja ovat haettavissa aamulla kello kuuden jälkeen Suomen aikaa. Data kuitenkin päivitty huomattavasti harvemmin.
-
-Jatkossa vapaat nopeudet tarjotaan suoraan [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot) -metadata-rajapinnassa.
+Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
+Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
 Metadatat:
 
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
+
+
+#### Viimeisen 24h historia
+
+Halutun tiesääaseman kaikkien anturien datan saa rajapinnasta:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+
+Yksittäisen anturin datan saa rajapinnasta:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
+
+Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja to={ISO 8061 -aika} parametreillä. Oletuksena ilman from-parametriä kyselyt palauttavat vain viimeisimmän tunnin datan.
+
+24h historia on vielä tarjolla vain beta-rajapintana.
+
 
 ### Ajantasaiset tiejaksojen keliennusteet
 
@@ -280,39 +294,7 @@ Lisätietoa löytyy [TMC/ALERT-C](paikannusnimisto) -sivulta.
 
 
 
-### Tiesääasemien ajantasaiset mittaustiedot
 
-[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id}){:target="_blank"}
-
-Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
-
-Viestissä on kullekin tiesääasemalle kyseisen aseman anturiarvot.
-
-Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
-Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
-
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
-
-
-#### Viimeisen 24h historia
-
-Halutun tiesääaseman kaikkien anturien datan saa rajapinnasta:
-
-[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
-
-Yksittäisen anturin datan saa rajapinnasta:
-
-[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
-
-Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja to={ISO 8061 -aika} parametreillä. Oletuksena ilman from-parametriä kyselyt palauttavat vain viimeisimmän tunnin datan.
-
-24h historia on vielä tarjolla vain beta-rajapintana.
 
 ### Muuttuvien liikennemerkkien tiedot
 
@@ -548,5 +530,27 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 
 Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
 
-## Swagger-rajapintakuvaus
-<!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->
+## Vanhentuneet ja poistuneet rajapinnat
+
+### ~~Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot~~
+
+Perjantaina 29.12.2017 päättyi pääkaupunkiseudun matka-aikajärjestelmän toiminta. Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
+vastaa enää asetettuja laatuvaatimuksia Tämän vuoksi myös Digitraffic lopetti toimittamasta PKS-järjestelmään liittyvää tietoa.
+
+Vanhat sujuvuuden historiatiedot ovat saatavilla [täältä](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html){:target="_blank"}.
+
+### ~~Vapaat nopeudet~~
+
+[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
+
+Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet LAM – asemille (linkeille tietoa ei ole enää saatavilla, joten ne ovat tyjät).
+
+Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa ja ovat haettavissa aamulla kello kuuden jälkeen Suomen aikaa. Data kuitenkin päivitty huomattavasti harvemmin.
+
+Jatkossa vapaat nopeudet tarjotaan suoraan [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot) -metadata-rajapinnassa.
+
+Metadatat:
+
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}

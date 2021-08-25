@@ -5,6 +5,7 @@ section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
 swagger-source: https://tie.digitraffic.fi/swagger/swagger-spec.json
+swagger-link: https://tie.digitraffic.fi/swagger/
 hero-image: road
 title: Road traffic
 lang: en
@@ -22,21 +23,21 @@ links:
 Road traffic information is gathered from the operational traffic management systems of ITM Finland Ltd (a subsidiary of Fintraffic).
 Currently the open data API includes:
 
-- TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland. The [TMS documentation](lam) contains descriptions of TMS data.
-
-- Current free flow speeds. Data is updated once a day.
-
-- Traffic disorders. Road traffic center provides information about traffic accidents and other disorders like road works. Messages are available in Datex2 format.
-
-- Weight restrictions are available in datex2 format.
-
-- Roadworks are available in datex2 format.
+- Road weather cameras. Cameras provide information on current traffic flow and weather conditions. Currently, there are over 470 road weather cameras.
 
 - Road weather station data. The road weather stations measure e.g. temperature, wind, rain, relative humidity and dew point.  Data is updated once per minute. Currently, there are over 350 road weather stations on the Finnish road network.
 
 - Road weather forecasts. Content is updated every five minutes.
 
-- Road weather cameras. Cameras provide information on current traffic flow and weather conditions. Currently, there are over 470 road weather cameras.
+- TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland. The [TMS documentation](lam) contains descriptions of TMS data.
+
+- Traffic messages. Traffic disorders, weight restrictions, roadworks and weight restrictions are available in Datex2 and Simple-JSON format.
+
+- TMC/ALERT-C location data which is used in Traffic messages.
+
+- Variable signs
+
+- Road maintenance information
 
 - Metadata for all services is updated twice per day
 
@@ -49,7 +50,9 @@ Currently the open data API includes:
 
 ## REST/JSON -APIs
 
-Full API description is located in [Swagger-documentation](https://tie.digitraffic.fi/swagger/){:target="_blank"}
+### Swagger API descriptions
+
+Full API descriptions can be found in [Swagger-documentation page]({{page.swagger-link}}){:target="_blank"}
 
 ### Road weather cameras
 
@@ -71,6 +74,7 @@ You should check from the metadata at the least field below to make sure the cam
 - Camera fields ```state``` and ```collectionStatus```
 - Preset field ```inCollection```
 
+
 ### Weather camera image history for the last 24 hours
 
 History can be fetched by API call:
@@ -84,27 +88,38 @@ History presence tells if history exists for given time interval and it can be f
 [```https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?id={preset or camera id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
 
 
-### Current journey times
+### Current data of road weather stations
 
-NOTE! This information is not updated. The old journey time system has been shut down in the end of 2017.
+[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
 
-Old history data can be downloaded from the following [link](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html){:target="_blank"}.
+[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id}){:target="_blank"}
 
-### Current free flow speeds
+Response message contains latest weather measurement data.
 
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
-
-Response message contains currently valid free flow speeds.
-
-Message is updated once a day and it ready be loaded after 6:00 AM EET. The actual data is updated much less frequently.
-
-This api will be deprecated at some point and the same information can be read from [Current data from TMS stations](#current-data-from-tms-stations) -metadata-api.
+Data is updated almost in real time but information is cached. Actual update interval is one minute.
+Real time data can be read from WebSocket.
 
 Related metadata:
 
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
+
+
+#### Sensor history for the last 24 hours
+
+Sensor history from the weather road station can be fetched by API call:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+
+Single sensor history can be fetched by API call:
+
+[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
+
+Time interval can be adjusted with from={ISO 8061 -time} and to={ISO 8061 -time} parameters.
+
+History for the last 24 hours is currently only in beta-API.
+
 
 ### Current road weather forecasts
 
@@ -131,7 +146,6 @@ Related metadata:
 [```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/22/50/27/60){:target="_blank"}
 
 [```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/25){:target="_blank"}
-
 
 
 ### Current data from TMS stations
@@ -278,37 +292,6 @@ More information can be found at [TMC Data](tmc-data) -page.
 [```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
 
 
-### Current data of road weather stations
-
-[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id}){:target="_blank"}
-
-Response message contains latest weather measurement data.
-
-Data is updated almost in real time but information is cached. Actual update interval is one minute.
-Real time data can be read from WebSocket. 
-
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
-
-
-#### Sensor history for the last 24 hours
-
-Sensor history from the weather road station can be fetched by API call:
-
-[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
-
-Single sensor history can be fetched by API call:
-
-[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
-
-Time interval can be adjusted with from={ISO 8061 -time} and to={ISO 8061 -time} parameters. 
-
-History for the last 24 hours is currently only in beta-API.
 
 ### Variable signs
 
@@ -547,5 +530,26 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 
 See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
 
-## Swagger API specification
-<!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->
+## Outdated and deprecated APIs
+
+### ~~Current journey times~~
+
+NOTE! This information is not updated. The old journey time system has been shut down in the end of 2017.
+
+Old history data can be downloaded from the following [link](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html){:target="_blank"}.
+
+### ~~Current free flow speeds~~
+
+[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds){:target="_blank"}
+
+[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
+
+Response message contains currently valid free flow speeds.
+
+Message is updated once a day and it ready be loaded after 6:00 AM EET. The actual data is updated much less frequently.
+
+This api will be deprecated at some point and the same information can be read from [Current data from TMS stations](#current-data-from-tms-stations) -metadata-api.
+
+Related metadata:
+
+[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
