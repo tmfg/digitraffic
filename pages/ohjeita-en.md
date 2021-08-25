@@ -152,6 +152,95 @@ final ResponseEntity<String> response =
 System.out.println(response.getBody());
 ```
 
+# Python
+
+__K__: How do I call the APIs with [Python request library](https://docs.python-requests.org/en/master/index.html)?  
+__V__:
+```python
+import requests
+
+TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
+
+headers = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
+
+r = requests.get(TMS_STATION_URL, headers=headers)
+print(r.json()['dataUpdatedTime'])
+```
+
+More examples and runnable code available in Colab:
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/solita-jkhaak/2021-digitraffic-dev-day/blob/main/python/requests-example.ipynb)
+
+
+# Node.js (and JavaScript)
+
+__K__: How do I call the APIs with [node-fetch](https://github.com/node-fetch/node-fetch)?  
+__V__:
+```javascript
+const fetch = require('node-fetch')
+
+const TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
+
+const DT_USER_ID = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
+
+function handleTmsData(data) {
+    console.log('Tms data updated time: ' + data.dataUpdatedTime)
+}
+
+fetch(TMS_STATION_URL, {headers: DT_USER_ID})
+    .then(response => response.json())
+    .then(handleTmsData)
+```
+
+__K__: How do I handle ETags when requesting weather camera images?
+__V__:
+```javascript
+const fetch = require('node-fetch')
+const sleep = require('sleep')
+
+const CAMERA_ID = 'C0450701'
+const WEATHER_CAM_URL = 'https://weathercam.digitraffic.fi/' + CAMERA_ID + '.jpg'
+
+const DT_USER_ID = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
+
+function writeData(filename, _) {
+    console.log('Saving file: ' + filename)
+    // TODO save file
+}
+
+function getImage(headers) {
+    return fetch(WEATHER_CAM_URL, {headers: headers})
+        .then(response => {
+            if (response.ok) {
+                console.log('Got new content')
+                writeData(CAMERA_ID + '.jpg', response.buffer())
+
+                // update etag with new content
+                return {...headers, 'If-None-Match': response.headers.get('etag')}
+            }
+
+            console.warn('Content not modified')
+            return headers
+        })
+}
+
+async function main() {
+    let count = 0;
+    let headers = {...DT_USER_ID, 'If-None-Match': ''}
+    
+    while (count < 5) {
+        // Request new image. After successful request store the new header with new etag for subsequent requests
+        headers = await getImage(headers)
+
+        count = count + 1
+        sleep.sleep(5)
+    }
+}
+
+main()
+```
+
+
 # Rate limiting
 __Q__: Why do some of my API requests fail with code 429?  
 __A__: Some APIs can be called with a certain amount in a certain time window. The API contents are not updated more often than the API can be called.  
