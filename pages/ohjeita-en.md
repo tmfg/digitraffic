@@ -36,7 +36,7 @@ Most libraries include this header automatically.
 If compression is not allowed in the request, the service returns error code `406`.
 
 ### Examples
-```
+```bash
 curl -H 'Accept-Encoding: gzip'  
 
 curl --compressed  
@@ -84,7 +84,7 @@ The Digitraffic-User header should include an identifiable user party and/or app
 `Digitraffic-User: Fintraffic/Liikennetilanne`  
 
 ### Examples
-```
+```bash
 curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
 
 wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
@@ -99,7 +99,7 @@ including at least the name and version of the application. Below you can find e
 `User-Agent: Liikennetilanne/1.0`
 
 ### Examples
-```
+```bash
 curl -H 'User-Agent: FoobarApp/1.0'  
 
 wget --header='User-Agent: FoobarApp/1.0'
@@ -121,25 +121,35 @@ These two might return a different _dataUpdatedTime_ because the calls were cach
 # cURL
 __Q__: How do I call the APIs with [cURL](https://curl.haxx.se/)?  
 __A__:
-```
+```bash
 curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' -H 'User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
 # Wget
 __Q__: How do I call the APIs with [Wget](https://www.gnu.org/software/wget/)?  
 __A__:
-```
+```bash
 wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' --header='User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
 # Java RestTemplate
 __Q__: How do I call the APIs with [Java RestTemplate](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)?  
 __A__:
-```
-final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
+```java
+final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory =
+    new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
 final RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
 
-final String output = restTemplate.getForObject("https://tie.digitraffic.fi/api/v1/data/tms-data?testi=testi", String.class);
+final HttpHeaders headers = new HttpHeaders();
+headers.add("Accept-Encoding", "gzip");
+headers.add("User-Agent", "RestTemplate");
+headers.add("Digitraffic-User", "DT/Tester");
+HttpEntity<String> entity = new HttpEntity<>("body", headers);
+
+final ResponseEntity<String> response =
+    restTemplate.exchange("https://tie.digitraffic.fi/api/v1/data/tms-data", HttpMethod.GET, entity, String.class);
+
+System.out.println(response.getBody());
 ```
 
 # Rate limiting
