@@ -86,7 +86,7 @@ Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/ta
 `Digitraffic-User: Liikennetilanne`  
 `Digitraffic-User: TMFG/Liikennetilanne`
 
-### Esimerkkejä
+#### Esimerkkejä
 ```bash
 curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
 
@@ -101,7 +101,7 @@ sisältäen vähintään sovelluksen nimen ja version. Alla esimerkkejä.
 `User-Agent: <sovellus>/<versio>`  
 `User-Agent: FoobarApp/1.0`
 
-### Esimerkkejä
+#### Esimerkkejä
 ```bash
 curl -H 'User-Agent: FoobarApp/1.0'  
 

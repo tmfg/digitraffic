@@ -83,7 +83,7 @@ The Digitraffic-User header should include an identifiable user party and/or app
 `Digitraffic-User: Liikennetilanne`  
 `Digitraffic-User: Fintraffic/Liikennetilanne`  
 
-### Examples
+#### Examples
 ```bash
 curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
 
@@ -98,7 +98,7 @@ including at least the name and version of the application. Below you can find e
 `User-Agent: <application>/<version>`  
 `User-Agent: Liikennetilanne/1.0`
 
-### Examples
+#### Examples
 ```bash
 curl -H 'User-Agent: FoobarApp/1.0'  
 
