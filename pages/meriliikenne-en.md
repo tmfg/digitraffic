@@ -5,6 +5,7 @@ section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
 swagger-source: https://meri.digitraffic.fi/swagger/swagger-spec.json
+swagger-link: https://meri.digitraffic.fi/swagger/
 hero-image: icebreaker
 lang: en
 ref: marine-traffic
@@ -27,7 +28,13 @@ Marine traffic information is gathered from Finnish Transport Infrastructure Age
 
 - Vessel location AIS (Automatic Identification System). [Additional info](ais).
 
-- Vessel and harbor metadata
+- Dirways from Baltice-system
+
+- Sea state estimation data from TLSC-system, that analyzes data send by smart AtoN buoy sites
+
+- Waterway traffic disturbances
+
+- Related metadata
 
 
 <h2 id="content">Content</h2>
@@ -38,9 +45,9 @@ Marine traffic information is gathered from Finnish Transport Infrastructure Age
 
 ## REST/JSON -API
 
-Full API description is located in [Swagger-documentation](https://meri.digitraffic.fi/swagger/){:target="_blank"}
+### Swagger API descriptions
 
-Both metadata and content is updated in real time.
+Full API descriptions can be found in [Swagger-documentation page]({{page.swagger-link}}){:target="_blank"}
 
 ### Nautical warnings
 
@@ -332,6 +339,3 @@ sse/site/<site-id>          # Tracking single site data
 ## Restrictions
 
 See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
-
-## Swagger API specification
-<!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->

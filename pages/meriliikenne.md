@@ -5,6 +5,7 @@ section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
 swagger-source: https://meri.digitraffic.fi/swagger/swagger-spec.json
+swagger-link: https://meri.digitraffic.fi/swagger/
 hero-image: icebreaker
 lang: fi
 ref: marine-traffic
@@ -27,7 +28,13 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa amm
 
 - Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä. [Lisätietoa](ais).
 
-- Alusten ja satamien metatiedot
+- Talvimerenkulun avustustiedot Baltice-järjestelmästä
+
+- Meren tilan arviointi dataa älypoijuilta 
+
+- Vesiliikenteen häiriötiedot
+
+- Näihin liittyvät metatiedot
 
 
 <h2 id="sisältö">Sisältö</h2>
@@ -38,9 +45,9 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa amm
 
 ## REST/JSON-rajapinnat
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta](https://meri.digitraffic.fi/swagger/){:target="_blank"}
+### Rajapintojen Swagger-kuvaukset
 
-Sekä metadataa että dataa päivitetään reaaliaikaisesti.
+Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta]({{page.swagger-link}}){:target="_blank"}
 
 ### Merivaroitukset
 
@@ -86,13 +93,13 @@ Metadatat:
 
 [```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships){:target="_blank"}
 
-### Älypoijudata (SSE)
+### Meren tilan arviointi (SSE)
 
 Data + metadata:
 
 [```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest){:target="_blank"}
 
-Älypoijudata haetaan TLSC-järjestelmästä, joka kerää ja analysoi älypoijujen lähettämää dataa julkaistavaan muotoon.
+Meren tilan arviointi -data haetaan TLSC-järjestelmästä, joka kerää ja analysoi älypoijujen lähettämää dataa julkaistavaan muotoon.
 
 Data päivitetään 30 minuutin välein.
 
@@ -333,6 +340,3 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
 ## Käyttörajoitukset
 
 Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
-
-## Swagger-rajapintakuvaus
-<!-- After this swagger-ui.html is appended here automatically in traffic-type.html -->  
