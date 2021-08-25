@@ -17,13 +17,13 @@ intro: Instructions for coding
 
 # General considerations
 
-Instructions in force from 1st of June 2020
+Instructions in effect from 1st of June 2020
 
 ## HTTPS- vs HTTP-protocol
 
 All APIs of Digitraffic supports HTTPS-protocol, so there is no reason to use unencrypted HTTP-protocol.
 At the moment unencrypted HTTP-requests to weather camera images are redirected to use HTTPS with ```HTTP/1.1 301 Moved Permanently``` -response code and
-```Location``` -header with the new https-address. In the future it is possible that all traffic will be redirected to use ```HTTPS```-protocol.
+```Location``` -header with the new https-address. In the future it is possible that all traffic will be enforced to use ```HTTPS```-protocol.
 More information of ```HTTP 301``` at [https://en.wikipedia.org/wiki/HTTP_301](https://en.wikipedia.org/wiki/HTTP_301).
 
 ## Compression  
@@ -35,12 +35,12 @@ Most libraries include this header automatically.
 
 If compression is not allowed in the request, the service returns error code `406`.
 
-### Example with cURL
+### Examples
 ```
-curl -H 'Accept-Encoding: gzip'
-```
-### Example with Wget
-```
+curl -H 'Accept-Encoding: gzip'  
+
+curl --compressed  
+
 wget --header='Accept-Encoding: gzip'
 ```
 
@@ -83,6 +83,13 @@ The Digitraffic-User header should include an identifiable user party and/or app
 `Digitraffic-User: Liikennetilanne`  
 `Digitraffic-User: Fintraffic/Liikennetilanne`  
 
+### Examples
+```
+curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
+
+wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
+```
+
 ### User-Agent
 
 If it is possible to set the User-Agent header in the application, it should be in accordance with [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3)
@@ -91,6 +98,12 @@ including at least the name and version of the application. Below you can find e
 `User-Agent: <application>/<version>`  
 `User-Agent: Liikennetilanne/1.0`
 
+### Examples
+```
+curl -H 'User-Agent: FoobarApp/1.0'  
+
+wget --header='User-Agent: FoobarApp/1.0'
+```
 
 # Cache
 __Q__: Why do APIs often return the same response?  
@@ -109,14 +122,14 @@ These two might return a different _dataUpdatedTime_ because the calls were cach
 __Q__: How do I call the APIs with [cURL](https://curl.haxx.se/)?  
 __A__:
 ```
-curl -H 'Accept-Encoding: gzip' -H 'Connection: close' --compress https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
+curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' -H 'User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
 # Wget
 __Q__: How do I call the APIs with [Wget](https://www.gnu.org/software/wget/)?  
 __A__:
 ```
-wget --header='Accept-Encoding: gzip' --header='Connection: close' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
+wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' --header='User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
 # Java RestTemplate
@@ -147,6 +160,9 @@ The response for a weather camera request returns the HTTP header **ETag**. The 
 
 curl example:
 ```
+
+# Attention! The Digitraffic-User header has been omitted here as it not relevant for the example. Please remember to use it.
+
 # Fetch the image with a GET request and retrieve the ETag value (-v switch)
 curl -v https://weathercam.digitraffic.fi/C0450701.jpg
 > HTTP/2 200
@@ -154,12 +170,17 @@ curl -v https://weathercam.digitraffic.fi/C0450701.jpg
 > etag: "920d5a54a98cca804825af6894d778a4"
 
 # Request the image again (note the double quotes in the etag value)
-curl -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+curl -v -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+> HTTP/2 304
+# Image not updated
+
+# Requests can also be made with HTTP HEAD which only returns the HTTP status code 
+curl -v -X HEAD -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
 > HTTP/2 304
 # Image not updated
 
 # New request after e.g. 5 minutes
-curl -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+curl -v -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
 > HTTP/2 200
 # The updated image is returned
 ```

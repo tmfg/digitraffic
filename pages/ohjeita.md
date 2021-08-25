@@ -22,10 +22,10 @@ intro: Ohjeita ohjelmoijille
 
 ## HTTPS- vai HTTP-protokolla
 
-Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, ei siis syytä käyttää salaamatonta HTTP-protokollaa. 
+Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, ei siis ole syytä käyttää salaamatonta HTTP-protokollaa. 
 Tällä hetkellä salaamattomat HTTP-pyynnöt kelikamerakuviin ohjataan käyttämään HTTPS:ää ```HTTP/1.1 301 Moved Permanently``` -vastauksella ja 
-```Location``` -otsikkotiedolla, jossa kerrotaa uusi HTTPS-osoite. 
-On mahdollista, että tulevaisuudessa kaikki liikenne ohjataan käyttämään ```HTTPS```-protokollaa. 
+```Location``` -otsikkotiedolla, jossa kerrotaan uusi HTTPS-osoite. 
+On mahdollista, että tulevaisuudessa kaikki liikenne pakotetaan käyttämään ```HTTPS```-protokollaa. 
 Lisätietoa ```HTTP 301``` -vastauksesta [https://en.wikipedia.org/wiki/HTTP_301](https://en.wikipedia.org/wiki/HTTP_301) -sivulla.
 
 
@@ -38,12 +38,12 @@ Useimmat kirjastot lisäävät otsikkotiedon automaattisesti.
 
 Jos pakkausta ei ole sallittu pyynnössä, palvelu palauttaa virhekoodin `406`.
 
-### Esimerkki cURL:lla
+### Esimerkkejä
 ```
-curl -H 'Accept-Encoding: gzip'
-```
-### Esimerkki Wget:llä
-```
+curl -H 'Accept-Encoding: gzip'  
+
+curl --compressed  
+
 wget --header='Accept-Encoding: gzip'
 ```
 
@@ -84,7 +84,14 @@ Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/ta
   
 `Digitraffic-User: TMFG`  
 `Digitraffic-User: Liikennetilanne`  
-`Digitraffic-User: TMFG/Liikennetilanne`  
+`Digitraffic-User: TMFG/Liikennetilanne`
+
+### Esimerkkejä
+```
+curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
+
+wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
+```
 
 ### User-Agent -otsikko
 
@@ -92,7 +99,14 @@ Mikäli sovelluksessa on mahdollista asettaa User-Agent -otsikkotieto, tulisi se
 sisältäen vähintään sovelluksen nimen ja version. Alla esimerkkejä.
 
 `User-Agent: <sovellus>/<versio>`  
-`User-Agent: Liikennetilanne/1.0`
+`User-Agent: FoobarApp/1.0`
+
+### Esimerkkejä
+```
+curl -H 'User-Agent: FoobarApp/1.0'  
+
+wget --header='User-Agent: FoobarApp/1.0'
+```
 
 # Cache
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  
@@ -111,14 +125,14 @@ Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen 
 __K__: Miten kutsun rajapintoja [cURLilla](https://curl.haxx.se/)?  
 __V__:
 ```
-curl -H 'Accept-Encoding: gzip' -H 'Connection: close' --compress https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
+curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' -H 'User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
 # Wget
 __K__: Miten kutsun rajapintoja [Wgetillä](https://www.gnu.org/software/wget/)?  
 __V__:
 ```
-wget --header='Accept-Encoding: gzip' --header='Connection: close' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
+wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' --header='User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
 # Java RestTemplate
@@ -149,6 +163,8 @@ Kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käytt�
 
 curl-esimerkki:
 ```
+# HUOM! Digitraffic-User -otsikko on jätetty tässä ei-olennaisena pois, muistathan käyttää sitä.
+
 # Haetaan kuva GET-pyynnöllä ja otetaan ETag-arvo talteen (vipu -v)
 curl -v https://weathercam.digitraffic.fi/C0450701.jpg
 > HTTP/2 200
@@ -156,12 +172,17 @@ curl -v https://weathercam.digitraffic.fi/C0450701.jpg
 > etag: "920d5a54a98cca804825af6894d778a4"
 
 # Kysytään kuvaa uudestaan (huomaa tuplahipsut ETag-arvossa)
-curl -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+curl -v -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+> HTTP/2 304
+# Kuva ei päivittynyt
+
+# Kysyminen on mahdollista myös HTTP HEAD-pyynnöllä joka palauttaa vain HTTP-statuskoodin
+curl -v -X HEAD -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
 > HTTP/2 304
 # Kuva ei päivittynyt
 
 # Uusi kysely, esim. 5 min päästä
-curl -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
+curl -v -H 'If-None-Match: "920d5a54a98cca804825af6894d778a4"' https://weathercam.digitraffic.fi/C0450701.jpg
 > HTTP/2 200
 # Päivittynyt kuva palautuu
 ```
