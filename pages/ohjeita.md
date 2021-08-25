@@ -138,11 +138,21 @@ wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Dig
 # Java RestTemplate
 __K__: Miten kutsun rajapintoja [Java RestTemplatella](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)?  
 __V__:
-```
-final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
+```java
+final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory =
+    new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
 final RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
 
-final String output = restTemplate.getForObject("https://tie.digitraffic.fi/api/v1/data/tms-data?testi=testi", String.class);
+final HttpHeaders headers = new HttpHeaders();
+headers.add("Accept-Encoding", "gzip");
+headers.add("User-Agent", "RestTemplate");
+headers.add("Digitraffic-User", "DT/Tester");
+HttpEntity<String> entity = new HttpEntity<>("body", headers);
+
+final ResponseEntity<String> response =
+    restTemplate.exchange("https://tie.digitraffic.fi/api/v1/data/tms-data", HttpMethod.GET, entity, String.class);
+
+System.out.println(response.getBody());
 ```
 
 # Pyyntömäärien rajoittaminen
