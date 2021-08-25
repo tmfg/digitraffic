@@ -3,7 +3,6 @@ title: Digitraffic
 baseurl:
 repository: tmfg/digitraffic
 encoding: utf-8
-highligher: rouge
 
 plugins_dir:
   - jekyll-babel
