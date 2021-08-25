@@ -447,8 +447,11 @@ Topics are constructed like shown below.
 }
 ```
 
-#### Simple JavaScript Web Socket client
+#### A simple JavaScript Web Socket client
+The code below refers to the missing variable **clientName**. Initialize it with the name of your application.
 
+**Note!** If your application is not constantly fetching data, close the connection by calling client.disconnect().)  
+The example code disconnects after 30 s.
 ```
 <html>
 <head>
@@ -464,7 +467,8 @@ Topics are constructed like shown below.
         function connect() {
             console.log('trying to connect to road mqtt...');
 
-            client = new Paho.MQTT.Client("tie-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            // enter a valid client name to fix the syntax error
+            client = new Paho.MQTT.Client("tie.digitraffic.fi", 61619, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
@@ -488,6 +492,10 @@ Topics are constructed like shown below.
             client.connect(connectionProperties);
 
             window.setInterval(logMessageCount, 60*1000);
+        }
+        
+        function disconnect() {
+            client.disconnect();
         }
 
         function logMessageCount() {
@@ -516,6 +524,9 @@ Topics are constructed like shown below.
         }
 
         connect();
+        
+        // disconnect after 30 seconds
+        setTimeout(disconnect, 30000);
     </script>
 </head>
 <body>
@@ -523,7 +534,6 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 <div class="messages" />
 </body>
 </html>
-
 ```
 
 ## Restrictions

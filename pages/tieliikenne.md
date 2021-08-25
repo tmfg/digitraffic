@@ -449,7 +449,10 @@ Topicit ovat seuraavanlaista muotoa.
 ```
 
 #### Yksinkertainen JavaScript WebSocket -client
+Alla olevassa koodissa viitataan puuttuvaan muuttujaan **clientName**, täydennä siihen sovelluksesi nimi. 
 
+**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla client.disconnect().  
+Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
 ```
 <html>
 <head>
@@ -465,7 +468,8 @@ Topicit ovat seuraavanlaista muotoa.
         function connect() {
             console.log('trying to connect to road mqtt...');
 
-            client = new Paho.MQTT.Client("tie.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            // enter a valid client name to fix the syntax error
+            client = new Paho.MQTT.Client("tie.digitraffic.fi", 61619, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
@@ -489,6 +493,10 @@ Topicit ovat seuraavanlaista muotoa.
             client.connect(connectionProperties);
 
             window.setInterval(logMessageCount, 60*1000);
+        }
+        
+        function disconnect() {
+            client.disconnect();
         }
 
         function logMessageCount() {
@@ -517,6 +525,9 @@ Topicit ovat seuraavanlaista muotoa.
         }
 
         connect();
+        
+        // disconnect after 30 seconds
+        setTimeout(disconnect, 30000);
     </script>
 </head>
 <body>
