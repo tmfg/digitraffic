@@ -195,7 +195,7 @@ fetch(TMS_STATION_URL, {headers: DT_USER_ID})
     .then(handleTmsData)
 ```
 
-__K__: How do I handle ETags when requesting weather camera images?
+__K__: How do I handle ETags when requesting weather camera images?  
 __V__:
 ```javascript
 const fetch = require('node-fetch')

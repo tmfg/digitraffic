@@ -247,7 +247,8 @@ Alla olevassa koodissa viitataan puuttuvaan muuttujaan **clientName**, täydenn�
 
 **HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla client.disconnect().  
 Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
-```
+
+```html
 <html>
 <head>
     <title>Testiclient for vessel locations</title>
@@ -346,6 +347,47 @@ Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
     <div class="messages" />
 </body>
 </html>
+```
+
+#### Yksinkertainen Python MQTT WebSocket -client
+
+Vaihda `APP_NAME` muuttujan sisältö oman sovelluksesi nimi.
+
+**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla `client.disconnect()`.  
+Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
+
+```python
+import uuid
+import paho.mqtt.client as mqtt
+import time
+
+APP_NAME = 'Junamies/FoobarApp 1.0'
+
+def on_message(client, userdata, message):
+    print('message received', str(message.payload.decode('utf-8')))
+
+def on_connect(client, userdata, flags, rc):
+    if rc == 0:
+        print('Connected')
+        client.subscribe("tms/#")
+    else:
+        print('Failed to connect, return code %d\n', rc)
+
+client_name = '{}; {}'.format(APP_NAME, str(uuid.uuid4()))
+client = mqtt.Client(client_name, transport="websockets")
+
+client.username_pw_set('digitraffic', 'digitrafficPassword')
+client.on_connect = on_connect
+client.on_message = on_message
+
+client.tls_set()
+client.connect('tie.digitraffic.fi', 61619)
+
+client.loop_start()
+time.sleep(30)
+client.loop_stop()
+
+client.disconnect()
 ```
 
 ## Käyttörajoitukset
