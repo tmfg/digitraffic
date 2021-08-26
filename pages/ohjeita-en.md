@@ -56,13 +56,13 @@ The documentation of each API explains how often each interface content is updat
 
 **Restrictions:**  
 
-| **Target / interface**      | **Max requests / min** | **Limit**
+| **Target / interface**      | **Max requests / min** | **Key**
 |-----------------------|-------------------|-------------|
-| **General restriction**   | 60                | IP + URL    
-| **MQTT**              | 5                 | IP          
-| **Weather camera images**   | 10                | IP + URL    
-| **tie/meri.digitraffic.fi V1-interfaces**     | &infin;                 |             
-| **infra- and jeti-api**     | &infin;                 |             
+| **General restriction**       | 60            | IP + URL
+| **MQTT**                      | 5             | IP
+| **Weather camera images**     | 6000 / 5 min  | IP
+| **tie/meri.digitraffic.fi V1-interfaces**     | &infin;                 |
+| **infra- and jeti-api**                       | &infin;                 |
 
 ## Headers to identify the application
 

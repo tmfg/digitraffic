@@ -59,13 +59,13 @@ Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö p�
 
 **Käyttörajoitukset:**  
 
-| **Kohde / rajapinta** | **Max kpl / min** | **Rajaus**  |
+| **Kohde / rajapinta**         | **Max kpl / min** | **Rajaus**  |
 |-----------------------|-------------------|-------------|
-| **Yleisrajoitus**   | 60                | IP + URL    
-| **MQTT**              | 5                 | IP          
-| **Kelikamerakuvat**   | 10                | IP + URL    
-| **tie/meri.digitraffic.fi:n V1-rajapinnat**     | &infin;                 |             
-| **infra- ja jeti-api**     | &infin;                 |             
+| **Yleisrajoitus**             | 60                | IP + URL
+| **MQTT**                      | 5                 | IP
+| **Kelikamerakuvat**           | 6000 / 5 min      | IP
+| **tie/meri.digitraffic.fi:n V1-rajapinnat**       | &infin;                 |
+| **infra- ja jeti-api**                            | &infin;                 |
 
 ## Sovelluksen yksilöivät otsikkotiedot
 
