@@ -19,6 +19,10 @@ intro: Instructions for coding
 
 Instructions in effect from 1st of June 2020
 
+## How can I be aware of updates and incidents?
+Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
+You can also subscribe to status updates with the  **Subscribe to updates** function.
+
 ## HTTPS- vs HTTP-protocol
 
 All APIs of Digitraffic supports HTTPS-protocol, so there is no reason to use unencrypted HTTP-protocol.

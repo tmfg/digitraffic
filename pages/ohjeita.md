@@ -20,6 +20,10 @@ intro: Ohjeita ohjelmoijille
 
 1.6.2020 alkaen voimassa olevat ohjeet
 
+## Miten saan tiedon päivityksistä ja vikatilanteista?
+Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
+Voit myös tilata statussivulta tiedon päivityksistä ja vikatilanteista sähköpostiisi **Subscribe to updates** -toiminnon avulla. 
+
 ## HTTPS- vai HTTP-protokolla
 
 Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, ei siis ole syytä käyttää salaamatonta HTTP-protokollaa. 

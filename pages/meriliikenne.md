@@ -243,7 +243,10 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
 ```
 
 #### Yksinkertainen JavaScript MQTT WebSocket -client
+Alla olevassa koodissa viitataan puuttuvaan muuttujaan **clientName**, täydennä siihen sovelluksesi nimi.
 
+**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla client.disconnect().  
+Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
 ```
 <html>
 <head>
@@ -259,7 +262,8 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
         function connect() {
             console.log('trying to connect marine mqtt...');
 
-            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            // enter a valid client name to fix the syntax error
+            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
@@ -284,6 +288,10 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
             client.connect(connectionProperties);
 
             window.setInterval(logMessageCount, 60*1000);
+        }
+
+        function disconnect() {
+            client.disconnect();
         }
 
         function logMessageCount() {
@@ -328,6 +336,9 @@ sse/site/<site-id>          # Yhden aseman datan tilaaminen
         }
 
         connect();
+        
+        // disconnect after 30 seconds
+        setTimeout(disconnect, 30000);
     </script>
 </head>
 <body>

@@ -241,8 +241,11 @@ sse/site/<site-id>          # Tracking single site data
 ```
 
 
-#### Simple JavaScript MQTT WebSocket client
+#### A simple JavaScript MQTT WebSocket client
+The code below refers to the missing variable **clientName**. Initialize it with the name of your application.
 
+**Note!** If your application is not constantly fetching data, close the connection by calling client.disconnect().)  
+The example code disconnects after 30 s.
 ```
 <html>
 <head>
@@ -258,7 +261,8 @@ sse/site/<site-id>          # Tracking single site data
         function connect() {
             console.log('trying to connect marine mqtt...');
 
-            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, 'testclient_' + Date.now());
+            // enter a valid client name to fix the syntax error
+            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
@@ -283,6 +287,10 @@ sse/site/<site-id>          # Tracking single site data
             client.connect(connectionProperties);
 
             window.setInterval(logMessageCount, 60*1000);
+        }
+
+        function disconnect() {
+            client.disconnect();
         }
 
         function logMessageCount() {
@@ -327,6 +335,9 @@ sse/site/<site-id>          # Tracking single site data
         }
 
         connect();
+        
+        // disconnect after 30 seconds
+        setTimeout(disconnect, 30000);
     </script>
 </head>
 <body>
