@@ -180,7 +180,6 @@ __V__:
 const fetch = require('node-fetch')
 
 const TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
-
 const DT_USER_ID = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 
 function handleTmsData(data) {
@@ -200,7 +199,6 @@ const sleep = require('sleep')
 
 const CAMERA_ID = 'C0450701'
 const WEATHER_CAM_URL = 'https://weathercam.digitraffic.fi/' + CAMERA_ID + '.jpg'
-
 const DT_USER_ID = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 
 function writeData(filename, _) {
