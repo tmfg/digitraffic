@@ -60,6 +60,7 @@ Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta]({{page.swagger-link}}){
 
 Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0450701 kuva löytyy
 osoitteesta [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg){:target="_blank"}.
+Kelikamerakuvat päivittyvät noin 10 minuutin välein.
 
 ![Kelikamerakuva C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 

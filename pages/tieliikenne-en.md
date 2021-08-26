@@ -62,6 +62,7 @@ Full API descriptions can be found in [Swagger-documentation page]({{page.swagge
 
 Response message contains weather camera information and URL for the camera image. For example preset image C0450701 is located at 
 [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg){:target="_blank"}.
+Weather camera images are updated approximately about every 10 minutes.
 
 ![Weather camera image C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
