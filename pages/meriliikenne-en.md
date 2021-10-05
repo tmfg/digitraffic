@@ -34,6 +34,8 @@ Marine traffic information is gathered from Finnish Transport Infrastructure Age
 
 - Waterway traffic disturbances
 
+- Aton faults
+
 - Related metadata
 
 
@@ -108,6 +110,14 @@ Data is updated every 30 minutes.
 [```https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions```](https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions){:target="_blank"}
 
 Waterway traffic disturbances are fetched from POOKI.
+
+Data is updated every 10 minutes.
+
+### Aton faults
+
+[```https://meri.digitraffic.fi/api/aton/v1/faults```](https://meri.digitraffic.fi/api/aton/v1/faults){:target="_blank"}
+
+Aton faults are fetched from POOKI.
 
 Data is updated every 10 minutes.
 

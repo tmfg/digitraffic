@@ -34,6 +34,8 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa amm
 
 - Vesiliikenteen häiriötiedot
 
+- Turvalaiteviat
+
 - Näihin liittyvät metatiedot
 
 
@@ -109,6 +111,14 @@ Data päivitetään 30 minuutin välein.
 [```https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions```](https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions){:target="_blank"}
 
 Vesiliikenteen häiriöt haetaan POOKI-järjestelmästä.
+
+Data päivitetään 10 minuutin välein.
+
+### Turvalaiteviat
+
+[```https://meri.digitraffic.fi/api/aton/v1/faults```](https://meri.digitraffic.fi/api/aton/v1/faults){:target="_blank"}
+
+Turvalaiteviat haetaan POOKI-järjestelmästä.
 
 Data päivitetään 10 minuutin välein.
 
