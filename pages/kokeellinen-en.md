@@ -14,12 +14,11 @@ intro: Data from various experimental road projects
 Experimental data sources offer data from various projects. The data is open for everyone.
 Being experimental means that availability, contents and freshness of data may vary.
 
-Currently there are following experimental sources.
-
-# Expired sources
 If you are interested in data from expired sources please contact digitraffic@fintraffic.fi.
 
-## Nordicway2-notifications
+Currently there are following experimental sources.
+
+## Nordicway2-notifications (expired)
 
 NordicWay 2 aims at enhancing traffic safety through Cooperative Intelligent Transport Systems (C-ITS). The project is European Commission Connecting Europe Facility-funded between 2017 and 2020, and it is implemented by the National Road Authorities of Finland, Norway, Sweden and Denmark as well as private companies and research centres.
 
@@ -32,7 +31,7 @@ Source: \<author\> / NordicWay2, CC 4.0 BY
 For example:
 Source: InfoTripla Oy / NordicWay2, CC 4.0 BY
 
-## Bridge vibrations
+## Bridge vibrations (expired)
 
 Aurora is a public test ecosystem created to ensure intelligent and automated transport as well as solutions for road maintenance and asset 
 management to meet the requirements of all conditions.
