@@ -15,7 +15,10 @@ Kokeelliset tietolähteet tarjoavat erilaisten kokeellisten hankkeiden tietoja a
 Kokeellisuus tarkoittaa sitä, että tiedot ovat tarjolla mahdollisesti rajatun ajan ja niiden saatavuus, ajantasaisuus ja sisältö voi muuttua 
 odottamatta.
 
-Tällä hetkellä tarjolla ovat seuraavat kokeellisen tietolähteet.
+Tällä hetkellä tarjolla ovat seuraavat kokeelliset tietolähteet.
+
+# Poistuneet tietolähteet
+Mikäli olet kiinnostunut poistuneiden tietolähteiden datasta, ota yhteyttä digitraffic@fintraffic.fi.
 
 ## Nordicway2-tiedotteet
 
@@ -25,16 +28,9 @@ Hankkeen aikana Suomessa toteutetaan tuotantokokeilu, jossa rakennetaan toiminta
 
 Lisätietoja täältä: [```https://www.nordicway.net```](https://www.nordicway.net)
 
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
-
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
-
-Rajapinta palauttaa voimassaolevat tiedotteet GeoJSON-muodossa.  Hakua on mahdollista rajata tuottajan mukaan.  Tiedotteilla on useita tuottajia, ja tietojen lähde täytyy ilmoittaa sovelluksessasi lähdekohtaisesti:
-
 Tietojen lähde: \<author\> / NordicWay2, CC 4.0 BY
 
 esimerkiksi: Tietojen lähde: InfoTripla Oy / NordicWay2, CC 4.0 BY
-
 
 ## Siltojen värähtelytiedot
 
@@ -49,12 +45,3 @@ Tiedostot nimetään tyyliin AL1501962095, missä A=mittaus-kortin identifier (A
 (epoch, sekunteina)
 
 Tiedostot ovat kooltaan keskimäärin noin 7 megatavun kokoisia.
-
-Tieto kerätään ja julkaistaan kerran kuukaudessa noin kuun puolivälissä.
-
-Listauksen saatavilla olevista tiedostoista saa osoitteesta:
-`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/index.txt`
-
-Tiedoston voi ladata osoitteesta:
-`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/{objektin-nimi}` , jossa `{objektin-nimi}` on jokin `index.txt` -listauksessa
- mainituista.

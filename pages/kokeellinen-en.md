@@ -16,6 +16,9 @@ Being experimental means that availability, contents and freshness of data may v
 
 Currently there are following experimental sources.
 
+# Expired sources
+If you are interested in data from expired sources please contact digitraffic@fintraffic.fi.
+
 ## Nordicway2-notifications
 
 NordicWay 2 aims at enhancing traffic safety through Cooperative Intelligent Transport Systems (C-ITS). The project is European Commission Connecting Europe Facility-funded between 2017 and 2020, and it is implemented by the National Road Authorities of Finland, Norway, Sweden and Denmark as well as private companies and research centres.
@@ -24,18 +27,10 @@ In Finland, the Finnish Transport Agency is implementing the NordicWay2 projectâ
 
 For more information, see [```https://www.nordicway.net```](https://www.nordicway.net)
 
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations```](https://tie.digitraffic.fi/api/beta/nw2/annotations)
-
-[```https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author}```](https://tie.digitraffic.fi/api/beta/nw2/annotations?author={author})
-
-Response message contains ongoing notifications in GeoJSON.  You can also limit searching by author.
-Notifications have many authors and source must be attributed accordingly:
-
 Source: \<author\> / NordicWay2, CC 4.0 BY
 
 For example:
 Source: InfoTripla Oy / NordicWay2, CC 4.0 BY
-
 
 ## Bridge vibrations
 
@@ -51,12 +46,3 @@ File name is in the pattern AL1501962095, where A = Identifier of the measuremen
 time stamp (epoch, seconds).
 
 Average file size is about 7 megabytes.
-
-Data is published once a month around middle of the month.
-
-Listing of available files can be found at:
-`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/index.txt`
-
-Each file can be loaded from url:
-`http://digitraffic-aurora.s3-website-eu-west-1.amazonaws.com/bridge-vibration/{object-name}` , where `{object-name}` is one of the names from `index.txt`
-listing.
