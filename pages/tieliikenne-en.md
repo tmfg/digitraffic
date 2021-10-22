@@ -319,6 +319,7 @@ Data is also available in datex2-format:
 Warnings text can contain sign symbols enclosed with []. It is possible to render those in svg-format:
 
 [```https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123```](https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123){:target="_blank"}
+
 [```https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321```](https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321){:target="_blank"}
 
 ### Road maintenance information
