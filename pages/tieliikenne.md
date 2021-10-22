@@ -316,7 +316,14 @@ Varoitusmerkit kuvina:
 
 [```https://vayla.fi/tieverkko/liikennemerkit```](https://vayla.fi/tieverkko/liikennemerkit){:target="_blank"}
 
+Tiedot on saatavina myös datex2-muotoisena:
 
+[```https://tie.digitraffic.fi/api/v1/variable-signs/datex2```](https://tie.digitraffic.fi/api/v1/variable-signs/datex2){:target="_blank"}
+
+Varoitusmerkissä mahdollisesti olevat []-merkkien sisällä olevat kyltit on mahdollista generoida svg-muodossa:
+
+[```https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123```](https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321```](https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321){:target="_blank"}
 
 ### Maanteiden kunnossapitotiedot
 

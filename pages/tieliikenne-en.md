@@ -312,7 +312,14 @@ Warning sign images:
 
 [```https://vayla.fi/tieverkko/liikennemerkit```](https://vayla.fi/tieverkko/liikennemerkit){:target="_blank"}
 
+Data is also available in datex2-format:
 
+[```https://tie.digitraffic.fi/api/v1/variable-signs/datex2```](https://tie.digitraffic.fi/api/v1/variable-signs/datex2){:target="_blank"}
+
+Warnings text can contain sign symbols enclosed with []. It is possible to render those in svg-format:
+
+[```https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123```](https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123){:target="_blank"}
+[```https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321```](https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321){:target="_blank"}
 
 ### Road maintenance information
 
