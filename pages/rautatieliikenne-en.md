@@ -13,7 +13,7 @@ intro: Timetables, delays, locations and composition of trains operating in Finl
 links:
   - ["Finnish Transport Infrastructure Agency", "https://vayla.fi"]
   - ["Fintraffic", "https://fintraffic.fi"]
-  - ["Swagger", "https://rata.digitraffic.fi/swagger/index.html"]
+  - ["Swagger", "https://rata.digitraffic.fi/swagger/"]
 ---
 
 The purpose of this service is to share data of trains operating in Finland. The service is operated by Fintraffic. The data is sourced from the following applications used in traffic controlling and capacity management: 
@@ -105,7 +105,7 @@ Resources:
 
 # Swagger 
 
-[Swagger documentation](https://rata.digitraffic.fi/swagger/index.html).
+[Swagger documentation](https://rata.digitraffic.fi/swagger/).
 
 
 

@@ -18,4 +18,4 @@ Examples:
 * Traffic restriction notifications in effect and created after the start of 2020. [https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications.json?state=SENT&start=2020-01-01T00:00:00.000Z](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications.json?state=SENT&start=2020-01-01T00:00:00.000Z)
 
 [RUMA documentation]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }})  
-[Swagger documentation](https://rata.digitraffic.fi/swagger/index.html)
+[Swagger documentation](https://rata.digitraffic.fi/swagger/)
