@@ -21,9 +21,9 @@ This note describes the Finnish location and event tables including which decisi
 
 ## TMC/ALERT-C location data
 
-RDS-TMC is a traffic message channel, which relays traffic information through analog FM radio's RDS channel. Traffic information includes useful and real time data about road works, accidents, traffic jams and weather. The TMC/ALERT-C material is necessary when using the traffic information. ITM Finland (a subsidiary of Traffic Management Finland) is responsible for administration and distribution of the Finnish TMC data. TMC is developed by the Tisa Forum.
+RDS-TMC is a traffic message channel, which relays traffic information through analog FM radio's RDS channel. Traffic information includes useful and real time data about road works, accidents, traffic jams and weather. The TMC/ALERT-C material is necessary when using the traffic information. Fintraffic is responsible for administration and distribution of the Finnish TMC data. TMC is developed by the TISA.
 
-The Finnish TMC location database is constantly updated and certified yearly by TISA forum. For incident broadcasting ITM Finland uses more frequently exported versions of the database. Both certified and these intermediate non-certified versions are downloadable via Digitraffic-service.
+The Finnish TMC location database is constantly updated and certified yearly by TISA. For incident broadcasting Fintraffic uses more frequently exported versions of the database. Both certified and these intermediate non-certified versions are downloadable via Digitraffic.
 
 ### Downloadable content
 
