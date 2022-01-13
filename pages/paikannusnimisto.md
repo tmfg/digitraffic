@@ -18,9 +18,9 @@ intro: Suomen liikennetiedottamisessa käytettävä paikannuspisteistö
 
 ## TMC/ALERT-C paikannuspisteistö
 
-RDS-TMC (Traffic Message Channel) on tieliikenteen liikennetiedotuspalvelu, joka välittää liikennetiedotteita analogisten radiolähetysten ohessa käytettävällä RDS-tekniikalla. Liikennetiedotteet sisältävät hyödyllistä ja ajantasaista tietoa tietöistä, onnettomuuksista, ruuhkista ja kelistä. Tiedotteiden sijoittamiseen tieverkolle käytetään TMC/ALERT-C -aineistoa, jonka ylläpidosta ja jakelusta Suomessa vastaa Traffic Management Finlandin tytäryhtiö ITM Finland.
+RDS-TMC (Traffic Message Channel) on tieliikenteen liikennetiedotuspalvelu, joka välittää liikennetiedotteita analogisten radiolähetysten ohessa käytettävällä RDS-tekniikalla. Liikennetiedotteet sisältävät hyödyllistä ja ajantasaista tietoa tietöistä, onnettomuuksista, ruuhkista ja kelistä. Tiedotteiden sijoittamiseen tieverkolle käytetään TMC/ALERT-C -aineistoa, jonka ylläpidosta Suomessa vastaa Fintraffic.
 
-Suomen paikannuspisteaineistoa ylläpidetään jatkuvasti ja se sertifioidaan [TISA](https://tisa.org/):n toimesta vuosittain. ITM Finlandin liikennetiedotuksessa käyttämä paikannuspisteistö päivittyy useamman kerran vuodessa, eli myös sertifiointien välissä. Myös sertifioimattomat versiot ovat ladattavissa Digitraffic-palvelun kautta.
+Suomen paikannuspisteaineistoa ylläpidetään jatkuvasti ja se sertifioidaan [TISA](https://tisa.org/):n toimesta vuosittain. Fintrafficin liikennetiedotuksessa käyttämä paikannuspisteistö päivittyy useamman kerran vuodessa, eli myös sertifiointien välissä. Myös sertifioimattomat versiot ovat ladattavissa Digitraffic-palvelun kautta.
 
 ### Ladattavat aineistot
 - [Viimeisin sertifioitu aineisto](https://tie.digitraffic.fi/tmc/index.html?prefix=certified){:target="_blank"}
