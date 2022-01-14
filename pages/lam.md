@@ -35,7 +35,7 @@ Alla on lisätietoa antureista.
  
 ## Anturivakiot
 
-Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioiden arvoja. Huomaathan että vakioiden arvot vaihtelevat asemakohtaisesti, tarkista arvot täältä: [https://tie-lam-test.digitraffic.fi/api/v1/data/tms-sensor-constants](https://tie-lam-test.digitraffic.fi/api/v1/data/tms-sensor-constants).
+Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioiden arvoja. Huomaathan että vakioiden arvot vaihtelevat asemakohtaisesti, tarkista arvot täältä: [https://tie.digitraffic.fi/api/v1/data/tms-sensor-constants](https://tie.digitraffic.fi/api/v1/data/tms-sensor-constants).
 
 | Vakion nimi | Yksikkö | Arvoalue | Kuvaus
 | --- | --- | --- | ---
@@ -61,7 +61,7 @@ Asemilta kerättyä aineistoa on saatavissa myös raakadatana. Tätä aineistoa 
 
 LAM-tiedot on jaettu päivä- ja LAM-pistekohtaisiin CSV-tiedostoihin (alla "Tulostiedosto"). Tietoja haettaessa tarvitaan tiedoston tarkka polku ja nimi muodossa:
 
-```https://tie-lam-test.digitraffic.fi/api/tms/history/raw/lamraw_[lam_id]_[yearshort]_[day_number].csv```
+```https://tie-test.digitraffic.fi/api/tms/history/raw/lamraw_[lam_id]_[yearshort]_[day_number].csv```
 
 Jossa:
 
@@ -71,7 +71,7 @@ Jossa:
 
 Esimerkiksi: Pisteen 101 tiedot päivältä 1.2.2017, saadaan kutsulla
 
-[```https://tie-lam-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv```](https://tie-lam-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv){:target="_blank"}
+[```https://tie-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv```](https://tie-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv){:target="_blank"}
 
 ### Tulostiedoston kuvaus
 
