@@ -50,7 +50,7 @@ In addition to providing real time data, the Digitraffic service enables the uti
 
 There are prebuilt reports based on the data available through a form.
 
-[```https://tie-lam-test.digitraffic.fi/api/tms/history/```](https://tie-lam-test.digitraffic.fi/api/tms/history/){:target="_blank"}
+[```https://tie-lam-test.digitraffic.fi```](https://tie-lam-test.digitraffic.fi){:target="_blank"}
 
 ## TMS raw data
 
@@ -60,7 +60,7 @@ Data collected from the stations is also available in raw form. The data is conv
 
 TMS data is available in CSV files, one file for each TMS point for each day ("result file" below). A specific URL path is needed when accessing the data:
 
-```https://tie-lam-test.digitraffic.fi/api/tms/history/raw/lamraw_[lam_id]_[yearshort]_[day_number].csv```
+```https://tie-test.digitraffic.fi/api/tms/history/raw/lamraw_[lam_id]_[yearshort]_[day_number].csv```
 
 Where:
 
@@ -70,7 +70,7 @@ Where:
 
 Example: to get data from TMS point number 101 for the date 1.2.2017, GET the URL:
 
-[```https://tie-lam-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv```](https://tie-lam-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv){:target="_blank"}
+[```https://tie-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv```](https://tie-test.digitraffic.fi/api/tms/history/raw/lamraw_101_17_32.csv){:target="_blank"}
 
 ### Description of the result file format
 
