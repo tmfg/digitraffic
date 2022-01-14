@@ -51,7 +51,7 @@ Reaalidatan lisäksi Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM
 
 Havoinnoista on muodostettu valmiita raportteja joita voi hakea lomaakkeen kautta
 
-[```https://tie-lam-test.digitraffic.fi/api/tms/history/```](https://tie-lam-test.digitraffic.fi/api/tms/history/){:target="_blank"}
+[```https://tie-lam-test.digitraffic.fi```](https://tie-lam-test.digitraffic.fi){:target="_blank"}
 
 ## LAM-raakadata
 
@@ -118,5 +118,8 @@ Ajoneuvoluokat määräytyvät seuraavasti:
 4 KAPP (kuorma-auto ja puoliperävaunu)\
 5 KATP (kuorma-auto ja täysperävaunu)\
 6 HA + PK (henkilöauto ja peräkärry)\
-7 HA + AV (henkilöauto ja asuntovaunu)
+7 HA + AV (henkilöauto ja asuntovaunu)\
+8 MP (Moottoripyörät ja mopot)\
+9 HCT (High Capacity Truck)
+
 
