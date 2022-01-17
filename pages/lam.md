@@ -11,7 +11,18 @@ ref: tms
 intro: Liikenteen automaattiset mittaustiedot
 ---
 
-LAM-asemat koostuvat tieverkolle upotetuista induktiosilmukoista ja tiedonkeruuyksiköistä. Asemia on suomessa yli 450. LAM-asemat sisältävät antureita jotka tuottavat laskennallista dataa. Laskennassa käytetään anturivakioita joiden arvot vaihtelevat asemakohtaisesti. LAM-laite rekisteröi pisteen ylittävät ajoneuvot, jolloin jokaisesta ajoneuvosta saadaan ohituksen kellonaika, ajosuunta, ajokaista, ajonopeus, ajoneuvon pituus, peräkkäisten ajoneuvojen aikaero ja ajoneuvoluokka.
+Fintraffic kerää tietoa tieliikenteestä liikenteen automaattisten mittausasemien (LAM) avulla. Tarjolla on reaaliaika- ja historiadataa.
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+# Mittauspisteiden toiminta
+
+LAM-pisteen toiminta perustuu päällysteen sisälle upotetun silmukan sähkömagneettiseen induktioon, jolloin ajoneuvon metallinen massa aiheuttaa muutoksen silmukan magneettikentässä.
+
+LAM-piste muodostuu kullakin kaistalla olevasta kahdesta induktiosilmukasta ja tiedonkeruuyksiköstä. LAM-laite rekisteröi pisteen ylittävät ajoneuvot, jolloin jokaisesta ajoneuvosta saadaan ohituksen kellonaika, ajosuunta, ajokaista, ajonopeus, ajoneuvon pituus, peräkkäisten ajoneuvojen aikaero ja ajoneuvoluokka.
+
+Asemia on Suomessa yli 450.
 
 # Reaaliaikadata
 
@@ -45,7 +56,16 @@ Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioid
 
 # Historiadata
 
-Reaalidatan lisäksi Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM-asemilta kerättyä aineistojen historiaa.
+Reaalidatan lisäksi Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM-asemilta kerättyä aineistojen historiaa. Historia-aineistoja on kahden tyyppisiä:
+
+- LAM-raportit
+	- Tarkimmillaan tuntitason summatietoja
+	- Tiedot ovat tarkastettuja ja tarvittaessa korjattuja
+	- Esimerkiksi tiedonsiirtokatkoksien aiheuttamat puutteet on korjattu aiempaan liikennemäärähistoriaan perustuvalla korjausehdotuksella
+	- Julkaisuviive: tyypillisesti alle 10 prosentilla LAM-pisteistä esiintyy tarkistettavaa ja näiden pisteiden tiedot julkaistaan muutaman päivän kuluessa
+-	LAM-raakadata
+	- yksittäisistä ajoneuvo-ohituksista kerättyä dataa, jota ei ole käsitelty muuten kuin purettu CSV-muotoiseksi
+	- Julkaisuviive: päivän aikana kerätty raakadata tulee saataville seuraavana päivänä
 
 ## LAM-raportit
 
@@ -55,7 +75,7 @@ Havoinnoista on muodostettu valmiita raportteja joita voi hakea lomaakkeen kautt
 
 ## LAM-raakadata
 
-Asemilta kerättyä aineistoa on saatavissa myös raakadatana. Tätä aineistoa ei ole käsitelty muuten kuin purettu CSV-muotoiseksi.
+Asemilta kerättyä aineistoa on saatavissa ajoneuvo-ohituksen tarkkuudella LAM-raakadatana. Tätä aineistoa ei ole käsitelty muuten kuin purettu CSV-muotoiseksi.
 
 ### Tiedostojen hakeminen
 
@@ -66,8 +86,13 @@ LAM-tiedot on jaettu päivä- ja LAM-pistekohtaisiin CSV-tiedostoihin (alla "Tul
 Jossa:
 
 - lam_id = LAM-pisteen tunniste
-- yearshort = vuosiluvun kaksi viimeistä numeroa
-- day_number = päivän järjestysnumero vuoden alusta laskettuna. 1.1. = 1. Kannattaa kiinnittää erityistä huomiota päivän numeron käsittelyyn karkausvuosina, kuten vuonna 2020.
+- yearshort = vuosiluvun kaksi viimeistä numeroa.
+	- 2009 = 9
+	- 2021 = 21
+- day_number = päivän järjestysnumero vuoden alusta laskettuna.
+	- 1. tammikuuta = 1
+	- 1. helmikuuta = 32
+	- Kannattaa kiinnittää erityistä huomiota päivän numeron käsittelyyn karkausvuosina, kuten vuonna 2020.
 
 Esimerkiksi: Pisteen 101 tiedot päivältä 1.2.2017, saadaan kutsulla
 
