@@ -26,7 +26,7 @@ Asemia on Suomessa yli 450.
 
 # Reaaliaikadata
 
-Reaaliaikadatan rajapinnat: https://www.digitraffic.fi/tieliikenne/#ajantasaiset-lam-mittaustiedot
+Reaaliaikadatan rajapinnat: [https://www.digitraffic.fi/tieliikenne/#ajantasaiset-lam-mittaustiedot](https://www.digitraffic.fi/tieliikenne/#ajantasaiset-lam-mittaustiedot)
 
 ## Laskennalliset anturit
 Alla on lisätietoa LAM-pisteiden laskennallisista antureista.
