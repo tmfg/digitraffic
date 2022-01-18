@@ -26,8 +26,10 @@ Asemia on Suomessa yli 450.
 
 # Reaaliaikadata
 
+Reaaliaikadatan rajapinnat: https://www.digitraffic.fi/tieliikenne/#ajantasaiset-lam-mittaustiedot
+
 ## Laskennalliset anturit
-Alla on lisätietoa antureista.
+Alla on lisätietoa LAM-pisteiden laskennallisista antureista.
 
 * LIUKUVA = Mittaukset viimeiseltä n minuutilta
 * KIINTEA = Mittaukset kiinteältä n minuutin aikaväliltä 
@@ -56,7 +58,7 @@ Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioid
 
 # Historiadata
 
-Reaalidatan lisäksi Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM-asemilta kerättyä aineistojen historiaa. Historia-aineistoja on kahden tyyppisiä:
+Reaaliaikadatan lisäksi Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM-asemilta kerättyä aineistojen historiadataa. Historia-aineistoja on kahden tyyppisiä:
 
 - LAM-raportit
 	- Tarkimmillaan tuntitason summatietoja
@@ -69,7 +71,7 @@ Reaalidatan lisäksi Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM
 
 ## LAM-raportit
 
-Havoinnoista on muodostettu valmiita raportteja joita voi hakea lomaakkeen kautta
+Havoinnoista on muodostettu valmiita raportteja joita voi hakea lomakkeen kautta:
 
 [```https://tie-lam-test.digitraffic.fi```](https://tie-lam-test.digitraffic.fi){:target="_blank"}
 
