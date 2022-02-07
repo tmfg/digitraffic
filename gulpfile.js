@@ -42,6 +42,7 @@ function watchFiles() {
             '_applications/*',
             '_config*.yml',
             './**/_developments/*',
+            '_developments/*',
             '_includes/*',
             '_layouts/*',
             '_posts/*',
