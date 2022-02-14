@@ -97,21 +97,6 @@ curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'
 wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
 ```
 
-### User-Agent -otsikko
-
-Mikäli sovelluksessa on mahdollista asettaa User-Agent -otsikkotieto, tulisi sen olla [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3) -kohdan mukainen 
-sisältäen vähintään sovelluksen nimen ja version. Alla esimerkkejä.
-
-`User-Agent: <sovellus>/<versio>`  
-`User-Agent: FoobarApp/1.0`
-
-#### Esimerkkejä
-```bash
-curl -H 'User-Agent: FoobarApp/1.0'  
-
-wget --header='User-Agent: FoobarApp/1.0'
-```
-
 # Cache
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  
 __V__: Suurin osa rajapintojen kutsuista on cachetettu edustapalvelimilla.  Tämän takia palveluita ei ole hyötyä kutsua liian usein, koska 
@@ -129,14 +114,14 @@ Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen 
 __K__: Miten kutsun rajapintoja [cURLilla](https://curl.haxx.se/)?  
 __V__:
 ```bash
-curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' -H 'User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
+curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
 # Wget
 __K__: Miten kutsun rajapintoja [Wgetillä](https://www.gnu.org/software/wget/)?  
 __V__:
 ```bash
-wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' --header='User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
+wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
 # Java RestTemplate
@@ -149,7 +134,6 @@ final RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
 
 final HttpHeaders headers = new HttpHeaders();
 headers.add("Accept-Encoding", "gzip");
-headers.add("User-Agent", "RestTemplate");
 headers.add("Digitraffic-User", "DT/Tester");
 HttpEntity<String> entity = new HttpEntity<>("body", headers);
 
