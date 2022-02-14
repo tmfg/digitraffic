@@ -94,21 +94,6 @@ curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'
 wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
 ```
 
-### User-Agent
-
-If it is possible to set the User-Agent header in the application, it should be in accordance with [RFC-7231 5.5.3](https://tools.ietf.org/html/rfc7231#section-5.5.3)
-including at least the name and version of the application. Below you can find examples.
-
-`User-Agent: <application>/<version>`  
-`User-Agent: Liikennetilanne/1.0`
-
-#### Examples
-```bash
-curl -H 'User-Agent: FoobarApp/1.0'  
-
-wget --header='User-Agent: FoobarApp/1.0'
-```
-
 # Cache
 __Q__: Why do APIs often return the same response?  
 __A__: Most of the service calls are cached.  Therefore, there is no gain calling the services too often, as the response will not change.  Most
@@ -126,14 +111,14 @@ These two might return a different _dataUpdatedTime_ because the calls were cach
 __Q__: How do I call the APIs with [cURL](https://curl.haxx.se/)?  
 __A__:
 ```bash
-curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' -H 'User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
+curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
 ```
 
 # Wget
 __Q__: How do I call the APIs with [Wget](https://www.gnu.org/software/wget/)?  
 __A__:
 ```bash
-wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' --header='User-Agent: FoobarApp/1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
+wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
 ```
 
 # Java RestTemplate
@@ -146,7 +131,6 @@ final RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
 
 final HttpHeaders headers = new HttpHeaders();
 headers.add("Accept-Encoding", "gzip");
-headers.add("User-Agent", "RestTemplate");
 headers.add("Digitraffic-User", "DT/Tester");
 HttpEntity<String> entity = new HttpEntity<>("body", headers);
 
