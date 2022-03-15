@@ -39,6 +39,8 @@ Currently the open data API includes:
 
 - Road maintenance information
 
+- Walking and cycling counting site values
+
 - Metadata for all services is updated twice per day
 
 
@@ -363,6 +365,24 @@ The API returns more detailed explanations of the tasks performed by the vehicle
 #### Swagger descriptions of the APIs
 
 [```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
+
+### Walking and cycling counting site values
+
+Walking and cycling counting site values are currently received from Oulu region.
+
+All counters in GeoJSON
+[```https://tie.digitraffic.fi/api/counting-site/v1/counters```](https://tie.digitraffic.fi/api/counting-site/v1/counters){:target="_blank"}
+
+More metadata
+[```https://tie.digitraffic.fi/api/counting-site/v1/directions```](https://tie.digitraffic.fi/api/counting-site/v1/directions){:target="_blank"}
+[```https://tie.digitraffic.fi/api/counting-site/v1/domains```](https://tie.digitraffic.fi/api/counting-site/v1/domains){:target="_blank"}
+[```https://tie.digitraffic.fi/api/counting-site/v1/user-types```](https://tie.digitraffic.fi/api/counting-site/v1/user-types){:target="_blank"}
+
+Counting site values in json
+[```https://tie.digitraffic.fi/api/counting-site/v1/values```](https://tie.digitraffic.fi/api/counting-site/v1/values){:target="_blank"}
+
+Counting site values in CSV
+[```https://tie.digitraffic.fi/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
 
 
 ## WebSocket API
