@@ -374,17 +374,23 @@ Rajapinta palauttaa ajoneuvojen suorittamien tehtävien tarkemmat selitteet.
 Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun alueelta.  
 
 Kaikkien mittauspisteiden tiedot GeoJSON-muodossa
+
 [```https://tie.digitraffic.fi/api/counting-site/v1/counters```](https://tie.digitraffic.fi/api/counting-site/v1/counters){:target="_blank"}
 
 Metatietoja
+
 [```https://tie.digitraffic.fi/api/counting-site/v1/directions```](https://tie.digitraffic.fi/api/counting-site/v1/directions){:target="_blank"}
+
 [```https://tie.digitraffic.fi/api/counting-site/v1/domains```](https://tie.digitraffic.fi/api/counting-site/v1/domains){:target="_blank"}
+
 [```https://tie.digitraffic.fi/api/counting-site/v1/user-types```](https://tie.digitraffic.fi/api/counting-site/v1/user-types){:target="_blank"}
 
 Mittauspisteiden dataa json-muodossa
+
 [```https://tie.digitraffic.fi/api/counting-site/v1/values```](https://tie.digitraffic.fi/api/counting-site/v1/values){:target="_blank"}
 
 Mittauspisteiden dataa CSV-muodossa
+
 [```https://tie.digitraffic.fi/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
 
 ## WebSocket-rajapinnat
