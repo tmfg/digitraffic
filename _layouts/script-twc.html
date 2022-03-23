@@ -82,11 +82,11 @@ layout: uncompressed
                   $("<col>", {"class": "twc-col4"})
                 ]),
                 $("<thead/>").append([
-                  $("<tr/>", {"class": "row"}).append([
+                  $("<tr/>", {"class": "row.nowrap"}).append([
                             $("<th/>", {"class": "twc-col1"}).text(tableTitle),
                             $("<th/>", {"class": "twc-col-2-4", "id": "date_" + dataType, "colspan": 3}).text("-")
                   ]),
-                  $("<tr/>", {"class": "row"}).append([
+                  $("<tr/>", {"class": "row.nowrap"}).append([
                             $("<th/>", {"class": "twc-col1"}).text("Time"),
                             $("<th/>", {"class": "twc-col2"}).text("Amount"),
                             $("<th/>", {"class": "twc-col3"}).text("Latest"),
@@ -94,25 +94,25 @@ layout: uncompressed
                   ])
                 ]),
                 $("<tbody/>").append([
-                  $("<tr/>", {"class": "row"}).append([
+                  $("<tr/>", {"class": "row.nowrap"}).append([
                       $("<td/>", {"class": "twc-col1"}).text("Up-to-date"),
                       $("<td/>", {"class": "twc-col2", "id": dataType + "_utd_count"}).text("0"),
                       $("<td/>", {"class": "twc-col3", "id": dataType + "_utd_latest"}).text("-"),
                       $("<td/>", {"class": "twc-col4", "id": dataType + "_utd_oldest"}).text("-")
                   ]),
-                  $("<tr/>", {"class": "row"}).append([
+                  $("<tr/>", {"class": "row.nowrap"}).append([
                       $("<td/>", {"class": "twc-col1"}).text("Older than 30min"),
                       $("<td/>", {"class": "twc-col2", "id": dataType + "_o30_count"}).text("0"),
                       $("<td/>", {"class": "twc-col3", "id": dataType + "_o30_latest"}).text("-"),
                       $("<td/>", {"class": "twc-col4", "id": dataType + "_o30_oldest"}).text("-")
                   ]),
-                  $("<tr/>", {"class": "row"}).append([
+                  $("<tr/>", {"class": "row.nowrap"}).append([
                       $("<td/>", {"class": "twc-col1"}).text("Older than 8h"),
                       $("<td/>", {"class": "twc-col2", "id": dataType + "_o8h_count"}).text("0"),
                       $("<td/>", {"class": "twc-col3", "id": dataType + "_o8h_latest"}).text("-"),
                       $("<td/>", {"class": "twc-col4", "id": dataType + "_o8h_oldest"}).text("-")
                   ]),
-                  $("<tr/>", {"class": "row"}).append([
+                  $("<tr/>", {"class": "row.nowrap"}).append([
                       $("<td/>", {"class": "twc-col1"}).text("Empty or no updates"),
                       $("<td/>", {"class": "twc-col-2-4", "id": dataType + "_empty", "colspan": 3}).text("0")
                   ])
