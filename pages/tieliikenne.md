@@ -52,7 +52,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 ### Rajapintojen Swagger-kuvaukset
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta]({{page.swagger-link}}){:target="_blank"}
+Rajapintakuvaukset löytyvät Swagger-dokumentaatiosta [```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
 
 ### Kelikamerat
 
@@ -333,37 +333,44 @@ Varoitusmerkissä mahdollisesti olevat []-merkkien sisällä olevat kyltit on ma
 Väylävirasto vastaanottaa teiden kunnossapitourakoitsijoilta kunnossapitoajoneuvojen reaaliaikaista sijainti- ja toimenpidetietoa. 
 Tiedot välittyvät ajoneuvoista urakoitsijoiden tietojärjestelmiin, joista ne edelleen välitetään Väyläviraston Harja-järjestelmään.
 Digitraffic vastaanottaa myös nämä tiedot ja julkaisee niitä avoimena datana alla kerrotuissa rajapinnoissa. 
-Tiedot päivittyvät keskimäärin minuutin välein. 
+Tiedot päivittyvät keskimäärin minuutin välein. Harja datan domain on `state-roads`.
+
+Tämän lisäksi tällä hetkellä tuodaan myös muutamien kuntien kunnossapitodataa. Tämän datan domain on eri kuin `state-roads`.
 
 Väylävirasto valmistelee myös vuorokautta vanhempien kunnossapidon toteumatietojen julkaisua omissa avoimen datan palveluissaan.
 
-#### Ajoneuvon viimeisin sijainti
+#### Kunnossapidon domain
 
-Rajapinta palauttaa viimeisimmät kunnossapitoajoneuvoista vastaanotetut sijainti- ja tehtävätiedot
+Rajapinta palauttaa mahdolliset domainit. Domain kertoo mistä järjestelmästä data tulee.
 
-[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/latest```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/latest){:target="_blank"}
-
-#### Ajoneuvojen seurantadata
-
-Rajapinta palauttaa ajoneuvon kulkeman reitin. Reitti ei täysin vastaa ajoneuvon maastossa kulkemaa reittiä, 
-koska julkaistava reitti muodostetaan yhdistelemällä ajoneuvosta saatavat sijaintitiedot viivaksi ja 
-erillistä reititystä tieverkolle ei tehdä. Reitti voi olla myös pelkkä piste, jos ajoneuvolta ei ole saatu useampaa seurantapistettä.
-
-Uusi viivakohde muodostetaan aina kun:
-- ajoneuvon suorittama tehtävä muuttuu
-- kahden peräkkäisen vastaanotetun sijaintiviestin aikaväli on yli 5 minuuttia
-- kahden peräkkäisen vastaanotetun sijaintiviestin välinen laskennallinen ajonopeus on yli 140 km/h
- 
-Näillä käsittelyllä poistetaan suurimmat ajoneuvojen tuottamassa datassa mahdollisesti esiintyvät virheet.
-
-[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings){:target="_blank"}
+[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains){:target="_blank"}
 
 #### Ajoneuvojen tehtävätyypit
 
 Rajapinta palauttaa ajoneuvojen suorittamien tehtävien tarkemmat selitteet.
 
-[```https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/tasks```](https://tie.digitraffic.fi/api/v3/data/maintenance/trackings/tasks){:target="_blank"}
+[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks){:target="_blank"}
 
+#### Ajoneuvojen seurantadata
+
+Rajapinta palauttaa ajoneuvon kulkeman reitin. Reitti ei täysin vastaa ajoneuvon maastossa kulkemaa reittiä,
+koska julkaistava reitti muodostetaan yhdistelemällä ajoneuvosta saatavat sijaintitiedot viivaksi ja
+erillistä reititystä tieverkolle ei tehdä. Reitti voi olla myös pelkkä piste, jos ajoneuvolta ei ole saatu useampaa seurantapistettä.
+
+Uusi seuranta, jossa ei ole viitettä edeliseen muodostetaan aina kun:
+- Ajoneuvon suorittama tehtävä muuttuu
+- Kahden peräkkäisen vastaanotetun sijaintiviestin aikaväli on yli 5 minuuttia
+- Kahden peräkkäisen vastaanotetun sijaintiviestin välinen laskennallinen ajonopeus on yli 140 km/h
+
+Näillä käsittelyllä poistetaan suurimmat ajoneuvojen tuottamassa datassa mahdollisesti esiintyvät virheet.
+
+[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads){:target="_blank"}
+
+#### Ajoneuvon viimeisin sijainti
+
+Rajapinta palauttaa viimeisimmät kunnossapitoajoneuvoista vastaanotetut sijainti- ja tehtävätiedot
+
+[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:target="_blank"}
 
 #### Rajapintojen Swagger kuvaus
 
