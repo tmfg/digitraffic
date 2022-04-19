@@ -412,7 +412,7 @@ Kirjautuessa tulee käyttää SSL-yhteyttä.  Lisäksi palveluun täytyy kirjaut
 
 Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja portti ```61619```, esimerkki alempana.
 
-Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
+Testin osoite on vastaavasti ```tie-test.digitraffic.fi``` ja portti ```443```.
 
 ### Topicit
 
