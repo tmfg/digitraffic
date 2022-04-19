@@ -407,7 +407,7 @@ You must use SSL when connecting. Also, you need to use following credentials:
 
 When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port ```61619```, see example below.  
 
-Address for test is ```tie-test.digitraffic.fi```.
+Address for test is ```tie-test.digitraffic.fi``` and port is ```443```.
 
 ### Topics
 
