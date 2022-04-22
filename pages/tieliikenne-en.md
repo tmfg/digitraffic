@@ -29,7 +29,7 @@ Currently the open data API includes:
 
 - Road weather forecasts. Content is updated every five minutes.
 
-- TMS data (Traffic Measurement System). Information is gathered from an inductive loop which is installed inside the pavement. When a vehicle passes over the loop it creates information about average speeds and traffic amounts. Currently, there are over 450 traffic measuring stations in Finland. The [TMS documentation](lam) contains descriptions of TMS data.
+- Traffic measurement system (TMS) data. Information about average speeds and traffic amounts.
 
 - Traffic messages. Traffic disorders, weight restrictions, roadworks and weight restrictions are available in Datex2 and Simple-JSON format.
 
@@ -151,7 +151,21 @@ Related metadata:
 [```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/25){:target="_blank"}
 
 
-### Current data from TMS stations
+### Traffic measurement system (TMS) dataCurrent data from TMS stations
+
+#### Documentation
+
+The [TMS documentation](lam) contains descriptions of TMS data.
+
+#### Statistics
+
+[Statistics](https://tie-lam-test.digitraffic.fi) web form
+
+#### Raw data
+
+[Raw data](lam#TMS_raw_data)
+
+#### Real time data
 
 [```https://tie.digitraffic.fi/api/v1/data/tms-data```](https://tie.digitraffic.fi/api/v1/data/tms-data){:target="_blank"}
 

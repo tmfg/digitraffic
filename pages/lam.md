@@ -37,11 +37,17 @@ Digitraffic palvelu tarjoaa mahdollisuuden hyödyntää LAM-asemilta kerättyä 
 	- yksittäisistä ajoneuvo-ohituksista kerättyä dataa, jota ei ole käsitelty muuten kuin purettu CSV-muotoiseksi
 	- Julkaisuviive: päivän aikana kerätty raakadata tulee saataville seuraavana päivänä
 
-## LAM-raportit
+## LAM-tilastohaku
 
-Havoinnoista on muodostettu valmiita raportteja joita voi hakea lomakkeen kautta:
+Havainnoista on muodostettu valmiita raportteja joita voi hakea lomakkeen kautta:
 
 [```https://tie-lam-test.digitraffic.fi```](https://tie-lam-test.digitraffic.fi){:target="_blank"}
+
+- **Kattavuus**: Liikennemäärädatan osalta aineistoa on saatavilla vuodesta 2010 alkaen ja nopeustietoja vuodesta 2020 alkaen. Raakadatatiedot löytyvät 12/2021 lähtien.  
+- **Liikennemäärätietojen ajantasaisuus ja tiedon luotettavuus**: havaintopäivän tiedot tulevat tyypillisesti saataville seuraavana päivänä klo 8 ja 9 välillä tai jos liikennemäärätiedoissa on havaittu tarkistettavaa, tulevat nämä saataville muutaman päivän kuluessa. Liikennemäärätiedot ovat ns. korjattua dataa, joten mahdolliset tietopuutteet tai virheet on korjattu tietokannassa kehittyneiden korjausalgoritmien mukaan. 
+- **Nopeustietojen ajantasaisuus ja tiedon luotettavuus**: havaintopäivän tiedot tulevat saataville seuraavana päivänä. Julkaisu tapahtuu tyypillisesti klo 8 ja 9 välillä. Keskinopeustiedot lasketaan laskentalaitteen antamien havaintojen perusteella, joten nopeuslaskennan havaintomäärät voivat poiketa liikennemääräraporttien havaintomäärissä, mikäli liikennemäärädataa on jouduttu korjaamaan. 
+- **Raakadatatietojen ajantasaisuus ja luotettavuus**: havaintopäivän tiedot tulevat saataville seuraavana päivänä tyypillisesti klo 8 ja 9 välillä. Raakadatan havaintomäärät voivat poiketa liikennemääräraporttien havaintomääristä, mikäli liikennemäärädataa on jouduttu korjaamaan tai mikäli raakadata on vielä päivittynyt liikennemäärätiedon julkaisun jälkeen.
+- **Tietojen käsittely**: liikennemäärätiedot tarkastetaan ja tarvittaessa korjataan tuntitasolla. Nopeus- ja raakadatahavainnoista poistetaan faulty-havainnot (kts. Faulty –arvo päätellään seuraavasti). Lomake palauttaa summattuja tietoja käyttäjän valitsemilla rajauksilla ja summaa ne halutulle tarkkuustasolle (mm. aika-, suunta-, kaista-, ajoneuvoluokkavalinta).
 
 ## LAM-raakadata
 

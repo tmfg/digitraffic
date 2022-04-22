@@ -27,7 +27,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 - Tiejaksojen keliennusteet. Viesti sisältää keliennusteet, jotka päivittyvät viiden minuutin välein.
 
-- LAM-mittaustiedot. Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain. LAM-pisteitä on yli 450 kappaletta ympäri Suomea. [LAM-dokumentaatioon](lam) on kerätty LAM-dataan liittyviä selitteitä.
+- Liikenteen automaattiset mittaustiedot (LAM). Tiehen upotetulta induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista ajoneuvoluokittain.
 
 - Liikennetiedotteet. Tieliikenteen häiriötiedotteet, painorajoitukset, tietyöt ja erikoiskuljetukset ovat saatavissa Datex2 sekä Simppeli-JSON -muodossa.  
 
@@ -149,7 +149,21 @@ Metadatat:
 
 [```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/25){:target="_blank"}
 
-### Ajantasaiset LAM mittaustiedot
+### Liikenteen automaattiset mittaustiedot (LAM)
+
+#### Dokumentaatio
+
+[LAM-dokumentaatio](lam) -sivulta löytyy tarkempi kuvaus aineistosta ja dataan liittyviä selitteitä.
+
+#### Tilastohaku
+
+[Tilastohaku](https://tie-lam-test.digitraffic.fi/){:target="_blank"} -lomakkeella voi hakea haluttuja raportteja lam-mittauspisteillä.
+
+#### Raakadatahaku
+
+Mittauspisteiden data on myös saatavissa [raakadatana](lam#lam-raakadata).
+
+#### Reaaliaika-aineisto
 
 [```https://tie.digitraffic.fi/api/v1/data/tms-data```](https://tie.digitraffic.fi/api/v1/data/tms-data){:target="_blank"}
 

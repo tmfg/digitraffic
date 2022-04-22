@@ -26,6 +26,12 @@ There are prebuilt reports based on the data available through a form.
 
 [```https://tie-lam-test.digitraffic.fi```](https://tie-lam-test.digitraffic.fi){:target="_blank"}
 
+- **Available data**: statistics of traffic volumes is available since 2010, average speeds since 2020 and raw data since December 2021.  
+- **Updating and reliability of traffic volumes**: yesterday’s data is updated each day usually between 8:00 and 9:00. If there are deviations in traffic volumes this subset of data is updated usually within a couple of days. Traffic volumes are inspected and corrected using advanced algorithms if needed.
+- **Updating and reliability of average speeds**: yesterday’s data is updated each day usually between 8:00 and 9:00. Average speeds are calculated based on the actual detections from the device, which means the number of detected vehicles might deviate from traffic volumes in case the traffic volumes are corrected. 
+- **Updating and reliability of raw data**: yesterday’s data is updated each day usually between 8:00 and 9:00. The number of detected vehicles in raw data might deviate from traffic volumes in case the traffic volumes are corrected, or new raw data is updated after publishing of traffic volumes.
+- **Data processing**: traffic volumes of each hour are inspected and corrected if needed. Faulty detections are removed from average speeds and raw data (Look The value of “faulty” is 1 if ...). The form returns data on a summarized level and allows users to choose their desired level of detail and filter data for example based on date, direction, lane and vehicle class. 
+
 ## TMS raw data
 
 Data collected from the stations is also available in raw form. The data is converted to a CSV format but not altered in any way.
