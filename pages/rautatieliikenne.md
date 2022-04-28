@@ -390,7 +390,7 @@ Palauttaa yhden junan tiedot
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
 | ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
+|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
 |  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
 |  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_deleted | boolean | false | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false
   
@@ -484,7 +484,7 @@ Uusi paketti luodaan joka kuun viides päivä.
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
 | ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. 
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. 
   
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
  
@@ -680,7 +680,7 @@ Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, 
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|---|---
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 	1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa | 	1,1,70,70 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -765,7 +765,7 @@ Palauttaa halutun yhden junan kulkutietoviestit.
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos. Jos tyhjä, ei tehdä versiorajoitusta.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -791,7 +791,7 @@ Palauttaa liikennepaikan kulkutietoviestit.
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
@@ -820,7 +820,7 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 |---|---|---|--- |--- 
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| track_section | string | "001" | Liikennepaikan raideosuuden lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä.
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä.
  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | limit | positive integer | 100 | Kuinka monta uusinta kulkutietoviestiä kyselyssä palautetaan. Maksimiarvo 1000. Tämä rajaus poissulkee departure_date-rajauksen. Jos departure_date- tai limit-rajoitusta ei anneta, käytetään limit-rajoitusta.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -997,7 +997,7 @@ Palauttaa liikennepaikan kulkutievaraukset.
 |&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
 |---|---|---|--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutievaraukseen liittyvän junan ensimmäisen lähdön päivämäärä. Palauttaa lisäksi kulkutievaraukset ilman lähtöpäivämäärää ajalta 00:00 - 24:00.
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutievaraukseen liittyvän junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutievaraukset ilman lähtöpäivämäärää ajalta 00:00 - 24:00.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
@@ -1401,7 +1401,7 @@ Jokainen tyypin kenttä on kuvattu ikonilla, jotka tarkoittavat:
 Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan järjestykseen.
 
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia, ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainType: IC, P, S, ...
@@ -1445,7 +1445,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan järjestykseen.
 
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia, ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: lähiliikenne, kaukoliikenne, tavaraliikenne
@@ -1490,7 +1490,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 ### GPS-sijainnit    
 
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin sijainti on luettu*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: geojson ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainti GeoJSON-muodossa*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) speed: number ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan nopeus*
@@ -1500,7 +1500,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin yksilöivä numero.*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutietoviesti on viimeksi muuttunut*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman ajanhetki*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman raideosuuden tunniste. Lista raideosuuksista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/track-sections).*
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextTrackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Seuraava raideosuuden tunniste, jolle juna ajaa.*
@@ -1515,7 +1515,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutievaraus on viimeksi muuttunut*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) messageTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin kulkutievaraus on luettu*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routeType: character  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varauksen tyyppi. `T`=junakulkutie, `S`=vaihtokulkutie ja `C`=kulkutien purkaminen*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) clientSystem: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutievarauksen luoneen kauko-ohjausjärjestelmän nimi*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routesections ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista raideosuuksista/vaihteista/elementeistä, jotka on varattu kulkutieksi*
@@ -1636,7 +1636,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versiotiedon yksilöivät tiedot*
   * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumero*
-  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä*
+  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
   * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fetchDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki, jolloin versio on syntynyt*  
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) json: json ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Version json-sisältö*
 
