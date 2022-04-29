@@ -8,6 +8,13 @@
 
       ga('create', 'UA-69413118-5', 'auto');
       ga('send', 'pageview');
+    } else {
+      document.cookie.split('; ')
+        .filter(c => c.startsWith('_ga') || c.startsWith('_gid'))
+        .forEach(c => {
+          const expDate = new Date().toUTCString();
+          document.cookie = `${c}; max-age=0; samesite=lax; path=/; expires=${expDate};`;
+        });
     }
   }, false);
 </script>
