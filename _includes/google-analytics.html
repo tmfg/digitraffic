@@ -9,7 +9,8 @@
       ga('create', 'UA-69413118-5', 'auto');
       ga('send', 'pageview');
     } else {
-      document.cookie.split('; ')
+      document.cookie.split(';')
+        .map(c => c.trim())
         .filter(c => c.startsWith('_ga') || c.startsWith('_gid'))
         .forEach(c => {
           const expDate = new Date(0).toUTCString();
