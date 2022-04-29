@@ -12,8 +12,8 @@
       document.cookie.split('; ')
         .filter(c => c.startsWith('_ga') || c.startsWith('_gid'))
         .forEach(c => {
-          const expDate = new Date().toUTCString();
-          document.cookie = `${c}; max-age=0; samesite=lax; path=/; expires=${expDate};`;
+          const expDate = new Date(0).toUTCString();
+          document.cookie = `${c}; expires=${expDate};`;
         });
     }
   }, false);
