@@ -260,7 +260,7 @@ Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin.
 
 Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
 
-Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [http://rata.digitraffic.fi/api/v1/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
+Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [https://rata.digitraffic.fi/api/v1/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
 
 Kaikki aikaleimat ovat [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601):n mukaisia (esimerkiksi `2018-03-28T04:35:00.000Z`). Huomaa, että aikaleimoissa aikavyökkeenä on `Z` eli ne ovat [UTC-aikaa](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), eivät Suomen aikaa.
 
@@ -1320,8 +1320,8 @@ Aktiivisen hakemisen sijasta dataa voidaan myös kuunnella. Tähän käytetään
 
 MQTT vastaa kolmesta portista
 
-1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/) 
-1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [http://jsfiddle.net/nj9dg6hp/](http://jsfiddle.net/nj9dg6hp/)
+1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [https://jsfiddle.net/r4f7b2qe/](https://jsfiddle.net/r4f7b2qe/) 
+1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [https://jsfiddle.net/nj9dg6hp/](https://jsfiddle.net/nj9dg6hp/)
 1. Normaalin TCP-yhteyden kautta osoitteessa rata-mqtt.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
 
 MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen junan kokoonpanoa topicista `compositions/+/5/#`. Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
@@ -1330,7 +1330,7 @@ MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voida
 
 Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
 
-Esimerkki: [http://jsfiddle.net/q07ad2hb/](http://jsfiddle.net/q07ad2hb/)
+Esimerkki: [https://jsfiddle.net/q07ad2hb/](https://jsfiddle.net/q07ad2hb/)
 
 **Paluuarvo**
 
@@ -1340,7 +1340,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 Topic: `trains-by-station/<station>`
 
-Esimerkki: [http://jsfiddle.net/bkeav28u/](http://jsfiddle.net/bkeav28u/)
+Esimerkki: [https://jsfiddle.net/bkeav28u/](https://jsfiddle.net/bkeav28u/)
 
 **Paluuarvo**
 
@@ -1350,7 +1350,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 Topic: `train-locations/<departure_date>/<train_number>`
 
-Esimerkki: [http://jsfiddle.net/r4f7b2qe/](http://jsfiddle.net/r4f7b2qe/)
+Esimerkki: [https://jsfiddle.net/r4f7b2qe/](https://jsfiddle.net/r4f7b2qe/)
 
 **Paluuarvo**
 
@@ -1360,7 +1360,7 @@ Palauttaa [kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
 
 Topic: `train-tracking/<departure_date>/<train_number>/<type>/<station>/<track_section>/<previous_station>/<next_station>/<previous_track_section>/<next_track_section>`
 
-Esimerkki: [http://jsfiddle.net/cb2uj7kg/2/](http://jsfiddle.net/cb2uj7kg/2/)
+Esimerkki: [https://jsfiddle.net/cb2uj7kg/2/](https://jsfiddle.net/cb2uj7kg/2/)
 
 **Paluuarvo**
 
@@ -1370,7 +1370,7 @@ Palauttaa [kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
 Topic: `routesets/<departure_date>/<train_number>`
 
-Esimerkki: [http://jsfiddle.net/ytx5n9m1/](http://jsfiddle.net/ytx5n9m1/)
+Esimerkki: [https://jsfiddle.net/ytx5n9m1/](https://jsfiddle.net/ytx5n9m1/)
 
 **Paluuarvo**
 
@@ -1380,7 +1380,7 @@ Palauttaa [kulkutievaraukset](#kulkutievaraukset)-tyyppisiä vastauksia.
 
 Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
 
-Esimerkki: [http://jsfiddle.net/3k4e8wyf/](http://jsfiddle.net/3k4e8wyf/)
+Esimerkki: [https://jsfiddle.net/3k4e8wyf/](https://jsfiddle.net/3k4e8wyf/)
 
 **Paluuarvo**
 
@@ -1483,7 +1483,7 @@ Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan jär
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})luggage : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa matkatavarasäilytysmahdollisuus*
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})smoking : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Saako vaunussa tupakoida*
         * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})disabled : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunu invalidiystävällinen*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta. Lisätietoa [http://fi.wikipedia.org/wiki/Sarjatunnus](http://fi.wikipedia.org/wiki/Sarjatunnus)*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta. Lisätietoa [https://fi.wikipedia.org/wiki/Sarjatunnus](https://fi.wikipedia.org/wiki/Sarjatunnus)*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) totalLength: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokonaispituus metreissä*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) maximumSpeed: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokoonpanolle ilmoitettu maksiminopeus kilometreina tunnissa*
     
@@ -1674,7 +1674,7 @@ Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettä
 
 ## Avoimen datan käyttölupa
 
-Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](http://creativecommons.org/licenses/by/4.0/).
+Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 [Käyttöehdot](/kayttoehdot) -sivulla on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
