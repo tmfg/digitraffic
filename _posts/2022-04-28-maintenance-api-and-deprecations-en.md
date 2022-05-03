@@ -1,5 +1,5 @@
 ---
-title: 'New road maintenance tracking and traffic message APIs published and deprecation of old APIs in six months'
+title: 'New road maintenance tracking and traffic message APIs are published and deprecation of old APIs in six months'
 image:
 published: true
 categories: en News
