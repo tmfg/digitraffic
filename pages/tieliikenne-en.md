@@ -210,17 +210,17 @@ Best practice is to use some library that can parse date and times properly with
 
 #### Traffic messages DATEX II -APIs
 
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
 #### Traffic messages Simpele JSON -APIs
 
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
 #### Traffic messages area geometries
 
@@ -293,8 +293,8 @@ Lisätietoa Norjaan matkustamisesta on osoitteessa www.entrynorway.no",
 </details>
 <br/>
 Area geometries are served from the API:
-* Geometry with ALERT-C location code 27: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false){:target="_blank"}
-* All geometries: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false){:target="_blank"}
+* Geometry with ALERT-C location code 27: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false){:target="_blank"}
+* All geometries: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:target="_blank"}
 
 
 ### TMC/ALERT-C location data

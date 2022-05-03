@@ -13,7 +13,7 @@ ref: road-traffic
 intro: Avointa dataa Suomen tieverkolta.
 links:
   - - Väylävirasto
-    - https://vayla.fi
+    - https://vayla.fi/api/traffic-message/v1/
 ---
 
 ## Yleistä tietoa
@@ -210,17 +210,17 @@ Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleis
 
 #### Liikennetiedotteiden DATEX II -muotoisen datan rajapinnat
 
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
 #### Liikennetiedotteiden Simppelin JSON -muotoisen datan rajapinnat
 
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
 #### Liikennetiedotteiden aluegeometriat
 
@@ -295,8 +295,8 @@ Lisätietoa Norjaan matkustamisesta on osoitteessa www.entrynorway.no",
 <br/>
 
 Aluegeometriat löytyvät rajapinnasta:
-* ALERT-C alue sijainti koodilla 27: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?id=27&lastUpdated=false){:target="_blank"}
-* Kaikki alueet: [```http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false```](http://tie.digitraffic.fi/api/v3/data/traffic-messages/area-geometries?lastUpdated=false){:target="_blank"}
+* ALERT-C alue sijainti koodilla 27: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false){:target="_blank"}
+* Kaikki alueet: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:target="_blank"}
 
 ### TMC/ALERT-C paikannuspisteistö
 
