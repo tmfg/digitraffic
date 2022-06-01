@@ -1320,8 +1320,8 @@ Aktiivisen hakemisen sijasta dataa voidaan myös kuunnella. Tähän käytetään
 
 MQTT vastaa kolmesta portista
 
-1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [https://jsfiddle.net/r4f7b2qe/](https://jsfiddle.net/r4f7b2qe/) 
-1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [https://jsfiddle.net/nj9dg6hp/](https://jsfiddle.net/nj9dg6hp/)
+1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [https://jsfiddle.net/m20ocg9f/](https://jsfiddle.net/m20ocg9f/) 
+1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [https://jsfiddle.net/5x96Lo7n/](https://jsfiddle.net/5x96Lo7n/)
 1. Normaalin TCP-yhteyden kautta osoitteessa rata-mqtt.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
 
 MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen junan kokoonpanoa topicista `compositions/+/5/#`. Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
@@ -1330,7 +1330,7 @@ MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voida
 
 Topic: `trains/<departure_date>/<train_number>/<train-category>/<train-type>/<operator>/<commuter-line>/<running-currently>/<timetable-type>`
 
-Esimerkki: [https://jsfiddle.net/q07ad2hb/](https://jsfiddle.net/q07ad2hb/)
+Esimerkki: [https://jsfiddle.net/t6gjuknf/](https://jsfiddle.net/t6gjuknf/)
 
 **Paluuarvo**
 
@@ -1340,7 +1340,7 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 Topic: `trains-by-station/<station>`
 
-Esimerkki: [https://jsfiddle.net/bkeav28u/](https://jsfiddle.net/bkeav28u/)
+Esimerkki: [https://jsfiddle.net/hm0wute4/](https://jsfiddle.net/hm0wute4/)
 
 **Paluuarvo**
 
@@ -1350,17 +1350,17 @@ Palauttaa [junat](#junat)-tyyppisiä vastauksia.
 
 Topic: `train-locations/<departure_date>/<train_number>`
 
-Esimerkki: [https://jsfiddle.net/r4f7b2qe/](https://jsfiddle.net/r4f7b2qe/)
+Esimerkki: [https://jsfiddle.net/4fae25yw/](https://jsfiddle.net/4fae25yw/)
 
 **Paluuarvo**
 
-Palauttaa [kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
+Palauttaa [GPS-sijainnit](#gps-sijainnit)-tyyppisiä vastauksia.
 
 ### Kulkutietoviestien kuuntelu
 
 Topic: `train-tracking/<departure_date>/<train_number>/<type>/<station>/<track_section>/<previous_station>/<next_station>/<previous_track_section>/<next_track_section>`
 
-Esimerkki: [https://jsfiddle.net/cb2uj7kg/2/](https://jsfiddle.net/cb2uj7kg/2/)
+Esimerkki: [https://jsfiddle.net/ov94zmep/](https://jsfiddle.net/ov94zmep/)
 
 **Paluuarvo**
 
@@ -1370,7 +1370,7 @@ Palauttaa [kulkutietoviestit](#kulkutietoviestit)-tyyppisiä vastauksia.
 
 Topic: `routesets/<departure_date>/<train_number>`
 
-Esimerkki: [https://jsfiddle.net/ytx5n9m1/](https://jsfiddle.net/ytx5n9m1/)
+Esimerkki: [https://jsfiddle.net/L0v2enb9/](https://jsfiddle.net/L0v2enb9/)
 
 **Paluuarvo**
 
@@ -1380,7 +1380,7 @@ Palauttaa [kulkutievaraukset](#kulkutievaraukset)-tyyppisiä vastauksia.
 
 Topic: `compositions/<departure_date>/<train_number>/<train_category>/<train_type>/<operator>`
 
-Esimerkki: [https://jsfiddle.net/3k4e8wyf/](https://jsfiddle.net/3k4e8wyf/)
+Esimerkki: [https://jsfiddle.net/g5x9ywnh/](https://jsfiddle.net/g5x9ywnh/)
 
 **Paluuarvo**
 
