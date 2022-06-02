@@ -91,7 +91,12 @@ layout: uncompressed
         client.onMessageArrived = function(message) {
           messagesLastMinuteCount++;
 
-          addMessage(JSON.parse(message.payloadString));
+          try {
+            addMessage(message.destinationName, JSON.parse(message.payloadString));
+          } catch (error) {
+            console.error("parsing failed " + error);
+            console.info(message);
+          }
 
           updateList();
         };
@@ -130,8 +135,8 @@ layout: uncompressed
         client.subscribe(topic);
       }
 
-      function addMessage(message) {
-        const text = JSON.stringify(message);
+      function addMessage(destination, message) {
+        const text = destination + ': ' + JSON.stringify(message);
 
         while (lines.length > 100) {
           lines.shift();
