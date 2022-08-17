@@ -5,7 +5,7 @@ ref: merenkulun_turvalaiteviat
 issue-number: DPO-881
 traffictypes:
   - Marine traffic
-status: inprogress
+status: finished
 date: 2020-02-19
 ---
 

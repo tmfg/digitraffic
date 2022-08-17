@@ -5,7 +5,7 @@ ref: kevytliikenne
 issue-number: DPO-1184
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2021-11-08
 ---
 

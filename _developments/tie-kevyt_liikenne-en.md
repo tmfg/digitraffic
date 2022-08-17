@@ -5,7 +5,7 @@ ref: kevyt_liikenne
 issue-number: DPO-1184
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 date: 2021-11-08
 ---
 
