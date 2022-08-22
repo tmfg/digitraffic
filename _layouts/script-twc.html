@@ -223,9 +223,9 @@ layout: uncompressed
         };
 
         function loadTWC() {
-          initTable(TYPE_TMS, "TMS-Stations");
-          initTable(TYPE_WEATHER, "Weather-Stations");
-          initTable(TYPE_CAMERA, "Camera-Stations");
+          initTable(TYPE_TMS, "TMS stations data");
+          initTable(TYPE_WEATHER, "Weather stations data");
+          initTable(TYPE_CAMERA, "Weathercam stations presets");
           
           loadContent(URL_TMS, process_tms);
           loadContent(URL_WEATHER, process_weather);

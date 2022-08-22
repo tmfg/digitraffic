@@ -2,8 +2,8 @@
 layout: script-twc
 hero-image: code
 permalink: /ohjeita/script-twc/
-title: Update times for road stations
+title: Data up-to-date status of road stations
 lang: fi
 ref: twc-status
-intro: TMS, WEATHER and CAMERA
+intro: TMS, Weather and Weathercam stations data
 ---
