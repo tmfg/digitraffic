@@ -4,7 +4,7 @@ permalink: en/marine-traffic/
 section: Tietolähteet
 traffictypes: Meriliikenne
 searchable: true
-swagger-source: https://meri.digitraffic.fi/swagger/swagger-spec.json
+swagger-source: https://meri.digitraffic.fi/swagger/openapi.json
 swagger-link: https://meri.digitraffic.fi/swagger/
 hero-image: icebreaker
 lang: en
@@ -15,7 +15,7 @@ links:
   - ["Finnish Transport Infrastructure Agency", "https://vayla.fi"]
   - ["Fintraffic", "https://fintraffic.fi"]
   - ["Swagger-UI", "https://meri.digitraffic.fi/swagger/"]
-  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/swagger-spec.json"]
+  - ["Swagger-kuvaus", "https://meri.digitraffic.fi/swagger/openapi.json"]
 ---
 
 ## General info

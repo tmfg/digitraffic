@@ -4,7 +4,7 @@ permalink: /tieliikenne/
 section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
-swagger-source: https://tie.digitraffic.fi/swagger/swagger-spec.json
+swagger-source: https://tie.digitraffic.fi/swagger/openapi.json
 swagger-link: https://tie.digitraffic.fi/swagger/
 hero-image: road
 title: Tieliikenne
@@ -12,8 +12,10 @@ lang: fi
 ref: road-traffic
 intro: Avointa dataa Suomen tieverkolta.
 links:
-  - - Väylävirasto
-    - https://vayla.fi/api/traffic-message/v1/
+  - ["Väylävirasto", "https://vayla.fi"]
+  - ["Fintraffic","https://fintraffic.fi"]
+  - ["Swagger-UI", "https://tie.digitraffic.fi/swagger/"]
+  - ["Swagger-kuvaus", "https://tie.digitraffic.fi/swagger/openapi.json"]
 ---
 
 ## Yleistä tietoa
