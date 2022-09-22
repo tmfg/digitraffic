@@ -1,7 +1,7 @@
 ---
 title: VR Junat kartalla
 intro: Junat kartalla on osa VR Group Oyj:n toteuttamaa ja ylläpitämää vr.fi-palvelua.
-logo:
+logo: vr-junat-kartalla/vr-500x500.svg
 developer:
   - VR Group Oyj
 traffictypes: 
