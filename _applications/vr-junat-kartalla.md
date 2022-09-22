@@ -8,10 +8,7 @@ traffictypes:
   - Rautatieliikenne
 environments:
   - Web
-language:
-  - Suomi (FIN)
-  - Ruotsi (SWE)
-  - Englanti (ENG)
+language: Suomi (FIN), Ruotsi (SWE), Englanti (EN)
 price: Ilmainen
 download-urls:
   - https://www.vr.fi/junat-kartalla
