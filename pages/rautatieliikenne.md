@@ -272,7 +272,9 @@ GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin, järjest�
 
 GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v2/graphql/graphiql](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
 
-Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi mahdolliset kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä. Vastausmuoto on [Trains](#junat)-tyyppinen
+Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
+
+[![GraphQL schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)
 
 Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 * filtterin (tai useampia) `where`-parametrilla    
