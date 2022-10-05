@@ -648,16 +648,16 @@ Kehittäjien kannattaa huomioida junien sijaintitietojen puutteet sovelluksissaa
 URL: `/train-locations/latest?bbox=<points>`
 
 * Esimerkki 1: [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
-* Esimerkki 2: [/train-locations/latest?bbox=20,60,35,70](https://rata.digitraffic.fi/api/v1/train-locations/latest?bbox=20,60,35,70)
-* Esimerkki 2: [/train-locations.geojson/latest?bbox=20,60,35,70](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=20,60,35,70)
+* Esimerkki 2 (Helsingin keskustan junat): [/train-locations/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations/latest?bbox=latest?bbox=24.896417,60.149976,24.980804,60.190234)
+* Esimerkki 3 (Helsingin keskustan junat GeoJson-muodossa): [/train-locations.geojson/latest?bbox=latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=latest?bbox=24.896417,60.149976,24.980804,60.190234)
 
 **Kuvaus**
 
 Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 minuutin sisällä.
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-|---|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa | 	1,1,70,70 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
+|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti                                                                                 | Esimerkki | Selitys
+|---|---|-------------------------------------------------------------------------------------------|---|--- 
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
@@ -683,7 +683,7 @@ Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, 
 |---|---|---|---|---
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 	1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa | 	1,1,70,70 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
+![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
