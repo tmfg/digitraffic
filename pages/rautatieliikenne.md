@@ -647,9 +647,9 @@ Kehittäjien kannattaa huomioida junien sijaintitietojen puutteet sovelluksissaa
 
 URL: `/train-locations/latest?bbox=<points>`
 
-* Esimerkki 1: [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
-* Esimerkki 2 (Helsingin keskustan junat): [/train-locations/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations/latest?bbox=24.896417,60.149976,24.980804,60.190234)
-* Esimerkki 3 (Helsingin keskustan junat GeoJson-muodossa): [/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234)
+* Esimerkki 1 (sijainnit GeoJSON-muodossa): [/train-locations.geojson/latest/](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/)
+* Esimerkki 2 (sijainnit "vanhassa" muodossa): [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
+* Esimerkki 3 (Helsingin keskustan junat GeoJSON-muodossa): [/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234)
 
 **Kuvaus**
 
