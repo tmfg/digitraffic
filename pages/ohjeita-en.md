@@ -17,7 +17,18 @@ intro: Instructions for coding
 
 # General considerations
 
-Instructions in effect from 1st of June 2020
+## API versioning and life cycle
+
+![APIs' life cycle]({{ site.baseurl }}{{ "/img/ohjeita/api-life-cycle.png" }})
+
+When a new interface is developed, it is always released first as a beta version for test use.
+When the beta interface is found to be publishable, a new version is published and the old interface will be considered deprecated.
+The old version will be available for six more months, after which it will be removed from the service. 
+During this period, security and bug fixes to the deprecated API will be considered on a case-by-case basis.
+The image above aims to clarify the life cycle of interfaces.
+
+New api versions will be announced in Google-groups 
+[road](https://groups.google.com/g/roaddigitrafficfi) and [marine](https://groups.google.com/g/meridigitrafficfi).
 
 ## How can I be aware of updates and incidents?
 Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
