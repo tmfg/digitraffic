@@ -28,7 +28,9 @@ During this period, security and bug fixes to the deprecated API will be conside
 The image above aims to clarify the life cycle of interfaces.
 
 New api versions will be announced in Google-groups 
-[road](https://groups.google.com/g/roaddigitrafficfi) and [marine](https://groups.google.com/g/meridigitrafficfi).
+[road](https://groups.google.com/g/roaddigitrafficfi),
+[marine](https://groups.google.com/g/meridigitrafficfi) and
+[rail](https://groups.google.com/u/1/g/rata_digitraffic_fi).
 
 ## How can I be aware of updates and incidents?
 Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
