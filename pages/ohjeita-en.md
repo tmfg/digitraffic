@@ -29,7 +29,7 @@ The old version will be available for six more months, after which it will be re
 During this period, security and bug fixes to the deprecated API will be considered on a case-by-case basis.
 The image above aims to clarify the life cycle of interfaces.
 
-New api versions will be announced in Google-groups 
+New api versions will be announced in Digitraffic website and Google-groups 
 [road](https://groups.google.com/g/roaddigitrafficfi),
 [marine](https://groups.google.com/g/meridigitrafficfi) and
 [rail](https://groups.google.com/u/1/g/rata_digitraffic_fi).

@@ -30,7 +30,8 @@ Vanha rajapintaversio on saatavilla vielä kuusi kuukautta, jonka jälkeen se po
 Tänä aikana vanhentuneen rajapinnan tietoturva- ja virheenkorjauksia harkitaan tapauskohtaisesti.
 Yllä oleva kuva pyrkii selventämään rajapintojen elinkaarta.
 
-Uusista rajapintaversioista tiedotetaan [tie](https://groups.google.com/g/roaddigitrafficfi)-,  
+Uusista rajapintaversioista tiedotetaan tällä sivustolla sekä 
+[tie](https://groups.google.com/g/roaddigitrafficfi)-,  
 [meri](https://groups.google.com/g/meridigitrafficfi)- ja
 [rata](https://groups.google.com/u/1/g/rata_digitraffic_fi)-Google-ryhmissä.
 
