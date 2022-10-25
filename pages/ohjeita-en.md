@@ -22,6 +22,8 @@ intro: Instructions for coding
 ![APIs' life cycle]({{ site.baseurl }}{{ "/img/ohjeita/api-life-cycle.png" }})
 
 When a new interface is developed, it is always released first as a beta version for test use.
+Notices of new beta APIs will be released on Google Groups and the Digitraffic website. 
+Users are encouraged to give feedback on beta versions so that new APIs can be improved to better serve their purpose.
 When the beta interface is found to be publishable, a new version is published and the old interface will be considered deprecated.
 The old version will be available for six more months, after which it will be removed from the service. 
 During this period, security and bug fixes to the deprecated API will be considered on a case-by-case basis.

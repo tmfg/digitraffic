@@ -23,6 +23,8 @@ intro: Ohjeita ohjelmoijille
 ![Rajapintojen elinkaari]({{ site.baseurl }}{{ "/img/ohjeita/api-life-cycle.png" }})
 
 Kun uutta rajapintaa kehitetään, julkaistaan se aina ensimmäiseksi beta-versiona testikäyttöön.
+Beta-rajapinnoista tiedotetaan Google-ryhmissä ja sivustolla. Hyödyntäjiä kannustetaan antamaan palautetta, 
+jotta uutta rajapintaa voitaisiin tarvittaessa vielä muuttaa paremmin tarkoitustaan vastaavaksi. 
 Kun rajapinta todetaan julkaisukelpoiseksi, julkaistaan siitä uusi versio ja vanha rajapinta merkitään vanhentuneeksi.
 Vanha rajapintaversio on saatavilla vielä kuusi kuukautta, jonka jälkeen se poistetaan palvelusta.
 Tänä aikana vanhentuneen rajapinnan tietoturva- ja virheenkorjauksia harkitaan tapauskohtaisesti.
