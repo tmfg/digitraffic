@@ -18,7 +18,19 @@ intro: Ohjeita ohjelmoijille
 
 # Yleistä huomioitavaa
 
-1.6.2020 alkaen voimassa olevat ohjeet
+## Rajapintojen versiointi ja elinkaari
+
+![Rajapintojen elinkaari]({{ site.baseurl }}{{ "/img/ohjeita/api-life-cycle.png" }})
+
+Kun uutta rajapintaa kehitetään, julkaistaan se aina ensimmäiseksi beta-versiona testikäyttöön.
+Kun rajapinta todetaan julkaisukelpoiseksi, julkaistaan siitä uusi versio ja vanha rajapinta merkitään vanhentuneeksi.
+Vanha rajapintaversio on saatavilla vielä kuusi kuukautta, jonka jälkeen se poistetaan palvelusta.
+Tänä aikana vanhentuneen rajapinnan tietoturva- ja virheenkorjauksia harkitaan tapauskohtaisesti.
+Yllä oleva kuva pyrkii selventämään rajapintojen elinkaarta.
+
+Uusista rajapintaversioista tiedotetaan [tie](https://groups.google.com/g/roaddigitrafficfi)-,  
+[meri](https://groups.google.com/g/meridigitrafficfi)- ja
+[rata](https://groups.google.com/u/1/g/rata_digitraffic_fi)-Google-ryhmissä.
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
