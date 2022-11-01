@@ -58,6 +58,20 @@
 	white-space: nowrap;
 }
 
+.deprecations-text {
+	margin-bottom: 2%;
+}
+
+.deprecations-sunset-alert {
+	background: #CC3300;
+	color: #FFFFFF;
+}
+
+.deprecations-sunset-warning {
+	background: #FFCC00;
+	color: #000000;
+}
+
 .warn {
     color: rgba(255, 7, 7, 1);
 }
