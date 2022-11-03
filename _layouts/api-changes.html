@@ -1,0 +1,87 @@
+---
+layout: uncompressed
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<!--HTML head-->
+{% include script-headers.html %}
+
+<!--HTML body-->
+<body class="body">
+
+<!--Header-->
+{% include header.html header-classes="header--white" %}
+
+<!--Content-->
+<content class="content">
+  <div class="row">
+    <div class="col-xs">
+      <h1 class="hero-image__heading">{{ page.title }}</h1>
+      <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+    </div>
+  </div>
+
+  <div class="content__section-under-hero content--padded content--github-edit">
+
+    <!--Breadcrumb-->
+    <div class="row">
+      <div class="col-xs-12 breadcrumb"><!--
+          -->{% include breadcrumb-home.html %}<!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+      </div>
+    </div>
+
+    <!--Article-->
+    <content>
+      <div class="row">
+        <!--Text content-->
+        <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+          {{ content }}
+        </div>
+      </div>
+
+      <div id="DEPRECATIONS-HEADER">
+      </div>
+      <div id="DEPRECATIONS-TEXT" class="deprecations-text">
+      </div>
+      <div class="row">
+        <!--Tables-->
+        <div class="col-xs-6 jekyll-content jekyll-content--no-tags" id="ROAD-DEPRECATIONS-DIV">
+          <table class="table" id="ROAD-DEPRECATIONS"></table>
+        </div>
+        <div class="col-xs-6 jekyll-content jekyll-content--no-tags" id="MARINE-DEPRECATIONS-DIV">
+          <table class="table" id="MARINE-DEPRECATIONS"></table>
+        </div>
+        <div class="col-xs-6 jekyll-content jekyll-content--no-tags" id="RAIL-DEPRECATIONS-DIV">
+          <table class="table" id="RAIL-DEPRECATIONS"></table>
+        </div>
+      </div>
+
+      <div id="SUPPORTED-HEADER">
+      </div>
+      <div class="row">
+        <div class="col-xs-4 jekyll-content jekyll-content--no-tags" id="ROAD-SUPPORTED-DIV">
+          <table class="table" id="ROAD-SUPPORTED"></table>
+        </div>
+        <div class="col-xs-4 jekyll-content jekyll-content--no-tags" id="RAIL-SUPPORTED-DIV">
+          <table class="table" id="RAIL-SUPPORTED"></table>
+        </div>
+        <div class="col-xs-4 jekyll-content jekyll-content--no-tags" id="MARINE-SUPPORTED-DIV">
+          <table class="table" id="MARINE-SUPPORTED"></table>
+        </div>
+      </div>
+    </content>
+
+  </div>
+</content>
+
+<!-- Github edit link -->
+{% include github-edit.html %}
+
+<!--footer-->
+{% include footer.html %}
+
+<script type="text/javascript" src="/js/script-api-changes.js"></script>
+</body>
+</html>

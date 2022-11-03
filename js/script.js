@@ -43,6 +43,8 @@ function init() {
     loadDatex2();
   } else if (typeof loadTWC === "function") {
     loadTWC();
+  } else if (typeof loadApiChanges === "function") {
+    loadApiChanges(pageLang);
   }
 
 }
