@@ -255,8 +255,11 @@ __Q__: Why does my mqtt-connection keep disconnecting?
 __A__: You have not subscribed any topic or subscribed only topics that have infrequent messages. 
 Subscribe also to relevan status-topic(tms/status, weather/status or vessels/status).
 
-# Avoiding unnecessary data transfer in weather camera requests
-The response for a weather camera request returns the HTTP header **ETag**. The ETag value can be used in the **If-None-Match** HTTP header. If the image is updated it will be returned with the HTTP return code 200. If the image is not updated no image will be returned and the HTTP return code will be 304.
+# Avoiding unnecessary data transfer with conditional HTTP-requests
+
+Most of the new `/api/{data typela}/v{n}/` APIs supports conditional HTTP-requests. You can identifie this kind of API by checking if the request response returns **ETag** HTTP header.
+
+E.g. the response for a weather camera request returns the HTTP header **ETag**. The ETag value can be used in the **If-None-Match** HTTP header. If the image is updated it will be returned with the HTTP return code 200. If the image is not updated no image will be returned and the HTTP return code will be 304.
 
 curl example:
 ```bash

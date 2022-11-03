@@ -258,8 +258,11 @@ __K__: Miksi mqtt-yhteys tuntuu katkeavan koko ajan?
 __V__: Jos et ole tilannut(subscribe) aiheita(topic) tai niistä ei tule viestejä, niin yhteys saattaa katketa.  
 Tilaa silloin myös status-topic(tms/status, weather/status, vessels/status).
 
-# Kelikamerakuvien turhan tiedonsiirron välttäminen ehdollisilla HTTP-pyynnöillä
-Kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käyttää ETagin arvoa **If-None-Match** -otsikossa. Mikäli kuva on päivittynyt se palautuu HTTP-paluukoodin 200 kera. Mikäli kuva ei ole päivittynyt mitään kuvaa ei palauteta ja HTTP-paluukoodi on 304.
+# Turhan tiedonsiirron välttäminen ehdollisilla HTTP-pyynnöillä
+
+Suurin osa uusista `/api/{datalaji}/v{n}/` -muotoisista apeista tukee ehdollisia HTTP-pyynntöjä. Tällaisen rajapinnan tunnistaa siitä, että se palautaa pyynnön vastauksessa **ETag** -HTTP-otsikon.
+
+Esimerkiksi kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käyttää ETagin arvoa **If-None-Match** -otsikossa. Mikäli kuva on päivittynyt se palautuu HTTP-paluukoodin 200 kera. Mikäli kuva ei ole päivittynyt mitään kuvaa ei palauteta ja HTTP-paluukoodi on 304 (Not Modified).
 
 curl-esimerkki:
 ```bash
