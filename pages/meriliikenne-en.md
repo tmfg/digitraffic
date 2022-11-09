@@ -61,7 +61,7 @@ At this time there is no metadata available.
 
 ### Port calls
 
-[```https://meri.digitraffic.fi/api/v1/port-calls```](https://meri.digitraffic.fi/api/v1/port-calls){:target="_blank"}
+[```https://meri.digitraffic.fi/api/port-calls/v1/port-calls```](https://meri.digitraffic.fi/api/port-calls/v1/port-calls){:target="_blank"}
 
 Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"}.
 
@@ -69,37 +69,37 @@ Related metadata:
 
 [```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/metadata/vessel-details```](https://meri.digitraffic.fi/api/v1/metadata/vessel-details){:target="_blank"}
+[```https://https://meri.digitraffic.fi/api/port-call/v1/vessel-details```](https://meri.digitraffic.fi/api/port-call/v1/vessel-details){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/metadata/code-descriptions```](https://meri.digitraffic.fi/api/v1/metadata/code-descriptions){:target="_blank"}
+[```https://https://meri.digitraffic.fi/api/port-call/v1/code-descriptions```](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:target="_blank"}
 
 ### Vessel locations
 
-[```https://meri.digitraffic.fi/api/v1/locations/latest```](https://meri.digitraffic.fi/api/v1/locations/latest){:target="_blank"}
+[```https://meri.digitraffic.fi/api/ais/v1/locations```](https://meri.digitraffic.fi/api/ais/v1/locations){:target="_blank"}
 
 Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.  [Additional info](ais).
 
 Related metadata:
 
-[```https://meri.digitraffic.fi/api/v1/metadata/vessels```](https://meri.digitraffic.fi/api/v1/metadata/vessels){:target="_blank"}
+[```https://meri.digitraffic.fi/api/ais/v1/vessels```](https://meri.digitraffic.fi/api/ais/v1/vessels){:target="_blank"}
 
 ### Dirways
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/dirways```](https://meri.digitraffic.fi/api/v1/winter-navigation/dirways){:target="_blank"}
+[```https://meri.digitraffic.fi/api/winter-navigation/v1/dirways```](https://meri.digitraffic.fi/api/winter-navigation/v1/dirways){:target="_blank"}
 
 Dirways are fetched from [Baltice](http://baltice.org){:target="_blank"}.
 
 Related metadata:
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/ports```](https://meri.digitraffic.fi/api/v1/winter-navigation/ports){:target="_blank"}
+[```https://meri.digitraffic.fi/api/winter-navigation/v1/ports```](https://meri.digitraffic.fi/api/winter-navigation/v1/ports){:target="_blank"}
 
-[```https://meri.digitraffic.fi/api/v1/winter-navigation/ships```](https://meri.digitraffic.fi/api/v1/winter-navigation/ships){:target="_blank"}
+[```https://meri.digitraffic.fi/api/winter-navigation/v1/vessels```](https://meri.digitraffic.fi/api/winter-navigation/v1/vessels){:target="_blank"}
 
 ### Sea state estimation (SSE)
 
 Data + metadata:
 
-[```https://meri.digitraffic.fi/api/v1/sse/latest```](https://meri.digitraffic.fi/api/v1/sse/latest){:target="_blank"}
+[```https://meri.digitraffic.fi/api/sse/v1/measurements```](https://meri.digitraffic.fi/api/sse/v1/measurements){:target="_blank"}
 
 Sea state estimation data is fetched from TLSC-server, that gathers and analyzes data send by AtoN sites. 
 
@@ -107,7 +107,7 @@ Data is updated every 30 minutes.
 
 ### Disturbances in waterway traffic 
 
-[```https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions```](https://meri.digitraffic.fi/api/v2/bridge-lock/disruptions){:target="_blank"}
+[```https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions```](https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions){:target="_blank"}
 
 Waterway traffic disturbances are fetched from POOKI.
 
