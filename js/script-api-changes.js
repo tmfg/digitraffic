@@ -10,7 +10,7 @@ const translations = {
     en: {
         api: "API",
         deprecationsHeader: "Deprecated APIs",
-        deprecationsText: "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead.",
+        deprecationsText: "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. Sunset date marks the point in time after which a deprecated API will not be available anymore.",
         marine: "Marine",
         rail: "Rail",
         road: "Road",
@@ -21,7 +21,7 @@ const translations = {
     fi: {
         api: "Rajapinta",
         deprecationsHeader: "Vanhentuneet rajapinnat",
-        deprecationsText: "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon.",
+        deprecationsText: "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Poistumispäivämäärä on ajankohta, minkä jälkeen vanhentunut rajapinta ei lähtökohtaisesti enää ole saatavilla.",
         marine: "Meri",
         rail: "Rata",
         road: "Tie",
@@ -37,15 +37,15 @@ const sunsetDateMatcher = RegExp(`(${removalTextMatcher.source})\.+(?<sunsetDate
 function initDeprecationsTable(trafficType, tableTitle, language) {
     $("#" + trafficType + "-DEPRECATIONS").append([
         $("<colgroup>").append([
-            $("<col>", {"class": "api-changes-col"}),
-            $("<col>", {"class": "api-changes-col"})
+            $("<col>", {"class": "deprecations-col1"}),
+            $("<col>", {"class": "deprecations-col2"})
         ]),
         $("<thead/>").append([
             $("<tr/>", {"class": "row.nowrap"}).append([
-                $("<th/>", {"class": "api-changes-col", "colspan": 2}).text(tableTitle)
+                $("<th/>", {"class": "api-changes-header", "colspan": 2}).text(tableTitle)
             ]),
             $("<tr/>", {"class": "row.nowrap"}).append([
-                $("<th/>", {"class": "api-changes-col"}).text(translations[language].api),
+                $("<th/>", {"class": "api-changes-header"}).text(translations[language].api),
                 $("<th/>", {"class": "deprecations-col2"}).text(translations[language].sunset),
             ])
         ]),
@@ -56,11 +56,11 @@ function initDeprecationsTable(trafficType, tableTitle, language) {
 function initSupportedTable(trafficType, tableTitle) {
     $("#" + trafficType + "-SUPPORTED").append([
         $("<colgroup>").append([
-            $("<col>", {"class": "api-changes-col"})
+            $("<col>", {"class": "supported-col"})
         ]),
         $("<thead/>").append([
             $("<tr/>", {"class": "row.nowrap"}).append([
-                $("<th/>", {"class": "api-changes-col"}).text(tableTitle)
+                $("<th/>", {"class": "api-changes-header"}).text(tableTitle)
             ])
         ]),
         $("<tbody/>")

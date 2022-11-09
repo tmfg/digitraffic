@@ -50,8 +50,13 @@
 	white-space: nowrap;
 }
 
-.api-changes-col {
+.api-changes-header {
 	text-align: start;
+}
+
+.deprecations-col1 {
+	white-space: normal;
+	word-wrap: anywhere;
 }
 
 .deprecations-col2 {
@@ -70,6 +75,10 @@
 .deprecations-sunset-warning {
 	background: #FFCC00;
 	color: #000000;
+}
+
+.supported-col {
+	word-wrap: anywhere;
 }
 
 .warn {
