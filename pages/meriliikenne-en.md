@@ -61,7 +61,7 @@ At this time there is no metadata available.
 
 ### Port calls
 
-[```https://meri.digitraffic.fi/api/port-calls/v1/port-calls```](https://meri.digitraffic.fi/api/port-calls/v1/port-calls){:target="_blank"}
+[```https://meri.digitraffic.fi/api/port-call/v1/port-calls```](https://meri.digitraffic.fi/api/port-calls/v1/port-calls){:target="_blank"}
 
 Port calls are fetched from [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"}.
 
