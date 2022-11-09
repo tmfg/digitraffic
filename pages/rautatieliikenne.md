@@ -462,8 +462,9 @@ Junien tiedot saa myös GTFS-muodossa (General Transit Feed Specification). Pake
 Paketti generoidaan uusiksi päivittäin noin klo 5:00. Se sisältää kaikki tulevaisuuden junat ja menneisyyden junat viimeiseltä seitsemältä päivältä.
  
 Lisäksi on tarjolla reaaliaikafeedit gtfs-rt-locations ja gtfs-rt-updates.  Nämä feedit tarjoavat reaaliaikaista GTFS-dataa protobuf-muodossa.
-gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.  
-gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja perumiset ja se päivitetään minuutin välein.
+
+- gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.  
+- gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja perumiset ja se päivitetään minuutin välein.
 
  **Paluuarvo**
  
