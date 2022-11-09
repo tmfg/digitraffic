@@ -452,6 +452,8 @@ Palauttaa yhden junan tiedot
  URL:t
  - [/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
  - [/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
+ - [/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
+ - [/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
  
  **Kuvaus**
  
@@ -459,9 +461,14 @@ Junien tiedot saa myös GTFS-muodossa (General Transit Feed Specification). Pake
 
 Paketti generoidaan uusiksi päivittäin noin klo 5:00. Se sisältää kaikki tulevaisuuden junat ja menneisyyden junat viimeiseltä seitsemältä päivältä.
  
+Lisäksi on tarjolla reaaliaikafeedit gtfs-rt-locations ja gtfs-rt-updates.  Nämä feedit tarjoavat reaaliaikaista GTFS-dataa protobuf-muodossa.
+gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.  
+gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja perumiset ja se päivitetään minuutin välein.
+
  **Paluuarvo**
  
- Palauttaa [GTFS-muodossa](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md) olevan zip-paketin
+Staattiset rajapinnat palauttavat [GTFS-muodossa](https://gtfs.org/schedule/reference/) olevan zip-paketin.
+Reaaliaikaiset rajapinnat palauttavat tiedot [protobuf-muodossa](https://gtfs.org/realtime/reference/).
  
 ### Vanhat junat zip-paketteina
 
