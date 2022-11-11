@@ -432,77 +432,56 @@ Testin osoite on vastaavasti ```tie-test.digitraffic.fi``` ja portti ```443```.
 
 ### Topicit
 
-Voit korvata ```<id>```-osan ```#```-merkillä, jolloin kuunnellaan koko joukon viestejä. Esim. ```tms/#```
-
-Topicit ovat seuraavanlaista muotoa.
+Voit korvata ```<id>```-osan ```#```-merkillä, jolloin kuunnellaan koko joukon viestejä. Esim. ```tms-v2/#```
 
 #### Ajantasaiset LAM mittaustiedot 
 
-- ```tms/<roadStationId>/<sensorId>```
-- ```tms/status```
-
+- ```tms-v2/<roadStationId>/<sensorId>```
+- ```tms-v2/status```
+ 
 ##### TMS-viesti
 
 ```
 {
-  "id": 5122,
-  "roadStationId": 23307,
-  "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1",
-  "oldName":" averageSpeed1",
-  "shortName": "km/h1",
-  "sensorValue": 84,
-  "sensorUnit":" km/h",
-  "measuredTime": "2019-01-23T08:25:02Z"
+    "value":108,
+    "time":1667972911,
+    "start":1667966400,
+    "end":1667970000
 }
+
 ```
 
 #### Tiesääasemien ajantasaiset mittaustiedot
 
-- ```weather/<roadStationId>/<sensorId>```
-- ```weather/status```
+- ```weather-v2/<roadStationId>/<sensorId>```
+- ```weather-v2/status```
 
 ##### Sääaseman mittaustieto-viesti
 
 ```
 {
-  "id": 1,
-  "roadStationId": 1158,
-  "name": "ILMA",
-  "oldName": "airtemperature1",
-  "shortName": "Ilma ",
-  "sensorValue": -2.2,
-  "sensorUnit": "°C",
-  "measuredTime": "2019-01-23T08:35:00Z"
+    "value":11068,
+    "time":1667973021
 }
 ```
 
 #### Maanteiden kunnossapitotiedon viimeisin sijainti
 
-- ```maintenance/tracking/#```
-- ```maintenance/tracking/<trackingId>```
-- ```maintenance/tracking/status```
+- ```maintenance-v2/trackings/#```
+- ```maintenance-v2/trackings/<trackingId>```
+- ```maintenance-v2/trackings/status```
 
 ##### Kunnossapitoviesti
 
 ```
 {
-  "type": "Feature",
-  "properties": {
-    "id": 247694,
-    "time": "2020-06-08T13:23:52Z",
-    "tasks": [
-      "PAVING"
+    "time":1668157878,
+    "source":"Harja/Väylävirasto",
+    "tasks":[
+        "MAINTENANCE_OF_GUIDE_SIGNS_AND_REFLECTOR_POSTS"
     ],
-    "direction": 72
-  },
-  "geometry": {
-    "type": "Point",
-    "coordinates": [
-      25.689415,
-      62.598124,
-      0
-    ]
-  }
+    "x":22.031937,
+    "y":62.567092
 }
 ```
 
@@ -565,7 +544,7 @@ Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
 
         function onConnect() {
             console.info(Date.now() + ' Connection open');
-            client.subscribe("tms/#");
+            client.subscribe("tms-v2/#");
         }
 
         function addMessage(message) {
@@ -601,25 +580,4 @@ Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](
 
 ## Vanhentuneet ja poistuneet rajapinnat
 
-### ~~Ajantasaiset linkkien sujuvuustiedot sisältäen matka-aikatiedot~~
-
-Perjantaina 29.12.2017 päättyi pääkaupunkiseudun matka-aikajärjestelmän toiminta. Järjestelmä on tullut teknisen käyttöikänsä päähän eikä toiminta
-vastaa enää asetettuja laatuvaatimuksia Tämän vuoksi myös Digitraffic lopetti toimittamasta PKS-järjestelmään liittyvää tietoa.
-
-Vanhat sujuvuuden historiatiedot ovat saatavilla [täältä](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html){:target="_blank"}.
-
-### ~~Vapaat nopeudet~~
-
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
-
-Viesti sisältää kulloinkin voimassa olevat vapaat nopeudet LAM – asemille (linkeille tietoa ei ole enää saatavilla, joten ne ovat tyjät).
-
-Viesti päivitetään eräajotyyppisesti kerran vuorokaudessa ja ovat haettavissa aamulla kello kuuden jälkeen Suomen aikaa. Data kuitenkin päivitty huomattavasti harvemmin.
-
-Jatkossa vapaat nopeudet tarjotaan suoraan [Ajantasaiset LAM mittaustiedot](#ajantasaiset-lam-mittaustiedot) -metadata-rajapinnassa.
-
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
+Tuetut ja vanhentuneet rajapinnat löytyy [täältä](https://www.digitraffic.fi/rajapintojen-tila/muutokset/).

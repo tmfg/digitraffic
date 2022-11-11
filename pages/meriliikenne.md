@@ -142,19 +142,19 @@ Testin osoite vastaavasti meri-test.digitraffic.fi
 
 Topicit ovat seuraavanlaista muotoa:
 
-- ```vessels/<mmsi>/metadata```
-- ```vessels/<mmsi>/locations```
-- ```vessels/status```
+- ```vessels-v2/<mmsi>/metadata```
+- ```vessels-v2/<mmsi>/location```
+- ```vessels-v2/status```
 
 #### Esimerkkejä alusten viestitilauksista
 
 ```
-vessels/#                 # Kaiken mahdollisen datan tilaaminen
-vessels/+/locations       # Kaikkien alusten sìjainnit
-vessels/+/metadata        # Kaikkien alusten metadatat
-vessels/<mmsi>/+          # Yhden aluksen sijainnit ja metadata
-vessels/<mmsi>/locations  # Yhden aluksen sijainnit
-vessels/<mmsi>/metadata n # Yhden aluksen metadata
+vessels-v2/#                # Kaiken mahdollisen datan tilaaminen
+vessels-v2/+/location       # Kaikkien alusten sìjainnit
+vessels-v2/+/metadata       # Kaikkien alusten metadatat
+vessels-v2/<mmsi>/+         # Yhden aluksen sijainnit ja metadata
+vessels-v2/<mmsi>/location  # Yhden aluksen sijainnit
+vessels-v2/<mmsi>/metadata  # Yhden aluksen metadata
 ```
 
 #### Alusten viestimuodot
@@ -163,23 +163,19 @@ vessels/<mmsi>/metadata n # Yhden aluksen metadata
 
 ```
 {
-  "type":"VESSEL_METADATA",
-  "data":{
-    "mmsi":255805753,
-    "name":"CHRISTIAN ESSBERGER",
-    "shipType":80,
-    "referencePointA":79,
-    "referencePointB":22,
-    "referencePointC":8,
-    "referencePointD":8,
-    "posType":1,
-    "draught":61,
-    "imo":9212498,
-    "callSign":"CQCC",
-    "eta":176640,
-    "timestamp":1487938960141,
-    "destination":"PORVOO"
-  }
+    "timestamp":1668075026035,
+    "destination":"UST LUGA",
+    "name":"ARUNA CIHAN",
+    "draught":68,
+    "eta":733376,
+    "posType":15,
+    "refA":160,
+    "refB":33,
+    "refC":20,
+    "refD":12,
+    "callSign":"V7WW7",
+    "imo":9543756,
+    "type":70
 }
 ```
 
@@ -187,26 +183,16 @@ vessels/<mmsi>/metadata n # Yhden aluksen metadata
 
 ```
 {
-  "type":"VESSEL_LOCATION",
-  "data":{
-    "mmsi":563907000,
-    "type":"Feature",
-    "geometry":{
-      "type":"Point",
-      "coordinates":[24.951581666666666,59.49639333333334]
-    },
-    "properties":{
-      "sog":0.1,
-      "cog":169.3,
-      "navStat":5,
-      "rot":0,
-      "posAcc":true,
-      "raim":false,
-      "heading":311,
-      "timestamp":34,
-      "timestampExternal":1487938959356
-    }
-  }
+    "time":1668075025,
+    "sog":10.7,
+    "cog":326.6,
+    "navStat":0,
+    "rot":0,
+    "posAcc":true,
+    "raim":false,
+    "heading":325,
+    "lon":20.345818,
+    "lat":60.03802
 }
 ```
 
@@ -214,40 +200,30 @@ vessels/<mmsi>/metadata n # Yhden aluksen metadata
 
 Topicit ovat seuraavanlaista muotoa:
 
-- ```sse/status```
-- ```sse/site/<site-id>``` 
+- ```sse-v2/status```
+- ```sse-v2/site/<site-id>``` 
 
 #### Esimerkkejä SSE-viestitilauksista
 
 ```
-sse/#                       # Kaiken mahdollisen datan tilaaminen
-sse/status                  # Status viestien tilaaminen
-sse/site/+                  # Kaikkien asemien datan tilaaminen
-sse/site/<site-id>          # Yhden aseman datan tilaaminen
+sse-v2/#                       # Kaiken mahdollisen datan tilaaminen
+sse-v2/status                  # Status viestien tilaaminen
+sse-v2/site/+                  # Kaikkien asemien datan tilaaminen
+sse-v2/site/<site-id>          # Yhden aseman datan tilaaminen
 ```
 
 #### SSE-data -viesti
 
 ```
 {
-    "siteNumber" : 8659,
-    "type" : "Feature",
-    "geometry" : {
-      "type" : "Point",
-      "coordinates" : [ 21.37694, 61.64541 ]
-    },
-    "properties" : {
-      "siteName" : "Kelloniemi_2",
-      "siteType" : "FLOATING",
-      "lastUpdate" : "2019-05-21T09:02:10Z",
-      "seaState" : "CALM",
-      "trend" : "NO_CHANGE",
-      "windWaveDir" : 200,
-      "confidence" : "GOOD",
-      "heelAngle" : 2.2,
-      "lightStatus" : "OFF",
-      "temperature" : 28
-    }
+    "timestamp":1668085252,
+    "seaState":"CALM",
+    "trend":"NO_CHANGE",
+    "windWaveDir":175,
+    "confidence":"GOOD",
+    "heelAngle":3,
+    "lightStatus":"OFF",
+    "temperature":10
 }
 ```
 
@@ -312,7 +288,7 @@ Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
         function onConnect() {
             console.info(Date.now() + ' Connection open');
 
-            client.subscribe("vessels/#");
+            client.subscribe("vessels-v2/#");
         }
 
         function addMessage(message) {
@@ -378,7 +354,7 @@ def on_message(client, userdata, message):
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print('Connected')
-        client.subscribe("tms/#")
+        client.subscribe("vessels-v2/#")
     else:
         print('Failed to connect, return code %d\n', rc)
 

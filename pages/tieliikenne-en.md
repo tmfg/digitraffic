@@ -425,77 +425,57 @@ Address for test is ```tie-test.digitraffic.fi``` and port is ```443```.
 
 ### Topics
 
-You can replace ```<id>```-part in topic with ```#```-character to listen all messages. E.g.. ```tms/#```
+You can replace ```<id>```-part in topic with ```#```-character to listen all messages. E.g.. ```tms-v2/#```
 
 Topics are constructed like shown below.
 
 #### Current data from TMS stations 
 
-- ```tms/<roadStationId>/<sensorId>```
-- ```tms/status```
+- ```tms-v2/<roadStationId>/<sensorId>```
+- ```tms-v2/status```
 
 ##### TMS station sensor measurement message
 
 ```
 {
-  "id": 5122,
-  "roadStationId": 23307,
-  "name": "KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1",
-  "oldName":" averageSpeed1",
-  "shortName": "km/h1",
-  "sensorValue": 84,
-  "sensorUnit":" km/h",
-  "measuredTime": "2019-01-23T08:25:02Z"
+    "value":108,
+    "time":1667972911,
+    "start":1667966400,
+    "end":1667970000
 }
 ```
 
 #### Current data of road weather stations
 
-- ```weather/<roadStationId>/<sensorId>```
-- ```weather/status```
+- ```weather-v2/<roadStationId>/<sensorId>```
+- ```weather-v2/status```
 
 ##### Weather station sensor measurement message
 
 ```
 {
-  "id": 1,
-  "roadStationId": 1158,
-  "name": "ILMA",
-  "oldName": "airtemperature1",
-  "shortName": "Ilma ",
-  "sensorValue": -2.2,
-  "sensorUnit": "°C",
-  "measuredTime": "2019-01-23T08:35:00Z"
+    "value":11068,
+    "time":1667973021
 }
 ```
 
 #### Road maintenance information of latest location
 
-- ```maintenance/tracking/#```
-- ```maintenance/tracking/<trackingId>```
-- ```maintenance/tracking/status```
+- ```maintenance-v2/trackings/#```
+- ```maintenance-v2/trackings/<trackingId>```
+- ```maintenance-v2/trackings/status```
 
 ##### Road maintenance tracking message
 
 ```
 {
-  "type": "Feature",
-  "properties": {
-    "id": 247694,
-    "time": "2020-06-08T13:23:52Z",
-    "tasks": [
-      "PAVING"
+    "time":1668157878,
+    "source":"Harja/Väylävirasto",
+    "tasks":[
+        "MAINTENANCE_OF_GUIDE_SIGNS_AND_REFLECTOR_POSTS"
     ],
-    "direction": 72
-  },
-  "geometry": {
-    "type": "Point",
-    "coordinates": [
-      25.689415,
-      62.598124,
-      0
-    ]
-  }
+    "x":22.031937,
+    "y":62.567092
 }
 ```
 
@@ -558,7 +538,7 @@ The example code disconnects after 30 s.
 
         function onConnect() {
             console.info(Date.now() + ' Connection open');
-            client.subscribe("tms/#");
+            client.subscribe("tms-v2/#");
         }
 
         function addMessage(message) {
@@ -594,24 +574,4 @@ See [Information and instructions for using APIs > General considerations](/en/i
 
 ## Outdated and deprecated APIs
 
-### ~~Current journey times~~
-
-NOTE! This information is not updated. The old journey time system has been shut down in the end of 2017.
-
-Old history data can be downloaded from the following [link](https://tie.digitraffic.fi/api/v1/data/fluency-history/list.html){:target="_blank"}.
-
-### ~~Current free flow speeds~~
-
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/{id}```](https://tie.digitraffic.fi/api/v1/data/free-flow-speeds/tms/23001){:target="_blank"}
-
-Response message contains currently valid free flow speeds.
-
-Message is updated once a day and it ready be loaded after 6:00 AM EET. The actual data is updated much less frequently.
-
-This api will be deprecated at some point and the same information can be read from [Current data from TMS stations](#current-data-from-tms-stations) -metadata-api.
-
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
+Supported and deprecated APIs are [here](https://www.digitraffic.fi/en/api-status/changes/).
