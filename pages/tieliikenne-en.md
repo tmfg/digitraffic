@@ -574,4 +574,4 @@ See [Information and instructions for using APIs > General considerations](/en/i
 
 ## Outdated and deprecated APIs
 
-Supported and deprecated APIs are [here](https://www.digitraffic.fi/en/api-status/changes/).
+Supported and deprecated APIs are [here](/en/api-status/changes/).

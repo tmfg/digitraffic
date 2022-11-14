@@ -376,3 +376,7 @@ client.disconnect()
 ## Restrictions
 
 See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
+
+## Outdated and deprecated APIs
+
+Supported and deprecated APIs are [here](/en/api-status/changes/).

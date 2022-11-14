@@ -13,8 +13,9 @@ tags:
 
 New APIs for Marine have been published.
 
-Documentation can be found [here](https://www.digitraffic.fi/en/marine-traffic/#restjson--api).
-Swagger descriptions [here](https://meri.digitraffic.fi/swagger/).
+Documentation can be found [here](/en/marine-traffic/#restjson--api).\
+Swagger descriptions [here](https://meri.digitraffic.fi/swagger/).\
+Outdated and deprecated APIs are [here](/en/api-status/changes/)
 
 🔴 Following old APIs will be removed after April 2023.
 * Port calls

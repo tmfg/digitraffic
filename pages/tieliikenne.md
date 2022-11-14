@@ -580,4 +580,4 @@ Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](
 
 ## Vanhentuneet ja poistuneet rajapinnat
 
-Tuetut ja vanhentuneet rajapinnat löytyy [täältä](https://www.digitraffic.fi/rajapintojen-tila/muutokset/).
+Tuetut ja vanhentuneet rajapinnat löytyy [täältä](/rajapintojen-tila/muutokset/).
