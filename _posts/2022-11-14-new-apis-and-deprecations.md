@@ -11,11 +11,11 @@ tags:
 - Rajapinnat
 ---
 
-Tieliikenteen apeista on julkaistu uudet rajapintaversiot.
+Tieliikenteen rajapinnoista on julkaistu uudet versiot.
 
 Dokumentaatiot löytyvät sivustolta [täältä](/tieliikenne/#restjson-rajapinnat).\
-Ja Swagger API -kuvaukset löytyvät [täältä](http://tie.digitraffic.fi/swagger/).\
-Tuetut ja vanhentuneet rajapinnat löytyy [täältä](/rajapintojen-tila/muutokset/).
+Swagger API -kuvaukset löytyvät [täältä](http://tie.digitraffic.fi/swagger/).\
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
 
 🔴 Seuraavat vanhat rajapinnat poistuvat käytöstä lähiaikoina.
 

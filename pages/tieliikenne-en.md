@@ -572,6 +572,6 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 
 See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
 
-## Outdated and deprecated APIs
+## Supported and deprecated APIs
 
-Supported and deprecated APIs are [here](/en/api-status/changes/).
+Listings of supported and deprecated APIs can be found [here](/en/api-status/changes/).

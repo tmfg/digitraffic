@@ -1,5 +1,5 @@
 ---
-title: 'New Road APIs and deprecations of old APIs in six months'
+title: 'New road APIs and the removal of deprecated APIs in six months'
 image:
 published: false
 categories: en News
@@ -11,13 +11,13 @@ tags:
 - APIs
 ---
 
-New APIs for Road have been published.
+New road traffic APIs have been published.
 
 Documentation can be found [here](/en/road-traffic/#restjson--apis).\
 Swagger descriptions [here](http://tie.digitraffic.fi/swagger/).\
-Outdated and deprecated APIs are [here](/en/api-status/changes/) 
+Listings of currently supported and deprecated APIs [here](/en/api-status/changes/) 
 
-🔴 Following old APIs will be removed any time soon
+🔴 The following old APIs will be removed soon
 
 * Traffic messages
   * `/api/v1/data/weight-restrictions-datex2/*`
@@ -34,7 +34,7 @@ Outdated and deprecated APIs are [here](/en/api-status/changes/)
 * TMS stations
   * `/api/v1/data/free-flow-speeds/*`
 
-🔴 Following old APIs will be removed after December 2022
+🔴 The following old APIs will be removed after December 2022
 
 * Variable signs
   * `/api/v3/metadata/variable-signs/code-descriptions`
@@ -42,7 +42,7 @@ Outdated and deprecated APIs are [here](/en/api-status/changes/)
   * `/api/v2/metadata/variable-signs/code-descriptions`
   * `/api/v2/data/variable-signs/*`
 
-🔴 Following old APIs will be removed after May 2023
+🔴 The following old APIs will be removed after May 2023
 
 * Weather stations
   * `/api/v1/metadata/weather-stations`

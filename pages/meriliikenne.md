@@ -379,6 +379,6 @@ client.disconnect()
 
 Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
 
-## Vanhentuneet ja poistuneet rajapinnat
+## Tuetut ja vanhentuneet rajapinnat
 
-Tuetut ja vanhentuneet rajapinnat löytyy [täältä](/rajapintojen-tila/muutokset/).
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
