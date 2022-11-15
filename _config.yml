@@ -412,6 +412,12 @@ t:
     url:
       en: "en/instructions"
       fi: "ohjeita"
+  api-changes:
+    en: "API changes"
+    fi: "Rajapintojen muutokset"
+    url:
+      en: "en/api-status/changes"
+      fi: "rajapintojen-tila/muutokset"
   support-mqtt:
     en: "Mqtt client"
     fi: "Mqtt client"

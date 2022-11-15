@@ -4,6 +4,7 @@
       {% 
         if page.url contains support-channels
         or page.url contains support-channels-information
+        or page.url contains api-changes
         or page.url contains contact
       %}
         active
@@ -26,6 +27,11 @@
     <li class="collapsible__item {% if page.url contains support-channels-information %}active{% endif %}">
       <a class="" href="/{{ support-channels-information | prepend:site.baseurl }}">
         {{ site.t.support-channels-information[page.lang] }}
+      </a>
+    </li>
+    <li class="collapsible__item {% if page.url contains api-changes %}active{% endif %}">
+      <a class="" href="/{{ api-changes | prepend:site.baseurl }}">
+        {{ site.t.api-changes[page.lang] }}
       </a>
     </li>
     <li class="collapsible__item {% if page.url contains contact %}active{% endif %}">
