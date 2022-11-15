@@ -1,7 +1,7 @@
 ---
 title: 'Tiepuolen uudet rajapinnat ja vanhojen rajapintojen käytöstä poistaminen kuuden kuukauden kuluttua'
 image:
-published: false
+published: true
 categories: Tiedotteet
 ref: 2022-11-14-new-apis-and-deprecations
 lang: fi

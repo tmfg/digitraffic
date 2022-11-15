@@ -1,7 +1,7 @@
 ---
 title: 'New road APIs and the removal of deprecated APIs in six months'
 image:
-published: false
+published: true
 categories: en News
 ref: 2022-11-14-new-apis-and-deprecations
 lang: en
