@@ -18,6 +18,13 @@ links:
   - ["Swagger-description", "https://tie.digitraffic.fi/swagger/openapi.json"]
 ---
 
+
+<h2 id="sisältö">Contents</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+
 ## General info
 
 Road traffic information is gathered from the operational traffic management systems of ITM Finland Ltd (a subsidiary of Fintraffic).
@@ -43,73 +50,76 @@ Currently the open data API includes:
 
 - Metadata for all services is updated twice per day
 
+### Restrictions
 
-<h2 id="contents">Contents</h2>
+See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
 
-* Do not remove this line (it will not be displayed)
-{:toc}
+### Supported and deprecated APIs
+
+Listings of supported and deprecated APIs can be found [here](/en/api-status/changes/).
+
 
 
 ## REST/JSON -APIs
 
-### Swagger API descriptions
+### Swagger descriptions of APIs 
 
-Full API descriptions can be found in Swagger-documentation at [```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
+Full API descriptions can be found in [Swagger-documentation]{:target="_blank"}
 
-### Road weather cameras
+There you can find more detailed information about the available parameters of the APIs.
 
-[```https://tie.digitraffic.fi/api/v1/data/camera-data```](https://tie.digitraffic.fi/api/v1/data/camera-data){:target="_blank"}
+### Weather cameras
 
-[```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](https://tie.digitraffic.fi/api/v1/data/camera-data/C04507){:target="_blank"}
+#### Simplified and detailed information of stations
 
-Response message contains weather camera information and URL for the camera image. For example preset image C0450701 is located at 
+[```/api/weathercam/v1/stations```](https://tie.digitraffic.fi/api/weathercam/v1/stations){:target="_blank"}\
+[```/api/weathercam/v1/stations/{id}```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507){:target="_blank"}
+
+You should check from the station metadata at the least field below to make sure the camera or preset is in collection.
+- Camera fields ```state``` and ```collectionStatus```
+- Preset field ```inCollection```
+
+Response message contains weather camera information and URL for the camera image. For example preset image C0450701 is located at
 [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg){:target="_blank"}.
+
+#### Data for all stations and for single station
+
+[```/api/weathercam/v1/stations/data```](https://tie.digitraffic.fi/api/weathercam/v1/stations/data){:target="_blank"}\
+[```/api/weathercam/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data){:target="_blank"}
+
 Weather camera images are updated approximately about every 10 minutes.
 
 ![Weather camera image C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations){:target="_blank"}
-
-You should check from the metadata at the least field below to make sure the camera or preset is in collection.
-
-- Camera fields ```state``` and ```collectionStatus```
-- Preset field ```inCollection```
-
-
 ### Weather camera image history for the last 24 hours
 
-History can be fetched by API call:
+[```/api/weathercam/v1/stations/{camraId}/history```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history){:target="_blank"}\
+[```/api/weathercam/v1/stations/{presetId}/history```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C0450701/history){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v3/data/camera-history/history?id={preset or camera id}```](https://tie.digitraffic.fi/api/v3/data/camera-history/history?id=C0450701){:target="_blank"}
-
-API call returns links to history images. You can also give time to get single image of given moment. 
-
-History presence tells if history exists for given time interval and it can be fetched by API call:
-
-[```https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?id={preset or camera id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
-
+API call returns links to history images for last 24 hours. 
 
 ### Current data of road weather stations
 
-[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
+#### Simplified and detailed information of stations
 
-[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id}){:target="_blank"}
+[```/api/weather/v1/stations```](https://tie.digitraffic.fi/api/weather/v1/stations){:target="_blank"}\
+[```/api/weather/v1/stations/{id}```](https://tie.digitraffic.fi/api/weather/v1/stations/1012){:target="_blank"}
+
+#### Available sensors information
+
+[```/api/weather/v1/sensors```](https://tie.digitraffic.fi/api/weather/v1/sensors){:target="_blank"}
+
+#### Data for all stations and for single station
+
+[```/api/weather/v1/stations/data```](https://tie.digitraffic.fi/api/weather/v1/stations/data){:target="_blank"}\
+[```/api/weather/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/weather/v1/stations/1012/data){:target="_blank"}
 
 Response message contains latest weather measurement data.
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute.
 Real time data can be read from WebSocket.
 
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
-
-
-#### Sensor history for the last 24 hours
+#### Sensor history for the last 24 hours (Beta)
 
 Sensor history from the weather road station can be fetched by API call:
 
@@ -126,29 +136,29 @@ History for the last 24 hours is currently only in beta-API.
 
 ### Current road weather forecasts
 
-Message contains road sections weather forecasts. Reports are updated every 5 minutes.
+#### Detailed ja simpler forecast road sections
 
+[```/api/weather/v1/forecast-sections```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections){:target="_blank"}\
+[```/api/weather/v1/forecast-sections/{id}```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0){:target="_blank"}\
+[```/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v3/data/road-conditions```](https://tie.digitraffic.fi/api/v3/data/road-conditions){:target="_blank"}
+[```/api/weather/v1/forecast-sections-simple```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple/{id}```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-Road specific weather forecasts.
+Forecast sections are normally updated once a year.
 
-[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/22/50/27/60){:target="_blank"}
+#### Forecasts of the forecast sections
 
-Road specific weather forecasts for given area.
+[```/api/weather/v1/forecast-sections/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections/{id}/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/25){:target="_blank"}
+[```/api/weather/v1/forecast-sections-simple/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple/{id}/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-Road specific weather forecasts for given road.
-
-
-Related metadata:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/22/50/27/60){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/25){:target="_blank"}
+Message contains road sections weather forecasts. Reports are updated every five minutes.
 
 
 ### Traffic measurement system (TMS) dataCurrent data from TMS stations
@@ -157,32 +167,38 @@ Related metadata:
 
 The [TMS documentation](lam) contains descriptions of TMS data.
 
-#### Statistics
+#### Simplified and detailed information of stations
 
-[Statistics](https://tie-lam-test.digitraffic.fi) web form
+[```/api/tms/v1/stations```](https://tie.digitraffic.fi/api/tms/v1/stations){:target="_blank"}\
+[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi/api/tms/v1/stations/1012){:target="_blank"}
+[```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/1012/sensor-constants){:target="_blank"}
 
-#### Raw data
+#### Available computational sensors information
 
-[Raw data](lam#TMS_raw_data)
+[```/api/tms/v1/sensors```](https://tie.digitraffic.fi/api/tms/v1/sensors){:target="_blank"}
 
-#### Real time data
+#### Data for all stations and for single station
 
-[```https://tie.digitraffic.fi/api/v1/data/tms-data```](https://tie.digitraffic.fi/api/v1/data/tms-data){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](https://tie.digitraffic.fi/api/v1/data/tms-data/23001){:target="_blank"}
+[```/api/tms/v1/stations/data```](https://tie.digitraffic.fi/api/tms/v1/stations/data){:target="_blank"}\
+[```/api/tms/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/tms/v1/stations/1012/data){:target="_blank"}
 
 Response message contains TMS (Traffic Measurement System)–stations measurement data.
 
-Every TMS station provides information about traffic amounts and measured average speeds.
+Every TMS station provides information about current computational sensor values.
 
-Data is updated almost in real time but information is cached. Actual update interval is one minute. 
-Real time data can be read from WebSocket. 
+Data is updated almost in real time but information is cached. Actual update interval is one minute.
+Real time data can be read from WebSocket.
 
-Related metadata:
+#### Statistics
 
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
+Statistics web form can be used to search reports from tms-stations.
 
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v3/metadata/tms-sensors){:target="_blank"}
+Web form to search for statistics can be found [here](https://tie-lam-test.digitraffic.fi){:target="_blank"}.
+
+#### Raw data
+
+Measurement data can also be found in raw-format and more information is provided [here](lam/#tms-raw-data)
+
 
 ### Traffic messages
 
@@ -292,8 +308,9 @@ Lisätietoa Norjaan matkustamisesta on osoitteessa www.entrynorway.no",
     </pre>
 </details>
 <br/>
+
 Area geometries are served from the API:
-* Geometry with ALERT-C location code 27: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false){:target="_blank"}
+* Geometry with ALERT-C location code 27: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?includeGeometry=true){:target="_blank"}
 * All geometries: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:target="_blank"}
 
 
@@ -302,27 +319,23 @@ Area geometries are served from the API:
 TMC/ALERT-C material contains location data which is used in Traffic information such as road works, accidents, traffic jams and weather. 
 More information can be found at [TMC Data](tmc-data) -page.
 
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
-
+[```/api/traffic-message/v1/locations/versions```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions){:target="_blank"}\
+[```/api/traffic-message/v1/locations/types```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types){:target="_blank"}\
+[```/api/traffic-message/v1/locations```](https://tie.digitraffic.fi/api/traffic-message/v1/locations){:target="_blank"}\
+[```/api/traffic-message/v1/locations/{id}```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/35){:target="_blank"}
 
 
 ### Variable signs
 
-[```https://tie.digitraffic.fi/api/v3/data/variable-signs```](https://tie.digitraffic.fi/api/v3/data/variable-signs){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}){:target="_blank"}
+[```/api/variable-sign/v1/signs```](https://tie.digitraffic.fi/api/variable-sign/v1/signs){:target="_blank"}\
+[```/api/variable-sign/v1/signs/{id}```](https://tie.digitraffic.fi/api/variable-sign/v1/signs/KRM01V102){:target="_blank"}\
+[```/api/variable-sign/v1/signs/history```](https://tie.digitraffic.fi/api/variable-sign/v1/signs/history?deviceId=KRM01V102){:target="_blank"}
 
 Response message contains latest variable sign data.  Currenty supported sign types are speed limits and warnings. Digitraffic publishes the data only from the master device of a device group. Data from slave devices on the left side of the road or on ramps is not available.
 
 Warning sign types(in Finnish):
 
-[```https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v2/metadata/variable-signs/code-descriptions){:target="_blank"}
+[```/api/variable-sign/v1/signs/code-descriptions```](https://tie.digitraffic.fi/api/variable-sign/v1/signs/code-descriptions){:target="_blank"}
 
 Warning sign images:
 
@@ -330,13 +343,12 @@ Warning sign images:
 
 Data is also available in datex2-format:
 
-[```https://tie.digitraffic.fi/api/v1/variable-signs/datex2```](https://tie.digitraffic.fi/api/v1/variable-signs/datex2){:target="_blank"}
+[```/api/variable-sign/v1/signs.datex2```](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}\
 
 Warnings text can contain sign symbols enclosed with []. It is possible to render those in svg-format:
 
-[```https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123```](https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321```](https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321){:target="_blank"}
+[```/api/variable-sign/v1/images/ramppi_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/ramppi_123){:target="_blank"}\
+[```/api/v1/variable-signs/images/tie_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/tie_321){:target="_blank"}
 
 ### Road maintenance information
 
@@ -379,19 +391,20 @@ These treatments eliminate the largest possible errors in the data generated by 
 
 #### Vehicle latest location
 
+[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:target="_blank"}
+
 The API returns the latest location and task information received from the maintenance vehicles.
 
-[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:target="_blank"}
 
 ### Walking and cycling counting site values
 
 Walking and cycling counting site values are currently received from Oulu region.
 
-All counters in GeoJSON
+#### All counters in GeoJSON
 
 [```https://tie.digitraffic.fi/api/counting-site/v1/counters```](https://tie.digitraffic.fi/api/counting-site/v1/counters){:target="_blank"}
 
-More metadata
+#### More metadata
 
 [```https://tie.digitraffic.fi/api/counting-site/v1/directions```](https://tie.digitraffic.fi/api/counting-site/v1/directions){:target="_blank"}
 
@@ -399,16 +412,16 @@ More metadata
 
 [```https://tie.digitraffic.fi/api/counting-site/v1/user-types```](https://tie.digitraffic.fi/api/counting-site/v1/user-types){:target="_blank"}
 
-Counting site values in json
+#### Counting site values in json
 
 [```https://tie.digitraffic.fi/api/counting-site/v1/values```](https://tie.digitraffic.fi/api/counting-site/v1/values){:target="_blank"}
 
-Counting site values in CSV
+#### Counting site values in CSV
 
 [```https://tie.digitraffic.fi/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
 
 
-## WebSocket API
+## WebSocket APIs
 
 TMC-data can be tracked from following Web Socket APIs. Protocol is MQTT over WebSockets. This allows
 you to subscibe only those topics you are interested in.
@@ -568,10 +581,4 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 </html>
 ```
 
-## Restrictions
-
-See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
-
-## Supported and deprecated APIs
-
-Listings of supported and deprecated APIs can be found [here](/en/api-status/changes/).
+[Swagger-documentation]: https://tie.digitraffic.fi/swagger/

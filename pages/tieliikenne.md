@@ -18,6 +18,13 @@ links:
   - ["Swagger-kuvaus", "https://tie.digitraffic.fi/swagger/openapi.json"]
 ---
 
+
+<h2 id="sisältö">Sisältö</h2>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+
 ## Yleistä tietoa
 
 Tieliikenteen tiedot syntyvät Fintrafficin hallinnoimissa tieliikenteen ohjaus- ja mittausjärjestelmissä.
@@ -44,82 +51,83 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 - Metatiedot. Rajapintojen kautta on haettavissa tieliikenteen tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein.
 
 
-<h2 id="sisältö">Sisältö</h2>
+### Käyttörajoitukset
 
-* Do not remove this line (it will not be displayed)
-{:toc}
+Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
+
+### Tuetut ja vanhentuneet rajapinnat
+
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
 
 
 ## REST/JSON-rajapinnat
 
 ### Rajapintojen Swagger-kuvaukset
 
-Rajapintakuvaukset löytyvät Swagger-dokumentaatiosta [```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
+Rajapintakuvaukset löytyvät [Swagger-kuvauksesta]{:target="_blank"}. 
+
+Sieltä löytyvät rajapintojen tarkemmat parametrit, 
+joita kaikkia ei ole tässä dokumentaatiossa välttämättä kerrottu.
 
 ### Kelikamerat
 
-[```https://tie.digitraffic.fi/api/v1/data/camera-data```](https://tie.digitraffic.fi/api/v1/data/camera-data){:target="_blank"}
+#### Asemien yksinkertaiset tiedot ja yksittäisen aseman tarkemmat tiedot
 
-[```https://tie.digitraffic.fi/api/v1/data/camera-data/{id}```](https://tie.digitraffic.fi/api/v1/data/camera-data/C04507){:target="_blank"}
+[```/api/weathercam/v1/stations```](https://tie.digitraffic.fi/api/weathercam/v1/stations){:target="_blank"}\
+[```/api/weathercam/v1/stations/{id}```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507){:target="_blank"}
 
 Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä kelikamerakuvat löytyvät. Esim. esiasennon C0450701 kuva löytyy
 osoitteesta [https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg){:target="_blank"}.
+
+Aseman tiedoista kannattaa huomioida ainakin alla olevat kentät, joista voi päätellä onko kamera tai esiasento keruussa.
+- Kameran kentät ```state``` ja ```collectionStatus```
+- Esiasennon kenttä ```inCollection```
+
+#### Kaikkien asemien data ja yksittäisen aseman data 
+
+[```/api/weathercam/v1/stations/data```](https://tie.digitraffic.fi/api/weathercam/v1/stations/data){:target="_blank"}\
+[```/api/weathercam/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data){:target="_blank"}
+
 Kelikamerakuvat päivittyvät noin 10 minuutin välein.
 
 ![Kelikamerakuva C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
 
-Metadatat:
+#### Halutun kameran tai esiasennon 24h historia
 
-[```https://tie.digitraffic.fi/api/v3/metadata/camera-stations```](https://tie.digitraffic.fi/api/v3/metadata/camera-stations){:target="_blank"}
+[```/api/weathercam/v1/stations/{camraId}/history```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history){:target="_blank"}\
+[```/api/weathercam/v1/stations/{presetId}/history```](https://tie.digitraffic.fi/api/weathercam/v1/stations/C0450701/history){:target="_blank"}
 
-Metadatasta kannattaa huomioida ainakin alla olevat kentät, joista voi päätellä onko kamera tai esiasento keruussa.
-
-- Kameran kentät ```state``` ja ```collectionStatus```
-- Esiasennon kenttä ```inCollection```
-
-
-### Kelikamerakuvien viimeisen 24 h historia
-
-Haluttujen kameroiden ja/tai esiasentojen historia saadaan rajapinnasta:
-
-[```https://tie.digitraffic.fi/api/v3/data/camera-history/history?id={kameran tai esiasennon id}```](https://tie.digitraffic.fi/api/v3/data/camera-history/history?id=C0450701){:target="_blank"}
-
-Rajapinta palauttaa linkit menneisiin kuviin. Pyynnölle voi antaa parametriksi myös ajanhetken miltä haluaa viimeisimmän kuvan, jolloin palautetaan vain yksi historiakuva esiasentoa kohden. 
-
-Historian olemassaoloa haluttuna aikavälillä voikysyä rajapinnasta:
-
-[```https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?id={kamera tai esiasento id}&from={ISO 8601 -aika}2&to={ISO 8601 -aika}```](https://tie-test.digitraffic.fi/api/v3/data/camera-history/presences?cameraOrPresetId=C0450701){:target="_blank"}
-
+Rajapinta palauttaa linkit menneisiin kuviin viimeisen 24 tunnin ajalta.
 
 ### Tiesääasemien ajantasaiset mittaustiedot
 
-[```https://tie.digitraffic.fi/api/v1/data/weather-data```](https://tie.digitraffic.fi/api/v1/data/weather-data){:target="_blank"}
+#### Asemien yksinkertaiset tiedot ja yksittäisen aseman tarkemmat tiedot
+\
+[```/api/weather/v1/stations```](https://tie.digitraffic.fi/api/weather/v1/stations){:target="_blank"}\
+[```/api/weather/v1/stations/{id}```](https://tie.digitraffic.fi/api/weather/v1/stations/1012){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v1/data/weather-data/{id}```](https://tie.digitraffic.fi/api/v1/data/weather-data/{id}){:target="_blank"}
+#### Antureiden tiedot
 
-Viesti sisältää tiesääasemien viimeisimmät mittaustiedot.
+[```/api/weather/v1/sensors```](https://tie.digitraffic.fi/api/weather/v1/sensors){:target="_blank"}
 
-Viestissä on kullekin tiesääasemalle kyseisen aseman anturiarvot.
+#### Kaikkien asemien data ja yksittäisen aseman data
 
+[```/api/weather/v1/stations/data```](https://tie.digitraffic.fi/api/weather/v1/stations/data){:target="_blank"}\
+[```/api/weather/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/weather/v1/stations/1012/data){:target="_blank"}
+
+Viesti sisältää tiesääasemien viimeisimmät antureiden mittaustiedot.  
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-stations```](https://tie.digitraffic.fi/api/v3/metadata/weather-stations){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/weather-sensors```](https://tie.digitraffic.fi/api/v3/metadata/weather-sensors){:target="_blank"}
-
-
-#### Viimeisen 24h historia
+#### Viimeisen 24h historia (Beta)
 
 Halutun tiesääaseman kaikkien anturien datan saa rajapinnasta:
 
-[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+[```/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
 
 Yksittäisen anturin datan saa rajapinnasta:
 
-[```https://tie.digitraffic.fi/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
+[```/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/1012/1){:target="_blank"}
 
 Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja to={ISO 8061 -aika} parametreillä. Oletuksena ilman from-parametriä kyselyt palauttavat vain viimeisimmän tunnin datan.
 
@@ -128,28 +136,29 @@ Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja 
 
 ### Ajantasaiset tiejaksojen keliennusteet
 
-Viesti sisältää tiejaksokohtaiset keliennusteet ja ne päivitetään viiden minuutin välein.
+#### Tarkat ja yksinkertaisemmat tiejaksot
 
-[```https://tie.digitraffic.fi/api/v3/data/road-conditions```](https://tie.digitraffic.fi/api/v3/data/road-conditions){:target="_blank"}
+[```/api/weather/v1/forecast-sections```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections){:target="_blank"}\
+[```/api/weather/v1/forecast-sections/{id}```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0){:target="_blank"}\
+[```/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-Tiejaksokohtaiset keliennusteet. Keliennusteet päivitetään viiden minuutin välein.
+[```/api/weather/v1/forecast-sections-simple```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple/{id}```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/22/50/27/60){:target="_blank"}
+Tiejaksot päivitetään normaalisti kerran vuodessa.
 
-Tiejaksokohtaiset keliennusteet halutulta alueelta.
+#### Tiejaksojen keliennusteet
 
-[```https://tie.digitraffic.fi/api/v3/data/road-conditions/{roadNumber}```](https://tie.digitraffic.fi/api/v3/data/road-conditions/25){:target="_blank"}
+[```/api/weather/v1/forecast-sections/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections/{id}/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-Tiejaksokohtaiset keliennusteet halutulta tieltä.
+[```/api/weather/v1/forecast-sections-simple/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple/{id}/forecasts```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0/forecasts){:target="_blank"}\
+[```/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60```](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
 
-
-Metadatat:
-
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{minLongitude}/{minLatitude}/{maxLongitude}/{maxLatitude}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/22/50/27/60){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/{roadNumber}```](https://tie.digitraffic.fi/api/v3/metadata/forecast-sections/25){:target="_blank"}
+Keliennusteet päivittyvät viiden minuutin välein.
 
 ### Liikenteen automaattiset mittaustiedot (LAM)
 
@@ -157,32 +166,38 @@ Metadatat:
 
 [LAM-dokumentaatio](lam) -sivulta löytyy tarkempi kuvaus aineistosta ja dataan liittyviä selitteitä.
 
-#### Tilastohaku
+#### Asemien yksinkertaiset tiedot ja yksittäisen aseman tarkemmat tiedot
 
-[Tilastohaku](https://tie-lam-test.digitraffic.fi/){:target="_blank"} -lomakkeella voi hakea haluttuja raportteja lam-mittauspisteillä.
+[```/api/tms/v1/stations```](https://tie.digitraffic.fi//api/tms/v1/stations){:target="_blank"}\
+[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi//api/tms/v1/stations/23001){:target="_blank"}
+[```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/1012/sensor-constants){:target="_blank"}
 
-#### Raakadatahaku
+#### Saatavilla olevien laskennallisien antureiden tiedot
 
-Mittauspisteiden data on myös saatavissa [raakadatana](lam#lam-raakadata).
+[```/api/tms/v1/sensors```](https://tie.digitraffic.fi/api/tms/v1/sensors){:target="_blank"}
 
-#### Reaaliaika-aineisto
+#### Kaikkien asemien data ja yksittäisen aseman data
 
-[```https://tie.digitraffic.fi/api/v1/data/tms-data```](https://tie.digitraffic.fi/api/v1/data/tms-data){:target="_blank"}
+[```/api/tms/v1/stations/data```](https://tie.digitraffic.fi/api/tms/v1/stations/data){:target="_blank"}\
+[```/api/tms/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/v1/data/tms-data/{id}```](https://tie.digitraffic.fi/api/v1/data/tms-data/23001){:target="_blank"}
+Viesti sisältää LAM (Liikenteen Automaattinen Mittaus) –asemien mittaustiedot.
 
-Viesti sisältää LAM (Liikenteen Automaattinen Mittaus)–asemien mittaustiedot.
-
-Viestissä on kullekin LAM-asemalle liikennemäärä molempiin suuntiin, ja mitattu keskinopeus molempiin suuntiin.
+Viestissä on kullakin LAM-asemalla olevien laskennallisien antureiden mittausarvot.
 
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
-Metadatat:
+#### Tilastohaku
 
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-stations```](https://tie.digitraffic.fi/api/v3/metadata/tms-stations){:target="_blank"}
+Tilastohaku-lomakkeella voi hakea haluttuja raportteja lam-mittauspisteillä. 
 
-[```https://tie.digitraffic.fi/api/v3/metadata/tms-sensors```](https://tie.digitraffic.fi/api/v3/metadata/tms-sensors){:target="_blank"}
+Tietojen hakulomake löytyy [täältä](https://tie-lam-test.digitraffic.fi/){:target="_blank"}.
+
+#### Raakadatahaku
+
+Mittauspisteiden data on saatavissa myös raakadatana ja lisätietoa löytyy [täältä](lam#lam-raakadata).
+
 
 ### Liikennetiedotteet
 
@@ -212,17 +227,17 @@ Päivämäärien ja kelloaikojen parsimisessa kannattaa käyttää jotakin yleis
 
 #### Liikennetiedotteiden DATEX II -muotoisen datan rajapinnat
 
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+* [```/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
+* [```/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
 #### Liikennetiedotteiden Simppelin JSON -muotoisen datan rajapinnat
 
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-* [```https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+* [```/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
+* [```/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
+* [```/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
+* [```/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION```](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
 
 #### Liikennetiedotteiden aluegeometriat
 
@@ -297,38 +312,32 @@ Lisätietoa Norjaan matkustamisesta on osoitteessa www.entrynorway.no",
 <br/>
 
 Aluegeometriat löytyvät rajapinnasta:
-* ALERT-C alue sijainti koodilla 27: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?lastUpdated=false){:target="_blank"}
-* Kaikki alueet: [```https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:target="_blank"}
+* ALERT-C alue sijainti koodilla 27: [```/api/traffic-message/v1/area-geometries/27```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?includeGeometry=true){:target="_blank"}
+* Kaikki alueet ilman geometriaa: [```/api/traffic-message/v1/area-geometries```](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:target="_blank"}
 
 ### TMC/ALERT-C paikannuspisteistö
 
 Häiriötiedotteiden, painorajoitusten ja tietöiden maantieteellisen sijainnin ilmoittamiseen käytetään TMC/ALERT-C -paikannuspisteistöä. Lisätietoa täällä.
 Lisätietoa löytyy [TMC/ALERT-C](paikannusnimisto) -sivulta.
 
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-versions```](https://tie.digitraffic.fi/api/v3/metadata/location-versions){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations-types```](https://tie.digitraffic.fi/api/v3/metadata/location-types){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/metadata/locations```](https://tie.digitraffic.fi/api/v3/metadata/locations){:target="_blank"}
-
-
-
+[```/api/traffic-message/v1/locations/versions```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions){:target="_blank"}\
+[```/api/traffic-message/v1/locations/types```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types){:target="_blank"}\
+[```/api/traffic-message/v1/locations```](https://tie.digitraffic.fi/api/traffic-message/v1/locations){:target="_blank"}\
+[```/api/traffic-message/v1/locations/{id}```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/35){:target="_blank"}
 
 
 ### Muuttuvien liikennemerkkien tiedot
 
-[```https://tie.digitraffic.fi/api/v3/data/variable-signs```](https://tie.digitraffic.fi/api/v3/data/variable-signs){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/{id}){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}```](https://tie.digitraffic.fi/api/v3/data/variable-signs/history/{id}){:target="_blank"}
+[```/api/variable-sign/v1/signs```](https://tie.digitraffic.fi/api/variable-sign/v1/signs){:target="_blank"}\
+[```/api/variable-sign/v1/signs/{id}```](https://tie.digitraffic.fi/api/variable-sign/v1/signs/KRM01V102){:target="_blank"}\
+[```/api/variable-sign/v1/signs/history```](https://tie.digitraffic.fi/api/variable-sign/v1/signs/history?deviceId=KRM01V102){:target="_blank"}
 
 Viesti sisältää muuttuvan liikennemerkin viimeisimmän tilan.  Tällä hetkellä tuettuja merkkejä ovat muuttuvat 
 nopeusrajoitukset sekä varoitusmerkit. Digitraffic julkaisee tilatiedot vain laiteryhmän master-laitteesta. Tämä tarkoittaa sitä, että ajoradan vasemmalla puolella olevan merkin ja mahdollisen ramppimerkin tietoja ei välitetä erikseen.
 
 Varoitusmerkkien tyypit:
 
-[```https://tie.digitraffic.fi/api/v3/metadata/variable-signs/code-descriptions```](https://tie.digitraffic.fi/api/v3/metadata/variable-signs/code-descriptions){:target="_blank"}
+[```/api/variable-sign/v1/signs/code-descriptions```](https://tie.digitraffic.fi/api/variable-sign/v1/signs/code-descriptions){:target="_blank"}
 
 Varoitusmerkit kuvina:
 
@@ -336,13 +345,12 @@ Varoitusmerkit kuvina:
 
 Tiedot on saatavina myös datex2-muotoisena:
 
-[```https://tie.digitraffic.fi/api/v1/variable-signs/datex2```](https://tie.digitraffic.fi/api/v1/variable-signs/datex2){:target="_blank"}
+[```/api/variable-sign/v1/signs.datex2```](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}\
 
 Varoitusmerkissä mahdollisesti olevat []-merkkien sisällä olevat kyltit on mahdollista generoida svg-muodossa:
 
-[```https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123```](https://tie.digitraffic.fi/api/v1/variable-signs/images/ramppi_123){:target="_blank"}
-
-[```https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321```](https://tie.digitraffic.fi/api/v1/variable-signs/images/tie_321){:target="_blank"}
+[```/api/variable-sign/v1/images/ramppi_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/ramppi_123){:target="_blank"}\
+[```/api/v1/variable-signs/images/tie_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/tie_321){:target="_blank"}
 
 ### Maanteiden kunnossapitotiedot
 
@@ -357,17 +365,20 @@ Väylävirasto valmistelee myös vuorokautta vanhempien kunnossapidon toteumatie
 
 #### Kunnossapidon domain
 
-Rajapinta palauttaa mahdolliset domainit. Domain kertoo mistä järjestelmästä data tulee.
+[```/api/maintenance/v1/tracking/domains```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains){:target="_blank"}
+Rajapinta palauttaa mahdolliset domainit. Domain kertoo mistä järjestelmästä data tulee.
 
 #### Ajoneuvojen tehtävätyypit
 
+[```/api/maintenance/v1/tracking/tasks```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks){:target="_blank"}
+
 Rajapinta palauttaa ajoneuvojen suorittamien tehtävien tarkemmat selitteet.
 
-[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks){:target="_blank"}
 
 #### Ajoneuvojen seurantadata
+
+[```/api/maintenance/v1/tracking/routes?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads){:target="_blank"}
 
 Rajapinta palauttaa ajoneuvon kulkeman reitin. Reitti ei täysin vastaa ajoneuvon maastossa kulkemaa reittiä,
 koska julkaistava reitti muodostetaan yhdistelemällä ajoneuvosta saatavat sijaintitiedot viivaksi ja
@@ -380,41 +391,34 @@ Uusi seuranta, jossa ei ole viitettä edeliseen muodostetaan aina kun:
 
 Näillä käsittelyllä poistetaan suurimmat ajoneuvojen tuottamassa datassa mahdollisesti esiintyvät virheet.
 
-[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads){:target="_blank"}
-
 #### Ajoneuvon viimeisin sijainti
+
+[```/api/maintenance/v1/tracking/routes/latest?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:target="_blank"}
 
 Rajapinta palauttaa viimeisimmät kunnossapitoajoneuvoista vastaanotetut sijainti- ja tehtävätiedot
 
-[```https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads```](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:target="_blank"}
-
-#### Rajapintojen Swagger kuvaus
-
-[```https://tie.digitraffic.fi/swagger/```](https://tie.digitraffic.fi/swagger/){:target="_blank"}
 
 ### Jalankulun ja pyöräilyn mittaustiedot
 
 Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun alueelta.  
 
-Kaikkien mittauspisteiden tiedot GeoJSON-muodossa
+#### Kaikkien mittauspisteiden tiedot GeoJSON-muodossa
 
-[```https://tie.digitraffic.fi/api/counting-site/v1/counters```](https://tie.digitraffic.fi/api/counting-site/v1/counters){:target="_blank"}
+[```/api/counting-site/v1/counters```](https://tie.digitraffic.fi/api/counting-site/v1/counters){:target="_blank"}
 
-Metatietoja
+#### Metatietoja
 
-[```https://tie.digitraffic.fi/api/counting-site/v1/directions```](https://tie.digitraffic.fi/api/counting-site/v1/directions){:target="_blank"}
+[```/api/counting-site/v1/directions```](https://tie.digitraffic.fi/api/counting-site/v1/directions){:target="_blank"}\
+[```/api/counting-site/v1/domains```](https://tie.digitraffic.fi/api/counting-site/v1/domains){:target="_blank"}\
+[```/api/counting-site/v1/user-types```](https://tie.digitraffic.fi/api/counting-site/v1/user-types){:target="_blank"}
 
-[```https://tie.digitraffic.fi/api/counting-site/v1/domains```](https://tie.digitraffic.fi/api/counting-site/v1/domains){:target="_blank"}
+#### Mittauspisteiden dataa json-muodossa
 
-[```https://tie.digitraffic.fi/api/counting-site/v1/user-types```](https://tie.digitraffic.fi/api/counting-site/v1/user-types){:target="_blank"}
+[```/api/counting-site/v1/values```](https://tie.digitraffic.fi/api/counting-site/v1/values){:target="_blank"}
 
-Mittauspisteiden dataa json-muodossa
+#### Mittauspisteiden dataa CSV-muodossa
 
-[```https://tie.digitraffic.fi/api/counting-site/v1/values```](https://tie.digitraffic.fi/api/counting-site/v1/values){:target="_blank"}
-
-Mittauspisteiden dataa CSV-muodossa
-
-[```https://tie.digitraffic.fi/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
+[```/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
 
 ## WebSocket-rajapinnat
 
@@ -574,10 +578,5 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 </html>
 ```
 
-## Käyttörajoitukset
 
-Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
-
-## Tuetut ja vanhentuneet rajapinnat
-
-Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
+[Swagger-kuvauksesta]: https://tie.digitraffic.fi/swagger/
