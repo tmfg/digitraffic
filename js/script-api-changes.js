@@ -3,14 +3,20 @@
 const URL = {
     MARINE: "https://meri.digitraffic.fi/swagger/openapi.json",
     RAIL: "https://rata.digitraffic.fi/swagger/openapi.json",
-    ROAD: "https://tie.digitraffic.fi/swagger/openapi.json"
+    ROAD: "https://tie.digitraffic.fi/swagger/openapi.json",
+    MARINE_UI: "https://meri.digitraffic.fi/swagger/#",
+    RAIL_UI: "https://rata.digitraffic.fi/swagger/#",
+    ROAD_UI: "https://tie.digitraffic.fi/swagger/#"
 };
 
 const translations = {
     en: {
         api: "API",
+        colorDescriptionsAlert: "Sunset in less than a month",
+        colorDescriptionsWarning: "Sunset in less than 3 months",
+        colorDescriptionsHeader: "Sunset date color coding:",
         deprecationsHeader: "Deprecated APIs",
-        deprecationsText: "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. Sunset date marks the point in time after which a deprecated API will not be available anymore.",
+        deprecationsText: "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. Sunset date marks the point in time after which the API in question will not be available anymore.\n\nThe API paths below contain links to their respective Swagger descriptions.",
         marine: "Marine",
         rail: "Rail",
         road: "Road",
@@ -20,8 +26,11 @@ const translations = {
     },
     fi: {
         api: "Rajapinta",
+        colorDescriptionsAlert: "Poistumassa alle kuukauden päästä",
+        colorDescriptionsWarning: "Poistumassa alle 3kk päästä",
+        colorDescriptionsHeader: "Poistumispäivämäärien värikoodaukset:",
         deprecationsHeader: "Vanhentuneet rajapinnat",
-        deprecationsText: "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Poistumispäivämäärä on ajankohta, minkä jälkeen vanhentunut rajapinta ei lähtökohtaisesti enää ole saatavilla.",
+        deprecationsText: "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Poistumispäivämäärä on ajankohta, minkä jälkeen kyseinen rajapinta ei lähtökohtaisesti enää ole saatavilla.\n\nAllaolevista rajapintojen poluista on linkki kunkin Swagger-kuvaukseen.",
         marine: "Meri",
         rail: "Rata",
         road: "Tie",
@@ -82,6 +91,10 @@ function loadApiDescription(trafficType) {
     })
 }
 
+function getSwaggerLink(swaggerPath, trafficType) {
+    return `${URL[`${trafficType}_UI`]}/${swaggerPath.tags[0]}/${swaggerPath.operationId}`;
+}
+
 function populateDeprecations(apiDescription, trafficType) {
     const deprecatedPaths = Object.keys(apiDescription.paths)
         .filter(path => apiDescription.paths[path].get.deprecated === true || removalTextMatcher.test(apiDescription.paths[path].get.summary))
@@ -89,10 +102,12 @@ function populateDeprecations(apiDescription, trafficType) {
             const match = apiDescription.paths[path].get.summary.match(sunsetDateMatcher);
             const sunset = match !== null ? match.groups.sunsetDate : "TBD";
             const dateClass = sunset !== "TBD" ? getSunsetDateClass(sunset) : "";
+            const swaggerLink = getSwaggerLink(apiDescription.paths[path].get, trafficType);
             return {
                 path,
                 sunset,
-                dateClass
+                dateClass,
+                swaggerLink
             }
         });
 
@@ -123,23 +138,27 @@ function getSunsetDateClass(isoLocalDateString) {
 function populateSupported(apiDescription, trafficType) {
     Object.keys(apiDescription.paths)
         .filter(path => apiDescription.paths[path].get.deprecated !== true && !removalTextMatcher.test(apiDescription.paths[path].get.summary))
-        .forEach(path => addToSupportedTable(path, trafficType));
+        .forEach(path => addToSupportedTable({path, swaggerLink: getSwaggerLink(apiDescription.paths[path].get, trafficType)}, trafficType));
 }
 
 
 function addToDeprecationsTable(api, trafficType) {
     $('#' + trafficType + '-DEPRECATIONS > tbody:last-child').append(
         $('<tr/>', {"class": "row.nowrap"}).append([
-            $('<td/>', {"class": "deprecations-col1"}).text(api.path),
+            $('<td/>', {"class": "deprecations-col1"}).append(
+                $('<a/>', {"href": api.swaggerLink}).text(api.path)
+            ),
             $('<td/>', {"class": `deprecations-col2 ${api.dateClass}`}).text(api.sunset)
         ])
     );
 }
 
-function addToSupportedTable(path, trafficType) {
+function addToSupportedTable(api, trafficType) {
     $('#' + trafficType + '-SUPPORTED > tbody:last-child').append(
         $('<tr/>', {"class": "row.nowrap"}).append([
-            $('<td/>', {"class": "supported-col"}).text(path)
+            $('<td/>', {"class": "supported-col"}).append(
+                $('<a/>', {"href": api.swaggerLink}).text(api.path)
+            )
         ])
     );
 }
@@ -151,13 +170,23 @@ function addHeadersAndText(language) {
     $('#SUPPORTED-HEADER').append(
         $('<h3 />').text(translations[language].supportedHeader)
     );
-    $('#DEPRECATIONS-TEXT').append(
-        $('<p />').text(translations[language].deprecationsText)
-    );
+    $('#DEPRECATIONS-TEXT').append([
+        $('<p />', {"class": "deprecations-text-paragraph"}).text(translations[language].deprecationsText),
+        $('<div />', {"class": "date-color-descriptions"}).append([
+            $('<p />', {"class": "date-color-descriptions-header"}).text(`${translations[language].colorDescriptionsHeader}`),
+            $('<p />', {"class": "date-color-descriptions-paragraph"}).append([
+                $('<span />', {"class": "date-alert-description"}).text("YYYY-MM-DD"),
+                $('<span />').html(`&nbsp;  ${translations[language].colorDescriptionsAlert}`)
+            ]),
+            $('<p />', {"class": "date-color-descriptions-paragraph"}).append([
+                $('<span />', {"class": "date-warning-description"}).text("YYYY-MM-DD"),
+                $('<span />').html(`&nbsp;  ${translations[language].colorDescriptionsWarning}`)
+            ])
+        ])
+    ]);
 }
 
 function removeEmptyDeprecationsTable(trafficType) {
-    $('#' + trafficType).remove();
     $('#' + trafficType + "-DEPRECATIONS-DIV").remove();
 }
 
@@ -172,15 +201,19 @@ async function loadApiChanges(language) {
     initSupportedTable("RAIL", translations[language].rail.toUpperCase(), language);
     initSupportedTable("ROAD", translations[language].road.toUpperCase(), language);
 
-    const marineApi = await loadApiDescription("MARINE");
-    const railApi = await loadApiDescription("RAIL");
-    const roadApi = await loadApiDescription("ROAD");
+    const [marineApi, railApi, roadApi] =
+        await Promise.all([
+            loadApiDescription("MARINE"),
+            loadApiDescription("RAIL"),
+            loadApiDescription("ROAD")
+        ])
+            .then(apis => apis.map(a => JSON.parse(a)))
 
-    populateDeprecations(JSON.parse(marineApi), "MARINE");
-    populateDeprecations(JSON.parse(railApi), "RAIL");
-    populateDeprecations(JSON.parse(roadApi), "ROAD");
+    populateDeprecations(marineApi, "MARINE");
+    populateDeprecations(railApi, "RAIL");
+    populateDeprecations(roadApi, "ROAD");
 
-    populateSupported(JSON.parse(marineApi), "MARINE");
-    populateSupported(JSON.parse(railApi), "RAIL");
-    populateSupported(JSON.parse(roadApi), "ROAD");
+    populateSupported(marineApi, "MARINE");
+    populateSupported(railApi, "RAIL");
+    populateSupported(roadApi, "ROAD");
 }
