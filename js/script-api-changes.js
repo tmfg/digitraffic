@@ -12,8 +12,8 @@ const URL = {
 const translations = {
     en: {
         api: "API",
-        colorDescriptionsAlert: "Sunset in less than 4 weeks",
-        colorDescriptionsWarning: "Sunset in less than 12 weeks",
+        colorDescriptionsAlert: "Sunset in less than a month",
+        colorDescriptionsWarning: "Sunset in less than 3 months",
         colorDescriptionsHeader: "Sunset date color coding:",
         deprecationsHeader: "Deprecated APIs",
         deprecationsText: "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. Sunset date marks the point in time after which the API in question will not be available anymore.\n\nThe API paths below contain links to their respective Swagger descriptions.",
@@ -26,8 +26,8 @@ const translations = {
     },
     fi: {
         api: "Rajapinta",
-        colorDescriptionsAlert: "Poistumassa alle 4vk päästä",
-        colorDescriptionsWarning: "Poistumassa alle 12vk päästä",
+        colorDescriptionsAlert: "Poistumassa alle kuukauden päästä",
+        colorDescriptionsWarning: "Poistumassa alle 3kk päästä",
         colorDescriptionsHeader: "Poistumispäivämäärien värikoodaukset:",
         deprecationsHeader: "Vanhentuneet rajapinnat",
         deprecationsText: "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Poistumispäivämäärä on ajankohta, minkä jälkeen kyseinen rajapinta ei lähtökohtaisesti enää ole saatavilla.\n\nAllaolevista rajapintojen poluista on linkki kunkin Swagger-kuvaukseen.",
@@ -187,7 +187,6 @@ function addHeadersAndText(language) {
 }
 
 function removeEmptyDeprecationsTable(trafficType) {
-    $('#' + trafficType).remove();
     $('#' + trafficType + "-DEPRECATIONS-DIV").remove();
 }
 
@@ -202,15 +201,13 @@ async function loadApiChanges(language) {
     initSupportedTable("RAIL", translations[language].rail.toUpperCase(), language);
     initSupportedTable("ROAD", translations[language].road.toUpperCase(), language);
 
-    const marineApi = await loadApiDescription("MARINE").then(function (response) {
-        return JSON.parse(response)
-    });
-    const railApi = await loadApiDescription("RAIL").then(function (response) {
-        return JSON.parse(response)
-    });
-    const roadApi = await loadApiDescription("ROAD").then(function (response) {
-        return JSON.parse(response)
-    });
+    const [marineApi, railApi, roadApi] =
+        await Promise.all([
+            loadApiDescription("MARINE"),
+            loadApiDescription("RAIL"),
+            loadApiDescription("ROAD")
+        ])
+            .then(apis => apis.map(a => JSON.parse(a)))
 
     populateDeprecations(marineApi, "MARINE");
     populateDeprecations(railApi, "RAIL");
