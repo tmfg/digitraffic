@@ -420,7 +420,7 @@ Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun alueelt
 
 [```/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
 
-## WebSocket-rajapinnat
+## MQTT WebSocket -rajapinnat
 
 REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa tieliikenteen automaattisten mittaustietojen (LAM), tiesääasemien tietojen sekä maanteiden kunnossapitotietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 

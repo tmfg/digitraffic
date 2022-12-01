@@ -421,7 +421,7 @@ Walking and cycling counting site values are currently received from Oulu region
 [```/api/counting-site/v1/values.csv```](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
 
 
-## WebSocket APIs
+## MQTT WebSocket APIs
 
 TMC-data can be tracked from following Web Socket APIs. Protocol is MQTT over WebSockets. This allows
 you to subscibe only those topics you are interested in.
