@@ -121,7 +121,7 @@ Aton faults are fetched from POOKI.
 
 Data is updated every 10 minutes.
 
-## MQTT WebSocket API
+## MQTT WebSocket APIs
 
 Vessel locations can be tracked from following WebSocket APIs.  Protocol is MQTT over WebSockets.  This allows
 you to subscibe only those topics you are interested in.
