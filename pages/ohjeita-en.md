@@ -34,6 +34,9 @@ New api versions will be announced in Digitraffic website and Google-groups
 [marine](https://groups.google.com/g/meridigitrafficfi) and
 [rail](https://groups.google.com/u/1/g/rata_digitraffic_fi).
 
+Deprecated APIs and their sunset dates are updated [on this page](/rajapintojen-tila/muutokset/).
+
+
 ## How can I be aware of updates and incidents?
 Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
 You can also subscribe to status updates with the  **Subscribe to updates** function.
@@ -108,6 +111,9 @@ curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'
 
 wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
 ```
+
+## Code examples
+[This page](/en/instructions/examples/) contains code examples of using Digitraffic data and good programming practices. The examples are in the form of notebooks and can be run and modified on Google Colab.
 
 # Cache
 __Q__: Why do APIs often return the same response?  
