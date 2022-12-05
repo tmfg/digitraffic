@@ -35,7 +35,7 @@ Uusista rajapintaversioista tiedotetaan tällä sivustolla sekä
 [meri](https://groups.google.com/g/meridigitrafficfi)- ja
 [rata](https://groups.google.com/u/1/g/rata_digitraffic_fi)- Google-ryhmissä.
 
-Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät [koontisivulle](/rajapintojen-tila/muutokset/).
+Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät sivulle [Tuki → Rajapintojen muutokset](/rajapintojen-tila/muutokset/).
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
@@ -97,7 +97,7 @@ sovelluksessa kehittäjälle tai ylläpitäjälle.
 Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
 `Digitraffic-User: Junamies/FoobarApp 1.0`
 
-Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntimäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/). 
+Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntömäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/). 
 
 ### Digitraffic-User -otsikko
 
@@ -113,9 +113,6 @@ curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'
 
 wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
 ```
-
-## Koodiesimerkkejä 
-[Tälle sivulle](/ohjeita/esimerkit/) on kerätty Google Colabissa ajettavia ja muokattavia koodiesimerkkejä, joiden tarkoitus on havainnollistaa Digitrafficista saatavilla olevan datan käyttöä ja opastaa hyviin ohjelmointikäytäntöihin.
 
 # Cache
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  
@@ -177,11 +174,6 @@ headers = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 r = requests.get(TMS_STATION_URL, headers=headers)
 print(r.json()['dataUpdatedTime'])
 ```
-
-Lisää esimerkkejä ja ajettavaa koodia löydät Colabista:
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/solita-jkhaak/2021-digitraffic-dev-day/blob/main/python/requests-example.ipynb)
-
 
 # Node.js (ja JavaScript)
 
