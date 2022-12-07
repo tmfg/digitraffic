@@ -34,6 +34,9 @@ New api versions will be announced in Digitraffic website and Google-groups
 [marine](https://groups.google.com/g/meridigitrafficfi) and
 [rail](https://groups.google.com/u/1/g/rata_digitraffic_fi).
 
+Deprecated APIs and their sunset dates are updated on the page [Support → API changes](/en/api-status/changes/).
+
+
 ## How can I be aware of updates and incidents?
 Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
 You can also subscribe to status updates with the  **Subscribe to updates** function.
@@ -169,11 +172,6 @@ headers = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 r = requests.get(TMS_STATION_URL, headers=headers)
 print(r.json()['dataUpdatedTime'])
 ```
-
-More examples and runnable code available in Colab:
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/solita-jkhaak/2021-digitraffic-dev-day/blob/main/python/requests-example.ipynb)
-
 
 # Node.js (and JavaScript)
 

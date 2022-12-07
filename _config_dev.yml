@@ -411,6 +411,12 @@ t:
     url:
       en: "en/instructions"
       fi: "ohjeita"
+  code-examples:
+    en: "Code examples"
+    fi: "Koodiesimerkkejä"
+    url:
+      en: "en/instructions/code-examples"
+      fi: "ohjeita/koodiesimerkit"
   api-changes:
     en: "API changes"
     fi: "Rajapintojen muutokset"

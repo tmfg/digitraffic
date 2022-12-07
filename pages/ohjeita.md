@@ -33,7 +33,9 @@ Yllä oleva kuva pyrkii selventämään rajapintojen elinkaarta.
 Uusista rajapintaversioista tiedotetaan tällä sivustolla sekä 
 [tie](https://groups.google.com/g/roaddigitrafficfi)-,  
 [meri](https://groups.google.com/g/meridigitrafficfi)- ja
-[rata](https://groups.google.com/u/1/g/rata_digitraffic_fi)-Google-ryhmissä.
+[rata](https://groups.google.com/u/1/g/rata_digitraffic_fi)- Google-ryhmissä.
+
+Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät sivulle [Tuki → Rajapintojen muutokset](/rajapintojen-tila/muutokset/).
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
@@ -95,7 +97,7 @@ sovelluksessa kehittäjälle tai ylläpitäjälle.
 Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
 `Digitraffic-User: Junamies/FoobarApp 1.0`
 
-Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntimäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/). 
+Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntömäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/). 
 
 ### Digitraffic-User -otsikko
 
@@ -172,11 +174,6 @@ headers = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 r = requests.get(TMS_STATION_URL, headers=headers)
 print(r.json()['dataUpdatedTime'])
 ```
-
-Lisää esimerkkejä ja ajettavaa koodia löydät Colabista:
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/solita-jkhaak/2021-digitraffic-dev-day/blob/main/python/requests-example.ipynb)
-
 
 # Node.js (ja JavaScript)
 
@@ -260,7 +257,7 @@ Tilaa silloin myös status-topic(tms/status, weather/status, vessels/status).
 
 # Turhan tiedonsiirron välttäminen ehdollisilla HTTP-pyynnöillä
 
-Suurin osa uusista `/api/{datalaji}/v{n}/` -muotoisista apeista tukee ehdollisia HTTP-pyynntöjä. Tällaisen rajapinnan tunnistaa siitä, että se palautaa pyynnön vastauksessa **ETag** -HTTP-otsikon.
+Suurin osa uusista `/api/{datalaji}/v{n}/` -muotoisista rajapinnoista tukee ehdollisia HTTP-pyyntöjä. Tällaisen rajapinnan tunnistaa siitä, että se palautaa pyynnön vastauksessa **ETag** -HTTP-otsikon.
 
 Esimerkiksi kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käyttää ETagin arvoa **If-None-Match** -otsikossa. Mikäli kuva on päivittynyt se palautuu HTTP-paluukoodin 200 kera. Mikäli kuva ei ole päivittynyt mitään kuvaa ei palauteta ja HTTP-paluukoodi on 304 (Not Modified).
 
