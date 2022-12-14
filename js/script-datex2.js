@@ -1,7 +1,7 @@
 'use strict';
 
-const TRAFFIC_MESSAGES_URL = "https://tie.digitraffic.fi/api/v3/data/traffic-messages/simple";
-const TRAFFIC_MESSAGES_DATEX2_URL = "https://tie.digitraffic.fi/api/v3/data/traffic-messages/datex2";
+const TRAFFIC_MESSAGES_URL = "https://tie.digitraffic.fi/api/traffic-message/v1/messages";
+const TRAFFIC_MESSAGES_DATEX2_URL = "https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2";
 const TYPE_EXEMPTED_TRANSPORT = "EXEMPTED_TRANSPORT";
 const TYPE_ROAD_WORK = "ROAD_WORK";
 const TYPE_TRAFFIC_ANNOUNCEMENT = "TRAFFIC_ANNOUNCEMENT";
