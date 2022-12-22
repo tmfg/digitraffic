@@ -89,8 +89,25 @@ layout: compress
           </div>
           <div class="row">
             <div class="col-xs-12">
-              <h3 class="service-status__incident-list-heading">{{ site.t.recent-outages[page.lang] }}</h3>
+              <h3 class="service-status__incident-list-heading">
+                <a href="#recent-outages" class="tab-link tab-link-active">{{ site.t.recent-outages[page.lang] }}</a> |
+                <a href="#upcoming-maintenances" class="tab-link" >{{ site.t.upcoming-maintenances[page.lang] }}</a>
+              </h3>
+            </div>
+          </div>
+          <div class="row closeable-tab" id="recent-outages">
+            <div class="col-xs-12">
+              <ul id="service-status-ongoing-maintenance-list" class="service-status__incident-list">
+                <li class="service-status__incident-list-item">{{ site.t.loading[page.lang] }}...</li>
+              </ul>
               <ul id="service-status-incident-list" class="service-status__incident-list">
+                <li class="service-status__incident-list-item">{{ site.t.loading[page.lang] }}...</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row closeable-tab" id="upcoming-maintenances" style="display: none;">
+            <div class="col-xs-12">
+              <ul id="service-status-upcoming-maintenance-list" class="service-status__incident-list">
                 <li class="service-status__incident-list-item">{{ site.t.loading[page.lang] }}...</li>
               </ul>
             </div>

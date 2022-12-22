@@ -46,7 +46,6 @@ function init() {
   } else if (typeof loadApiChanges === "function") {
     loadApiChanges(pageLang);
   }
-
 }
 
 
@@ -71,14 +70,19 @@ function addEventListeners() {
       menuElement.addEventListener("click", toggleMenu);
   }
     if (searchElement) {
-  searchElement.addEventListener("click", toggleSearch);
+      searchElement.addEventListener("click", toggleSearch);
     }
     if (languageElement) {
-languageElement.addEventListener("click", toggleLanguage);
+      languageElement.addEventListener("click", toggleLanguage);
     }
     if (outsideMenu) {
-        outsideMenu.addEventListener("click", closeMenuSearchLanguage);
+      outsideMenu.addEventListener("click", closeMenuSearchLanguage);
     }
+
+    var tabLinks = document.getElementsByClassName('tab-link');
+    Array.prototype.forEach.call(tabLinks, function(link) {
+      link.addEventListener('click', (ev) => openTab(link.href.substring(link.href.lastIndexOf('#') + 1), ev))
+    });
 }
 
 // Add .header--scrolled when scrolling page, remove when scrolled to top
@@ -405,12 +409,39 @@ function updateServiceStatusList() {
     statusList.removeChild(statusList.firstChild);
   }
 
+  // Limit to 7 days                      day hour  min  sec  msec
+  var limitTimestamp = new Date().getTime() - (7 * 24 *  60 * 60 * 1000)
+
   // Add list of service status incidents to incident list
   JSON.parse(this.responseText).incidents.forEach(function (incident) {
     const newestUpdate = incident.incident_updates[0];
-    addIncidentToList(newestUpdate.created_at, incident.name, newestUpdate.body, statusList, templateItem);
+    const resolvedTimestamp = new Date(incident.resolved_at).getTime();
+    console.info(limitTimestamp + " < " + resolvedTimestamp + " : " + (limitTimestamp < resolvedTimestamp));
+    if (limitTimestamp < resolvedTimestamp) {
+      addIncidentToList(newestUpdate.created_at, incident.name, newestUpdate.body, incident.shortlink, statusList, templateItem);
+    }
   });
 }
+
+function updateMaintenancesList(elementId, event) {
+
+  var statusList = document.getElementById(elementId);
+
+  // Get a reference to the template li and remove it from dom
+  var templateItem = statusList.firstElementChild;
+
+  while (statusList.firstChild) {
+    statusList.removeChild(statusList.firstChild);
+  }
+
+  // Add list of upcoming maintenances to maintenances list
+  JSON.parse(event.target.responseText).scheduled_maintenances.forEach(function (incident) {
+    const newestUpdate = incident.incident_updates[0];
+    console.log(incident.scheduled_for);
+    addMaintenanceToList(incident.scheduled_for, incident.name, newestUpdate.body, incident.shortlink, statusList, templateItem);
+  });
+}
+
 
 // Get page language
 function getPageLanguage() {
@@ -428,11 +459,31 @@ function getServiceStatus(baseUrl) {
   oReq.open("GET", baseUrl + "/api/v2/components.json");
   oReq.send();
 
-  // Get service incidents from api
+  // Get ongoing-maintenances from api
+  if (document.getElementById("service-status-ongoing-maintenance-list")) {
+    const oReq2 = new XMLHttpRequest();
+    oReq2.addEventListener("load", function (evt) {
+      updateMaintenancesList('service-status-ongoing-maintenance-list', evt)
+    });
+    oReq2.open("GET", baseUrl + "/api/v2/scheduled-maintenances/active.json");
+    oReq2.send();
+  }
+
+  // Get current and past service incidents from api
   if (document.getElementById("service-status-incident-list")) {
-    var oReq2 = new XMLHttpRequest();
+    const oReq2 = new XMLHttpRequest();
     oReq2.addEventListener("load", updateServiceStatusList);
     oReq2.open("GET", baseUrl + "/api/v2/incidents.json");
+    oReq2.send();
+  }
+
+  // Get upcoming-maintenances from api
+  if (document.getElementById("service-status-upcoming-maintenance-list")) {
+    const oReq2 = new XMLHttpRequest();
+    oReq2.addEventListener("load", function (evt) {
+      updateMaintenancesList('service-status-upcoming-maintenance-list', evt);
+    });
+    oReq2.open("GET", baseUrl + "/api/v2/scheduled-maintenances/upcoming.json");
     oReq2.send();
   }
 
@@ -475,13 +526,42 @@ function addOperationStatus(service, status) {
   }
 }
 
-function addIncidentToList(created_at, name, message, statusList, templateItem) {
+function addIncidentToList(created_at, name, message, link, statusList, templateItem) {
   const createdAtDate = new Date(created_at);
   const createdDateString = createdAtDate.getDate()  + "." +
       (createdAtDate.getMonth() + 1) + "." +
       createdAtDate.getFullYear() + " " +
       createdAtDate.getHours() + ":" + createdAtDate.getMinutes();
   var newItem = templateItem.cloneNode(true);
-  newItem.innerHTML = "<h4>" + name + "</h4><span class='service-status__incident-list-timestamp'>" + createdDateString + "</span><span>" + message + "</span>";
+  newItem.innerHTML = "<h4><a href=\"" + link + "\">" + name + " " + createdDateString + "</a></h4><pre>" + message + "</pre>";
   statusList.appendChild(newItem);
+}
+
+function addMaintenanceToList(scheduledFor, name, message, link, statusList, templateItem) {
+  const scheduledForDate = new Date(scheduledFor);
+  const scheduledForDateString = scheduledForDate.getDate()  + "." +
+      (scheduledForDate.getMonth() + 1) + "." +
+      scheduledForDate.getFullYear() + " " +
+      ('0'+scheduledForDate.getHours()).slice(-2) + ":" + ('0'+scheduledForDate.getMinutes()).slice(-2);
+  var newItem = templateItem.cloneNode(true);
+  newItem.innerHTML = "<h4><a href=\"" + link + "\">" + name + " " + scheduledForDateString + "</a></h4><pre>" + message + "</pre>";
+  statusList.appendChild(newItem);
+}
+
+
+function openTab(tabId, event) {
+  event.preventDefault(); // dont execute link href
+  var i;
+  var x = document.getElementsByClassName("closeable-tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabId).style.display = "block";
+
+  var tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" tab-link-active", "");
+  }
+  event.currentTarget.className += " tab-link-active";
+  return false;
 }
