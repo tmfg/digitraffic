@@ -2,15 +2,15 @@
   color: $blue-dark;
   text-decoration: none;
 
-  &:hover {
+  & button {
+    margin: 0;
+  }
+
+  &:hover button {
     text-decoration: underline;
   }
 
-  &:focus {
-    color: $blue-dark;
-  }
-
-  &-active {
+  &-active button {
     text-decoration: underline!important;
   }
 }

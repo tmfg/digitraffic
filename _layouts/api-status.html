@@ -12,7 +12,6 @@ layout: compress
     
     <!-- Header -->
     {% include header.html header-classes="header--white" %}
-    
     <!-- Content -->
     <content class="content">
       <div class="row">
@@ -90,8 +89,13 @@ layout: compress
           <div class="row">
             <div class="col-xs-12">
               <h3 class="service-status__incident-list-heading">
-                <a href="#recent-outages" class="tab-link tab-link-active">{{ site.t.recent-outages[page.lang] }}</a> |
-                <a href="#upcoming-maintenances" class="tab-link" >{{ site.t.upcoming-maintenances[page.lang] }}</a>
+                <a href="#recent-outages" class="tab-link tab-link-active">
+                  <button class="button"><i class="button__icon material-icons md-light md-lg">show_chart</i><span class="button__text">{{ site.t.recent-outages[page.lang] }}</span></button>
+                </a>
+                <a href="#upcoming-maintenances" class="tab-link" >
+                  <button class="button"><i class="button__icon material-icons md-light md-lg">show_chart</i><span class="button__text">{{ site.t.upcoming-maintenances[page.lang] }}</span></button>
+                </a>
+
               </h3>
             </div>
           </div>
@@ -119,6 +123,6 @@ layout: compress
 
     <!-- Footer -->
     {% include footer.html %}
-
+    <script type="text/javascript" src="/js/script-api-status.js"></script>
   </body>
 </html>
