@@ -432,8 +432,11 @@ t:
       fi: "ohjeita/mqtt-client"
   # API status
   recent-outages:
-    en: "Recent outages"
-    fi: "Viimeisimmät häiriöt"
+    en: "Current maintenances and recent outages"
+    fi: "Tämän hetkiset huoltokatkot ja viimeisimmät häiriöt"
+  upcoming-maintenances:
+    en: "Upcoming maintenance breaks"
+    fi: "Tulevat huoltokatkot"
 
   # Posts
   filter-news:

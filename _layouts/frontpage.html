@@ -17,7 +17,6 @@ layout: compress
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
   {% include head.html %}
-
   <body class="body">
     {% include header.html header-classes="header--white" %}
 
@@ -97,6 +96,12 @@ layout: compress
                 <div class="service-status__button-area">
                   <a href="/{{ site.t.api-status.url[page.lang] | prepend:site.baseurl }}"><button class="button"><i class="button__icon material-icons md-light md-lg">show_chart</i><span class="button__text">{{ site.t.api-status[page.lang] }}</span></button></a>
                 </div>
+            </div>
+          </div>
+          <div class="row" id="service-status-active-incidents-short">
+            <div class="col-xs-12 col-sm-4 latest-item">
+              <h4 class="h4 latest-item__header-text">&nbsp;</h4>
+              <div class="latest-item__meta-first">&nbsp;<span class="latest-item__traffic-type"></span></div>
             </div>
           </div>
         </section>
@@ -248,7 +253,7 @@ layout: compress
 
       <!--footer-->
       {% include footer.html %}
-
     </content>
+    <script type="text/javascript" src="/js/script-api-status.js"></script>
   </body>
 </html>

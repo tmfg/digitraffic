@@ -1,0 +1,16 @@
+.tab-link {
+  color: $blue-dark;
+  text-decoration: none;
+
+  & button {
+    margin: 0;
+  }
+
+  &:hover button {
+    text-decoration: underline;
+  }
+
+  &-active button {
+    text-decoration: underline!important;
+  }
+}

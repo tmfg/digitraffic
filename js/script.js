@@ -47,6 +47,9 @@ function init() {
     loadApiChanges(pageLang);
   }
 
+  if (typeof loadApiStatuses === "function") {
+    loadApiStatuses(pageLang);
+  }
 }
 
 
@@ -71,13 +74,13 @@ function addEventListeners() {
       menuElement.addEventListener("click", toggleMenu);
   }
     if (searchElement) {
-  searchElement.addEventListener("click", toggleSearch);
+      searchElement.addEventListener("click", toggleSearch);
     }
     if (languageElement) {
-languageElement.addEventListener("click", toggleLanguage);
+      languageElement.addEventListener("click", toggleLanguage);
     }
     if (outsideMenu) {
-        outsideMenu.addEventListener("click", closeMenuSearchLanguage);
+      outsideMenu.addEventListener("click", closeMenuSearchLanguage);
     }
 }
 
@@ -361,127 +364,10 @@ function elementInViewport(el) {
   );
 }
 
-const componentGroups = ['road', 'marine', 'rail'];
-const serviceChildComponentHealthThreshold = 50;
-const statusOperational = 'operational';
-const statusPartialOutage = 'partial_outage';
-const statusMajorOutage = 'major_outage';
-
-function serviceIsHealthy(serviceStatus) {
-  return serviceStatus.toLowerCase() === statusOperational;
-}
-
-function getChildComponentHealthPercentage(service, allComponents) {
-  const childComponents = allComponents.filter(c => service.components.includes(c.id));
-  const healthyComponents = childComponents.filter(c => serviceIsHealthy(c.status));
-  return Math.ceil(healthyComponents.length / childComponents.length * 100);
-}
-
-function updateServiceStatus() {
-  // Add updated service status info to each service
-  const components = JSON.parse(this.responseText).components;
-  components.filter(c => componentGroups.includes(c.name.toLowerCase())).forEach(service => {
-    if (serviceIsHealthy(service.status)) {
-      addOperationStatus(service.name.toLowerCase(), statusOperational);
-    } else {
-      const childComponentHealthPercentage = getChildComponentHealthPercentage(service, components);
-      if (childComponentHealthPercentage > serviceChildComponentHealthThreshold) {
-        addOperationStatus(service.name.toLowerCase(), statusPartialOutage);
-      } else {
-        addOperationStatus(service.name.toLowerCase(), statusMajorOutage);
-      }
-    }
-  });
-}
-
-function updateServiceStatusList() {
-
-  var statusList = document.getElementById('service-status-incident-list'); //ul
-
-  // Get a reference to the template li and remove it from dom
-  var templateItem = statusList.firstElementChild;
-
-  while (statusList.firstChild) {
-    statusList.removeChild(statusList.firstChild);
-  }
-
-  // Add list of service status incidents to incident list
-  JSON.parse(this.responseText).incidents.forEach(function (incident) {
-    const newestUpdate = incident.incident_updates[0];
-    addIncidentToList(newestUpdate.created_at, incident.name, newestUpdate.body, statusList, templateItem);
-  });
-}
-
 // Get page language
 function getPageLanguage() {
   let lang = document.getElementsByTagName("html")[0].getAttribute('lang');
   if (lang) {
     pageLang = lang;
   }
-}
-
-function getServiceStatus(baseUrl) {
-
-  // Get service status data from api
-  var oReq = new XMLHttpRequest();
-  oReq.addEventListener("load", updateServiceStatus);
-  oReq.open("GET", baseUrl + "/api/v2/components.json");
-  oReq.send();
-
-  // Get service incidents from api
-  if (document.getElementById("service-status-incident-list")) {
-    var oReq2 = new XMLHttpRequest();
-    oReq2.addEventListener("load", updateServiceStatusList);
-    oReq2.open("GET", baseUrl + "/api/v2/incidents.json");
-    oReq2.send();
-  }
-
-  // Update service status every 60 seconds
-  setTimeout(getServiceStatus, 60000, baseUrl);
-}
-
-function addOperationStatus(service, status) {
-  //console.log(service, ":", status);
-
-  // Elements
-  const classes = document.getElementById(`service-status-circle-${service}`).classList;
-  let statusText = document.getElementById(`service-status-text-${service}`);
-
-  // Clean previous status
-  classes.remove(
-    `service-status__icon-circle-bottom--operational__${service}`,
-    "service-status__icon-circle-bottom--partial-outage",
-    "service-status__icon-circle-bottom--major-outage"
-  );
-
-  // Update status
-  if (status === "operational") {
-    classes.add(`service-status__icon-circle-bottom--operational__${service}`);
-    statusText.textContent = t.statusOperational[pageLang];
-    statusText.classList.remove("service-status__service-text--loading");
-  } else if (status === "partial_outage") {
-    classes.add("service-status__icon-circle-bottom--partial-outage");
-    statusText.textContent = t.statusPartialOutage[pageLang];
-    statusText.classList.remove("service-status__service-text--loading");
-  }
-  else if (status === "major_outage") {
-    classes.add("service-status__icon-circle-bottom--major-outage");
-    statusText.textContent = t.statusMajorOutage[pageLang];
-    statusText.classList.remove("service-status__service-text--loading");
-  }
-  else {
-    statusText.textContent = t.loadingError[pageLang];
-    statusText.classList.add("service-status__service-text--loading");
-  }
-}
-
-function addIncidentToList(created_at, name, message, statusList, templateItem) {
-  const createdAtDate = new Date(created_at);
-  const createdDateString = createdAtDate.getDate()  + "." +
-      (createdAtDate.getMonth() + 1) + "." +
-      createdAtDate.getFullYear() + " " +
-      createdAtDate.getHours() + ":" + createdAtDate.getMinutes();
-  var newItem = templateItem.cloneNode(true);
-  newItem.innerHTML = "<h4>" + name + "</h4><span class='service-status__incident-list-timestamp'>" + createdDateString + "</span><span>" + message + "</span>";
-  statusList.appendChild(newItem);
 }
