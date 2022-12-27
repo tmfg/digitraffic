@@ -57,7 +57,7 @@ function updateServiceStatus(language, evt) {
   });
 }
 
-function updateServiceStatusList() {
+function updateServiceStatusList(language, event) {
 
   let statusList = document.getElementById('service-status-incident-list'); //ul
 
@@ -72,14 +72,19 @@ function updateServiceStatusList() {
   let limitTimestamp = new Date().getTime() - (7 * 24 *  60 * 60 * 1000)
 
   // Add list of service status incidents to incident list
-  JSON.parse(this.responseText).incidents.forEach(function (incident) {
+  let added = false;
+  JSON.parse(event.target.responseText).incidents.forEach(function (incident) {
     const newestUpdate = incident.incident_updates[0];
     const resolvedTimestamp = new Date(incident.resolved_at).getTime();
 
     if (limitTimestamp < resolvedTimestamp) {
+      added = true;
       addIncidentDetailedList(newestUpdate.created_at, incident.name, newestUpdate.body, incident.shortlink, statusList, templateItem);
     }
   });
+  if (!added) {
+    addIncidentDetailedList(null, t.statusNoIncidents[language], null, null, statusList, templateItem);
+  }
 }
 
 function updateMaintenancesList(elementId, event) {
@@ -154,7 +159,9 @@ function getServiceStatus(baseUrl, language) {
   // Get current and past service incidents from api
   if (document.getElementById("service-status-incident-list")) {
     const oReq2 = new XMLHttpRequest();
-    oReq2.addEventListener("load", updateServiceStatusList);
+    oReq2.addEventListener("load", function (evt) {
+      updateServiceStatusList(language, evt);
+    });
     oReq2.open("GET", baseUrl + "/api/v2/incidents.json");
     oReq2.send();
   }
@@ -218,9 +225,13 @@ function addOperationStatus(service, status, language) {
 function addIncidentDetailedList(isoDateTime, name, message, link, statusList, templateItem) {
   const newItem = templateItem.cloneNode(true);
 
-  newItem.innerHTML = '<h3 class="h3 latest-item__header-text"><a href="' + link + '" class="latest-item__header-link">' + name + '</a></h3>' +
-      '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' + getTimeStringFromIsoString(isoDateTime) + '</span></div>' +
-      (message ? '<pre>' + message + '</pre>' : '');
+  if(isoDateTime) {
+    newItem.innerHTML = '<h3 class="h3 latest-item__header-text"><a href="' + link + '" class="latest-item__header-link">' + name + '</a></h3>' +
+        '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' + getTimeStringFromIsoString(isoDateTime) + '</span></div>' +
+        (message ? '<pre>' + message + '</pre>' : '');
+  } else {
+    newItem.innerHTML = '<p>' + name + '</p>';
+  }
   statusList.appendChild(newItem);
 }
 

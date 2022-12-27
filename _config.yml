@@ -501,6 +501,9 @@ t:
     statusPartialOutage:
       en: "Partial outage"
       fi: "Osittainen katkos"
+    statusNoIncidents:
+      en: "No outages in the last seven days"
+      fi: "Ei katkoja viimeisen seitsemän päivän aikana"
 
   # Footer note of supported browsers
   supported-browsers:
