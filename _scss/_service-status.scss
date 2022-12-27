@@ -65,6 +65,14 @@
       }
     }
 
+    &--under-maintenance {
+      background-color: $yellow;
+
+      .service-status__icon-circle {
+        box-shadow: 0px 0px 10px $yellow;
+      }
+    }
+
     &--partial-outage {
       background-color: $orange;
 

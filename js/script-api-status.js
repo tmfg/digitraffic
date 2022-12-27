@@ -21,11 +21,15 @@ function addApiStatusTabLinksEventListeners() {
 const componentGroups = ['road', 'marine', 'rail'];
 const serviceChildComponentHealthThreshold = 50;
 const statusOperational = 'operational';
+const statusUnderMaintenance = 'under_maintenance';
 const statusPartialOutage = 'partial_outage';
 const statusMajorOutage = 'major_outage';
 
 function serviceIsHealthy(serviceStatus) {
   return serviceStatus.toLowerCase() === statusOperational;
+}
+function serviceIsUnderMaintenance(serviceStatus) {
+  return serviceStatus.toLowerCase() === statusUnderMaintenance;
 }
 
 function getChildComponentHealthPercentage(service, allComponents) {
@@ -40,6 +44,8 @@ function updateServiceStatus(language, evt) {
   components.filter(c => componentGroups.includes(c.name.toLowerCase())).forEach(service => {
     if (serviceIsHealthy(service.status)) {
       addOperationStatus(service.name.toLowerCase(), statusOperational, language);
+    } else if (serviceIsUnderMaintenance(service.status)) {
+        addOperationStatus(service.name.toLowerCase(), statusUnderMaintenance, language);
     } else {
       const childComponentHealthPercentage = getChildComponentHealthPercentage(service, components);
       if (childComponentHealthPercentage > serviceChildComponentHealthThreshold) {
@@ -187,21 +193,23 @@ function addOperationStatus(service, status, language) {
   );
 
   // Update status
-  if (status === "operational") {
+  if (status === statusOperational ) {
     classes.add(`service-status__icon-circle-bottom--operational__${service}`);
     statusText.textContent = t.statusOperational[language];
     statusText.classList.remove("service-status__service-text--loading");
-  } else if (status === "partial_outage") {
+  } else if (status === statusUnderMaintenance) {
+    classes.add("service-status__icon-circle-bottom--under-maintenance");
+    statusText.textContent = t.statusUnderMaintenance[language];
+    statusText.classList.remove("service-status__service-text--loading");
+  } else if (status === statusPartialOutage) {
     classes.add("service-status__icon-circle-bottom--partial-outage");
     statusText.textContent = t.statusPartialOutage[language];
     statusText.classList.remove("service-status__service-text--loading");
-  }
-  else if (status === "major_outage") {
+  } else if (status === statusMajorOutage) {
     classes.add("service-status__icon-circle-bottom--major-outage");
     statusText.textContent = t.statusMajorOutage[language];
     statusText.classList.remove("service-status__service-text--loading");
-  }
-  else {
+  } else {
     statusText.textContent = t.loadingError[language];
     statusText.classList.add("service-status__service-text--loading");
   }

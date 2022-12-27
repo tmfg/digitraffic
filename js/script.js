@@ -37,7 +37,7 @@ function init() {
   getPageLanguage();
 
   // If Service status section exists, get service status
-  document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi") : '';
+  document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi", pageLang) : '';
 
   if (typeof loadDatex2 === "function") {
     loadDatex2();
@@ -51,7 +51,6 @@ function init() {
     loadApiStatuses(pageLang);
   }
 }
-
 
 /* On scroll actions */
 window.onscroll = () => {
@@ -337,15 +336,17 @@ function closeLanguageQuick() {
 
 /* Parallax function for elements with css class ".parallax" */
 function parallax() {
-  parallaxElements.forEach(element => {
-    if (elementInViewport(element)) {
-      let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
-      let windowCenter = window.innerHeight / 2;
-      let diffFromCenter = elementCenter - windowCenter;
-      let translateY = diffFromCenter / 15;
-      element.style.transform = "translate3d(0, " + translateY + "px, 1px)";
-    }
-  });
+  if (parallaxElements) {
+    parallaxElements.forEach(element => {
+      if (elementInViewport(element)) {
+        let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
+        let windowCenter = window.innerHeight / 2;
+        let diffFromCenter = elementCenter - windowCenter;
+        let translateY = diffFromCenter / 15;
+        element.style.transform = "translate3d(0, " + translateY + "px, 1px)";
+      }
+    });
+  }
 }
 
 /* Check if a part of element is in viewport */
