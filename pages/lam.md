@@ -151,7 +151,7 @@ Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioid
 
 | Vakion nimi | Yksikkö | Arvoalue | Kuvaus
 | --- | --- | --- | ---
-| VVAPAAS1<br>VVAPAAS2 | km/h | 18-107 | Suunnan vapaanopeus.
+| VVAPAAS1<br>VVAPAAS2 | km/h | 18-107 | Keskimääräinen oletettu matkanopeus, kun liikennevirta kulkee sille ominaista tavoitenopeutta.
 | MS1<br>MS2 | kpl/h | 200-3600<br>200-14000 | Vapaakaistan maksimi automäärä tunnissa tierekisterin kasvavaan/laskevaan suuntaan.
 | Tien_suunta | Aste (°) | 0–360° | Tien suunta asteina tierekisterin kasvavaan suuntaan. Pohjoinen 0°, itä 90°, jne.
 

@@ -123,6 +123,6 @@ The table below contains values for sensor constants used by computational senso
 
 | Constant | Unit | Value range | Description
 | --- | --- | --- | ---
-| VVAPAAS1<br>VVAPAAS2 | km/h | 18-107 | Speed limit for a direction.
+| VVAPAAS1<br>VVAPAAS2 | km/h | 18-107 | Expected average free flow speed when traffic flows normally.
 | MS1<br>MS2 | kpl/h | 200-3600<br>200-14000 | The maximum amount of vehicles per hour for a lane in an ascending/descending direction.
 | Tien_suunta | Degree (°) | 0–360° | Road direction by degrees in an ascending/descending direction. North 0°, east 90°, etc.
