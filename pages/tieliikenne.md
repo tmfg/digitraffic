@@ -471,9 +471,8 @@ Voit korvata ```<id>```-osan ```#```-merkillä, jolloin kuunnellaan koko joukon 
 
 #### Maanteiden kunnossapitotiedon viimeisin sijainti
 
-- ```maintenance-v2/trackings/#```
-- ```maintenance-v2/trackings/<trackingId>```
-- ```maintenance-v2/trackings/status```
+- ```maintenance-v2/routes/#```
+- ```maintenance-v2/status```
 
 ##### Kunnossapitoviesti
 

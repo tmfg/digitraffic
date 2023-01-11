@@ -474,9 +474,8 @@ Topics are constructed like shown below.
 
 #### Road maintenance information of latest location
 
-- ```maintenance-v2/trackings/#```
-- ```maintenance-v2/trackings/<trackingId>```
-- ```maintenance-v2/trackings/status```
+- ```maintenance-v2/routes/#```
+- ```maintenance-v2/status```
 
 ##### Road maintenance tracking message
 
