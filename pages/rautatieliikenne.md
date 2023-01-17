@@ -645,7 +645,7 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 Tämän rajapinnan kautta voidaan lukea junan GPS:n tuottamaa sijaintitietoa. Kaikissa junissa ei ole GPS:ää käytössä. Jos näiden junien tarkka sijainti kiinnostaa, voidaan seuraamiseen käyttää käyttää esimerkiksi kulkutietoviestejä.
 
-Junan GPS-laite toimittaa sijainnin tällä hetkellä 15 sekunnin välein. Sijainnit saapuvat kuitenkin eri aikoihin, joten kyselyiden cache-aika on yksi sekunti.
+Junan GPS-laite toimittaa sijainnin tällä hetkellä 8 sekunnin välein. Sijainnit saapuvat kuitenkin eri aikoihin, joten kyselyiden cache-aika on yksi sekunti.
 
 GPS-datan tuotto kytkeytyy päälle ja pois veturin kuljettajan toimesta, joten on mahdollista, että juna tuottaa GPS-dataa vaikka se ei olekaan ajossa. Yli 500 metriä lähimmästä radasta sijaitsevat GPS-sijainnit suodatetaan pois.
 
