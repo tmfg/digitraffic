@@ -41,10 +41,10 @@ layout: uncompressed
             </div>
           </div>
 
-          <table>
+          <table style="text-align: left; border-collapse: collapse;">
             <tr>
               <th>Host:</th>
-              <td><select id="domain" name="domain">
+              <td><select id="domain" name="domain" style="width: 100%;">
                 <option value="tie-test.digitraffic.fi">tie-test.digitraffic.fi</option>
                 <option value="tie.digitraffic.fi">tie.digitraffic.fi</option>
                 <option value="meri-test.digitraffic.fi">meri-test.digitraffic.fi</option>
@@ -57,7 +57,7 @@ layout: uncompressed
                 Topic template:
               </th>
               <td>
-                <select id="topic_select" name="topic_select" onchange="updateTopicTemplate()">
+                <select id="topic_select" name="topic_select" onchange="updateTopicTemplate()" style="width: 100%;">
                   <option value="tms-v2/#">tms-v2/&lt;roadStationId>/&lt;sensorId></option>
                   <option value="weather-v2/#">weather-v2/&lt;roadStationId>/&lt;sensorId></option>
                   <option value="maintenance-v2/routes/#">maintenance-v2/routes/#</option>
@@ -70,7 +70,7 @@ layout: uncompressed
             </tr>
             <tr>
               <th>Topic:</td>
-              <td><input type="text" id="topic" name="topic" value=""></td>
+              <td><input type="text" id="topic" name="topic" value="" style="width: 100%;"></td>
             </tr>
             <tr>
               <th></th>
