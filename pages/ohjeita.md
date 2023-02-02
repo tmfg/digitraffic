@@ -35,7 +35,13 @@ Uusista rajapintaversioista tiedotetaan tällä sivustolla sekä
 [meri](https://groups.google.com/g/meridigitrafficfi)- ja
 [rata](https://groups.google.com/u/1/g/rata_digitraffic_fi)- Google-ryhmissä.
 
-Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät sivulle [Tuki → Rajapintojen muutokset](/rajapintojen-tila/muutokset/).
+Rajapintojen deprekoinneista tiedotetaan [Digitraffic-statuspalvelun](https://status.digitraffic.fi) kautta. Lisäksi vanhentuneet rajapinnat palauttavat vastauksissa HTTP-otsakkeet `Deprecation` ja `Sunset`, sisältäen tiedot rajapinnan vanhentumisesta sekä suunnitellusta poistumispäivämäärästä. Esim:
+```
+Deprecation: true
+Sunset: Tue,1 Nov 2022 00:00:00 GMT
+```
+
+Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät myös erilliselle koontisivulle [Tuki → Rajapintojen muutokset](/rajapintojen-tila/muutokset/).
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).

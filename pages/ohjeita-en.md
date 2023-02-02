@@ -29,12 +29,18 @@ The old version will be available for six more months, after which it will be re
 During this period, security and bug fixes to the deprecated API will be considered on a case-by-case basis.
 The image above aims to clarify the life cycle of interfaces.
 
-New api versions will be announced in Digitraffic website and Google-groups 
+New API versions will be announced in Digitraffic website and Google-groups 
 [road](https://groups.google.com/g/roaddigitrafficfi),
 [marine](https://groups.google.com/g/meridigitrafficfi) and
 [rail](https://groups.google.com/u/1/g/rata_digitraffic_fi).
 
-Deprecated APIs and their sunset dates are updated on the page [Support → API changes](/en/api-status/changes/).
+Notices of API deprecations will be given via the [Digitraffic status service](https://status.digitraffic.fi). In addition, deprecated APIs will return the HTTP headers `Deprecation` and `Sunset`. For example:
+```
+Deprecation: true
+Sunset: Tue,1 Nov 2022 00:00:00 GMT
+```
+
+Deprecated APIs and their sunset dates are also updated on the page [Support → API changes](/en/api-status/changes/).
 
 
 ## How can I be aware of updates and incidents?
