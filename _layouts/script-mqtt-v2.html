@@ -125,14 +125,16 @@ layout: uncompressed
           try {
             if (message.destinationName.endsWith("status")) {
               console.log(message.destinationName + ': ' + message.payloadString);
+            } else if (message.payloadString.startsWith("<?xml")) {
+              addMessage(message.destinationName, message.payloadString);
             } else {
-              addMessage(message.destinationName, JSON.parse(message.payloadString));
+              addMessage(message.destinationName, JSON.stringify(JSON.parse(message.payloadString)));
             }
           } catch (error) {
-            // not json, try decompress
+            // not json or xml, try decompress
             try {
               const json = decompressGzipToString(message.payloadString)
-              addMessage(message.destinationName, JSON.parse(json));
+              addMessage(message.destinationName, JSON.stringify(JSON.parse(json)));
             } catch (errorIn) {
               console.error("addMessage failed " + error);
               console.info(message);
@@ -175,7 +177,7 @@ layout: uncompressed
       }
 
       function addMessage(destination, message) {
-        const text = destination + ': ' + JSON.stringify(message);
+        const text = destination + ': ' + message;
 
         while (lines.length > 100) {
           lines.shift();
