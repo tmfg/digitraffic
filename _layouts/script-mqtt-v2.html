@@ -124,7 +124,7 @@ layout: uncompressed
 
           try {
             if (message.destinationName.endsWith("status")) {
-              console.log(message.destination + ': ' + JSON.stringify(message.payloadString));
+              console.log(message.destinationName + ': ' + message.payloadString);
             } else {
               addMessage(message.destinationName, JSON.parse(message.payloadString));
             }
