@@ -138,6 +138,14 @@ Testin osoite vastaavasti meri-test.digitraffic.fi
 
 ### Topicit
 
+Jokaisen tarjottavan datalajin juuressa on myös topikki `status`. Viesti kertoo, milloin data on viimeksi päivittynyt epookki sekunteina. Esim.:
+```
+status: {
+  "updated" : 1676628995
+}
+```
+
+
 #### Alusten topicit
 
 Topicit ovat seuraavanlaista muotoa:

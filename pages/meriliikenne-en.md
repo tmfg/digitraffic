@@ -138,6 +138,13 @@ Address for test is meri-test.digitraffic.fi
 
 ### Topics
 
+At the root of each offered data type is also the topic `status`. The message tells when the data is last updated in epoch seconds. E.g.:
+```
+status: {
+  "updated" : 1676628995
+}
+```
+
 #### Vessel topics
 
 Topics are constructed like this:

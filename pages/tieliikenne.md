@@ -436,6 +436,13 @@ Testin osoite on vastaavasti ```tie-test.digitraffic.fi``` ja portti ```443```.
 
 ### Topicit
 
+Jokaisen tarjottavan datalajin juuressa on myös topikki `status`. Viesti kertoo, milloin data on viimeksi päivittynyt epookki sekunteina. Esim.: 
+```
+status: {
+  "updated" : 1676628995
+}
+```
+
 Voit korvata ```<id>```-osan ```#```-merkillä, jolloin kuunnellaan koko joukon viestejä. Esim. ```tms-v2/#```
 
 #### Ajantasaiset LAM mittaustiedot 

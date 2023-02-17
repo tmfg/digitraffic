@@ -438,6 +438,13 @@ Address for test is ```tie-test.digitraffic.fi``` and port is ```443```.
 
 ### Topics
 
+At the root of each offered data type is also the topic `status`. The message tells when the data is last updated in epoch seconds. E.g.:
+```
+status: {
+  "updated" : 1676628995
+}
+```
+
 You can replace ```<id>```-part in topic with ```#```-character to listen all messages. E.g.. ```tms-v2/#```
 
 Topics are constructed like shown below.
