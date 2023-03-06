@@ -35,7 +35,7 @@ links:
     - http://www.ulkoisen-linkin-osoite.fi
   - - Fintraffic
     - https://fintraffic.fi/
-  - - http://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
+  - - http://tie.digitraffic.fi/api/weathercam/v1/stations/data
 ```
 
 Yksi linkki sisältää sivupalkissa näkyvän tekstin ja linkin osoitteen. Osoite voi olla joko ulkoinen tai sivuston sisäinen osoite. Mikäli linkki on ulkoinen, tulee sen alkaa `http://` tai `https://`. Mikäli linkki on sisäinen tulee sen alkaa `/`-merkillä ja sisältää osoitepalkissa näkyvän osoitteen polku, esim. `/palvelun-esittely`.
@@ -50,7 +50,7 @@ Linkin teksti ja osoite ovat listassa peräkkäin. Tekstin edessä on kaksi väl
 Mikäli osoitteelle ei haluta erillistä näkyvää tekstiä vaan halutaan näyttää itse osoite tekstinä, lisätään vain yksi rivi jossa on edessä kaksi väliviivaa `- -`.
 
 ```
-- - https://tie.digitraffic.fi/api/v1/data/camera-data/camera-data
+- - https://tie.digitraffic.fi/api/weathercam/v1/stations/data
 ```
 
 **HUOM!** Älä muokkaa muita Meta Datan tietoja!

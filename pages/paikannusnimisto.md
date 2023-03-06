@@ -27,17 +27,17 @@ Suomen paikannuspisteaineistoa ylläpidetään jatkuvasti ja se sertifioidaan [T
 
 - [Sertifioimattomat aineistoversiot ](https://tie.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
 
-Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisun rakenteesta - rakenne-erot on kirjattu erilliseen dokumenttiin. Dokumentaatio on ladattavissa [täältä](https://tie.digitraffic.fi/tmc/index.html){:target="_blank"}.
+Sertifioimattoman aineiston rakenne poikkeaa jonkin verran sertifioidun julkaisun rakenteesta. Rakenne-erot on kirjattu [Table_format_differences.zip](https://tie.digitraffic.fi/tmc/noncertified/Table_format_differences.zip){:target="_blank"} -dokumenttiin.
 
 ### Rajapintajakelu
 Paikannuspisteistön sertifioimattomat versiot ovat saatavilla myös rajapintojen kautta:
-- Paikannuspisteet [https://tie.digitraffic.fi/api/v3/metadata/locations](https://tie.digitraffic.fi/api/v3/metadata/locations)
+- Paikannuspisteet [https://tie.digitraffic.fi/api/traffic-message/v1/locations](https://tie.digitraffic.fi/api/traffic-message/v1/locations)
 
-- Aineistoversiot [https://tie.digitraffic.fi/api/v3/metadata/location-versions](https://tie.digitraffic.fi/api/v3/metadata/location-versions)
+- Aineistoversiot [https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions)
 
-- Paikannuspisteiden tyypit [https://tie.digitraffic.fi/api/v3/metadata/locations-types](https://tie.digitraffic.fi/api/v3/metadata/locations-types)
+- Paikannuspisteiden tyypit [https://tie.digitraffic.fi/api/traffic-message/v1/locations/types](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types)
 
-Rajapinnat on dokumentoitu Swaggeriin [https://tie.digitraffic.fi/swagger/#/](https://tie.digitraffic.fi/swagger/#/)
+Rajapinnat on dokumentoitu Swaggeriin [https://tie.digitraffic.fi/swagger/#/Traffic message V1](https://tie.digitraffic.fi/swagger/#/Traffic%20message%20V1)
 
 ## Aineiston kuvaus
 ### Teiden nimeäminen

@@ -32,19 +32,19 @@ The Finnish TMC location database is constantly updated and certified yearly by 
 - [Non-certified versions](https://tie.digitraffic.fi/tmc/index.html?prefix=noncertified){:target="_blank"}
 
 
-The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described [here](https://tie.digitraffic.fi/tmc/index.html){:target="_blank"}.
+The structure of the non-certified data differs slightly from that of certified version. These differences between versions are described in [Table_format_differences.zip](https://tie.digitraffic.fi/tmc/noncertified/Table_format_differences.zip){:target="_blank"} document.
 
 ### Api-content
 
 Non-certified location content is available also via API-calls:
 
-- Locations [https://tie.digitraffic.fi/api/v3/metadata/locations](https://tie.digitraffic.fi/api/v3/metadata/locations)
+- Locations [https://tie.digitraffic.fi/api/traffic-message/v1/locations](https://tie.digitraffic.fi/api/traffic-message/v1/locations)
 
-- Content versions [https://tie.digitraffic.fi/api/v3/metadata/locations-versions](https://tie.digitraffic.fi/api/v3/metadata/locations-versions)
+- Content versions [https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions)
 
-- Location types [https://tie.digitraffic.fi/api/v3/metadata/locations-types](https://tie.digitraffic.fi/api/v3/metadata/locations-types)
+- Location types [https://tie.digitraffic.fi/api/traffic-message/v1/locations/types](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types)
 
-Full API description is located in Swagger-documentation [https://tie.digitraffic.fi/swagger/#/](https://tie.digitraffic.fi/swagger/#/)
+Full API description is located in Swagger-documentation [https://tie.digitraffic.fi/swagger/#/Traffic message V1](https://tie.digitraffic.fi/swagger/#/Traffic%20message%20V1)
 
 ## Event list
 

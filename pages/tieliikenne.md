@@ -192,11 +192,11 @@ Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
 Tilastohaku-lomakkeella voi hakea haluttuja raportteja lam-mittauspisteillä. 
 
-Tietojen hakulomake löytyy [täältä](https://tie-lam-test.digitraffic.fi/){:target="_blank"}.
+Tietojen hakulomake löytyy sivulta [https://tie.digitraffic.fi/ui/tms/history/](https://tie.digitraffic.fi/ui/tms/history/){:target="_blank"}.
 
 #### Raakadatahaku
 
-Mittauspisteiden data on saatavissa myös raakadatana ja lisätietoa löytyy [täältä](lam#lam-raakadata).
+Mittauspisteiden data on saatavissa myös raakadatana ja lisätietoa löytyy [LAM-dokumentaatio/LAM-raakadata](lam#lam-raakadata) -sivulta.
 
 
 ### Liikennetiedotteet

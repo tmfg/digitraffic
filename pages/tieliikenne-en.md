@@ -161,7 +161,7 @@ Forecast sections are normally updated once a year.
 Message contains road sections weather forecasts. Reports are updated every five minutes.
 
 
-### Traffic measurement system (TMS) dataCurrent data from TMS stations
+### Traffic measurement system (TMS)
 
 #### Documentation
 
@@ -193,7 +193,7 @@ Real time data can be read from WebSocket.
 
 Statistics web form can be used to search reports from tms-stations.
 
-Web form to search for statistics can be found [here](https://tie-lam-test.digitraffic.fi){:target="_blank"}.
+Web form to search for statistics can be found at [https://tie.digitraffic.fi/ui/tms/history/](https://tie.digitraffic.fi/ui/tms/history/){:target="_blank"}.
 
 #### Raw data
 

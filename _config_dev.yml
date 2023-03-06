@@ -67,19 +67,19 @@ defaults:
 t:
   # Traffic types
   tieliikenne:
-    en: "Road"
+    en: "Road traffic"
     fi: "Tieliikenne"
     url:
       en: "en/road-traffic"
       fi: "tieliikenne"
   rautatieliikenne:
-    en: "Rail"
+    en: "Railway traffic"
     fi: "Rautatieliikenne"
     url:
       en: "en/railway-traffic"
       fi: "rautatieliikenne"
   meriliikenne:
-    en: "Marine"
+    en: "Marine traffic"
     fi: "Meriliikenne"
     url:
       en: "en/marine-traffic"
