@@ -149,8 +149,8 @@ layout: uncompressed
 
 
         const connectionProperties = {
-          onSuccess: onSuccessCb,
-          onFailure: onFailureCb,
+          onSuccess: onConnectSuccess,
+          onFailure: onConnectFailure,
           reconnect: true,
           cleanSession:false,
           mqttVersion:4,
@@ -180,12 +180,12 @@ layout: uncompressed
         messagesLastMinuteCount = 0;
       }
 
-      function onSuccessCb() {
+      function onConnectSuccess() {
         console.info(Date.now() + ' Connection open. Subscribing to topic ' + topic);
         client.subscribe(topic);
       }
 
-      function onFailureCb(response) {
+      function onConnectFailure(response) {
         console.info(Date.now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
       }
 

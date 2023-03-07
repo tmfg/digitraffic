@@ -536,6 +536,7 @@ The example code disconnects after 30 s.
 
             const connectionProperties = {
                 onSuccess:onConnect,
+                onFailure: onConnectFailure,
                 mqttVersion:4,
                 useSSL:true,
                 userName:"digitraffic",
@@ -560,6 +561,10 @@ The example code disconnects after 30 s.
         function onConnect() {
             console.info(Date.now() + ' Connection open');
             client.subscribe("tms-v2/#");
+        }
+        
+        function onConnectFailure(response) {
+            console.info(Date.now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
         }
 
         function addMessage(message) {
