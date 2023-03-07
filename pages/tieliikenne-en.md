@@ -426,13 +426,15 @@ Walking and cycling counting site values are currently received from Oulu region
 TMC-data can be tracked from following Web Socket APIs. Protocol is MQTT over WebSockets. This allows
 you to subscibe only those topics you are interested in.
 
-Production address is wss://tie.digitraffic.fi:61619/mqtt
+Production address is wss://tie.digitraffic.fi:443/mqtt
 
-You must use SSL when connecting. Also, you need to use following credentials:
+You must use SSL when connecting. 
+
+Also, you need to use following credentials: (:date: *The identification requirement will be removed on March 21, 2022*)
 * userName: ```digitraffic```
 * password: ```digitrafficPassword```
 
-When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port ```61619```, see example below.  
+When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port ```443```, see example below.  
 
 Address for test is ```tie-test.digitraffic.fi``` and port is ```443```.
 
@@ -519,7 +521,7 @@ The example code disconnects after 30 s.
             console.log('trying to connect to road mqtt...');
 
             // enter a valid client name to fix the syntax error
-            client = new Paho.MQTT.Client("tie.digitraffic.fi", 61619, clientName);
+            client = new Paho.MQTT.Client("tie.digitraffic.fi", 443, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);

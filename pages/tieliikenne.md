@@ -424,13 +424,15 @@ Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun alueelt
 
 REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa tieliikenteen automaattisten mittaustietojen (LAM), tiesääasemien tietojen sekä maanteiden kunnossapitotietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
-Tuotannon osoite on wss://tie.digitraffic.fi:61619/mqtt
+Tuotannon osoite on wss://tie.digitraffic.fi:443/mqtt
 
-Kirjautuessa tulee käyttää SSL-yhteyttä.  Lisäksi palveluun täytyy kirjautua seuraavin tiedoin:
+Kirjautuessa tulee käyttää SSL-yhteyttä.
+
+Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (:date: **Tunnistautumis vaatimus poistuu käytöstä 21.3.2022**)
 * userName: ```digitraffic```
 * password: ```digitrafficPassword```
 
-Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja portti ```61619```, esimerkki alempana.
+Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja portti ```443```, esimerkki alempana.
 
 Testin osoite on vastaavasti ```tie-test.digitraffic.fi``` ja portti ```443```.
 
@@ -516,7 +518,7 @@ Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
             console.log('trying to connect to road mqtt...');
 
             // enter a valid client name to fix the syntax error
-            client = new Paho.MQTT.Client("tie.digitraffic.fi", 61619, clientName);
+            client = new Paho.MQTT.Client("tie.digitraffic.fi", 443, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);

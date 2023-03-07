@@ -126,13 +126,15 @@ Data päivitetään 10 minuutin välein.
 Laivojen sijainteja ja älypoijudataa voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa
 ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
-Tuotannon osoite on wss://meri.digitraffic.fi:61619/mqtt
+Tuotannon osoite on wss://meri.digitraffic.fi:443/mqtt
 
-Kirjautuessa tulee käyttää SSL-yhteyttä.  Lisäksi palveluun täytyy kirjautua seuraavin tiedoin:
+Kirjautuessa tulee käyttää SSL-yhteyttä. 
+
+Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (:date: *Tunnistautumis vaatimus poistuu käytöstä 21.3.2022*)
 * userName:digitraffic
 * password:digitrafficPassword
 
-Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 61619, esimerkki alempana.
+Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 443, esimerkki alempana.
 
 Testin osoite vastaavasti meri-test.digitraffic.fi
 
@@ -257,7 +259,7 @@ Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
             console.log('trying to connect marine mqtt...');
 
             // enter a valid client name to fix the syntax error
-            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 61619, clientName);
+            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 443, clientName);
 
             client.onConnectionLost = function (response) {
                 console.info(Date.now() + ' Connection lost:' + response.errorMessage);
@@ -374,7 +376,7 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 client.tls_set()
-client.connect('tie.digitraffic.fi', 61619)
+client.connect('tie.digitraffic.fi', 443)
 
 client.loop_start()
 time.sleep(30)
