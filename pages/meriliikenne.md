@@ -130,7 +130,7 @@ Tuotannon osoite on wss://meri.digitraffic.fi:443/mqtt
 
 Kirjautuessa tulee käyttää SSL-yhteyttä. 
 
-Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (:date: *Tunnistautumis vaatimus poistuu käytöstä 21.3.2022*)
+Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (:bangbang: *Tunnistautumis vaatimus poistuu käytöstä 21.3.2022*)
 * userName:digitraffic
 * password:digitrafficPassword
 

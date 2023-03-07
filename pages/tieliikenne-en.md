@@ -430,7 +430,7 @@ Production address is wss://tie.digitraffic.fi:443/mqtt
 
 You must use SSL when connecting. 
 
-Also, you need to use following credentials: (:date: *The identification requirement will be removed on March 21, 2022*)
+Also, you need to use following credentials: (:bangbang: *The identification requirement will be removed on March 21, 2022*)
 * userName: ```digitraffic```
 * password: ```digitrafficPassword```
 
