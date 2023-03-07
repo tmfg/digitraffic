@@ -126,17 +126,17 @@ Data päivitetään 10 minuutin välein.
 Laivojen sijainteja ja älypoijudataa voi kuunnella WebSocket-rajapinnoista.  Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa
 ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
-Tuotannon osoite on wss://meri.digitraffic.fi:443/mqtt
+Tuotannon osoite on ```wss://meri.digitraffic.fi:443/mqtt```.
 
 Kirjautuessa tulee käyttää SSL-yhteyttä. 
 
-Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (:bangbang: *Tunnistautumis vaatimus poistuu käytöstä 21.3.2022*)
-* userName:digitraffic
-* password:digitrafficPassword
+Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (*Tunnistautumis vaatimus poistuu käytöstä 21.3.2022*)
+* userName: ```digitraffic```
+* password: ```digitrafficPassword```
 
 Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 443, esimerkki alempana.
 
-Testin osoite vastaavasti meri-test.digitraffic.fi
+Testin osoite vastaavasti ```meri-test.digitraffic.fi```.
 
 ### Topicit
 

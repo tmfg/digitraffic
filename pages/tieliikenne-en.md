@@ -426,17 +426,17 @@ Walking and cycling counting site values are currently received from Oulu region
 TMC-data can be tracked from following Web Socket APIs. Protocol is MQTT over WebSockets. This allows
 you to subscibe only those topics you are interested in.
 
-Production address is wss://tie.digitraffic.fi:443/mqtt
+Production address is ```wss://tie.digitraffic.fi:443/mqtt```.
 
 You must use SSL when connecting. 
 
-Also, you need to use following credentials: (:bangbang: *The identification requirement will be removed on March 21, 2022*)
+Also, you need to use following credentials: (*The identification requirement will be removed on March 21, 2022*)
 * userName: ```digitraffic```
 * password: ```digitrafficPassword```
 
 When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port ```443```, see example below.  
 
-Address for test is ```tie-test.digitraffic.fi``` and port is ```443```.
+Address for test is ```tie-test.digitraffic.fi```.
 
 ### Topics
 

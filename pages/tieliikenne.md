@@ -424,17 +424,17 @@ Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun alueelt
 
 REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa tieliikenteen automaattisten mittaustietojen (LAM), tiesääasemien tietojen sekä maanteiden kunnossapitotietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
 
-Tuotannon osoite on wss://tie.digitraffic.fi:443/mqtt
+Tuotannon osoite on ```wss://tie.digitraffic.fi:443/mqtt```.
 
 Kirjautuessa tulee käyttää SSL-yhteyttä.
 
-Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (:bangbang: **Tunnistautumis vaatimus poistuu käytöstä 21.3.2022**)
+Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (**Tunnistautumis vaatimus poistuu käytöstä 21.3.2022**)
 * userName: ```digitraffic```
 * password: ```digitrafficPassword```
 
 Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja portti ```443```, esimerkki alempana.
 
-Testin osoite on vastaavasti ```tie-test.digitraffic.fi``` ja portti ```443```.
+Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
 
 ### Topicit
 
