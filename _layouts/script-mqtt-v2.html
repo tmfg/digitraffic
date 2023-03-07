@@ -105,6 +105,8 @@ layout: uncompressed
       let messagesLastMinuteCount = 0, client;
       const port = 443;
       let topic = "";
+      const user = 'digitraffic';
+      const pass = 'digitrafficPassword';
 
       window.setInterval(logMessageCount, 60*1000);
 
@@ -117,8 +119,9 @@ layout: uncompressed
         client = new Paho.Client(host, port, clientId);
 
         client.onConnectionLost = function (response) {
-          console.info(Date.now() + ' Connection lost:' + response.errorMessage);
+          console.info(Date.now() + ' Connection lost: ' + response.errorCode+ ': ' + response.errorMessage);
         };
+
         client.onMessageArrived = function(message) {
           messagesLastMinuteCount++;
 
@@ -144,13 +147,19 @@ layout: uncompressed
           updateList();
         };
 
+
         const connectionProperties = {
-          onSuccess:onConnect,
+          onSuccess: onSuccessCb,
+          onFailure: onFailureCb,
           reconnect: true,
           cleanSession:false,
           mqttVersion:4,
           useSSL:true
         };
+        if (!host.includes('test')) {
+          connectionProperties['userName'] = user;
+          connectionProperties['password'] = pass;
+        }
 
         client.connect(connectionProperties);
       }
@@ -171,9 +180,13 @@ layout: uncompressed
         messagesLastMinuteCount = 0;
       }
 
-      function onConnect() {
+      function onSuccessCb() {
         console.info(Date.now() + ' Connection open. Subscribing to topic ' + topic);
         client.subscribe(topic);
+      }
+
+      function onFailureCb(response) {
+        console.info(Date.now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
       }
 
       function addMessage(destination, message) {
