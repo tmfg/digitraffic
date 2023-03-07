@@ -6,6 +6,7 @@ encoding: utf-8
 
 plugins_dir:
   - jekyll-babel
+  - jemoji
 
 sass:
   sass_dir: _scss
