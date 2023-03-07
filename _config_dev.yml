@@ -7,7 +7,6 @@ incremental: true
 
 plugins_dir:
   - jekyll-babel
-  - jemoji
 
 sass:
   sass_dir: _scss
