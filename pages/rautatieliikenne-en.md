@@ -116,9 +116,9 @@ Resources:
 
 .zip files are generated daily around 5:00. Packages include all current and future trains
 
-* GTFS for passenger trains: https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip
-* GTFS for all trains: https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip
-* GTFS-RT locations: https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations
-* GTFS-RT updates: https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates
+* GTFS for passenger trains: [https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
+* GTFS for all trains: [https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
+* GTFS-RT locations: [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
+* GTFS-RT updates: [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
 
 Data is licensed under [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
