@@ -170,8 +170,8 @@ The [TMS documentation](lam) contains descriptions of TMS data.
 #### Simplified and detailed information of stations
 
 [```/api/tms/v1/stations```](https://tie.digitraffic.fi/api/tms/v1/stations){:target="_blank"}\
-[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi/api/tms/v1/stations/1012){:target="_blank"}
-[```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/1012/sensor-constants){:target="_blank"}
+[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi/api/tms/v1/stations/23001){:target="_blank"}\
+[```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/sensor-constants){:target="_blank"}
 
 #### Available computational sensors information
 
@@ -180,7 +180,7 @@ The [TMS documentation](lam) contains descriptions of TMS data.
 #### Data for all stations and for single station
 
 [```/api/tms/v1/stations/data```](https://tie.digitraffic.fi/api/tms/v1/stations/data){:target="_blank"}\
-[```/api/tms/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/tms/v1/stations/1012/data){:target="_blank"}
+[```/api/tms/v1/stations/{id}/data```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data){:target="_blank"}
 
 Response message contains TMS (Traffic Measurement System)–stations measurement data.
 

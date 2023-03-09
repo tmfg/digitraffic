@@ -169,8 +169,8 @@ Keliennusteet päivittyvät viiden minuutin välein.
 #### Asemien yksinkertaiset tiedot ja yksittäisen aseman tarkemmat tiedot
 
 [```/api/tms/v1/stations```](https://tie.digitraffic.fi//api/tms/v1/stations){:target="_blank"}\
-[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi//api/tms/v1/stations/23001){:target="_blank"}
-[```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/1012/sensor-constants){:target="_blank"}
+[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi//api/tms/v1/stations/23001){:target="_blank"}\
+[```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/sensor-constants){:target="_blank"}
 
 #### Saatavilla olevien laskennallisien antureiden tiedot
 
