@@ -32,6 +32,11 @@ Using the data from this service, it is possible to answer the following questio
 
 English version of the documentation page contains only GraphQL and Swagger (in a short form). You might get more information using Google Translate with the [Finnish documentation](https://www.digitraffic.fi/rautatieliikenne/)
 
+# Index
+1. [GraphQL](#graphql)
+2. [Swagger](#swagger)
+3. [GTFS](#gtfs)
+
 # GraphQL
 
 Resources:
@@ -107,6 +112,11 @@ Resources:
 
 [Swagger documentation](https://rata.digitraffic.fi/swagger/).
 
+# GTFS
 
+* GTFS for passenger trains: https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip
+* GTFS for all trains: https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip
+* GTFS-RT locations: https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations
+* GTFS-RT updates: https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates
 
 Data is licensed under [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
