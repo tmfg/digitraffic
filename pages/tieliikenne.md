@@ -493,7 +493,7 @@ Voit kokeilla viestin purkamista esim. https://facia.dev/tools/compress-decompre
 - ```maintenance-v2/routes/<domain>```
 - ```maintenance-v2/status```
 
-Sallitu domain-parametrin arvot löytyvät https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains -rajapinnasta
+Sallitu domain-parametrin arvot ovat `state-roads`, `autori-kuopio`, `autori-oulu` and `paikannin-kuopio`.
 
 
 ##### Kunnossapitoviesti

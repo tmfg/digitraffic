@@ -495,7 +495,7 @@ You can test decompressing it i.e. at https://facia.dev/tools/compress-decompres
 - ```maintenance-v2/routes/<domain>```
 - ```maintenance-v2/status```
 
-Allowed domain values can be found at https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains -API
+Allowed domain values are `state-roads`, `autori-kuopio`, `autori-oulu` and `paikannin-kuopio`.
 
 
 ##### Road maintenance tracking message
