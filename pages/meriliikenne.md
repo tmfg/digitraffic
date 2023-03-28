@@ -130,10 +130,6 @@ Tuotannon osoite on ```wss://meri.digitraffic.fi:443/mqtt```.
 
 Kirjautuessa tulee käyttää SSL-yhteyttä. 
 
-Lisäksi palveluun täytyy kirjautua seuraavin tiedoin: (*Tunnistautumis vaatimus poistuu käytöstä 21.3.2022*)
-* userName: ```digitraffic```
-* password: ```digitrafficPassword```
-
 Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 443, esimerkki alempana.
 
 Testin osoite vastaavasti ```meri-test.digitraffic.fi```.

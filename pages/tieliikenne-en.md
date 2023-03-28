@@ -430,10 +430,6 @@ Production address is ```wss://tie.digitraffic.fi:443/mqtt```.
 
 You must use SSL when connecting. 
 
-Also, you need to use following credentials: (*The identification requirement will be removed on March 21, 2022*)
-* userName: ```digitraffic```
-* password: ```digitrafficPassword```
-
 When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port ```443```, see example below.  
 
 Address for test is ```tie-test.digitraffic.fi```.
@@ -451,6 +447,22 @@ You can replace ```<id>```-part in topic with ```#```-character to listen all me
 
 Topics are constructed like shown below.
 
+
+#### Current data of road weather stations
+
+- ```weather-v2/<roadStationId>/<sensorId>```
+- ```weather-v2/status```
+
+##### Weather station sensor measurement message
+
+```
+{
+    "value":11068,
+    "time":1667973021
+}
+```
+
+
 #### Current data from TMS stations 
 
 - ```tms-v2/<roadStationId>/<sensorId>```
@@ -467,24 +479,24 @@ Topics are constructed like shown below.
 }
 ```
 
-#### Current data of road weather stations
 
-- ```weather-v2/<roadStationId>/<sensorId>```
-- ```weather-v2/status```
+#### Traffic messages
 
-##### Weather station sensor measurement message
+- ```traffic-message-v2/datex2/<situationType>``` Message payload is in Datex2 XML format.
+- ```traffic-message-v2/simple/<situationType>``` Message payload is in simple JSON that is gzipped and base64-coded
 
-```
-{
-    "value":11068,
-    "time":1667973021
-}
-```
+Situation type: `TRAFFIC_ANNOUNCEMENT` | `EXEMPTED_TRANSPORT` | `WEIGHT_RESTRICTION` | `ROAD_WORK`
+
+Example simple JSON gzipped and base64-coded value: `H4sIAAAAAAAAAO1VS27bMBDd5xSE1rZCfWI7XtWIk9ZtqgSN0wBpg4KR6JiVRAokFSAIvOtRfIZeQBfrSKJs+RcUXXfjD+dx5s0bzszrEUKWfsmohYbIuqBE55JanfL0iYqUavlSWl7hoA28FozrCganoRAyYpxoqkrjN+Se2J6P+7jXQT3Hdr2ed9JHDwBeVI4zKTIqNavhxrViOieaCT6JqgjvbyfjE+zjUw97TaAVZtrwmH4ZXVxMzn6MguDqNjg7/3weTBu0lmQ2Y+GIc5HzkKaU69W982B8Pm6Az1QqcFoaTs2RpAklik5ZWuNd7Hpd7HRdf4oHQ9cdYs8eDNz7LRd78adDDw+9no29/gpPWqSMaLUOYEsIf8rJk6nIxFwpE2I6MWkzily/g0aKxTFJiI0uGYsp5xRUjYSmSJS/tUjzPKJKA2DKwC8Hw5zZaO0zEWGl6LoSpqQ5h9KfiagK2OusTc2NKXlMaJCnj1SWEKd/CPN1La/l2I5j+57VwgK/ULKsIWFyQ8/FMmFJUizRJZlrhrroY7FMVbFsZf0dAsiYphlDGSnPhugavgkkjCZKdItfjLPiN3I6LorTDlI5ZEUIRzckATXSYhkz2zJUFjuajKkmLFFb0khBolEUSarU5V7xqhfOUiJf6i7ZMoI5zTkLWUYSpqvuspqMWroYP+KZwTOpe65Ysp/FUnc/gBB0G2oqViFvcpGybUCL9y4lYy8N8K72mW5o2KQ62AFEDCQ3PD3P7W3YF1tESALNf3ZIu40KNO/P9Qe9naCcmGZrldp6k5rj+v1Naq1/GzQtRUPBo/813CfOP9ewf7iGrY58u4Y+Phn8ZQ0jJtcJW7fBp+DqLrCOti+uG39Wrz8zkB9W56V2d0LG13PYCTtWDUN/xKNxLvdNUmAu9aE9gocY37eHIeXR4R3iuLbnePe7A4tEEStDk2TCZ0KmKx5Wsxa66CdBMYXHWu0HBPsqFkrBwJxrnanh8XGyWiDVnrBn8OzrBQo/j9cLQwHFeuJbFysIbBfaOIipinOFpiSFJU9rsotGLnjiMIHDjYaysrngdcrYxdh1MF6HoymM4Mqma4f2Zpx3GzxNNBMrIprcZvBJ3xDVx5Wgi6PFH4BXin4LCQAA`
+You can test decompressing it i.e. at https://facia.dev/tools/compress-decompress/gzip-decompress/
 
 #### Road maintenance information of latest location
 
-- ```maintenance-v2/routes/#```
+- ```maintenance-v2/routes/<domain>```
 - ```maintenance-v2/status```
+
+Allowed domain values can be found at https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains -API
+
 
 ##### Road maintenance tracking message
 
@@ -499,6 +511,7 @@ Topics are constructed like shown below.
     "y":62.567092
 }
 ```
+
 
 #### A simple JavaScript Web Socket client
 The code below refers to the missing variable **clientName**. Initialize it with the name of your application.

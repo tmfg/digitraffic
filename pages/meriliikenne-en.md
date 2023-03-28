@@ -130,10 +130,6 @@ Production address is ```wss://meri.digitraffic.fi:443/mqtt```.
 
 You must use SSL when connecting.  
 
-Also, you need to use following credentials:  (*The identification requirement will be removed on March 21, 2022*)
-* userName: ```digitraffic```
-* password: ```digitrafficPassword```
-
 When using Paho JS-client the address is plain meri.digitraffic.fi and port 443, see example below.  
 
 Address for test is ```meri-test.digitraffic.fi```.
