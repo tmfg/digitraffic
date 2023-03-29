@@ -88,21 +88,24 @@ function addMessage(clazz, message) {
     let start = "-";
     let end = "-";
     let timeDur = message.latestTimeAndDuration;
-    if (timeDur) {
 
-        start = toIsoLocalDate(timeDur.startTime);
+    const startDateTime = timeDur.startTime;
+    const endDateTime = timeDur.endTime;
+    if (startDateTime) {
 
-        if (timeDur.endTime) {
-            end = toIsoLocalDate(timeDur.endTime);
-            let days = Math.round((Date.parse(timeDur.endTime) - Date.parse(timeDur.startTime)) / 86400000);
+        start = startDateTime.toISOString();
+
+        if (endDateTime) {
+            end = endDateTime.toISOString();
+            let days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 86400000);
 
             end = end + " (" + days + " days)";
-            if (Date.parse(timeDur.endTime) < new Date().getTime()) {
+            if (endDateTime.getTime() < new Date().getTime()) {
                 warn = " warn";
             }
         } else {
 
-          let days = Math.round((new Date() - Date.parse(timeDur.startTime)) / 86400000);
+          let days = Math.round((new Date().getTime() - startDateTime.getTime()) / 86400000);
           end = "(" + days + " days)";
 
           if (days > 14) {
@@ -119,7 +122,7 @@ function addMessage(clazz, message) {
             $('<td/>', {"class": "datex2-col4" + warn}).text(end),
             $('<td/>', {"class": "datex2-col5"}).text(getTitle(message.properties.announcements)),
             $('<td/>', {"class": "datex2-col6"}).append(
-                    $('<a />', { "target" : "_blank", "href": TRAFFIC_MESSAGES_DATEX2_URL + "/" + message.properties.situationId + "?latest=true" }).text("xml")
+                    $('<a />', { "target" : "_blank", "href": TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + ".datex2?latest=true" }).text("xml")
             ),
             $('<td/>', {"class": "datex2-col7"}).append(
                     $('<a />', { "target" : "_blank", "href": TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + "?latest=true" }).text("json")
