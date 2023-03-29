@@ -66,13 +66,9 @@ function processResponse(resp, requestType) {
         console.log("Response:", resp);
 
         $("#date_" + requestType).text("Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " + resp.features.length + " pcs");
-
-        const sorted = resp.features.sort(function(a, b) {
-          const timeDurA = getDateTime(a.properties.announcements);
-          const timeDurB = getDateTime(b.properties.announcements);
-          const startA = new Date(timeDurA.startTime);
-          const startB = new Date(timeDurB.startTime);
-          return startA - startB;
+        const enrichedResponse = enrichDatexData(resp);
+        const sorted = enrichedResponse.features.sort(function(a, b) {
+          return (a?.latestTimeAndDuration?.startTime || 0) - (b?.latestTimeAndDuration?.startTime || 0);
         });
         for (var item of sorted) {
             addMessage(requestType, item);
@@ -80,11 +76,18 @@ function processResponse(resp, requestType) {
     }
 }
 
+function enrichDatexData(data) {
+  return { ...data, features: data.features.map((feature) => {
+    return { ...feature,
+    latestTimeAndDuration: getLatestDateTimeInterval(feature.properties.announcements)};
+  }) }
+}
+
 function addMessage(clazz, message) {
     let warn = "";
     let start = "-";
     let end = "-";
-    let timeDur = getDateTime(message.properties.announcements);
+    let timeDur = message.latestTimeAndDuration;
     if (timeDur) {
 
         start = toIsoLocalDate(timeDur.startTime);
@@ -128,14 +131,23 @@ function addMessage(clazz, message) {
     )
 }
 
-function getDateTime(announcements) {
-    for (var ann of announcements) {
-        if (ann.timeAndDuration) {
-            return ann.timeAndDuration;
-        }
-    }
+function getLatestDateTimeInterval(announcements) {
+  return announcements
+    .map(({ roadWorkPhases, timeAndDuration }) => {
+      const phasesTimes = roadWorkPhases.map(({ timeAndDuration }) => stringObjectToDateObject(timeAndDuration));
+      return (phasesTimes.length === 0) ? stringObjectToDateObject(timeAndDuration) : phasesTimes;
+    })
+    .flat()
+    .reduce((latest, current) => ((latest?.endTime > current?.endTime) ? latest : current), null);
+}
 
-    return null;
+function stringObjectToDateObject(o) {
+  return Object.keys(o).reduce((res, k) => {
+    return { ...res, 
+      ...(o[k] !== null && { [k]: new Date(o[k]) })
+    }
+  },
+  {});
 }
 
 function getTitle(announcements) {
