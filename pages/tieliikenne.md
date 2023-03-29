@@ -422,7 +422,7 @@ Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun alueelt
 
 ## MQTT WebSocket -rajapinnat
 
-REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa tieliikenteen automaattisten mittaustietojen (LAM), tiesääasemien tietojen sekä maanteiden kunnossapitotietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton topicien avulla.
+REST/JSON-rajapinnan lisäksi tarjolla on WebSocket-rajapinta, joka mahdollistaa tieliikenteen automaattisten mittaustietojen (LAM), tiesääasemien tietojen sekä maanteiden kunnossapitotietojen kuuntelemisen. Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan haluttujen tietojen vastaanoton aiheiden avulla.
 
 Tuotannon osoite on ```wss://tie.digitraffic.fi:443/mqtt```.
 
@@ -432,9 +432,9 @@ Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja po
 
 Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
 
-### Topicit
+### Aiheet
 
-Jokaisen tarjottavan datalajin juuressa on myös topikki `status`. Viesti kertoo, milloin data on viimeksi päivittynyt epookki sekunteina. Esim.: 
+Jokaisen tarjottavan datalajin juuressa on myös aihe `status`. Viesti kertoo, milloin data on viimeksi päivittynyt epookki sekunteina. Esim.: 
 ```
 status: {
   "updated" : 1676628995
@@ -482,10 +482,15 @@ Voit korvata ```<id>```-osan ```#```-merkillä, jolloin kuunnellaan koko joukon 
 - ```traffic-message-v2/datex2/<situationType>``` Viestin sisältö on Datex2 XML muotoa.
 - ```traffic-message-v2/simple/<situationType>``` Viestin sisältö on liikennetiedotteiden simppeli JSON joka on gzip-pakattu ja base64-koodattu.
 
-Mahdolliset situationType arvot:: `TRAFFIC_ANNOUNCEMENT` | `EXEMPTED_TRANSPORT` | `WEIGHT_RESTRICTION` | `ROAD_WORK`
+Mahdolliset situationType -arvot: `TRAFFIC_ANNOUNCEMENT`, `EXEMPTED_TRANSPORT`, `WEIGHT_RESTRICTION`, `ROAD_WORK`
 
 Esimerkki simppeli JSON pakattu ja koodattu arvo: `H4sIAAAAAAAAAO1VS27bMBDd5xSE1rZCfWI7XtWIk9ZtqgSN0wBpg4KR6JiVRAokFSAIvOtRfIZeQBfrSKJs+RcUXXfjD+dx5s0bzszrEUKWfsmohYbIuqBE55JanfL0iYqUavlSWl7hoA28FozrCganoRAyYpxoqkrjN+Se2J6P+7jXQT3Hdr2ed9JHDwBeVI4zKTIqNavhxrViOieaCT6JqgjvbyfjE+zjUw97TaAVZtrwmH4ZXVxMzn6MguDqNjg7/3weTBu0lmQ2Y+GIc5HzkKaU69W982B8Pm6Az1QqcFoaTs2RpAklik5ZWuNd7Hpd7HRdf4oHQ9cdYs8eDNz7LRd78adDDw+9no29/gpPWqSMaLUOYEsIf8rJk6nIxFwpE2I6MWkzily/g0aKxTFJiI0uGYsp5xRUjYSmSJS/tUjzPKJKA2DKwC8Hw5zZaO0zEWGl6LoSpqQ5h9KfiagK2OusTc2NKXlMaJCnj1SWEKd/CPN1La/l2I5j+57VwgK/ULKsIWFyQ8/FMmFJUizRJZlrhrroY7FMVbFsZf0dAsiYphlDGSnPhugavgkkjCZKdItfjLPiN3I6LorTDlI5ZEUIRzckATXSYhkz2zJUFjuajKkmLFFb0khBolEUSarU5V7xqhfOUiJf6i7ZMoI5zTkLWUYSpqvuspqMWroYP+KZwTOpe65Ysp/FUnc/gBB0G2oqViFvcpGybUCL9y4lYy8N8K72mW5o2KQ62AFEDCQ3PD3P7W3YF1tESALNf3ZIu40KNO/P9Qe9naCcmGZrldp6k5rj+v1Naq1/GzQtRUPBo/813CfOP9ewf7iGrY58u4Y+Phn8ZQ0jJtcJW7fBp+DqLrCOti+uG39Wrz8zkB9W56V2d0LG13PYCTtWDUN/xKNxLvdNUmAu9aE9gocY37eHIeXR4R3iuLbnePe7A4tEEStDk2TCZ0KmKx5Wsxa66CdBMYXHWu0HBPsqFkrBwJxrnanh8XGyWiDVnrBn8OzrBQo/j9cLQwHFeuJbFysIbBfaOIipinOFpiSFJU9rsotGLnjiMIHDjYaysrngdcrYxdh1MF6HoymM4Mqma4f2Zpx3GzxNNBMrIprcZvBJ3xDVx5Wgi6PFH4BXin4LCQAA`
-Voit kokeilla viestin purkamista esim. https://facia.dev/tools/compress-decompress/gzip-decompress/ -sivulla.
+Voit kokeilla viestin purkamista esim. [https://facia.dev/tools/compress-decompress/gzip-decompress/](https://facia.dev/tools/compress-decompress/gzip-decompress/) -sivulla.
+
+Tai komentoriviltä:
+
+* Linux: `echo "<viesti>" | base64 -d | gzip -d`
+* MacOS: `echo "<viesti>" | base64 -d -i - -o - | gzip -d`
 
 
 #### Maanteiden kunnossapitotiedon viimeisin sijainti
