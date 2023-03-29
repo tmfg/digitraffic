@@ -68,10 +68,8 @@ function processResponse(resp, requestType) {
         $("#date_" + requestType).text("Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " + resp.features.length + " pcs");
 
         const sorted = resp.features.sort(function(a, b) {
-          const timeDurA = getDateTime(a.properties.announcements);
-          const timeDurB = getDateTime(b.properties.announcements);
-          const startA = new Date(timeDurA.startTime);
-          const startB = new Date(timeDurB.startTime);
+          const startA = getStartDateTime(a.properties.announcements);
+          const startB = getStartDateTime(b.properties.announcements);
           return startA - startB;
         });
         for (var item of sorted) {
@@ -84,22 +82,24 @@ function addMessage(clazz, message) {
     let warn = "";
     let start = "-";
     let end = "-";
-    let timeDur = getDateTime(message.properties.announcements);
-    if (timeDur) {
 
-        start = toIsoLocalDate(timeDur.startTime);
+    const startDateTime = getStartDateTime(message.properties.announcements)
+    const endDateTime = getEndDateTime(message.properties.announcements)
+    if (startDateTime) {
 
-        if (timeDur.endTime) {
-            end = toIsoLocalDate(timeDur.endTime);
-            let days = Math.round((Date.parse(timeDur.endTime) - Date.parse(timeDur.startTime)) / 86400000);
+        start = startDateTime.toISOString();
+
+        if (endDateTime) {
+            end = endDateTime.toISOString();
+            let days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 86400000);
 
             end = end + " (" + days + " days)";
-            if (Date.parse(timeDur.endTime) < new Date().getTime()) {
+            if (endDateTime.getTime() < new Date().getTime()) {
                 warn = " warn";
             }
         } else {
 
-          let days = Math.round((new Date() - Date.parse(timeDur.startTime)) / 86400000);
+          let days = Math.round((new Date().getTime() - startDateTime.getTime()) / 86400000);
           end = "(" + days + " days)";
 
           if (days > 14) {
@@ -116,7 +116,7 @@ function addMessage(clazz, message) {
             $('<td/>', {"class": "datex2-col4" + warn}).text(end),
             $('<td/>', {"class": "datex2-col5"}).text(getTitle(message.properties.announcements)),
             $('<td/>', {"class": "datex2-col6"}).append(
-                    $('<a />', { "target" : "_blank", "href": TRAFFIC_MESSAGES_DATEX2_URL + "/" + message.properties.situationId + "?latest=true" }).text("xml")
+                    $('<a />', { "target" : "_blank", "href": TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + ".datex2?latest=true" }).text("xml")
             ),
             $('<td/>', {"class": "datex2-col7"}).append(
                     $('<a />', { "target" : "_blank", "href": TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + "?latest=true" }).text("json")
@@ -128,13 +128,19 @@ function addMessage(clazz, message) {
     )
 }
 
-function getDateTime(announcements) {
-    for (var ann of announcements) {
-        if (ann.timeAndDuration) {
-            return ann.timeAndDuration;
-        }
+function getStartDateTime(anouncements) {
+    const times = anouncements.filter(a => a.timeAndDuration && a.timeAndDuration.startTime).map(a => new Date(a.timeAndDuration.startTime).getTime());
+    if (times.length > 0) {
+        return new Date(Math.min(...times));
     }
+    return null;
+}
 
+function getEndDateTime(anouncements) {
+    const times = anouncements.filter(a => a.timeAndDuration && a.timeAndDuration.endTime).map(a => new Date(a.timeAndDuration.endTime).getTime());
+    if (times.length > 0) {
+        return new Date(Math.max(...times));
+    }
     return null;
 }
 
