@@ -66,9 +66,11 @@ function processResponse(resp, requestType) {
         console.log("Response:", resp);
 
         $("#date_" + requestType).text("Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " + resp.features.length + " pcs");
-        const enrichedResponse = enrichDatexData(resp);
-        const sorted = enrichedResponse.features.sort(function(a, b) {
-          return (a?.latestTimeAndDuration?.startTime || 0) - (b?.latestTimeAndDuration?.startTime || 0);
+
+        const sorted = resp.features.sort(function(a, b) {
+          const startA = getStartDateTime(a.properties.announcements);
+          const startB = getStartDateTime(b.properties.announcements);
+          return startA - startB;
         });
         for (var item of sorted) {
             addMessage(requestType, item);
@@ -76,21 +78,13 @@ function processResponse(resp, requestType) {
     }
 }
 
-function enrichDatexData(data) {
-  return { ...data, features: data.features.map((feature) => {
-    return { ...feature,
-    latestTimeAndDuration: getLatestDateTimeInterval(feature.properties.announcements)};
-  }) }
-}
-
 function addMessage(clazz, message) {
     let warn = "";
     let start = "-";
     let end = "-";
-    let timeDur = message.latestTimeAndDuration;
 
-    const startDateTime = timeDur.startTime;
-    const endDateTime = timeDur.endTime;
+    const startDateTime = getStartDateTime(message.properties.announcements)
+    const endDateTime = getEndDateTime(message.properties.announcements)
     if (startDateTime) {
 
         start = startDateTime.toISOString();
@@ -134,23 +128,20 @@ function addMessage(clazz, message) {
     )
 }
 
-function getLatestDateTimeInterval(announcements) {
-  return announcements
-    .map(({ roadWorkPhases, timeAndDuration }) => {
-      const phasesTimes = roadWorkPhases.map(({ timeAndDuration }) => stringObjectToDateObject(timeAndDuration));
-      return (phasesTimes.length === 0) ? stringObjectToDateObject(timeAndDuration) : phasesTimes;
-    })
-    .flat()
-    .reduce((latest, current) => ((latest?.endTime > current?.endTime) ? latest : current), null);
+function getStartDateTime(anouncements) {
+    const times = anouncements.filter(a => a.timeAndDuration && a.timeAndDuration.startTime).map(a => new Date(a.timeAndDuration.startTime).getTime());
+    if (times.length > 0) {
+        return new Date(Math.min(...times));
+    }
+    return null;
 }
 
-function stringObjectToDateObject(o) {
-  return Object.keys(o).reduce((res, k) => {
-    return { ...res, 
-      ...(o[k] !== null && { [k]: new Date(o[k]) })
+function getEndDateTime(anouncements) {
+    const times = anouncements.filter(a => a.timeAndDuration && a.timeAndDuration.endTime).map(a => new Date(a.timeAndDuration.endTime).getTime());
+    if (times.length > 0) {
+        return new Date(Math.max(...times));
     }
-  },
-  {});
+    return null;
 }
 
 function getTitle(announcements) {

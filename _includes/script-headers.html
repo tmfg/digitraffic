@@ -25,13 +25,7 @@
 
   <script type="text/javascript">
     function toIsoLocalDate(utc) {
-      let utcDate;
-      if (typeof utc === 'Date') {
-        utcDate = utc;
-      } else {
-        utcDate = new Date(utc);
-      }
-      const utcDateMs = utcDate.getTime();
+      const utcDateMs = new Date(utc).getTime();
       const offsetMs = new Date().getTimezoneOffset() * 60 * 1000 * -1;
       const localMs = utcDateMs + offsetMs;
       const localDateTime = new Date(localMs);
