@@ -61,7 +61,7 @@ Merivaroituksiin liittyvää metadataa ei ole digitrafficista saatavilla.
 
 ### Satamakäynnit
 
-[```https://meri.digitraffic.fi/api/port-call/v1/port-calls```](https://meri.digitraffic.fi/api/port-call/v1/port-calls){:target="_blank"}
+[```https://meri.digitraffic.fi/api/port-calls/v1/port-calls```](https://meri.digitraffic.fi/api/port-call/v1/port-calls){:target="_blank"}
 
 Satamakäynnit haetaan [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"} -järjestelmästä.
 
