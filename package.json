@@ -16,10 +16,10 @@
     "del": "^7.0.0",
     "extend": "^3.0.2",
     "gulp": "^4.0.2",
-    "gulp-clean": ">=0.4.0",
+    "gulp-clean": "^0.4.0",
     "gulp-shell": "^0.8.0",
     "lodash": "^4.17.21",
-    "lodash.template": ">=4.5.0"
+    "lodash.template": "^4.5.0"
   },
   "dependencies": {
     "xmlhttprequest": "^1.8.0"
