@@ -5,7 +5,7 @@ ref: kuntien-liikennedatan-pilotointi
 issue-number: DPO-1656
 traffictypes:
   - Road traffic
-status: inprogress
+status: finished
 date: 2022-01-01
 ---
 

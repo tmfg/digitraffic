@@ -5,7 +5,7 @@ ref: kuntien-liikennedatan-pilotointi
 issue-number: DPO-1656
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2022-01-01
 ---
 

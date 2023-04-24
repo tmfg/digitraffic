@@ -5,7 +5,7 @@ ref: tie-lam-arkisto
 issue-number: DPO-1566
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2022-01-01
 ---
 
