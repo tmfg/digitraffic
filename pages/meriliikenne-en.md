@@ -271,9 +271,7 @@ The example code disconnects after 30 s.
                 onSuccess:onConnect,
                 onFailure: onConnectFailure,
                 mqttVersion:4,
-                useSSL:true,
-                userName:"digitraffic",
-                password:"digitrafficPassword"
+                useSSL:true
             };
 
             client.connect(connectionProperties);
@@ -368,7 +366,6 @@ def on_connect(client, userdata, flags, rc):
 client_name = '{}; {}'.format(APP_NAME, str(uuid.uuid4()))
 client = mqtt.Client(client_name, transport="websockets")
 
-client.username_pw_set('digitraffic', 'digitrafficPassword')
 client.on_connect = on_connect
 client.on_message = on_message
 

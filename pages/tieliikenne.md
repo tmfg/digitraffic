@@ -553,9 +553,7 @@ Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
                 onSuccess:onConnect,
                 onFailure: onConnectFailure,
                 mqttVersion:4,
-                useSSL:true,
-                userName:"digitraffic",
-                password:"digitrafficPassword"
+                useSSL:true
             };
 
             client.connect(connectionProperties);

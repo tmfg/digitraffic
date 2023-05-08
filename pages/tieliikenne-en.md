@@ -556,9 +556,7 @@ The example code disconnects after 30 s.
                 onSuccess:onConnect,
                 onFailure: onConnectFailure,
                 mqttVersion:4,
-                useSSL:true,
-                userName:"digitraffic",
-                password:"digitrafficPassword"
+                useSSL:true
             };
 
             client.connect(connectionProperties);
