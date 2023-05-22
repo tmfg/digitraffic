@@ -138,7 +138,8 @@ layout: uncompressed
             // not json or xml, try decompress
             try {
               const json = decompressGzipToString(message.payloadString)
-              addMessage(message.destinationName, JSON.stringify(JSON.parse(json)));
+              addMessage(message.destinationName,
+                         "RAW: " + message.payloadString + "\n DECOMPRESSED: \"" + JSON.stringify(JSON.parse(json)) + "\"");
             } catch (errorIn) {
               console.error("addMessage failed " + error);
               console.info(message);
