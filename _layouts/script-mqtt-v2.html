@@ -139,7 +139,7 @@ layout: uncompressed
             try {
               const json = decompressGzipToString(message.payloadString)
               addMessage(message.destinationName,
-                         "RAW: " + message.payloadString + "\n DECOMPRESSED: \"" + JSON.stringify(JSON.parse(json)) + "\"");
+                         "\nRAW: " + message.payloadString + "\nDECOMPRESSED: \"" + JSON.stringify(JSON.parse(json)) + "\"");
             } catch (errorIn) {
               console.error("addMessage failed " + error);
               console.info(message);
