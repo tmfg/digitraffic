@@ -109,6 +109,8 @@ layout: uncompressed
 
       window.setInterval(logMessageCount, 60*1000);
 
+      window.onload = updateTopicTemplate;
+
       function connect() {
         const clientId = "testclient_" + Date.now();
         const host = $("#domain").val();
