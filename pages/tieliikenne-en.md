@@ -434,6 +434,8 @@ When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port
 
 Address for test is ```tie-test.digitraffic.fi```.
 
+Simple example client can be found at [/en/instructions/script-mqtt/](/en/instructions/script-mqtt/) page.
+
 ### Topics
 
 At the root of each offered data type is also the topic `status`. The message tells when the data is last updated in epoch seconds. E.g.:
@@ -493,6 +495,8 @@ You can test decompressing it i.e. at [https://facia.dev/tools/compress-decompre
 Or with command line
 * Linux: `echo "<message>" | base64 -d | gzip -d`
 * MacOS: `echo "<message>" | base64 -d -i - -o - | gzip -d`
+
+And code to decompress message with browser and JS can be found at [JSFiddle](https://jsfiddle.net/jouniso/ab2x3kzd/latest/).
 
 
 #### Road maintenance information of latest location
