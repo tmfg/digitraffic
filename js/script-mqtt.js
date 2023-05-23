@@ -3,7 +3,7 @@ let lines = [];
 let messagesLastMinuteCount = 0, client;
 const port = 443;
 let topic = "";
-
+let messagesDiv;
 window.setInterval(logMessageCount, 60*1000);
 
 window.onload = updateTopicTemplate;
@@ -28,7 +28,7 @@ function connect() {
             if (message.destinationName.endsWith("status")) {
                 console.log(message.destinationName + ': ' + message.payloadString);
             } else if (message.payloadString.startsWith("<?xml")) {
-                addMessage(message.destinationName, "\n" + escapeXml(message.payloadString));
+                addMessage(message.destinationName, escapeXml(message.payloadString));
             } else {
                 addMessage(message.destinationName, JSON.stringify(JSON.parse(message.payloadString)));
             }
@@ -36,15 +36,12 @@ function connect() {
             // not json or xml, try decompress
             try {
                 const json = decompressGzipToString(message.payloadString)
-                addMessage(message.destinationName,
-                    "\nRAW: " + message.payloadString + "\nDECOMPRESSED: \"" + JSON.stringify(JSON.parse(json)) + "\"");
+                addMessage(message.destinationName, "RAW: \"" + message.payloadString + "\"\nDECOMPRESSED: \"" + JSON.stringify(JSON.parse(json)) + "\"");
             } catch (errorIn) {
                 console.error("addMessage failed " + error);
                 console.info(message);
             }
         }
-
-        updateList();
     };
 
 
@@ -89,17 +86,27 @@ function onConnectFailure(response) {
 }
 
 function addMessage(destination, message) {
-    const text = destination + ': ' + message;
 
-    while (lines.length > 100) {
-        lines.shift();
+    if (!messagesDiv) {
+        messagesDiv = document.getElementById("messages");
     }
 
-    lines.push(text);
-}
+    const pre = document.createElement("pre");
+    pre.innerHTML = destination + ': '
 
-function updateList() {
-    $("#messages").html(lines.join('<br/>'));
+    const code = document.createElement("code");
+    code.innerHTML = message;
+    pre.appendChild(code);
+
+    messagesDiv.appendChild(pre);
+    const elements = messagesDiv.getElementsByTagName("pre");
+    const toRemove = elements.length-50;
+    if (toRemove > 0) {
+        for (let i = 0; i < toRemove; i++) {
+            messagesDiv.removeChild(elements[i]);
+        }
+    }
+    hljs.highlightElement(code);
 }
 
 function updateTopicTemplate() {
