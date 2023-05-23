@@ -9,7 +9,7 @@ window.setInterval(logMessageCount, 60*1000);
 window.onload = updateTopicTemplate;
 
 function connect() {
-    const clientId = "testclient_" + Date.now();
+    const clientId = "testclient_" + now();
     const host = $("#domain").val();
     topic = $("#topic").val();
     console.log("Trying to connect to road mqtt " + host + ":" + port + " Topic: " + topic + " client id: " + clientId);
@@ -17,7 +17,8 @@ function connect() {
     client = new Paho.Client(host, port, clientId);
 
     client.onConnectionLost = function (response) {
-        console.info(Date.now() + ' Connection lost: ' + response.errorCode+ ': ' + response.errorMessage);
+        $("#connectionStatus").text(new Date().toISOString() + ' Connection lost: ' + response.errorCode+ ': ' + response.errorMessage);
+        console.info(new Date().toISOString() + ' Connection lost: ' + response.errorCode+ ': ' + response.errorMessage);
     };
 
     client.onMessageArrived = function(message) {
@@ -27,7 +28,7 @@ function connect() {
             if (message.destinationName.endsWith("status")) {
                 console.log(message.destinationName + ': ' + message.payloadString);
             } else if (message.payloadString.startsWith("<?xml")) {
-                addMessage(message.destinationName, escapeXml(message.payloadString));
+                addMessage(message.destinationName, "\n" + escapeXml(message.payloadString));
             } else {
                 addMessage(message.destinationName, JSON.stringify(JSON.parse(message.payloadString)));
             }
@@ -63,6 +64,7 @@ function disconnect() {
     try {
         if (client && client.isConnected) {
             client.disconnect();
+            $("#connectionStatus").text(new Date().toISOString() + ' Disconnected');
         }
     } catch(err) {
         console.error(err.message);
@@ -70,18 +72,20 @@ function disconnect() {
 }
 
 function logMessageCount() {
-    console.info(Date.now() + ' ' + messagesLastMinuteCount + ' messages per minute');
+    console.info(now() + ' ' + messagesLastMinuteCount + ' messages per minute');
     $("#messagesPerMinute").text(messagesLastMinuteCount);
     messagesLastMinuteCount = 0;
 }
 
 function onConnectSuccess() {
-    console.info(Date.now() + ' Connection open. Subscribing to topic ' + topic);
+    console.info(now() + ' Connection open. Subscribing to topic ' + topic);
+    $("#connectionStatus").text(new Date().toISOString() + ' Connected, topic: ' + topic);
     client.subscribe(topic);
 }
 
 function onConnectFailure(response) {
-    console.info(Date.now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
+    console.info(now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
+    $("#connectionStatus").text(new Date().toISOString() + ' Connection failed. ' + response.errorCode + ": " + response.errorMessage);
 }
 
 function addMessage(destination, message) {
@@ -133,4 +137,8 @@ function escapeXml(unsafeXml) {
             case '"': return '&quot;';
         }
     });
+}
+
+function now() {
+    return new Date().toISOString();
 }
