@@ -22,12 +22,12 @@ function connect() {
 
     client.onMessageArrived = function(message) {
         messagesLastMinuteCount++;
-
+        console.log(message.destinationName + ': ' + message.payloadString);
         try {
             if (message.destinationName.endsWith("status")) {
                 console.log(message.destinationName + ': ' + message.payloadString);
             } else if (message.payloadString.startsWith("<?xml")) {
-                addMessage(message.destinationName, message.payloadString);
+                addMessage(message.destinationName, escapeXml(message.payloadString));
             } else {
                 addMessage(message.destinationName, JSON.stringify(JSON.parse(message.payloadString)));
             }
@@ -121,4 +121,16 @@ function decompressGzipToString(gzippedB64Data) {
     const ungzippedData = pako.ungzip(gzippedDataArray);
     // Decode UTF-8 byte array to string
     return new TextDecoder().decode(ungzippedData);
+}
+
+function escapeXml(unsafeXml) {
+    return unsafeXml.replace(/[<>&'"]/g, function (c) {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+        }
+    });
 }
