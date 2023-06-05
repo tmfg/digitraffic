@@ -434,7 +434,7 @@ When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port
 
 Address for test is ```tie-test.digitraffic.fi```.
 
-Simple example client can be found at [/en/support/script-mqtt/](/en/support/script-mqtt/) page.
+Simple example client can be found at [Support > MQTT examples](/en/support/script-mqtt/) page.
 
 ### Topics
 

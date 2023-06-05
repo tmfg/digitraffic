@@ -432,7 +432,7 @@ Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja po
 
 Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
 
-Yksinkertainen asiakas sovellus selaimelle löytyy [/tuki/ohjeita/script-mqtt/](/tuki/ohjeita/script-mqtt/) -sivulta.
+Yksinkertainen asiakas sovellus selaimelle löytyy [Tuki > MQTT esimerkkejä](/tuki/ohjeita/script-mqtt/) -sivulta.
 
 ### Aiheet
 
