@@ -1,7 +1,7 @@
 ---
 layout: script-twc
 hero-image: code
-permalink: /ohjeita/script-twc/
+permalink: /tuki/script-twc/
 title: Data up-to-date status of road stations
 lang: fi
 ref: twc-status

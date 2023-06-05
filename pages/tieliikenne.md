@@ -53,7 +53,7 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 ### Käyttörajoitukset
 
-Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
+Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/tuki/ohjeita/#yleistä-huomioitavaa)
 
 ### Tuetut ja vanhentuneet rajapinnat
 
@@ -432,7 +432,7 @@ Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja po
 
 Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
 
-Yksinkertainen asiakas sovellus selaimelle löytyy [/ohjeita/script-mqtt/](/ohjeita/script-mqtt/) -sivulta.
+Yksinkertainen asiakas sovellus selaimelle löytyy [/tuki/ohjeita/script-mqtt/](/tuki/ohjeita/script-mqtt/) -sivulta.
 
 ### Aiheet
 

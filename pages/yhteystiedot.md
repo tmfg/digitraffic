@@ -1,13 +1,13 @@
 ---
 layout: page
-permalink: /yhteystiedot/
+permalink: /tuki/yhteystiedot/
 section: Tuki
 searchable: true
 title: Yhteystiedot
 lang: fi
 ref: contact-information
 links:
-  - ["Tukikanavat", "/tukikanavat"]
+  - ["Tukikanavat", "/tuki/tukikanavat"]
 ---
 
 Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.

@@ -381,8 +381,8 @@ client.disconnect()
 
 ## Restrictions
 
-See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
+See [Information and instructions for using APIs > General considerations](/en/support/instructions/#general-considerations)
 
 ## Supported and deprecated APIs
 
-Listings of supported and deprecated APIs can be found [here](/en/api-status/changes/).
+Listings of supported and deprecated APIs can be found [here](/en/support/api-changes/).

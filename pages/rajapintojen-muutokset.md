@@ -1,7 +1,7 @@
 ---
 layout: api-changes
 hero-image: code
-permalink: /rajapintojen-tila/muutokset/
+permalink: /tuki/rajapintojen-muutokset/
 title: Rajapintojen muutokset
 lang: fi
 ref: api-changes

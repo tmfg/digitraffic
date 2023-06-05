@@ -1,7 +1,7 @@
 ---
 layout: script-mqtt
 hero-image: code
-permalink: /en/instructions/script-mqtt/
+permalink: /en/support/script-mqtt/
 title: MQTT
 lang: en
 ref: mqtt-client

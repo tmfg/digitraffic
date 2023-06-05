@@ -52,7 +52,7 @@ Currently the open data API includes:
 
 ### Restrictions
 
-See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
+See [Information and instructions for using APIs > General considerations](/en/support/instructions/#general-considerations)
 
 ### Supported and deprecated APIs
 
@@ -434,7 +434,7 @@ When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port
 
 Address for test is ```tie-test.digitraffic.fi```.
 
-Simple example client can be found at [/en/instructions/script-mqtt/](/en/instructions/script-mqtt/) page.
+Simple example client can be found at [/en/support/script-mqtt/](/en/support/script-mqtt/) page.
 
 ### Topics
 

@@ -14,5 +14,5 @@ tags:
   - APIs
 ---
 
-We recommend the use of the Digitraffic-User HTTP header in all API requests according to [API usage guidelines](https://www.digitraffic.fi/en/instructions/#digitraffic-user).
+We recommend the use of the Digitraffic-User HTTP header in all API requests according to [API usage guidelines](/en/support/instructions/#digitraffic-user).
 Requests without the header can possibly face usage limitations in the future.
