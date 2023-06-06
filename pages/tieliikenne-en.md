@@ -56,7 +56,7 @@ See [Information and instructions for using APIs > General considerations](/en/s
 
 ### Supported and deprecated APIs
 
-Listings of supported and deprecated APIs can be found [here](/en/api-status/changes/).
+Listings of supported and deprecated APIs can be found [here](/en/support/api-changes/).
 
 
 

@@ -12,7 +12,7 @@ links:
 
 Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.
 
-Mikäli kyseessä on tukipyyntö, pyydämme ottamaan yhteyttä kyseisen tietolajin Google-ryhmän kautta. Google-ryhmät löytyvät [Tukikanavat](/tukikanavat)-sivulta. 
+Mikäli kyseessä on tukipyyntö, pyydämme ottamaan yhteyttä kyseisen tietolajin Google-ryhmän kautta. Google-ryhmät löytyvät [Tukikanavat](/tuki/tukikanavat/)-sivulta. 
 
 Sähköposti: digitraffic@fintraffic.fi
 

@@ -15,7 +15,7 @@ Meriliikenteen apeista on julkaistu uudet rajapintaversiot.
 
 Dokumentaatiot löytyvät sivustolta [täältä](/meriliikenne/#restjson-rajapinnat).\
 Ja Swagger API -kuvaukset löytyvät [täältä](https://meri.digitraffic.fi/swagger/).\
-Tuetut ja vanhentuneet rajapinnat löytyy [täältä](/rajapintojen-tila/muutokset/).
+Tuetut ja vanhentuneet rajapinnat löytyy [täältä](/tuki/rajapintojen-muutokset/).
 
 🔴 Seuraavat vanhat rajapinnat poistuvat käytöstä huhtikuun 2023 jälkeen.
 * Satamakäynnit

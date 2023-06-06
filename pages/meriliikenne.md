@@ -388,4 +388,4 @@ Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](
 
 ## Tuetut ja vanhentuneet rajapinnat
 
-Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/tuki/rajapintojen-muutokset/).

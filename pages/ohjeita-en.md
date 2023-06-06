@@ -40,7 +40,7 @@ Deprecation: true
 Sunset: Tue,1 Nov 2022 00:00:00 GMT
 ```
 
-Deprecated APIs and their sunset dates are also updated on the page [Support → API changes](/en/api-status/changes/).
+Deprecated APIs and their sunset dates are also updated on the page [Support → API changes](/en/support/api-changes/).
 
 
 ## How can I be aware of updates and incidents?
