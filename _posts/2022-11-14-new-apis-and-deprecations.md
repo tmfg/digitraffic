@@ -15,7 +15,7 @@ Tieliikenteen rajapinnoista on julkaistu uudet versiot.
 
 Dokumentaatiot löytyvät sivustolta [täältä](/tieliikenne/#restjson-rajapinnat).\
 Swagger API -kuvaukset löytyvät [täältä](http://tie.digitraffic.fi/swagger/).\
-Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/tuki/rajapintojen-muutokset/).
 
 🔴 Seuraavat vanhat rajapinnat poistuvat käytöstä lähiaikoina.
 

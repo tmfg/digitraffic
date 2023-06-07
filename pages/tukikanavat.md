@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /tukikanavat/
+permalink: /tuki/tukikanavat/
 section: Tuki
 searchable: true
 title: Tukikanavat

@@ -15,7 +15,7 @@ New road traffic APIs have been published.
 
 Documentation can be found [here](/en/road-traffic/#restjson--apis).\
 Swagger descriptions [here](http://tie.digitraffic.fi/swagger/).\
-Listings of currently supported and deprecated APIs [here](/en/api-status/changes/) 
+Listings of currently supported and deprecated APIs [here](/en/support/api-changes/) 
 
 🔴 The following old APIs will be removed soon
 

@@ -384,8 +384,8 @@ client.disconnect()
 
 ## Käyttörajoitukset
 
-Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
+Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/tuki/ohjeita/#yleistä-huomioitavaa)
 
 ## Tuetut ja vanhentuneet rajapinnat
 
-Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/tuki/rajapintojen-muutokset/).

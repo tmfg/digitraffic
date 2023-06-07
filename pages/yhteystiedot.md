@@ -1,18 +1,18 @@
 ---
 layout: page
-permalink: /yhteystiedot/
+permalink: /tuki/yhteystiedot/
 section: Tuki
 searchable: true
 title: Yhteystiedot
 lang: fi
 ref: contact-information
 links:
-  - ["Tukikanavat", "/tukikanavat"]
+  - ["Tukikanavat", "/tuki/tukikanavat"]
 ---
 
 Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.
 
-Mikäli kyseessä on tukipyyntö, pyydämme ottamaan yhteyttä kyseisen tietolajin Google-ryhmän kautta. Google-ryhmät löytyvät [Tukikanavat](/tukikanavat)-sivulta. 
+Mikäli kyseessä on tukipyyntö, pyydämme ottamaan yhteyttä kyseisen tietolajin Google-ryhmän kautta. Google-ryhmät löytyvät [Tukikanavat](/tuki/tukikanavat/)-sivulta. 
 
 Sähköposti: digitraffic@fintraffic.fi
 

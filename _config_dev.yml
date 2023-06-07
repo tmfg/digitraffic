@@ -187,8 +187,8 @@ t:
     en: "Contact"
     fi: "Yhteystiedot"
     url:
-      en: "en/contact"
-      fi: "yhteystiedot"
+      en: "en/support/contact"
+      fi: "tuki/yhteystiedot"
   privacy-policy:
     en: "Privacy policy"
     fi: "Tietosuojaseloste"
@@ -400,35 +400,35 @@ t:
     en: "Support channels"
     fi: "Tukikanavat"
     url:
-      en: "en/support-channels"
-      fi: "tukikanavat"
+      en: "en/support/support-channels"
+      fi: "tuki/tukikanavat"
   support-channels-description:
     en: "Public Google groups provide support and communication between developers, service provider and Fintraffic."
     fi: "Kehittäjien, palvelun ylläpitäjän ja Fintrafficin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
-  support-channels-information:
+  instructions:
     en: "Information and instructions for using APIs"
     fi: "Ohjeita ja lisätietoa rajapintojen käyttöön"
     url:
-      en: "en/instructions"
-      fi: "ohjeita"
+      en: "en/support/instructions"
+      fi: "tuki/ohjeita"
   code-examples:
     en: "Code examples"
     fi: "Koodiesimerkkejä"
     url:
-      en: "en/instructions/code-examples"
-      fi: "ohjeita/koodiesimerkit"
+      en: "en/support/code-examples"
+      fi: "tuki/koodiesimerkit"
+  script-mqtt:
+    en: "MQTT examples"
+    fi: "MQTT esimerkkejä"
+    url:
+      en: "en/support/script-mqtt"
+      fi: "tuki/script-mqtt"
   api-changes:
     en: "API changes"
     fi: "Rajapintojen muutokset"
     url:
-      en: "en/api-status/changes"
-      fi: "rajapintojen-tila/muutokset"
-  support-mqtt:
-    en: "Mqtt client"
-    fi: "Mqtt client"
-    url:
-      en: "en/instructions/mqtt-client"
-      fi: "ohjeita/mqtt-client"
+      en: "en/support/api-changes"
+      fi: "tuki/rajapintojen-muutokset"
   # API status
   recent-outages:
     en: "Current maintenances and recent outages"

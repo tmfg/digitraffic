@@ -4,163 +4,102 @@ layout: uncompressed
 
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
-  <!--HTML head-->
-  {% include script-headers.html %}
+<!--HTML head-->
+{% include script-headers.html %}
 
-  <!--HTML body-->
-  <body class="body">
+<!--HTML body-->
+<body class="body">
 
-    <!--Header-->
-    {% include header.html header-classes="header--white" %}
+<!--Header-->
+{% include header.html header-classes="header--white" %}
 
-    <!--Content-->
-    <content class="content">
+<!--Content-->
+<content class="content">
+  <div class="row">
+    <div class="col-xs">
+      <h1 class="hero-image__heading">{{ page.title }}</h1>
+      <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+    </div>
+  </div>
+
+  <div class="content__section-under-hero content--padded content--github-edit">
+
+    <!--Breadcrumb-->
+    <div class="row">
+      <div class="col-xs-12 breadcrumb"><!--
+          -->{% include breadcrumb-home.html %}<!--
+          --><span class="breadcrumb__item">{{ page.title }}</span>
+      </div>
+    </div>
+
+    <!--Artice-->
+    <content>
       <div class="row">
-        <div class="col-xs">
-          <h1 class="hero-image__heading">{{ page.title }}</h1>
-          <p class="hero-image__intro hero-image__intro--no-buttons">{{ page.intro }}</p>
+        <!--Text body-->
+        <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+          {{ content }}
         </div>
       </div>
 
-      <div class="content__section-under-hero content--padded content--github-edit">
-
-        <!--Breadcrumb-->
-        <div class="row">
-          <div class="col-xs-12 breadcrumb"><!--
-          -->{% include breadcrumb-home.html %}<!--
-          --><span class="breadcrumb__item">{{ page.title }}</span>
-          </div>
-        </div>
-
-        <!--Artice-->
-        <content>
-          <div class="row">
-            <!--Text body-->
-            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
-              {{ content }}
-            </div>
-          </div>
-          <div>
-            Host: <select id="domain" name="domain">
+      <table style="text-align: left; border-collapse: collapse;">
+        <tr>
+          <th>Host:</th>
+          <td><select id="domain" name="domain" style="width: 100%;">
             <option value="tie-test.digitraffic.fi">tie-test.digitraffic.fi</option>
             <option value="tie.digitraffic.fi">tie.digitraffic.fi</option>
             <option value="meri-test.digitraffic.fi">meri-test.digitraffic.fi</option>
             <option value="meri.digitraffic.fi">meri.digitraffic.fi</option>
           </select>
-            Topic:
-            <input type="text" id="topic" name="topic" value="tms/#">
-            <button onclick="updateTopic()"> Connect / Update </button>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Topic template:
+          </th>
+          <td>
+            <select id="topic_select" name="topic_select" onchange="updateTopicTemplate()" style="width: 100%;">
+              <option value="tms-v2/#">tms-v2/&lt;roadStationId>/&lt;sensorId></option>
+              <option value="weather-v2/#">weather-v2/&lt;roadStationId>/&lt;sensorId></option>
+              <option value="maintenance-v2/routes/#">maintenance-v2/routes/#</option>
+              <option value="traffic-message-v2/datex2/#">traffic-message-v2/datex2/&lt;situationType></option>
+              <option value="traffic-message-v2/simple/#">traffic-message-v2/simple/&lt;situationType></option>
+              <option value="vessels-v2/#">vessels-v2/&lt;mmsi>/&lt;metadata> or vessels-v2/&lt;mmsi>/&lt;location></option>
+              <option value="sse-v2/site/#">sse-v2/site/&lt;site-id></option>
+            </select>
+          </td>
+
+        </tr>
+        <tr>
+          <th>Topic:</td>
+          <td><input type="text" id="topic" name="topic" value="" style="width: 100%;"></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <button onclick="reconnect()"> Connect/Reconnect </button>
             <button onclick="disconnect()"> Disconnect </button>
-          </div>
+            <div id="connectionStatus">Disconnected</div>
+          </td>
+        </tr>
+      </table>
 
-          Messages (<span id="messagesPerMinute">0</span> messages per minute):
+      Messages (<span id="messagesPerMinute">0</span> messages per minute):
 
-          <pre id="messages" style="font-size: small" ></pre>
-        </content>
-      </div>
+      <div id="messages" style="font-size: small; padding-bottom: 10px;" ></div>
     </content>
+  </div>
+</content>
 
-      </div>
-    </content>
+</div>
+</content>
 
-    <!-- Github edit link -->
-    {% include github-edit.html %}
+<!-- Github edit link -->
+{% include github-edit.html %}
 
-    <!--footer-->
-    {% include footer.html %}
+<!--footer-->
+{% include footer.html %}
 
-    <script type="text/javascript">
-      'use strict';
-      let lines = [];
-      let messagesLastMinuteCount = 0, client;
-      let host = "tie-test.digitraffic.fi";
-      const port = 443;
-      let topic = "tms/#";
+<script type="text/javascript" src="/js/script-mqtt.js"></script>
 
-      window.setInterval(logMessageCount, 60*1000);
-
-      function connect() {
-        const clientId = "testclient_" + Date.now();
-        console.log("Trying to connect to road mqtt " + host + ":" + port + " Topic: " + topic + " client id: " + clientId);
-
-        client = new Paho.Client(host, port, clientId);
-
-        client.onConnectionLost = function (response) {
-          console.info(Date.now() + ' Connection lost:' + response.errorMessage);
-        };
-        client.onMessageArrived = function(message) {
-          messagesLastMinuteCount++;
-
-          try {
-            addMessage(message.destinationName, JSON.parse(message.payloadString));
-          } catch (error) {
-            console.error("parsing failed " + error);
-            console.info(message);
-          }
-
-          updateList();
-        };
-
-        const connectionProperties = {
-          onSuccess:onConnect,
-          reconnect: true,
-          cleanSession:false,
-          mqttVersion:4,
-          useSSL:true,
-          userName:"digitraffic",
-          password:"digitrafficPassword"
-        };
-
-        client.connect(connectionProperties);
-      }
-
-      function disconnect() {
-        try {
-          if (client && client.isConnected) {
-            client.disconnect();
-          }
-        } catch(err) {
-          console.error(err.message);
-        }
-      }
-
-      function logMessageCount() {
-        console.info(Date.now() + ' ' + messagesLastMinuteCount + ' messages per minute');
-        $("#messagesPerMinute").text(messagesLastMinuteCount);
-        messagesLastMinuteCount = 0;
-      }
-
-      function onConnect() {
-        console.info(Date.now() + ' Connection open. Subscribing to topic ' + topic);
-        client.subscribe(topic);
-      }
-
-      function addMessage(destination, message) {
-        const text = destination + ': ' + JSON.stringify(message);
-
-        while (lines.length > 100) {
-          lines.shift();
-        }
-
-        lines.push(text);
-      }
-
-      function updateList() {
-        $("#messages").html(lines.join('<br/>'));
-      }
-
-      function updateTopic() {
-        host=$("#domain").val();
-        topic=$("#topic").val();
-
-        messagesLastMinuteCount = 0;
-        $("#messages").html('');
-        $("#messagesPerMinute").text(0);
-
-        disconnect();
-        lines = [];
-        connect();
-      }
-    </script>
-  </body>
+</body>
 </html>

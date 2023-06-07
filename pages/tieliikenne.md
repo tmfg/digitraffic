@@ -53,11 +53,11 @@ Tieliikenteen avoimet tiedot sisältävät tällä hetkellä:
 
 ### Käyttörajoitukset
 
-Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/ohjeita/#yleistä-huomioitavaa)
+Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/tuki/ohjeita/#yleistä-huomioitavaa)
 
 ### Tuetut ja vanhentuneet rajapinnat
 
-Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/rajapintojen-tila/muutokset/).
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/tuki/rajapintojen-muutokset/).
 
 
 ## REST/JSON-rajapinnat
@@ -432,6 +432,8 @@ Pahon JS-clientia käyttäessä osoite on pelkkä ```tie.digitraffic.fi``` ja po
 
 Testin osoite on vastaavasti ```tie-test.digitraffic.fi```.
 
+Yksinkertainen asiakas sovellus selaimelle löytyy [Tuki > MQTT esimerkkejä](/tuki/ohjeita/script-mqtt/) -sivulta.
+
 ### Aiheet
 
 Jokaisen tarjottavan datalajin juuressa on myös aihe `status`. Viesti kertoo, milloin data on viimeksi päivittynyt epookki sekunteina. Esim.: 
@@ -492,6 +494,7 @@ Tai komentoriviltä:
 * Linux: `echo "<viesti>" | base64 -d | gzip -d`
 * MacOS: `echo "<viesti>" | base64 -d -i - -o - | gzip -d`
 
+Esimerkki JavaScript-koodi viestin pakkauksen purkamiseen löytyy [JSFiddle](https://jsfiddle.net/jouniso/ab2x3kzd/latest/):stä.
 
 #### Maanteiden kunnossapitotiedon viimeisin sijainti
 

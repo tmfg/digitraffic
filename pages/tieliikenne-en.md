@@ -52,11 +52,11 @@ Currently the open data API includes:
 
 ### Restrictions
 
-See [Information and instructions for using APIs > General considerations](/en/instructions/#general-considerations)
+See [Information and instructions for using APIs > General considerations](/en/support/instructions/#general-considerations)
 
 ### Supported and deprecated APIs
 
-Listings of supported and deprecated APIs can be found [here](/en/api-status/changes/).
+Listings of supported and deprecated APIs can be found [here](/en/support/api-changes/).
 
 
 
@@ -434,6 +434,8 @@ When using Paho JS-client the address is plain ```tie.digitraffic.fi``` and port
 
 Address for test is ```tie-test.digitraffic.fi```.
 
+Simple example client can be found at [Support > MQTT examples](/en/support/script-mqtt/) page.
+
 ### Topics
 
 At the root of each offered data type is also the topic `status`. The message tells when the data is last updated in epoch seconds. E.g.:
@@ -493,6 +495,8 @@ You can test decompressing it i.e. at [https://facia.dev/tools/compress-decompre
 Or with command line
 * Linux: `echo "<message>" | base64 -d | gzip -d`
 * MacOS: `echo "<message>" | base64 -d -i - -o - | gzip -d`
+
+And code to decompress message with browser and JS can be found at [JSFiddle](https://jsfiddle.net/jouniso/ab2x3kzd/latest/).
 
 
 #### Road maintenance information of latest location

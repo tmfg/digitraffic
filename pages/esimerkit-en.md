@@ -1,7 +1,7 @@
 ---
 layout: traffictype
 hero-image: code
-permalink: /en/instructions/code-examples/
+permalink: /en/support/code-examples/
 section: Tietolähteet
 searchable: true
 lang: en

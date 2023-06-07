@@ -1,9 +1,9 @@
 ---
 layout: script-mqtt
 hero-image: code
-permalink: /tuki/script-mqtt/
+permalink: /en/support/script-mqtt/
 title: MQTT
-lang: fi
+lang: en
 ref: mqtt-client
-intro: Esimerkki MQTT-kuuntelija
+intro: Sample MQTT client
 ---

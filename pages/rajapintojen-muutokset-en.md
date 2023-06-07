@@ -1,7 +1,7 @@
 ---
 layout: api-changes
 hero-image: code
-permalink: /en/api-status/changes/
+permalink: /en/support/api-changes/
 title: API changes
 lang: en
 ref: api-changes

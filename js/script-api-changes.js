@@ -16,7 +16,10 @@ const translations = {
         colorDescriptionsWarning: "Sunset in less than 3 months",
         colorDescriptionsHeader: "Sunset date color coding:",
         deprecationsHeader: "Deprecated APIs",
-        deprecationsText: "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. Sunset date marks the point in time after which the API in question will not be available anymore.\n\nThe API paths below contain links to their respective Swagger descriptions.",
+        deprecationsText:
+            "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. This page lists all deprecated APIs and their sunset dates. A sunset date marks the point in time after which the API in question will not be available anymore.\n\nThe API paths below contain links to their respective Swagger descriptions.",
+        noDeprecationsText:
+            "An API is considered deprecated once a new version of it is released. Deprecated APIs will be available for a period of 6 months after the release of a new version. However, deprecated APIs are not recommended for use, and users should move to a supported version instead. This page lists all deprecated APIs and their sunset dates. A sunset date marks the point in time after which the API in question will not be available anymore.\n\nThere are no deprecated APIs at this time.",
         marine: "Marine",
         rail: "Rail",
         road: "Road",
@@ -30,7 +33,10 @@ const translations = {
         colorDescriptionsWarning: "Poistumassa alle 3kk päästä",
         colorDescriptionsHeader: "Poistumispäivämäärien värikoodaukset:",
         deprecationsHeader: "Vanhentuneet rajapinnat",
-        deprecationsText: "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Poistumispäivämäärä on ajankohta, minkä jälkeen kyseinen rajapinta ei lähtökohtaisesti enää ole saatavilla.\n\nAllaolevista rajapintojen poluista on linkki kunkin Swagger-kuvaukseen.",
+        deprecationsText:
+            "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Tälle sivulle kootaan vanhentuneet rajapinnat sekä niiden poistumispäivämäärät. Poistumispäivämäärä on ajankohta, minkä jälkeen kyseinen rajapinta ei lähtökohtaisesti enää ole saatavilla.\n\nAllaolevista rajapintojen poluista on linkki kunkin Swagger-kuvaukseen.",
+        noDeprecationsText:
+            "Rajapinta katsotaan vanhentuneeksi, kun siitä julkaistaan uusi versio. Vanhentunut rajapinta on saatavilla 6kk ajan uuden version julkaisusta, mutta sitä ei suositella käytettäväksi, vaan käyttäjien tulisi siirtyä tuettuun versioon. Tälle sivulle kootaan vanhentuneet rajapinnat sekä niiden poistumispäivämäärät. Poistumispäivämäärä on ajankohta, minkä jälkeen kyseinen rajapinta ei lähtökohtaisesti enää ole saatavilla.\n\nTällä hetkellä ei ole vanhentuneita rajapintoja.",
         marine: "Meri",
         rail: "Rata",
         road: "Tie",
@@ -46,16 +52,16 @@ const sunsetDateMatcher = RegExp(`(${removalTextMatcher.source})\.+(?<sunsetDate
 function initDeprecationsTable(trafficType, tableTitle, language) {
     $("#" + trafficType + "-DEPRECATIONS").append([
         $("<colgroup>").append([
-            $("<col>", {"class": "deprecations-col1"}),
-            $("<col>", {"class": "deprecations-col2"})
+            $("<col>", { "class": "deprecations-col1" }),
+            $("<col>", { "class": "deprecations-col2" })
         ]),
         $("<thead/>").append([
-            $("<tr/>", {"class": "row.nowrap"}).append([
-                $("<th/>", {"class": "api-changes-header", "colspan": 2}).text(tableTitle)
+            $("<tr/>", { "class": "row.nowrap" }).append([
+                $("<th/>", { "class": "api-changes-header", "colspan": 2 }).text(tableTitle)
             ]),
-            $("<tr/>", {"class": "row.nowrap"}).append([
-                $("<th/>", {"class": "api-changes-header"}).text(translations[language].api),
-                $("<th/>", {"class": "deprecations-col2"}).text(translations[language].sunset),
+            $("<tr/>", { "class": "row.nowrap" }).append([
+                $("<th/>", { "class": "api-changes-header" }).text(translations[language].api),
+                $("<th/>", { "class": "deprecations-col2" }).text(translations[language].sunset),
             ])
         ]),
         $("<tbody/>")
@@ -65,11 +71,11 @@ function initDeprecationsTable(trafficType, tableTitle, language) {
 function initSupportedTable(trafficType, tableTitle) {
     $("#" + trafficType + "-SUPPORTED").append([
         $("<colgroup>").append([
-            $("<col>", {"class": "supported-col"})
+            $("<col>", { "class": "supported-col" })
         ]),
         $("<thead/>").append([
-            $("<tr/>", {"class": "row.nowrap"}).append([
-                $("<th/>", {"class": "api-changes-header"}).text(tableTitle)
+            $("<tr/>", { "class": "row.nowrap" }).append([
+                $("<th/>", { "class": "api-changes-header" }).text(tableTitle)
             ])
         ]),
         $("<tbody/>")
@@ -138,26 +144,26 @@ function getSunsetDateClass(isoLocalDateString) {
 function populateSupported(apiDescription, trafficType) {
     Object.keys(apiDescription.paths)
         .filter(path => apiDescription.paths[path].get.deprecated !== true && !removalTextMatcher.test(apiDescription.paths[path].get.summary))
-        .forEach(path => addToSupportedTable({path, swaggerLink: getSwaggerLink(apiDescription.paths[path].get, trafficType)}, trafficType));
+        .forEach(path => addToSupportedTable({ path, swaggerLink: getSwaggerLink(apiDescription.paths[path].get, trafficType) }, trafficType));
 }
 
 
 function addToDeprecationsTable(api, trafficType) {
     $('#' + trafficType + '-DEPRECATIONS > tbody:last-child').append(
-        $('<tr/>', {"class": "row.nowrap"}).append([
-            $('<td/>', {"class": "deprecations-col1"}).append(
-                $('<a/>', {"href": api.swaggerLink}).text(api.path)
+        $('<tr/>', { "class": "row.nowrap" }).append([
+            $('<td/>', { "class": "deprecations-col1" }).append(
+                $('<a/>', { "href": api.swaggerLink }).text(api.path)
             ),
-            $('<td/>', {"class": `deprecations-col2 ${api.dateClass}`}).text(api.sunset)
+            $('<td/>', { "class": `deprecations-col2 ${api.dateClass}` }).text(api.sunset)
         ])
     );
 }
 
 function addToSupportedTable(api, trafficType) {
     $('#' + trafficType + '-SUPPORTED > tbody:last-child').append(
-        $('<tr/>', {"class": "row.nowrap"}).append([
-            $('<td/>', {"class": "supported-col"}).append(
-                $('<a/>', {"href": api.swaggerLink}).text(api.path)
+        $('<tr/>', { "class": "row.nowrap" }).append([
+            $('<td/>', { "class": "supported-col" }).append(
+                $('<a/>', { "href": api.swaggerLink }).text(api.path)
             )
         ])
     );
@@ -170,20 +176,28 @@ function addHeadersAndText(language) {
     $('#SUPPORTED-HEADER').append(
         $('<h3 />').text(translations[language].supportedHeader)
     );
-    $('#DEPRECATIONS-TEXT').append([
-        $('<p />', {"class": "deprecations-text-paragraph"}).text(translations[language].deprecationsText),
-        $('<div />', {"class": "date-color-descriptions"}).append([
-            $('<p />', {"class": "date-color-descriptions-header"}).text(`${translations[language].colorDescriptionsHeader}`),
-            $('<p />', {"class": "date-color-descriptions-paragraph"}).append([
-                $('<span />', {"class": "date-alert-description"}).text("YYYY-MM-DD"),
-                $('<span />').html(`&nbsp;  ${translations[language].colorDescriptionsAlert}`)
-            ]),
-            $('<p />', {"class": "date-color-descriptions-paragraph"}).append([
-                $('<span />', {"class": "date-warning-description"}).text("YYYY-MM-DD"),
-                $('<span />').html(`&nbsp;  ${translations[language].colorDescriptionsWarning}`)
+    if ($("#MARINE-DEPRECATIONS-DIV").children().length === 0 &&
+        $("#RAIL-DEPRECATIONS-DIV").children().length === 0 &&
+        $("#ROAD-DEPRECATIONS-DIV").children().length === 0) {
+        $("#DEPRECATIONS-TEXT").append([
+            $("<p />", { class: "deprecations-text-paragraph" }).text(translations[language].noDeprecationsText),
+        ]);
+    } else {
+        $('#DEPRECATIONS-TEXT').append([
+            $('<p />', { "class": "deprecations-text-paragraph" }).text(translations[language].deprecationsText),
+            $('<div />', { "class": "date-color-descriptions" }).append([
+                $('<p />', { "class": "date-color-descriptions-header" }).text(`${translations[language].colorDescriptionsHeader}`),
+                $('<p />', { "class": "date-color-descriptions-paragraph" }).append([
+                    $('<span />', { "class": "date-alert-description" }).text("YYYY-MM-DD"),
+                    $('<span />').html(`&nbsp;  ${translations[language].colorDescriptionsAlert}`)
+                ]),
+                $('<p />', { "class": "date-color-descriptions-paragraph" }).append([
+                    $('<span />', { "class": "date-warning-description" }).text("YYYY-MM-DD"),
+                    $('<span />').html(`&nbsp;  ${translations[language].colorDescriptionsWarning}`)
+                ])
             ])
-        ])
-    ]);
+        ]);
+    }
 }
 
 function removeEmptyDeprecationsTable(trafficType) {
@@ -191,8 +205,6 @@ function removeEmptyDeprecationsTable(trafficType) {
 }
 
 async function loadApiChanges(language) {
-    addHeadersAndText(language);
-
     initDeprecationsTable("MARINE", translations[language].marine.toUpperCase(), language);
     initDeprecationsTable("RAIL", translations[language].rail.toUpperCase(), language);
     initDeprecationsTable("ROAD", translations[language].road.toUpperCase(), language);
@@ -216,4 +228,6 @@ async function loadApiChanges(language) {
     populateSupported(marineApi, "MARINE");
     populateSupported(railApi, "RAIL");
     populateSupported(roadApi, "ROAD");
+
+    addHeadersAndText(language);
 }

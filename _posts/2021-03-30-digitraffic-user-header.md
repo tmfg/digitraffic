@@ -14,5 +14,5 @@ tags:
   - Rajapinnat
 ---
 
-Suosittelemme rajapintakutsuihin lisättävän Digitraffic-User -otsikon käyttöä [ohjeet-sivuston](https://www.digitraffic.fi/ohjeita/#digitraffic-user--otsikko) mukaisesti.
+Suosittelemme rajapintakutsuihin lisättävän Digitraffic-User -otsikon käyttöä [ohjeet-sivuston](/tuki/ohjeita/#digitraffic-user--otsikko) mukaisesti.
 Pyyntöihin, jotka eivät sisällä otsikkoa, voidaan mahdollisesti jatkossa kohdistaa käyttörajoituksia

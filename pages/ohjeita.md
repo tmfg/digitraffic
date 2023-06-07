@@ -1,7 +1,7 @@
 ---
 layout: traffictype
 hero-image: code
-permalink: /ohjeita/
+permalink: /tuki/ohjeita/
 section: Tietolähteet
 searchable: true
 lang: fi
@@ -41,7 +41,7 @@ Deprecation: true
 Sunset: Tue,1 Nov 2022 00:00:00 GMT
 ```
 
-Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät myös erilliselle koontisivulle [Tuki → Rajapintojen muutokset](/rajapintojen-tila/muutokset/).
+Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät myös erilliselle koontisivulle [Tuki → Rajapintojen muutokset](/tuki/rajapintojen-muutokset/).
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
