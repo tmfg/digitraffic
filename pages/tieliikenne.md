@@ -350,7 +350,7 @@ Tiedot on saatavina myös datex2-muotoisena:
 Varoitusmerkissä mahdollisesti olevat []-merkkien sisällä olevat kyltit on mahdollista generoida svg-muodossa:
 
 [```/api/variable-sign/v1/images/ramppi_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/ramppi_123){:target="_blank"}\
-[```/api/v1/variable-signs/images/tie_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/tie_321){:target="_blank"}
+[```/api/variable-sign/v1/images/tie_{number}```](https://tie.digitraffic.fi/api/variable-sign/v1/images/tie_321){:target="_blank"}
 
 ### Maanteiden kunnossapitotiedot
 
