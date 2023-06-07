@@ -53,7 +53,7 @@ Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta]({{page.swagger-link}}){
 
 ### Merivaroitukset
 
-[```https://meri.digitraffic.fi/api/v1/nautical-warnings/published```](https://meri.digitraffic.fi/api/v1/nautical-warnings/published){:target="_blank"}
+[```https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active```](https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active){:target="_blank"}
 
 Merivaroitukset haetaan POOKI-järjestelmästä.
 
@@ -67,11 +67,11 @@ Satamakäynnit haetaan [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/
 
 Metadatat:
 
-[```https://meri.digitraffic.fi/api/v1/metadata/locations```](https://meri.digitraffic.fi/api/v1/metadata/locations){:target="_blank"}
+[```https://meri.digitraffic.fi/api/port-call/v1/ports```](https://meri.digitraffic.fi/api/port-call/v1/ports){:target="_blank"}
 
-[```https://https://meri.digitraffic.fi/api/port-call/v1/vessel-details```](https://meri.digitraffic.fi/api/port-call/v1/vessel-details){:target="_blank"}
+[```https://meri.digitraffic.fi/api/port-call/v1/vessel-details```](https://meri.digitraffic.fi/api/port-call/v1/vessel-details){:target="_blank"}
 
-[```https://https://meri.digitraffic.fi/api/port-call/v1/code-descriptions```](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:target="_blank"}
+[```https://meri.digitraffic.fi/api/port-call/v1/code-descriptions```](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:target="_blank"}
 
 ### AIS-tiedot
 
