@@ -1,6 +1,8 @@
 ---
 layout: page
 permalink: /tuki/yhteystiedot/
+redirect_from:
+  - /yhteystiedot/
 section: Tuki
 searchable: true
 title: Yhteystiedot

@@ -1,6 +1,8 @@
 ---
 layout: page
 permalink: /en/support/support-channels/
+redirect_from:
+  - /en/support-channels/
 section: Tuki
 searchable: true
 title: Support Channels

@@ -7,6 +7,9 @@ encoding: utf-8
 plugins_dir:
   - jekyll-babel
 
+plugins:
+  - jekyll-redirect-from
+
 sass:
   sass_dir: _scss
   style: compressed

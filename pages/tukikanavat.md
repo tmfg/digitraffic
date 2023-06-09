@@ -1,6 +1,8 @@
 ---
 layout: page
 permalink: /tuki/tukikanavat/
+redirect_from:
+  - /tukikanavat/
 section: Tuki
 searchable: true
 title: Tukikanavat

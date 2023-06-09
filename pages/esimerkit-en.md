@@ -2,6 +2,8 @@
 layout: traffictype
 hero-image: code
 permalink: /en/support/code-examples/
+redirect_from:
+  - /en/instructions/code-examples/
 section: Tietolähteet
 searchable: true
 lang: en

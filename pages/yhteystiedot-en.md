@@ -1,6 +1,8 @@
 ---
 layout: page
 permalink: /en/support/contact/
+redirect_from:
+  - /en/contact/
 section: Tuki
 searchable: true
 title: Contact information

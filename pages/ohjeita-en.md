@@ -2,6 +2,8 @@
 layout: traffictype
 hero-image: code
 permalink: /en/support/instructions/
+redirect_from:
+  - /en/instructions/
 section: Tietolähteet
 searchable: true
 lang: en

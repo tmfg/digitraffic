@@ -8,6 +8,9 @@ incremental: true
 plugins_dir:
   - jekyll-babel
 
+plugins:
+  - jekyll-redirect-from
+
 sass:
   sass_dir: _scss
 compress_html:

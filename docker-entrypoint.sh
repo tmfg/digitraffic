@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Signal handler to clean up and exit properly when terminating
 trap "echo Exiting...; kill -TERM -1; exit" SIGINT SIGTERM
@@ -16,7 +16,7 @@ then
     npm install
     npm update --save
     npm audit
-    npm audit fix
+    npm audit fix | true
 
 else
     echo
