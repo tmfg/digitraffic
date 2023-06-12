@@ -20,6 +20,36 @@ intro: Ohjeita ohjelmoijille
 
 # Yleistä huomioitavaa
 
+## Sovelluksen yksilöivät otsikkotiedot
+
+Toivomme, että rajapintojen käyttäjät käyttäisivät kaikissa HTTP-pyynnöissä alla kuvattuja HTTP-otsikkotietoja.
+Näin pystymme seuraamaan erilaisesta käytöstä tulevaa kuormaa sekä reagoimaan mahdollisiin virhetilanteisiin paremmin.
+Esimerkkinä voisi olla ohjelmointivirhe, joka aiheuttaa huomattavan kuorman tekemällä ylimääräisiä pyyntöjä rajapintoihimme.
+Jos alla mainitut tiedot ovat kunnossa, pystymme tunnistamaan osapuolen ja välittämään tiedon mahdollisesta ongelmasta
+sovelluksessa kehittäjälle tai ylläpitäjälle.
+
+### Huomio!
+Älä lähetä mitään henkilötietoja kuten nimeä tai sähköpostiosoitetta otsikkotietojen mukana!
+Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
+`Digitraffic-User: Junamies/FoobarApp 1.0`
+
+Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntömäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/).
+
+### Digitraffic-User -otsikko
+
+Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/tai sovellus. Alla esimerkkejä.
+
+`Digitraffic-User: TMFG`  
+`Digitraffic-User: Liikennetilanne`  
+`Digitraffic-User: TMFG/Liikennetilanne`
+
+#### Esimerkkejä
+```bash
+curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
+
+wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
+```
+
 ## Rajapintojen versiointi ja elinkaari
 
 ![Rajapintojen elinkaari]({{ site.baseurl }}{{ "/img/ohjeita/api-life-cycle.png" }})
@@ -92,35 +122,6 @@ Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö p�
 | **tie/meri.digitraffic.fi:n V1-rajapinnat**       | &infin;                 |
 | **infra- ja jeti-api**                            | &infin;                 |
 
-## Sovelluksen yksilöivät otsikkotiedot
-
-Toivomme, että rajapintojen käyttäjät käyttäisivät kaikissa HTTP-pyynnöissä alla kuvattuja HTTP-otsikkotietoja. 
-Näin pystymme seuraamaan erilaisesta käytöstä tulevaa kuormaa sekä reagoimaan mahdollisiin virhetilanteisiin paremmin.
-Esimerkkinä voisi olla ohjelmointivirhe, joka aiheuttaa huomattavan kuorman tekemällä ylimääräisiä pyyntöjä rajapintoihimme.
-Jos alla mainitut tiedot ovat kunnossa, pystymme tunnistamaan osapuolen ja välittämään tiedon mahdollisesta ongelmasta 
-sovelluksessa kehittäjälle tai ylläpitäjälle.
-
-### Huomio!
-Älä lähetä mitään henkilötietoja kuten nimeä tai sähköpostiosoitetta otsikkotietojen mukana!
-Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
-`Digitraffic-User: Junamies/FoobarApp 1.0`
-
-Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntömäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/). 
-
-### Digitraffic-User -otsikko
-
-Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/tai sovellus. Alla esimerkkejä.
-  
-`Digitraffic-User: TMFG`  
-`Digitraffic-User: Liikennetilanne`  
-`Digitraffic-User: TMFG/Liikennetilanne`
-
-#### Esimerkkejä
-```bash
-curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
-
-wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
-```
 
 # Cache
 __K__: Miksi saan rajapinnoilta usein saman vastauksen?  

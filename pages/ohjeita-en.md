@@ -19,6 +19,36 @@ intro: Instructions for coding
 
 # General considerations
 
+## Headers to identify the application
+
+We hope that API users will use the HTTP headers described below in all HTTP requests.
+This enables us to better monitor the load from different use cases and to react better to possible error situations.
+An example could be a programming error that causes a considerable load by making additional requests to our interfaces.
+If the information listed below is in order, we are able to identify the API user in question and to notify
+the application developer or administrator.
+
+### Attention!
+Don't send any PII (personally identifiable information) via the headers!
+If you want to be identified as owner of multiple apps, use a nickname e.g.  
+`Digitraffic-User: Trainguy/FoobarApp 1.0`
+
+If you want to be contact for e.g. excessive request amount, please sign up on our webpage [https://www.digitraffic.fi/en/sign-up-your-application/](https://www.digitraffic.fi/en/sign-up-your-application/).
+
+### Digitraffic-User
+
+The Digitraffic-User header should include an identifiable user party and/or application. Below you can find examples.
+
+`Digitraffic-User: Fintraffic`  
+`Digitraffic-User: Liikennetilanne`  
+`Digitraffic-User: Fintraffic/Liikennetilanne`
+
+#### Examples
+```bash
+curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
+
+wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
+```
+
 ## API versioning and life cycle
 
 ![APIs' life cycle]({{ site.baseurl }}{{ "/img/ohjeita/api-life-cycle.png" }})
@@ -90,35 +120,6 @@ The documentation of each API explains how often each interface content is updat
 | **tie/meri.digitraffic.fi V1-interfaces**     | &infin;                 |
 | **infra- and jeti-api**                       | &infin;                 |
 
-## Headers to identify the application
-
-We hope that API users will use the HTTP headers described below in all HTTP requests.
-This enables us to better monitor the load from different use cases and to react better to possible error situations.
-An example could be a programming error that causes a considerable load by making additional requests to our interfaces.
-If the information listed below is in order, we are able to identify the API user in question and to notify 
-the application developer or administrator.
-
-### Attention!
-Don't send any PII (personally identifiable information) via the headers!
-If you want to be identified as owner of multiple apps, use a nickname e.g.  
-`Digitraffic-User: Trainguy/FoobarApp 1.0`
-
-If you want to be contact for e.g. excessive request amount, please sign up on our webpage [https://www.digitraffic.fi/en/sign-up-your-application/](https://www.digitraffic.fi/en/sign-up-your-application/).
-
-### Digitraffic-User
-
-The Digitraffic-User header should include an identifiable user party and/or application. Below you can find examples.
-
-`Digitraffic-User: Fintraffic`  
-`Digitraffic-User: Liikennetilanne`  
-`Digitraffic-User: Fintraffic/Liikennetilanne`  
-
-#### Examples
-```bash
-curl -H 'Digitraffic-User: Junamies/FoobarApp 1.0'  
-
-wget --header='Digitraffic-User: Junamies/FoobarApp 1.0'
-```
 
 # Cache
 __Q__: Why do APIs often return the same response?  
