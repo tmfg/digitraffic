@@ -5,10 +5,9 @@ section: Palvelun tietosuojaseloste
 searchable: true
 lang: fi
 ref: privacy-policy
-title: Tietosuojaseloste
+title: Digitraffic-palvelun tietosuojaseloste
 ---
 
-## Digitraffic-palvelun tietosuojaseloste
 EU:n yleinen tietosuoja-asetus (EU) 2016/679
 
 ### 1\. Johdanto
