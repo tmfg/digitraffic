@@ -26,14 +26,7 @@ Toivomme, että rajapintojen käyttäjät käyttäisivät kaikissa HTTP-pyynnöi
 Näin pystymme seuraamaan erilaisesta käytöstä tulevaa kuormaa sekä reagoimaan mahdollisiin virhetilanteisiin paremmin.
 Esimerkkinä voisi olla ohjelmointivirhe, joka aiheuttaa huomattavan kuorman tekemällä ylimääräisiä pyyntöjä rajapintoihimme.
 Jos alla mainitut tiedot ovat kunnossa, pystymme tunnistamaan osapuolen ja välittämään tiedon mahdollisesta ongelmasta
-sovelluksessa kehittäjälle tai ylläpitäjälle.
-
-### Huomio!
-Älä lähetä mitään henkilötietoja kuten nimeä tai sähköpostiosoitetta otsikkotietojen mukana!
-Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
-`Digitraffic-User: Junamies/FoobarApp 1.0`
-
-Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntömäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/).
+sovelluksessa kehittäjälle tai ylläpitäjälle. Mikäli haluat että sinuun otetaan yhteyttä esim. liian ison pyyntömäärän takia, ilmoita sovellus sivustollemme [https://www.digitraffic.fi/ilmoita-oma-sovellus/](https://www.digitraffic.fi/ilmoita-oma-sovellus/).
 
 ### Digitraffic-User -otsikko
 
@@ -42,6 +35,11 @@ Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/ta
 `Digitraffic-User: TMFG`  
 `Digitraffic-User: Liikennetilanne`  
 `Digitraffic-User: TMFG/Liikennetilanne`
+
+#### Huomio!
+Älä lähetä mitään henkilötietoja kuten nimeä tai sähköpostiosoitetta otsikkotietojen mukana!
+Jos sinulla on useampi sovellus jotka haluat yhdistettävän itseesi, käytä vaikka nimimerkkiä, esim.  
+`Digitraffic-User: Junamies/FoobarApp 1.0`
 
 #### Esimerkkejä
 ```bash
@@ -81,7 +79,7 @@ Voit myös tilata statussivulta tiedon päivityksistä ja vikatilanteista sähk�
 
 ## HTTPS- vai HTTP-protokolla
 
-Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, ei siis ole syytä käyttää salaamatonta HTTP-protokollaa. 
+Käytä HTTPS:ää. Digitrafficin kaikki rajapinnat tukevat HTTPS-protokollaa, joten ei ole syytä käyttää salaamatonta HTTP-protokollaa. 
 Tällä hetkellä salaamattomat HTTP-pyynnöt kelikamerakuviin ohjataan käyttämään HTTPS:ää ```HTTP/1.1 301 Moved Permanently``` -vastauksella ja 
 ```Location``` -otsikkotiedolla, jossa kerrotaan uusi HTTPS-osoite. 
 On mahdollista, että tulevaisuudessa kaikki liikenne pakotetaan käyttämään ```HTTPS```-protokollaa. 
@@ -201,6 +199,51 @@ function handleTmsData(data) {
 fetch(TMS_STATION_URL, {headers: DT_USER_ID})
     .then(response => response.json())
     .then(handleTmsData)
+```
+
+# PHP
+
+__K__: Miten kutsun rajapintoja PHP:lla?  
+__V__:
+```php
+# Settings
+$user = 'Käyttäjänimesi'; # Choose descriptive name, eg. your organisation and append it with your nickname (not real name)
+$tiesaa_id = '14028'; # Find id from https://tie.digitraffic.fi/api/weather/v1/stations/
+# End of settings
+
+# Tiesääaseman perustiedot https://tie.digitraffic.fi/api/weather/v1/stations/14028
+# Tiesääaseman data esim. https://tie.digitraffic.fi/api/weather/v1/stations/14028/data
+$digitraffic_url = 'https://tie.digitraffic.fi/api/weather/v1/stations/' . $tiesaa_id . '/data';
+
+$options = array(
+  'http' => array(
+    'method' => "GET",
+    'header' => "Accept-Encoding: gzip\r\n" .
+              "Accept: application/json\r\n"  .
+			  "Digitraffic-User: ".$user
+  )
+);
+
+$context = stream_context_create($options);
+if (!$digitraffic_file = file_get_contents($digitraffic_url, false, $context)) {
+	echo "Error: Invalid url (or Bad request).\r\n<br>";
+	exit;
+}
+
+if (!$digitraffic_file = gzdecode($digitraffic_file, 15000)) {
+	echo "Error: With gzdecode.\r\n<br>";
+	exit;
+}
+
+if (!$digitraffic_json = json_decode($digitraffic_file, TRUE, 5)) {
+	echo "Error: Json decode failed.\r\n<br>";
+	exit;
+}
+
+# Json is now decoded to array and ready to be used. 
+#var_dump($digitraffic_json);
+
+echo $digitraffic_json['dataUpdatedTime']."\r\n<br>"; # For example: dataUpdatedTime: "2023-07-19T09:24:00Z"
 ```
 
 __K__: Miten käsittelen ETagia kamerakuvia kyseltäessä?  
