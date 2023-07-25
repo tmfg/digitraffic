@@ -6,7 +6,7 @@ issue-number: DPO-2007
 traffictypes:
   - Road traffic
   - Marine traffic
-  - Rail traffic
+  - Railway traffic
 status: planned
 date: 2023-04-01
 ---
