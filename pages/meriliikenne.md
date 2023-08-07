@@ -134,6 +134,8 @@ Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 
 
 Testin osoite vastaavasti ```meri-test.digitraffic.fi```.
 
+Yksinkertainen asiakas sovellus selaimelle löytyy [Tuki > MQTT esimerkkejä](/tuki/script-mqtt/) -sivulta.
+
 ### Topicit
 
 Jokaisen tarjottavan datalajin juuressa on myös topikki `status`. Viesti kertoo, milloin data on viimeksi päivittynyt epookki sekunteina. Esim.:

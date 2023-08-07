@@ -134,6 +134,8 @@ When using Paho JS-client the address is plain meri.digitraffic.fi and port 443,
 
 Address for test is ```meri-test.digitraffic.fi```.
 
+Simple example client can be found at [Support > MQTT examples](/en/support/script-mqtt/) page.
+
 ### Topics
 
 At the root of each offered data type is also the topic `status`. The message tells when the data is last updated in epoch seconds. E.g.:
