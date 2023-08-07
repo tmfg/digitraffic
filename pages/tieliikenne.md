@@ -345,7 +345,7 @@ Varoitusmerkit kuvina:
 
 Tiedot on saatavina myös datex2-muotoisena:
 
-[```/api/variable-sign/v1/signs.datex2```](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}\
+[```/api/variable-sign/v1/signs.datex2```](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}
 
 Varoitusmerkissä mahdollisesti olevat []-merkkien sisällä olevat kyltit on mahdollista generoida svg-muodossa:
 

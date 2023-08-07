@@ -343,7 +343,7 @@ Warning sign images:
 
 Data is also available in datex2-format:
 
-[```/api/variable-sign/v1/signs.datex2```](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}\
+[```/api/variable-sign/v1/signs.datex2```](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}
 
 Warnings text can contain sign symbols enclosed with []. It is possible to render those in svg-format:
 
