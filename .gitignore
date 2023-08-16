@@ -5,4 +5,4 @@ node_modules
 _site
 _site_tmp
 .DS_Store
-js
+js/*.js.map
