@@ -7,7 +7,10 @@
   "license": "CC-BY-4.0",
   "main": "index.js",
   "scripts": {
-    "build": "bundle exec jekyll build",
+    "build": "npm run build:tsc && npm run build:jekyll",
+    "build:jekyll": "bundle exec jekyll build",
+    "build:tsc": "tsc",
+    "prettify": "prettier --write --config .prettierrc.js ts",
     "dev": "gulp",
     "test": ""
   },
@@ -22,6 +25,8 @@
     "lodash.template": "^4.5.0"
   },
   "dependencies": {
+    "@types/jquery": "^3.5.16",
+    "typescript": "^5.1.6",
     "xmlhttprequest": "^1.8.0"
   }
 }

@@ -9,7 +9,6 @@ layout: uncompressed
 
   <!--HTML body-->
   <body class="body">
-
     <!--Header-->
     {% include header.html header-classes="header--white" %}
 
@@ -23,7 +22,6 @@ layout: uncompressed
       </div>
 
       <div class="content__section-under-hero content--padded content--github-edit">
-
         <!--Breadcrumb-->
         <div class="row">
           <div class="col-xs-12 breadcrumb"><!--
@@ -36,8 +34,21 @@ layout: uncompressed
         <content>
           <div class="row">
             <!--Text content-->
+            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">{{ content }}</div>
+          </div>
+
+          <div class="row">
             <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
-              {{ content }}
+              <a href="{{ page.url }}?sort=days" class="tab-link">
+                <button class="button">
+                  <span class="button__text">Sort by open days</span>
+                </button>
+              </a>
+              <a href="{{ page.url }}?sort=start" class="tab-link">
+                <button class="button">
+                  <span class="button__text">Sort by start day</span>
+                </button>
+              </a>
             </div>
           </div>
 
@@ -54,7 +65,6 @@ layout: uncompressed
             </div>
           </div>
         </content>
-
       </div>
     </content>
 

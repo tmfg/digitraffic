@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "outDir": "./js",
+    "target": "ES6",
+    "module": "ES2022",
+    "lib": ["DOM", "ES6"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "alwaysStrict": true,
+    // "noImplicitAny": true,
+    "checkJs": true,
+    "allowJs": true
+  },
+  "include": ["./ts/**/*.ts", "./ts/**/*.js", "js/script-api-changes.ts"],
+  "exclude": ["node_modules"]
+}
