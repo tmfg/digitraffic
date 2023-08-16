@@ -149,18 +149,12 @@ function calculateDaysOpen(feature) {
 
 type SortCallbackFunction = (a: any) => number;
 
-function sortBy(fn: SortCallbackFunction) {
+function sortBy(fn: SortCallbackFunction, reverse: boolean = false) {
+    const shouldReverse = reverse ? -1 : 1;
     return (a, b) => {
         const daysA = fn(a);
         const daysB = fn(b);
-        if (daysA && daysB) {
-            return daysB - daysA;
-        } else if (daysA) {
-            return -1;
-        } else if (daysB) {
-            return 1;
-        }
-        return 0;
+        return (daysA > daysB ? 1 : -1) * shouldReverse;
     };
 }
 
@@ -168,7 +162,7 @@ function getSortAlgorithm() {
     const urlParams = new URLSearchParams(window.location.search);
     const sort = urlParams.get("sort");
     if (sort === "days") {
-        return sortBy((f) => f.properties.daysOpen);
+        return sortBy((f) => f.properties.daysOpen, true);
     }
     return sortBy((f) => getStartDateTime(f.properties.announcements).valueOf());
 }
