@@ -133,7 +133,7 @@ function sortBy(fn, reverse = false) {
     return (a, b) => {
         const daysA = fn(a);
         const daysB = fn(b);
-        return (daysA > daysB ? 1 : -1) * shouldReverse;
+        return daysA > daysB ? shouldReverse : -shouldReverse;
     };
 }
 function getSortAlgorithm() {
