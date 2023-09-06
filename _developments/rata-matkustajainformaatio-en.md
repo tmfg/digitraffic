@@ -5,7 +5,7 @@ ref: rata-rami
 issue-number: DPO-1297
 traffictypes:
   - Railway traffic
-status: planned
+status: finished
 date: 2022-01-01
 ---
 

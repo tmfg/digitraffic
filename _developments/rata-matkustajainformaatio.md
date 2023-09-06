@@ -5,7 +5,7 @@ ref: rata-rami
 issue-number: DPO-1297
 traffictypes:
   - Rautatieliikenne
-status: suunnitteilla
+status: valmis
 date: 2022-01-01
 ---
 
