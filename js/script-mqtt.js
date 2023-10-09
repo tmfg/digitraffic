@@ -2,6 +2,7 @@
 let lines = [];
 let messagesLastMinuteCount = 0, client;
 const port = 443;
+let host = "";
 let topic = "";
 let messagesDiv;
 window.setInterval(logMessageCount, 60*1000);
@@ -10,15 +11,16 @@ window.onload = updateTopicTemplate;
 
 function connect() {
     const clientId = "testclient_" + now();
-    const host = $("#domain").val();
+    host = $("#domain").val();
     topic = $("#topic").val();
-    console.log("Trying to connect to road mqtt " + host + ":" + port + " Topic: " + topic + " client id: " + clientId);
+    console.log("Trying to connect to host " + host + ":" + port + ", topic: " + topic + " client id: " + clientId);
 
     client = new Paho.Client(host, port, clientId);
 
     client.onConnectionLost = function (response) {
-        $("#connectionStatus").text(new Date().toISOString() + ' Connection lost: ' + response.errorCode+ ': ' + response.errorMessage);
-        console.info(new Date().toISOString() + ' Connection lost: ' + response.errorCode+ ': ' + response.errorMessage);
+        const msg = new Date().toISOString() + ' Connection to host ' + host + ' lost: ' + response.errorCode + ': ' + response.errorMessage;
+        $("#connectionStatus").text(msg);
+        console.info(msg);
     };
 
     client.onMessageArrived = function(message) {
@@ -61,7 +63,7 @@ function disconnect() {
     try {
         if (client && client.isConnected) {
             client.disconnect();
-            $("#connectionStatus").text(new Date().toISOString() + ' Disconnected');
+            $("#connectionStatus").text(new Date().toISOString() + ' Disconnected from host '  + host);
         }
     } catch(err) {
         console.error(err.message);
@@ -76,13 +78,14 @@ function logMessageCount() {
 
 function onConnectSuccess() {
     console.info(now() + ' Connection open. Subscribing to topic ' + topic);
-    $("#connectionStatus").text(new Date().toISOString() + ' Connected, topic: ' + topic);
+    $("#connectionStatus").text(new Date().toISOString() + ' Connected to host ' + host + ', topic: ' + topic);
     client.subscribe(topic);
 }
 
 function onConnectFailure(response) {
-    console.info(now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
-    $("#connectionStatus").text(new Date().toISOString() + ' Connection failed. ' + response.errorCode + ": " + response.errorMessage);
+    const msg = new Date().toISOString() + ' Connection to host ' + host + ' failed. ' + response.errorCode + ": " + response.errorMessage;
+    console.info(msg);
+    $("#connectionStatus").text(msg);
 }
 
 function addMessage(destination, message) {

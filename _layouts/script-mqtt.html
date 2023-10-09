@@ -49,6 +49,9 @@ layout: uncompressed
             <option value="tie.digitraffic.fi">tie.digitraffic.fi</option>
             <option value="meri-test.digitraffic.fi">meri-test.digitraffic.fi</option>
             <option value="meri.digitraffic.fi">meri.digitraffic.fi</option>
+            <option value="meri-test.digitraffic.fi">meri-test.digitraffic.fi</option>
+            <option value="rata-beta.digitraffic.fi">rata-beta.digitraffic.fi</option>
+            <option value="rata.digitraffic.fi">rata.digitraffic.fi</option>
           </select>
           </td>
         </tr>
@@ -58,13 +61,23 @@ layout: uncompressed
           </th>
           <td>
             <select id="topic_select" name="topic_select" onchange="updateTopicTemplate()" style="width: 100%;">
+              <option value="" disabled>Road</option>
               <option value="tms-v2/#">tms-v2/&lt;roadStationId>/&lt;sensorId></option>
               <option value="weather-v2/#">weather-v2/&lt;roadStationId>/&lt;sensorId></option>
               <option value="maintenance-v2/routes/#">maintenance-v2/routes/#</option>
               <option value="traffic-message-v2/datex2/#">traffic-message-v2/datex2/&lt;situationType></option>
               <option value="traffic-message-v2/simple/#">traffic-message-v2/simple/&lt;situationType></option>
+              <option value="" disabled>Marine</option>
               <option value="vessels-v2/#">vessels-v2/&lt;mmsi>/&lt;metadata> or vessels-v2/&lt;mmsi>/&lt;location></option>
               <option value="sse-v2/site/#">sse-v2/site/&lt;site-id></option>
+              <option value="" disabled>Railway</option>
+              <option value="trains/#">trains/&lt;departure_date>/&lt;train_number>/&lt;train-category>/&lt;train-type>/&lt;operator>/&lt;commuter-line>/&lt;running-currently>/&lt;timetable-type></option>
+              <option value="trains-by-station/#">trains-by-station/&lt;station></option>
+              <option value="train-locations/#">train-locations/&lt;departure_date>/&lt;train_number></option>
+              <option value="train-tracking/#">train-tracking/&lt;departure_date>/&lt;train_number>/&lt;type>/&lt;station>/&lt;track_section>/&lt;previous_station>/&lt;next_station>/&lt;previous_track_section>/&lt;next_track_section></option>
+              <option value="routesets/#">routesets/&lt;departure_date>/&lt;train_number></option>
+              <option value="compositions/#">compositions/&lt;departure_date>/&lt;train_number>/&lt;train_category>/&lt;train_type>/&lt;operator></option>
+
             </select>
           </td>
 
