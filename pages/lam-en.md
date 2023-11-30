@@ -39,8 +39,8 @@ The table below contains additional information about sensors.
 
 | Id | Name | Unit | Description
 | --- | --- | --- | ---
-| 5152<br>5125 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2 | km/h | The average speed for the last five minutes.
-| 5158<br>5161 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2 | % of the free flow speed | The average speed percentage of the road free flow speed for the last five minutes.<br><code>Value descriptions:<br>0 – 10 Stationary<br>10 – 25 Queuing<br>25 – 75 Slow<br>75 – 90 Platooning<br>90 – 100 Fluent</code>
+| 5122<br>5125 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2 | km/h | The average speed for the last five minutes.
+| 5158<br>5161 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2 | % of the free flow speed | The average speed percentage of the road free flow speed for the last five minutes.<br><code>Value descriptions:<br>0 – 10 Stationary<br>10 – 25 Queuing<br>25 – 75 Slow<br>75 – 90 Platooning<br>90 – 100 Fluent<br>100 –    Over the free flow speed</code>
 | 5056<br>5057 | KESKINOPEUS_60MIN_KIINTEA_SUUNTA1  KESKINOPEUS_60MIN_KIINTEA_SUUNTA2 | km/h | The average speed for a given 60 minute period.
 | 5058<br>5061 | KESKINOPEUS_5MIN_KIINTEA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_KIINTEA_SUUNTA2_VVAPAAS2 |  % of the free flow speed | The average speed percentage of the road free flow speed for a given 5 minute period.<br><code>Value descriptions: see above KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1.</code>
 | 5116<br>5119 | OHITUKSET_5MIN_LIUKUVA_SUUNTA1  OHITUKSET_5MIN_LIUKUVA_SUUNTA2 | kpl/h | Vehicles passed from the last 5 minutes extrapolated to one hour. I.e. how many vehicles would pass during one hour if the rate of passes was the same as during the last five minutes.

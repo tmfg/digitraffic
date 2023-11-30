@@ -39,9 +39,9 @@ Alla on lisätietoa LAM-pisteiden laskennallisista antureista.
 
 | Anturin tunniste | Nimi | Yksikkö | Selite
 | --- | --- | --- | ---
-| 5152<br>5125 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2 | km/h | Keskinopeus viimeiseltä viideltä minuutilta.
-| 5158<br>5161 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2 | % vapaasta nopeudesta | Keskinopeuden prosenttiosuus määritellystä tien vapaasta nopeudesta viimeisen viiden minuutin ajalta.<br><code>Arvovastaavuudet:<br>0 – 10 Seisoo<br>10 – 25 Pysähtelee<br>25 – 75 Hidasta<br>75 – 90 Jonoutunut<br>90 – 100 Sujuvaa</code>
-| 5056<br>5057 | KESKINOPEUS_60MIN_KIINTEA_SUUNTA1  KESKINOPEUS_60MIN_KIINTEA_SUUNTA2 | km/h | Keskinopeus ilmoitetun 60 min aikavaikaikkunalta.
+| 5122<br>5125 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2 | km/h | Keskinopeus viimeiseltä viideltä minuutilta.
+| 5158<br>5161 | KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_LIUKUVA_SUUNTA2_VVAPAAS2 | % vapaasta nopeudesta | Keskinopeuden prosenttiosuus määritellystä tien vapaasta nopeudesta viimeisen viiden minuutin ajalta.<br><code>Arvovastaavuudet:<br>0 – 10   Seisoo<br>10 – 25  Pysähtelee<br>25 – 75  Hidasta<br>75 – 90  Jonoutunut<br>90 – 100 Sujuvaa<br>100 –    Yli vapaan nopeuden</code>
+| 5056<br>5057 | KESKINOPEUS_60MIN_KIINTEA_SUUNTA1  KESKINOPEUS_60MIN_KIINTEA_SUUNTA2 | km/h | Keskinopeus ilmoitetun 60 min aikaikkunalta.
 | 5058<br>5061 | KESKINOPEUS_5MIN_KIINTEA_SUUNTA1_VVAPAAS1  KESKINOPEUS_5MIN_KIINTEA_SUUNTA2_VVAPAAS2 | % vapaasta nopeudesta | Keskinopeuden prosenttiosuus määritellystä tien vapaasta nopeudesta ilmoitetulta 5 min aikaväliltä.<br><code>Arvovastaavuudet: ks. yllä KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1_VVAPAAS1.</code>
 | 5116<br>5119 | OHITUKSET_5MIN_LIUKUVA_SUUNTA1  OHITUKSET_5MIN_LIUKUVA_SUUNTA2 | kpl/h | Viimeisen 5 minuutin automäärä ekstrapoloituna tuntimääräksi. Eli paljonko autoja kulkisi tunnissa, jos virta pysyisi samana kuin viimeisen viiden minuutin aikana.
 | 5164<br>5168 | OHITUKSET_5MIN_LIUKUVA_SUUNTA1_MS1  OHITUKSET_5MIN_LIUKUVA_SUUNTA2_MS2 | % maksimista | Viimeisen 5 minuutin (tuntimääräksi ekstrapoloidun) automäärän prosenttiosuus maksimimäärästä (MS1/MS2).
