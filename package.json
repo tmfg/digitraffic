@@ -25,8 +25,8 @@
     "lodash.template": "^4.5.0"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.22",
-    "typescript": "^5.2.2",
+    "@types/jquery": "^3.5.29",
+    "typescript": "^5.3.3",
     "xmlhttprequest": "^1.8.0"
   }
 }
