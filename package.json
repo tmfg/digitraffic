@@ -14,11 +14,6 @@
     "dev": "bundle exec jekyll serve --port 3000 --host localhost --livereload --config _config_dev.yml",
     "test": ""
   },
-  "devDependencies": {
-    "del": "^7.1.0",
-    "lodash": "^4.17.21",
-    "lodash.template": "^4.5.0"
-  },
   "dependencies": {
     "@types/jquery": "^3.5.29",
     "typescript": "^5.3.3",
