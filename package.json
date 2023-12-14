@@ -11,16 +11,11 @@
     "build:jekyll": "bundle exec jekyll build",
     "build:tsc": "tsc",
     "prettify": "prettier --write --config .prettierrc.js ts",
-    "dev": "gulp",
+    "dev": "bundle exec jekyll serve --port 3000 --host localhost --livereload --config _config_dev.yml",
     "test": ""
   },
   "devDependencies": {
-    "browser-sync": "^2.29.3",
     "del": "^7.1.0",
-    "extend": "^3.0.2",
-    "gulp": "^4.0.2",
-    "gulp-clean": "^0.4.0",
-    "gulp-shell": "^0.8.0",
     "lodash": "^4.17.21",
     "lodash.template": "^4.5.0"
   },
