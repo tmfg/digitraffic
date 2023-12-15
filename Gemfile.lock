@@ -11,10 +11,10 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     base64 (0.2.0)
-    bigdecimal (3.1.4)
+    bigdecimal (3.1.5)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -224,6 +224,8 @@ GEM
     mutex_m (0.2.0)
     nokogiri (1.15.5-aarch64-linux)
       racc (~> 1.4)
+    nokogiri (1.15.5-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.5-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
@@ -267,6 +269,7 @@ GEM
 
 PLATFORMS
   aarch64-linux-musl
+  arm64-darwin-23
   x86_64-darwin-22
   x86_64-linux
 
