@@ -89,50 +89,62 @@ function updateServiceStatusList(language, event) {
 
 function updateMaintenancesList(elementId, event) {
 
-  let statusList = document.getElementById(elementId);
+    let statusList = document.getElementById(elementId);
 
-  // Get a reference to the template li and remove it from dom
-  let templateItem = statusList.firstElementChild;
+    // Get a reference to the template li and remove it from dom
+    let templateItem = statusList.firstElementChild;
 
-  while (statusList.firstChild) {
-    statusList.removeChild(statusList.firstChild);
-  }
+    while (statusList.firstChild) {
+        statusList.removeChild(statusList.firstChild);
+    }
 
-  // Add list of upcoming maintenances to maintenances list
-  JSON.parse(event.target.responseText).scheduled_maintenances.forEach(function (incident) {
-    const newestUpdate = incident.incident_updates[0];
-    addIncidentDetailedList(incident.scheduled_for, incident.name, newestUpdate.body, incident.shortlink, statusList, templateItem);
-  });
+    // Add list of upcoming maintenances to maintenances list
+    JSON.parse(event.target.responseText).scheduled_maintenances.forEach(function (incident) {
+        const newestUpdate = incident.incident_updates[0];
+        addIncidentDetailedList(incident.scheduled_for, incident.name, newestUpdate.body, incident.shortlink,
+            statusList, templateItem);
+    });
+}
+
+function isActiveMaintenance(issue) {
+    // the cstate field createdAt is actually the intended time of the maintenance
+    return Date.parse(issue.createdAt) <= Date.now()
 }
 
 async function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, baseUrl) {
+    const statusList = document.getElementById(elementId);
 
-  const statusList = document.getElementById(elementId);
+    const cstateIndex = await getJson(baseUrl + "/index.json");
 
-  // const maintenancesJson = await getJson(baseUrl + "/api/v2/scheduled-maintenances/upcoming.json"); // upcoming maintenances for testing
-  const maintenancesJson = await getJson(baseUrl + "/api/v2/scheduled-maintenances/active.json"); // active maintenances
-  // const unresolvedIncidentsJson = await getJson(baseUrl + "/api/v2/incidents.json"); // all incidents for testing
-  const unresolvedIncidentsJson = await getJson(baseUrl + "/api/v2/incidents/unresolved.json"); // active incidents
-  // Combine all active maintenances and incidents to one list
-  const allActive = [...maintenancesJson.scheduled_maintenances, ...unresolvedIncidentsJson.incidents];
+    // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
+    const activeMaintenances = cstateIndex.pinnedIssues.filter(isActiveMaintenance);
+    const unresolvedIncidents = cstateIndex.systems.reduce((acc, curr) => {
+        return acc.concat(curr.unresolvedIssues.filter(
+            // filter duplicates, they exist if one issue affects multiple components
+            issue => !acc.find(addedIssue => addedIssue.filename === issue.filename)))
+    }, [])
 
-  // Get a reference to the template li and remove it from dom
-  let templateItem = statusList.firstElementChild;
+    // active incidents and maintenances are displayable issues
+    const displayableIssues = activeMaintenances.concat(unresolvedIncidents)
+                                                .sort((a, b) => Date.parse(b.createdAt) - Date.parse(
+                                                    a.createdAt));
 
-  while (statusList.firstChild) {
-    statusList.removeChild(statusList.firstChild);
-  }
+    // Get a reference to the template li and remove it from dom
+    const templateItem = statusList.firstElementChild;
 
-  // Take only first three to show on front page
-  const first3 = allActive.slice(0, 3);
-  if (first3.length > 0) {
-    first3.forEach(function (incident) {
-      const incidentTime = incident.hasOwnProperty("scheduled_for") ? incident.scheduled_for : incident.created_at;
-      addIncidentFrontPageList(incidentTime, incident.name, incident.shortlink, statusList, templateItem);
-    });
-  } else { // empty place hoder
-    addIncidentFrontPageList(null, null, null, statusList, templateItem);
-  }
+    while (statusList.firstChild) {
+        statusList.removeChild(statusList.firstChild);
+    }
+
+    // Take only first three to show on front page
+    const first3 = displayableIssues.slice(0, 3);
+    if (first3.length > 0) {
+        first3.forEach(
+            issue => addIncidentFrontPageList(issue.createdAt, issue.title, issue.permalink, statusList,
+                templateItem));
+    } else { // empty placeholder
+        addIncidentFrontPageList(null, null, null, statusList, templateItem);
+    }
 }
 
 
