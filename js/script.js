@@ -17,7 +17,7 @@ if (document.readyState !== 'loading') {
   document.addEventListener('DOMContentLoaded', init, false);
 }
 
-function init() {
+async function init() {
   //console.log("DOM ready");
 
   //Set parallax elements
@@ -37,18 +37,17 @@ function init() {
   getPageLanguage();
 
   // If Service status section exists, get service status
-  document.getElementById("service-status-section") ? getServiceStatus("https://status.digitraffic.fi", pageLang) : '';
+  document.getElementById("service-status-section") ? await getServiceStatus("https://solita-ijunnone.github.io/cstate-test", pageLang) : '';
 
   if (typeof loadDatex2 === "function") {
-    loadDatex2();
+    await loadDatex2();
   } else if (typeof loadTWC === "function") {
     loadTWC();
   } else if (typeof loadApiChanges === "function") {
-    loadApiChanges(pageLang);
+    await loadApiChanges(pageLang);
   }
-
   if (typeof loadApiStatuses === "function") {
-    loadApiStatuses(pageLang);
+    await loadApiStatuses(pageLang);
   }
 }
 
