@@ -63,12 +63,16 @@ function updateServiceStatus(language, evt) {
     });
 }
 
-function updateServiceStatusList(language, event) {
+function issuesByDate() {
+    return (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt);
+}
 
-    let statusList = document.getElementById('service-status-incident-list'); //ul
+function updateServiceStatusList(language, cstateIssues) {
+
+    const statusList = document.getElementById('service-status-incident-list'); //ul
 
     // Get a reference to the template li and remove it from dom
-    let templateItem = statusList.firstElementChild;
+    const templateItem = statusList.firstElementChild;
 
     while (statusList.firstChild) {
         statusList.removeChild(statusList.firstChild);
@@ -77,42 +81,40 @@ function updateServiceStatusList(language, event) {
     // Limit to 7 days                      day hour  min  sec  msec
     const limitTimestamp = new Date().getTime() - (7 * 24 * 60 * 60 * 1000)
 
+    const publishableIncidents = cstateIssues.pages
+                                             .filter(issue => (limitTimestamp < new Date(
+                                                 issue.resolvedAt).getTime() || !issue.resolved) && !issue.informational)
+                                             .sort(issuesByDate);
+
     // Add list of service status incidents to incident list
-    let added = false;
-    JSON.parse(event.target.responseText).pages.forEach(function (incident) {
-        const resolvedTimestamp = new Date(incident.resolvedAt).getTime();
-        if ((limitTimestamp < resolvedTimestamp) || !incident.informational) {
-            added = true;
-            addIncidentDetailedList(incident.createdAt, incident.title, "", incident.permalink, statusList,
-                templateItem);
-        }
-    });
-    if (!added) {
+    if (publishableIncidents.length > 0) {
+        publishableIncidents.forEach(
+            issue => addIncidentDetailedList(issue.createdAt, issue.title, "", issue.permalink, statusList,
+                templateItem))
+    } else {
         addIncidentDetailedList(null, t.statusNoIncidents[language], null, null, statusList, templateItem);
     }
+
 }
 
-async function updateActiveMaintenancesList(elementId, baseUrl) {
+async function updateActiveMaintenancesList(elementId, cstateIndex) {
 
-    let statusList = document.getElementById(elementId);
+    const statusList = document.getElementById(elementId);
 
     // Get a reference to the template li and remove it from dom
-    let templateItem = statusList.firstElementChild;
-    console.log("templateItem:", templateItem)
+    const templateItem = statusList.firstElementChild;
+
     while (statusList.firstChild) {
         statusList.removeChild(statusList.firstChild);
     }
 
-    const cstateIndex = await getJson(baseUrl + "/index.json");
-    console.log(cstateIndex.pinnedIssues)
-    // Add list of active maintenances to list of current and most recent incidents and active maintenances
+    // Add active maintenances to list of ongoing maintenances
     cstateIndex.pinnedIssues.filter(issue => isActiveMaintenance(issue)).forEach(issue => {
-        console.log(issue)
         addIncidentDetailedList(issue.createdAt, issue.title, "", issue.permalink, statusList, templateItem)
     })
 }
 
-async function updateUpcomingMaintenancesList(elementId, baseUrl) {
+async function updateUpcomingMaintenancesList(elementId, cstateIndex) {
 
     let statusList = document.getElementById(elementId);
 
@@ -122,8 +124,6 @@ async function updateUpcomingMaintenancesList(elementId, baseUrl) {
     while (statusList.firstChild) {
         statusList.removeChild(statusList.firstChild);
     }
-
-    const cstateIndex = await getJson(baseUrl + "/index.json");
 
     // Add to list upcoming maintenances and other informational issues
     cstateIndex.pinnedIssues.filter(issue => !isActiveMaintenance(issue)).forEach(issue => {
@@ -132,15 +132,12 @@ async function updateUpcomingMaintenancesList(elementId, baseUrl) {
 }
 
 function isActiveMaintenance(issue) {
-    // the cstate field createdAt is actually the intended time of the maintenance
+    // the cstate field createdAt is the intended time of the maintenance
     return Date.parse(issue.createdAt) <= Date.now()
 }
 
-async function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, baseUrl) {
+async function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, cstateIndex) {
     const statusList = document.getElementById(elementId);
-
-    // /index.json contains all pinned and unresolved issues
-    const cstateIndex = await getJson(baseUrl + "/index.json");
 
     // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
     const activeMaintenances = cstateIndex.pinnedIssues.filter(isActiveMaintenance);
@@ -152,8 +149,7 @@ async function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, baseUr
 
     // active incidents and maintenances are displayable issues
     const displayableIssues = activeMaintenances.concat(unresolvedIncidents)
-                                                .sort((a, b) => Date.parse(b.createdAt) - Date.parse(
-                                                    a.createdAt));
+                                                .sort(issuesByDate);
 
     // Get a reference to the template li and remove it from dom
     const templateItem = statusList.firstElementChild;
@@ -184,35 +180,32 @@ async function getServiceStatus(baseUrl, language) {
         oReq.open("GET", baseUrl + "/api/v2/components.json");
         oReq.send();
     */
-    // Get ongoing-maintenances from api
+
+    const cstateIndex = await getJson(baseUrl + "/index.json");
+
+    // Add ongoing maintenances to page
     if (document.getElementById("service-status-ongoing-maintenance-list")) {
-        await updateActiveMaintenancesList('service-status-ongoing-maintenance-list', baseUrl)
+        await updateActiveMaintenancesList('service-status-ongoing-maintenance-list', cstateIndex)
     }
 
-
-    // Get current and recent service incidents from api
-    if (document.getElementById("service-status-incident-list")) {
-        const oReq2 = new XMLHttpRequest();
-        oReq2.addEventListener("load", function (evt) {
-            updateServiceStatusList(language, evt);
-        });
-        oReq2.open("GET", baseUrl + "/issues/index.json");
-        oReq2.send();
-    }
-
-
-    // Get upcoming-maintenances from api
+    // Add upcoming maintenances to page
     if (document.getElementById("service-status-upcoming-maintenance-list")) {
-        await updateUpcomingMaintenancesList('service-status-upcoming-maintenance-list', baseUrl);
+        await updateUpcomingMaintenancesList('service-status-upcoming-maintenance-list', cstateIndex);
     }
 
-    // Get ongoing-maintenances from api
+    // Show ongoing maintenances and issues on front page
     if (document.getElementById("service-status-active-incidents-short")) {
         await updateActiveMaintenancesAndIncidentsOnFrontPage('service-status-active-incidents-short',
-            baseUrl);
+            cstateIndex);
     }
 
+    // Get current and recent service incidents from api
+    const cstateIssues = await getJson(baseUrl + "/issues/index.json");
 
+    if (document.getElementById("service-status-incident-list")) {
+        updateServiceStatusList(language, cstateIssues);
+    }
+    
     // Update service status every 60 seconds
     setTimeout(getServiceStatus, 60000, baseUrl, language);
 }
