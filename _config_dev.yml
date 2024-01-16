@@ -437,8 +437,8 @@ t:
     en: "Current maintenances and recent outages"
     fi: "Tämän hetkiset huoltokatkot ja viimeisimmät häiriöt"
   upcoming-maintenances:
-    en: "Upcoming maintenance breaks"
-    fi: "Tulevat huoltokatkot"
+    en: "Upcoming maintenance breaks and other notices"
+    fi: "Tulevat huoltokatkot ja muut ilmoitukset"
 
   # Posts
   filter-news:
@@ -506,6 +506,9 @@ t:
     statusNoIncidents:
       en: "No outages in the last seven days"
       fi: "Ei katkoja viimeisen seitsemän päivän aikana"
+    statusNoUpcomingIssues:
+      en: "No upcoming maintenance breaks or other notices"
+      fi: "Ei tulevia huoltokatkoja tai muita ilmoituksia"
 
   # Footer note of supported browsers
   supported-browsers:

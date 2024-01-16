@@ -37,7 +37,9 @@ async function init() {
   getPageLanguage();
 
   // If Service status section exists, get service status
-  document.getElementById("service-status-section") ? await getServiceStatus("https://solita-ijunnone.github.io/cstate-test", pageLang) : '';
+  if (document.getElementById("service-status-section")) {
+    await getServiceStatus("https://status.digitraffic.fi", pageLang);
+  }
 
   if (typeof loadDatex2 === "function") {
     await loadDatex2();

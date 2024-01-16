@@ -53,7 +53,7 @@ async function loadApiStatuses(language: string) {
     addApiStatusTabLinksEventListeners();
     // If Service status section exists, get service status
     if (document.getElementById("service-status-section")) {
-        await getServiceStatus("https://solita-ijunnone.github.io/cstate-test", language);
+        await getServiceStatus("https://status.digitraffic.fi", language);
     }
 }
 
@@ -133,14 +133,14 @@ async function updateServiceStatusList(language: string, issues: CStateIssueObje
     // Limit to 7 days                      day hour  min  sec  msec
     const limitTimestamp = new Date().getTime() - (7 * 24 * 60 * 60 * 1000)
 
-    const publishableIncidents = issues
+    const displayableIncidents = issues
         .filter(issue => (limitTimestamp < new Date(
             issue.resolvedAt).getTime() || !issue.resolved) && !issue.informational)
         .sort(issuesByDate());
 
     // Add list of service status incidents to incident list
-    if (publishableIncidents.length > 0) {
-        for (const issue of publishableIncidents) {
+    if (displayableIncidents.length > 0) {
+        for (const issue of displayableIncidents) {
             const issueWithBody = await getJson(issue.permalink + "index.json") as CStateIssuePageObject;
             addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList,
                 templateItem)
@@ -168,7 +168,7 @@ async function updateActiveMaintenancesList(elementId: string, activeMaintenance
     }
 }
 
-async function updateUpcomingMaintenancesAndOtherIssuesList(elementId: string, index: CStateIndex) {
+async function updateUpcomingMaintenancesAndOtherIssuesList(language: string, elementId: string, index: CStateIndex) {
     const statusList = document.getElementById(elementId);
 
     // Get a reference to the template li and remove it from dom
@@ -178,13 +178,18 @@ async function updateUpcomingMaintenancesAndOtherIssuesList(elementId: string, i
         statusList.removeChild(statusList.firstChild);
     }
 
-    const publishableIssues = index.pinnedIssues.filter(issue => !isActiveMaintenance(issue));
+    const displayableIssues = index.pinnedIssues.filter(issue => !isActiveMaintenance(issue));
 
-    // Add to list upcoming maintenances and other informational issues
-    for (const issue of publishableIssues) {
-        const issueWithBody = await getJson(issue.permalink + "index.json") as CStateIssuePageObject;
-        addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem)
+    if (displayableIssues.length > 0) {
+        // Add to list upcoming maintenances and other informational issues
+        for (const issue of displayableIssues) {
+            const issueWithBody = await getJson(issue.permalink + "index.json") as CStateIssuePageObject;
+            addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem)
+        }
+    } else {
+        addIncidentDetailedList(null, t.statusNoUpcomingIssues[language], null, null, statusList, templateItem);
     }
+
 }
 
 function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId: string, activeMaintenances: CStatePinnedIssueObject[], systems: CStateSystem[]) {
@@ -236,7 +241,7 @@ async function getServiceStatus(baseUrl: string, language: string) {
 
     // Add upcoming maintenances to page
     if (document.getElementById("service-status-upcoming-maintenance-list")) {
-        await updateUpcomingMaintenancesAndOtherIssuesList('service-status-upcoming-maintenance-list', index);
+        await updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
     }
 
     // Show ongoing maintenances and issues on front page

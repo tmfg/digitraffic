@@ -15,7 +15,7 @@ function loadApiStatuses(language) {
         addApiStatusTabLinksEventListeners();
         // If Service status section exists, get service status
         if (document.getElementById("service-status-section")) {
-            yield getServiceStatus("https://solita-ijunnone.github.io/cstate-test", language);
+            yield getServiceStatus("https://status.digitraffic.fi", language);
         }
     });
 }
@@ -83,12 +83,12 @@ function updateServiceStatusList(language, issues) {
         }
         // Limit to 7 days                      day hour  min  sec  msec
         const limitTimestamp = new Date().getTime() - (7 * 24 * 60 * 60 * 1000);
-        const publishableIncidents = issues
+        const displayableIncidents = issues
             .filter(issue => (limitTimestamp < new Date(issue.resolvedAt).getTime() || !issue.resolved) && !issue.informational)
             .sort(issuesByDate());
         // Add list of service status incidents to incident list
-        if (publishableIncidents.length > 0) {
-            for (const issue of publishableIncidents) {
+        if (displayableIncidents.length > 0) {
+            for (const issue of displayableIncidents) {
                 const issueWithBody = yield getJson(issue.permalink + "index.json");
                 addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
             }
@@ -113,7 +113,7 @@ function updateActiveMaintenancesList(elementId, activeMaintenances) {
         }
     });
 }
-function updateUpcomingMaintenancesAndOtherIssuesList(elementId, index) {
+function updateUpcomingMaintenancesAndOtherIssuesList(language, elementId, index) {
     return __awaiter(this, void 0, void 0, function* () {
         const statusList = document.getElementById(elementId);
         // Get a reference to the template li and remove it from dom
@@ -121,11 +121,16 @@ function updateUpcomingMaintenancesAndOtherIssuesList(elementId, index) {
         while (statusList.firstChild) {
             statusList.removeChild(statusList.firstChild);
         }
-        const publishableIssues = index.pinnedIssues.filter(issue => !isActiveMaintenance(issue));
-        // Add to list upcoming maintenances and other informational issues
-        for (const issue of publishableIssues) {
-            const issueWithBody = yield getJson(issue.permalink + "index.json");
-            addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
+        const displayableIssues = index.pinnedIssues.filter(issue => !isActiveMaintenance(issue));
+        if (displayableIssues.length > 0) {
+            // Add to list upcoming maintenances and other informational issues
+            for (const issue of displayableIssues) {
+                const issueWithBody = yield getJson(issue.permalink + "index.json");
+                addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
+            }
+        }
+        else {
+            addIncidentDetailedList(null, t.statusNoUpcomingIssues[language], null, null, statusList, templateItem);
         }
     });
 }
@@ -167,7 +172,7 @@ function getServiceStatus(baseUrl, language) {
         }
         // Add upcoming maintenances to page
         if (document.getElementById("service-status-upcoming-maintenance-list")) {
-            yield updateUpcomingMaintenancesAndOtherIssuesList('service-status-upcoming-maintenance-list', index);
+            yield updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
         }
         // Show ongoing maintenances and issues on front page
         if (document.getElementById("service-status-active-incidents-short")) {
