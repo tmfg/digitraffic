@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const cStateStatusString = { OK: "ok", DISRUPTED: "disrupted", DOWN: "down" };
 const serviceChildComponentHealthThreshold = 50;
-const statusUnderMaintenance = 'under_maintenance';
+const statusUnderMaintenance = "under_maintenance";
 const maintenanceRegExp = new RegExp(/^maintenance.+$/);
 function loadApiStatuses(language) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -24,32 +24,32 @@ function loadApiStatuses(language) {
 }
 /* Add event listeners for status links */
 function addApiStatusTabLinksEventListeners() {
-    const tabLinks = document.getElementsByClassName('tab-link');
+    const tabLinks = document.getElementsByClassName("tab-link");
     Array.prototype.forEach.call(tabLinks, function (link) {
-        link.addEventListener('click', (event) => openTab(link.href.substring(link.href.lastIndexOf('#') + 1), event));
+        link.addEventListener("click", (event) => openTab(link.href.substring(link.href.lastIndexOf("#") + 1), event));
     });
 }
 function getServiceStatus(baseUrl, language) {
     return __awaiter(this, void 0, void 0, function* () {
-        const index = yield getJson(baseUrl + "/index.json");
+        const index = (yield getJson(baseUrl + "/index.json"));
         // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
         const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
         // Set service/category status
         updateServiceStatus(language, index, activeMaintenances);
         // Add ongoing maintenances to page
         if (document.getElementById("service-status-ongoing-maintenance-list")) {
-            yield updateActiveMaintenancesList('service-status-ongoing-maintenance-list', activeMaintenances);
+            yield updateActiveMaintenancesList("service-status-ongoing-maintenance-list", activeMaintenances);
         }
         // Add upcoming maintenances to page
         if (document.getElementById("service-status-upcoming-maintenance-list")) {
-            yield updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
+            yield updateUpcomingMaintenancesAndOtherIssuesList(language, "service-status-upcoming-maintenance-list", index);
         }
         // Show ongoing maintenances and issues on front page
         if (document.getElementById("service-status-active-incidents-short")) {
-            updateActiveMaintenancesAndIncidentsOnFrontPage('service-status-active-incidents-short', activeMaintenances, index.systems);
+            updateActiveMaintenancesAndIncidentsOnFrontPage("service-status-active-incidents-short", activeMaintenances, index.systems);
         }
         // Get current and past service incidents from api
-        const allIssues = yield getJson(baseUrl + "/issues/index.json");
+        const allIssues = (yield getJson(baseUrl + "/issues/index.json"));
         if (document.getElementById("service-status-incident-list")) {
             yield updateServiceStatusList(language, allIssues.pages);
         }
@@ -58,8 +58,8 @@ function getServiceStatus(baseUrl, language) {
     });
 }
 function updateServiceStatus(language, index, activeMaintenances) {
-    const categories = index.categories.map(category => category.name);
-    categories.forEach(category => {
+    const categories = index.categories.map((category) => category.name);
+    categories.forEach((category) => {
         const systems = getSystemsForCategory(index, category);
         if (systemsUnderMaintenance(systems, activeMaintenances)) {
             addOperationStatus(category.toLowerCase(), statusUnderMaintenance, language);
@@ -80,21 +80,22 @@ function updateServiceStatus(language, index, activeMaintenances) {
 }
 function updateServiceStatusList(language, issues) {
     return __awaiter(this, void 0, void 0, function* () {
-        const statusList = document.getElementById('service-status-incident-list'); //ul
+        const statusList = document.getElementById("service-status-incident-list"); //ul
         // Get a reference to the template li and remove it from dom
         const templateItem = statusList.firstElementChild;
         while (statusList.firstChild) {
             statusList.removeChild(statusList.firstChild);
         }
         // Limit to 7 days                      day hour  min  sec  msec
-        const limitTimestamp = new Date().getTime() - (7 * 24 * 60 * 60 * 1000);
+        const limitTimestamp = new Date().getTime() - 7 * 24 * 60 * 60 * 1000;
         const displayableIncidents = issues
-            .filter(issue => (limitTimestamp < new Date(issue.resolvedAt).getTime() || !issue.resolved) && !issue.informational)
+            .filter((issue) => (limitTimestamp < new Date(issue.resolvedAt).getTime() || !issue.resolved) &&
+            !issue.informational)
             .sort(issuesByDate());
         // Add list of service status incidents to incident list
         if (displayableIncidents.length > 0) {
             for (const issue of displayableIncidents) {
-                const issueWithBody = yield getJson(issue.permalink + "index.json");
+                const issueWithBody = (yield getJson(issue.permalink + "index.json"));
                 addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
             }
         }
@@ -113,7 +114,7 @@ function updateActiveMaintenancesList(elementId, activeMaintenances) {
         }
         // Add active maintenances to list of ongoing maintenances
         for (const issue of activeMaintenances) {
-            const issueWithBody = yield getJson(issue.permalink + "index.json");
+            const issueWithBody = (yield getJson(issue.permalink + "index.json"));
             addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
         }
     });
@@ -126,11 +127,11 @@ function updateUpcomingMaintenancesAndOtherIssuesList(language, elementId, index
         while (statusList.firstChild) {
             statusList.removeChild(statusList.firstChild);
         }
-        const displayableIssues = index.pinnedIssues.filter(issue => !isActiveMaintenance(issue));
+        const displayableIssues = index.pinnedIssues.filter((issue) => !isActiveMaintenance(issue));
         if (displayableIssues.length > 0) {
             // Add to list upcoming maintenances and other informational issues
             for (const issue of displayableIssues) {
-                const issueWithBody = yield getJson(issue.permalink + "index.json");
+                const issueWithBody = (yield getJson(issue.permalink + "index.json"));
                 addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
             }
         }
@@ -144,12 +145,10 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, activeMainte
     const unresolvedIncidents = systems.reduce((acc, curr) => {
         return acc.concat(curr.unresolvedIssues.filter(
         // filter duplicates, they exist if one issue affects multiple components
-        issue => !acc.find(addedIssue => addedIssue.filename === issue.filename)));
+        (issue) => !acc.find((addedIssue) => addedIssue.filename === issue.filename)));
     }, []);
     // active incidents and maintenances are displayable issues
-    const displayableIssues = activeMaintenances
-        .concat(unresolvedIncidents)
-        .sort(issuesByDate());
+    const displayableIssues = activeMaintenances.concat(unresolvedIncidents).sort(issuesByDate());
     // Get a reference to the template li and remove it from dom
     const templateItem = statusList.firstElementChild;
     while (statusList.firstChild) {
@@ -158,9 +157,10 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, activeMainte
     // Take only first three to show on front page
     const first3 = displayableIssues.slice(0, 3);
     if (first3.length > 0) {
-        first3.forEach(issue => addIncidentFrontPageList(issue.createdAt, issue.title, issue.permalink, statusList, templateItem));
+        first3.forEach((issue) => addIncidentFrontPageList(issue.createdAt, issue.title, issue.permalink, statusList, templateItem));
     }
-    else { // empty placeholder
+    else {
+        // empty placeholder
         addIncidentFrontPageList(null, null, null, statusList, templateItem);
     }
 }
@@ -199,33 +199,59 @@ function addOperationStatus(service, status, language) {
 function addIncidentDetailedList(isoDateTime, name, message, link, statusList, templateItem) {
     const newItem = templateItem.cloneNode(true);
     if (isoDateTime) {
-        newItem.innerHTML = '<h3 class="h3 latest-item__header-text"><a href="' + link + '" class="latest-item__header-link">' + name + '</a></h3>' + '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' + getTimeStringFromIsoString(isoDateTime) + '</span></div>' + (message ? '<pre>' + message + '</pre>' : '');
+        newItem.innerHTML =
+            '<h3 class="h3 latest-item__header-text"><a href="' +
+                link +
+                '" class="latest-item__header-link">' +
+                name +
+                "</a></h3>" +
+                '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' +
+                getTimeStringFromIsoString(isoDateTime) +
+                "</span></div>" +
+                (message ? "<pre>" + message + "</pre>" : "");
     }
     else {
-        newItem.innerHTML = '<p>' + name + '</p>';
+        newItem.innerHTML = "<p>" + name + "</p>";
     }
     statusList.appendChild(newItem);
 }
 function addIncidentFrontPageList(scheduledFor, name, link, statusList, templateItem) {
     const newItem = templateItem.cloneNode(true);
     if (scheduledFor) {
-        newItem.innerHTML = '<h4 class="h4 latest-item__header-text"><a href="' + link + '" class="latest-item__header-link">' + name + '</a></h4>' + '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' + getTimeStringFromIsoString(scheduledFor) + '</span></div>';
+        newItem.innerHTML =
+            '<h4 class="h4 latest-item__header-text"><a href="' +
+                link +
+                '" class="latest-item__header-link">' +
+                name +
+                "</a></h4>" +
+                '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' +
+                getTimeStringFromIsoString(scheduledFor) +
+                "</span></div>";
     }
     else {
-        newItem.innerHTML = '<h4 class="h4 latest-item__header-text">&nbsp;</h4>' + '<div class="latest-item__meta-first">&nbsp;<span class="latest-item__traffic-type"></span></div>';
+        newItem.innerHTML =
+            '<h4 class="h4 latest-item__header-text">&nbsp;</h4>' +
+                '<div class="latest-item__meta-first">&nbsp;<span class="latest-item__traffic-type"></span></div>';
     }
     statusList.appendChild(newItem);
 }
 function getTimeStringFromIsoString(dateTime) {
     const asDate = new Date(dateTime);
-    const scheduledForDateString = asDate.getDate() + "." + (asDate.getMonth() + 1) + "." + asDate.getFullYear() + " " + ('0' + asDate.getHours()).slice(-2) + ":" + ('0' + asDate.getMinutes()).slice(-2);
+    const scheduledForDateString = asDate.getDate() +
+        "." +
+        (asDate.getMonth() + 1) +
+        "." +
+        asDate.getFullYear() +
+        " " +
+        ("0" + asDate.getHours()).slice(-2) +
+        ":" +
+        ("0" + asDate.getMinutes()).slice(-2);
     return scheduledForDateString;
 }
 function openTab(tabId, event) {
     event.preventDefault(); // dont execute link href
     const x = document.getElementsByClassName("closeable-tab");
     for (let i = 0; i < x.length; i++) {
-        // @ts-ignore
         x[i].style.display = "none";
     }
     document.getElementById(tabId).style.display = "block";
@@ -239,7 +265,7 @@ function openTab(tabId, event) {
 function getJson(url) {
     return new Promise(function (resolve, reject) {
         const req = new XMLHttpRequest();
-        req.responseType = 'json';
+        req.responseType = "json";
         req.onload = function () {
             const status = req.status;
             if (status == 200) {
@@ -257,17 +283,17 @@ function serviceIsHealthy(serviceStatus) {
     return serviceStatus.toLowerCase() === cStateStatusString.OK;
 }
 function systemsUnderMaintenance(systems, activeMaintenances) {
-    return !!activeMaintenances.find(maintenance => !!systems.find(system => maintenance.affected.includes(system.name)));
+    return !!activeMaintenances.find((maintenance) => !!systems.find((system) => maintenance.affected.includes(system.name)));
 }
 function systemsDownOrDisrupted(systems) {
-    return !!systems.find(system => system.unresolvedIssues.find(issue => issue.severity === cStateStatusString.DOWN || issue.severity === cStateStatusString.DISRUPTED));
+    return !!systems.find((system) => system.unresolvedIssues.find((issue) => issue.severity === cStateStatusString.DOWN || issue.severity === cStateStatusString.DISRUPTED));
 }
 function getSystemsForCategory(index, categoryName) {
-    return index.systems.filter(system => system.category === categoryName);
+    return index.systems.filter((system) => system.category === categoryName);
 }
 function getSystemHealthPercentage(systems) {
-    const healthyComponents = systems.filter(c => serviceIsHealthy(c.status));
-    return Math.ceil(healthyComponents.length / systems.length * 100);
+    const healthyComponents = systems.filter((c) => serviceIsHealthy(c.status));
+    return Math.ceil((healthyComponents.length / systems.length) * 100);
 }
 function issuesByDate() {
     return (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt);
