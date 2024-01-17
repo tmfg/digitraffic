@@ -48,6 +48,10 @@ interface CStateIssuePageObject extends CStateIssueObject {
 const cStateStatusString = {OK: "ok", DISRUPTED: "disrupted", DOWN: "down"} as const;
 type CStateStatus = typeof cStateStatusString[keyof typeof cStateStatusString];
 
+const serviceChildComponentHealthThreshold = 50;
+const statusUnderMaintenance = 'under_maintenance';
+const maintenanceRegExp = new RegExp(/^maintenance.+$/);
+
 async function loadApiStatuses(language: string) {
     // Add menu event listeners
     addApiStatusTabLinksEventListeners();
@@ -66,40 +70,41 @@ function addApiStatusTabLinksEventListeners() {
     });
 }
 
-const serviceChildComponentHealthThreshold = 50;
-const statusUnderMaintenance = 'under_maintenance';
-const maintenanceRegExp = new RegExp(/^maintenance.+$/);
+async function getServiceStatus(baseUrl: string, language: string) {
+    const index = await getJson(baseUrl + "/index.json") as CStateIndex;
 
-function serviceIsHealthy(serviceStatus: string) {
-    return serviceStatus.toLowerCase() === cStateStatusString.OK;
+    // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
+    const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
+
+    // Set service/category status
+    updateServiceStatus(language, index, activeMaintenances);
+
+    // Add ongoing maintenances to page
+    if (document.getElementById("service-status-ongoing-maintenance-list")) {
+        await updateActiveMaintenancesList('service-status-ongoing-maintenance-list', activeMaintenances)
+    }
+
+    // Add upcoming maintenances to page
+    if (document.getElementById("service-status-upcoming-maintenance-list")) {
+        await updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
+    }
+
+    // Show ongoing maintenances and issues on front page
+    if (document.getElementById("service-status-active-incidents-short")) {
+        updateActiveMaintenancesAndIncidentsOnFrontPage('service-status-active-incidents-short',
+            activeMaintenances, index.systems);
+    }
+
+    // Get current and past service incidents from api
+    const allIssues = await getJson(baseUrl + "/issues/index.json") as CStateIssues;
+
+    if (document.getElementById("service-status-incident-list")) {
+        await updateServiceStatusList(language, allIssues.pages);
+    }
+
+    // Update service status every 60 seconds
+    setTimeout(getServiceStatus, 60000, baseUrl, language);
 }
-
-function systemsUnderMaintenance(systems: CStateSystem[], activeMaintenances: CStatePinnedIssueObject[]) {
-    return !!activeMaintenances.find(maintenance => !!systems.find(system => maintenance.affected.includes(system.name)))
-}
-
-function systemsDownOrDisrupted(systems: CStateSystem[]) {
-    return !!systems.find(system => system.unresolvedIssues.find(issue => issue.severity === cStateStatusString.DOWN || issue.severity === cStateStatusString.DISRUPTED))
-}
-
-function getSystemsForCategory(index: CStateIndex, categoryName: string) {
-    return index.systems.filter(system => system.category === categoryName)
-}
-
-function getSystemHealthPercentage(systems: CStateSystem[]) {
-    const healthyComponents = systems.filter(c => serviceIsHealthy(c.status));
-    return Math.ceil(healthyComponents.length / systems.length * 100);
-}
-
-function issuesByDate() {
-    return (a: CStateIssue, b: CStateIssue) => Date.parse(b.createdAt) - Date.parse(a.createdAt);
-}
-
-function isActiveMaintenance(issue: CStateIssue) {
-    // the cState field createdAt is the intended time of the maintenance
-    return Date.parse(issue.createdAt) <= Date.now() && maintenanceRegExp.test(issue.filename);
-}
-
 
 function updateServiceStatus(language: string, index: CStateIndex, activeMaintenances: CStatePinnedIssueObject[]) {
     const categories = index.categories.map(category => category.name);
@@ -224,43 +229,6 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId: string, acti
     }
 }
 
-
-async function getServiceStatus(baseUrl: string, language: string) {
-    const index = await getJson(baseUrl + "/index.json") as CStateIndex;
-
-    // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
-    const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
-
-    // Set service/category status
-    updateServiceStatus(language, index, activeMaintenances);
-
-    // Add ongoing maintenances to page
-    if (document.getElementById("service-status-ongoing-maintenance-list")) {
-        await updateActiveMaintenancesList('service-status-ongoing-maintenance-list', activeMaintenances)
-    }
-
-    // Add upcoming maintenances to page
-    if (document.getElementById("service-status-upcoming-maintenance-list")) {
-        await updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
-    }
-
-    // Show ongoing maintenances and issues on front page
-    if (document.getElementById("service-status-active-incidents-short")) {
-        updateActiveMaintenancesAndIncidentsOnFrontPage('service-status-active-incidents-short',
-            activeMaintenances, index.systems);
-    }
-
-    // Get current and past service incidents from api
-    const allIssues = await getJson(baseUrl + "/issues/index.json") as CStateIssues;
-
-    if (document.getElementById("service-status-incident-list")) {
-        await updateServiceStatusList(language, allIssues.pages);
-    }
-
-    // Update service status every 60 seconds
-    setTimeout(getServiceStatus, 60000, baseUrl, language);
-}
-
 function addOperationStatus(service: string, status: string, language: string) {
     // Elements
     const classes = document.getElementById(`service-status-circle-${service}`).classList;
@@ -326,9 +294,8 @@ function getTimeStringFromIsoString(dateTime: string) {
 
 function openTab(tabId: string, event) {
     event.preventDefault(); // dont execute link href
-    const x = document.getElementsByClassName("closeable-tab");
+    const x = document.getElementsByClassName("closeable-tab") as HTMLCollectionOf<HTMLElement>;
     for (let i = 0; i < x.length; i++) {
-        // @ts-ignore
         x[i].style.display = "none";
     }
     document.getElementById(tabId).style.display = "block";
@@ -357,3 +324,34 @@ function getJson(url: string) {
         req.send();
     });
 }
+
+function serviceIsHealthy(serviceStatus: string) {
+    return serviceStatus.toLowerCase() === cStateStatusString.OK;
+}
+
+function systemsUnderMaintenance(systems: CStateSystem[], activeMaintenances: CStatePinnedIssueObject[]) {
+    return !!activeMaintenances.find(maintenance => !!systems.find(system => maintenance.affected.includes(system.name)))
+}
+
+function systemsDownOrDisrupted(systems: CStateSystem[]) {
+    return !!systems.find(system => system.unresolvedIssues.find(issue => issue.severity === cStateStatusString.DOWN || issue.severity === cStateStatusString.DISRUPTED))
+}
+
+function getSystemsForCategory(index: CStateIndex, categoryName: string) {
+    return index.systems.filter(system => system.category === categoryName)
+}
+
+function getSystemHealthPercentage(systems: CStateSystem[]) {
+    const healthyComponents = systems.filter(c => serviceIsHealthy(c.status));
+    return Math.ceil(healthyComponents.length / systems.length * 100);
+}
+
+function issuesByDate() {
+    return (a: CStateIssue, b: CStateIssue) => Date.parse(b.createdAt) - Date.parse(a.createdAt);
+}
+
+function isActiveMaintenance(issue: CStateIssue) {
+    // the cState field createdAt is the intended time of the maintenance
+    return Date.parse(issue.createdAt) <= Date.now() && maintenanceRegExp.test(issue.filename);
+}
+

@@ -9,6 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const cStateStatusString = { OK: "ok", DISRUPTED: "disrupted", DOWN: "down" };
+const serviceChildComponentHealthThreshold = 50;
+const statusUnderMaintenance = 'under_maintenance';
+const maintenanceRegExp = new RegExp(/^maintenance.+$/);
 function loadApiStatuses(language) {
     return __awaiter(this, void 0, void 0, function* () {
         // Add menu event listeners
@@ -26,31 +29,33 @@ function addApiStatusTabLinksEventListeners() {
         link.addEventListener('click', (event) => openTab(link.href.substring(link.href.lastIndexOf('#') + 1), event));
     });
 }
-const serviceChildComponentHealthThreshold = 50;
-const statusUnderMaintenance = 'under_maintenance';
-const maintenanceRegExp = new RegExp(/^maintenance.+$/);
-function serviceIsHealthy(serviceStatus) {
-    return serviceStatus.toLowerCase() === cStateStatusString.OK;
-}
-function systemsUnderMaintenance(systems, activeMaintenances) {
-    return !!activeMaintenances.find(maintenance => !!systems.find(system => maintenance.affected.includes(system.name)));
-}
-function systemsDownOrDisrupted(systems) {
-    return !!systems.find(system => system.unresolvedIssues.find(issue => issue.severity === cStateStatusString.DOWN || issue.severity === cStateStatusString.DISRUPTED));
-}
-function getSystemsForCategory(index, categoryName) {
-    return index.systems.filter(system => system.category === categoryName);
-}
-function getSystemHealthPercentage(systems) {
-    const healthyComponents = systems.filter(c => serviceIsHealthy(c.status));
-    return Math.ceil(healthyComponents.length / systems.length * 100);
-}
-function issuesByDate() {
-    return (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt);
-}
-function isActiveMaintenance(issue) {
-    // the cState field createdAt is the intended time of the maintenance
-    return Date.parse(issue.createdAt) <= Date.now() && maintenanceRegExp.test(issue.filename);
+function getServiceStatus(baseUrl, language) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const index = yield getJson(baseUrl + "/index.json");
+        // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
+        const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
+        // Set service/category status
+        updateServiceStatus(language, index, activeMaintenances);
+        // Add ongoing maintenances to page
+        if (document.getElementById("service-status-ongoing-maintenance-list")) {
+            yield updateActiveMaintenancesList('service-status-ongoing-maintenance-list', activeMaintenances);
+        }
+        // Add upcoming maintenances to page
+        if (document.getElementById("service-status-upcoming-maintenance-list")) {
+            yield updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
+        }
+        // Show ongoing maintenances and issues on front page
+        if (document.getElementById("service-status-active-incidents-short")) {
+            updateActiveMaintenancesAndIncidentsOnFrontPage('service-status-active-incidents-short', activeMaintenances, index.systems);
+        }
+        // Get current and past service incidents from api
+        const allIssues = yield getJson(baseUrl + "/issues/index.json");
+        if (document.getElementById("service-status-incident-list")) {
+            yield updateServiceStatusList(language, allIssues.pages);
+        }
+        // Update service status every 60 seconds
+        setTimeout(getServiceStatus, 60000, baseUrl, language);
+    });
 }
 function updateServiceStatus(language, index, activeMaintenances) {
     const categories = index.categories.map(category => category.name);
@@ -159,34 +164,6 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(elementId, activeMainte
         addIncidentFrontPageList(null, null, null, statusList, templateItem);
     }
 }
-function getServiceStatus(baseUrl, language) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const index = yield getJson(baseUrl + "/index.json");
-        // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
-        const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
-        // Set service/category status
-        updateServiceStatus(language, index, activeMaintenances);
-        // Add ongoing maintenances to page
-        if (document.getElementById("service-status-ongoing-maintenance-list")) {
-            yield updateActiveMaintenancesList('service-status-ongoing-maintenance-list', activeMaintenances);
-        }
-        // Add upcoming maintenances to page
-        if (document.getElementById("service-status-upcoming-maintenance-list")) {
-            yield updateUpcomingMaintenancesAndOtherIssuesList(language, 'service-status-upcoming-maintenance-list', index);
-        }
-        // Show ongoing maintenances and issues on front page
-        if (document.getElementById("service-status-active-incidents-short")) {
-            updateActiveMaintenancesAndIncidentsOnFrontPage('service-status-active-incidents-short', activeMaintenances, index.systems);
-        }
-        // Get current and past service incidents from api
-        const allIssues = yield getJson(baseUrl + "/issues/index.json");
-        if (document.getElementById("service-status-incident-list")) {
-            yield updateServiceStatusList(language, allIssues.pages);
-        }
-        // Update service status every 60 seconds
-        setTimeout(getServiceStatus, 60000, baseUrl, language);
-    });
-}
 function addOperationStatus(service, status, language) {
     // Elements
     const classes = document.getElementById(`service-status-circle-${service}`).classList;
@@ -275,4 +252,27 @@ function getJson(url) {
         req.open("GET", url, true);
         req.send();
     });
+}
+function serviceIsHealthy(serviceStatus) {
+    return serviceStatus.toLowerCase() === cStateStatusString.OK;
+}
+function systemsUnderMaintenance(systems, activeMaintenances) {
+    return !!activeMaintenances.find(maintenance => !!systems.find(system => maintenance.affected.includes(system.name)));
+}
+function systemsDownOrDisrupted(systems) {
+    return !!systems.find(system => system.unresolvedIssues.find(issue => issue.severity === cStateStatusString.DOWN || issue.severity === cStateStatusString.DISRUPTED));
+}
+function getSystemsForCategory(index, categoryName) {
+    return index.systems.filter(system => system.category === categoryName);
+}
+function getSystemHealthPercentage(systems) {
+    const healthyComponents = systems.filter(c => serviceIsHealthy(c.status));
+    return Math.ceil(healthyComponents.length / systems.length * 100);
+}
+function issuesByDate() {
+    return (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt);
+}
+function isActiveMaintenance(issue) {
+    // the cState field createdAt is the intended time of the maintenance
+    return Date.parse(issue.createdAt) <= Date.now() && maintenanceRegExp.test(issue.filename);
 }
