@@ -10,4 +10,6 @@ jobs:
         with:
           paths: https://www.digitraffic.fi
           concurrency: 5
+          recurse: true
           markdown: true
+          linksToSkip: "https://jsfiddle.net"
