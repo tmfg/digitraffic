@@ -14,11 +14,11 @@ links:
   - - Marine
     - /en/marine-traffic/
   - - Development roadmap
-    - /en/development-roadmap
+    - /en/development-roadmap/
   - - Applications
-    - /en/applications
+    - /en/applications/
   - - Terms of use
-    - /en/terms-of-service
+    - /en/terms-of-service/
   - - Finnish Transport Infrastructure Agency open data
     - https://vayla.fi/web/en/open-data
 published: true

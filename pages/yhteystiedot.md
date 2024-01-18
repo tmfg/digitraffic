@@ -9,7 +9,7 @@ title: Yhteystiedot
 lang: fi
 ref: contact-information
 links:
-  - ["Tukikanavat", "/tuki/tukikanavat"]
+  - ["Tukikanavat", "/tuki/tukikanavat/"]
 ---
 
 Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.

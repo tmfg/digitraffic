@@ -7,7 +7,7 @@ lang: fi
 ref: terms-of-service
 title: Käyttöehdot
 links:
-  - ["Käyttöehdot", "/kayttoehdot"]
+  - ["Käyttöehdot", "/kayttoehdot/"]
  
 ---
 

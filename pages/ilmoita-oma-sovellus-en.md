@@ -7,7 +7,7 @@ lang: en
 ref: ilmoita-oma-sovellus
 title: Sign up your application
 links:
-  - ["Applications", "/sovellukset"]
+  - ["Applications", "/sovellukset/"]
   - ["Terms of service", "/en/terms-of-service/"]
 ---
 
