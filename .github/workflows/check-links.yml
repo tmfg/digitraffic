@@ -1,0 +1,13 @@
+name: Check links
+on:
+  workflow_dispatch:
+
+jobs:
+  linkinator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JustinBeckwith/linkinator-action@v1
+        with:
+          paths: https://www.digitraffic.fi
+          concurrency: 5
+          markdown: true
