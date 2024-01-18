@@ -12,4 +12,4 @@ jobs:
           concurrency: 5
           recurse: true
           markdown: true
-          linksToSkip: "https://jsfiddle.net"
+          linksToSkip: "https://jsfiddle.net, https://www.digitraffic.fi/tiedotteet/2018/, https://www.digitraffic.fi/tiedotteet/2020/,  https://www.digitraffic.fi/tiedotteet/2022/"

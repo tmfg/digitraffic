@@ -26,7 +26,7 @@ Marine traffic information is gathered from Finnish Transport Infrastructure Age
 
 - Harbor schedules (gathered from the Portnet-system)
 
-- Vessel location AIS (Automatic Identification System). [Additional info](ais).
+- Vessel location AIS (Automatic Identification System). [Additional info](ais/).
 
 - Dirways from Baltice-system
 
@@ -77,7 +77,7 @@ Related metadata:
 
 [```https://meri.digitraffic.fi/api/ais/v1/locations```](https://meri.digitraffic.fi/api/ais/v1/locations){:target="_blank"}
 
-Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.  [Additional info](ais).
+Vessel locations and metadata are collected from AIS-messages broadcasted by vessels.  [Additional info](ais/).
 
 Related metadata:
 
