@@ -18,7 +18,4 @@ Mikäli kyseessä on tukipyyntö, pyydämme ottamaan yhteyttä kyseisen tietolaj
 
 Sähköposti: digitraffic@fintraffic.fi
 
-Facebook: [www.facebook.com/OpenDigitraffic](https://www.facebook.com/OpenDigitraffic/)
-
-Twitter: [https://twitter.com/trafficfinland](https://twitter.com/trafficfinland)
-
+X: [(@Digitraffic_fi)](https://twitter.com/Digitraffic_fi)
