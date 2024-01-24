@@ -1,8 +1,8 @@
 ---
-layout: statuspage
+layout: status-page
 hero-image: code
-permalink: /en/api-status/statuspage
+permalink: /en/api-status/status-page
 title: Status page
 lang: en
-ref: statuspage
+ref: status-page
 ---

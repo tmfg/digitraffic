@@ -95,6 +95,12 @@
               </button>
             </div>
           </span>
+          <span class="header__top-link">
+              <a class="header__link-bold"
+                 href="/{{ site.t.status-page.url[page.lang] | prepend:site.baseurl }}">
+               {{ site.t.status-page[page.lang] }}
+              </a>
+          </span>
         </div>
       </div>
       {% include header__menu.html %}
@@ -116,23 +122,26 @@
     </li>
     <li class="{% if page.url contains news %}active{% endif %}">
       <a class=""
-        href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tiedotteet[page.lang] | downcase }}">
-        {{ site.t.news[page.lang] }}
+         href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{
+      site.t.tiedotteet[page.lang] | downcase }}">
+      {{ site.t.news[page.lang] }}
       </a>
     </li>
     {% if has_articles == true %}
     <li class="">
       <a class=""
-        href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.artikkelit[page.lang] | downcase }}">
-        {{ site.t.artikkelit[page.lang] }}
+         href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{
+      site.t.artikkelit[page.lang] | downcase }}">
+      {{ site.t.artikkelit[page.lang] }}
       </a>
     </li>
     {% endif %}
     {% if has_events == true %}
     <li class="">
       <a class=""
-        href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{ site.t.tapahtumat[page.lang] | downcase }}">
-        {{ site.t.tapahtumat[page.lang] }}
+         href="{{ "/" | prepend:site.baseurl }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}{{
+      site.t.tapahtumat[page.lang] | downcase }}">
+      {{ site.t.tapahtumat[page.lang] }}
       </a>
     </li>
     {% endif %}
@@ -237,6 +246,7 @@
     </li>
   </ul>
 </div>
+
 
 <script>
   tippy('#dropdown__button--updates', {
