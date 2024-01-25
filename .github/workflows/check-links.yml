@@ -20,15 +20,7 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: failure
-          fields: repo, job, took
-          custom_payload: |
-            {
-              text: "www.digitraffic.fi link check failed",
-              attachments: [{
-                color: "danger",
-                title: "Failing links"
-                text: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-              }]    
-            }            
+          fields: repo, job
+          text: "www.digitraffic.fi link check failed"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
