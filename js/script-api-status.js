@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const cStateStatusString = { OK: "ok", DISRUPTED: "disrupted", DOWN: "down" };
 const serviceChildComponentHealthThreshold = 50;
 const statusUnderMaintenance = "under_maintenance";
-const maintenanceRegExp = new RegExp(/^maintenance.+$/);
+const maintenanceRegExp = /^maintenance.+$/;
 function loadApiStatuses(language) {
     return __awaiter(this, void 0, void 0, function* () {
         // Add menu event listeners

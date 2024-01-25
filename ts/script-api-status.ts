@@ -49,7 +49,7 @@ type CStateStatus = (typeof cStateStatusString)[keyof typeof cStateStatusString]
 
 const serviceChildComponentHealthThreshold = 50;
 const statusUnderMaintenance = "under_maintenance";
-const maintenanceRegExp = new RegExp(/^maintenance.+$/);
+const maintenanceRegExp = /^maintenance.+$/;
 
 async function loadApiStatuses(language: string) {
     // Add menu event listeners
