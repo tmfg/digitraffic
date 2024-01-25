@@ -27,7 +27,7 @@ jobs:
               attachments: [{
                 color: "danger",
                 title: "Failing links"
-                text: ${{ steps.link_check.outputs.results }}
+                text: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
               }]    
             }            
         env:
