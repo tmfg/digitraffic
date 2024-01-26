@@ -51,7 +51,7 @@ Alla on lisätietoa LAM-pisteiden laskennallisista antureista.
  
 ## Anturivakiot
 
-Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioiden arvoja. Huomaathan että vakioiden arvot vaihtelevat asemakohtaisesti, tarkista arvot täältä: [/api/v1/data/tms-sensor-constants](https://tie.digitraffic.fi/api/v1/data/tms-sensor-constants).
+Alla on listattu laskennallisten anturien laskennassa käyttämien anturivakioiden arvoja. Huomaathan että vakioiden arvot vaihtelevat asemakohtaisesti, tarkista arvot täältä: [/api/tms/v1/stations/sensor-constants](https://tie.digitraffic.fi/api/tms/v1/stations/sensor-constants).
 
 | Vakion nimi | Yksikkö | Arvoalue | Kuvaus
 | --- | --- | --- | ---

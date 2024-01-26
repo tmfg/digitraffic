@@ -4,7 +4,7 @@ intro: Tietorahdin kartta sisältää tärkeää tietoa ammattikuljettajille ja 
 logo: tietorahdin-kartta/tietorahti-kartta-sovelluslogo.png
 developer:
   - Tietorahti Oy
-  - https://tietorahti.fi/tietorahdinkartta
+  - https://tietorahti.fi/tietorahdin-kartta
 traffictypes: 
   - Tieliikenne
   - Meriliikenne
