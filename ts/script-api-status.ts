@@ -49,7 +49,8 @@ type CStateStatus = (typeof cStateStatusString)[keyof typeof cStateStatusString]
 
 const serviceChildComponentHealthThreshold = 50;
 const statusUnderMaintenance = "under_maintenance";
-const maintenanceRegExp = /^maintenance.+$/;
+// cState issues under this path are Digitraffic maintenances
+const digitrafficMaintenancePath = "/maintenance-disable-nodeping/";
 
 async function loadApiStatuses(language: string) {
     // Add menu event listeners
@@ -451,5 +452,5 @@ function issuesByDate() {
 
 function isActiveMaintenance(issue: CStateIssue) {
     // the cState field createdAt is the intended time of the maintenance
-    return Date.parse(issue.createdAt) <= Date.now() && maintenanceRegExp.test(issue.filename);
+    return Date.parse(issue.createdAt) <= Date.now() && issue.permalink.includes(digitrafficMaintenancePath);
 }

@@ -11,7 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const cStateStatusString = { OK: "ok", DISRUPTED: "disrupted", DOWN: "down" };
 const serviceChildComponentHealthThreshold = 50;
 const statusUnderMaintenance = "under_maintenance";
-const maintenanceRegExp = /^maintenance.+$/;
+// cState issues under this path are Digitraffic maintenances
+const digitrafficMaintenancePath = "/maintenance-disable-nodeping/";
 function loadApiStatuses(language) {
     return __awaiter(this, void 0, void 0, function* () {
         // Add menu event listeners
@@ -300,5 +301,5 @@ function issuesByDate() {
 }
 function isActiveMaintenance(issue) {
     // the cState field createdAt is the intended time of the maintenance
-    return Date.parse(issue.createdAt) <= Date.now() && maintenanceRegExp.test(issue.filename);
+    return Date.parse(issue.createdAt) <= Date.now() && issue.permalink.includes(digitrafficMaintenancePath);
 }
