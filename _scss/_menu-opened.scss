@@ -31,6 +31,11 @@
     @extend .footer-list__link;
   }
 
+  &__link-bold {
+    @extend .footer-list__link;
+    font-weight: 600;
+  }
+
   &__language-mobile {
     margin-top: $margin-xs;
     ul {
