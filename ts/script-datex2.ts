@@ -1,4 +1,4 @@
-/** Specified in _includes/script-headers.html */
+/** Specified in _includes/script-head.html */
 declare function toLocalDate(date: string): string;
 
 const TRAFFIC_MESSAGES_URL = "https://tie.digitraffic.fi/api/traffic-message/v1/messages";
