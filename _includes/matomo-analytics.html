@@ -22,7 +22,6 @@
     // https://support.cookieinformation.com/en/articles/5444629-third-party-cookie-blocking
     window.addEventListener('CookieInformationConsentGiven', function(event) {
       if (CookieInformation.getConsentGivenFor('cookie_cat_statistic')) {
-        alert("Cookiet!")
         var _mtm = window._mtm = window._mtm || [];
         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
