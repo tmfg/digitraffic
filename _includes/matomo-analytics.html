@@ -1,4 +1,6 @@
 <!-- Matomo Tag Manager -->
+<!-- Wait for statistics cookie consent -->
+<!-- https://support.cookieinformation.com/en/articles/5444629-third-party-cookie-blocking -->
 <script>
     function cacheParam() {
         function pad(number) {
@@ -18,8 +20,6 @@
             pad(now.getUTCHours() + 1)
         );
     }
-    // Wait for statistics cookie consent
-    // https://support.cookieinformation.com/en/articles/5444629-third-party-cookie-blocking
     window.addEventListener('CookieInformationConsentGiven', function(event) {
       if (CookieInformation.getConsentGivenFor('cookie_cat_statistic')) {
         var _mtm = window._mtm = window._mtm || [];
