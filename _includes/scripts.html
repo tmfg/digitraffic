@@ -1,8 +1,8 @@
 <script src="{{ "/js/jquery-3.7.1.slim.min.js" | prepend:site.baseurl }}" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="></script>
 <script type="text/javascript">
   function isDigitraffic() {
-    const found = location.href.indexOf("digitraffic.fi") > -1;
-    console.log("isDigitraffic(): " + found);
-    return found;
+    const isDigitrafficDomain = window.location.host.endsWith("digitraffic.fi");
+    console.log("isDigitraffic(): " + isDigitrafficDomain);
+    return isDigitrafficDomain;
   }
 </script>
