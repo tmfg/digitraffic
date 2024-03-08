@@ -158,6 +158,16 @@
     }
   }
 
+  &__link-bold {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $header-text-color;
+      font-weight: 600;
+    }
+  }
+
   &__main {
     display: none;
 

@@ -440,6 +440,12 @@ t:
   upcoming-maintenances:
     en: "Upcoming maintenance breaks"
     fi: "Tulevat huoltokatkot"
+  status-page:
+    en: "Status"
+    fi: "Status"
+    url:
+      en: "en/api-status/status-page/"
+      fi: "rajapintojen-tila/statussivu/"
 
   # Posts
   filter-news:

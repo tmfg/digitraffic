@@ -35,6 +35,14 @@
     {% include support-collapsible.html %}
     <div class="menu-opened__item">
       <div class="col-xs-12 menu-opened__language-mobile">
+        <a class="menu-opened__link-bold"
+           href="/{{ site.t.status-page.url[page.lang] | prepend:site.baseurl }}">
+          {{ site.t.status-page[page.lang] }}
+        </a>
+      </div>
+    </div>
+    <div class="menu-opened__item">
+      <div class="col-xs-12 menu-opened__language-mobile">
         <ul>
           {% if page.lang != "fi" %}
           <li class="menu-opened__language-option">
