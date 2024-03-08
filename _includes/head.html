@@ -4,20 +4,9 @@
   <title>{% if page.title and page.title != "" %}{{ page.title }} | {% endif %}Digitraffic - Fintraffic</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The initial config of Consent Mode -->
-  <script type="text/javascript">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 1500,
-    });
-    gtag('set', 'ads_data_redaction', true);
-  </script>
-  <script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture="{{ page.lang | upcase }}" type="text/javascript"></script>
+  {% include scripts.html %}
+  {% include matomo-analytics.html %}
+  {% include cookie-consent.html %}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"> 
@@ -27,6 +16,4 @@
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script type="text/javascript" src="{{ "/js/script.js" | prepend:site.baseurl }}" async="async"></script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-
-  {% include matomo-analytics.html %}
 </head>
