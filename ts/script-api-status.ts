@@ -50,14 +50,14 @@ type CStateStatus = (typeof cStateStatusString)[keyof typeof cStateStatusString]
 const serviceChildComponentHealthThreshold = 50;
 const statusUnderMaintenance = "under_maintenance";
 // cState issues under this path are Digitraffic maintenances
-const digitrafficMaintenancePath = "/maintenance-disable-nodeping/";
+const digitrafficMaintenancePath = "/digitraffic-maintenance/";
 
 async function loadApiStatuses(language: string) {
     // Add menu event listeners
     addApiStatusTabLinksEventListeners();
     // If Service status section exists, get service status
     if (document.getElementById("service-status-section")) {
-        await getServiceStatus("https://status.digitraffic.fi", language);
+        await getServiceStatus("https://status-test.digitraffic.fi", language);
     }
 }
 
@@ -337,7 +337,7 @@ function addIncidentDetailedList(
             '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' +
             getTimeStringFromIsoString(isoDateTime) +
             "</span></div>" +
-            (message ? "<pre>" + message + "</pre>" : "");
+            (message ? "<div>" + message + "</div>" : "");
     } else {
         newItem.innerHTML = "<p>" + name + "</p>";
     }

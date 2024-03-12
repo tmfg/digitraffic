@@ -436,7 +436,7 @@ t:
   # API status
   recent-outages:
     en: "Current maintenances and recent outages"
-    fi: "Tämän hetkiset huoltokatkot ja viimeisimmät häiriöt"
+    fi: "Tämänhetkiset huoltokatkot ja viimeisimmät häiriöt"
   upcoming-maintenances:
     en: "Upcoming maintenance breaks and other notices"
     fi: "Tulevat huoltokatkot ja muut ilmoitukset"
