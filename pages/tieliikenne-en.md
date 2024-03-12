@@ -165,7 +165,7 @@ Message contains road sections weather forecasts. Reports are updated every five
 
 #### Documentation
 
-The [TMS documentation](lam) contains descriptions of TMS data.
+The [TMS documentation](lam/) contains descriptions of TMS data.
 
 #### Simplified and detailed information of stations
 

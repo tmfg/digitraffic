@@ -196,7 +196,7 @@ Tietojen hakulomake löytyy sivulta [https://tie.digitraffic.fi/ui/tms/history/]
 
 #### Raakadatahaku
 
-Mittauspisteiden data on saatavissa myös raakadatana ja lisätietoa löytyy [LAM-dokumentaatio/LAM-raakadata](lam#lam-raakadata) -sivulta.
+Mittauspisteiden data on saatavissa myös raakadatana ja lisätietoa löytyy [LAM-dokumentaatio/LAM-raakadata](lam/#lam-raakadata) -sivulta.
 
 
 ### Liikennetiedotteet
@@ -318,7 +318,7 @@ Aluegeometriat löytyvät rajapinnasta:
 ### TMC/ALERT-C paikannuspisteistö
 
 Häiriötiedotteiden, painorajoitusten ja tietöiden maantieteellisen sijainnin ilmoittamiseen käytetään TMC/ALERT-C -paikannuspisteistöä. Lisätietoa täällä.
-Lisätietoa löytyy [TMC/ALERT-C](paikannusnimisto) -sivulta.
+Lisätietoa löytyy [TMC/ALERT-C](paikannusnimisto/) -sivulta.
 
 [```/api/traffic-message/v1/locations/versions```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions){:target="_blank"}\
 [```/api/traffic-message/v1/locations/types```](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types){:target="_blank"}\

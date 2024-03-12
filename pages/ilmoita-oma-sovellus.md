@@ -7,8 +7,8 @@ lang: fi
 ref: ilmoita-oma-sovellus
 title: Ilmoita oma sovellus
 links:
-  - ["Sovellukset", "/sovellukset"]
-  - ["Käyttöehdot", "/kayttoehdot"]
+  - ["Sovellukset", "/sovellukset/"]
+  - ["Käyttöehdot", "/kayttoehdot/"]
 ---
 
 Voit ilmoittaa oman sovelluksesi toimittamalla esittelyn tiedot kuvineen sähköpostilla osoitteeseen digitraffic(a)fintraffic.fi tai lähettämällä pull requestin [GitHubiin](https://github.com/finnishtransportagency/digitraffic).

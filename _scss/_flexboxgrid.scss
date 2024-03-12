@@ -47,6 +47,10 @@ $half-gutter-width: $gutter-width * .5;
   @include flex-wrap(wrap);
   margin-right: $gutter-compensation;
   margin-left: $gutter-compensation;
+  &--iframe {
+    @extend .row;
+    height: 75vh;
+  }
 }
 
 .row.nowrap {

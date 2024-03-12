@@ -50,7 +50,7 @@ The table below contains additional information about sensors.
 | 5067<br>5071 | OHITUKSET_60MIN_KIINTEA_SUUNTA1_MS1  OHITUKSET_60MIN_KIINTEA_SUUNTA2_MS2 | % of the maximum | Percentage of vehicles passed during a given 60 minute window from the maximum amount of vehicles per hour (MS1/MS2).
 
 ## Sensor constants
-The table below contains values for sensor constants used by computational sensors. Note that the constant values vary by station, look them up here: [/api/v1/data/tms-sensor-constants](https://tie.digitraffic.fi/api/v1/data/tms-sensor-constants).
+The table below contains values for sensor constants used by computational sensors. Note that the constant values vary by station, look them up here: [/api/tms/v1/stations/sensor-constants](https://tie.digitraffic.fi/api/tms/v1/stations/sensor-constants).
 
 | Constant | Unit | Value range | Description
 | --- | --- | --- | ---

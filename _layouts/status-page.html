@@ -1,0 +1,29 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<!--HTML head-->
+{% include head.html %}
+
+<!--HTML body-->
+<body class="body">
+
+<!--Header-->
+{% include header.html header-classes="header--white" %}
+<content class="content">
+  <div class="row--iframe">
+    <iframe
+      src="https://status-test.digitraffic.fi/"
+      width="100%"
+      sandbox="allow-scripts"
+    >
+    </iframe>
+  </div>
+</content>
+<!--footer-->
+{% include footer.html %}
+
+</body>
+</html>

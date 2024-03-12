@@ -439,6 +439,12 @@ t:
   upcoming-maintenances:
     en: "Upcoming maintenance breaks and other notices"
     fi: "Tulevat huoltokatkot ja muut ilmoitukset"
+  status-page:
+    en: "Status"
+    fi: "Status"
+    url:
+      en: "en/api-status/status-page/"
+      fi: "rajapintojen-tila/statussivu/"
 
   # Posts
   filter-news:

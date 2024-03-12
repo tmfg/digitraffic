@@ -1,0 +1,29 @@
+<!-- The initial config of Consent Mode -->
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 1500,
+    });
+    gtag('set', 'ads_data_redaction', true);
+</script>
+
+<!--
+<script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture="EN" type="text/javascript"></script>
+-->
+<script type="text/javascript">
+    $(function() {
+        if ( window.location.host.endsWith("digitraffic.fi") ) {
+            const script = document.createElement('script');
+            script.type='text/javascript';
+            script.id="CookieConsent";
+            script.setAttribute("data-culture", "EN");
+            script.src = 'https://policy.app.cookieinformation.com/uc.js';
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
+    });
+</script>

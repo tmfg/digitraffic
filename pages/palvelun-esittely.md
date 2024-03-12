@@ -8,17 +8,17 @@ lang: fi
 ref: service-overview
 links:
   - - Tieliikenne
-    - /tieliikenne
+    - /tieliikenne/
   - - Rautatieliikenne
-    - /rautatieliikenne
+    - /rautatieliikenne/
   - - Meriliikenne
-    - /meriliikenne
+    - /meriliikenne/
   - - Kehityssuunnitelma
-    - /kehityssuunnitelma
+    - /kehityssuunnitelma/
   - - Sovellukset
-    - /sovellukset
+    - /sovellukset/
   - - Käyttöehdot
-    - /kayttoehdot
+    - /kayttoehdot/
   - - Väyläviraston avoin data
     - https://vayla.fi/avoindata
 published: true
