@@ -12,11 +12,15 @@
   gtag('set', 'ads_data_redaction', true);
 
   function askConsent() {
+    let langCode = "EN";
+    if (navigator.language.substring(0,2) === "fi") {
+      langCode = "FI";
+    }
     if ( window.location.host.endsWith("digitraffic.fi") ) {
       const script = document.createElement('script');
       script.type='text/javascript';
       script.id="CookieConsent";
-      script.setAttribute("data-culture", "EN");
+      script.setAttribute("data-culture", langCode);
       script.src = 'https://policy.app.cookieinformation.com/uc.js';
       document.getElementsByTagName('head')[0].appendChild(script);
     }
