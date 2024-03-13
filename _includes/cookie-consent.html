@@ -20,7 +20,7 @@
       const script = document.createElement('script');
       script.type='text/javascript';
       script.id="CookieConsent";
-      script.setAttribute("data-culture", langCode);
+      script.setAttribute("data-culture", {% if page.lang == "fi" %}"FI"{% else %}"EN"{% endif %});
       script.src = 'https://policy.app.cookieinformation.com/uc.js';
       document.getElementsByTagName('head')[0].appendChild(script);
     }
