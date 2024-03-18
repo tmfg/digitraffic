@@ -21,6 +21,7 @@ interface CStateSystem {
     readonly status: CStateStatus;
     readonly unresolvedIssues: CStateIssueObject[];
 }
+
 type CStateSystemName = string;
 
 interface CStateIssue {
@@ -151,12 +152,19 @@ async function updateServiceStatusList(language: string, issues: CStateIssueObje
     const limitTimestamp = new Date().getTime() - 7 * 24 * 60 * 60 * 1000;
 
     const displayableIncidents = issues
-        .filter(
-            (issue) =>
-                (limitTimestamp < new Date(issue.resolvedAt).getTime() || !issue.resolved) &&
-                !issue.informational
-        )
-        .sort(issuesByDate());
+        // show any unresolved incidents on top
+        .filter((issue) => !issue.informational && !issue.resolved)
+        .sort(issuesByDate())
+        .concat(
+            issues
+                .filter(
+                    (issue) =>
+                        issue.resolved &&
+                        !issue.informational &&
+                        limitTimestamp < new Date(issue.resolvedAt).getTime()
+                )
+                .sort(issuesByDate())
+        );
 
     // Add list of service status incidents to incident list
     if (displayableIncidents.length > 0) {
@@ -164,7 +172,8 @@ async function updateServiceStatusList(language: string, issues: CStateIssueObje
             const issueWithBody = (await getJson(issue.permalink + "index.json")) as CStateIssuePageObject;
             addIncidentDetailedList(
                 issue.createdAt,
-                issue.title,
+                // for clarity, prefix resolved issue titles with [Resolved] similarly to the cstate RSS feed
+                issue.resolved ? "[Resolved] " + issue.title : issue.title,
                 issueWithBody.body,
                 issue.permalink,
                 statusList,

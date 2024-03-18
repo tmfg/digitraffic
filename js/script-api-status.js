@@ -90,14 +90,21 @@ function updateServiceStatusList(language, issues) {
         // Limit to 7 days                      day hour  min  sec  msec
         const limitTimestamp = new Date().getTime() - 7 * 24 * 60 * 60 * 1000;
         const displayableIncidents = issues
-            .filter((issue) => (limitTimestamp < new Date(issue.resolvedAt).getTime() || !issue.resolved) &&
-            !issue.informational)
-            .sort(issuesByDate());
+            // show any unresolved incidents on top
+            .filter((issue) => !issue.informational && !issue.resolved)
+            .sort(issuesByDate())
+            .concat(issues
+            .filter((issue) => issue.resolved &&
+            !issue.informational &&
+            limitTimestamp < new Date(issue.resolvedAt).getTime())
+            .sort(issuesByDate()));
         // Add list of service status incidents to incident list
         if (displayableIncidents.length > 0) {
             for (const issue of displayableIncidents) {
                 const issueWithBody = (yield getJson(issue.permalink + "index.json"));
-                addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
+                addIncidentDetailedList(issue.createdAt, 
+                // for clarity, prefix resolved issue titles with [Resolved] similarly to the cstate RSS feed
+                issue.resolved ? "[Resolved] " + issue.title : issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
             }
         }
         else {
