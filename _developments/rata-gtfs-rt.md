@@ -5,7 +5,7 @@ ref: rata-gtfs-rt
 issue-number: DPO-1313
 traffictypes:
   - Rautatieliikenne
-status: toteutuksessa
+status: valmis
 date: 2022-01-01
 ---
 

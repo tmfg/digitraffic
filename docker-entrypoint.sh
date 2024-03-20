@@ -3,9 +3,10 @@
 # Signal handler to clean up and exit properly when terminating
 trap "echo Exiting...; kill -TERM -1; exit" SIGINT SIGTERM
 
-if [ "x${SKIP_UPDATE}" = "x" ]
+if [ "${SKIP_UPDATE}" != "true" ]
 then
-
+    echo
+    echo "env SKIP_UPDATE=false"
     echo
     echo "Installing/updating required Ruby gems."
     bundle install
@@ -20,10 +21,9 @@ then
 
 else
     echo
-    echo "Skipping bundle and npm updates"
+    echo "env SKIP_UPDATE=true. Skipping bundle and npm updates"
 fi
 
-#bundle exec jekyll serve --config _config_dev.yml --host=0.0.0.0 &
 npm run dev &
 
 while true

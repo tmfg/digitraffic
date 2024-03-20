@@ -6,7 +6,7 @@ issue-number: DPO-DPO-1570
 traffictypes:
   - Tieliikenne
   - Meriliikenne
-status: toteutuksessa
+status: valmis
 date: 2022-01-01
 ---
 

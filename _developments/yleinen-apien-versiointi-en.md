@@ -6,7 +6,7 @@ issue-number: DPO-1570
 traffictypes:
   - Road traffic
   - Marine traffic
-status: inprogress
+status: finished
 date: 2022-01-01
 ---
 
