@@ -94,7 +94,7 @@ published: true
 title: Vanhojen SOAP-rajapintojen elinkaari päättyi
 image: 2017-08-31-old-api-eol/data-eol.jpg
 categories: Tiedotteet
-traffictypes:
+traffictypes:   
   - Tieliikenne
 tags:
   - Rajapinnat
@@ -131,13 +131,27 @@ categories: Tiedotteet
 **HUOM!** Muista kirjoittaa varsinainen kategoria isolla alkukirjaimella. `Artikkelit` on oikein. `artikkelit` on väärin.
 
 #### Julkaisun liikennetyyppien lisääminen
-Julkaisulla voi olla yksi tai useampi kolmesta liikennetyypistä: `Tieliikenne`, `Rautatieliikenne`, `Meriliikenne`. Liikennetyypit määritellään meta datan `traffictypes`-tietoon listaksi. Jokainen liikennetyyppi kirjoitetaan omalle rivilleen meta dataan ja kunkin eteen kirjoitetaan väliviiva ja välilyönti `- `. Esimerkiksi, kun haluat lisätä julkaisulle liikennetyypit `Rautatieliikenne` ja `Meriliikenne`, kirjoita metadataan seuraavat rivit.
+Julkaisulla voi olla yksi tai useampi kolmesta liikennetyypistä: `Tieliikenne`, `Meriliikenne`, `Rautatieliikenne`. Liikennetyypit määritellään meta datan `traffictypes`-tietoon listaksi. Jokainen liikennetyyppi kirjoitetaan omalle rivilleen meta dataan ja kunkin eteen kirjoitetaan väliviiva ja välilyönti `- `. Esimerkiksi, kun haluat lisätä julkaisulle liikennetyypit `Rautatieliikenne` ja `Meriliikenne`, kirjoita metadataan seuraavat rivit.
 
 ```
 traffictypes:
-  - Rautatieliikenne
+  - Tieliikenne 
   - Meriliikenne
+  - Rautatieliikenne
 ```
+
+en
+
+```
+traffictypes:
+  - Road traffic
+  - Marine traffic
+  - Marine traffic
+```
+
+
+
+
 
 **HUOM!** Määrittele julkaisulle **vähintään yksi** liikennetyyppi.
 

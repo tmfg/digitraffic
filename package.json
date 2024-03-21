@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@types/jquery": "^3.5.29",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "xmlhttprequest": "^1.8.0"
   }
 }

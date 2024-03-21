@@ -337,7 +337,7 @@ t:
         en: "planned"
         fi: "suunnitteilla"
       inprogress:
-        en: "inprogress"
+        en: "in progress"
         fi: "toteutuksessa"
       finished:
         en: "finished"

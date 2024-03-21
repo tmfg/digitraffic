@@ -2,7 +2,7 @@
 title: Rajapintojen kokonaisuuksien ja versioinnin kehittäminen
 lang: fi
 ref: apien-versiointi
-issue-number: DPO-DPO-1570
+issue-number: DPO-1570
 traffictypes:
   - Tieliikenne
   - Meriliikenne
