@@ -19,7 +19,7 @@ function loadApiStatuses(language) {
         addApiStatusTabLinksEventListeners();
         // If Service status section exists, get service status
         if (document.getElementById("service-status-section")) {
-            yield getServiceStatus("https://status-test.digitraffic.fi", language);
+            yield getServiceStatus("https://status.digitraffic.fi", language);
         }
     });
 }

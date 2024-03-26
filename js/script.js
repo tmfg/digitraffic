@@ -38,7 +38,7 @@ async function init() {
 
   // If Service status section exists, get service status
   if (document.getElementById("service-status-section")) {
-    await getServiceStatus("https://status-test.digitraffic.fi", pageLang);
+    await getServiceStatus("https://status.digitraffic.fi", pageLang);
   }
 
   if (typeof loadDatex2 === "function") {

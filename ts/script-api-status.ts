@@ -58,7 +58,7 @@ async function loadApiStatuses(language: string) {
     addApiStatusTabLinksEventListeners();
     // If Service status section exists, get service status
     if (document.getElementById("service-status-section")) {
-        await getServiceStatus("https://status-test.digitraffic.fi", language);
+        await getServiceStatus("https://status.digitraffic.fi", language);
     }
 }
 
