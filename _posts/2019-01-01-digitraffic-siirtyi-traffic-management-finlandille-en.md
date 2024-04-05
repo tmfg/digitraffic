@@ -10,8 +10,8 @@ traffictypes:
   - Rautatieliikenne
   - Meriliikenne
 tags:
-  - Rajapinnat
-  - Ylläpito
+  - APIs
+  - Admin
 ---
 
 Starting from the 1st of January 2019 Digitraffic will be operated by Fintraffic. 

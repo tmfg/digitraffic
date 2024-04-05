@@ -8,7 +8,7 @@ ref: 2018-12-20-tampereen-kamerat
 traffictypes:
   - Tieliikenne
 tags:
-  - Rajapinnat
+  - APIs
 ---
 
 The Finnish Transport Agency has interrupted distribution of traffic and weather camera images from the Tampere city streets in the Digitraffic service. 
