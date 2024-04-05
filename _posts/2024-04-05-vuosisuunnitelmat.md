@@ -1,5 +1,5 @@
 ---
-title: 'Rataliikenteen vuosisuunnitelmat -palvelu poistuu käytöstä 18.6.2024'
+title: 'Rataliikenteen vuosisuunnitelmat karttapalvelu poistuu käytöstä 18.6.2024'
 image:
 published: true
 categories: Tiedotteet

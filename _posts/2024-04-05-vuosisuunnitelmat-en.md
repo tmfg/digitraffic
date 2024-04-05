@@ -1,5 +1,5 @@
 ---
-title: 'Railway traffic yearly plans service will be discontinued on June 18, 2024'
+title: 'Railway traffic yearly plans map service will be discontinued on June 18, 2024'
 image:
 published: true
 categories: en News
