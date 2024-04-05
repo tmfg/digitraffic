@@ -15,7 +15,7 @@ jobs:
           concurrency: 5
           recurse: true
           markdown: true
-          linksToSkip: "https://jsfiddle.net, ^https://www.digitraffic.fi/tiedotteet/(2017|2018|2019|2020|2021|2022)/, ^https://www.digitraffic.fi/en/news/(2017|2018|2019|2020|2021|2022)/, https://maanpuolustus.net, https://digitransit.fi, https://status-test.digitraffic.fi/, https://status.digitraffic.fi/api/"
+          linksToSkip: "https://jsfiddle.net, ^https://www.digitraffic.fi/tiedotteet/(2017|2018|2019|2020|2021|2022)/, ^https://www.digitraffic.fi/en/news/(2017|2018|2019|2020|2021|2022)/, https://maanpuolustus.net, https://digitransit.fi, https://status-test.digitraffic.fi, https://status.digitraffic.fi/api/"
       - name: Notify Slack
         if: failure()
         uses: 8398a7/action-slack@v3
