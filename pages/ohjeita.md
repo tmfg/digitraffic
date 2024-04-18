@@ -75,6 +75,7 @@ Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät myös 
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
+Voit myös tilata statussivulta tiedon päivityksistä ja vikatilanteista ATOM-syötteenä **Subscribe via ATOM to all updates** -toiminnon avulla.
 
 ## HTTPS- vai HTTP-protokolla
 

@@ -77,6 +77,7 @@ Deprecated APIs and their sunset dates are also updated on the page [Support →
 
 ## How can I be aware of updates and incidents?
 Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
+You can also subscribe to status updates with the  **Subscribe via ATOM to all updates** function.
 
 ## HTTPS- vs HTTP-protocol
 
