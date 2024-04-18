@@ -75,7 +75,6 @@ Vanhentuneet rajapinnat ja niiden poistumispäivämäärät päivittyvät myös 
 
 ## Miten saan tiedon päivityksistä ja vikatilanteista?
 Tarkkaile statussivua [https://status.digitraffic.fi](https://status.digitraffic.fi).
-Voit myös tilata statussivulta tiedon päivityksistä ja vikatilanteista sähköpostiisi **Subscribe to updates** -toiminnon avulla. 
 
 ## HTTPS- vai HTTP-protokolla
 
@@ -128,9 +127,9 @@ cachesta palautuva vastaus ei muutu.  Cachen ikä on määritelty HTTP-headeriss
 
 Tämä saattaa myös aiheuttaa omituiselta tuntuvia aikaleimoja, kun samaa palvelua kutsuu eri parametreilla.  Esimerkiksi:
 
-`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true`
+`https://tie.digitraffic.fi/api/tms/v1/sensors?lastUpdated=true`
 
-`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false`
+`https://tie.digitraffic.fi/api/tms/v1/sensors?lastUpdated=false`
 
 Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen eri aikoina.
 
@@ -138,14 +137,14 @@ Näistä voi tulla eri _dataUpdatedTime_, koska vastaukset ovat menneet cacheen 
 __K__: Miten kutsun rajapintoja [cURLilla](https://curl.haxx.se/)?  
 __V__:
 ```bash
-curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
+curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/tms/v1/sensors -o data.json
 ```
 
 # Wget
 __K__: Miten kutsun rajapintoja [Wgetillä](https://www.gnu.org/software/wget/)?  
 __V__:
 ```bash
-wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
+wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/tms/v1/sensors -O data.json
 ```
 
 # Java RestTemplate
@@ -162,7 +161,7 @@ headers.add("Digitraffic-User", "DT/Tester");
 HttpEntity<String> entity = new HttpEntity<>("body", headers);
 
 final ResponseEntity<String> response =
-    restTemplate.exchange("https://tie.digitraffic.fi/api/v1/data/tms-data", HttpMethod.GET, entity, String.class);
+    restTemplate.exchange("https://tie.digitraffic.fi/api/tms/v1/sensors", HttpMethod.GET, entity, String.class);
 
 System.out.println(response.getBody());
 ```
@@ -174,7 +173,7 @@ __V__:
 ```python
 import requests
 
-TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
+TMS_STATION_URL = 'https://tie.digitraffic.fi/api/tms/v1/sensors'
 
 headers = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 
@@ -189,7 +188,7 @@ __V__:
 ```javascript
 const fetch = require('node-fetch')
 
-const TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
+const TMS_STATION_URL = 'https://tie.digitraffic.fi/api/tms/v1/sensors'
 const DT_USER_ID = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 
 function handleTmsData(data) {

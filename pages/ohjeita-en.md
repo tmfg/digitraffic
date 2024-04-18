@@ -77,7 +77,6 @@ Deprecated APIs and their sunset dates are also updated on the page [Support →
 
 ## How can I be aware of updates and incidents?
 Check the status page [https://status.digitraffic.fi](https://status.digitraffic.fi).
-You can also subscribe to status updates with the  **Subscribe to updates** function.
 
 ## HTTPS- vs HTTP-protocol
 
@@ -128,9 +127,9 @@ of the caches are one minute long.
 
 This might lead to some oddities with updated timestamps. For example:
 
-`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=true`
+`https://tie.digitraffic.fi/api/tms/v1/sensors?lastUpdated=true`
 
-`https://tie.digitraffic.fi/api/v1/data/tms-data?lastUpdated=false`
+`https://tie.digitraffic.fi/api/tms/v1/sensors?lastUpdated=false`
 
 These two might return a different _dataUpdatedTime_ because the calls were cached at different time.
 
@@ -138,14 +137,14 @@ These two might return a different _dataUpdatedTime_ because the calls were cach
 __Q__: How do I call the APIs with [cURL](https://curl.haxx.se/)?  
 __A__:
 ```bash
-curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -o data.json
+curl -H 'Connection: close' --compressed -H 'Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/tms/v1/sensors -o data.json
 ```
 
 # Wget
 __Q__: How do I call the APIs with [Wget](https://www.gnu.org/software/wget/)?  
 __A__:
 ```bash
-wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/v1/data/tms-data -O data.json
+wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/tms/v1/sensors -O data.json
 ```
 
 # Java RestTemplate
@@ -162,7 +161,7 @@ headers.add("Digitraffic-User", "DT/Tester");
 HttpEntity<String> entity = new HttpEntity<>("body", headers);
 
 final ResponseEntity<String> response =
-    restTemplate.exchange("https://tie.digitraffic.fi/api/v1/data/tms-data", HttpMethod.GET, entity, String.class);
+    restTemplate.exchange("https://tie.digitraffic.fi/api/tms/v1/sensors", HttpMethod.GET, entity, String.class);
 
 System.out.println(response.getBody());
 ```
@@ -174,7 +173,7 @@ __V__:
 ```python
 import requests
 
-TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
+TMS_STATION_URL = 'https://tie.digitraffic.fi/api/tms/v1/sensors'
 
 headers = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 
@@ -189,7 +188,7 @@ __V__:
 ```javascript
 const fetch = require('node-fetch')
 
-const TMS_STATION_URL = 'https://tie.digitraffic.fi/api/v1/data/tms-data'
+const TMS_STATION_URL = 'https://tie.digitraffic.fi/api/tms/v1/sensors'
 const DT_USER_ID = {'Digitraffic-User': 'Junamies/FoobarApp 1.0'}
 
 function handleTmsData(data) {
