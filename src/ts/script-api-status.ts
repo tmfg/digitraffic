@@ -1,12 +1,14 @@
 // export these functions to global scope and don't tree shake them
 globalThis.getServiceStatus = getServiceStatus;
 
-export default function () { /* Dummy export for bundle */ }
+export default function () {
+    /* Dummy export for bundle */
+}
 
 // Fix: Property 't' does not exist on type 'Window'
 declare global {
     interface Window {
-        t:Record<string, unknown>;
+        t: Record<string, unknown>;
     }
 }
 
@@ -61,7 +63,6 @@ const serviceChildComponentHealthThreshold = 50;
 const statusUnderMaintenance = "under_maintenance";
 // cState issues under this path are Digitraffic maintenances
 const digitrafficMaintenancePath = "/digitraffic-maintenance/";
-
 
 /* Add event listeners for status links */
 function addApiStatusTabLinksEventListeners() {
@@ -186,7 +187,14 @@ async function updateServiceStatusList(language: string, issues: CStateIssueObje
             );
         }
     } else {
-        addIncidentDetailedList(null, window.t.statusNoIncidents[language], null, null, statusList, templateItem);
+        addIncidentDetailedList(
+            null,
+            window.t.statusNoIncidents[language],
+            null,
+            null,
+            statusList,
+            templateItem
+        );
     }
 }
 
@@ -386,7 +394,8 @@ function addIncidentFrontPageList(
 
 function getTimeStringFromIsoString(dateTime: string) {
     const asDate = new Date(dateTime);
-    return asDate.getDate() +
+    return (
+        asDate.getDate() +
         "." +
         (asDate.getMonth() + 1) +
         "." +
@@ -394,7 +403,8 @@ function getTimeStringFromIsoString(dateTime: string) {
         " " +
         ("0" + asDate.getHours()).slice(-2) +
         ":" +
-        ("0" + asDate.getMinutes()).slice(-2);
+        ("0" + asDate.getMinutes()).slice(-2)
+    );
 }
 
 function openTab(tabId: string, event) {

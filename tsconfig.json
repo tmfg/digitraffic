@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "outDir": "./js/custom",
+    "outDir": "./dist",
     "target": "ES6",
     "module": "ES2022",
     "lib": ["DOM", "ES2020"],
@@ -15,6 +15,6 @@
     "allowJs": true,
 
   },
-  "include": ["./src/**/*.ts", "./ts/src/*.js"],
+  "include": ["./src/ts/**/*.ts"],
   "exclude": ["node_modules"]
 }

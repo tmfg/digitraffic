@@ -19,7 +19,8 @@ exclude:
   - .idea
   - docs
   - _site
-  - ts
+  - src
+  - dist
   - node_modules
   - .dockerignore
   - .gitignore
