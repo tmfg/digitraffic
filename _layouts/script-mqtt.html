@@ -5,7 +5,7 @@ layout: uncompressed
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
 <!--HTML head-->
-{% include script-head.html %}
+{% include head.html %}
 
 <!--HTML body-->
 <body class="body">
@@ -41,7 +41,7 @@ layout: uncompressed
         </div>
       </div>
 
-      <table style="text-align: left; border-collapse: collapse;">
+      <table id="mqtt-options" style="text-align: left; border-collapse: collapse;">
         <tr>
           <th>Host:</th>
           <td><select id="domain" name="domain" style="width: 100%;">
@@ -60,7 +60,7 @@ layout: uncompressed
             Topic template:
           </th>
           <td>
-            <select id="topic_select" name="topic_select" onchange="updateTopicTemplate()" style="width: 100%;">
+            <select id="topic_select" name="topic_select" onchange="mqtt_updateTopicTemplate()" style="width: 100%;">
               <option value="" disabled>Road</option>
               <option value="tms-v2/#">tms-v2/&lt;roadStationId>/&lt;sensorId></option>
               <option value="weather-v2/#">weather-v2/&lt;roadStationId>/&lt;sensorId></option>
@@ -89,8 +89,8 @@ layout: uncompressed
         <tr>
           <th></th>
           <td>
-            <button onclick="reconnect()"> Connect/Reconnect </button>
-            <button onclick="disconnect()"> Disconnect </button>
+            <button onclick="mqtt_reconnect()"> Connect/Reconnect </button>
+            <button onclick="mqtt_disconnect()"> Disconnect </button>
             <div id="connectionStatus">Disconnected</div>
           </td>
         </tr>
@@ -111,8 +111,8 @@ layout: uncompressed
 
 <!--footer-->
 {% include footer.html %}
-
-<script type="text/javascript" src="/js/script-mqtt.js"></script>
+<!--integrity="sha384-FSbF2svmEG+1lEuWlXDJX7xdyoAm5t+V2vOZZTuYF8siKZQPA9h+zAZn6HbZyPJ2"-->
+<!--<script type="text/javascript" src="{{ '/js/custom/script-mqtt.js' | prepend:site.baseurl }}"  crossorigin="anonymous"></script>-->
 
 </body>
 </html>

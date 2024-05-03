@@ -9,6 +9,7 @@ title: TMS documentation
 lang: en
 ref: tms
 intro: Traffic measurement system data
+swagger-source: https://meri.digitraffic.fi/swagger/openapi.json
 ---
 
 Fintraffic collects information about road traffic using automatic traffic measurement stations (LAM). Real-time and historical data are available.

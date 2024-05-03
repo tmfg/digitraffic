@@ -5,7 +5,7 @@ layout: uncompressed
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
 <!--HTML head-->
-{% include script-head.html %}
+{% include head.html %}
 
 <!--HTML body-->
 <body class="body">
@@ -45,7 +45,7 @@ layout: uncompressed
       </div>
       <div id="DEPRECATIONS-TEXT" class="deprecations-text">
       </div>
-      <div class="row">
+      <div id="script-api-changes-data" class="row">
         <!--Tables-->
         <div class="col-sm jekyll-content jekyll-content--no-tags" id="ROAD-DEPRECATIONS-DIV">
           <table class="table" id="ROAD-DEPRECATIONS"></table>
@@ -81,7 +81,5 @@ layout: uncompressed
 
 <!--footer-->
 {% include footer.html %}
-
-<script type="text/javascript" src="/js/script-api-changes.js"></script>
 </body>
 </html>

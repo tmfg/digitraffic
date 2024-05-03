@@ -4,7 +4,7 @@
   justify-content: flex-end;
   align-items: center;
   height: inherit;
-  transition: $transition-faster;
+  transition: 10ms;
 
   /* Elements */
   &__list {

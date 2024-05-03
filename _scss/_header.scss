@@ -166,6 +166,12 @@
       color: $header-text-color;
       font-weight: 600;
     }
+    &.active {
+      border-bottom: 2px $black solid;
+      padding-top: 2px;
+    }
+    align-content: center;
+    height: $header-height;
   }
 
   &__main {
@@ -212,3 +218,6 @@
 .header .row {
   height: inherit;
 }
+
+
+

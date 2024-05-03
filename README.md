@@ -214,15 +214,20 @@ Vaakakuva, korkeintaan 500 px leveä, optimi 480 x 270 px
 Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edited)
 
 
-### Install with Docker
+### Run locally with Docker
 ```
+# Install dependencies
+npm install
+# Compiled TypeScript files and install compiled JavaScript files in place. Install fonts and Goole icons in place.
+npm run install-all
+# Build Docker image
 docker build . -t digitraffic-pages
+# Clean 
+rm -r _site
+# Run in docker
 docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest
 ```
-
-or one-liner `docker build . -t digitraffic-pages; docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest`
-
-or the script: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
+Or with scripts: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
 
 ## In addition
 

@@ -1,4 +1,4 @@
-<div class="col-md dropdown language-dropdown">
+<div id="language-dropdown__button-parent" class="col-md dropdown language-dropdown">
   <button id="language-dropdown__button">
     {% include globe.svg %}
     <span>
@@ -14,6 +14,7 @@
   </button>
 </div>
 
+<div>
 <div id="language-options" style="display: none;">
   {% include language-menu-controller.html %}
   <ul>
@@ -33,26 +34,5 @@
     </li>
   </ul>
 </div>
-
-<script>
-  const languageOptionsTemplate = document.getElementById('language-options');
-
-  tippy('#language-dropdown__button', {
-    allowHTML: true,
-    content: languageOptionsTemplate.innerHTML,
-    interactive: true,
-    placement: 'bottom-end',
-    popperOptions: {
-      modifiers: [
-        {
-          name: 'arrow',
-          options: {
-            padding: 80,
-          },
-        },
-      ],
-    },
-    theme: 'digitraffic',
-    trigger: 'click',
-  });
-</script>
+</div>
+<!-- See setDropDowns() function in script.js for tippyjs menu dropdowns -->

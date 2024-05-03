@@ -101,7 +101,7 @@
 
   /* Elements */
   &__heading {
-    @include heading(6rem, 100, $black, -0.05rem);
+    @include heading(6rem, 400, $black, -0.05rem);
     padding: 0 $content-padding;
     margin: $margin-sm auto 0 auto;
     line-height: 1.1;
@@ -109,7 +109,7 @@
   }
 
   &__intro {
-    @include heading(2.25rem, 100, $black, -0.05rem, break-word);
+    @include heading(2.25rem, 400, $black, -0.05rem, break-word);
     max-width: 65rem;
     padding: 0 $content-padding;
     margin: $margin-xs auto $margin-md;
