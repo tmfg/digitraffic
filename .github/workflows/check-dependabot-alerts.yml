@@ -1,0 +1,20 @@
+name: Check Dependabot alerts and notify Slack
+
+on:
+  schedule:
+    - cron: "0 6,9,12 * * *"
+  workflow_dispatch:
+
+jobs:
+  check_alerts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Dependabot alerts
+        uses: tmfg/digitraffic-actions@dependabot-slack/v1
+        with:
+          TOKEN: ${{ secrets.DEPENDABOT_ALERTS_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
+          CRITICAL: "true"
+          HIGH: "true"
+          MEDIUM: "false"
+          LOW: "false"
