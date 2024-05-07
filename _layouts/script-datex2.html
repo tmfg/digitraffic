@@ -5,7 +5,7 @@ layout: uncompressed
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
   <!--HTML head-->
-  {% include script-head.html %}
+  {% include head.html %}
 
   <!--HTML body-->
   <body class="body">
@@ -54,7 +54,7 @@ layout: uncompressed
 
           <div class="row">
             <!--Tables-->
-            <div class="col-xs-12 jekyll-content jekyll-content--no-tags">
+            <div id="script-datex2-data" class="col-xs-12 jekyll-content jekyll-content--no-tags">
               <table class="table" id="TRAFFIC_ANNOUNCEMENT"></table>
 
               <table class="table" id="EXEMPTED_TRANSPORT"></table>
@@ -73,7 +73,5 @@ layout: uncompressed
 
     <!--footer-->
     {% include footer.html %}
-
-    <script type="text/javascript" src="/js/script-datex2.js"></script>
   </body>
 </html>

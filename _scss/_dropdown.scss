@@ -24,11 +24,13 @@
 
     @at-root .active#{&} {
       border-bottom: 2px $black solid;
+      padding-top: 2px;
     }
   }
 
   ul {
     list-style-type: none;
+    text-align: left;
 
     li {
       font-size: $font-size-md;
@@ -50,7 +52,7 @@
 
   .tippy-content {
     padding: 0;
-
+    font-weight: 400;
     ul {
       > li {
         &:not(:first-child) {

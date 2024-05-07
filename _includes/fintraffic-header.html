@@ -19,17 +19,4 @@
 <div id="services-options" style="display: none;">
   {% include fintraffic-links.html %}
 </div>
-
-<script>
-  const servicesOptionsTemplate = document.getElementById('services-options');
-
-  tippy('#services-dropdown__button', {
-    allowHTML: true,
-    arrow: false,
-    content: servicesOptionsTemplate.innerHTML,
-    interactive: true,
-    placement: 'bottom-start',
-    theme: 'fintraffic',
-    trigger: 'click',
-  });
-</script>
+<!-- See setDropDowns() function in script.js for tippyjs menu dropdowns -->

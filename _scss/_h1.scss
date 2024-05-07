@@ -1,5 +1,5 @@
 h1, .h1 {
-  @include heading();
+  @include heading(3rem, 400);
   margin: $margin-xssm 0;
 
   &--page-top {

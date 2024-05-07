@@ -1,5 +1,5 @@
 # https://pages.github.com/versions/
-FROM ruby:3.3.0-alpine
+FROM ruby:3.3.1-alpine
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL en_US.UTF-8

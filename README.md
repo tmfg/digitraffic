@@ -1,5 +1,29 @@
 # digitraffic
 
+
+## Run locally with Docker
+```
+# Install dependencies
+npm install
+# Compiled TypeScript files and install compiled JavaScript files in place. Install fonts and Goole icons in place.
+npm run build-and-install"
+# Build Docker image
+docker build . -t digitraffic-pages
+# Clean 
+rm -r _site
+# Run in docker
+docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest
+```
+Or with scripts: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
+
+## Development
+
+If you make changes to `.js` or `.ts` -files run `npm run build && npm run bundle`
+
+If you update dependencies run `npm install && npm run build-and-install`
+
+
+
 ## Sisältösivujen päivitys
 Sisältösivut löytyvät `pages`-kansiosta. Muokattavissa olevat sivut ovat `.md`-päätteisiä. Sivujen sisältöä voi muokata [prose.io](https://prose.io/) -palvelulla. Navigoi palvelussa pages-kansioon ja haluttuun sisältösivuun. Avaa sisältösivu prosessa. Voit muokata sivun sisältöä avautuvassa tekstieditorissa.
 
@@ -213,16 +237,6 @@ Vaakakuva, korkeintaan 500 px leveä, optimi 480 x 270 px
 #### 4. Hero-taustakuva
 Vaakakuva, mustavalkoinen, korkeintaan 1500 px leveä, optimi 1200 x 675 px (edited)
 
-
-### Install with Docker
-```
-docker build . -t digitraffic-pages
-docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest
-```
-
-or one-liner `docker build . -t digitraffic-pages; docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest`
-
-or the script: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
 
 ## In addition
 

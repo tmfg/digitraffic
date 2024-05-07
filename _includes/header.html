@@ -12,13 +12,14 @@
       <div class="col-xs header__main">
         <div class="row middle-md">
           <span class="header__top-link">
-            <div class="
-              dropdown 
+            <div class="dropdown
               {%
                if page.url contains news 
-               or page.url contains api-status 
+               or page.url contains api-status)
               %}
+              {% unless page.url contains 'status-page' or page.url contains 'statussivu' %}
                 active
+              {% endunless %}
               {% endif %}
             ">
               <button id="dropdown__button--updates">
@@ -31,8 +32,7 @@
             </div>
           </span>
           <span class="header__top-link">
-            <div class="
-              dropdown 
+            <div class="dropdown
               {% if page.url contains road-traffic
                  or page.url contains railway-traffic
                  or page.url contains marine-traffic
@@ -52,8 +52,7 @@
             </div>
           </span>
           <span class="header__top-link">
-            <div class="
-              dropdown
+            <div class="dropdown
               {% if page.url contains service-overview
                 or page.url contains development-roadmap
                 or page.url contains applications
@@ -74,8 +73,7 @@
             </div>
           </span>
           <span class="header__top-link">
-            <div class="
-              dropdown 
+            <div class="dropdown
               {% if page.url contains support-channels
                  or page.url contains instructions
                  or page.url contains code-examples
@@ -96,10 +94,15 @@
             </div>
           </span>
           <span class="header__top-link">
+            <div class="header__link-bold
+              {% if page.url contains 'status-page' or page.url contains 'statussivu' %}
+                active
+              {% endif %}">
               <a class="header__link-bold"
                  href="/{{ site.t.status-page.url[page.lang] | prepend:site.baseurl }}">
                {{ site.t.status-page[page.lang] }}
               </a>
+            </div>
           </span>
         </div>
       </div>
@@ -246,47 +249,5 @@
     </li>
   </ul>
 </div>
+<!-- See setDropDowns() function in script.js for tippyjs menu dropdowns -->
 
-
-<script>
-  tippy('#dropdown__button--updates', {
-    allowHTML: true,
-    arrow: false,
-    content: document.getElementById('updates-dropdown-template').innerHTML,
-    interactive: true,
-    offset: [0, 0],
-    placement: 'bottom-start',
-    theme: 'digitraffic',
-    trigger: 'click',
-  });
-  tippy('#dropdown__button--sources', {
-    allowHTML: true,
-    arrow: false,
-    content: document.getElementById('sources-dropdown-template').innerHTML,
-    interactive: true,
-    offset: [0, 0],
-    placement: 'bottom-start',
-    theme: 'digitraffic',
-    trigger: 'click',
-  });
-  tippy('#dropdown__button--about', {
-    allowHTML: true,
-    arrow: false,
-    content: document.getElementById('about-dropdown-template').innerHTML,
-    interactive: true,
-    offset: [0, 0],
-    placement: 'bottom-start',
-    theme: 'digitraffic',
-    trigger: 'click',
-  });
-  tippy('#dropdown__button--support', {
-    allowHTML: true,
-    arrow: false,
-    content: document.getElementById('support-dropdown-template').innerHTML,
-    interactive: true,
-    offset: [0, 0],
-    placement: 'bottom-start',
-    theme: 'digitraffic',
-    trigger: 'click',
-  });
-</script>

@@ -7,16 +7,44 @@
   "license": "CC-BY-4.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:tsc && npm run build:jekyll",
+    "build-and-install": "npm run clean && npm run build && npm run install-all",
+    "build": "npm run build:tsc && npm run generate-third-party-licenses",
     "build:jekyll": "bundle exec jekyll build",
     "build:tsc": "tsc",
-    "prettify": "prettier --write --config .prettierrc.js ts",
+    "bundle": "esbuild --bundle src/assets.js --outfile=js/bundle.js && esbuild --bundle src/assets.js --minify --outfile=js/bundle.min.js && mv js/bundle.css _scss/bundle.scss && rm js/bundle.min.css",
+    "clean": "rimraf dist",
+    "prettify": "prettier --write --config .prettierrc.js src",
     "dev": "bundle exec jekyll serve --host 0.0.0.0 --port 3000 --livereload --livereload_port 3001 --config _config_dev.yml --trace",
-    "test": ""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-all": "npm run install-icons-and-fonts && npm run bundle && npm run generate-third-party-licenses",
+    "install-icons-and-fonts": "npm run install-icons && npm run install-fonts",
+    "install-icons": "npm run copy-icons && npm run fix-icons-css",
+    "copy-icons": "mkdir -p css/material-icons && cp node_modules/material-icons/iconfont/*round.{css,woff*} css/material-icons/",
+    "fix-icons-css": "sed -i'.bak' -E 's/url\\(\\\"\\./url\\(\\\"\\/css\\/material-icons/g' css/material-icons/round.css && sed -i'.bak' -E 's/\\.material-icons-round/\\.material-icons/g' css/material-icons/round.css && rm css/material-icons/*.css.bak",
+    "install-fonts": "npm run copy-fonts && npm run copy-fonts-css && npm run fix-fonts-css",
+    "copy-fonts": "mkdir -p css/public-sans && cp node_modules/@fontsource/public-sans/files/public-sans-latin-* css/public-sans/ && rm css/public-sans/*-ext-*",
+    "copy-fonts-css": "cp node_modules/@fontsource/public-sans/latin.css _scss/public-sans-latin.scss && cp node_modules/@fontsource/public-sans/latin-italic.css _scss/public-sans-latin-italic.scss",
+    "fix-fonts-css": "sed -i'.bak' -E 's/url\\(\\.\\/files/url\\(\\/css\\/public-sans/g' _scss/public-sans-latin*.scss && rm _scss/public-sans-latin*.scss.bak",
+    "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite"
   },
   "dependencies": {
-    "@types/jquery": "^3.5.29",
-    "typescript": "^5.4.4",
+    "@fontsource/public-sans": "^5.0.18",
+    "@popperjs/core": "^2.11.8",
+    "alpinejs": "^3.13.10",
+    "highlight.js": "^11.9.0",
+    "jquery": "^3.7.1",
+    "lunr": "^2.3.9",
+    "material-icons": "^1.13.12",
+    "paho-mqtt": "^1.1.0",
+    "pako": "^2.1.0",
+    "tippy.js": "^6.3.7",
     "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.29",
+    "esbuild": "^0.20.2",
+    "generate-license-file": "^3.4.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5"
   }
 }

@@ -3,6 +3,10 @@
 
 @charset "UTF-8";
 
+/* Public Sans fonts */
+@import "public-sans-latin-italic",
+        "public-sans-latin";
+
 /* Flexboxgrid Sass */
 @import "flexboxgrid";
 
@@ -63,7 +67,7 @@
   "header-menu",
   "hero-image",
   "hiddenvisible",
-  "highlight",
+  "iframe",
   "icons",
   "intro",
   "jekyll-content",
@@ -88,7 +92,6 @@
   "utilities",
   "toc",
   "script-styles",
-  "code-examples";
+  "code-examples",
+  "bundle";
 
-  /* Swagger-ui styles */
-@import "swagger-ui/swagger-ui-main";
