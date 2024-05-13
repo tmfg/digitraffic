@@ -2,7 +2,7 @@ name: Check Dependabot alerts and notify Slack
 
 on:
   schedule:
-    - cron: "0 6,9,12 * * *"
+    - cron: "0 5-14 * * 1-5"
   workflow_dispatch:
 
 jobs:
@@ -15,6 +15,6 @@ jobs:
           TOKEN: ${{ secrets.DEPENDABOT_ALERTS_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
           CRITICAL: "true"
-          HIGH: "true"
+          HIGH: "false"
           MEDIUM: "false"
           LOW: "false"
