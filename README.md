@@ -16,6 +16,11 @@ docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest
 ```
 Or with scripts: `./build-and-run-in-docker.sh` that uses `build-docker-image.sh` and `run-in-docker.sh` scripts.
 
+## Update deps
+
+Just run [./run-in-docker.sh](./run-in-docker.sh). When docker starts it runs [docker-entrypoint.sh](docker-entrypoint.sh) and
+it will run `bundle update` to update Ruby gems and npm update to update JavaScript packages.
+
 ## Development
 
 If you make changes to `.js` or `.ts` -files run `npm run build && npm run bundle`
