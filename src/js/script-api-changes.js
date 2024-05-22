@@ -51,7 +51,7 @@ const translations = {
 };
 
 const removalTextMatcher = /(?:W|w)ill be removed/
-const sunsetDateMatcher = RegExp(`(${removalTextMatcher.source})\.+(?<sunsetDate>\\d{4}-\\d{2}-\\d{2})`);
+const sunsetDateMatcher = RegExp(`(${removalTextMatcher.source}).+(?<sunsetDate>\\d{4}-\\d{2}-\\d{2})`);
 
 function initDeprecationsTable(trafficType, tableTitle, language) {
     $("#" + trafficType + "-DEPRECATIONS").append([
