@@ -24,13 +24,13 @@ links:
 published: true
 ---
 
-Digitraffic on Fintrafficin (TMF) palvelu, jonka kautta on saatavissa ajantasaista liikennetietoa Suomen tieverkolta, rautatieliikenteestä ja meriliikenteestä. Liikennetiedot ovat avointa dataa, jota jaetaan avointen rajapintojen kautta.
+Digitraffic on Fintrafficin palvelu, jonka kautta on saatavissa ajantasaista liikennetietoa Suomen tieverkolta, rautatieliikenteestä ja meriliikenteestä. Liikennetiedot ovat avointa dataa, jota jaetaan avointen rajapintojen kautta.
 Digitraffic viittaa sanana digitaaliseen liikenteeseen eli liikennettä esittävään malliin.
 
 ![Kelikamerakuva Tie 12 Tampere, Rantatunnelin suu, itä. ](https://weathercam.digitraffic.fi/C0460900.jpg)
 **Kelikamerakuva Tie 12 Tampere, Rantatunnelin suu, itä.**
 
-Digitrafficin kehitys alkoi vuonna 2002 VTT:n ja TKK:n [projektista](http://virtual.vtt.fi/virtual/proj6/fits/julkaisut/hanke3/FITS_30.pdf), 
+Digitrafficin kehitys alkoi vuonna 2002 VTT:n ja TKK:n projektista, 
 jossa tavoitteena oli  tuottaa  entistä  parempia  liikennetelematiikan palveluja. Käynnistysvaiheen jälkeen Digitraffic siirtyi Tiehallinnon ja
 sittemmin Kaakkois-Suomen ELY-keskuksen hoitoon. Liikennevirasto vastasi palvelun ylläpidosta ja kehityksestä vuosina 2014-2018, jolloin Digitrafficin 
 hyödyntäjäsopimuksista luovuttiin, palvelu siirrettiin pilvipalveluun, tietosisällöstä tehtiin avointa dataa ja palvelu laajennettiin kattamaan 
