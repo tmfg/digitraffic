@@ -11,14 +11,20 @@ ref: railway-traffic
 title: Rautatieliikenne
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
-  - ["Väylävirasto", "https://vayla.fi"]
-  - ["Fintraffic", "https://fintraffic.fi"]
-  - ["Swagger", "https://rata.digitraffic.fi/swagger/"]
+
+- ["Väylävirasto", "https://vayla.fi"]
+- ["Fintraffic", "https://fintraffic.fi"]
+- ["Swagger", "https://rata.digitraffic.fi/swagger/"]
+
 ---
 
-Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Fintraffic ja tietolähteenä toimii Fintrafficin ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset sekä matkustajainformaatiojärjestelmä MIKU.
+Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla kulkevien junien aikatauluista,
+sijainneista, kokoonpanoista sekä täsmällisyystiedoista. Palvelun omistaa Fintraffic ja tietolähteenä toimii
+Fintrafficin ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset sekä
+matkustajainformaatiojärjestelmä MIKU.
 
-![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{ site.baseurl }}{{ "/img/rata/reaali.png" }}) ![LOKI]({{ site.baseurl }}{{ "/img/rata/loki.png" }})
+![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{ site.baseurl }}{{ "/img/rata/reaali.png"
+}}) ![LOKI]({{ site.baseurl }}{{ "/img/rata/loki.png" }})
 
 Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraaviin kysymyksiin:
 
@@ -31,13 +37,18 @@ Rajapinnasta saatavien tietojen avulla on mahdollista vastata esimerkiksi seuraa
 * Oliko juna aikataulussa esimerkiksi kaksi kuukautta sitten?
 * Millaisia matkustajatiedotteita on voimassa asemalla A liittyen junaan B?
 
-Saatavilla on [GraphQL-rajapinta](https://www.digitraffic.fi/rautatieliikenne/#graphql) sekä [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/) 
+Saatavilla on [GraphQL-rajapinta](https://www.digitraffic.fi/rautatieliikenne/#graphql)
+sekä [Swagger-dokumentaatio](https://rata.digitraffic.fi/swagger/)
 
 Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](#avoimen-datan-käyttölupa).
 
-Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien tiedoissa voi olla puutteita tai virheitä, tietoa ei aina saada tai tieto jää jostakin syystä välittymättä avoimeen dataan. Arkaluonteisia tietoja ei tuoda avoimeen dataan lainkaan. Näistä syistä emme suosittele aineiston käyttämistä turvallisuuskriittisissä sovelluksissa.
+Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien tiedoissa voi olla puutteita tai
+virheitä, tietoa ei aina saada tai tieto jää jostakin syystä välittymättä avoimeen dataan. Arkaluonteisia
+tietoja ei tuoda avoimeen dataan lainkaan. Näistä syistä emme suosittele aineiston käyttämistä
+turvallisuuskriittisissä sovelluksissa.
 
 # Sisältö
+
 1. [Yleistä](#yleistä)
     1. [Palvelun kehittäjäyhteisö](#palvelun-kehittäjäyhteisö)
     1. [Suunnittellut ominaisuudet](#suunnittellut-ominaisuudet)
@@ -45,7 +56,7 @@ Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien
     1. [HTTPS](#https)
     1. [Dataa tukevat rajapinnat / työkalut](#dataa-tukevat-rajapinnat--työkalut)
 1. [REST-rajapinnat](#rest-rajapinnat)
-    1. [GraphQL](#graphql) 
+    1. [GraphQL](#graphql)
     1. [Junien tiedot (/trains)](#junien-tiedot-trains)
         - [Yhden junan tiedot](#yhden-junan-tiedot)
         - [Päivän junien tiedot](#päivän-junien-tiedot)
@@ -71,7 +82,7 @@ Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien
         - [Junan kokoonpanohaku](#junan-kokoonpanohaku)
         - [Junien kokoonpanohaku](#junien-kokoonpanohaku)
         - [Kaikkien kokoonpanojen seuranta](#kaikkien-kokoonpanojen-seuranta)
-        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)   
+        - [Vanhat kokoonpanot zip-paketteina](#vanhat-kokoonpanot-zip-paketteina)
         - [Kokoonpanojen versiohistoria](#kokoonpanojen-versiohistoria)
     1. [Kulkutievaraukset (/routesets)](#kulkutievaraukset-routesets)
         - [Kaikkien kulkutievarauksien seuranta](#kaikkien-kulkutievarauksien-seuranta)
@@ -131,13 +142,17 @@ Avoimeen dataan tuotavaa tietoa koostetaan eri lähteistä. Lähdejärjestelmien
 
 ## Palvelun kehittäjäyhteisö
 
-Jos sinulla on kysymyksiä tietosisällöstä, kehitysehdotuksia tai tarvitset apua rajapinnan käyttöön, palvelulle on perustettu julkinen [rata.digitraffic.fi Google-ryhmä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi).
+Jos sinulla on kysymyksiä tietosisällöstä, kehitysehdotuksia tai tarvitset apua rajapinnan käyttöön,
+palvelulle on perustettu
+julkinen [rata.digitraffic.fi Google-ryhmä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi).
 
 ## Suunnittellut ominaisuudet
 
-Listassa ensimmäisenä oleva pyritään toteuttamaan ensimmäisenä. Ominaisuuksia saatetaan vielä hyllyttää esim. operaattorien liikesalaisuussyistä tai odottamattomien teknisten vaikeuksien takia.
+Listassa ensimmäisenä oleva pyritään toteuttamaan ensimmäisenä. Ominaisuuksia saatetaan vielä hyllyttää esim.
+operaattorien liikesalaisuussyistä tai odottamattomien teknisten vaikeuksien takia.
 
-Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskusteluryhmässä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi) 
+Otamme mielellämme vastaan
+kehitysehdotuksia [rata.digitraffic.fi -keskusteluryhmässä](https://groups.google.com/forum/#!forum/rata_digitraffic_fi)
 
 **Suunnitteilla olevat ominaisuudet:**
 
@@ -147,7 +162,7 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 ## Toteutetut ominaisuudet
 
 * 5.9.2023
-    * Matkustajainformaation tiedotteiden rajapinta (/passenger-information) 
+    * Matkustajainformaation tiedotteiden rajapinta (/passenger-information)
 * 13.10.2020
     * GraphQL:n v2, jossa dataa pystyy käsittelemään monipuolisemmin
 * 13.5.2020
@@ -171,12 +186,12 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
 * 12.9.2018
     * Vanhat GPS-sijainnit zip-paketteina
 * 13.8.2018
-    * Junan "myöhässä"-toiminallisuus    
+    * Junan "myöhässä"-toiminallisuus
 * 21.5.2018
     * Junan sijaintihistorian haku (/train-locations/\<departure_date>/\<train_number>)
 * 12.2.2018
     * Kokoonpanojen haku versionumeron avulla
-* 5.2.2018 
+* 5.2.2018
     * GraphQL. Tapa filtteröidä, rajoittaa ja yhdistellä vastauksia
 * 1.2.2018
     * Uusi tyyli etusivulle
@@ -226,7 +241,7 @@ Otamme mielellämme vastaan kehitysehdotuksia [rata.digitraffic.fi -keskustelury
     * Rajoitetun kokokoonpanotietojen julkaiseminen.
     * Reaaliaikaisen liikennetilanteen ja toteumatiedon julkaiseminen.
     * Voimassa olevan kapasiteetin julkaiseminen.
-    
+
 ## HTTPS
 
 Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä.
@@ -238,19 +253,22 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
 * [https://rata.digitraffic.fi/jeti-api/](https://rata.digitraffic.fi/jeti-api/)
     * Rajapinta, josta löytyy tietoja rataverkkoon kohdistuvista huoltotöistä
 * [https://rata.digitraffic.fi/history/](https://rata.digitraffic.fi/history/)
-    * Työkalu, jolla voi tarkastella missä tilassa jokin juna tai kokoonpano oli tiettynä ajanhetkenä   
-* [https://rata.digitraffic.fi/vuosisuunnitelmat/](https://rata.digitraffic.fi/vuosisuunnitelmat/)  
-    * Työkalu, jolla voi tarkastella ratatöiden vuosisuunnitelmia   
+    * Työkalu, jolla voi tarkastella missä tilassa jokin juna tai kokoonpano oli tiettynä ajanhetkenä
+* [https://rata.digitraffic.fi/vuosisuunnitelmat/](https://rata.digitraffic.fi/vuosisuunnitelmat/)
+    * Työkalu, jolla voi tarkastella ratatöiden vuosisuunnitelmia
 
 # REST-rajapinnat
 
-Rest-rajapintoja on kahta eri tyyyppiä: 
- 1. [GraphQL](#graphql)-rajapinta
- 2. Staattiset rajapinnat
- 
-[GraphQL](#graphql)-rajapinta tarjoaa mahdollisuuden valita miten tietoa filtteröidään, järjestetään ja mitä kenttiä otetaan mukaan vastaukseen
+Rest-rajapintoja on kahta eri tyyyppiä:
 
-Staattiset rajapinnat palauttavat tiedot aina samassa formaatissa. Tietojen filtteröinti, järjestäminen ja kenttien määrittely ei ole mahdollista 
+1. [GraphQL](#graphql)-rajapinta
+2. Staattiset rajapinnat
+
+[GraphQL](#graphql)-rajapinta tarjoaa mahdollisuuden valita miten tietoa filtteröidään, järjestetään ja mitä
+kenttiä otetaan mukaan vastaukseen
+
+Staattiset rajapinnat palauttavat tiedot aina samassa formaatissa. Tietojen filtteröinti, järjestäminen ja
+kenttien määrittely ei ole mahdollista
 
 Staattiset rajapinta on jaettu kahdeksaan osaan:
 
@@ -263,39 +281,58 @@ Staattiset rajapinta on jaettu kahdeksaan osaan:
 * [Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (/trafficrestriction-notifications)](#ratatyötiedot-trackwork-notifications-ja-liikenteen-rajoitetiedot-trafficrestriction-notifications)
 * [Metatiedot (/metadata)](#metatiedot-metadata)
 
-Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein. Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan jälkeen, ei voi täydellä varmuudella luottaa.
+Palvelussa on junien aikataulu- ja toteumatiedot noin 720 päivää taaksepäin. Tulevaisuuteen tiedot ovat
+saatavilla niin pitkälle kuin rataviranomainen on hyväksynyt operaattoreiden aikatauluhakemukset. Rajapinnasta
+saatavat aikataulut voivat muuttua aikataulujen muutosajankohdissa, joita on noin kolmen kuukauden välein.
+Tämä koskee erityisesti tavaraliikennettä, mutta myös henkilöliikenteeseen voi tulla muutoksia näissä
+ajankohdissa. Tämän vuoksi sellaisten junien aikatauluihin, joiden lähtöpäivä on seuraavan muutosajankohdan
+jälkeen, ei voi täydellä varmuudella luottaa.
 
-Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
+Rajapinnan tulokset tallennetaan välimuistiin, jossa säilytysaika riippuu tehdystä kyselystä ja muodostetusta
+vastauksesta, esimerkiksi asematiedot pidetään välimuistissa pidempään kuin reaaliaikaiset kulkutiedot.
 
-Käytettävä versio rajapinnasta kerrotaan osoitteessa. Esimerkiksi [https://rata.digitraffic.fi/api/v1/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1), jossa v1 on rajapinnan versiotunnus.
+Käytettävä versio rajapinnasta kerrotaan osoitteessa.
+Esimerkiksi [https://rata.digitraffic.fi/api/v1/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1)
+, jossa v1 on rajapinnan versiotunnus.
 
-Kaikki aikaleimat ovat [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601):n mukaisia (esimerkiksi `2018-03-28T04:35:00.000Z`). Huomaa, että aikaleimoissa aikavyökkeenä on `Z` eli ne ovat [UTC-aikaa](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), eivät Suomen aikaa.
+Kaikki aikaleimat ovat [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601):n mukaisia (
+esimerkiksi `2018-03-28T04:35:00.000Z`). Huomaa, että aikaleimoissa aikavyökkeenä on `Z` eli ne
+ovat [UTC-aikaa](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), eivät Suomen aikaa.
 
 Palvelun tilaa voi seurata osoitteessa [https://status.digitraffic.fi/](https://status.digitraffic.fi/).
 
 ## GraphQL
 
-GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin, järjestämiseen ja yhdistelyyn. GraphQL:n avulla voidaan esimerkiksi rajata mukaan vain tietyt kentät tai filtteröidä vastausta käyttäen lähes mitä tahansa vastauksesta löytyvää kenttää. 
+GraphQL voidaan käyttää vastausten rajoittamiseen, filtteröintiin, järjestämiseen ja yhdistelyyn. GraphQL:n
+avulla voidaan esimerkiksi rajata mukaan vain tietyt kentät tai filtteröidä vastausta käyttäen lähes mitä
+tahansa vastauksesta löytyvää kenttää.
 
-GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla osoitteessa [https://rata.digitraffic.fi/api/v2/graphql/graphiql](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
+GraphQL-kyselyitä voi kokeilla ja kirjoitella GraphiQL-työkalulla
+osoitteessa [https://rata.digitraffic.fi/api/v2/graphql/graphiql](https://rata.digitraffic.fi/api/v2/graphql/graphiql)
 
-Kuva schemasta löytyy osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg). Schemasta käy ilmi kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
+Kuva schemasta löytyy
+osoitteesta [https://rata.digitraffic.fi/api/v2/graphql/schema.svg](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)
+. Schemasta käy ilmi kyselyt, niiden parametrit sekä mihin tietoihin voidaan yhdistyä
 
 [![GraphQL schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)](https://rata.digitraffic.fi/api/v2/graphql/schema.svg)
 
 Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
-* filtterin (tai useampia) `where`-parametrilla    
+
+* filtterin (tai useampia) `where`-parametrilla
 * järjestyksen (tai useampia) `orderBy`-parametrilla
-* kappalemäärän `skip`- ja `take`-parametrilla 
+* kappalemäärän `skip`- ja `take`-parametrilla
 
 ### Rajoituksia
 
-* Kyselyssä ei saa olla sama kenttä kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton 
-* `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä. Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {greaterThan: 50}}}}}}` on laiton
+* Kyselyssä ei saa olla sama kenttä kahdesti. Esimerkiksi kysely `train { compositions { train } }` on laiton
+* `contains`:a ei voi käyttää kahdesti samassa `where`-argumentissä.
+  Esimerkiksi `where: {compositions: {contains: {journeySections: {contains: {maximumSpeed: {greaterThan: 50}}}}}}`
+  on laiton
 
 ### Esimerkkejä
 
 #### Kaikki kulussa olevat VR:n junat ja niille viimeisin sijainti, jossa nopeus on yli 30 km/h [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(where%3A%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20trainLocations(where%3A%20%7Bspeed%3A%20%7BgreaterThan%3A%2030%7D%7D%2C%20orderBy%3A%20%7Btimestamp%3A%20DESCENDING%7D%2C%20take%3A%201)%20%7B%0A%20%20%20%20%20%20speed%0A%20%20%20%20%20%20timestamp%0A%20%20%20%20%20%20location%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+
 ```
 {
   currentlyRunningTrains(where: {operator: {shortCode: {equals: "vr"}}}) {
@@ -311,6 +348,7 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 ```
 
 #### Kaikki junat tietyltä päivämäärältä, joiden operaattori on VR ja lähilinjaliikennetunnus ei ole Z järjestettynä laskevasti junanumeron mukaan [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(%0A%20%20%20%20departureDate%3A%20%222020-10-05%22%2C%20%0A%20%20%20%20where%3A%20%7Band%3A%20%5B%20%7Boperator%3A%20%7BshortCode%3A%20%7Bequals%3A%20%22vr%22%7D%7D%7D%2C%20%7BcommuterLineid%3A%20%7Bunequals%3A%20%22Z%22%7D%7D%5D%7D%2C%20%0A%20%20%20%20orderBy%3A%20%7BtrainNumber%3A%20DESCENDING%7D)%20%0A%20%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20commuterLineid%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+
 ```
 {
   trainsByDepartureDate(
@@ -329,6 +367,7 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 ```
 
 #### Kulussa olevat junat järjestetynä operaattorilla ja junanumerolla [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20currentlyRunningTrains(orderBy%3A%20%5B%7Boperator%3A%7BshortCode%3AASCENDING%7D%7D%2C%7BtrainNumber%3AASCENDING%7D%5D)%20%7B%0A%20%20%20%20operator%20%7B%0A%20%20%20%20%20%20shortCode%0A%20%20%20%20%7D%0A%20%20%20%20trainNumber%0A%20%20%7D%0A%7D%0A)
+
 ```
 {
   currentlyRunningTrains(orderBy: [{operator:{shortCode:ASCENDING}},{trainNumber:ASCENDING}]) {
@@ -341,6 +380,7 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 ```
 
 #### Junat, jotka kulkevat Ylöjärven kautta [kokeile](https://rata.digitraffic.fi/api/v2/graphql/graphiql?query=%7B%0A%20%20trainsByDepartureDate(departureDate%3A%20%222020-10-06%22%2C%20%0A%20%20%20%20where%3A%20%7BtimeTableRows%3A%7Bcontains%3A%7Bstation%3A%7BshortCode%3A%7Bequals%3A%22YL%C3%96%22%7D%7D%7D%7D%7D%0A%20%20%20%20)%20%7B%0A%20%20%20%20trainNumber%0A%20%20%20%20departureDate%0A%20%20%20%20timeTableRows%20%7B%0A%20%20%20%20%20%20station%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20uicCode%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A)
+
 ```
 {
   trainsByDepartureDate(departureDate: "2020-10-06", 
@@ -358,6 +398,32 @@ Kaikille kyselyille ja niihin liittyville tiedoille voi antaa
 }
 ```
 
+#### Päivän juniin liittyvät matkustajainformaation tiedotteet
+
+```
+{
+  passengerInformationMessages(
+    where: {trainDepartureDate: {equals: "2024-06-11"}}
+  ) {
+    trainNumber
+    video {
+      text {
+        fi
+        sv
+        en
+      }
+    }
+    audio {
+      text {
+        fi
+        sv
+        en
+      }
+    }
+  }
+}
+```
+
 ### GraphQL-kysely omassa sovelluksessa
 
 GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.fi/api/v2/graphql/graphql`
@@ -365,28 +431,37 @@ GraphQL-kysely on POST-tyyppinen pyyntö osoitteeseen `https://rata.digitraffic.
 HTTP-pyyntöön tulee lisätä otsikot `Content-Type: application/json` ja `Accept-Encoding: gzip`
 
 Itse kysely on jsonia POST:n bodyssä. Esimerkiksi:
+
 ```
 {"query":"{  trainsByDepartureDate(departureDate:\"2020-10-05\", where: {and: [{operator: {shortCode: {eq: \"vr\"}}}, {commuterLineid: {ne: \"Z\"}}]}, orderBy:{trainNumber:DESCENDING}) {    trainNumber\n    departureDate\n    commuterLineid\n    operator {\n      shortCode\n    }\n  }\n}","variables":null,"operationName":null}
 ```
 
 Kysely kokonaisuudessaan curl:lla:
+
 ```
 curl 'https://rata.digitraffic.fi/api/v2/graphql/graphql' --compressed -H 'content-type: application/json' --data-binary '{"query":"{\n  currentlyRunningTrains(where: {operator: {shortCode: {equals: \"vr\"}}}) {\n    trainNumber\n    departureDate\n    trainLocations(where: {speed: {greaterThan: 30}}, orderBy: {timestamp: DESCENDING}, take: 1) {\n      speed\n      timestamp\n      location\n    }\n  }\n}","variables":null,"operationName":null}'
 ```
 
 ## Junien tiedot (/trains)
 
-Tämän rajapinnan kautta voidaan kysyä junien aikataulutietoja. Erilaisia tapoja kysyä junien tietoja ovat: junanumero, lähtöpäivämäärä, asema ja versio.
+Tämän rajapinnan kautta voidaan kysyä junien aikataulutietoja. Erilaisia tapoja kysyä junien tietoja ovat:
+junanumero, lähtöpäivämäärä, asema ja versio.
 
-Toteumatiedoista osa perustuu liikenteenohjauksen tekemiin käsikirjauksiin, jonka vuoksi osa toteumakirjauksista tehdään tapahtumahetkeä 0-5 minuuttia myöhemmin (siis historiaan). Esimerkiksi Tampereen ja Seinäjoen liikennepaikoilla ei saada automaattisia toteumatietoja, vaan kaikki toteumat perustuvat käsikirjauksiin.
+Toteumatiedoista osa perustuu liikenteenohjauksen tekemiin käsikirjauksiin, jonka vuoksi osa
+toteumakirjauksista tehdään tapahtumahetkeä 0-5 minuuttia myöhemmin (siis historiaan). Esimerkiksi Tampereen
+ja Seinäjoen liikennepaikoilla ei saada automaattisia toteumatietoja, vaan kaikki toteumat perustuvat
+käsikirjauksiin.
 
-Automaattinen ennusteen laskeminen perustuu toteutuneisiin toteumiin. Historiasta voidaan laskea keskinopeus kuinka nopeasti juna on ajanut liikennepaikkavälin tietyllä kalustolla ja tätä keskinopeutta käytetään ennustenopeutena.
+Automaattinen ennusteen laskeminen perustuu toteutuneisiin toteumiin. Historiasta voidaan laskea keskinopeus
+kuinka nopeasti juna on ajanut liikennepaikkavälin tietyllä kalustolla ja tätä keskinopeutta käytetään
+ennustenopeutena.
 
 ### Yhden junan tiedot
 
 URL: `/trains/<departure_date>/<train_number>`
 
 Esimerkkejä
+
 - [/trains/latest/1](https://rata.digitraffic.fi/api/v1/trains/latest/1)
 - [/trains/2017-01-01/1](https://rata.digitraffic.fi/api/v1/trains/2017-01-01/1)
 
@@ -402,138 +477,157 @@ Palauttaa yhden junan tiedot
 |  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
 |  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
 |  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_deleted | boolean | false | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false
-  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat) -tyyppisen vastauksen.
- 
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [junat](#junat) -tyyppisen vastauksen.
+
 ### Päivän junien tiedot
- 
- URL: `/trains/<departure_date>`
- 
- Esimerkki: [/trains/2017-11-09](https://rata.digitraffic.fi/api/v1/trains/2017-11-09)
- 
- **Kuvaus**
- 
- Palauttaa kaikki junat halutulta lähtöpäivämäärältä.
- 
- **Hakuehdot**
- 
+
+URL: `/trains/<departure_date>`
+
+Esimerkki: [/trains/2017-11-09](https://rata.digitraffic.fi/api/v1/trains/2017-11-09)
+
+**Kuvaus**
+
+Palauttaa kaikki junat halutulta lähtöpäivämäärältä.
+
+**Hakuehdot**
+
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki |
 | --- | --- | --- | ---
 | ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date (yyyy-mm-dd) | 2017-01-01
 |  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_deleted | boolean | false | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat)-tyyppisen vastauksen.
- 
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [junat](#junat)-tyyppisen vastauksen.
+
 ### Kaikkien junien tiedot
- 
- URL: `/trains?version`
- 
- Esimerkki: [/trains?version=1234567891234](https://rata.digitraffic.fi/api/v1/trains?version=1234567891234)
- 
- **Kuvaus**
- 
- Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun versionumeron. Vastaus rajoitettu 2500 junaan.
- 
- **Hakuehdot**
- 
+
+URL: `/trains?version`
+
+Esimerkki: [/trains?version=1234567891234](https://rata.digitraffic.fi/api/v1/trains?version=1234567891234)
+
+**Kuvaus**
+
+Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun versionumeron. Vastaus rajoitettu 2500
+junaan.
+
+**Hakuehdot**
+
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | version | positive integer | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmalla versionumerolla muuttuneet junat.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
- 
- **Paluuarvo**
- 
- Palauttaa [junat](#junat)-tyyppisen vastauksen.
- 
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [junat](#junat)-tyyppisen vastauksen.
+
 ### GTFS
- 
- URL:t
- - [/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
- - [/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
- - [/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
- - [/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
- 
- **Kuvaus**
- 
-Junien tiedot saa myös GTFS-muodossa (General Transit Feed Specification). Paketti gtfs-all.zip sisältää kaikki junat ja gtfs-passenger.zip sisältää vain matkustajajunat.
 
-Paketti generoidaan uusiksi päivittäin noin klo 5:00. Se sisältää kaikki tulevaisuuden junat ja menneisyyden junat viimeiseltä seitsemältä päivältä.
- 
-Lisäksi on tarjolla reaaliaikafeedit gtfs-rt-locations ja gtfs-rt-updates.  Nämä feedit tarjoavat reaaliaikaista GTFS-dataa protobuf-muodossa.
+URL:t
 
-- gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.  
-- gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja perumiset ja se päivitetään minuutin välein.
+- [/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
+- [/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
+- [/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
+- [/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
 
- **Paluuarvo**
- 
+**Kuvaus**
+
+Junien tiedot saa myös GTFS-muodossa (General Transit Feed Specification). Paketti gtfs-all.zip sisältää
+kaikki junat ja gtfs-passenger.zip sisältää vain matkustajajunat.
+
+Paketti generoidaan uusiksi päivittäin noin klo 5:00. Se sisältää kaikki tulevaisuuden junat ja menneisyyden
+junat viimeiseltä seitsemältä päivältä.
+
+Lisäksi on tarjolla reaaliaikafeedit gtfs-rt-locations ja gtfs-rt-updates. Nämä feedit tarjoavat
+reaaliaikaista GTFS-dataa protobuf-muodossa.
+
+- gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.
+- gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja perumiset ja se päivitetään
+  minuutin välein.
+
+**Paluuarvo**
+
 Staattiset rajapinnat palauttavat [GTFS-muodossa](https://gtfs.org/schedule/reference/) olevan zip-paketin.
 Reaaliaikaiset rajapinnat palauttavat tiedot [protobuf-muodossa](https://gtfs.org/realtime/reference/).
- 
+
 ### Vanhat junat zip-paketteina
 
-Vanhojen junien tiedot löytyvät zip-paketteina osoittesta [/api/v1/trains/dumps/list.html](https://rata.digitraffic.fi/api/v1/trains/dumps/list.html)
+Vanhojen junien tiedot löytyvät zip-paketteina
+osoittesta [/api/v1/trains/dumps/list.html](https://rata.digitraffic.fi/api/v1/trains/dumps/list.html)
 
 Paketin sisältämä json on saman muotoista kuin muutkin [juna-vastaukset](#junat).
 
 Uusi paketti luodaan joka kuun viides päivä.
- 
+
 ### Junan versiohistoria
- 
- URL: `/trains/history/{departure_date}/{train_number}`
- 
- Esimerkki: [/trains/history/2019-10-14/1](https://rata.digitraffic.fi/api/v1/trains/history/2019-10-14/1)
- 
- **Kuvaus**
- 
- Palauttaa junan kaikki versiot. Historiatietoa säilytetään tallessa 14 päivää
- 
+
+URL: `/trains/history/{departure_date}/{train_number}`
+
+Esimerkki: [/trains/history/2019-10-14/1](https://rata.digitraffic.fi/api/v1/trains/history/2019-10-14/1)
+
+**Kuvaus**
+
+Palauttaa junan kaikki versiot. Historiatietoa säilytetään tallessa 14 päivää
+
 **Hakuehdot**
 
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 | --- | --- | --- | --- | ---
 | ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
 | ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. 
-  
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
- 
- **Paluuarvo**
- 
- Palauttaa [versiohistoria](#versiohistoria)-tyyppisen vastauksen, jossa json-kenttä on muotoa [junat](#junat).
- 
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+**Paluuarvo**
+
+Palauttaa [versiohistoria](#versiohistoria)-tyyppisen vastauksen, jossa json-kenttä on muotoa [junat](#junat).
+
 ## Aktiivisten junien seuranta (/live-trains)
- 
+
 ### Liikennepaikan saapuvat ja lähtevät junat (lukumäärärajoitus)
- 
- URL: `/live-trains/station/<station_shortcode>?arrived_trains=arrived_trains>&arriving_trains=arriving_trains> &departed_trains=<departed_trains>&departing_trains=<departing_trains>&version=<change_number>`
- 
- Esimerkkejä:
- - [/live-trains/station/HKI](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI)
- - [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false)
- - [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false&train_categories=Commuter](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false&train_categories=Commuter)
- 
- **Kuvaus**
- 
-Palauttaa asemalla pysähtyvistä junista viimeksi lähteneet tai saapuneet, tai seuraavaksi lähtevät tai saapuvat.
 
-Parametreillä voidaan rajoittaa palautettavien junien määrää. Junien kokonaismäärän rajoitus on 1000. Rajoitusparametrien yhteenlaskettu summa ei siis voi olla tätä suurempi.
+URL: `/live-trains/station/<station_shortcode>?arrived_trains=arrived_trains>&arriving_trains=arriving_trains> &departed_trains=<departed_trains>&departing_trains=<departing_trains>&version=<change_number>`
 
-Haku tehdään aikatauluaikojen perusteella taakse ja eteenpäin 24 tuntia. Tämä tarkoittaa, että harvaan liikennöidyllä liikennepaikkalla junien määrä saattaa olla pieni.
- 
-![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Koska sama juna voi kuulua useampaan joukkoon (esim. saapunut juna voi olla yhtäaikaisesti myös lähtevä), palautettava kokonaismäärä on yleensä pienempi kuin parametrien summa.
- 
-Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemalle. Parametrin "include_nonstopping" avulla voidaan palauttaa myös junat, jotka ajavat aseman ohi pysähtymättä.
+Esimerkkejä:
 
-Versionumerohaulla ei palauteta junasta tietoa, mikäli junan tiedot eivät ole muuttuneet kyselyiden välillä. Tämä tarkoittaa, että tulosjoukon koko voi olla tällöin pienempi.
- 
+- [/live-trains/station/HKI](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI)
+- [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false)
+- [/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false&train_categories=Commuter](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&arriving_trains=5&departed_trains=5&departing_trains=5&include_nonstopping=false&train_categories=Commuter)
+
+**Kuvaus**
+
+Palauttaa asemalla pysähtyvistä junista viimeksi lähteneet tai saapuneet, tai seuraavaksi lähtevät tai
+saapuvat.
+
+Parametreillä voidaan rajoittaa palautettavien junien määrää. Junien kokonaismäärän rajoitus on 1000.
+Rajoitusparametrien yhteenlaskettu summa ei siis voi olla tätä suurempi.
+
+Haku tehdään aikatauluaikojen perusteella taakse ja eteenpäin 24 tuntia. Tämä tarkoittaa, että harvaan
+liikennöidyllä liikennepaikkalla junien määrä saattaa olla pieni.
+
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Koska sama juna voi kuulua useampaan joukkoon (esim.
+saapunut juna voi olla yhtäaikaisesti myös lähtevä), palautettava kokonaismäärä on yleensä pienempi kuin
+parametrien summa.
+
+Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemalle. Parametrin "include_nonstopping" avulla
+voidaan palauttaa myös junat, jotka ajavat aseman ohi pysähtymättä.
+
+Versionumerohaulla ei palauteta junasta tietoa, mikäli junan tiedot eivät ole muuttuneet kyselyiden välillä.
+Tämä tarkoittaa, että tulosjoukon koko voi olla tällöin pienempi.
+
 | | Nimi | Formaatti | Oletusarvo | Esimerkki | Selitys 
 |---|---|---|---|---|---|
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | station | string |   | "HKI" | Aseman lyhenne. Esimerkiksi HKL, TPE, PSL. Lista lyhenteistä löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).
@@ -545,31 +639,37 @@ Versionumerohaulla ei palauteta junasta tietoa, mikäli junan tiedot eivät ole 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_categories | string |  | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajaus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
-   
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
 **Paluuarvo**
 
 Palauttaa [junat](#junat)-tyyppisen vastauksen.
-   
+
 ### Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)
 
 URL: `/live-trains/station/<station_shortcode>?minutes_before_departure=<minutes_before_departure>&minutes_after_departure=<minutes_after_departure>&minutes_before_arrival=<minutes_before_arrival>&minutes_after_arrival=<minutes_after_arrival>&version=<change_number>&includeNonstopping=<includeNonstopping`
 
 Esimerkkejä:
+
 - [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15)
 - [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15&train_categories=Commuter](https://rata.digitraffic.fi/api/v1//live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15&train_categories=Commuter)
 
 **Kuvaus**
 
-Palauttaa asemalla pysähtyvistä junista viimeksi lähteneet tai saapuneet, tai seuraavaksi lähtevät tai saapuvat.
+Palauttaa asemalla pysähtyvistä junista viimeksi lähteneet tai saapuneet, tai seuraavaksi lähtevät tai
+saapuvat.
 
 Parametreillä voidaan rajoittaa lähteviä ja saapuvia junia aikamääreiden avulla.
 
-Aikavälirajoituksen maksimikoko on 24 tuntia. Tämä tarkoittaa, että harvaan liikennöidyllä liikennepaikkalla junien määrä saattaa olla pieni.
+Aikavälirajoituksen maksimikoko on 24 tuntia. Tämä tarkoittaa, että harvaan liikennöidyllä liikennepaikkalla
+junien määrä saattaa olla pieni.
 
-Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemalle. Parametrin "include_nonstopping" avulla voidaan palauttaa myös junat, jotka ajavat aseman ohi pysähtymättä.
+Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemalle. Parametrin "include_nonstopping" avulla
+voidaan palauttaa myös junat, jotka ajavat aseman ohi pysähtymättä.
 
-Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole muuttuneet sitten annetun versionumeron.
+Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole muuttuneet sitten annetun
+versionumeron.
 
 **Hakuehdot**
 
@@ -584,7 +684,8 @@ Versionumerorajoituksen avulla voidaan suodattaa pois junat, jotka eivät ole mu
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_categories | string |  | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -598,11 +699,14 @@ Esimerkki: [/live-trains/station/HKI/TPE](https://rata.digitraffic.fi/api/v1/liv
 
 **Kuvaus**
 
-Palauttaa junat, jotka kulkevat departure_station_code- ja arrival_station_code-asemien kautta ja pysähtyvät asemilla.
+Palauttaa junat, jotka kulkevat departure_station_code- ja arrival_station_code-asemien kautta ja pysähtyvät
+asemilla.
 
-Haku palauttaa vain suorat junayhteydet.. Hakutulos ei siis sisällä operaattorin tarjoamia reittivaihtoehtoja, joissa matkustaja joutuu esimerkiksi vaihtamaan junaa. Päivämääräväli rajattu maksimissaan kahteen päivään.
+Haku palauttaa vain suorat junayhteydet.. Hakutulos ei siis sisällä operaattorin tarjoamia reittivaihtoehtoja,
+joissa matkustaja joutuu esimerkiksi vaihtamaan junaa. Päivämääräväli rajattu maksimissaan kahteen päivään.
 
-Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parametrin "include_nonstopping" avulla voidaan palauttaa myös junat, jotka ajavat asemien ohi pysähtymättä.
+Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parametrin "include_nonstopping"
+avulla voidaan palauttaa myös junat, jotka ajavat asemien ohi pysähtymättä.
 
 **Hakuehdot**
 
@@ -616,7 +720,8 @@ Oletuksena haulla palautetaan vain junat, jotka pysähtyvät asemallilla. Parame
  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| limit | positive integer | 15 | Rajaa palautettavien junien määrää. Oletusarvo on 1000.
  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_nonstopping | true/false | false | Palautetaanko aseman ohi pysähtymättä ajavat junat.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -627,6 +732,7 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 URL: `/live-trains?version=<version>`
 
 Esimerkkejä:
+
 - [/live-trains?version=12345671234567](https://rata.digitraffic.fi/api/v1/live-trains?version=12345671234567)
 - [/live-trains](https://rata.digitraffic.fi/api/v1/live-trains)
 
@@ -634,7 +740,8 @@ Esimerkkejä:
 
 Palauttaa kaikkien lähiaikoina kulussa olevien junien tiedot.
 
-Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suunniteltu, ennuste tai toteuma reitin jollain liikennepaikalla) hetkestä on kulunut alle 4 tuntia nykyhetkeen verrattuna.
+Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suunniteltu, ennuste tai toteuma reitin
+jollain liikennepaikalla) hetkestä on kulunut alle 4 tuntia nykyhetkeen verrattuna.
 
 **Hakuehdot**
 
@@ -642,7 +749,8 @@ Kulussa oleva juna määritellään siten, että junan aikataulutapahtuman (suun
   |---|---|---|--- |--- 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -650,21 +758,31 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 
 ## Junan GPS-sijainnit (/train-locations)
 
-Tämän rajapinnan kautta voidaan lukea junan GPS:n tuottamaa sijaintitietoa. Kaikissa junissa ei ole GPS:ää käytössä. Jos näiden junien tarkka sijainti kiinnostaa, voidaan seuraamiseen käyttää käyttää esimerkiksi kulkutietoviestejä.
+Tämän rajapinnan kautta voidaan lukea junan GPS:n tuottamaa sijaintitietoa. Kaikissa junissa ei ole GPS:ää
+käytössä. Jos näiden junien tarkka sijainti kiinnostaa, voidaan seuraamiseen käyttää käyttää esimerkiksi
+kulkutietoviestejä.
 
-Junan GPS-laite toimittaa sijainnin tällä hetkellä 6 sekunnin välein. Sijainnit saapuvat kuitenkin eri aikoihin, joten kyselyiden cache-aika on yksi sekunti.
+Junan GPS-laite toimittaa sijainnin tällä hetkellä 6 sekunnin välein. Sijainnit saapuvat kuitenkin eri
+aikoihin, joten kyselyiden cache-aika on yksi sekunti.
 
-GPS-datan tuotto kytkeytyy päälle ja pois veturin kuljettajan toimesta, joten on mahdollista, että juna tuottaa GPS-dataa vaikka se ei olekaan ajossa. Yli 500 metriä lähimmästä radasta sijaitsevat GPS-sijainnit suodatetaan pois.
+GPS-datan tuotto kytkeytyy päälle ja pois veturin kuljettajan toimesta, joten on mahdollista, että juna
+tuottaa GPS-dataa vaikka se ei olekaan ajossa. Yli 500 metriä lähimmästä radasta sijaitsevat GPS-sijainnit
+suodatetaan pois.
 
-Kehittäjien kannattaa huomioida junien sijaintitietojen puutteet sovelluksissaan ja kertoa rajoitteista selkeästi myös sovellusten loppukäyttäjille. Puutteiden ja virheiden vuoksi tietojen käyttöä turvallisuuteen liittyvissä sovelluksissa kannattaa harkita tarkkaan.
+Kehittäjien kannattaa huomioida junien sijaintitietojen puutteet sovelluksissaan ja kertoa rajoitteista
+selkeästi myös sovellusten loppukäyttäjille. Puutteiden ja virheiden vuoksi tietojen käyttöä turvallisuuteen
+liittyvissä sovelluksissa kannattaa harkita tarkkaan.
 
 ### Kaikkien junien sijainnit
 
 URL: `/train-locations/latest?bbox=<points>`
 
-* Esimerkki 1 (sijainnit GeoJSON-muodossa): [/train-locations.geojson/latest/](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/)
-* Esimerkki 2 (sijainnit "vanhassa" muodossa): [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
-* Esimerkki 3 (Helsingin keskustan junat GeoJSON-muodossa): [/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234)
+* Esimerkki 1 (sijainnit
+  GeoJSON-muodossa): [/train-locations.geojson/latest/](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/)
+* Esimerkki 2 (sijainnit "vanhassa"
+  muodossa): [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
+* Esimerkki 3 (Helsingin keskustan junat
+  GeoJSON-muodossa): [/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234)
 
 **Kuvaus**
 
@@ -674,7 +792,8 @@ Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 
 |---|---|-------------------------------------------------------------------------------------------|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -685,6 +804,7 @@ Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 URL: `/train-locations/<departure_date>/<train_number>?bbox=<points>`
 
 Esimerkkejä:
+
 * [/train-locations/latest/1](https://rata.digitraffic.fi/api/v1/train-locations/latest/1)
 * [/train-locations/2018-03-01/1](https://rata.digitraffic.fi/api/v1/train-locations/2018-03-01/1)
 
@@ -692,7 +812,8 @@ Esimerkkejä:
 
 Palauttaa junan GPS-sijainnit lähtöpäivänä.
 
-Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, joka on päivittynyt viimeisen 15 minuutin sisällä.
+Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, joka on päivittynyt viimeisen 15
+minuutin sisällä.
 
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
 |---|---|---|---|---
@@ -700,7 +821,8 @@ Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -708,11 +830,13 @@ Palauttaa [GPS-sijainnit](#gps-sijainnit) -tyyppisen vastauksen.
 
 ### Vanhat sijainnit zip-paketteina
 
-Vanhat sijainnit löytyvät zip-paketteina osoitteesta [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
+Vanhat sijainnit löytyvät zip-paketteina
+osoitteesta [/api/v1/train-locations/dumps/list.html](https://rata.digitraffic.fi/api/v1/train-locations/dumps/list.html)
 
 Paketin sisältämä json on saman muotoista kuin muutkin [GPS-sijainti-vastaukset](#gps-sijainnit).
 
-Uusi paketti luodaan joka päivä noin kello 15:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi 11.9.2018 15:30 luodaan päivän 9.9. junat.
+Uusi paketti luodaan joka päivä noin kello 15:30. Paketin sisältö on kaksi päivää vanhaa. Esimerkiksi
+11.9.2018 15:30 luodaan päivän 9.9. junat.
 
 ### Sijainnit GeoJSON-muodossa
 
@@ -720,26 +844,35 @@ Lisää osoitteen perään `.geojson`
 
 Esimerkkejä:
 
-*  [/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
-*  [/train-locations.geojson/latest/1](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/1)
+* [/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
+* [/train-locations.geojson/latest/1](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/1)
 
 ## Tarkempi seuranta kulkutietoviestien avulla (/train-tracking)
 
-Liikennepaikkakohtaisten toteumien ja ennusteiden lisäksi junaa voidaan seurata ja paikantaa raideosuustarkkuudella kulkutietoviestien avulla
+Liikennepaikkakohtaisten toteumien ja ennusteiden lisäksi junaa voidaan seurata ja paikantaa
+raideosuustarkkuudella kulkutietoviestien avulla
 
-Kun juna saapuu raideosuudelle, aktivoituu raideosuuden anturi ja raideosuus varautuu kyseiselle junalle. Varatumisesta muodostuu "OCCUPY"-tyyppinen kulkutietoviesti. Junan poistuessa raideosuudelta syntyy puolestaan "RELEASE"-tyyppinen kulkutietoviesti. Kulkutietoviestit kertovat siis mitä raideosuuksia juna on varannut itselleen kuljettavaksi.
+Kun juna saapuu raideosuudelle, aktivoituu raideosuuden anturi ja raideosuus varautuu kyseiselle junalle.
+Varatumisesta muodostuu "OCCUPY"-tyyppinen kulkutietoviesti. Junan poistuessa raideosuudelta syntyy
+puolestaan "RELEASE"-tyyppinen kulkutietoviesti. Kulkutietoviestit kertovat siis mitä raideosuuksia juna on
+varannut itselleen kuljettavaksi.
 
-Kulkutietoviestejä voi seurata kahdella tapaa. Perinteisellä REST-rajapinalla (eli kuten esimerkiksi "live-trains"-liittymää) tai socketeilla (MQTT).
+Kulkutietoviestejä voi seurata kahdella tapaa. Perinteisellä REST-rajapinalla (eli kuten esimerkiksi "
+live-trains"-liittymää) tai socketeilla (MQTT).
 
-Kulkutietoviestejä kertyy päivittäin yli 300 000. On siis hyvä miettiä halutaanko hyödyntää kulkutietoviestejä vai luvussa 1.1 kuvattuja liikennepaikkakohtaisia toteumia ja ennusteita.
+Kulkutietoviestejä kertyy päivittäin yli 300 000. On siis hyvä miettiä halutaanko hyödyntää kulkutietoviestejä
+vai luvussa 1.1 kuvattuja liikennepaikkakohtaisia toteumia ja ennusteita.
 
-![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Datan laatu ei ole aina optimaalista. Tunnettuja välillä esiintyviä vikoja:
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Datan laatu ei ole aina optimaalista. Tunnettuja
+välillä esiintyviä vikoja:
 
 * Seuraavan ja edellisen aseman/raideosuuden puuttuvat
 * Junan lähtöpäivämäärä tyhjä
 * Viestejä esiintyy tuplana (samat tiedot, eri id)
 
-Kulkutietoviestit välitetään avoimen datan rajapintaan käytännössä sellaisena kuin ne saadaan kauko-ohjausjärjestelmistä. Virheellisiä viestejä lähettäviä kauko-ohjausjärjestelmiä pyritään korjaamaan jatkuvasti palautteen avulla.
+Kulkutietoviestit välitetään avoimen datan rajapintaan käytännössä sellaisena kuin ne saadaan
+kauko-ohjausjärjestelmistä. Virheellisiä viestejä lähettäviä kauko-ohjausjärjestelmiä pyritään korjaamaan
+jatkuvasti palautteen avulla.
 
 ### Kaikkien junien seuranta
 
@@ -759,7 +892,8 @@ Maksimissaan palautetaan 2500 kulkutietoviestiä.
 |---|---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan. Jos versionumeroa ei anneta, palautetaan kulkutietoviestit uusimmalla versionumerolla
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -775,7 +909,9 @@ Esimerkki: [/train-tracking/2017-01-01/1?version=1000](https://rata.digitraffic.
 
 Palauttaa halutun yhden junan kulkutietoviestit.
 
-![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Kyselyyn otetaan mukaan myös kulkutietoviestit, joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa palautua "eilisen" kulkutietoviestejä.
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Kyselyyn otetaan mukaan myös kulkutietoviestit,
+joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa
+palautua "eilisen" kulkutietoviestejä.
 
 **Hakuehdot**
 
@@ -785,7 +921,8 @@ Palauttaa halutun yhden junan kulkutietoviestit.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos. Jos tyhjä, ei tehdä versiorajoitusta.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -801,7 +938,9 @@ Esimerkki: [/train-tracking/station/JY/2017-08-01](https://rata.digitraffic.fi/a
 
 Palauttaa liikennepaikan kulkutietoviestit.
 
-![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Kyselyyn otetaan mukaan myös kulkutietoviestit, joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa palautua "eilisen" kulkutietoviestejä.
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Kyselyyn otetaan mukaan myös kulkutietoviestit,
+joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa
+palautua "eilisen" kulkutietoviestejä.
 
 **Hakuehdot**
 
@@ -810,7 +949,8 @@ Palauttaa liikennepaikan kulkutietoviestit.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -821,6 +961,7 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 URL: `/train-tracking/station/<station>/<departure_date>/<track_section>`
 
 Esimerkkejä:
+
 - [/train-tracking/station/PSL/2017-01-01/293](https://rata.digitraffic.fi/api/v1/train-tracking/station/PSL/2017-01-01/293)
 - [/train-tracking/station/PSL/latest/293](https://rata.digitraffic.fi/api/v1/train-tracking/station/PSL/latest/293)
 - [/train-tracking/station/PSL/latest/293?limit=150](https://rata.digitraffic.fi/api/v1/train-tracking/station/PSL/latest/293?limit=150)
@@ -829,7 +970,9 @@ Esimerkkejä:
 
 Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
 
-![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Kyselyyn otetaan mukaan myös kulkutietoviestit, joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa palautua "eilisen" kulkutietoviestejä.
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Kyselyyn otetaan mukaan myös kulkutietoviestit,
+joilla ei ole lähtöpäivämäärää (departureDate) edellisen ja seuraavan vuorokauden rajauksella. Tällöin saattaa
+palautua "eilisen" kulkutietoviestejä.
 
 **Hakuehdot**
 
@@ -840,7 +983,8 @@ Palauttaa liikennepaikan raideosuuden kulkutietoviestit.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä.
  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | limit | positive integer | 100 | Kuinka monta uusinta kulkutietoviestiä kyselyssä palautetaan. Maksimiarvo 1000. Tämä rajaus poissulkee departure_date-rajauksen. Jos departure_date- tai limit-rajoitusta ei anneta, käytetään limit-rajoitusta.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -850,7 +994,8 @@ Palauttaa [Kulkutietoviestit](#kulkutietoviestit)-tyyppisen vastauksen.
 
 Kokoonpanotietoja tulee junille 0-5 tuntia ennen junan lähtö tai pysähdystä, jossa kokoonpano muuttuu.
 
-![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Moottorivaunut (esimerkiksi tyypit Sm3, Sm4, Sm5) on yleisesti ilmoitettu kokoonpanoissa vaunuina.
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Moottorivaunut (esimerkiksi tyypit Sm3, Sm4, Sm5) on
+yleisesti ilmoitettu kokoonpanoissa vaunuina.
 
 ### Junan kokoonpanohaku
 
@@ -869,7 +1014,8 @@ Palauttaa yksittäisen junan kokoonpanotiedot tiettynä päivämääränä.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -891,7 +1037,8 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 |---|---|---|--- 
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})|departure_date|date(yyyy-mm-dd)|2017-01-01
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -917,15 +1064,17 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
   |---|---|---|--- |--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kokoonpanot, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kokoonpano.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 ### Vanhat kokoonpanot zip-paketteina
 
-Vanhat kokoonpanot löytyvät zip-paketteina osoittesta [/api/v1/compositions/dumps/list.html](https://rata.digitraffic.fi/api/v1/compositions/dumps/list.html)
+Vanhat kokoonpanot löytyvät zip-paketteina
+osoittesta [/api/v1/compositions/dumps/list.html](https://rata.digitraffic.fi/api/v1/compositions/dumps/list.html)
 
 Paketin sisältämä json on saman muotoista kuin muutkin [kokoonpano-vastaukset](#kokoonpanot).
 
-Uusi paketti luodaan joka kuun viides päivä. 
+Uusi paketti luodaan joka kuun viides päivä.
 
 ### Kokoonpanojen versiohistoria
 
@@ -944,15 +1093,18 @@ Palauttaa junan kokoonpanojen kaikki versiot. Historiatietoa säilytetään tall
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
-Palauttaa [versiohistoria](#versiohistoria)-tyyppisen vastauksen, jossa json-kenttä on muotoa [kokoonpanot](#kokoonpanot).
+Palauttaa [versiohistoria](#versiohistoria)-tyyppisen vastauksen, jossa json-kenttä on
+muotoa [kokoonpanot](#kokoonpanot).
 
 ## Kulkutievaraukset (/routesets)
 
-Jotta juna voi kulkea eteenpäin, sen tarvitsee varata edestään turvallinen kulkutie. Kulkutievaraukset kertovat yksityiskohtaisesti (raideosuus/opastin/vaihe-tasolla), millainen kulkutie edestä on varattu.
+Jotta juna voi kulkea eteenpäin, sen tarvitsee varata edestään turvallinen kulkutie. Kulkutievaraukset
+kertovat yksityiskohtaisesti (raideosuus/opastin/vaihe-tasolla), millainen kulkutie edestä on varattu.
 
 ### Kaikkien kulkutievarauksien seuranta
 
@@ -966,7 +1118,8 @@ Palauttaa kaikki kulkutievaraukset, jotka ovat uudempia kuin `version`
 
 **Paluuarvo**
 
-Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä `version`-kentän mukaan nousevasti.
+Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä `version`-kentän mukaan
+nousevasti.
 
 **Hakuehdot**
 
@@ -974,7 +1127,8 @@ Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjeste
   |---|---|---|--- |--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kulkutievaraukset, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kulkutievaraus.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 ### Yhden junan kulkutievaraukset
 
@@ -984,7 +1138,8 @@ Esimerkki: [/routesets/2019-05-20/1](https://rata.digitraffic.fi/api/v1/routeset
 
 **Kuvaus**
 
-Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä järjestettynä nousevasti `messageTime`- ja `sectionOrder`-kentän mukaan
+Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä järjestettynä nousevasti `messageTime`-
+ja `sectionOrder`-kentän mukaan
 
 **Hakuehdot**
 
@@ -993,7 +1148,8 @@ Palauttaa yksittäisen junan kulkutievaraukset tiettynä päivämääränä jär
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -1016,19 +1172,23 @@ Palauttaa liikennepaikan kulkutievaraukset.
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutievaraukseen liittyvän junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutievaraukset ilman lähtöpäivämäärää ajalta 00:00 - 24:00.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
-Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä nousevasti `messageTime`- ja `sectionOrder`-kentän mukaan
+Palauttaa [Kulkutievaraukset](#kulkutievaraukset)-tyyppisen vastauksen järjestettynä nousevasti `messageTime`-
+ja `sectionOrder`-kentän mukaan
 
 ## Ratatyötiedot (/trackwork-notifications) ja liikenteen rajoitetiedot (trafficrestriction-notifications)
 
-Ratatyöilmoitukset ja liikenteen rajoite-ilmoitukset ovat peräisin RUMA-järjestelmästä. Kuvaus tietosisällöstä löytyy [täältä]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }}).
+Ratatyöilmoitukset ja liikenteen rajoite-ilmoitukset ovat peräisin RUMA-järjestelmästä. Kuvaus tietosisällöstä
+löytyy [täältä]({{ site.baseurl }}/{{ site.t.railway-traffic.url[page.lang] }}{{ "/ruma" }}).
 
 ### Ratatyöilmoitukset
 
-Ratatyöilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda kaikkia tietoje, joten peräkkäiset versiot voivat olla tietosisällöltään identtisiä.  
+Ratatyöilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda kaikkia tietoje, joten peräkkäiset versiot
+voivat olla tietosisällöltään identtisiä.
 
 #### Ratatyöilmoitusten haku aikavälillä
 
@@ -1037,8 +1197,9 @@ URL: `/trackwork-notifications.{json/geojson}`
 Esimerkki: [/trackwork-notifications.json?state=ACTIVE](https://rata.digitraffic.fi/api/v1/trackwork-notifications.json?state=ACTIVE)
 
 **Kuvaus**
-Palauttaa ratatyöilmoitukset JSON tai GeoJSON-muodossa. Annettava aikaväli rajaa ilmoituksia version luontihetken eli *modified*-kentän perusteella.
-Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio. 
+Palauttaa ratatyöilmoitukset JSON tai GeoJSON-muodossa. Annettava aikaväli rajaa ilmoituksia version
+luontihetken eli *modified*-kentän perusteella.
+Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 
 **Hakuehdot**
 
@@ -1048,9 +1209,9 @@ Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 #### Ratatyöilmoitusten uusimpien versioiden haku aikavälillä
 
@@ -1067,12 +1228,13 @@ Palauttaa aikavälille osuvien ilmoituksen tunnisteet ja uusimmat versiot.
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
-Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä nousevasti `modified`- ja `id`-kentän mukaan.
-
+Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä
+nousevasti `modified`- ja `id`-kentän mukaan.
 
 #### Ratatyöilmoitusten kaikkien versioiden palautus
 
@@ -1081,16 +1243,16 @@ URL: `/trackwork-notifications/<id>`
 Esimerkki: [/trackwork-notifications/1.2.246.586.7.1.166700](https://rata.digitraffic.fi/api/v1/trackwork-notifications/1.2.246.586.7.1.166700)
 
 **Kuvaus**
-Palauttaa tietyn ilmoituksen kaikki versiot. 
+Palauttaa tietyn ilmoituksen kaikki versiot.
 
 **Hakuehdot**
 
 |&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 #### Ratatyöilmoitusten tietyn version palautus
 
@@ -1099,20 +1261,21 @@ URL: `/trackwork-notifications/<id>/<version>`
 Esimerkki: [/trackwork-notifications/1.2.246.586.7.1.166700/5](https://rata.digitraffic.fi/api/v1/trackwork-notifications/1.2.246.586.7.1.166700/5)
 
 **Kuvaus**
-Palauttaa tietyn ilmoituksen tietyn version. 
+Palauttaa tietyn ilmoituksen tietyn version.
 
 **Hakuehdot**
 
 |&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 ### Liikenteen rajoite-ilmoitukset
 
-Liikenteen rajoite-ilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda kaikkia tietoje, joten peräkkäiset versiot voivat olla tietosisällöltään identtisiä.  
+Liikenteen rajoite-ilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda kaikkia tietoje, joten peräkkäiset
+versiot voivat olla tietosisällöltään identtisiä.
 
 #### Liikenteen rajoite-ilmoitusten haku aikavälillä
 
@@ -1121,8 +1284,9 @@ URL: `/trafficrestriction-notifications.{json/geojson}`
 Esimerkki: [/trafficrestriction-notifications.json?state=SENT](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications.json?state=SENT)
 
 **Kuvaus**
-Palauttaa ilmoitukset JSON tai GeoJSON-muodossa. Annettava aikaväli rajaa ilmoituksia version luontihetken eli *modified*-kentän perusteella.
-Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio. 
+Palauttaa ilmoitukset JSON tai GeoJSON-muodossa. Annettava aikaväli rajaa ilmoituksia version luontihetken
+eli *modified*-kentän perusteella.
+Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 
 **Hakuehdot**
 
@@ -1132,9 +1296,9 @@ Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 #### Liikenteen rajoite-ilmoitusten uusimpien versioiden haku aikavälillä
 
@@ -1151,12 +1315,13 @@ Palauttaa aikavälille osuvien ilmoitusten tunnisteet ja uusimmat versiot.
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
-Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä nousevasti `modified`- ja `id`-kentän mukaan.
-
+Palauttaa vastauksena joukon [Ilmoituksen status](#ilmoituksen-status)-tyyppisiä alkioita järjestettynä
+nousevasti `modified`- ja `id`-kentän mukaan.
 
 #### Liikenteen rajoite-ilmoituksen kaikkien versioiden palautus
 
@@ -1165,16 +1330,16 @@ URL: `/trafficrestriction-notifications/<id>`
 Esimerkki: [/trafficrestriction-notifications/1.2.246.586.7.2.102883](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications/1.2.246.586.7.2.102883)
 
 **Kuvaus**
-Palauttaa tietyn ilmoituksen kaikki versiot. 
+Palauttaa tietyn ilmoituksen kaikki versiot.
 
 **Hakuehdot**
 
 |&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 #### Liikenteen rajoite-ilmoituksen tietyn version palautus
 
@@ -1183,17 +1348,16 @@ URL: `/trafficrestriction-notifications/<id>/<version>`
 Esimerkki: [/trafficrestriction-notifications/1.2.246.586.7.2.102883/1](https://rata.digitraffic.fi/api/v1/trafficrestriction-notifications/1.2.246.586.7.2.102883/1)
 
 **Kuvaus**
-Palauttaa tietyn ilmoituksen tietyn version. 
+Palauttaa tietyn ilmoituksen tietyn version.
 
 **Hakuehdot**
 
 |&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
 |---|---|---|--- 
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
-
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 ## Metatiedot (/metadata)
 
@@ -1202,6 +1366,7 @@ Palvelun metatietojen hakurajapinta.
 ### Liikennepaikkatiedot
 
 URL:
+
 * [metadata/stations](https://rata.digitraffic.fi/api/v1/metadata/stations)
 * [metadata/stations.geojson](https://rata.digitraffic.fi/api/v1/metadata/stations.geojson)
 
@@ -1231,7 +1396,9 @@ URL: [metadata/cause-category-codes](https://rata.digitraffic.fi/api/v1/metadata
 
 **Kuvaus**
 
-Palauttaa listan palvelussa aktiivisesti käytössä olevista syyluokista. Syyluokat ovat yleisiä kategorioita syytiedoille. Kaikki syyluokat julkaistaan AvoinData-palvelun kautta. Jos haluat listaukseen mukaan käytöstä poistuneet tai käyttöön lisättävät syyluokat, lisää osoitteeseen parametri `show_inactive=true`.
+Palauttaa listan palvelussa aktiivisesti käytössä olevista syyluokista. Syyluokat ovat yleisiä kategorioita
+syytiedoille. Kaikki syyluokat julkaistaan AvoinData-palvelun kautta. Jos haluat listaukseen mukaan käytöstä
+poistuneet tai käyttöön lisättävät syyluokat, lisää osoitteeseen parametri `show_inactive=true`.
 
 **Paluuarvo**
 
@@ -1243,7 +1410,9 @@ URL: [metadata/detailed-cause-category-codes](https://rata.digitraffic.fi/api/v1
 
 **Kuvaus**
 
-Palauttaa listan palvelussa käytössä olevista syykoodeista. Jokainen syyluokka on jaettu syykoodeihin eli syykoodi on syyluokan alempi taso. Kaikkia syykoodeja ei julkaista. Jos haluat listaukseen mukaan käytöstä poistuneet tai käyttöön lisättävät syykoodit, lisää osoitteeseen parametri `show_inactive=true`.
+Palauttaa listan palvelussa käytössä olevista syykoodeista. Jokainen syyluokka on jaettu syykoodeihin eli
+syykoodi on syyluokan alempi taso. Kaikkia syykoodeja ei julkaista. Jos haluat listaukseen mukaan käytöstä
+poistuneet tai käyttöön lisättävät syykoodit, lisää osoitteeseen parametri `show_inactive=true`.
 
 **Paluuarvo**
 
@@ -1255,7 +1424,10 @@ URL: [metadata /third-cause-category-codes](https://rata.digitraffic.fi/api/v1/m
 
 **Kuvaus**
 
-Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. Kolmannen tason syykoodi on syykoodin alempi taso. Kaikkia kolmannen tason syykoodeja ei julkaista. Jos haluat listaukseen mukaan käytöstä poistuneet tai käyttöön lisättävät kolmannen tason syykoodit, lisää osoitteeseen parametri `show_inactive=true`.
+Palauttaa listan palvelussa käytössä olevista kolmannen tason syykoodeista. Kolmannen tason syykoodi on
+syykoodin alempi taso. Kaikkia kolmannen tason syykoodeja ei julkaista. Jos haluat listaukseen mukaan käytöstä
+poistuneet tai käyttöön lisättävät kolmannen tason syykoodit, lisää osoitteeseen
+parametri `show_inactive=true`.
 
 **Paluuarvo**
 
@@ -1267,7 +1439,7 @@ URL: [metadata/train-categories](https://rata.digitraffic.fi/api/v1/metadata/tra
 
 **Kuvaus**
 
-Palauttaa listan palvelussa käytössä olevista junalajeista (esim. Cargo, Long-distance, Commuter). 
+Palauttaa listan palvelussa käytössä olevista junalajeista (esim. Cargo, Long-distance, Commuter).
 
 **Paluuarvo**
 
@@ -1279,7 +1451,8 @@ URL: [metadata/train-types](https://rata.digitraffic.fi/api/v1/metadata/train-ty
 
 **Kuvaus**
 
-Palauttaa listan palvelussa käytössä olevista junatyypeista (esim. IC, P, P). Jokaisella junatyypillä on yläkäsitteenä junalaji (esim. lähijuna, kaukojuna, tavarajuna).
+Palauttaa listan palvelussa käytössä olevista junatyypeista (esim. IC, P, P). Jokaisella junatyypillä on
+yläkäsitteenä junalaji (esim. lähijuna, kaukojuna, tavarajuna).
 
 **Paluuarvo**
 
@@ -1291,7 +1464,8 @@ URL: [metadata/track-sections](https://rata.digitraffic.fi/api/v1/metadata/track
 
 **Kuvaus**
 
-Palauttaa listan raideosuuksista. Raideosuus on pienin osuus raiteesta, jonka yksittäinen juna voi varata käyttöönsä ja näin muodostaa turvallisen kulkureitin. Raideosuudella voi siis sijaita maksimissaan yksi juna.
+Palauttaa listan raideosuuksista. Raideosuus on pienin osuus raiteesta, jonka yksittäinen juna voi varata
+käyttöönsä ja näin muodostaa turvallisen kulkureitin. Raideosuudella voi siis sijaita maksimissaan yksi juna.
 
 Lista ei kata kaikkia kulkutietoviesteissä esiintyviä raideosuuksia. Datan laatua pyritään parantamaan.
 
@@ -1307,7 +1481,10 @@ URL: [metadata/train-running-message-rules](https://rata.digitraffic.fi/api/v1/m
 
 Herätepiste kuvaa miten kulkutietoviesti muunnetaan aikataulurivin toteumaksi taustajärjestelmässä.
 
-Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määriteltyä liikennepaikkaa, raideosuutta, varautumisen tyyppiä ja seuraavaa liikennepaikkaa, haetaan kulkutietoviestissä määritellyn junan aikataulurivi, joka vastaa herätepisteessä määritelty liikennepaikkaa ja aikataulurivityyppiä. Aikatauluriville kirjataan toteuma, joka on kulkutietoviestin aikaleima lisättynä offset-arvolla.
+Esimerkiksi kun saadaan kulkutietoviesti, joka vastaa herätepisteessä määriteltyä liikennepaikkaa,
+raideosuutta, varautumisen tyyppiä ja seuraavaa liikennepaikkaa, haetaan kulkutietoviestissä määritellyn junan
+aikataulurivi, joka vastaa herätepisteessä määritelty liikennepaikkaa ja aikataulurivityyppiä.
+Aikatauluriville kirjataan toteuma, joka on kulkutietoviestin aikaleima lisättynä offset-arvolla.
 
 **Paluuarvo**
 
@@ -1319,11 +1496,15 @@ URL: [metadata/time-table-periods](https://rata.digitraffic.fi/api/v1/metadata/t
 
 **Kuvaus**
 
-Aikataulukausi kuvaa ajanjaksoa, jolle haetaan säännöllisiä aikatauluja. Junan aikataulu on säännöllinen, jos sen [vastauksessa](#junat) on mukana arvo `timetableType:"REGULAR"`.
+Aikataulukausi kuvaa ajanjaksoa, jolle haetaan säännöllisiä aikatauluja. Junan aikataulu on säännöllinen, jos
+sen [vastauksessa](#junat) on mukana arvo `timetableType:"REGULAR"`.
 
-Muutosajankohta on ajankohta aikataulukauden sisällä, jolloin jäljellä olevaan aikataulukauteen voidaan hakea muutoksia.
+Muutosajankohta on ajankohta aikataulukauden sisällä, jolloin jäljellä olevaan aikataulukauteen voidaan hakea
+muutoksia.
 
-Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta eli sitä voiko se enää muuttua. Jos juna esimerkiksi lähtee 1.2.2018 ja seuraava muutosajankohta on 1.3.2018, junan aikataulu ei voi enää muuttua.
+Muutosajankohtia voidaan käyttää arvioimaan junan aikataulun luotettavuutta eli sitä voiko se enää muuttua.
+Jos juna esimerkiksi lähtee 1.2.2018 ja seuraava muutosajankohta on 1.3.2018, junan aikataulu ei voi enää
+muuttua.
 
 **Paluuarvo**
 
@@ -1331,14 +1512,20 @@ Palauttaa [Aikataulukaudet ja muutosajankohdat](#aikataulukaudet-ja-muutosajanko
 
 ## Matkustajainformaation tiedotteet (/passenger-information)
 
-Rajapinnan kautta on saatavilla suomalaisilla rautatieasemilla nähtäviä ja kuultavia matkustajatiedotteita. Ne sisältävät mm. sekä yleisiä tiedotteita että ajankohtaista tietoa rataliikenteen häiriöstä ja aikataulumuutoksista.
+Rajapinnan kautta on saatavilla suomalaisilla rautatieasemilla nähtäviä ja kuultavia matkustajatiedotteita. Ne
+sisältävät mm. sekä yleisiä tiedotteita että ajankohtaista tietoa rataliikenteen häiriöstä ja
+aikataulumuutoksista.
 
-Matkustajainformaatiotiedote liittyy asemaan tai asemiin ja/tai johonkin junanumeroon ja junan lähtöpäivämäärään. Tiedotteen voimassaoloaika kerrotaan alku- ja loppupäivämäärillä ja yksittäinen tiedote voi myös ajan mittaan päivittyä, mikä ilmaistaan versionumerolla. Rajapinnat palauttavat aina kunkin tiedotteen (yksilöidään tunnisteella `id`) uusimman version (`version`).
+Matkustajainformaatiotiedote liittyy asemaan tai asemiin ja/tai johonkin junanumeroon ja junan
+lähtöpäivämäärään. Tiedotteen voimassaoloaika kerrotaan alku- ja loppupäivämäärillä ja yksittäinen tiedote voi
+myös ajan mittaan päivittyä, mikä ilmaistaan versionumerolla. Rajapinnat palauttavat aina kunkin tiedotteen (
+yksilöidään tunnisteella `id`) uusimman version (`version`).
 
-Tiedotteesta on olemassa audio- tai videomuotoinen julkaisu tai molemmat. Rajapinnasta saatava tieto sisältää erimuotoisten julkaisujen tekstitetyt sisällöt sekä niiden esittämiseen mahdollisesti liittyviä sääntöjä. Tiedotteen tekstisisällöt ovat yleensä saatavilla suomeksi, ruotsiksi ja englanniksi.
+Tiedotteesta on olemassa audio- tai videomuotoinen julkaisu tai molemmat. Rajapinnasta saatava tieto sisältää
+erimuotoisten julkaisujen tekstitetyt sisällöt sekä niiden esittämiseen mahdollisesti liittyviä sääntöjä.
+Tiedotteen tekstisisällöt ovat yleensä saatavilla suomeksi, ruotsiksi ja englanniksi.
 
-
-### Voimassa olevat tiedotteet 
+### Voimassa olevat tiedotteet
 
 URL: `/passenger-information/active`
 
@@ -1346,7 +1533,8 @@ Esimerkki: [/passenger-information/active?station=HKI](https://rata.digitraffic.
 
 **Kuvaus**
 
-Palauttaa kaikki mahdollisin hakuehdoin rajatut tiedotteet, joiden `startValidity` on menneisyydessä ja `endValidity` tulevaisuudessa.
+Palauttaa kaikki mahdollisin hakuehdoin rajatut tiedotteet, joiden `startValidity` on menneisyydessä
+ja `endValidity` tulevaisuudessa.
 
 **Hakuehdot**
 
@@ -1357,7 +1545,8 @@ Palauttaa kaikki mahdollisin hakuehdoin rajatut tiedotteet, joiden `startValidit
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_departure_date | date(YYYY-MM-DD) | 2023-10-20 | Palauttaa annettuna päivämääränä lähteviin juniin liittyvät tiedotteet.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | only_general         | boolean          | true       | Palauttaa vain "yleiset" tiedotteet (jotka eivät liity tiettyyn junaan vaan ainoastaan asemaan/asemiin). Oletusarvo `false`.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
@@ -1371,25 +1560,29 @@ Esimerkki: [/passenger-information/updated-after/2023-09-01T12:00?only_active=fa
 
 **Kuvaus**
 
-Palauttaa kaikki mahdollisin hakuehdoin rajatut tiedotteet, joiden `creationDateTime` on polkuparametrin `{date}` päivämääränä tai sen jälkeen. `creationDateTime` on yhden tiedotteen yhden version luontiaika, jolloin toisin sanoen rajapinta palauttaa ne tiedotteet, jotka ovat joko luotu (uusin versionumero 1) tai päivitetty (uusin versionumero > 1) annettuna päivämääränä tai sen jälkeen.
+Palauttaa kaikki mahdollisin hakuehdoin rajatut tiedotteet, joiden `creationDateTime` on
+polkuparametrin `{date}` päivämääränä tai sen jälkeen. `creationDateTime` on yhden tiedotteen yhden version
+luontiaika, jolloin toisin sanoen rajapinta palauttaa ne tiedotteet, jotka ovat joko luotu (uusin versionumero
+
+1) tai päivitetty (uusin versionumero > 1) annettuna päivämääränä tai sen jälkeen.
 
 **Hakuehdot**
 
 |&nbsp;&nbsp;&nbsp;&nbsp;| Nimi                 | Formaatti        | Esimerkki             | Selitys
 | --- |----------------------|------------------|-----------------------| ---
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| date                 | date(ISO 8601)   | 2023-10-20T13:00+0300 | 
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| date                 | date(ISO 8601)   | 2023-10-20T13:00+0300 |
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | station              | string           | HKI                   | Aseman (liikennepaikan) lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations). Palauttaa asemaan liittyvät tiedotteet.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_number         | 1-99999          | 7                     | Palauttaa annettuun junanumeroon liittyvät tiedotteet.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_departure_date | date(YYYY-MM-DD) | 2023-10-20            | Palauttaa annettuna päivämääränä lähteviin juniin liittyvät tiedotteet.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | only_general         | boolean          | true                  | Palauttaa "yleiset" tiedotteet (jotka eivät liity tiettyyn junaan vaan ainoastaan asemaan/asemiin). Oletusarvo `false`.
 ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | only_active          | boolean          | true                  | Mikäli arvo on `false`, palauttaa myös ei-voimassaolevat tiedotteet. Oletusarvo `true`.
 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
+![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
+}}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
 
 **Paluuarvo**
 
 Palauttaa [Matkustajainformaation tiedotteet](#matkustajainformaation-tiedotteet) -tyyppisen vastauksen.
-
 
 ## WebSocket (MQTT)
 
@@ -1399,11 +1592,17 @@ Aktiivisen hakemisen sijasta dataa voidaan myös kuunnella. Tähän käytetään
 
 MQTT vastaa kolmesta portista
 
-1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443. Esimerkki: [https://jsfiddle.net/m20ocg9f/](https://jsfiddle.net/m20ocg9f/) 
-1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80. Esimerkki: [https://jsfiddle.net/5x96Lo7n/](https://jsfiddle.net/5x96Lo7n/)
-1. Normaalin TCP-yhteyden kautta osoitteessa rata-mqtt.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
+1. Suojattu WebSocket osoitteessa rata.digitraffic.fi:443.
+   Esimerkki: [https://jsfiddle.net/m20ocg9f/](https://jsfiddle.net/m20ocg9f/)
+1. Suojaamaton WebSocket osoitteessa rata.digitraffic.fi:80.
+   Esimerkki: [https://jsfiddle.net/5x96Lo7n/](https://jsfiddle.net/5x96Lo7n/)
+1. Normaalin TCP-yhteyden kautta osoitteessa rata-mqtt.digitraffic.fi:1883. TCP-porttiin ei voi selaimessa
+   ottaa suoraan yhteyttä, joten esimerkkiä ei ole mahdollista muodostaa
 
-MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#" ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen junan kokoonpanoa topicista `compositions/+/5/#`. Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
+MQTT:ssä kuunneltava data määritellään topicin avulla. Osia topic:sta voidaan korvata wildcard-merkeillä "#"
+ja "+". Esimerkiksi voidaan kuunnella kaikki kokoonpanoja topicista `compositions/#` tai vain yksittäisen
+junan kokoonpanoa topicista `compositions/+/5/#`.
+Lisätietoa [täältä](https://www.hivemq.com/blog/mqtt-essentials-part-5-mqtt-topics-best-practices)
 
 ### Junien kuuntelu
 
@@ -1479,297 +1678,598 @@ Jokainen tyypin kenttä on kuvattu ikonilla, jotka tarkoittavat:
 
 Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan järjestykseen.
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia, ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999 ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia,
+  ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista
+  löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainType: IC, P, S, ...
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: lähiliikenne, kaukoliikenne, tavaraliikenne, ...
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: lähiliikenne, kaukoliikenne,
+  tavaraliikenne, ...
 * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commuterLineID: Z, K, N....
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) runningCurrently: true/false ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko juna tällä hetkellä kulussa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) cancelled: true/false ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Totta, jos junan peruminen on tehty 10 vuorokauden sisällä. Yli 10 vuorokautta sitten peruttuja junia ei palauteta rajapinnassa laisinkaan.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa juna on viimeksi muuttunut*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timetableType: REGULAR tai ADHOC. ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kertoo onko junan aikataulu haettu säännöllisenä (REGULAR) vai kiireellisenä yksittäistä päivää koskevana (ADHOC).*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timetableAcceptanceDate: datetime. ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin viranomainen on hyväksynyt junan aikataulun.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deleted: true,false ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kertoo onko juna poistettu eli peruttu yli kymmenen päivää ennen lähtöä.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRows ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kuvaa saapumisia ja lähtöjä liikennepaikoilta. Järjestetty reitin mukaiseen järjestykseen.*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainStopping true,false ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähtyykö juna liikennepaikalla*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman lyhennekoodi*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationcUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman UIC-koodi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) runningCurrently: true/false ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Onko juna tällä hetkellä kulussa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) cancelled: true/false ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Totta, jos junan peruminen on tehty 10 vuorokauden sisällä. Yli 10
+  vuorokautta sitten peruttuja junia ei palauteta rajapinnassa laisinkaan.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa juna on viimeksi muuttunut*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timetableType: REGULAR tai ADHOC. ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Kertoo onko junan aikataulu haettu säännöllisenä (REGULAR) vai
+  kiireellisenä yksittäistä päivää koskevana (ADHOC).*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timetableAcceptanceDate: datetime. ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin viranomainen on hyväksynyt junan aikataulun.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deleted: true,false ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Kertoo onko juna poistettu eli peruttu yli kymmenen päivää ennen lähtöä.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRows ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Kuvaa saapumisia ja lähtöjä liikennepaikoilta. Järjestetty reitin mukaiseen
+  järjestykseen.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainStopping true,false ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähtyykö juna liikennepaikalla*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman lyhennekoodi*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationcUICCode: 1-9999 ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman UIC-koodi*
     * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode: "FI", "RU"
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "DEPARTURE" ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialStop: boolean ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko pysähdys kaupallinen. Annettu vain pysähdyksille, ei läpiajoille. Mikäli junalla on osaväliperumisia, saattaa viimeinen perumista edeltävä pysähdys jäädä virheellisesti ei-kaupalliseksi.*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialTrack: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Suunniteltu raidenumero, jolla juna pysähtyy tai jolta se lähtee. Raidenumeroa ei saada junille, joiden lähtöön on vielä yli 10 päivää. Operatiivisissa häiriötilanteissa raide voi olla muu.*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) cancelled: true/false ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Totta, jos lähtö tai saapuminen on peruttu*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) liveEstimateTime: datetime  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ennuste. Tyhjä jos juna ei ole matkalla*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) estimateSource: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ennusteen lähde*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) unknownDelay: boolean ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Jos ennustetta ei voida antaa luotettavasti, liikenteenohjaaja voi kytkeä unknownDelay-bitin päälle. Bitti tarkoittaa, että juna on myöhässä, mutta ei osata kertoa kuinka paljon. Lisätietoa: [https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla](https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla)*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) actualTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aika jolloin juna saapui tai lähti asemalta*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) differenceInMinutes: integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vertaa aikataulun mukaista aikaa ennusteeseen tai toteutuneeseen aikaan ja kertoo erotuksen minuutteina*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) causes ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syytiedot. Kuvaavat syitä miksi juna oli myöhässä tai etuajassa pysähdyksellä. Kaikkia syyluokkia ja -tietoja ei julkaista.*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryCodeId ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Yleisen syyluokan yksilöivä tunnus. Lista syyluokista löytyy osoitteesta [täältä](https://rata.digitraffic.fi/api/v1/metadata/cause-category-codes)*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Yleisen syyluokan koodi. Huom. ei yksilöivä.*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) detailedCategoryCodeId ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tarkemman syykoodin yksilöivä tunnus. Lista syykoodeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/detailed-cause-category-codes)*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) detailedCategoryCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tarkempi syykoodin koodi. Huom. ei yksilöivä*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) thirdCategoryCodeId ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin tunnus. Lista kolmannen tason syykoodeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/third-cause-category-codes)*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) thirdCategoryCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin koodi. Huom. ei yksilöivä*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainReady ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan lähtövalmius. Operaattorin tulee tehdä lähtövalmiusilmoitus liikenteenohjaajalle aina kun junan kokoonpanovaihtuu tai se lähtee ensimmäiseltä pysäkiltään.*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) source ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapa, jolla lähtövalmiusilmoitus on tehty.*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) accepted ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko lähtövalmiusilmoitus hyväksytty.*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aika jolloin lähtövalmiusilmoitus on päätetty.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "DEPARTURE" ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialStop: boolean ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Onko pysähdys kaupallinen. Annettu vain pysähdyksille, ei
+      läpiajoille. Mikäli junalla on osaväliperumisia, saattaa viimeinen perumista edeltävä pysähdys jäädä
+      virheellisesti ei-kaupalliseksi.*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialTrack: string ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Suunniteltu raidenumero, jolla juna pysähtyy tai jolta se
+      lähtee. Raidenumeroa ei saada junille, joiden lähtöön on vielä yli 10 päivää. Operatiivisissa
+      häiriötilanteissa raide voi olla muu.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) cancelled: true/false ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Totta, jos lähtö tai saapuminen on peruttu*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime  ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) liveEstimateTime: datetime  ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Ennuste. Tyhjä jos juna ei ole matkalla*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) estimateSource: datetime ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Ennusteen lähde*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) unknownDelay: boolean ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Jos ennustetta ei voida antaa luotettavasti,
+      liikenteenohjaaja voi kytkeä unknownDelay-bitin päälle. Bitti tarkoittaa, että juna on myöhässä, mutta
+      ei osata kertoa kuinka paljon.
+      Lisätietoa: [https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla](https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla)*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) actualTime: datetime ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Aika jolloin juna saapui tai lähti asemalta*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) differenceInMinutes: integer ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Vertaa aikataulun mukaista aikaa ennusteeseen tai
+      toteutuneeseen aikaan ja kertoo erotuksen minuutteina*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) causes ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Syytiedot. Kuvaavat syitä miksi juna oli myöhässä tai etuajassa pysähdyksellä.
+      Kaikkia syyluokkia ja -tietoja ei julkaista.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryCodeId ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Yleisen syyluokan yksilöivä tunnus. Lista syyluokista löytyy
+          osoitteesta [täältä](https://rata.digitraffic.fi/api/v1/metadata/cause-category-codes)*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryCode ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Yleisen syyluokan koodi. Huom. ei yksilöivä.*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) detailedCategoryCodeId ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Tarkemman syykoodin yksilöivä tunnus. Lista syykoodeista
+          löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/detailed-cause-category-codes)*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) detailedCategoryCode ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Tarkempi syykoodin koodi. Huom. ei yksilöivä*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) thirdCategoryCodeId ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin tunnus. Lista kolmannen tason
+          syykoodeista
+          löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/third-cause-category-codes)*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) thirdCategoryCode ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin koodi. Huom. ei yksilöivä*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainReady ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Junan lähtövalmius. Operaattorin tulee tehdä lähtövalmiusilmoitus
+      liikenteenohjaajalle aina kun junan kokoonpanovaihtuu tai se lähtee ensimmäiseltä pysäkiltään.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) source ![Info]({{ site.baseurl }}{{ "
+          /img/rata/info.png" }}) *Tapa, jolla lähtövalmiusilmoitus on tehty.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) accepted ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Onko lähtövalmiusilmoitus hyväksytty.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Aika jolloin lähtövalmiusilmoitus on päätetty.*
 
 ### Kokoonpanot
 
 Järjestetty kenttien `departureDate` ja `trainNumber` mukaisesti nousevaan järjestykseen.
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia, ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: lähiliikenne, kaukoliikenne, tavaraliikenne
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: 1-99999  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Junan operoiman operaattorin UIC-koodi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: vr, vr-track, destia,
+  ... ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista operaattoreista
+  löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/operators).*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: lähiliikenne, kaukoliikenne,
+  tavaraliikenne
 * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainType: P, S, IC, IC2, MUS, etc.
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa juna on viimeksi muuttunut*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) journeySections ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kuvaa junan yhtä matkaosuutta, joka ajetaan samalla kokoonpanolla*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) beginTimeTableRow ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aloitus*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman lyhennekoodi*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationcUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman UIC-koodi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa juna on viimeksi muuttunut*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) journeySections ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Kuvaa junan yhtä matkaosuutta, joka ajetaan samalla kokoonpanolla*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) beginTimeTableRow ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Aloitus*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman lyhennekoodi*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationcUICCode: 1-9999 ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman UIC-koodi*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode: "FI" or "RU"
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "DEPARTURE" ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endTimeTableRow ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})
-     *Lopetus*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman lyhennekoodi*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationcUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman UIC-koodi*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "
+          DEPARTURE" ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endTimeTableRow ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }})
+      *Lopetus*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman lyhennekoodi*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationcUICCode: 1-9999 ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Aseman UIC-koodi*
         * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode: "FI" tai "RU"
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "DEPARTURE" ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) locomotives  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kokoonpanon veturit*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})vehicleNumber ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Veturin yksilöivä kalustoyksikkönumero. Saatavilla vain sarjatunnuksille `Sm1`, `Sm2`, `Sm4` ja `Sm5`. Lisätietoa [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin paikka kokoonpanossa. Pienin numero on junan kärjessä*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) locomotiveType: SR1, SR2, ...  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin tyyppi*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) powerType: Diesel, Sähkö, ...  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin vetovoimalaji*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) wagons  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) 
-    *Kokoonpanon vaunut*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})vehicleNumber ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Vaunun yksilöivä kalustoyksikkönumero. Saatavilla vain sarjatunnuksille `Sm1`, `Sm2`, `Sm4` ja `Sm5`. Lisätietoa [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})location: integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun paikka kokoonpanossa. Pienin numero on junan kärjessä*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})salesNumber: 0-99 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun myyntinumero. Lukee esimerkiksi matkustajan junalipussa. 0 jos ei tiedossa.*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})length: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun pituus senttimetreinä*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})playground : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa leikkipaikka*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})pet: true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa lemmikkivaunu*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})catering : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa ravintolavaunu*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})video : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa videonäyttömahdollisuus*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})luggage : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa matkatavarasäilytysmahdollisuus*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})smoking : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Saako vaunussa tupakoida*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})disabled : true ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunu invalidiystävällinen*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta. Lisätietoa [https://fi.wikipedia.org/wiki/Sarjatunnus](https://fi.wikipedia.org/wiki/Sarjatunnus)*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) totalLength: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokonaispituus metreissä*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) maximumSpeed: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokoonpanolle ilmoitettu maksiminopeus kilometreina tunnissa*
-    
-### GPS-sijainnit    
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: "ARRIVAL" tai "
+          DEPARTURE" ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Pysähdyksen tyyppi*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) scheduledTime: datetime ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulun mukainen pysähtymis- tai lähtöaika*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) locomotives  ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Kokoonpanon veturit*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})vehicleNumber ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }})  *Veturin yksilöivä kalustoyksikkönumero. Saatavilla vain
+          sarjatunnuksille `Sm1`, `Sm2`, `Sm4` ja `Sm5`.
+          Lisätietoa [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: positive integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin paikka kokoonpanossa. Pienin numero on junan
+          kärjessä*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) locomotiveType: SR1, SR2,
+          ...  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin tyyppi*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) powerType: Diesel, Sähkö,
+          ...  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Veturin vetovoimalaji*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) wagons  ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }})
+      *Kokoonpanon vaunut*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})vehicleNumber ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }})  *Vaunun yksilöivä kalustoyksikkönumero. Saatavilla vain
+          sarjatunnuksille `Sm1`, `Sm2`, `Sm4` ja `Sm5`.
+          Lisätietoa [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})location: integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun paikka kokoonpanossa. Pienin numero on junan
+          kärjessä*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})salesNumber: 0-99 ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun myyntinumero. Lukee esimerkiksi matkustajan
+          junalipussa. 0 jos ei tiedossa.*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})length: positive integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Vaunun pituus senttimetreinä*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})playground : true ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Onko vaunussa leikkipaikka*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})pet: true ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Onko vaunussa lemmikkivaunu*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})catering : true ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Onko vaunussa ravintolavaunu*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})video : true ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Onko vaunussa videonäyttömahdollisuus*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})luggage : true ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Onko vaunussa matkatavarasäilytysmahdollisuus*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})smoking : true ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Saako vaunussa tupakoida*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})disabled : true ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Onko vaunu invalidiystävällinen*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})wagonType ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }})  *Suomalainen sarjatunnus vaunulle. Ilmaisee vaunun tyypin sekä vaunun
+          palvelut. Kaikille vaunuille ei välttämättä löydy sarjatunnusta.
+          Lisätietoa [https://fi.wikipedia.org/wiki/Sarjatunnus](https://fi.wikipedia.org/wiki/Sarjatunnus)*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) totalLength: positive integer ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokonaispituus metreissä*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) maximumSpeed: positive integer ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junan kokoonpanolle ilmoitettu maksiminopeus kilometreina
+      tunnissa*
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin sijainti on luettu*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: geojson ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainti GeoJSON-muodossa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) speed: number ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan nopeus*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) accuracy: number ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijaintitiedon tarkkuus metreinä*
-    
+### GPS-sijainnit
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä
+  tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: datetime ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin sijainti on luettu*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) location: geojson ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Sijainti GeoJSON-muodossa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) speed: number ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Junan nopeus*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) accuracy: number ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Sijaintitiedon tarkkuus metreinä*
+
 ### Kulkutietoviestit
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin yksilöivä numero.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutietoviesti on viimeksi muuttunut*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman ajanhetki*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman raideosuuden tunniste. Lista raideosuuksista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/track-sections).*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextTrackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Seuraava raideosuuden tunniste, jolle juna ajaa.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) previousTrackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden tunniste, jolta juna tuli.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella raideosuus on. Lista liikennepaikoista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextStation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella juna aiemmin oli.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) previousStation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"}}) *Liikennepaikan tunniste, jonka alueelle juna ajaa seuraavaksi.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuman tyyppi. `OCCUPY` tarkoittaa, että juna varasi raideosuuden. `RELEASE` tarkoittaa, että juna vapautti raideosuuden.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin yksilöivä numero.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutietoviesti on viimeksi muuttunut*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä
+  tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timestamp: date  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Tapahtuman ajanhetki*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSection: string ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Tapahtuman raideosuuden tunniste. Lista raideosuuksista
+  löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/track-sections).*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextTrackSection: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Seuraava raideosuuden tunniste, jolle juna ajaa.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) previousTrackSection: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden tunniste, jolta juna tuli.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella raideosuus on. Lista liikennepaikoista
+  löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) nextStation: string ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Liikennepaikan tunniste, jonka alueella juna aiemmin oli.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) previousStation: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png"}}) *Liikennepaikan tunniste, jonka alueelle juna ajaa seuraavaksi.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Tapahtuman tyyppi. `OCCUPY` tarkoittaa, että juna varasi raideosuuden. `RELEASE`
+  tarkoittaa, että juna vapautti raideosuuden.*
 
 ### Kulkutievaraukset
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutievaraus on viimeksi muuttunut*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) messageTime: datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin kulkutievaraus on luettu*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) departureDate: date  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä tapauksissa, jossa junan aikataulua ei tunneta.*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routeType: character  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varauksen tyyppi. `T`=junakulkutie, `S`=vaihtokulkutie ja `C`=kulkutien purkaminen*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) clientSystem: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutievarauksen luoneen kauko-ohjausjärjestelmän nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routesections ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista raideosuuksista/vaihteista/elementeistä, jotka on varattu kulkutieksi*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sectionId: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Varattavan osuuden tunnus*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationCode: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikka, jossa varaus sijaitsee*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialTrackId: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raiteen kaupallinen tunnus*        
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero, jossa kulkutievaraus on viimeksi muuttunut*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) messageTime: datetime ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Aikaleima jolloin kulkutievaraus on luettu*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan numero. Esim junan "IC 59" junanumero on 59*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) departureDate: date  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Voi olla tyhjä
+  tapauksissa, jossa junan aikataulua ei tunneta.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routeType: character  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Varauksen tyyppi. `T`=junakulkutie, `S`=vaihtokulkutie ja `C`=kulkutien
+  purkaminen*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) clientSystem: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Kulkutievarauksen luoneen kauko-ohjausjärjestelmän nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) routesections ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Lista raideosuuksista/vaihteista/elementeistä, jotka on varattu kulkutieksi*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sectionId: string  ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Varattavan osuuden tunnus*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationCode: string  ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikka, jossa varaus sijaitsee*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) commercialTrackId: string  ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Raiteen kaupallinen tunnus*
 
 ### Liikennepaikat
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) passengerTraffic: boolean ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Onko liikennepaikalla kaupallista matkustajaliikennettä*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan maatunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationName: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan lyhenne*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan maakohtainen UIC-koodi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) latitude: decimal  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan latitude "WGS 84"-muodossa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) longitude: decimal  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan longitudi "WGS 84"-muodossa*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan tyyppi. `STATION` = asema, `STOPPING_POINT` = seisake, `TURNOUT_IN_THE_OPEN_LINE` = linjavaihde*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) passengerTraffic: boolean ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Onko liikennepaikalla kaupallista matkustajaliikennettä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Liikennepaikan maatunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationName: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Liikennepaikan nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationShortCode: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan lyhenne*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stationUICCode: 1-9999  ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Liikennepaikan maakohtainen UIC-koodi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) latitude: decimal  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Liikennepaikan latitude "WGS 84"-muodossa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) longitude: decimal  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Liikennepaikan longitudi "WGS 84"-muodossa*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Liikennepaikan tyyppi. `STATION` = asema, `STOPPING_POINT` =
+  seisake, `TURNOUT_IN_THE_OPEN_LINE` = linjavaihde*
 
 ### Operaattorit
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin yksilöivä tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorName: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin lyhenne*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin UIC-koodi*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainNumbers ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin käytössäolevat junanumeroavaruudet.*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumeroavaruuden yksilöivä tunnus*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) bottomLimit: 1-99999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumeroiden alaraja*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) topLimit: 1-99999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumeroiden yläraja*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junalaji*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Operaattorin yksilöivä tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorName: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Operaattorin nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorShortCode: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin lyhenne*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) operatorUICCode: 1-9999  ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Operaattorin UIC-koodi*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainNumbers ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Operaattorin käytössäolevat junanumeroavaruudet.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumeroavaruuden yksilöivä tunnus*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) bottomLimit: 1-99999 ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumeroiden alaraja*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) topLimit: 1-99999 ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Junanumeroiden yläraja*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory: string ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junalaji*
 
 ### Syyluokat
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syyluokan yksilöivä tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryCode: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syyluokan tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryName: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syyluokan suomenkielinen nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) validFrom: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syyluokka astuu voimaan. Ajanhetki viittaa junan lähtöpäivämäärään.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) validTo: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syyluokka poistuu voimasta. Voi olla tyhjä, jolloin syyluokka on toistaiseksi voimassa. Ajanhetki viittaa junan lähtöpäivämäärään.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) passengerTerm ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Matkustajatiedotustermi. Matkustajaläheinen kuvaus syyluokasta*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Suomenkielinen käännös*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Englanninkielinen käännös*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ruotsinkielinen käännös*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Syyluokan yksilöivä tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryCode: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Syyluokan tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) categoryName: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Syyluokan suomenkielinen nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) validFrom: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syyluokka astuu voimaan. Ajanhetki viittaa junan
+  lähtöpäivämäärään.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) validTo: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syyluokka poistuu voimasta. Voi olla tyhjä, jolloin
+  syyluokka on toistaiseksi voimassa. Ajanhetki viittaa junan lähtöpäivämäärään.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) passengerTerm ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Matkustajatiedotustermi. Matkustajaläheinen kuvaus syyluokasta*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Suomenkielinen käännös*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Englanninkielinen käännös*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Ruotsinkielinen käännös*
 
 ### Syykoodit
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syykoodin yksilöivä tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) detailedCategoryCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syykoodin tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) detailedCategoryName: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Syykoodin suomenkielinen nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) validFrom: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syykoodi astuu voimaan. Ajanhetki viittaa junan lähtöpäivämäärään.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) validTo: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syykoodi poistuu voimasta. Voi olla tyhjä, jolloin syykoodi on toistaiseksi voimassa. Ajanhetki viittaa junan lähtöpäivämäärään.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) passengerTerm ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Matkustajatiedotustermi. Matkustajaläheinen kuvaus syykoodista*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Suomenkielinen käännös*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Englanninkielinen käännös*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ruotsinkielinen käännös*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Syykoodin yksilöivä tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) detailedCategoryCode: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Syykoodin tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) detailedCategoryName: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Syykoodin suomenkielinen nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) validFrom: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syykoodi astuu voimaan. Ajanhetki viittaa junan
+  lähtöpäivämäärään.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) validTo: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin syykoodi poistuu voimasta. Voi olla tyhjä, jolloin syykoodi
+  on toistaiseksi voimassa. Ajanhetki viittaa junan lähtöpäivämäärään.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) passengerTerm ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Matkustajatiedotustermi. Matkustajaläheinen kuvaus syykoodista*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Suomenkielinen käännös*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Englanninkielinen käännös*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Ruotsinkielinen käännös*
 
 ### Kolmannen tason syykoodit
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin yksilöivä tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) thirdCategoryCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin tunnus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) thirdCategoryName: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin suomenkielinen nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) validFrom: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin kolmannen tason syykoodin astuu voimaan. Ajanhetki viittaa junan lähtöpäivämäärään.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) validTo: string  ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin kolmannen tason syykoodin astuu poistuu voimasta. Voi olla tyhjä, jolloin kolmannen tason syykoodin astuu on toistaiseksi voimassa. Ajanhetki viittaa junan lähtöpäivämäärään.*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) passengerTerm ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Matkustajatiedotustermi. Matkustajaläheinen kuvaus kolmannen tason syykoodista*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Suomenkielinen käännös*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Englanninkielinen käännös*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ruotsinkielinen käännös*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin yksilöivä tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) thirdCategoryCode: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin tunnus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) thirdCategoryName: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Kolmannen tason syykoodin suomenkielinen nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) validFrom: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin kolmannen tason syykoodin astuu voimaan. Ajanhetki viittaa
+  junan lähtöpäivämäärään.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) validTo: string  ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Ajanhetki jolloin kolmannen tason syykoodin astuu poistuu voimasta. Voi olla
+  tyhjä, jolloin kolmannen tason syykoodin astuu on toistaiseksi voimassa. Ajanhetki viittaa junan
+  lähtöpäivämäärään.*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) passengerTerm ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Matkustajatiedotustermi. Matkustajaläheinen kuvaus kolmannen tason syykoodista*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Suomenkielinen käännös*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) en: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Englanninkielinen käännös*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Ruotsinkielinen käännös*
 
 ### Junalajit
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junalajin nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Junalajin nimi*
 
 ### Junatyypit
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junatyypin nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junalaji*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junalajin nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Junatyypin nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainCategory ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Junalaji*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Junalajin nimi*
 
 ### Raideosuudet
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden liikennepaikan lyhenne. Lista liikennepaikoista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSectionCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden tunnus. Yksilöivä tieto*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) ranges ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden sijainnit. Raideosuudella voi olla monta sijaintia, jos se sijaitsee usealla eri ratanumerolla.*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id : positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin yksilöivä numero*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) startLocation: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin alkukohta*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ratanumero*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres: positive integer ![Info]({{ site.baseurl }}{{"/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina rataverkon nollapisteestä.*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus kilometreistä.*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endLocation ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin loppukohta*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ratanumero*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina radan alkuosasta*
-        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus kilometreistä.*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) station: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Raideosuuden liikennepaikan lyhenne. Lista liikennepaikoista
+  löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trackSectionCode: string ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Raideosuuden tunnus. Yksilöivä tieto*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) ranges ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Raideosuuden sijainnit. Raideosuudella voi olla monta sijaintia, jos se sijaitsee
+  usealla eri ratanumerolla.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id : positive integer ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin yksilöivä numero*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) startLocation: string ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin alkukohta*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Ratanumero*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres: positive integer ![Info](
+          {{ site.baseurl }}{{"/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti kilometreina
+          rataverkon nollapisteestä.*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres: positive integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus
+          kilometreistä.*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endLocation ![Info]({{ site.baseurl }}{{ "
+      /img/rata/info.png" }}) *Sijainnin loppukohta*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) track: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Ratanumero*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) kilometres: positive integer ![Info](
+          {{ site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin kilometri-komponentti. Sijainti
+          kilometreina radan alkuosasta*
+        * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) metres: positive integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Sijainnin metri-komponentti. Eli ylijäävä osuus
+          kilometreistä.*
 
 ### Herätepisteet
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Herätepisteen yksilöivä numero*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageTrackSection: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin raideosuus*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageStationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin liikennepaikka*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageNextStationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin seuraava liikennepaikka*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin tyyppi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRowStationShortCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulurivin liikennepaikka*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRowType ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulurivin tyyppi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) offset ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kuinka paljon aikaa sekunteina kulkutietoviestin aikaleimaan lisätään, jotta saadaan aikataulurivin toteuma*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Herätepisteen yksilöivä numero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageTrackSection:
+  string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin raideosuus*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageStationShortCode:
+  string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin liikennepaikka*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageNextStationShortCode:
+  string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin seuraava liikennepaikka*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainRunningMessageType ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Kulkutietoviestin tyyppi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRowStationShortCode ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulurivin liikennepaikka*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) timeTableRowType ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Aikataulurivin tyyppi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) offset ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Kuinka paljon aikaa sekunteina kulkutietoviestin aikaleimaan lisätään, jotta
+  saadaan aikataulurivin toteuma*
 
 ### Aikataulukaudet ja muutosajankohdat
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden yksilöivä numero*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden nimi*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden alkupäivämäärä*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveTo: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden loppupäivämäärä*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityAllocationConfirmDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Päivämäärä jolloin viranomainen tekee päätöksen kapasiteettihakemukselle*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin kapasiteettihakemuksia aikataulukaudelle otetaan vastaan*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) changeDates ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Aikataulukauden muutosajankohdat*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan yksilöivä numero*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan alkupäivämäärä*
-    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin kapasiteettihakemuksia muutosajankohtaan otetaan vastaan*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Aikataulukauden yksilöivä numero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) name: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Aikataulukauden nimi*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Aikataulukauden alkupäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveTo: date ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Aikataulukauden loppupäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityAllocationConfirmDate: date ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Päivämäärä jolloin viranomainen tekee päätöksen
+  kapasiteettihakemukselle*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline:
+  date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin
+  kapasiteettihakemuksia aikataulukaudelle otetaan vastaan*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) changeDates ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Aikataulukauden muutosajankohdat*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: positive integer ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan yksilöivä numero*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) effectiveFrom: date ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Muutosajankohdan alkupäivämäärä*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) capacityRequestSubmissionDeadline:
+      date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Viimeinen päivämäärä, jolloin operaattorin
+      kapasiteettihakemuksia muutosajankohtaan otetaan vastaan*
 
 ### Versiohistoria
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Versiotiedon yksilöivät tiedot*
-  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumero*
-  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
-  * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fetchDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajanhetki, jolloin versio on syntynyt*  
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) json: json ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Version json-sisältö*
-
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Versionumero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Versiotiedon yksilöivät tiedot*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) trainNumber: positive integer ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junanumero*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) departureDate: date ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Junan ensimmäisen lähdön päivämäärä Suomen ajassa*
+    * ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) fetchDate: date ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Ajanhetki, jolloin versio on syntynyt*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) json: json ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Version json-sisältö*
 
 ### Ilmoituksen status
 
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ilmoituksen yksilöivä OID-tunniste*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Uusin versionumero*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) modified: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Uusimman version muokkausaika*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Ilmoituksen yksilöivä OID-tunniste*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Uusin versionumero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) modified: date ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Uusimman version muokkausaika*
 
 ### Matkustajainformaation tiedotteet
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen yksilöivä merkkijonotunniste*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen uusin versionumero*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) creationDateTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen uusimman version luontipäivämäärä*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) startValidity: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen voimassaolon alkupäivämäärä*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endValidity: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen voimassaolon loppupäivämäärä*
-* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stations: string[] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista tiedotteeseen liittyvien asemien lyhenteistä*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainNumber: positive integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteeseen liittyvän junan numero*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainDepartureDate: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteeseen liittyvän junan lähtöpäivämäärä*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) audio: object ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen audioversion tekstisisällöt ja esityssäännöt*
-  * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) text: object ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisällöt*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö suomeksi*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö ruotsiksi*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) en: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö englanniksi*
-  * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryRules: object ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen audiosisältöön liittyvät esityssäännöt*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startDateTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkupäivämäärä*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endDateTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen loppupäivämäärä*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkuaika*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen loppuaika*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) weekDays: string[] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista viikonpäivistä, joina tiedotetta esitetään*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryType: enum["NOW", "DELIVERY_AT", "REPEAT_EVERY", "ON_SCHEDULE", "ON_EVENT"] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *NOW: tiedote esitetään sen luontihetkellä DELIVERY_AT: Tiedote esitetään kentän `deliveryAt` osoittamana ajankohtana. REPEAT_EVERY: Tiedotetta toistetaan päivämäärästä `startDateTime` ja kellonajasta `startTime` päivämäärään `endDateTime` ja kellonaikaan `endTime` asti. Tiedotetta toistetaan kentän `repetitions` osoittama määrä kentän `repeatEvery` osoittaman minuuttivälin mukaisesti niinä viikonpäivinä, jotka ovat listassa `weekDays`. ON_SCHEDULE: Tiedote esitetään siihen liittyvän junan aikataulunmukaisena saapumisaikana. ON_EVENT: Tiedote esitetään, kun siihen liittyvä juna joko saapuu tai lähtee asemalta kentän `eventType` (esim. `ARRIVING`) mukaisesti listassa `stations` määritellyllä asemalla.*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) repeatEvery: integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen esitysväli minuutteina kun `deliveryType` on `REPEAT_EVERY`*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) repetitions: integer ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen esityksen toistojen määrä kun `deliveryType` on `REPEAT_EVERY`*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) eventType: enum["ARRIVING", "DEPARTING"] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuma, jonka yhteydessä tiedote esitetään kun `deliveryType` on `ON_EVENT`*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryAt: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Ajankohta, jona tiedote esitetään kun `deliveryType` on `DELIVERY_AT`*
-* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) video: object ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen videoversion tekstisisällöt ja esityssäännöt*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) text: object ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisällöt*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) fi: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö suomeksi*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) sv: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö ruotsiksi*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) en: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö englanniksi*
-    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryRules: object ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen videosisältöön liittyvät esityssäännöt*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startDateTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkupäivämäärä*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endDateTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen loppupäivämäärä*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkuaika*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endTime: date ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen loppuaika*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) weekDays: string[] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Lista viikonpäivistä, joina tiedotetta esitetään*
-        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryType: enum["CONTINUOS_VISUALIZATION", "WHEN"] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *CONTINUOS_VISUALIZATION: Tiedotetta esitetään jatkuvasti välillä `startDateTime` - `endDateTime`. Mikäli `startTime` on määritelty, alkaa tiedotteen esittäminen sen osoittamaan kellonaikaan kentän `startDateTime` mukaisena päivämääränä (tällöin kentän `startDateTime` kellonajalla ei ole merkitystä). Sama pätee kenttiin `endTime` ja `endDateTime` esityksen loppuajankohdan suhteen. WHEN: Tiedotetta esitetään päivämäärävälillä `startDateTime` - `endDateTime` ainoastaan kenttien `startTime` ja `endTime` osoittamien kellonaikojen välillä kentässä `weekDays` määriteltyinä viikonpäivinä.*
+
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) id: string ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Tiedotteen yksilöivä merkkijonotunniste*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) version: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen uusin versionumero*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) creationDateTime: date ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Tiedotteen uusimman version luontipäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) startValidity: date ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Tiedotteen voimassaolon alkupäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) endValidity: date ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Tiedotteen voimassaolon loppupäivämäärä*
+* ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) stations: string[] ![Info]({{ site.baseurl
+  }}{{ "/img/rata/info.png" }}) *Lista tiedotteeseen liittyvien asemien lyhenteistä*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainNumber: positive integer ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteeseen liittyvän junan numero*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainDepartureDate: date ![Info]({{
+  site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteeseen liittyvän junan lähtöpäivämäärä*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) audio: object ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Tiedotteen audioversion tekstisisällöt ja esityssäännöt*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) text: object ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisällöt*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) fi: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö suomeksi*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) sv: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö ruotsiksi*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) en: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö englanniksi*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryRules: object ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen audiosisältöön liittyvät esityssäännöt*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startDateTime: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkupäivämäärä*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endDateTime: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen loppupäivämäärä*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startTime: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkuaika*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endTime: date ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Esityksen loppuaika*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) weekDays: string[] ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Lista viikonpäivistä, joina tiedotetta esitetään*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryType:
+          enum["NOW", "DELIVERY_AT", "REPEAT_EVERY", "ON_SCHEDULE", "ON_EVENT"] ![Info]({{ site.baseurl }}{{ "
+          /img/rata/info.png" }}) *NOW: tiedote esitetään sen luontihetkellä DELIVERY_AT: Tiedote esitetään
+          kentän `deliveryAt` osoittamana ajankohtana. REPEAT_EVERY: Tiedotetta toistetaan
+          päivämäärästä `startDateTime` ja kellonajasta `startTime` päivämäärään `endDateTime` ja
+          kellonaikaan `endTime` asti. Tiedotetta toistetaan kentän `repetitions` osoittama määrä
+          kentän `repeatEvery` osoittaman minuuttivälin mukaisesti niinä viikonpäivinä, jotka ovat
+          listassa `weekDays`. ON_SCHEDULE: Tiedote esitetään siihen liittyvän junan aikataulunmukaisena
+          saapumisaikana. ON_EVENT: Tiedote esitetään, kun siihen liittyvä juna joko saapuu tai lähtee
+          asemalta kentän `eventType` (esim. `ARRIVING`) mukaisesti listassa `stations` määritellyllä
+          asemalla.*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) repeatEvery: integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen esitysväli minuutteina kun `deliveryType`
+          on `REPEAT_EVERY`*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) repetitions: integer ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen esityksen toistojen määrä kun `deliveryType`
+          on `REPEAT_EVERY`*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) eventType:
+          enum["ARRIVING", "DEPARTING"] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *Tapahtuma,
+          jonka yhteydessä tiedote esitetään kun `deliveryType` on `ON_EVENT`*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryAt: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Ajankohta, jona tiedote esitetään kun `deliveryType`
+          on `DELIVERY_AT`*
+* ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) video: object ![Info]({{ site.baseurl }}{{ "
+  /img/rata/info.png" }}) *Tiedotteen videoversion tekstisisällöt ja esityssäännöt*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) text: object ![Info]({{ site.baseurl
+      }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisällöt*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) fi: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö suomeksi*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) sv: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö ruotsiksi*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) en: string ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Tiedotteen tekstisisältö englanniksi*
+    * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryRules: object ![Info]({{
+      site.baseurl }}{{ "/img/rata/info.png" }}) *Tiedotteen videosisältöön liittyvät esityssäännöt*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startDateTime: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkupäivämäärä*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endDateTime: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen loppupäivämäärä*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) startTime: date ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Esityksen alkuaika*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) endTime: date ![Info]({{ site.baseurl
+          }}{{ "/img/rata/info.png" }}) *Esityksen loppuaika*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) weekDays: string[] ![Info]({{
+          site.baseurl }}{{ "/img/rata/info.png" }}) *Lista viikonpäivistä, joina tiedotetta esitetään*
+        * ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) deliveryType:
+          enum["CONTINUOS_VISUALIZATION", "WHEN"] ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) *
+          CONTINUOS_VISUALIZATION: Tiedotetta esitetään jatkuvasti välillä `startDateTime` - `endDateTime`.
+          Mikäli `startTime` on määritelty, alkaa tiedotteen esittäminen sen osoittamaan kellonaikaan
+          kentän `startDateTime` mukaisena päivämääränä (tällöin kentän `startDateTime` kellonajalla ei ole
+          merkitystä). Sama pätee kenttiin `endTime` ja `endDateTime` esityksen loppuajankohdan suhteen. WHEN:
+          Tiedotetta esitetään päivämäärävälillä `startDateTime` - `endDateTime` ainoastaan
+          kenttien `startTime` ja `endTime` osoittamien kellonaikojen välillä kentässä `weekDays`
+          määriteltyinä viikonpäivinä.*
 
 ## Versionumeroiden käyttö
 
-Useissa rajapinnan pyynnöissä parametrina on mukana `version`, joka rajaa vastauksesta pois junat, jotka eivät ole päivittyneet sitten `version` määrittelemän versionumeron.
+Useissa rajapinnan pyynnöissä parametrina on mukana `version`, joka rajaa vastauksesta pois junat, jotka eivät
+ole päivittyneet sitten `version` määrittelemän versionumeron.
 
-Esimerkiksi kysely [/live-trains/station/HKI?arrived_trains=5](https://rata.digitraffic.fi/api/v1//live-trains/station/HKI?arrived_trains=5) saattaisi palauttaa seuraavan vastauksen:
+Esimerkiksi
+kysely [/live-trains/station/HKI?arrived_trains=5](https://rata.digitraffic.fi/api/v1//live-trains/station/HKI?arrived_trains=5)
+saattaisi palauttaa seuraavan vastauksen:
 
 ```
 [
@@ -1785,15 +2285,21 @@ Esimerkiksi kysely [/live-trains/station/HKI?arrived_trains=5](https://rata.digi
       "version":3657782905,
       "timeTableRows":...
 ```      
-Jos kyselyyn lisättäisiin versionumero [/live-trains/station/HKI?arrived_trains=5&version=3657782905](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&version=3657782905), ei junaa 44 palautettaisi vastauksessa ennenkuin se on muuttunut.
 
-Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettävä sitä seuraavassa kyselyssä parametrina.
+Jos kyselyyn lisättäisiin
+versionumero [/live-trains/station/HKI?arrived_trains=5&version=3657782905](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?arrived_trains=5&version=3657782905)
+, ei junaa 44 palautettaisi vastauksessa ennenkuin se on muuttunut.
+
+Vastaanottajan on siis parsittava vastauksesta suurin versionumero ja käytettävä sitä seuraavassa kyselyssä
+parametrina.
 
 ## Avoimen datan käyttölupa
 
-Rajapinnasta saatavien tietojen käyttölupa on [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/).
+Rajapinnasta saatavien tietojen käyttölupa
+on [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 [Käyttöehdot](/kayttoehdot) -sivulla on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
-[Fintrafficin avoimen datan sivustolla](https://www.fintraffic.fi/fi/fintraffic/kayttoehdot) on lisätietoja käyttöluvasta ja ohjeita lähteen nimeämiseen.
+[Fintrafficin avoimen datan sivustolla](https://www.fintraffic.fi/fi/fintraffic/kayttoehdot) on lisätietoja
+käyttöluvasta ja ohjeita lähteen nimeämiseen.
 
