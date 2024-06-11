@@ -148,23 +148,18 @@ __A__:
 wget --header='Accept-Encoding: gzip' --header='Connection: close' --header='Digitraffic-User: Junamies/FoobarApp 1.0' https://tie.digitraffic.fi/api/tms/v1/sensors -O data.json
 ```
 
-# Java RestTemplate
-__Q__: How do I call the APIs with [Java RestTemplate](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)?  
+# Java WebClient
+__Q__: How do I call the APIs with [Java WebClient](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/reactive/function/client/WebClient.html)?
 __A__:
 ```java
-final HttpComponentsClientHttpRequestFactory clientHttpRequestFactory =
-    new HttpComponentsClientHttpRequestFactory(HttpClientBuilder.create().build());
-final RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
+final WebClient client = WebClient.builder()
+				.defaultHeader("Digitraffic-User", "DT/Tester")
+				.build();
 
-final HttpHeaders headers = new HttpHeaders();
-headers.add("Accept-Encoding", "gzip");
-headers.add("Digitraffic-User", "DT/Tester");
-HttpEntity<String> entity = new HttpEntity<>("body", headers);
+		final JsonNode response = client.get().uri("https://tie.digitraffic.fi/api/tms/v1/sensors")
+				.retrieve().bodyToMono(JsonNode.class).block();
 
-final ResponseEntity<String> response =
-    restTemplate.exchange("https://tie.digitraffic.fi/api/tms/v1/sensors", HttpMethod.GET, entity, String.class);
-
-System.out.println(response.getBody());
+System.out.println(response);
 ```
 
 # Python
