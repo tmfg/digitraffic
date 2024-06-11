@@ -153,11 +153,11 @@ __K__: Miten kutsun rajapintoja [Java WebClientilla](https://docs.spring.io/spri
 __V__:
 ```java
 final WebClient client = WebClient.builder()
-				.defaultHeader("Digitraffic-User", "DT/Tester")
-				.build();
+    .defaultHeader("Digitraffic-User", "DT/Tester")
+    .build();
 
-		final JsonNode response = client.get().uri("https://tie.digitraffic.fi/api/tms/v1/sensors")
-				.retrieve().bodyToMono(JsonNode.class).block();
+final JsonNode response = client.get().uri("https://tie.digitraffic.fi/api/tms/v1/sensors")
+    .retrieve().bodyToMono(JsonNode.class).block();
 
 System.out.println(response);
 ```
