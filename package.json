@@ -30,7 +30,7 @@
   "dependencies": {
     "@fontsource/public-sans": "^5.0.18",
     "@popperjs/core": "^2.11.8",
-    "alpinejs": "^3.13.10",
+    "alpinejs": "^3.14.0",
     "highlight.js": "^11.9.0",
     "jquery": "^3.7.1",
     "lunr": "^2.3.9",
