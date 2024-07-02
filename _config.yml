@@ -135,18 +135,18 @@ t:
   station-info:
     en: "Station Info"
     fi: "Asemainfo"
-  drone-register:
-    en: "Drone Services"
-    fi: "Drone-palvelut"
+  fintraffic-app:
+    en: "Fintraffic App"
+    fi: "Fintraffic Mobiili"
+    url:
+      en: "https://www.fintraffic.fi/en/fintraffic_app"
+      fi: "https://www.fintraffic.fi/fi/mobiili"
   digitraffic:
     en: "Digitraffic"
     fi: "Digitraffic"
   digitransit:
     en: "Digitransit"
     fi: "Digitransit"
-  nap:
-    en: "NAP"
-    fi: "NAP"
 
   # Menu items // Some menu items found under Frontpage
   updates:

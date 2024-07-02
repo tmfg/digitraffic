@@ -75,20 +75,20 @@ t:
     en: "Road traffic"
     fi: "Tieliikenne"
     url:
-      en: "en/road-traffic"
-      fi: "tieliikenne"
+      en: "en/road-traffic/"
+      fi: "tieliikenne/"
   rautatieliikenne:
     en: "Railway traffic"
     fi: "Rautatieliikenne"
     url:
-      en: "en/railway-traffic"
-      fi: "rautatieliikenne"
+      en: "en/railway-traffic/"
+      fi: "rautatieliikenne/"
   meriliikenne:
     en: "Marine traffic"
     fi: "Meriliikenne"
     url:
-      en: "en/marine-traffic"
-      fi: "meriliikenne"
+      en: "en/marine-traffic/"
+      fi: "meriliikenne/"
   kokeellinen:
     en: "Experimental"
     fi: "Kokeellinen"
@@ -134,18 +134,18 @@ t:
   station-info:
     en: "Station Info"
     fi: "Asemainfo"
-  drone-register:
-    en: "Drone Services"
-    fi: "Drone-palvelut"
+  fintraffic-app:
+    en: "Fintraffic App"
+    fi: "Fintraffic Mobiili"
+    url:
+      en: "https://www.fintraffic.fi/en/fintraffic_app"
+      fi: "https://www.fintraffic.fi/fi/mobiili"
   digitraffic:
     en: "Digitraffic"
     fi: "Digitraffic"
   digitransit:
     en: "Digitransit"
     fi: "Digitransit"
-  nap:
-    en: "NAP"
-    fi: "NAP"
 
   # Menu items // Some menu items found under Frontpage
   updates:
@@ -281,8 +281,8 @@ t:
     en: "API status"
     fi: "Rajapintojen tila"
     url:
-      en: "en/api-status"
-      fi: "rajapintojen-tila"
+      en: "en/api-status/"
+      fi: "rajapintojen-tila/"
   applications:
     en: "Applications"
     fi: "Sovellukset"
@@ -360,8 +360,8 @@ t:
     en: "Marine traffic"
     fi: "Meriliikenne"
     url:
-      en: "en/marine-traffic"
-      fi: "meriliikenne"
+      en: "en/marine-traffic/"
+      fi: "meriliikenne/"
   marine-traffic-description:
     en: "Marine traffic APIs provide sea warnings, ship locations and their meta data, and Portnet data."
     fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
@@ -375,8 +375,8 @@ t:
     en: "Railway traffic"
     fi: "Rautatieliikenne"
     url:
-      en: "en/railway-traffic"
-      fi: "rautatieliikenne"
+      en: "en/railway-traffic/"
+      fi: "rautatieliikenne/"
   railway-traffic-description:
     en: "Railway traffic APIs provides timetables, dispatch advices, locations and setups of trains. In addition, varous metadata is provided. LIIKE system acts as the main source for the data"
     fi: "Rajapinta tarjoaa junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot. Lisäksi tarjotaan erilaista metatietoa kuten lista rautatieliikennepaikoista. Pääasiallisena tietolähteenä toimii LIIKE-järjestelmä."
@@ -387,8 +387,8 @@ t:
     en: "Road traffic"
     fi: "Tieliikenne"
     url:
-      en: "en/road-traffic"
-      fi: "tieliikenne"
+      en: "en/road-traffic/"
+      fi: "tieliikenne/"
   road-traffic-description:
     en: "Digitraffic road traffic service provides current data about Finnish road traffic and weather conditions. Most of the data provided by Digitraffic are from the data services of Fintraffic."
     fi: "Tieliikenteen Digitraffic-palvelu tarjoaa ajantasaista liikenne- ja olosuhdetietoa Suomen liikenneverkolta. Suurin osa Digitraffic-palvelun kautta jaettavista tietolajeista saadaan Fintrafficin ylläpitämistä tiedonkeruujärjestelmistä."
@@ -399,14 +399,14 @@ t:
     en: "Service overview"
     fi: "Palvelun esittely"
     url:
-      en: "en/service-overview"
-      fi: "palvelun-esittely"
+      en: "en/service-overview/"
+      fi: "palvelun-esittely/"
   support-channels:
     en: "Support channels"
     fi: "Tukikanavat"
     url:
-      en: "en/support/support-channels"
-      fi: "tuki/tukikanavat"
+      en: "en/support/support-channels/"
+      fi: "tuki/tukikanavat/"
   support-channels-description:
     en: "Public Google groups provide support and communication between developers, service provider and Fintraffic."
     fi: "Kehittäjien, palvelun ylläpitäjän ja Fintrafficin väliseen tukeen sekä kommunikaatioon on käytössä julkiset avoimet Google-ryhmät."
@@ -414,26 +414,26 @@ t:
     en: "Information and instructions for using APIs"
     fi: "Ohjeita ja lisätietoa rajapintojen käyttöön"
     url:
-      en: "en/support/instructions"
-      fi: "tuki/ohjeita"
+      en: "en/support/instructions/"
+      fi: "tuki/ohjeita/"
   code-examples:
     en: "Code examples"
     fi: "Koodiesimerkkejä"
     url:
-      en: "en/support/code-examples"
-      fi: "tuki/koodiesimerkit"
+      en: "en/support/code-examples/"
+      fi: "tuki/koodiesimerkit/"
   script-mqtt:
     en: "MQTT examples"
     fi: "MQTT esimerkkejä"
     url:
-      en: "en/support/script-mqtt"
-      fi: "tuki/script-mqtt"
+      en: "en/support/script-mqtt/"
+      fi: "tuki/script-mqtt/"
   api-changes:
     en: "API changes"
     fi: "Rajapintojen muutokset"
     url:
-      en: "en/support/api-changes"
-      fi: "tuki/rajapintojen-muutokset"
+      en: "en/support/api-changes/"
+      fi: "tuki/rajapintojen-muutokset/"
   # API status
   recent-outages:
     en: "Current maintenances and recent outages"
