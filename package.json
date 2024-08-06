@@ -31,7 +31,7 @@
     "@fontsource/public-sans": "^5.0.18",
     "@popperjs/core": "^2.11.8",
     "alpinejs": "^3.14.1",
-    "highlight.js": "^11.9.0",
+    "highlight.js": "^11.10.0",
     "jquery": "^3.7.1",
     "lunr": "^2.3.9",
     "material-icons": "^1.13.12",
@@ -44,7 +44,7 @@
     "@types/jquery": "^3.5.30",
     "esbuild": "^0.20.2",
     "generate-license-file": "^3.5.0",
-    "rimraf": "^5.0.7",
-    "typescript": "^5.5.3"
+    "rimraf": "^5.0.10",
+    "typescript": "^5.5.4"
   }
 }
