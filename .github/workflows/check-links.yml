@@ -2,7 +2,7 @@ name: Check links
 on:
   schedule:
     - cron: "3 15 * * *"
-
+  workflow_dispatch:
 jobs:
   linkinator:
     runs-on: ubuntu-latest
