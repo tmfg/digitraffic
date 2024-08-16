@@ -5,7 +5,7 @@ ref: tie-liipi-liityntapysakointi
 issue-number: DPO-2030
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2023-03-01
 ---
 

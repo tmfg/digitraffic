@@ -5,7 +5,7 @@ ref: tie-liipi-liityntapysakointi
 issue-number: DPO-2030
 traffictypes:
   - Road traffic
-status: in progress
+status: finished
 date: 2023-03-01
 ---
 

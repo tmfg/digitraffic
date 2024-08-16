@@ -7,7 +7,7 @@ traffictypes:
   - Road traffic
   - Marine traffic
   - Railway traffic
-status: planned
+status: in progress
 date: 2023-04-01
 ---
 
