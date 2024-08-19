@@ -4,8 +4,8 @@ lang: en
 ref: bussikorvaus-sektorointi
 issue-number: DPO-2666
 traffictypes:
-  - Rautatieliikenne
-status: suunnitteilla
+  - Railway traffic
+status: in progress
 date: 2024-08-16
 ---
 
