@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /sv/DigitrafficDataskyddsbeskrivning/
+permalink: /sv/dataskyddsbeskrivning/
 section: Palvelun tietosuojaseloste
 searchable: true
 lang: sv
