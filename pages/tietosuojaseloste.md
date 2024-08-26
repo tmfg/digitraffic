@@ -10,6 +10,8 @@ title: Digitraffic-palvelun tietosuojaseloste
 
 EU:n yleinen tietosuoja-asetus (EU) 2016/679
 
+# ([Dataskyddsbeskrivning](https://www.digitraffic.fi/dataskyddsbeskrivning/))
+
 ### 1\. Johdanto
 
 Yksityisyytesi suojaaminen ja henkilötietojesi käsittelyn läpinäkyvyys on Fintraffic-konsernille tärkeää. Tämän tietosuojaselosteen tarkoitus on informoida sinua henkilötietojesi käsittelystä Digitraffic-palvelussa. 

@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /sv/dataskyddsbeskrivning/
+permalink: /dataskyddsbeskrivning/
 section: Palvelun tietosuojaseloste
 searchable: true
-lang: sv
+lang: fi
 ref: privacy-policy
 title: Dataskyddsbeskrivning
 ---
