@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /sv/tietosuojaseloste/
+permalink: /sv/DigitrafficDataskyddsbeskrivning/
 section: Palvelun tietosuojaseloste
 searchable: true
 lang: sv
@@ -14,7 +14,7 @@ Digitraffic-tjänstens dataskyddsbeskrivning EU:s allmänna dataskyddsförordnin
 
 För Fintraffickoncernen är skyddet av din integritet och en transparent behandling av dina personuppgifter viktigt. Syftet med denna dataskyddsbeskrivning är att informera dig om behandlingen av dina personuppgifter i Digitraffic-tjänsten.
 
-### 2\.Personuppgiftsansvarig
+### 2\. Personuppgiftsansvarig
 
 Trafikstyrningsbolaget Fintraffic Oy (nedan "Fintraffic")<br/>
 Löneboställsporten 1, 00240 Helsingfors<br/>

@@ -11,7 +11,7 @@ title: Privacy policy
 
 EU General Data Protection Regulation (EU) 2016/679
 
-### \1. Introduction
+### 1\. Introduction
 
 Protecting your privacy and the transparency of the processing of your personal data is important to the Fintraffic Group. The purpose of this privacy statement is to inform you of the processing of your personal data in the Digitraffic service.
 
