@@ -7,8 +7,7 @@ lang: fi
 ref: privacy-policy
 title: Digitraffic-palvelun tietosuojaseloste
 ---
-
-# [Dataskyddsbeskrivning](https://www.digitraffic.fi/dataskyddsbeskrivning/)
+## [Dataskyddsbeskrivning](https://www.digitraffic.fi/dataskyddsbeskrivning/)
 
 EU:n yleinen tietosuoja-asetus (EU) 2016/679
 
