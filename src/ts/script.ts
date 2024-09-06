@@ -52,7 +52,7 @@ async function init() {
 
     // If Service status section exists, get service status
     if (document.getElementById("service-status-section")) {
-        await getServiceStatus("https://status.digitraffic.fi", window.pageLang);
+        getServiceStatus("https://status.digitraffic.fi", window.pageLang);
     }
 
     // If not datex2 page, return

@@ -6,9 +6,18 @@ export default function () { /* Dummy export for bundle */ }
 globalThis.loadTWC = loadTWC;
 
 
-const URL_TMS = "https://tie.digitraffic.fi/api/tms/v1/stations/data";
-const URL_WEATHER = "https://tie.digitraffic.fi/api/tms/v1/stations/data";
-const URL_CAMERA = "https://tie.digitraffic.fi/api/weathercam/v1/stations/data";
+const URLS_TMS = {
+    PROD: "https://tie.digitraffic.fi/api/tms/v1/stations/data",
+    TEST: "https://tie-test.digitraffic.fi/api/tms/v1/stations/data"
+}
+const URLS_WEATHER = {
+    PROD: "https://tie.digitraffic.fi/api/tms/v1/stations/data",
+    TEST: "https://tie-test.digitraffic.fi/api/tms/v1/stations/data"
+};
+const URLS_CAMERA = {
+    PROD: "https://tie.digitraffic.fi/api/weathercam/v1/stations/data",
+    TEST: "https://tie-test.digitraffic.fi/api/weathercam/v1/stations/data"
+};
 
 const TYPE_TMS = "TMS";
 const TYPE_WEATHER = "WEATHER";
@@ -59,13 +68,14 @@ function initTable(dataType, tableTitle) {
             ])
         ])
     ]);
-};
+}
 
 function loadContent(requestUrl, processResponse) {
+    console.log(`GET ${requestUrl}`);
     let xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             try {
                 processResponse(JSON.parse(this.responseText));
             } catch(e) {
@@ -80,7 +90,7 @@ function loadContent(requestUrl, processResponse) {
 
     xmlhttp.open("GET", requestUrl, true);
     xmlhttp.send();
-};
+}
 
 function process_tms(resp) {
     if (resp) {
@@ -94,7 +104,7 @@ function process_tms(resp) {
             sort(TYPE_TMS, time, Date.parse(item.dataUpdatedTime));
         }
     }
-};
+}
 
 function process_weather(resp) {
     if (resp) {
@@ -108,7 +118,7 @@ function process_weather(resp) {
             sort(TYPE_WEATHER, time, Date.parse(item.dataUpdatedTime));
         }
     }
-};
+}
 
 function process_camera(resp) {
     if (resp) {
@@ -124,7 +134,7 @@ function process_camera(resp) {
             }
         }
     }
-};
+}
 
 function sort(type, time, measured) {
     if (measured > 0) {
@@ -141,34 +151,44 @@ function sort(type, time, measured) {
     } else {
         updateCount(type + "_empty");
     }
-};
+}
 
 function updateCount(field) {
     var tmp = $("#" + field);
 
     tmp.text(parseInt(tmp.text()) + 1);
-};
+}
 
 function updateDate(field, measured) {
     var latest = $("#" + field + "latest");
 
-    if (latest.text() == "-" || measured > Date.parse(latest.text())) {
+    if (latest.text() === "-" || measured > Date.parse(latest.text())) {
         latest.text(toIsoLocalDate(new Date(measured)));
     }
 
     var oldest = $("#" + field + "oldest");
 
-    if (oldest.text() == "-" || measured < Date.parse(oldest.text())) {
+    if (oldest.text() === "-" || measured < Date.parse(oldest.text())) {
         oldest.text(toIsoLocalDate(measured));
     }
-};
+}
 
 export function loadTWC() {
     initTable(TYPE_TMS, "TMS stations data");
     initTable(TYPE_WEATHER, "Weather stations data");
     initTable(TYPE_CAMERA, "Weathercam stations presets");
 
-    loadContent(URL_TMS, process_tms);
-    loadContent(URL_WEATHER, process_weather);
-    loadContent(URL_CAMERA, process_camera);
-};
+    const env = getEnv()
+    loadContent(URLS_TMS[env], process_tms);
+    loadContent(URLS_WEATHER[env], process_weather);
+    loadContent(URLS_CAMERA[env], process_camera);
+    document.getElementById(`tab-${env}`).classList.add('tab-link-active');
+}
+
+function getEnv() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const env = urlParams.get("env");
+    console.log(`ENV: ${env}`);
+    return env || "PROD";
+}
+

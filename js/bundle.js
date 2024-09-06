@@ -8876,7 +8876,7 @@
         }
         return mode;
       }
-      var version = "11.9.0";
+      var version = "11.10.0";
       var HTMLInjectionError = class extends Error {
         constructor(reason, html) {
           super(reason);
@@ -16691,6 +16691,7 @@
     };
     return {
       name: "JSON",
+      aliases: ["jsonc"],
       keywords: {
         literal: LITERALS2
       },
@@ -20480,9 +20481,18 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
 
   // src/js/script-twc.js
   globalThis.loadTWC = loadTWC2;
-  var URL_TMS = "https://tie.digitraffic.fi/api/tms/v1/stations/data";
-  var URL_WEATHER = "https://tie.digitraffic.fi/api/tms/v1/stations/data";
-  var URL_CAMERA = "https://tie.digitraffic.fi/api/weathercam/v1/stations/data";
+  var URLS_TMS = {
+    PROD: "https://tie.digitraffic.fi/api/tms/v1/stations/data",
+    TEST: "https://tie-test.digitraffic.fi/api/tms/v1/stations/data"
+  };
+  var URLS_WEATHER = {
+    PROD: "https://tie.digitraffic.fi/api/tms/v1/stations/data",
+    TEST: "https://tie-test.digitraffic.fi/api/tms/v1/stations/data"
+  };
+  var URLS_CAMERA = {
+    PROD: "https://tie.digitraffic.fi/api/weathercam/v1/stations/data",
+    TEST: "https://tie-test.digitraffic.fi/api/weathercam/v1/stations/data"
+  };
   var TYPE_TMS = "TMS";
   var TYPE_WEATHER = "WEATHER";
   var TYPE_CAMERA = "CAMERA";
@@ -20533,6 +20543,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     ]);
   }
   function loadContent(requestUrl, processResponse2) {
+    console.log(`GET ${requestUrl}`);
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -20615,9 +20626,17 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     initTable(TYPE_TMS, "TMS stations data");
     initTable(TYPE_WEATHER, "Weather stations data");
     initTable(TYPE_CAMERA, "Weathercam stations presets");
-    loadContent(URL_TMS, process_tms);
-    loadContent(URL_WEATHER, process_weather);
-    loadContent(URL_CAMERA, process_camera);
+    const env = getEnv();
+    loadContent(URLS_TMS[env], process_tms);
+    loadContent(URLS_WEATHER[env], process_weather);
+    loadContent(URLS_CAMERA[env], process_camera);
+    document.getElementById(`tab-${env}`).classList.add("tab-link-active");
+  }
+  function getEnv() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const env = urlParams.get("env");
+    console.log(`ENV: ${env}`);
+    return env || "PROD";
   }
 
   // src/js/script-mqtt.js
@@ -21269,7 +21288,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       addEventListeners4();
       headerScrolled();
       if (document.getElementById("service-status-section")) {
-        yield getServiceStatus("https://status.digitraffic.fi", window.pageLang);
+        getServiceStatus("https://status.digitraffic.fi", window.pageLang);
       }
       if (document.getElementById("script-datex2-data")) {
         yield loadDatex2();

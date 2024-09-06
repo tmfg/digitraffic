@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/jquery": "^3.5.30",
     "esbuild": "^0.20.2",
-    "generate-license-file": "^3.5.0",
+    "generate-license-file": "^3.5.1",
     "rimraf": "^5.0.10",
     "typescript": "^5.5.4"
   }
