@@ -28,7 +28,7 @@
     "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite"
   },
   "dependencies": {
-    "@fontsource/public-sans": "^5.0.18",
+    "@fontsource/public-sans": "^5.1.0",
     "@popperjs/core": "^2.11.8",
     "alpinejs": "^3.14.1",
     "highlight.js": "^11.10.0",
@@ -45,6 +45,6 @@
     "esbuild": "^0.20.2",
     "generate-license-file": "^3.5.1",
     "rimraf": "^5.0.10",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   }
 }

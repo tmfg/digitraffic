@@ -20546,7 +20546,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     console.log(`GET ${requestUrl}`);
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
+      if (this.readyState === 4 && this.status === 200) {
         try {
           processResponse2(JSON.parse(this.responseText));
         } catch (e) {
@@ -20614,11 +20614,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function updateDate(field, measured) {
     var latest = $("#" + field + "latest");
-    if (latest.text() == "-" || measured > Date.parse(latest.text())) {
+    if (latest.text() === "-" || measured > Date.parse(latest.text())) {
       latest.text(toIsoLocalDate(new Date(measured)));
     }
     var oldest = $("#" + field + "oldest");
-    if (oldest.text() == "-" || measured < Date.parse(oldest.text())) {
+    if (oldest.text() === "-" || measured < Date.parse(oldest.text())) {
       oldest.text(toIsoLocalDate(measured));
     }
   }

@@ -448,6 +448,11 @@ t:
     url:
       en: "en/api-status/status-page/"
       fi: "rajapintojen-tila/statussivu/"
+  # Parking
+  parking-page:
+    en: "Parking"
+    fi: "Liityntäpysäköinti"
+    external-url: "https://parking.fintraffic.fi"
 
   # Posts
   filter-news:
