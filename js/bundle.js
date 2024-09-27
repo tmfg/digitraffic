@@ -6507,6 +6507,7 @@
             if (this.messageIdentifier !== void 0)
               remLength += 2;
             switch (this.type) {
+              // If this a Connect then we need to include 12 bytes for its header
               case MESSAGE_TYPE.CONNECT:
                 switch (this.mqttVersion) {
                   case 3:
@@ -6529,6 +6530,7 @@
                 if (this.password !== void 0)
                   remLength += UTF8Length(this.password) + 2;
                 break;
+              // Subscribe, Unsubscribe can both contain topic strings
               case MESSAGE_TYPE.SUBSCRIBE:
                 first |= 2;
                 for (var i = 0; i < this.topics.length; i++) {
@@ -6548,11 +6550,9 @@
                 first |= 2;
                 break;
               case MESSAGE_TYPE.PUBLISH:
-                if (this.payloadMessage.duplicate)
-                  first |= 8;
+                if (this.payloadMessage.duplicate) first |= 8;
                 first = first |= this.payloadMessage.qos << 1;
-                if (this.payloadMessage.retained)
-                  first |= 1;
+                if (this.payloadMessage.retained) first |= 1;
                 destinationNameLength = UTF8Length(this.payloadMessage.destinationName);
                 remLength += destinationNameLength + 2;
                 var payloadBytes = this.payloadMessage.payloadBytes;
@@ -6622,6 +6622,10 @@
               case MESSAGE_TYPE.PUBLISH:
                 byteStream.set(payloadBytes, pos);
                 break;
+              //    	    case MESSAGE_TYPE.PUBREC:
+              //    	    case MESSAGE_TYPE.PUBREL:
+              //    	    case MESSAGE_TYPE.PUBCOMP:
+              //    	    	break;
               case MESSAGE_TYPE.SUBSCRIBE:
                 for (var i = 0; i < this.topics.length; i++) {
                   pos = writeString(this.topics[i], topicStrLength[i], byteStream, pos);
@@ -7384,8 +7388,7 @@
             if (wireMessage.type == 1) {
               var wireMessageMasked = this._traceMask(wireMessage, "password");
               this._trace("Client._socket_send", wireMessageMasked);
-            } else
-              this._trace("Client._socket_send", wireMessage);
+            } else this._trace("Client._socket_send", wireMessage);
             this.socket.send(wireMessage.encode());
             this.sendPinger.reset();
           };
@@ -7508,12 +7511,9 @@
                 if (this._traceBuffer.length == this._MAX_TRACE_ENTRIES) {
                   this._traceBuffer.shift();
                 }
-                if (i === 0)
-                  this._traceBuffer.push(arguments[i]);
-                else if (typeof arguments[i] === "undefined")
-                  this._traceBuffer.push(arguments[i]);
-                else
-                  this._traceBuffer.push("  " + JSON.stringify(arguments[i]));
+                if (i === 0) this._traceBuffer.push(arguments[i]);
+                else if (typeof arguments[i] === "undefined") this._traceBuffer.push(arguments[i]);
+                else this._traceBuffer.push("  " + JSON.stringify(arguments[i]));
               }
             }
           };
@@ -7982,8 +7982,7 @@
          * @param {CompiledMode} mode
          */
         constructor(mode) {
-          if (mode.data === void 0)
-            mode.data = {};
+          if (mode.data === void 0) mode.data = {};
           this.data = mode.data;
           this.isMatchIgnored = false;
         }
@@ -8050,8 +8049,7 @@
          *
          * @param {Node} node */
         openNode(node) {
-          if (!emitsWrappingTags(node))
-            return;
+          if (!emitsWrappingTags(node)) return;
           const className = scopeToCSSClass(
             node.scope,
             { prefix: this.classPrefix }
@@ -8063,8 +8061,7 @@
          *
          * @param {Node} node */
         closeNode(node) {
-          if (!emitsWrappingTags(node))
-            return;
+          if (!emitsWrappingTags(node)) return;
           this.buffer += SPAN_CLOSE;
         }
         /**
@@ -8115,8 +8112,7 @@
           return void 0;
         }
         closeAllNodes() {
-          while (this.closeNode())
-            ;
+          while (this.closeNode()) ;
         }
         toJSON() {
           return JSON.stringify(this.rootNode, null, 4);
@@ -8146,10 +8142,8 @@
          * @param {Node} node
          */
         static _collapse(node) {
-          if (typeof node === "string")
-            return;
-          if (!node.children)
-            return;
+          if (typeof node === "string") return;
+          if (!node.children) return;
           if (node.children.every((el) => typeof el === "string")) {
             node.children = [node.children.join("")];
           } else {
@@ -8189,8 +8183,7 @@
          */
         __addSublanguage(emitter, name) {
           const node = emitter.root;
-          if (name)
-            node.scope = `language:${name}`;
+          if (name) node.scope = `language:${name}`;
           this.add(node);
         }
         toHTML() {
@@ -8203,10 +8196,8 @@
         }
       };
       function source(re) {
-        if (!re)
-          return null;
-        if (typeof re === "string")
-          return re;
+        if (!re) return null;
+        if (typeof re === "string") return re;
         return re.source;
       }
       function lookahead(re) {
@@ -8295,8 +8286,7 @@
           relevance: 0,
           /** @type {ModeCallback} */
           "on:begin": (m, resp) => {
-            if (m.index !== 0)
-              resp.ignoreMatch();
+            if (m.index !== 0) resp.ignoreMatch();
           }
         }, opts);
       };
@@ -8446,8 +8436,7 @@
             },
             /** @type {ModeCallback} */
             "on:end": (m, resp) => {
-              if (resp.data._beginMatch !== m[1])
-                resp.ignoreMatch();
+              if (resp.data._beginMatch !== m[1]) resp.ignoreMatch();
             }
           }
         );
@@ -8492,39 +8481,30 @@
         }
       }
       function beginKeywords(mode, parent) {
-        if (!parent)
-          return;
-        if (!mode.beginKeywords)
-          return;
+        if (!parent) return;
+        if (!mode.beginKeywords) return;
         mode.begin = "\\b(" + mode.beginKeywords.split(" ").join("|") + ")(?!\\.)(?=\\b|\\s)";
         mode.__beforeBegin = skipIfHasPrecedingDot;
         mode.keywords = mode.keywords || mode.beginKeywords;
         delete mode.beginKeywords;
-        if (mode.relevance === void 0)
-          mode.relevance = 0;
+        if (mode.relevance === void 0) mode.relevance = 0;
       }
       function compileIllegal(mode, _parent) {
-        if (!Array.isArray(mode.illegal))
-          return;
+        if (!Array.isArray(mode.illegal)) return;
         mode.illegal = either(...mode.illegal);
       }
       function compileMatch(mode, _parent) {
-        if (!mode.match)
-          return;
-        if (mode.begin || mode.end)
-          throw new Error("begin & end are not supported with match");
+        if (!mode.match) return;
+        if (mode.begin || mode.end) throw new Error("begin & end are not supported with match");
         mode.begin = mode.match;
         delete mode.match;
       }
       function compileRelevance(mode, _parent) {
-        if (mode.relevance === void 0)
-          mode.relevance = 1;
+        if (mode.relevance === void 0) mode.relevance = 1;
       }
       var beforeMatchExt = (mode, parent) => {
-        if (!mode.beforeMatch)
-          return;
-        if (mode.starts)
-          throw new Error("beforeMatch cannot be used with starts");
+        if (!mode.beforeMatch) return;
+        if (mode.starts) throw new Error("beforeMatch cannot be used with starts");
         const originalMode = Object.assign({}, mode);
         Object.keys(mode).forEach((key) => {
           delete mode[key];
@@ -8599,8 +8579,7 @@
         console.log(`WARN: ${message}`, ...args);
       };
       var deprecated = (version2, message) => {
-        if (seenDeprecations[`${version2}/${message}`])
-          return;
+        if (seenDeprecations[`${version2}/${message}`]) return;
         console.log(`Deprecated as of ${version2}. ${message}`);
         seenDeprecations[`${version2}/${message}`] = true;
       };
@@ -8620,8 +8599,7 @@
         mode[key]._multi = true;
       }
       function beginMultiClass(mode) {
-        if (!Array.isArray(mode.begin))
-          return;
+        if (!Array.isArray(mode.begin)) return;
         if (mode.skip || mode.excludeBegin || mode.returnBegin) {
           error2("skip, excludeBegin, returnBegin not compatible with beginScope: {}");
           throw MultiClassError;
@@ -8634,8 +8612,7 @@
         mode.begin = _rewriteBackreferences(mode.begin, { joinWith: "" });
       }
       function endMultiClass(mode) {
-        if (!Array.isArray(mode.end))
-          return;
+        if (!Array.isArray(mode.end)) return;
         if (mode.skip || mode.excludeEnd || mode.returnEnd) {
           error2("skip, excludeEnd, returnEnd not compatible with endScope: {}");
           throw MultiClassError;
@@ -8716,8 +8693,7 @@
           }
           // @ts-ignore
           getMatcher(index) {
-            if (this.multiRegexes[index])
-              return this.multiRegexes[index];
+            if (this.multiRegexes[index]) return this.multiRegexes[index];
             const matcher = new MultiRegex();
             this.rules.slice(index).forEach(([re, opts]) => matcher.addRule(re, opts));
             matcher.compile();
@@ -8733,8 +8709,7 @@
           // @ts-ignore
           addRule(re, opts) {
             this.rules.push([re, opts]);
-            if (opts.type === "begin")
-              this.count++;
+            if (opts.type === "begin") this.count++;
           }
           /** @param {string} s */
           exec(s) {
@@ -8742,8 +8717,7 @@
             m.lastIndex = this.lastIndex;
             let result = m.exec(s);
             if (this.resumingScanAtSamePosition()) {
-              if (result && result.index === this.lastIndex)
-                ;
+              if (result && result.index === this.lastIndex) ;
               else {
                 const m2 = this.getMatcher(0);
                 m2.lastIndex = this.lastIndex + 1;
@@ -8775,8 +8749,7 @@
             /** @type CompiledMode */
             mode
           );
-          if (mode.isCompiled)
-            return cmode;
+          if (mode.isCompiled) return cmode;
           [
             scopeClassName,
             // do this early so compiler extensions generally don't have to worry about
@@ -8808,25 +8781,20 @@
           }
           cmode.keywordPatternRe = langRe(keywordPattern, true);
           if (parent) {
-            if (!mode.begin)
-              mode.begin = /\B|\b/;
+            if (!mode.begin) mode.begin = /\B|\b/;
             cmode.beginRe = langRe(cmode.begin);
-            if (!mode.end && !mode.endsWithParent)
-              mode.end = /\B|\b/;
-            if (mode.end)
-              cmode.endRe = langRe(cmode.end);
+            if (!mode.end && !mode.endsWithParent) mode.end = /\B|\b/;
+            if (mode.end) cmode.endRe = langRe(cmode.end);
             cmode.terminatorEnd = source(cmode.end) || "";
             if (mode.endsWithParent && parent.terminatorEnd) {
               cmode.terminatorEnd += (mode.end ? "|" : "") + parent.terminatorEnd;
             }
           }
-          if (mode.illegal)
-            cmode.illegalRe = langRe(
-              /** @type {RegExp | string} */
-              mode.illegal
-            );
-          if (!mode.contains)
-            mode.contains = [];
+          if (mode.illegal) cmode.illegalRe = langRe(
+            /** @type {RegExp | string} */
+            mode.illegal
+          );
+          if (!mode.contains) mode.contains = [];
           mode.contains = [].concat(...mode.contains.map(function(c) {
             return expandOrCloneMode(c === "self" ? mode : c);
           }));
@@ -8843,8 +8811,7 @@
           cmode.matcher = buildModeRegex(cmode);
           return cmode;
         }
-        if (!language.compilerExtensions)
-          language.compilerExtensions = [];
+        if (!language.compilerExtensions) language.compilerExtensions = [];
         if (language.contains && language.contains.includes("self")) {
           throw new Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.");
         }
@@ -8855,8 +8822,7 @@
         );
       }
       function dependencyOnParent(mode) {
-        if (!mode)
-          return false;
+        if (!mode) return false;
         return mode.endsWithParent || dependencyOnParent(mode.starts);
       }
       function expandOrCloneMode(mode) {
@@ -8973,8 +8939,7 @@
                 emitter.addText(buf);
                 buf = "";
                 keywordHits[word] = (keywordHits[word] || 0) + 1;
-                if (keywordHits[word] <= MAX_KEYWORD_HITS)
-                  relevance += keywordRelevance;
+                if (keywordHits[word] <= MAX_KEYWORD_HITS) relevance += keywordRelevance;
                 if (kind.startsWith("_")) {
                   buf += match[0];
                 } else {
@@ -8991,8 +8956,7 @@
             emitter.addText(buf);
           }
           function processSubLanguage() {
-            if (modeBuffer === "")
-              return;
+            if (modeBuffer === "") return;
             let result2 = null;
             if (typeof top2.subLanguage === "string") {
               if (!languages[top2.subLanguage]) {
@@ -9019,8 +8983,7 @@
             modeBuffer = "";
           }
           function emitKeyword(keyword, scope2) {
-            if (keyword === "")
-              return;
+            if (keyword === "") return;
             emitter.startScope(scope2);
             emitter.addText(keyword);
             emitter.endScope();
@@ -9067,8 +9030,7 @@
               if (mode["on:end"]) {
                 const resp = new Response(mode);
                 mode["on:end"](match, resp);
-                if (resp.isMatchIgnored)
-                  matched = false;
+                if (resp.isMatchIgnored) matched = false;
               }
               if (matched) {
                 while (mode.endsParent && mode.parent) {
@@ -9096,11 +9058,9 @@
             const resp = new Response(newMode);
             const beforeCallbacks = [newMode.__beforeBegin, newMode["on:begin"]];
             for (const cb of beforeCallbacks) {
-              if (!cb)
-                continue;
+              if (!cb) continue;
               cb(match, resp);
-              if (resp.isMatchIgnored)
-                return doIgnore(lexeme);
+              if (resp.isMatchIgnored) return doIgnore(lexeme);
             }
             if (newMode.skip) {
               modeBuffer += lexeme;
@@ -9233,8 +9193,7 @@
                 }
                 top2.matcher.lastIndex = index;
                 const match = top2.matcher.exec(codeToHighlight);
-                if (!match)
-                  break;
+                if (!match) break;
                 const beforeMatch = codeToHighlight.substring(index, match.index);
                 const processedCount = processLexeme(beforeMatch, match);
                 index = match.index + processedCount;
@@ -9303,8 +9262,7 @@
           );
           results.unshift(plaintext);
           const sorted = results.sort((a, b) => {
-            if (a.relevance !== b.relevance)
-              return b.relevance - a.relevance;
+            if (a.relevance !== b.relevance) return b.relevance - a.relevance;
             if (a.language && b.language) {
               if (getLanguage(a.language).supersetOf === b.language) {
                 return 1;
@@ -9327,8 +9285,7 @@
         function highlightElement(element) {
           let node = null;
           const language = blockLanguage(element);
-          if (shouldNotHighlight(language))
-            return;
+          if (shouldNotHighlight(language)) return;
           fire(
             "before:highlightElement",
             { el: element, language }
@@ -9393,8 +9350,7 @@
           blocks.forEach(highlightElement);
         }
         function boot() {
-          if (wantsHighlight)
-            highlightAll();
+          if (wantsHighlight) highlightAll();
         }
         if (typeof window !== "undefined" && window.addEventListener) {
           window.addEventListener("DOMContentLoaded", boot, false);
@@ -9412,8 +9368,7 @@
             }
             lang = PLAINTEXT_LANGUAGE;
           }
-          if (!lang.name)
-            lang.name = languageName;
+          if (!lang.name) lang.name = languageName;
           languages[languageName] = lang;
           lang.rawDefinition = languageDefinition.bind(null, hljs2);
           if (lang.aliases) {
@@ -9659,8 +9614,7 @@
           return "deprecations-sunset-alert";
         } else if (differenceInWeeks <= 12) {
           return "deprecations-sunset-warning";
-        } else
-          return "";
+        } else return "";
       }
       function populateSupported(apiDescription, trafficType) {
         Object.keys(apiDescription.paths).filter((path) => apiDescription.paths[path].get.deprecated !== true && !removalTextMatcher.test(apiDescription.paths[path].get.summary)).forEach((path) => addToSupportedTable({ path, swaggerLink: getSwaggerLink(apiDescription.paths[path].get, trafficType) }, trafficType));
@@ -10694,8 +10648,7 @@
       };
       for (var _i = numberOfChecks; _i > 0; _i--) {
         var _ret = _loop(_i);
-        if (_ret === "break")
-          break;
+        if (_ret === "break") break;
       }
     }
     if (state.placement !== firstFittingPlacement) {
@@ -14610,10 +14563,8 @@
     if (this.ended) {
       return false;
     }
-    if (flush_mode === ~~flush_mode)
-      _flush_mode = flush_mode;
-    else
-      _flush_mode = flush_mode === true ? Z_FINISH$2 : Z_NO_FLUSH$1;
+    if (flush_mode === ~~flush_mode) _flush_mode = flush_mode;
+    else _flush_mode = flush_mode === true ? Z_FINISH$2 : Z_NO_FLUSH$1;
     if (typeof data2 === "string") {
       strm.input = strings.string2buf(data2);
     } else if (toString$1.call(data2) === "[object ArrayBuffer]") {
@@ -14653,8 +14604,7 @@
         strm.avail_out = 0;
         continue;
       }
-      if (strm.avail_in === 0)
-        break;
+      if (strm.avail_in === 0) break;
     }
     return true;
   };
@@ -15608,6 +15558,7 @@
             hold = 0;
             bits = 0;
             state.mode = TIME;
+          /* falls through */
           case TIME:
             while (bits < 32) {
               if (have === 0) {
@@ -15630,6 +15581,7 @@
             hold = 0;
             bits = 0;
             state.mode = OS;
+          /* falls through */
           case OS:
             while (bits < 16) {
               if (have === 0) {
@@ -15651,6 +15603,7 @@
             hold = 0;
             bits = 0;
             state.mode = EXLEN;
+          /* falls through */
           case EXLEN:
             if (state.flags & 1024) {
               while (bits < 16) {
@@ -15676,6 +15629,7 @@
               state.head.extra = null;
             }
             state.mode = EXTRA;
+          /* falls through */
           case EXTRA:
             if (state.flags & 1024) {
               copy = state.length;
@@ -15712,6 +15666,7 @@
             }
             state.length = 0;
             state.mode = NAME;
+          /* falls through */
           case NAME:
             if (state.flags & 2048) {
               if (have === 0) {
@@ -15737,6 +15692,7 @@
             }
             state.length = 0;
             state.mode = COMMENT;
+          /* falls through */
           case COMMENT:
             if (state.flags & 4096) {
               if (have === 0) {
@@ -15761,6 +15717,7 @@
               state.head.comment = null;
             }
             state.mode = HCRC;
+          /* falls through */
           case HCRC:
             if (state.flags & 512) {
               while (bits < 16) {
@@ -15799,6 +15756,7 @@
             hold = 0;
             bits = 0;
             state.mode = DICT;
+          /* falls through */
           case DICT:
             if (state.havedict === 0) {
               strm.next_out = put;
@@ -15811,10 +15769,12 @@
             }
             strm.adler = state.check = 1;
             state.mode = TYPE;
+          /* falls through */
           case TYPE:
             if (flush === Z_BLOCK || flush === Z_TREES) {
               break inf_leave;
             }
+          /* falls through */
           case TYPEDO:
             if (state.last) {
               hold >>>= bits & 7;
@@ -15879,8 +15839,10 @@
             if (flush === Z_TREES) {
               break inf_leave;
             }
+          /* falls through */
           case COPY_:
             state.mode = COPY;
+          /* falls through */
           case COPY:
             copy = state.length;
             if (copy) {
@@ -15928,6 +15890,7 @@
             }
             state.have = 0;
             state.mode = LENLENS;
+          /* falls through */
           case LENLENS:
             while (state.have < state.ncode) {
               while (bits < 3) {
@@ -15957,6 +15920,7 @@
             }
             state.have = 0;
             state.mode = CODELENS;
+          /* falls through */
           case CODELENS:
             while (state.have < state.nlen + state.ndist) {
               for (; ; ) {
@@ -16074,8 +16038,10 @@
             if (flush === Z_TREES) {
               break inf_leave;
             }
+          /* falls through */
           case LEN_:
             state.mode = LEN;
+          /* falls through */
           case LEN:
             if (have >= 6 && left2 >= 258) {
               strm.next_out = put;
@@ -16157,6 +16123,7 @@
             }
             state.extra = here_op & 15;
             state.mode = LENEXT;
+          /* falls through */
           case LENEXT:
             if (state.extra) {
               n = state.extra;
@@ -16175,6 +16142,7 @@
             }
             state.was = state.length;
             state.mode = DIST;
+          /* falls through */
           case DIST:
             for (; ; ) {
               here = state.distcode[hold & (1 << state.distbits) - 1];
@@ -16225,6 +16193,7 @@
             state.offset = here_val;
             state.extra = here_op & 15;
             state.mode = DISTEXT;
+          /* falls through */
           case DISTEXT:
             if (state.extra) {
               n = state.extra;
@@ -16247,6 +16216,7 @@
               break;
             }
             state.mode = MATCH;
+          /* falls through */
           case MATCH:
             if (left2 === 0) {
               break inf_leave;
@@ -16323,6 +16293,7 @@
               bits = 0;
             }
             state.mode = LENGTH;
+          /* falls through */
           case LENGTH:
             if (state.wrap && state.flags) {
               while (bits < 32) {
@@ -16342,6 +16313,7 @@
               bits = 0;
             }
             state.mode = DONE;
+          /* falls through */
           case DONE:
             ret = Z_STREAM_END$1;
             break inf_leave;
@@ -16351,6 +16323,7 @@
           case MEM:
             return Z_MEM_ERROR$1;
           case SYNC:
+          /* falls through */
           default:
             return Z_STREAM_ERROR$1;
         }
@@ -16362,8 +16335,7 @@
     state.hold = hold;
     state.bits = bits;
     if (state.wsize || _out !== strm.avail_out && state.mode < BAD && (state.mode < CHECK || flush !== Z_FINISH$1)) {
-      if (updatewindow(strm, strm.output, strm.next_out, _out - strm.avail_out))
-        ;
+      if (updatewindow(strm, strm.output, strm.next_out, _out - strm.avail_out)) ;
     }
     _in -= strm.avail_in;
     _out -= strm.avail_out;
@@ -16531,12 +16503,9 @@
     const chunkSize = this.options.chunkSize;
     const dictionary = this.options.dictionary;
     let status, _flush_mode, last_avail_out;
-    if (this.ended)
-      return false;
-    if (flush_mode === ~~flush_mode)
-      _flush_mode = flush_mode;
-    else
-      _flush_mode = flush_mode === true ? Z_FINISH : Z_NO_FLUSH;
+    if (this.ended) return false;
+    if (flush_mode === ~~flush_mode) _flush_mode = flush_mode;
+    else _flush_mode = flush_mode === true ? Z_FINISH : Z_NO_FLUSH;
     if (toString.call(data2) === "[object ArrayBuffer]") {
       strm.input = new Uint8Array(data2);
     } else {
@@ -16581,24 +16550,21 @@
             let utf8str = strings.buf2string(strm.output, next_out_utf8);
             strm.next_out = tail;
             strm.avail_out = chunkSize - tail;
-            if (tail)
-              strm.output.set(strm.output.subarray(next_out_utf8, next_out_utf8 + tail), 0);
+            if (tail) strm.output.set(strm.output.subarray(next_out_utf8, next_out_utf8 + tail), 0);
             this.onData(utf8str);
           } else {
             this.onData(strm.output.length === strm.next_out ? strm.output : strm.output.subarray(0, strm.next_out));
           }
         }
       }
-      if (status === Z_OK && last_avail_out === 0)
-        continue;
+      if (status === Z_OK && last_avail_out === 0) continue;
       if (status === Z_STREAM_END) {
         status = inflate_1$2.inflateEnd(this.strm);
         this.onEnd(status);
         this.ended = true;
         return true;
       }
-      if (strm.avail_in === 0)
-        break;
+      if (strm.avail_in === 0) break;
     }
     return true;
   };
@@ -16620,8 +16586,7 @@
   function inflate$1(input, options) {
     const inflator = new Inflate$1(options);
     inflator.push(input);
-    if (inflator.err)
-      throw inflator.msg || messages[inflator.err];
+    if (inflator.err) throw inflator.msg || messages[inflator.err];
     return inflator.result;
   }
   function inflateRaw$1(input, options) {
