@@ -185,7 +185,8 @@ vessels-v2/<mmsi>/metadata   # Single vessel metadata
 ***NOTE:*** the timestamp in the metadata message is in milliseconds while in the location message it is in
 seconds.
 
-See also AIS data field descriptions in Swagger: https://meri.digitraffic.fi/swagger/#/AIS%20V1
+See also AIS data field descriptions in
+Swagger: [https://meri.digitraffic.fi/swagger/#/AIS%20V1](https://meri.digitraffic.fi/swagger/#/AIS%20V1)
 
 #### Vessel metadata -message
 

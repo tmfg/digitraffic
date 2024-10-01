@@ -189,9 +189,12 @@ vessels-v2/<mmsi>/metadata  # Yhden aluksen metadata
 
 ***HUOM:*** metadataviestissä aikaleima on millisekunteina kun taas sijaintiviestissä se on sekunteina.
 
-Ks. AIS-datan kenttien kuvaukset Swaggerista: https://meri.digitraffic.fi/swagger/#/AIS%20V1
+Ks. AIS-datan kenttien kuvaukset
+Swaggerista: [https://meri.digitraffic.fi/swagger/#/AIS%20V1](https://meri.digitraffic.fi/swagger/#/AIS%20V1)
 
 #### Aluksen metadata -viesti
+
+’
 
 ```
 {
