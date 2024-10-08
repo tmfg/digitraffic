@@ -12,9 +12,9 @@ title: Rautatieliikenne
 intro: Junien aikataulut, toteumatiedot, sijainnit ja kokoonpanot.
 links:
 
-- ["Väylävirasto", "https://vayla.fi"]
-- ["Fintraffic", "https://fintraffic.fi"]
-- ["Swagger", "https://rata.digitraffic.fi/swagger/"]
+    - [ "Väylävirasto", "https://vayla.fi" ]
+    - [ "Fintraffic", "https://fintraffic.fi" ]
+    - [ "Swagger", "https://rata.digitraffic.fi/swagger/" ]
 
 ---
 
@@ -469,12 +469,12 @@ Palauttaa yhden junan tiedot
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-| --- | --- | --- | --- | ---
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja.
-|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.
-|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_deleted | boolean | false | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi            | Formaatti        | Esimerkki    | Selitys                                                                                                                                                                                                                                                                                                                                                                                         
+|--------------------------------------------------------------------|-----------------|------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | train_number    | 1-99999          | 1, 3402      | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.                                                                                                                                                                                                                                                                                                                                       
+| ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departure_date  | date(yyyy-mm-dd) | 2017-01-01   | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos parametriksi annetaan "latest", pyritään päättelemään juna joka on lähinnä nykyhetkeä. Päättely tehdään siten, että haetaan kaikki junanumeron junat lähipäiviltä ja etsitään nykyhetkeä lähinnä oleva aikataulurivi (rajauksella 4 tuntia taaksepäin, 16 tuntia eteenpäin. Vertailussa käytetään aikataulurivien suunnitteltuja aikoja. 
+| ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version         | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos.                                                                                                                                                                                                                                                                                                  
+| ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_deleted | boolean          | false        | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false                                                                                                                                                                                                                                                                                                                               
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -495,10 +495,10 @@ Palauttaa kaikki junat halutulta lähtöpäivämäärältä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki |
-| --- | --- | --- | ---
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date (yyyy-mm-dd) | 2017-01-01
-|  ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_deleted | boolean | false | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi            | Formaatti         | Esimerkki  |
+|--------------------------------------------------------------------|-----------------|-------------------|------------
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | departure_date  | date (yyyy-mm-dd) | 2017-01-01 
+| ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_deleted | boolean           | false      | Palautetaanko vastauksessa myös poistetut junat. Oletuksena false
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -520,9 +520,9 @@ junaan.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-| --- | --- | --- | --- | ---
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | version | positive integer | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmalla versionumerolla muuttuneet junat.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi    | Formaatti        | Esimerkki    | Selitys                                                                                                                                                                     
+|--------------------------------------------------------------------|---------|------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmalla versionumerolla muuttuneet junat. 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -581,10 +581,10 @@ Palauttaa junan kaikki versiot. Historiatietoa säilytetään tallessa 14 päiv�
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-| --- | --- | --- | --- | ---
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. 
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti        | Esimerkki  | Selitys                                                   
+|-----------------------------------------------------------------|----------------|------------------|------------|-----------------------------------------------------------
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number   | 1-99999          | 1, 3402    | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59. 
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa.        
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -626,16 +626,16 @@ voidaan palauttaa myös junat, jotka ajavat aseman ohi pysähtymättä.
 Versionumerohaulla ei palauteta junasta tietoa, mikäli junan tiedot eivät ole muuttuneet kyselyiden välillä.
 Tämä tarkoittaa, että tulosjoukon koko voi olla tällöin pienempi.
 
-| | Nimi | Formaatti | Oletusarvo | Esimerkki | Selitys 
-|---|---|---|---|---|---|
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | station | string |   | "HKI" | Aseman lyhenne. Esimerkiksi HKL, TPE, PSL. Lista lyhenteistä löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | arrived_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta saapunutta junaa palautetaan maksimissaan.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | arriving_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta saapuvaa junaa palautetaan maksimissaan.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departed_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta lähtenyttä junaa palautetaan maksimissaan.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | departing_trains | positive integer, 1-600 | 5 | 20 | Kuinka monta lähtevää junaa palautetaan maksimissaan.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping | true/false | false | true | Palautetaanko aseman ohi pysähtymättä ajavat junat.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_categories | string |  | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajaus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+|                                                                    | Nimi                | Formaatti               | Oletusarvo | Esimerkki              | Selitys                                                                                                                                       
+|--------------------------------------------------------------------|---------------------|-------------------------|------------|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | station             | string                  |            | "HKI"                  | Aseman lyhenne. Esimerkiksi HKL, TPE, PSL. Lista lyhenteistä löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).           
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | arrived_trains      | positive integer, 1-600 | 5          | 20                     | Kuinka monta saapunutta junaa palautetaan maksimissaan.                                                                                       
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | arriving_trains     | positive integer, 1-600 | 5          | 20                     | Kuinka monta saapuvaa junaa palautetaan maksimissaan.                                                                                         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departed_trains     | positive integer, 1-600 | 5          | 20                     | Kuinka monta lähtenyttä junaa palautetaan maksimissaan.                                                                                       
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departing_trains    | positive integer, 1-600 | 5          | 20                     | Kuinka monta lähtevää junaa palautetaan maksimissaan.                                                                                         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping | true/false              | false      | true                   | Palautetaanko aseman ohi pysähtymättä ajavat junat.                                                                                           
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_categories    | string                  |            | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version             | positive integer        |            | 159123295871           | Versiorajaus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot. 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -652,6 +652,9 @@ Esimerkkejä:
 
 - [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15](https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15)
 - [/live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15&train_categories=Commuter](https://rata.digitraffic.fi/api/v1//live-trains/station/HKI?minutes_before_departure=15&minutes_after_departure=15&minutes_before_arrival=15&minutes_after_arrival=15&train_categories=Commuter)
+
+![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Aikaväliä rajoittavia parametrejä käytettäessä on
+kaikille niistä annettava arvo, jotta rajoitus toimii.
 
 **Kuvaus**
 
@@ -671,16 +674,16 @@ versionumeron.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Oletusarvo | Esimerkki | Selitys
-|---|---|---|---|---|---
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | station | string |   | "HKI" | Aseman lyhenne. Esimerkiksi HKL, TPE, PSL. Lista lyhenteistä löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | minutes_before_departure | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään ennen sen lähtöä.
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| minutes_after_departure | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään sen lähdön jälkeen.
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| minutes_before_arrival | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään ennen sen saapumista.
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| minutes_after_arrival | positive integer, 0-1440 |  | 20 | Kuinka monta minuuttia juna näytetään sen saapumisen jälkeen.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping | true/false | false | true | Palautetaanko aseman ohi pysähtymättä ajavat junat.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_categories | string |  | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer |   | 159123295871 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi                     | Formaatti                | Oletusarvo | Esimerkki              | Selitys                                                                                                                                                                
+|--------------------------------------------------------------------|--------------------------|--------------------------|------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | station                  | string                   |            | "HKI"                  | Aseman lyhenne. Esimerkiksi HKL, TPE, PSL. Lista lyhenteistä löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).                                    
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | minutes_before_departure | positive integer, 0-1440 |            | 20                     | Kuinka monta minuuttia juna näytetään ennen sen lähtöä. Aikaväliä rajoittavia parametrejä käytettäessä on kaikille niistä annettava arvo, jotta rajoitus toimii.       
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | minutes_after_departure  | positive integer, 0-1440 |            | 20                     | Kuinka monta minuuttia juna näytetään sen lähdön jälkeen. Aikaväliä rajoittavia parametrejä käytettäessä on kaikille niistä annettava arvo, jotta rajoitus toimii.     
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | minutes_before_arrival   | positive integer, 0-1440 |            | 20                     | Kuinka monta minuuttia juna näytetään ennen sen saapumista. Aikaväliä rajoittavia parametrejä käytettäessä on kaikille niistä annettava arvo, jotta rajoitus toimii.   
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | minutes_after_arrival    | positive integer, 0-1440 |            | 20                     | Kuinka monta minuuttia juna näytetään sen saapumisen jälkeen. Aikaväliä rajoittavia parametrejä käytettäessä on kaikille niistä annettava arvo, jotta rajoitus toimii. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping      | true/false               | false      | true                   | Palautetaanko aseman ohi pysähtymättä ajavat junat.                                                                                                                    
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_categories         | string                   |            | Commuter,Long-distance | Junalaji-rajaus pilkulla eroteltuna. Lista junalajeista löytyy [täältä](https://rata.digitraffic.fi/api/v1/metadata/train-categories)                                  
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version                  | positive integer         |            | 159123295871           | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.                        
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -708,15 +711,15 @@ avulla voidaan palauttaa myös junat, jotka ajavat asemien ohi pysähtymättä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selite
-|---|---|---|--- |--- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_station | string | "HKI" | Lähtöaseman lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | arrival_station | string | "RI" | Määränpääaseman lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Päivämäärä jolta junia haetaan. Jos lähtöpäivämäärä on tyhjä, etsitään seuraavan 24 tunnin aikana lähteviä junia.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | startDate | datetime(ISO 8601) | 2017-01-01T23:28:59.564Z | departure_date päivämäärän sijasta voidaan määritellä aikaväli, jolta junia haetaan. Tämä parametri määrittelee aikavälin alun. Päivämääräväliä verrataan junan aikataulun mukaisen lähtöaikaan reittihaun lähtöasemalta.
- ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| endDate | datetime(ISO 8601) | 2017-01-01T23:28:59.564Z | Tämä parametri määrittelee aikavälin lopun. Jos tämä parametri jätetään tyhjäksi, haetaan junia seuraavalle 24 tunnille asti.
- ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| limit | positive integer | 15 | Rajaa palautettavien junien määrää. Oletusarvo on 1000.
- ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| include_nonstopping | true/false | false | Palautetaanko aseman ohi pysähtymättä ajavat junat.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi                | Formaatti          | Esimerkki                | Selite                                                                                                                                                                                                                    
+|--------------------------------------------------------------------|---------------------|--------------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | departure_station   | string             | "HKI"                    | Lähtöaseman lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).                                                                                                               
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | arrival_station     | string             | "RI"                     | Määränpääaseman lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations).                                                                                                           
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | departure_date      | date(yyyy-mm-dd)   | 2017-01-01               | Päivämäärä jolta junia haetaan. Jos lähtöpäivämäärä on tyhjä, etsitään seuraavan 24 tunnin aikana lähteviä junia.                                                                                                         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | startDate           | datetime(ISO 8601) | 2017-01-01T23:28:59.564Z | departure_date päivämäärän sijasta voidaan määritellä aikaväli, jolta junia haetaan. Tämä parametri määrittelee aikavälin alun. Päivämääräväliä verrataan junan aikataulun mukaisen lähtöaikaan reittihaun lähtöasemalta. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | endDate             | datetime(ISO 8601) | 2017-01-01T23:28:59.564Z | Tämä parametri määrittelee aikavälin lopun. Jos tämä parametri jätetään tyhjäksi, haetaan junia seuraavalle 24 tunnille asti.                                                                                             
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | limit               | positive integer   | 15                       | Rajaa palautettavien junien määrää. Oletusarvo on 1000.                                                                                                                                                                   
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | include_nonstopping | true/false         | false                    | Palautetaanko aseman ohi pysähtymättä ajavat junat.                                                                                                                                                                       
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -743,9 +746,9 @@ jollain liikennepaikalla) hetkestä on kulunut alle 4 tuntia nykyhetkeen verratt
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-  |---|---|---|--- |--- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi    | Formaatti        | Esimerkki  | Selitys                                                                                                                                         
+  |-----------------------------------------------------------------|---------|------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki junat, jotka ovat muuttuneet sitten version-version. Jos versionumeroa ei anneta, palautetaan uusimmat tiedot. 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -786,9 +789,9 @@ URL: `/train-locations/latest?bbox=<points>`
 
 Palauttaa kaikkien junien GPS-tiedot, jotka ovat olleet aktiivisia viimeisen 15 minuutin sisällä.
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti                                                                                 | Esimerkki | Selitys
-|---|---|-------------------------------------------------------------------------------------------|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi | Formaatti                                                                                         | Esimerkki                                | Selitys                                                                                                                                                  
+|--------------------------------------------------------------------|------|---------------------------------------------------------------------------------------------------|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -813,11 +816,11 @@ Palauttaa junan GPS-sijainnit lähtöpäivänä.
 Mikäli lähtöpäivänä käytetään arvoa "latest" palautetaan GPS-sijainti, joka on päivittynyt viimeisen 15
 minuutin sisällä.
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-|---|---|---|---|---
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 	1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi           | Formaatti                                                                                         | Esimerkki                                | Selitys                                                                                                                                                                              
+|--------------------------------------------------------------------|----------------|---------------------------------------------------------------------------------------------------|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | train_number   | 1-99999                                                                                           | 	1                                       | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.                                                                                                                            
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | departure_date | date(yyyy-mm-dd)                                                                                  | 2017-01-01                               | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-locations/latest/1), palautetaan uusin, vähintään 15 minuutin sisällä päivittynyt GPS-sijainti. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | bbox           | 4 numeroa: [`vasen ala long (x)`, `vasen ala lat (y)`, `oikea ylä long (x)`, `oikea ylä lat (y)`] | 	24.896417,60.149976,24.980804,60.190234 | 	Maantieteellinen rajaus WSG84-koordinaateilla. Kahdesta ensimmäisestä ja kahdesta viimeisestä numerosta muodostetaan rajausneliön määrittelevät pisteet                             
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -886,9 +889,9 @@ Maksimissaan palautetaan 2500 kulkutietoviestiä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-|---|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan. Jos versionumeroa ei anneta, palautetaan kulkutietoviestit uusimmalla versionumerolla
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi    | Formaatti        | Esimerkki  | Selitys                                                                                                                                          
+|--------------------------------------------------------------------|---------|------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versionumero, jota uudemmat kulkutietoviestit palautetaan. Jos versionumeroa ei anneta, palautetaan kulkutietoviestit uusimmalla versionumerolla 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -913,11 +916,11 @@ palautua "eilisen" kulkutietoviestejä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-|---|---|---|--- |--- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1, 3402 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | version | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos. Jos tyhjä, ei tehdä versiorajoitusta.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi           | Formaatti        | Esimerkki    | Selitys                                                                                                                                                                                                                                       
+|--------------------------------------------------------------------|----------------|------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | train_number   | 1-99999          | 1, 3402      | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.                                                                                                                                                                                     
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | departure_date | date(yyyy-mm-dd) | 2017-01-01   | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Jos arvo on "latest" (esim. train-tracking/latest/1) , palauttaa uusimman lähdön kulkutietoviestejä. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää +1..-1 päivän rajauksella. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version        | positive integer | 159123295871 | Versiorajoitus. Jos juna ei ole muuttunut sitten määritellyn version, palautetaan tyhjä tulos. Jos tyhjä, ei tehdä versiorajoitusta.                                                                                                          
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -942,10 +945,10 @@ palautua "eilisen" kulkutietoviestejä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-|---|---|---|--- |--- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})  | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti        | Esimerkki  | Selitys                                                                                                                                                             
+|-----------------------------------------------------------------|----------------|------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | station        | string           | "HKI"      | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)                                                       
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -974,12 +977,12 @@ palautua "eilisen" kulkutietoviestejä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-|---|---|---|--- |--- 
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| track_section | string | "001" | Liikennepaikan raideosuuden lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä.
- ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | limit | positive integer | 100 | Kuinka monta uusinta kulkutietoviestiä kyselyssä palautetaan. Maksimiarvo 1000. Tämä rajaus poissulkee departure_date-rajauksen. Jos departure_date- tai limit-rajoitusta ei anneta, käytetään limit-rajoitusta.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi           | Formaatti         | Esimerkki  | Selitys                                                                                                                                                                                                                                                         
+|--------------------------------------------------------------------|----------------|-------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | station        | string            | "HKI"      | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)                                                                                                                                                   
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | track_section  | string            | "001"      | Liikennepaikan raideosuuden lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)                                                                                                                                      
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutietoviestiin liittyvän Junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutietoviestit ilman lähtöpäivämäärää hakuparametria seuraavalta päivältä kello 16:00 asti. Jos arvo on "latest", palautetaan uusimpia kulkutietoviestejä. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | limit          | positive integer  | 100        | Kuinka monta uusinta kulkutietoviestiä kyselyssä palautetaan. Maksimiarvo 1000. Tämä rajaus poissulkee departure_date-rajauksen. Jos departure_date- tai limit-rajoitusta ei anneta, käytetään limit-rajoitusta.                                                
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1007,9 +1010,9 @@ Palauttaa yksittäisen junan kokoonpanotiedot tiettynä päivämääränä.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Selitys|
-|---|---|---|--- 
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti        | Selitys    |
+|-----------------------------------------------------------------|----------------|------------------|------------ 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number   | 1-99999          | 1          | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
@@ -1031,9 +1034,9 @@ Palauttaa junien kokoonpanotiedot halutulta vuorokaudelta.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki
-|---|---|---|--- 
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})|departure_date|date(yyyy-mm-dd)|2017-01-01
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti        | Esimerkki  
+|-----------------------------------------------------------------|----------------|------------------|------------ 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1058,9 +1061,9 @@ Palauttaa [Kokoonpanot](#kokoonpanot)-tyyppisen vastauksen.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-  |---|---|---|--- |--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kokoonpanot, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kokoonpano.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi    | Formaatti        | Esimerkki  | Selitys                                                                                                                                          
+  |--------------------------------------------------------------------|---------|------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kokoonpanot, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kokoonpano. 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1086,9 +1089,9 @@ Palauttaa junan kokoonpanojen kaikki versiot. Historiatietoa säilytetään tall
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Selitys|
-|---|---|---|--- 
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti        | Selitys    |
+|-----------------------------------------------------------------|----------------|------------------|------------ 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number   | 1-99999          | 1          | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
@@ -1121,9 +1124,9 @@ nousevasti.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi | Formaatti | Esimerkki | Selitys
-  |---|---|---|--- |--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kulkutievaraukset, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kulkutievaraus.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi    | Formaatti        | Esimerkki  | Selitys                                                                                                                                                    
+  |--------------------------------------------------------------------|---------|------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | version | positive integer | 6403053026 | Versiorajoitus. Palauttaa kaikki kulkutievaraukset, jotka ovat muuttuneet sitten `version`. Jos versionumeroa ei anneta, palautetaan uusin kulkutievaraus. 
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1141,9 +1144,9 @@ ja `sectionOrder`-kentän mukaan
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number | 1-99999 | 1 | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti        | Esimerkki  |
+|-----------------------------------------------------------------|----------------|------------------|------------ 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | train_number   | 1-99999          | 1          | Junan numero. Esimerkiksi junan "IC 59" junanumero on 59.
  ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date(yyyy-mm-dd) | 2017-01-01 | Lähtöpäivämäärä
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
@@ -1165,10 +1168,10 @@ Palauttaa liikennepaikan kulkutievaraukset.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| station | string | "HKI" | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
- ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutievaraukseen liittyvän junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutievaraukset ilman lähtöpäivämäärää ajalta 00:00 - 24:00.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                        | Nimi           | Formaatti         | Esimerkki  |
+|-----------------------------------------------------------------|----------------|-------------------|------------ 
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | station        | string            | "HKI"      | Liikennepaikan lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations)
+ ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) | departure_date | date (yyyy-mm-dd) | 2017-01-01 | Kulkutievaraukseen liittyvän junan ensimmäisen lähdön päivämäärä Suomen ajassa. Palauttaa lisäksi kulkutievaraukset ilman lähtöpäivämäärää ajalta 00:00 - 24:00.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1201,12 +1204,12 @@ Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| state | string | "ACTIVE" | Ilmoituksen tila, arvot: SENT, ACTIVE, PASSIVE, FINISHED. Oletusarvo ACTIVE.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi   | Formaatti | Esimerkki                |
+|--------------------------------------------------------------------|--------|-----------|-------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | state  | string    | "ACTIVE"                 | Ilmoituksen tila, arvot: SENT, ACTIVE, PASSIVE, FINISHED. Oletusarvo ACTIVE.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | schema | boolean   | true                     | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | start  | date      | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | end    | date      | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1222,10 +1225,10 @@ Palauttaa aikavälille osuvien ilmoituksen tunnisteet ja uusimmat versiot.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi  | Formaatti | Esimerkki                |
+|--------------------------------------------------------------------|-------|-----------|-------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | start | date      | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | end   | date      | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1245,9 +1248,9 @@ Palauttaa tietyn ilmoituksen kaikki versiot.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi   | Formaatti | Esimerkki |
+|--------------------------------------------------------------------|--------|-----------|----------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | schema | boolean   | true      | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1263,9 +1266,9 @@ Palauttaa tietyn ilmoituksen tietyn version.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi   | Formaatti | Esimerkki |
+|--------------------------------------------------------------------|--------|-----------|----------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | schema | boolean   | true      | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1288,12 +1291,12 @@ Aikavälille osuvasta ilmoituksesta palautetaan aina uusin versio.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| state | string | "ACTIVE" | Liikenteen ilmoituksen tila, arvot: SENT, FINISHED. Oletusarvo SENT.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi   | Formaatti | Esimerkki                |
+|--------------------------------------------------------------------|--------|-----------|-------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | state  | string    | "ACTIVE"                 | Liikenteen ilmoituksen tila, arvot: SENT, FINISHED. Oletusarvo SENT.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | schema | boolean   | true                     | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | start  | date      | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | end    | date      | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1309,10 +1312,10 @@ Palauttaa aikavälille osuvien ilmoitusten tunnisteet ja uusimmat versiot.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| start | date | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| end | date | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi  | Formaatti | Esimerkki                |
+|--------------------------------------------------------------------|-------|-----------|-------------------------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | start | date      | 2019-01-01T00:00:00.000Z | Aikavälin alku. Oletusarvo nykyhetki - 7 päivää.
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | end   | date      | 2019-02-04T00:00:00.000Z | Aikavälin loppu. Oletusarvo nykyhetki.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1332,9 +1335,9 @@ Palauttaa tietyn ilmoituksen kaikki versiot.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi   | Formaatti | Esimerkki |
+|--------------------------------------------------------------------|--------|-----------|----------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | schema | boolean   | true      | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1350,9 +1353,9 @@ Palauttaa tietyn ilmoituksen tietyn version.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;|Nimi|Formaatti|Esimerkki|
-|---|---|---|--- 
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})| schema | boolean | true | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi   | Formaatti | Esimerkki |
+|--------------------------------------------------------------------|--------|-----------|----------- 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | schema | boolean   | true      | Näytetäänkö ilmoituksen kaaviosijainnit? Oletusarvo false.
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1536,12 +1539,12 @@ ja `endValidity` tulevaisuudessa.
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi                 | Formaatti        | Esimerkki  | Selitys
-| --- |----------------------|------------------|------------| ---
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | station              | string           | HKI        | Aseman (liikennepaikan) lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations). Palauttaa asemaan liittyvät tiedotteet.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_number         | 1-99999          | 7          | Palauttaa annettuun junanumeroon liittyvät tiedotteet.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_departure_date | date(YYYY-MM-DD) | 2023-10-20 | Palauttaa annettuna päivämääränä lähteviin juniin liittyvät tiedotteet.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | only_general         | boolean          | true       | Palauttaa vain "yleiset" tiedotteet (jotka eivät liity tiettyyn junaan vaan ainoastaan asemaan/asemiin). Oletusarvo `false`.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi                 | Formaatti        | Esimerkki  | Selitys                                                                                                                                                         
+|--------------------------------------------------------------------|----------------------|------------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | station              | string           | HKI        | Aseman (liikennepaikan) lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations). Palauttaa asemaan liittyvät tiedotteet. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_number         | 1-99999          | 7          | Palauttaa annettuun junanumeroon liittyvät tiedotteet.                                                                                                          
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_departure_date | date(YYYY-MM-DD) | 2023-10-20 | Palauttaa annettuna päivämääränä lähteviin juniin liittyvät tiedotteet.                                                                                         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | only_general         | boolean          | true       | Palauttaa vain "yleiset" tiedotteet (jotka eivät liity tiettyyn junaan vaan ainoastaan asemaan/asemiin). Oletusarvo `false`.                                    
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
@@ -1566,14 +1569,14 @@ luontiaika, jolloin toisin sanoen rajapinta palauttaa ne tiedotteet, jotka ovat 
 
 **Hakuehdot**
 
-|&nbsp;&nbsp;&nbsp;&nbsp;| Nimi                 | Formaatti        | Esimerkki             | Selitys
-| --- |----------------------|------------------|-----------------------| ---
-| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})| date                 | date(ISO 8601)   | 2023-10-20T13:00+0300 |
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | station              | string           | HKI                   | Aseman (liikennepaikan) lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations). Palauttaa asemaan liittyvät tiedotteet.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_number         | 1-99999          | 7                     | Palauttaa annettuun junanumeroon liittyvät tiedotteet.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | train_departure_date | date(YYYY-MM-DD) | 2023-10-20            | Palauttaa annettuna päivämääränä lähteviin juniin liittyvät tiedotteet.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | only_general         | boolean          | true                  | Palauttaa "yleiset" tiedotteet (jotka eivät liity tiettyyn junaan vaan ainoastaan asemaan/asemiin). Oletusarvo `false`.
-![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }})  | only_active          | boolean          | true                  | Mikäli arvo on `false`, palauttaa myös ei-voimassaolevat tiedotteet. Oletusarvo `true`.
+| &nbsp;&nbsp;&nbsp;&nbsp;                                           | Nimi                 | Formaatti        | Esimerkki             | Selitys                                                                                                                                                         
+|--------------------------------------------------------------------|----------------------|------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }})    | date                 | date(ISO 8601)   | 2023-10-20T13:00+0300 |
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | station              | string           | HKI                   | Aseman (liikennepaikan) lyhenne. Lyhennekoodit löytyvät [täältä](https://rata.digitraffic.fi/api/v1/metadata/stations). Palauttaa asemaan liittyvät tiedotteet. 
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_number         | 1-99999          | 7                     | Palauttaa annettuun junanumeroon liittyvät tiedotteet.                                                                                                          
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | train_departure_date | date(YYYY-MM-DD) | 2023-10-20            | Palauttaa annettuna päivämääränä lähteviin juniin liittyvät tiedotteet.                                                                                         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | only_general         | boolean          | true                  | Palauttaa "yleiset" tiedotteet (jotka eivät liity tiettyyn junaan vaan ainoastaan asemaan/asemiin). Oletusarvo `false`.                                         
+ ![vapaaehtoinen]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) | only_active          | boolean          | true                  | Mikäli arvo on `false`, palauttaa myös ei-voimassaolevat tiedotteet. Oletusarvo `true`.                                                                         
 
 ![pakollinen]({{ site.baseurl }}{{ "/img/rata/required.png" }}) Pakollinen ![vapaaehtoinen]({{ site.baseurl
 }}{{ "/img/rata/optional.png" }}) Vapaaehtoinen
