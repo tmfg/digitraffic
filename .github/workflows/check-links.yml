@@ -30,6 +30,7 @@ jobs:
             https://www.facebook.com/FintrafficFI, 
             https://liipi.hsl.fi/hubs
             https://www.gnu.org/software/wget/
+            https://liikenne.palautevayla.fi/feedback
       - name: Notify Slack
         if: failure()
         uses: 8398a7/action-slack@v3
