@@ -13,6 +13,7 @@ jobs:
         with:
           paths: https://www.digitraffic.fi
           concurrency: 5
+          timeout: 10000
           recurse: true
           markdown: true
           # YAML multiline without linebreaks
