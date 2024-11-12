@@ -9,4 +9,4 @@ status: valmis
 date: 2019-11-26
 ---
 
-Palauteväylän palautteiden jakaminen Open311-määrittelyn mukaisista rajapinnoista.  Lisätietoa palauteväylästä osoitteessa [https://liikenne.palautevayla.fi/feedbacks](https://liikenne.palautevayla.fi/feedbacks)
+Palauteväylän palautteiden jakaminen Open311-määrittelyn mukaisista rajapinnoista.  Lisätietoa palauteväylästä osoitteessa [https://liikenne.palautevayla.fi/feedback](https://liikenne.palautevayla.fi/feedback)
