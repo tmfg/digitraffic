@@ -4,7 +4,7 @@ intro: Tässä.fi on mobiili paikallisopas, jonka avulla löydät nopeasti kaupp
 logo: tassa/tassa-logo.png
 developer:
   - Adfore Technologies Oy
-  - https://mitäs.tässä.fi
+  - https://www.adfore.com/
 traffictypes: 
   - Tieliikenne
 environments:
