@@ -10,3 +10,5 @@ date: 2023-03-01
 ---
 
 Olemme tuomassa HSL:n [Liityntäpysäköinti](https://liipi.hsl.fi/hubs) -palvelun osaksi Digitrafficia. Palvelu tulee olemaan Digitrafficin ylläpitämä tulevan syksyn aikana.
+
+Uusi sivu löytyy osoiteesta https://parking.fintraffic.fi
