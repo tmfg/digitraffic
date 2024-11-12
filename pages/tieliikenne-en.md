@@ -119,20 +119,17 @@ Response message contains latest weather measurement data.
 Data is updated almost in real time but information is cached. Actual update interval is one minute.
 Real time data can be read from WebSocket.
 
-#### Sensor history for the last 24 hours (Beta)
+#### Sensor history for the last 24 hours
 
 Sensor history from the weather road station can be fetched by API call:
 
-[```/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+[```/api/weather/v1/stations/{id}/data/history```](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history){:target="_blank"}
 
 Single sensor history can be fetched by API call:
 
-[```/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057/1){:target="_blank"}
+[```/api/weather/v1/stations/1001/data/history?sensorId={sensorId}```](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history?sensorId=1){:target="_blank"}
 
-Time interval can be adjusted with from={ISO 8061 -time} and to={ISO 8061 -time} parameters.
-
-History for the last 24 hours is currently only in beta-API.
-
+Time interval can be adjusted with `from={ISO 8061 time}` and `to={ISO 8061 time}` parameters. By default last hour is returned.
 
 ### Current road weather forecasts
 

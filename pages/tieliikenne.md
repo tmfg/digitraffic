@@ -119,20 +119,17 @@ Viesti sisältää tiesääasemien viimeisimmät antureiden mittaustiedot.
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
-#### Viimeisen 24h historia (Beta)
+#### Viimeisen 24h historia
 
 Halutun tiesääaseman kaikkien anturien datan saa rajapinnasta:
 
-[```/api/beta/weather-history-data/{stationId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/4057){:target="_blank"}
+[```/api/weather/v1/stations/{id}/data/history```](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history){:target="_blank"}
 
 Yksittäisen anturin datan saa rajapinnasta:
 
-[```/api/beta/weather-history-data/{stationId}/{sensorId}```](https://tie.digitraffic.fi/api/beta/weather-history-data/1012/1){:target="_blank"}
+[```/api/weather/v1/stations/1001/data/history?sensorId={sensorId}```](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history?sensorId=1){:target="_blank"}
 
-Molempiin kyselyihin on mahdollista rajata ajanhetkeä from={ISO 8061 -aika} ja to={ISO 8061 -aika} parametreillä. Oletuksena ilman from-parametriä kyselyt palauttavat vain viimeisimmän tunnin datan.
-
-24h historia on vielä tarjolla vain beta-rajapintana.
-
+Molempiin kyselyihin on mahdollista rajata ajanhetkeä `from={ISO 8061 -aika}` ja `to={ISO 8061 -aika}` parametreillä. Oletuksena ilman from-parametriä kyselyt palauttavat vain viimeisimmän tunnin datan.
 
 ### Ajantasaiset tiejaksojen keliennusteet
 
