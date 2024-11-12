@@ -15,7 +15,8 @@ jobs:
           concurrency: 5
           recurse: true
           markdown: true
-          linksToSkip: >- # YAML multiline without linebreaks 
+          # YAML multiline without linebreaks
+          linksToSkip: >-  
             https://jsfiddle.net, 
             ^https://www.digitraffic.fi/tiedotteet/(2017|2018|2019|2020|2021|2022)/, 
             ^https://www.digitraffic.fi/en/news/(2017|2018|2019|2020|2021|2022)/, 
