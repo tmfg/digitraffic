@@ -4,8 +4,8 @@ lang: fi
 ref: bussikorvaus-sektorointi
 issue-number: DPO-2666
 traffictypes:
-  - Rautatieliikenne
-status: suunnitteilla
+    - Rautatieliikenne
+status: toteutuksessa
 date: 2024-08-16
 ---
 
