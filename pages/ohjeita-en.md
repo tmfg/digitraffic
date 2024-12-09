@@ -36,11 +36,16 @@ If you want to be contact for e.g. excessive request amount, please sign up on o
 
 ### Digitraffic-User
 
-The Digitraffic-User header should include an identifiable user party and/or application. Below you can find examples.
+The Digitraffic-User header should include an identifiable user party and/or application. Using the header increases the
+amount of requests you can make. See [Restricting requests](#restricting-requests). Below you can find examples.
 
 `Digitraffic-User: Fintraffic`  
 `Digitraffic-User: Liikennetilanne`  
 `Digitraffic-User: Fintraffic/Liikennetilanne`
+
+#### NOTE!
+
+Do **not** send any personal information, such as a person's name or email address, in the header!
 
 #### Examples
 ```bash
@@ -112,13 +117,16 @@ The documentation of each API explains how often each interface content is updat
 
 **Restrictions:**  
 
-| **Target / interface**      | **Max requests / min** | **Key**
-|-----------------------|-------------------|-------------|
-| **General restriction**       | 60            | IP + URL
-| **MQTT**                      | 5             | IP
-| **Weather camera images**     | 6000 / 5 min  | IP
-| **tie/meri.digitraffic.fi V1-interfaces**     | &infin;                 |
-| **infra- and jeti-api**                       | &infin;                 |
+The restrictions listed in the table below are for request without the [Digitraffic-User header](#digitraffic-user).
+You can make more requests when the header is set.
+
+| **Target / interface**      | **Max requests / min** | **Key** |
+|-----------------------|------------------------|-------------|
+| **General restriction**       | 120                    | IP |
+| **MQTT**                      | 5                      | IP |
+| **Weather camera images**     | 120                    | IP |
+| **tie/meri.digitraffic.fi V1-interfaces**     | 120                    | IP |
+| **infra- and jeti-api**                       | 120                    | IP |
 
 
 # Cache

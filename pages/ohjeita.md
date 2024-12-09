@@ -30,7 +30,8 @@ sovelluksessa kehittäjälle tai ylläpitäjälle. Mikäli haluat että sinuun o
 
 ### Digitraffic-User -otsikko
 
-Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/tai sovellus. Alla esimerkkejä.
+Digitraffic-User -otsikon tulisi sisältää tunnistettava käyttäjätaho ja/tai sovellus. Otsikon käyttö mahdollistaa kyselyjen
+tekemisen tiheämpään kuin ilman sitä. Katso [rajoitukset](#pyyntöjen-rajoittaminen). Alla esimerkkejä.
 
 `Digitraffic-User: TMFG`  
 `Digitraffic-User: Liikennetilanne`  
@@ -108,17 +109,20 @@ wget --header='Accept-Encoding: gzip'
 
 Turhien ja liiallisten kyselyjen aiheuttaman kuormituksen vähentämiseksi rajapinnoissa on käytössä pyyntöjen määrän rajoitus. 
 Kun pyyntöjen määrä ylittää asetetun raja-arvon, palvelu palauttaa virhekoodin `429`. 
-Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö päivittyy.  
+Sivuston dokumentaatiossa kerrotaan, kuinka usein kunkin rajapinnan sisältö päivittyy.
 
-**Käyttörajoitukset:**  
+**Käyttörajoitukset:**
+
+Taulukossa olevat rajoitukset koskevat kyselyitä, joissa ei ole [Digitraffic-User otsikkoa](#digitraffic-user--otsikko) 
+mukana. Kyselyitä voi tehdä huomattavasti enemmän, jos otsikko on kyselyissä mukana.
 
 | **Kohde / rajapinta**         | **Max kpl / min** | **Rajaus**  |
 |-----------------------|-------------------|-------------|
-| **Yleisrajoitus**             | 60                | IP + URL
-| **MQTT**                      | 5                 | IP
-| **Kelikamerakuvat**           | 6000 / 5 min      | IP
-| **tie/meri.digitraffic.fi:n V1-rajapinnat**       | &infin;                 |
-| **infra- ja jeti-api**                            | &infin;                 |
+| **Yleisrajoitus**             | 120               | IP |
+| **MQTT**                      | 5                 | IP |
+| **Kelikamerakuvat**           | 120 / 5 min       | IP |
+| **tie/meri.digitraffic.fi:n V1-rajapinnat**       | 120              | IP |
+| **infra- ja jeti-api**                            | 120              | IP |
 
 
 # Cache
