@@ -1,5 +1,5 @@
 ---
-title: 'Digitraffic API-kyeselymäärien rajoittaminen tuntemattomilta käyttäjiltä'
+title: 'Digitraffic API-kyselymäärien rajoittaminen tuntemattomilta käyttäjiltä'
 image:
 published: true
 categories: Tiedotteet
