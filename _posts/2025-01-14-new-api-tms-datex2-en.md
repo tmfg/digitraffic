@@ -1,5 +1,5 @@
 ---
-title: 'The Datex2 format APIs for data from LAM stations have been published.'
+title: 'The Datex2 format APIs for data from TMS stations have been published.'
 image:
 published: true
 categories: en News
@@ -11,7 +11,7 @@ tags:
 - APIs
 ---
 
-The Datex2 format APIs for data from LAM stations have been published.
+The Datex2 format APIs for data from TMS stations have been published.
 
 The Datex2 API version is 3.5 and data is shared in both JSON and XML formats.
 
