@@ -164,7 +164,7 @@ Message contains road sections weather forecasts. Reports are updated every five
 
 The [TMS documentation](lam/) contains descriptions of TMS data.
 
-#### Simplified and detailed information of stations
+#### Simplified information of all the stations and detailed information for a single station
 
 [```/api/tms/v1/stations```](https://tie.digitraffic.fi/api/tms/v1/stations){:target="_blank"}\
 [```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi/api/tms/v1/stations/23001){:target="_blank"}\
@@ -185,6 +185,32 @@ Every TMS station provides information about current computational sensor values
 
 Data is updated almost in real time but information is cached. Actual update interval is one minute.
 Real time data can be read from WebSocket.
+
+#### Traffic speed and traffic volume data in Datex2 format
+
+The Datex2 API version is 3.5 and data is shared in both JSON and XML formats.
+
+The shared sensor data is as follows:
+
+* Average speeds over the last five minutes (KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1/2)
+* Average speeds over a fixed 60-minute period (KESKINOPEUS_60MIN_KIINTEA_SUUNTA1/2)
+* Passings over the last five minutes (OHITUKSET_5MIN_LIUKUVA_SUUNTA1/2)
+* Passings over a fixed 60-minute period (OHITUKSET_60MIN_KIINTEA_SUUNTA1/2)
+
+##### Information of all the stations and for a single station
+
+[```/api/tms/v1/stations/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/datex2.xml){:target="_blank"} (Datex2 XML)\
+[```/api/tms/v1/stations/{id}/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/{id}/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2.xml){:target="_blank"} (Datex2 XML)\
+
+##### Data for all the stations and for a single station
+
+[```/api/tms/v1/stations/data/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/data/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2.xml){:target="_blank"} (Datex2 XML)\
+[```/api/tms/v1/stations/{id}/data/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/{id}/data/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2.xml){:target="_blank"} (Datex2 XML)
+
 
 #### Statistics
 

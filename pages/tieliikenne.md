@@ -165,8 +165,8 @@ Keliennusteet päivittyvät viiden minuutin välein.
 
 #### Asemien yksinkertaiset tiedot ja yksittäisen aseman tarkemmat tiedot
 
-[```/api/tms/v1/stations```](https://tie.digitraffic.fi//api/tms/v1/stations){:target="_blank"}\
-[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi//api/tms/v1/stations/23001){:target="_blank"}\
+[```/api/tms/v1/stations```](https://tie.digitraffic.fi/api/tms/v1/stations){:target="_blank"}\
+[```/api/tms/v1/stations/{id}```](https://tie.digitraffic.fi/api/tms/v1/stations/23001){:target="_blank"}\
 [```/api/tms/v1/stations/{id}/sensor-constants```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/sensor-constants){:target="_blank"}
 
 #### Saatavilla olevien laskennallisien antureiden tiedot
@@ -184,6 +184,31 @@ Viestissä on kullakin LAM-asemalla olevien laskennallisien antureiden mittausar
 
 Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viestiä pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
+
+#### Liikenteen nopeus- ja määrätiedot Datex2-muodossa
+
+Rajapinnan Datex2 versio on 3.5 ja data jaetaan sekä JSON- että xml-muodoissa.
+
+Jaettava sensoridata on seuraava:
+
+* Keskinopeudet viimeisen viiden minuutin ajalta (KESKINOPEUS_5MIN_LIUKUVA_SUUNTA1/2)
+* Keskinopeudet 60 minuutin kiinteältä aikaväliltä (KESKINOPEUS_60MIN_KIINTEA_SUUNTA1/2)
+* Ohitukset viimeisen viiden minuutin ajalta ("OHITUKSET_5MIN_LIUKUVA_SUUNTA1/2)
+* Ohitukset 60 minuutin kiinteältä aikaväliltä (OHITUKSET_60MIN_KIINTEA_SUUNTA1/2)
+
+##### Asemien tiedot ja yksittäisen aseman tiedot
+
+[```/api/tms/v1/stations/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/datex2.xml){:target="_blank"} (Datex2 XML)\
+[```/api/tms/v1/stations/{id}/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/{id}/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2.xml){:target="_blank"} (Datex2 XML)\
+
+##### Kaikkien asemien data ja yksittäisen aseman data
+
+[```/api/tms/v1/stations/data/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/data/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2.xml){:target="_blank"} (Datex2 XML)\
+[```/api/tms/v1/stations/{id}/data/datex2```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2){:target="_blank"} (Datex2 JSON)\
+[```/api/tms/v1/stations/{id}/data/datex2.xml```](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2.xml){:target="_blank"} (Datex2 XML)
 
 #### Tilastohaku
 
