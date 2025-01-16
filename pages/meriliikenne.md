@@ -381,6 +381,7 @@ Vaihda `APP_NAME` muuttujan sisältö oman sovelluksesi nimi.
 Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
 
 ```python
+import time
 import uuid
 import paho.mqtt.client as mqtt
 
@@ -401,19 +402,25 @@ def on_message(client, userdata, msg):
 
 client_name = "{}; {}".format(APP_NAME, str(uuid.uuid4()))
 
-mqttc = mqtt.Client(
+client = mqtt.Client(
     callback_api_version=mqtt.CallbackAPIVersion.VERSION2,
     transport="websockets",
     client_id=client_name,
 )
 
-mqttc.on_connect = on_connect
-mqttc.on_message = on_message
+client.on_connect = on_connect
+client.on_message = on_message
 
-mqttc.tls_set()
-mqttc.connect("meri.digitraffic.fi", 443, 60)
+client.tls_set()
+client.connect("meri.digitraffic.fi", 443)
 
-mqttc.loop_forever()
+client.loop_start()
+time.sleep(30)
+client.loop_stop()
+
+client.disconnect()
+
+
 
 
 ```
