@@ -419,10 +419,6 @@ time.sleep(30)
 client.loop_stop()
 
 client.disconnect()
-
-
-
-
 ```
 
 ## Käyttörajoitukset
