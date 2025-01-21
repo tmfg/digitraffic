@@ -516,7 +516,7 @@ Esimerkki: [/trains?version=1234567891234](https://rata.digitraffic.fi/api/v1/tr
 **Kuvaus**
 
 Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun versionumeron. Vastaus rajoitettu 2500
-junaan.
+junat-tyyppiseen riviin. Huomaa, että palautetussa setissä voi olla samasta junasta useampi rivi, mutta eri päiville.
 
 **Hakuehdot**
 
