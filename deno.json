@@ -1,0 +1,10 @@
+{
+  "exclude": [
+    "**/pnpm-lock.yaml",
+    "**/dist",
+    "/*/**/lib",
+    "**/node_modules",
+    ".git",
+    "**/bundle.*"
+  ]
+}

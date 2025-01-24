@@ -25,7 +25,10 @@
     "copy-fonts": "mkdir -p css/public-sans && cp node_modules/@fontsource/public-sans/files/public-sans-latin-* css/public-sans/ && rm css/public-sans/*-ext-*",
     "copy-fonts-css": "cp node_modules/@fontsource/public-sans/latin.css _scss/public-sans-latin.scss && cp node_modules/@fontsource/public-sans/latin-italic.css _scss/public-sans-latin-italic.scss",
     "fix-fonts-css": "sed -i'.bak' -E 's/url\\(\\.\\/files/url\\(\\/css\\/public-sans/g' _scss/public-sans-latin*.scss && rm _scss/public-sans-latin*.scss.bak",
-    "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite"
+    "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
+    "prepare": "lefthook install",
+    "format-changed": "lefthook run pre-commit",
+    "format": "pnpm deno fmt"
   },
   "dependencies": {
     "@fontsource/public-sans": "^5.1.2",
@@ -42,8 +45,10 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.32",
+    "deno": "^2.1.7",
     "esbuild": "^0.24.2",
     "generate-license-file": "^3.6.0",
+    "lefthook": "^1.10.10",
     "rimraf": "^6.0.1",
     "typescript": "^5.7.3"
   }
