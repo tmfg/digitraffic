@@ -1,10 +1,24 @@
 {
-  "exclude": [
-    "**/pnpm-lock.yaml",
-    "**/dist",
-    "/*/**/lib",
-    "**/node_modules",
-    ".git",
-    "**/bundle.*"
-  ]
+  "fmt": {
+    "include": [
+      "**/*.ts",
+      "**/*yml",
+      "**/*yaml",
+      "**/*md",
+      "**/*json",
+      "**/*html",
+      "**/*css",
+      "**/*scss"
+    ],
+    "exclude": [
+      "*/**",
+      "**/pnpm-lock.yaml",
+      "**/dist",
+      "/*/**/lib",
+      "**/node_modules",
+      ".git",
+      "**/bundle.*",
+      "_site"
+    ]
+  }
 }

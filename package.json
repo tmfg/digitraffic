@@ -13,7 +13,6 @@
     "build:tsc": "tsc",
     "bundle": "esbuild --bundle src/assets.js --outfile=js/bundle.js && esbuild --bundle src/assets.js --minify --outfile=js/bundle.min.js && mv js/bundle.css _scss/bundle.scss && rm js/bundle.min.css",
     "clean": "rimraf dist",
-    "prettify": "prettier --write --config .prettierrc.js src",
     "dev": "bundle exec jekyll serve --host 0.0.0.0 --port 3000 --livereload --livereload_port 3001 --config _config_dev.yml --trace",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-all": "npm run install-icons-and-fonts && npm run bundle && npm run generate-third-party-licenses",

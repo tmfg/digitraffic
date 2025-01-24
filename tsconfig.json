@@ -12,8 +12,7 @@
     "alwaysStrict": true,
     // "noImplicitAny": true,
     "checkJs": true,
-    "allowJs": true,
-
+    "allowJs": true
   },
   "include": ["./src/ts/**/*.ts"],
   "exclude": ["node_modules"]
