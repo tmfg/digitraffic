@@ -9,5 +9,5 @@ status: valmis
 date: 2022-01-01
 ---
 
-LAM-asemilta kerättyn datan historian jakelu. 
-Lisätietoa [https://digitraffic.fi/tieliikenne/lam/#historiadata](/tieliikenne/lam/#historiadata).
+LAM-asemilta kerättyn datan historian jakelu. Lisätietoa
+[https://digitraffic.fi/tieliikenne/lam/#historiadata](/tieliikenne/lam/#historiadata).

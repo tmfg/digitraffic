@@ -18,7 +18,7 @@ Changelog:
 
 MARINE
 
-- DPO-442 - Merenkulun älypoijudata - BETA  
+- DPO-442 - Merenkulun älypoijudata - BETA
 - DPO-797 - Merenkulun älypoijudata MQTT-jonoon - BETA
 
 We apologize for any inconvenience.

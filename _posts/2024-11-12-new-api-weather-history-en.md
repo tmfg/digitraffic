@@ -13,7 +13,6 @@ tags:
 
 New api for history of road weather stations data have been published.
 
-Documentation can be found [here](/en/road-traffic/#current-data-of-road-weather-stations).\
+Documentation can be found
+[here](/en/road-traffic/#current-data-of-road-weather-stations).\
 Swagger descriptions [here](https://tie.digitraffic.fi/swagger/#/Weather%20V1).
-
-

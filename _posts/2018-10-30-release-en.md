@@ -11,7 +11,7 @@ tags:
   - APIs
 ---
 
-See examples: 
+See examples:
 
 [https://jsfiddle.net/cb2uj7kg/](https://jsfiddle.net/cb2uj7kg/)
 [https://jsfiddle.net/a9dgjm10/1/](https://jsfiddle.net/a9dgjm10/1/)

@@ -9,5 +9,5 @@ status: valmis
 date: 2022-01-01
 ---
 
-Rataliikenteen matkustajainformaatiotiedon jakaminen. 
-Tämä vastaa matkustajille asemalaitureiden näytöillä ja kuulutuksissa esitettävää tietoa.
+Rataliikenteen matkustajainformaatiotiedon jakaminen. Tämä vastaa matkustajille
+asemalaitureiden näytöillä ja kuulutuksissa esitettävää tietoa.

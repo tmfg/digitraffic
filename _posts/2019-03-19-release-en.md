@@ -20,10 +20,12 @@ Changelog:
 ROAD
 
 - DPO-586 - Datex2 muotoisen TMS-datan information status -kenttä
-- DPO-697 - Asemien laskennallisten vakioiden haku LOTJUsta ja jakaminen Digitrafficissa (BETA-rajapinta)
+- DPO-697 - Asemien laskennallisten vakioiden haku LOTJUsta ja jakaminen
+  Digitrafficissa (BETA-rajapinta)
 - DPO-566 - Tarkennettu keliennustepalvelu (BETA-rajapinta)
 - DPO-746 - Osa LAM-antureista ei päivity testissä
-- DPO-753 - AWS-tuotantoasennuksessa web-instansseja pitäisi käynnistyä kaksi kappaletta
+- DPO-753 - AWS-tuotantoasennuksessa web-instansseja pitäisi käynnistyä kaksi
+  kappaletta
 - DPO-755 - Postgresiin pg_stat_statements päälle analysointia varten
 - DPO-756 - RoadStationSensorValueDtoRepository:ssa max measured timen korjaus
 - DPO-762 - Testissä osa LAM-antureista on hävinnyt

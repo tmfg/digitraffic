@@ -12,6 +12,7 @@ tags:
     - Rajapinnat
 ---
 
-Talvimerenkulun avustustiedoissa on katkos lähdejärjestelmän huoltotöiden vuoksi 11.8. klo 08:30 alkaen.
- 
+Talvimerenkulun avustustiedoissa on katkos lähdejärjestelmän huoltotöiden vuoksi
+11.8. klo 08:30 alkaen.
+
 Pahoittelemme tästä aiheutuvaa häiriötä.

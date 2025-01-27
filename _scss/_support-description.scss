@@ -8,15 +8,15 @@
       text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
       margin: $margin-xs 0;
     }
-    
+
     &-i {
       font-size: 6rem;
       color: $blue-dark;
       transition: $transition-fast;
     }
   }
-  
-  &__link:hover{
+
+  &__link:hover {
     .h-link,
     .support-description__icon-i {
       @extend .h-link, :hover;

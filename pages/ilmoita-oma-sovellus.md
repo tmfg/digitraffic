@@ -11,17 +11,20 @@ links:
   - ["Käyttöehdot", "/kayttoehdot/"]
 ---
 
-Voit ilmoittaa oman sovelluksesi toimittamalla esittelyn tiedot kuvineen sähköpostilla osoitteeseen digitraffic(a)fintraffic.fi tai lähettämällä pull requestin [GitHubiin](https://github.com/finnishtransportagency/digitraffic).
+Voit ilmoittaa oman sovelluksesi toimittamalla esittelyn tiedot kuvineen
+sähköpostilla osoitteeseen digitraffic(a)fintraffic.fi tai lähettämällä pull
+requestin [GitHubiin](https://github.com/finnishtransportagency/digitraffic).
 
 ## Sovellusesittelyyn vaadittavat tiedot
-* Sovelluksen nimi
-* Johdanto
-* Sovellusesittely
-* Sovelluslogo
-* Kehittäjä / julkaisija (ja kotisivu)
-* Liikennetyyppi
-* Käyttöympäristö / sovellusalusta / järjestelmävaatimukset
-* Kieli
-* Hinta
-* Latauslinkki
-* Palautelinkki / -sähköposti
+
+- Sovelluksen nimi
+- Johdanto
+- Sovellusesittely
+- Sovelluslogo
+- Kehittäjä / julkaisija (ja kotisivu)
+- Liikennetyyppi
+- Käyttöympäristö / sovellusalusta / järjestelmävaatimukset
+- Kieli
+- Hinta
+- Latauslinkki
+- Palautelinkki / -sähköposti

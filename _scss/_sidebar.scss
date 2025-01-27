@@ -56,7 +56,7 @@
 
   &__filter-row {
     @include border-bottom;
-    
+
     &:last-child {
       border-bottom: none;
       margin-bottom: $margin-lg;
@@ -141,7 +141,6 @@
   }
 
   &__application-traffictype {
-
     &:after {
       @include separator(",", 0);
     }

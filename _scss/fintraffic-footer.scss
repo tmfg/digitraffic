@@ -47,7 +47,7 @@
 
     li {
       // first four list items
-      &:nth-child(-n + 4) {
+      &:nth-child(-n+4) {
         font-weight: 600;
       }
       &:nth-child(4) {

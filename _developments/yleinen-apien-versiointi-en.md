@@ -10,4 +10,5 @@ status: finished
 date: 2022-01-01
 ---
 
-Divide interfaces to more coherent entities and try to follow REST APIs' best practices more carefully.
+Divide interfaces to more coherent entities and try to follow REST APIs' best
+practices more carefully.

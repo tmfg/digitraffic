@@ -32,7 +32,7 @@
     @extend .latest-item__content-type-list;
   }
 
-  &__type{
+  &__type {
     @extend .latest-item__content-type;
 
     &--no-preceding-data:last-child::after {

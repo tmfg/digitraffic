@@ -9,4 +9,5 @@ status: finished
 date: 2019-09-03
 ---
 
-Variable speed limit signs and information boards are planned to be published on Digitraffic API.
+Variable speed limit signs and information boards are planned to be published on
+Digitraffic API.

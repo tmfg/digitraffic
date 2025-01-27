@@ -11,6 +11,9 @@ tags:
 - Rajapinnat
 ---
 
-Rataliikenteen [vuosisuunnitelmien karttapalvelu](https://rata.digitraffic.fi/vuosisuunnitelmat/) poistuu käytöstä 18.6.2024.
+Rataliikenteen
+[vuosisuunnitelmien karttapalvelu](https://rata.digitraffic.fi/vuosisuunnitelmat/)
+poistuu käytöstä 18.6.2024.
 
-Data on on tämän jälkeen edelleen saatavissa [Jeti-API](https://rata.digitraffic.fi/jeti-api/)n kautta.
+Data on on tämän jälkeen edelleen saatavissa
+[Jeti-API](https://rata.digitraffic.fi/jeti-api/)n kautta.

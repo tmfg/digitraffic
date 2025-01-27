@@ -4,7 +4,7 @@ intro: Junat kartalla on osa VR Group Oyj:n toteuttamaa ja ylläpitämää vr.fi
 logo: vr-junat-kartalla/vr-500x500.svg
 developer:
   - VR Group Oyj
-traffictypes: 
+traffictypes:
   - Rautatieliikenne
 environments:
   - Web
@@ -16,6 +16,9 @@ feedback-url:
   - https://www.vr.fi/palaute
 ---
 
-Junat kartalla tarjoaa reaaliaikaisen ja sujuvakäyttöisen ikkunan Suomessa tapahtuvaan henkilöjunaliikenteeseen. Löydät palvelusta haun ja paikannuksen asemille että junille, sekä aikataulut.
+Junat kartalla tarjoaa reaaliaikaisen ja sujuvakäyttöisen ikkunan Suomessa
+tapahtuvaan henkilöjunaliikenteeseen. Löydät palvelusta haun ja paikannuksen
+asemille että junille, sekä aikataulut.
 
-Palvelu uusittiin syyskuussa 2022 ja tuotiin samalla aiemmin uudistetun vr.fi-sivuston osaksi.
+Palvelu uusittiin syyskuussa 2022 ja tuotiin samalla aiemmin uudistetun
+vr.fi-sivuston osaksi.

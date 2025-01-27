@@ -9,5 +9,5 @@ status: finished
 date: 2021-11-08
 ---
 
-
-We are planning for sharing data of counting of pedestrian and cyclists movement.
+We are planning for sharing data of counting of pedestrian and cyclists
+movement.

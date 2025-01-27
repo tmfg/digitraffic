@@ -9,5 +9,6 @@ status: valmis
 date: 2020-04-16
 ---
 
-Teiden kunnossapitoajoneuvojen reaaliaikaisen sijainti- ja toimenpidetiedon jakaaminen MQTT-protokollan avulla.
-Lisätietoa saatavasta datasta [Digitraffic > Tieliikenne > Maanteiden kunnossapitotiedot](/tieliikenne/#maanteiden-kunnossapitotiedot)
+Teiden kunnossapitoajoneuvojen reaaliaikaisen sijainti- ja toimenpidetiedon
+jakaaminen MQTT-protokollan avulla. Lisätietoa saatavasta datasta
+[Digitraffic > Tieliikenne > Maanteiden kunnossapitotiedot](/tieliikenne/#maanteiden-kunnossapitotiedot)

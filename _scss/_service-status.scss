@@ -1,5 +1,4 @@
 .service-status {
-
   /* Elements */
   &__column {
     display: flex;
@@ -36,7 +35,6 @@
     }
 
     &--operational {
-
       &__road {
         box-shadow: 0px 0px 10px $green;
         background-color: $green;
@@ -125,7 +123,7 @@
       font-size: $font-size-mdlg;
     }
     @media screen and (min-width: $min-width-md) {
-      font-size: $font-size-lg
+      font-size: $font-size-lg;
     }
   }
 
@@ -197,7 +195,7 @@
   color: $base-font-color;
 }
 
-.service-status__column a:-webkit-any-link span{
+.service-status__column a:-webkit-any-link span {
   color: $base-font-color;
 }
 

@@ -12,16 +12,20 @@ tags:
   - APIs
   - Admin
 ---
+
 Digitraffic production applications have been updated.
 
 Changelog:
 
 TIE
- - DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - Viestintä: Tietyöt datex2-muodossa
- - DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
+
+- DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - Viestintä:
+  Tietyöt datex2-muodossa
+- DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
 
 MERI
- - DPO-417 - Palautetaan vain voimassa olevat väylät
- - DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
+
+- DPO-417 - Palautetaan vain voimassa olevat väylät
+- DPO-322 - POST metodilla rajapinnan kutsuminen johtaa 500 statuskoodiin
 
 We apologize for any inconvenience.

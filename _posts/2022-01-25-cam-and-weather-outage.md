@@ -12,6 +12,7 @@ tags:
     - Rajapinnat
 ---
 
-Tiistaina 25.1. klo 10–11 voi esiintyä käyttökatkoja kamera- ja tiesäädatassa päivityksestä lähdejärjestelmän huoltotöiden vuoksi.
+Tiistaina 25.1. klo 10–11 voi esiintyä käyttökatkoja kamera- ja tiesäädatassa
+päivityksestä lähdejärjestelmän huoltotöiden vuoksi.
 
 Pahoittelemme tästä aiheutuvaa häiriötä.

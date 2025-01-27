@@ -1,10 +1,9 @@
 .applications-list {
-  
   /* Elements */
   &__page-heading {
     margin-top: 0;
   }
-  
+
   &__amount {
     @extend .posts-in-category__amount;
   }
@@ -70,7 +69,6 @@
 
   &__application-traffictype,
   &__application-environment {
-    
     &:after {
       @include separator("●");
     }

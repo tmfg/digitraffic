@@ -1,36 +1,36 @@
 /* Black icons on light background */
 .material-icons {
-    //colors
-    //dark
-    &.md-dark {
-        color: $md-dark;
-        &.md-inactive {
-            color: $md-dark-inactive;
-        }
+  //colors
+  //dark
+  &.md-dark {
+    color: $md-dark;
+    &.md-inactive {
+      color: $md-dark-inactive;
     }
-    //light
-    &.md-light {
-        color: $md-light;
-        &.md-inactive {
-            color: $md-light-inactive;
-        }
+  }
+  //light
+  &.md-light {
+    color: $md-light;
+    &.md-inactive {
+      color: $md-light-inactive;
     }
+  }
 
-    //sizes
-    &.md-sm {
-        font-size: $md-sm;
-        vertical-align: -0.05rem;
-    }
-    &.md-md {
-        font-size: $md-md;
-        vertical-align: -0.2rem;
-    }
-    &.md-lg {
-        font-size: $md-lg;
-        vertical-align: -0.4rem;
-    }
-    &.md-xl {
-        font-size: $md-xl;
-        vertical-align: -0.7rem;
-    }
+  //sizes
+  &.md-sm {
+    font-size: $md-sm;
+    vertical-align: -0.05rem;
+  }
+  &.md-md {
+    font-size: $md-md;
+    vertical-align: -0.2rem;
+  }
+  &.md-lg {
+    font-size: $md-lg;
+    vertical-align: -0.4rem;
+  }
+  &.md-xl {
+    font-size: $md-xl;
+    vertical-align: -0.7rem;
+  }
 }

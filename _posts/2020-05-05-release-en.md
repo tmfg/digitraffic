@@ -19,8 +19,10 @@ Changelog:
 ROAD
 
 - DPO-740 HARJA tyokoneenseurannan tallennus ja jako viivageometrialla
-    -  More info at [Digitraffic > Road traffic > Road maintenance information](/en/road-traffic/#road-maintenance-information)
+  - More info at
+    [Digitraffic > Road traffic > Road maintenance information](/en/road-traffic/#road-maintenance-information)
 - DPO-249 Datex2-SimppeliJSON
-    -  More info at [Digitraffic > Road traffic > Traffic incidents](/en/road-traffic/#traffic-incidents)
+  - More info at
+    [Digitraffic > Road traffic > Traffic incidents](/en/road-traffic/#traffic-incidents)
 
 We apologize for any inconvenience.

@@ -9,5 +9,7 @@ status: finished
 date: 2018-11-21
 ---
 
-Road conditions version 2 data is planned to be published on Digitraffic API. The new version provides higher resolution for road segments and there are higher number of forecast points.
- More information [https://groups.google.com/forum/#!category-topic/roaddigitrafficfi/yleinen-keskustelu/u-PybMHgER8](https://groups.google.com/forum/#!category-topic/roaddigitrafficfi/yleinen-keskustelu/u-PybMHgER8)
+Road conditions version 2 data is planned to be published on Digitraffic API.
+The new version provides higher resolution for road segments and there are
+higher number of forecast points. More information
+[https://groups.google.com/forum/#!category-topic/roaddigitrafficfi/yleinen-keskustelu/u-PybMHgER8](https://groups.google.com/forum/#!category-topic/roaddigitrafficfi/yleinen-keskustelu/u-PybMHgER8)

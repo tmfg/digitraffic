@@ -9,4 +9,5 @@ status: toteutuksessa
 date: 2024-08-16
 ---
 
-Lähdejärjestelmän muutosten takia talvimerenkulun datalle on suunnitteilla uusi rajapinta.
+Lähdejärjestelmän muutosten takia talvimerenkulun datalle on suunnitteilla uusi
+rajapinta.

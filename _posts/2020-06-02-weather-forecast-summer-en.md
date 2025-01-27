@@ -1,6 +1,6 @@
 ---
 title: 'Weather Forecast summer break starting soon and ends 1st of September 2020'
-image: 
+image:
 published: true
 categories: en News
 ref: 2020-06-02-weather-forecast-summer
@@ -11,6 +11,8 @@ tags:
   - APIs
 ---
 
-Weather forecasts will start soon and ends 1st of September and the data will stay on it's last state.
+Weather forecasts will start soon and ends 1st of September and the data will
+stay on it's last state.
 
-We apologize for any inconvenience caused by the break and the late announcement.
+We apologize for any inconvenience caused by the break and the late
+announcement.

@@ -1,7 +1,7 @@
 /* Button colors */
 $button-color-1: $blue-dark;
 $button-color-2: $blue-darker;
-$button-color-disabled: $gray-200; 
+$button-color-disabled: $gray-200;
 
 /* Button styles */
 .button {
@@ -44,18 +44,21 @@ $button-color-disabled: $gray-200;
     background-size: auto;
     color: $blue-dark;
     border: 1px solid $blue-dark;
-    padding: calc(1rem - 1px) calc(1.2rem - 1px) calc(1rem - 1px) calc(1rem - 1px);
+    padding: calc(1rem - 1px) calc(1.2rem - 1px) calc(1rem - 1px)
+      calc(1rem - 1px);
 
     &:hover {
       border-width: 2px;
-      padding: calc(1rem - 2px) calc(1.2rem - 2px) calc(1rem - 2px) calc(1rem - 2px);
+      padding: calc(1rem - 2px) calc(1.2rem - 2px) calc(1rem - 2px)
+        calc(1rem - 2px);
     }
 
     &:active {
       background: $white;
       color: $gray-102;
       border: 2px solid $gray-102;
-      padding: calc(1rem - 2px) calc(1.2rem - 2px) calc(1rem - 2px) calc(1rem - 2px);
+      padding: calc(1rem - 2px) calc(1.2rem - 2px) calc(1rem - 2px)
+        calc(1rem - 2px);
     }
 
     &.button--no-icon {

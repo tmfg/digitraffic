@@ -9,5 +9,6 @@ status: finished
 date: 2022-01-01
 ---
 
-Sharing of the railway passenger information data. 
-This corresponds to the information provided to passengers on the screens and in the announcements at the station platforms.
+Sharing of the railway passenger information data. This corresponds to the
+information provided to passengers on the screens and in the announcements at
+the station platforms.

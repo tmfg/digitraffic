@@ -19,8 +19,10 @@ Changelog:
 
 ROAD
 
-- DPO-697 - Asemien laskennallisten vakioiden haku LOTJUsta ja jakaminen Digitrafficissa 
-- DPO-703 - FileHelper-luokassa käytetään IOUtils.closeQuietly-metodia, joka on deprekoitu
+- DPO-697 - Asemien laskennallisten vakioiden haku LOTJUsta ja jakaminen
+  Digitrafficissa
+- DPO-703 - FileHelper-luokassa käytetään IOUtils.closeQuietly-metodia, joka on
+  deprekoitu
 - DPO-786 - Elasticsearchin keyval-pipeline hajosi väärin lokitettuun key-arvoon
 
 MARINE

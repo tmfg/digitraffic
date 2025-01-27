@@ -12,5 +12,5 @@ tags:
 ---
 
 STOMP has been shut down
- 
+
 Please use MQTT for websocket connections

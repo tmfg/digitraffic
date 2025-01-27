@@ -11,10 +11,16 @@ ref: ruma
 intro: RUMA-järjestelmän tiedot
 ---
 
-RUMA-järjestelmällä suunnitellaan ja toteutetaan ratatöitä ratatyöilmoitusten, eli RT-ilmoitusten avulla. RUMA:lla ilmoitetaan myös liikenteen rajoitteista LR-ilmoitusten avulla.
+RUMA-järjestelmällä suunnitellaan ja toteutetaan ratatöitä ratatyöilmoitusten,
+eli RT-ilmoitusten avulla. RUMA:lla ilmoitetaan myös liikenteen rajoitteista
+LR-ilmoitusten avulla.
 
 # RT-ilmoitus
-RT-ilmoitus sisältää perustietojen lisäksi ratatyön kohteen. Kohteita voi olla useampia ja ne ovat eri tyyppisiä. Alla on yritetty kuvata kohteiden käsitemallin hierarkiaa:
+
+RT-ilmoitus sisältää perustietojen lisäksi ratatyön kohteen. Kohteita voi olla
+useampia ja ne ovat eri tyyppisiä. Alla on yritetty kuvata kohteiden
+käsitemallin hierarkiaa:
+
 ```
 RT-ilmoitus
 │
@@ -42,10 +48,15 @@ RT-ilmoitus
 ```
 
 ## Työnosa
-Työnosa kuvaa ratatyön loogista osaa. Työnosaan liittyy aina vähintään yksi kohde. Työnosat ovat numeroituja.
+
+Työnosa kuvaa ratatyön loogista osaa. Työnosaan liittyy aina vähintään yksi
+kohde. Työnosat ovat numeroituja.
 
 # LR-ilmoitus
-LR-ilmoitus sisältää perustietojen lisäksi mahdollisen linkin RT-ilmoitukseen sekä rajoitteen tyypin. Rajoitetyyppejä ovat:  
+
+LR-ilmoitus sisältää perustietojen lisäksi mahdollisen linkin RT-ilmoitukseen
+sekä rajoitteen tyypin. Rajoitetyyppejä ovat:
+
 - Suljettu liikennöinniltä
 - Suljettu sähkövetokalustolta
 - Tilapäinen nopeusrajoitus
@@ -54,32 +65,51 @@ LR-ilmoitus sisältää perustietojen lisäksi mahdollisen linkin RT-ilmoituksee
 - Vaihteen lukitus
 - Tulityön vaara-alue
 
-LR-ilmoitus liittyy ratainfraan (kohteet) suoraan eikä työnosien kautta kuten RT-ilmoitus.
+LR-ilmoitus liittyy ratainfraan (kohteet) suoraan eikä työnosien kautta kuten
+RT-ilmoitus.
 
 # Työn tai rajoituksen kohteet
-Alla on kuvattu käsitteet joiden avulla RT- ja LR-ilmoitukset liittyvät ratainfraan.
+
+Alla on kuvattu käsitteet joiden avulla RT- ja LR-ilmoitukset liittyvät
+ratainfraan.
 
 ## Kohde
-Kohde liittyy aina joko liikennepaikkaan tai liikennepaikkaväliin. Kohteen tyyppi kuvaa työn tai rajoituksen tyyppiä, sallitut arvot ovat TYONKOHDE, TULITYO, NOPEUSRAJOITUS.  
+
+Kohde liittyy aina joko liikennepaikkaan tai liikennepaikkaväliin. Kohteen
+tyyppi kuvaa työn tai rajoituksen tyyppiä, sallitut arvot ovat TYONKOHDE,
+TULITYO, NOPEUSRAJOITUS.\
 Mikäli kohteeseen ei liity tunnusvälejä, kohteena on koko liikennepaikka/väli.
 
 ## Tunnusväli
+
 Tunnusväli kuvaa joko:
-- Kahden elementin välistä aluetta joka koostuu yhdestä tai useammasta elementtivälistä.  
-TAI
-- Vaihteen liikennöitävyyttä: tunnusväliin liittyvä yksittäinen vaihde tarkoittaa ettei vaihde ole 
-liikennöitävissä.  
-TAI
+
+- Kahden elementin välistä aluetta joka koostuu yhdestä tai useammasta
+  elementtivälistä.\
+  TAI
+- Vaihteen liikennöitävyyttä: tunnusväliin liittyvä yksittäinen vaihde
+  tarkoittaa ettei vaihde ole liikennöitävissä.\
+  TAI
 - Jotain tulkinnanvaraista reittiä kahden elementin välillä (elementtipari).
 
 ## Elementtiväli
-Elementtiväleistä muodostetaan reitti tunnusvälin elementiltä toiselle (muuten voisi olla useampia reittejä). Elementtivälin elementeiksi voi valita vain tietyn tyyppisiä *rajaavia* elementtejä: **rajaava opastin, vaihde, puskin, seislevy, liikennepaikan raja, liikenteenohjauksen raja**.  
+
+Elementtiväleistä muodostetaan reitti tunnusvälin elementiltä toiselle (muuten
+voisi olla useampia reittejä). Elementtivälin elementeiksi voi valita vain
+tietyn tyyppisiä _rajaavia_ elementtejä: **rajaava opastin, vaihde, puskin,
+seislevy, liikennepaikan raja, liikenteenohjauksen raja**.
 
 ## Tarkenne
-Tarkenteella voidaan valita kohteeksi ei-rajaava elementti elementtivälin sisältä, tarkenne-elementtejä ovat: **tasoristeys, baliisi, ei-rajaava opastin**.
+
+Tarkenteella voidaan valita kohteeksi ei-rajaava elementti elementtivälin
+sisältä, tarkenne-elementtejä ovat: **tasoristeys, baliisi, ei-rajaava
+opastin**.
 
 ### Rajaavat opastintyypit
-Alla Infra-API -opastintyypit jotka luokitellaan RUMA:ssa rajaaviksi, loput opastintyypit ovat ei-rajaavia.
+
+Alla Infra-API -opastintyypit jotka luokitellaan RUMA:ssa rajaaviksi, loput
+opastintyypit ovat ei-rajaavia.
+
 ```
 pa, pa2, pav, ps, ps2, ps2v, psv, ra, rp, su, rd, y4, ye, ys, yse, ysj, ysje, ysjv, ysv, ysve, yv
 ```

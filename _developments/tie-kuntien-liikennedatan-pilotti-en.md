@@ -9,4 +9,5 @@ status: finished
 date: 2022-01-01
 ---
 
-Bringing municipal road maintenance, condition and street work permit data to the interfaces.
+Bringing municipal road maintenance, condition and street work permit data to
+the interfaces.

@@ -12,4 +12,5 @@ tags:
   - Admin
 ---
 
-Historic positions of trains can be found from new endpoint `/train-locations/<departure_date>/<train_number>`
+Historic positions of trains can be found from new endpoint
+`/train-locations/<departure_date>/<train_number>`

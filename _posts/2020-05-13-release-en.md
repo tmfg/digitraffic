@@ -12,10 +12,14 @@ tags:
   - Admin
 ---
 
-If vehicle type is `Sm1`, `Sm2`, `Sm4` tai `Sm5`, its vehicle number will be visible
+If vehicle type is `Sm1`, `Sm2`, `Sm4` tai `Sm5`, its vehicle number will be
+visible
 
-Vehicle number will be added to existing `/composition` reply as a new json field `vehicleNumber`
+Vehicle number will be added to existing `/composition` reply as a new json
+field `vehicleNumber`
 
-Example: [https://rata-beta.digitraffic.fi/api/v1/compositions/2020-05-19/9224](https://rata-beta.digitraffic.fi/api/v1/compositions/2020-05-19/9224)
+Example:
+[https://rata-beta.digitraffic.fi/api/v1/compositions/2020-05-19/9224](https://rata-beta.digitraffic.fi/api/v1/compositions/2020-05-19/9224)
 
-More information about the vehicle number: [https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)
+More information about the vehicle number:
+[https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock](https://en.wikipedia.org/wiki/UIC_identification_marking_for_tractive_stock)

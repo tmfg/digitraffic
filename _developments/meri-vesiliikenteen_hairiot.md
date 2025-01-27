@@ -9,4 +9,5 @@ status: valmis
 date: 2020-06-17
 ---
 
-Uusi rajapinta vesiliikenteen häiriöistä. Tiedotteissa ilmoitetaan häiriöistä joilla voi olla vaikutusta vesi- ja meriliikenteelle.
+Uusi rajapinta vesiliikenteen häiriöistä. Tiedotteissa ilmoitetaan häiriöistä
+joilla voi olla vaikutusta vesi- ja meriliikenteelle.

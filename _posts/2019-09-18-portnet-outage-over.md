@@ -11,6 +11,6 @@ tags:
     - Ylläpito
     - Rajapinnat
 ---
- 
- 
-PORTNET-integraation palvelukatko on ohi ja satamakäyntien tiedot päivittyvät. Pahoittelemme aiheutunutta häiriötä.
+
+PORTNET-integraation palvelukatko on ohi ja satamakäyntien tiedot päivittyvät.
+Pahoittelemme aiheutunutta häiriötä.

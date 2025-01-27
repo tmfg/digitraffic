@@ -7,4 +7,5 @@ status: valmis
 date: 2018-11-22
 ---
 
-Painorajoitukset ja tietyöt tullaan julkaisemaan rajapinnassa DatexII-dokumentteina.
+Painorajoitukset ja tietyöt tullaan julkaisemaan rajapinnassa
+DatexII-dokumentteina.

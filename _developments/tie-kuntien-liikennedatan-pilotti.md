@@ -9,4 +9,5 @@ status: valmis
 date: 2022-01-01
 ---
 
-Kuntien teiden kunnossapito-, olosuhde- ja katutyölupatietojen tuominen rajapintoihin.
+Kuntien teiden kunnossapito-, olosuhde- ja katutyölupatietojen tuominen
+rajapintoihin.

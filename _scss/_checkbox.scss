@@ -2,8 +2,8 @@ $checkbox-size: 20px;
 $label-padding: 8px;
 
 .checkbox {
-  display:      inline-block;
-  cursor:       pointer;
+  display: inline-block;
+  cursor: pointer;
 
   label {
     position: relative;
@@ -52,7 +52,7 @@ $label-padding: 8px;
         fill: $blue-dark;
       }
     }
-    input:indeterminate         + svg,
+    input:indeterminate + svg,
     input:checked:indeterminate + svg {
       .unchecked {
         display: none;
@@ -65,7 +65,7 @@ $label-padding: 8px;
       }
     }
 
-    input:disabled  + svg {
+    input:disabled + svg {
       cursor: default;
       &:active {
         transform: none;
@@ -76,11 +76,11 @@ $label-padding: 8px;
     }
 
     input {
-      display:   block;
-      position:  absolute;
-      opacity:   0;
-      width:     0;
-      height:    0;
+      display: block;
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
     }
   }
 
