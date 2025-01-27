@@ -1,7 +1,7 @@
 ---
 title: 'Rail: data avaiable as GeoOJson'
 categories: en News
-image: 
+image:
 lang: en
 published: true
 ref: 2019-08-19-release
@@ -14,5 +14,6 @@ tags:
 Data is avaiable as GeoJson by adding `.geojson` to the url
 
 Examples:
-* [https://rata.digitraffic.fi/api/v1/metadata/stations.geojson](https://rata.digitraffic.fi/api/v1/metadata/stations.geojson)
-* [https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
+
+- [https://rata.digitraffic.fi/api/v1/metadata/stations.geojson](https://rata.digitraffic.fi/api/v1/metadata/stations.geojson)
+- [https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)

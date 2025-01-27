@@ -9,4 +9,5 @@ status: toteutuksessa
 date: 2024-08-16
 ---
 
-Rataliikenteen rajapintoihin on tulossa tieto bussikorvauksesta ja pysähtymispaikasta laiturilla.
+Rataliikenteen rajapintoihin on tulossa tieto bussikorvauksesta ja
+pysähtymispaikasta laiturilla.

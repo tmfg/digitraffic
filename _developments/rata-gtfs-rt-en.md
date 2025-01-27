@@ -9,5 +9,5 @@ status: finished
 date: 2022-01-01
 ---
 
-
-Realtime GTFS feed of railway traffic that provides realtime updates for train locations and timetables.
+Realtime GTFS feed of railway traffic that provides realtime updates for train
+locations and timetables.

@@ -9,4 +9,5 @@ status: toteutuksessa
 date: 2024-08-16
 ---
 
-Rataliikenteen rajapintoihin on tulossa tieto, mikäli pysähdyksen pysähdysaika tai raide on tuntematon.
+Rataliikenteen rajapintoihin on tulossa tieto, mikäli pysähdyksen pysähdysaika
+tai raide on tuntematon.

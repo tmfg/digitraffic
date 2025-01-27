@@ -1,140 +1,138 @@
-
-
 .datex2-col-1-2 {
-	width: 15%;
+  width: 15%;
 }
 .datex2-col-3-8 {
-	width: 85%;
+  width: 85%;
 }
 
 .datex2-col1 {
-	width: 10%;
+  width: 10%;
 }
 
 .datex2-col2 {
-	width: 5%;
+  width: 5%;
 }
 
 .datex2-col3 {
-	width: 15%;
-	font-family: monospace;
-	white-space: nowrap;
+  width: 15%;
+  font-family: monospace;
+  white-space: nowrap;
 }
 
 .datex2-col4 {
-	width: 22%;
-	font-family: monospace;
-	white-space: nowrap;
+  width: 22%;
+  font-family: monospace;
+  white-space: nowrap;
 }
 
 .datex2-col5 {
-	width: 36%;
-	font-family: monospace;
+  width: 36%;
+  font-family: monospace;
 }
 
 .datex2-col6 {
-	width: 4%;
-	font-family: monospace;
-	white-space: nowrap;
+  width: 4%;
+  font-family: monospace;
+  white-space: nowrap;
 }
 
 .datex2-col7 {
-	width: 4%;
-	font-family: monospace;
-	white-space: nowrap;
+  width: 4%;
+  font-family: monospace;
+  white-space: nowrap;
 }
 
 .datex2-col8 {
-	width: 4%;
-	font-family: monospace;
-	white-space: nowrap;
+  width: 4%;
+  font-family: monospace;
+  white-space: nowrap;
 }
 
 .api-changes-header {
-	text-align: start;
+  text-align: start;
 }
 
 %break-long-paths {
-	white-space: normal;
-	word-wrap: anywhere;
+  white-space: normal;
+  word-wrap: anywhere;
 }
 
 .deprecations-col1 {
-	@extend %break-long-paths;
+  @extend %break-long-paths;
 }
 
 .deprecations-col2 {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 .supported-col {
-	@extend %break-long-paths;
+  @extend %break-long-paths;
 }
 
 .deprecations-text {
-	margin-bottom: 4%;
+  margin-bottom: 4%;
 }
 
 .deprecations-text-paragraph {
-	white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 .date-color-descriptions {
-	margin-top: 2%;
+  margin-top: 2%;
 }
 
 .date-color-descriptions-header {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .date-color-descriptions-paragraph {
-	margin-top: 1%;
+  margin-top: 1%;
 }
 
 %alert {
-	background: #CC3300;
-	color: #FFFFFF;
+  background: #cc3300;
+  color: #ffffff;
 }
 
 %warning {
-	background: #FFCC00;
-	color: #000000;
+  background: #ffcc00;
+  color: #000000;
 }
 
 .date-alert-description {
-	@extend %alert;
-	padding: 0.5%;
+  @extend %alert;
+  padding: 0.5%;
 }
 
 .date-warning-description {
-	@extend %warning;
-	padding: 0.5%;
+  @extend %warning;
+  padding: 0.5%;
 }
 
 .deprecations-sunset-alert {
-	@extend %alert;
+  @extend %alert;
 }
 
 .deprecations-sunset-warning {
-	@extend %warning;
+  @extend %warning;
 }
 
 .warn {
-    color: rgba(255, 7, 7, 1);
+  color: rgba(255, 7, 7, 1);
 }
 
 .twc-col-2-4 {
-	width: 70%;
+  width: 70%;
 }
 .twc-col1 {
-	width: 30%;
+  width: 30%;
 }
 .twc-col2 {
-	width: 10%;
+  width: 10%;
 }
 .twc-col3 {
-	width: 30%;
+  width: 30%;
 }
 .twc-col4 {
-	width: 30%;
+  width: 30%;
 }

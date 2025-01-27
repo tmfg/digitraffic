@@ -2,27 +2,29 @@
 published: false
 title: Esimerkkisovellus
 intro: Tämä on esimerkkisivu sovelluksesta.
-logo: 
+logo:
 developer:
   - Kaisa Kehittäjä
   - https://www.digitraffic.fi
-traffictypes: 
+traffictypes:
   - Tieliikenne
   - Meriliikenne
   - Kokeellinen
-environments: 
+environments:
   - Android
   - iOS
 language: Suomi (FIN)
 price: 1,99€
-download-urls: 
+download-urls:
   - https://fintraffic.fi/
 feedback-url: https://fintraffic.fi/fi/fintraffic-0
 ---
 
-Tähän tulee tietoa sovelluksesta. Ensimmäinen kappale on muotoiltu isommalla fontilla.
+Tähän tulee tietoa sovelluksesta. Ensimmäinen kappale on muotoiltu isommalla
+fontilla.
 
 Loput tekstit ovat pienemmällä.
 
 ## Voit lisätä väliotsikoita
+
 Ja jatkaa tekstiä uuden väliotsikon alle.

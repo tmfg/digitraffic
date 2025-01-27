@@ -1,6 +1,6 @@
 ---
 title: 'Keliennusteet kesätauolla 1.9.2020 asti'
-image: 
+image:
 published: true
 categories: Tiedotteet
 ref: 2020-06-02-weather-forecast-summer
@@ -11,6 +11,6 @@ tags:
   - Rajapinnat
 ---
 
-Sääennusteet menevät kesätauolle, jolloin data jää viimeiseen saatuun arvoon. 
+Sääennusteet menevät kesätauolle, jolloin data jää viimeiseen saatuun arvoon.
 
 Pahoittelemme tästä aiheutuvaa haittaa ja myöhäistä ilmoitusaikaa.

@@ -13,6 +13,8 @@ tags:
 
 Sometimes a train is late, but traffic controllers can not say for how long.
 
-If this is the case, timetable rows now have a `unknownDelay`-property set to value `true` 
+If this is the case, timetable rows now have a `unknownDelay`-property set to
+value `true`
 
-More (in Finnish): [https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla](https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla)
+More (in Finnish):
+[https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla](https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla)

@@ -20,7 +20,9 @@ ROAD
 
 - DPO-949 Kelikamerakuvien historia julkiseksi - small fixes
 
-Documentatioon for weather camera history can be found at [Weather camera image history for the last 24 hours](/en/road-traffic/#weather-camera-image-history-for-the-last-24-hours) -section
-and also from [Swagger-documentation](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/Data%20v2/getCameraOrPresetHistoryUsingGET).
+Documentatioon for weather camera history can be found at
+[Weather camera image history for the last 24 hours](/en/road-traffic/#weather-camera-image-history-for-the-last-24-hours)
+-section and also from
+[Swagger-documentation](https://tie.digitraffic.fi/api/v1/metadata/documentation/swagger-ui.html#/Data%20v2/getCameraOrPresetHistoryUsingGET).
 
 We apologize for any inconvenience.

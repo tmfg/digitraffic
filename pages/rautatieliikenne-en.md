@@ -15,29 +15,30 @@ links:
 - ["Finnish Transport Infrastructure Agency", "https://vayla.fi"]
 - ["Fintraffic", "https://fintraffic.fi"]
 - ["Swagger", "https://rata.digitraffic.fi/swagger/"]
-
 ---
 
-The purpose of this service is to share data of trains operating in Finland. The service is operated by
-Fintraffic. The data is sourced from the following applications used in traffic controlling and capacity
-management:
+The purpose of this service is to share data of trains operating in Finland. The
+service is operated by Fintraffic. The data is sourced from the following
+applications used in traffic controlling and capacity management:
 
-![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{ site.baseurl }}{{ "/img/rata/reaali.png"
-}}) ![LOKI]({{ site.baseurl }}{{ "/img/rata/loki.png" }})
+![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{
+site.baseurl }}{{ "/img/rata/reaali.png" }}) ![LOKI]({{ site.baseurl }}{{
+"/img/rata/loki.png" }})
 
-Using the data from this service, it is possible to answer the following questions:
+Using the data from this service, it is possible to answer the following
+questions:
 
-* Is my train on schedule?
-* What is the location of my train at the moment?
-* Which train can I use to travel from A to B on date C?
-* Which trains are departing and arriving next from a specific station?
-* What kind of wagons and locotomovites does my train consist of?
-* What kind of services does a train provide?
-* Was my train on schedule for example two months ago?
+- Is my train on schedule?
+- What is the location of my train at the moment?
+- Which train can I use to travel from A to B on date C?
+- Which trains are departing and arriving next from a specific station?
+- What kind of wagons and locotomovites does my train consist of?
+- What kind of services does a train provide?
+- Was my train on schedule for example two months ago?
 
-English version of the documentation page contains only GraphQL and Swagger (in a short form). You might get
-more information using Google Translate with
-the [Finnish documentation](https://www.digitraffic.fi/rautatieliikenne/)
+English version of the documentation page contains only GraphQL and Swagger (in
+a short form). You might get more information using Google Translate with the
+[Finnish documentation](https://www.digitraffic.fi/rautatieliikenne/)
 
 # Index
 
@@ -49,9 +50,10 @@ the [Finnish documentation](https://www.digitraffic.fi/rautatieliikenne/)
 
 Resources:
 
-* [GraphiQL](https://rata.digitraffic.fi/api/v2/graphql/graphiql), online tool for testing and developing
-  GraphQL-queries
-* [Schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg), contains available Queries, Types etc.
+- [GraphiQL](https://rata.digitraffic.fi/api/v2/graphql/graphiql), online tool
+  for testing and developing GraphQL-queries
+- [Schema](https://rata.digitraffic.fi/api/v2/graphql/schema.svg), contains
+  available Queries, Types etc.
 
 ## Examples
 
@@ -120,7 +122,7 @@ Resources:
     }
   }
 }
-``` 
+```
 
 #### Passenger information messages related to trains on a specific date
 
@@ -154,15 +156,17 @@ Resources:
 
 # GTFS
 
-.zip files are generated daily around 5:00. Packages include all current and future trains
+.zip files are generated daily around 5:00. Packages include all current and
+future trains
 
-* GTFS for passenger
-  trains: [https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
-* GTFS for all
-  trains: [https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
-* GTFS-RT
-  locations: [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
-* GTFS-RT
-  updates: [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
+- GTFS for passenger trains:
+  [https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
+- GTFS for all trains:
+  [https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
+- GTFS-RT locations:
+  [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
+- GTFS-RT updates:
+  [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
 
-Data is licensed under [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
+Data is licensed under
+[Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)

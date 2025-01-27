@@ -1,12 +1,12 @@
 .frontpage-traffic-type {
   margin: $margin-md 0;
   justify-content: center;
-  
+
   /* Elements */
   &__button {
     margin: $margin-xssm 0 0 0;
   }
-  
+
   &__description {
     @media screen and (min-width: $min-width-md) {
       margin-top: $margin-xs;

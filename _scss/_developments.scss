@@ -1,5 +1,4 @@
 .developments {
-
   /* Elements */
   &__list-heading {
     margin: 0 0 $margin-xssm;
@@ -18,7 +17,7 @@
     }
 
     &--last {
-      @extend .developments__development, :last-child
+      @extend .developments__development, :last-child;
     }
 
     &--hidden {

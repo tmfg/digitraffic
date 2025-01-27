@@ -10,7 +10,6 @@
       "**/*.scss"
     ],
     "exclude": [
-      "*/**",
       "**/pnpm-lock.yaml",
       "**/dist",
       "/*/**/lib",

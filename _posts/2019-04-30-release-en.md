@@ -18,6 +18,6 @@ Changelog:
 
 ROAD
 
-- DPO-566 - Tarkennettu keliennustepalvelu:  beta -> v2
+- DPO-566 - Tarkennettu keliennustepalvelu: beta -> v2
 
 We apologize for any inconvenience.

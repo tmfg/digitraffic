@@ -9,4 +9,5 @@ status: valmis
 date: 2020-02-19
 ---
 
-Rajapinta merenkulun turvalaitevikojen jakamiseen Digitrafficissa. Datan tuottaja on Väylä.
+Rajapinta merenkulun turvalaitevikojen jakamiseen Digitrafficissa. Datan
+tuottaja on Väylä.

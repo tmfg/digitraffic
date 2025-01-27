@@ -9,5 +9,5 @@ status: valmis
 date: 2020-11-16
 ---
 
-Painorajoitukset ja tietyöt julkaistaan jatkossa Datex II -formaatin
-lisäksi yksinkertaisemmassa JSON-muodossa.
+Painorajoitukset ja tietyöt julkaistaan jatkossa Datex II -formaatin lisäksi
+yksinkertaisemmassa JSON-muodossa.

@@ -10,4 +10,5 @@ status: valmis
 date: 2022-01-01
 ---
 
-Jaetaan rajapinnat yhteneäisemmiksi kokonaisuuksiksi ja pyritään noudattamaan REST-rajapintojen parhaita käytäntöjä.
+Jaetaan rajapinnat yhteneäisemmiksi kokonaisuuksiksi ja pyritään noudattamaan
+REST-rajapintojen parhaita käytäntöjä.

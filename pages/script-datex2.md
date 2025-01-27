@@ -9,5 +9,3 @@ lang: fi
 ref: Datex2-status
 intro: State of traffic messages
 ---
-
-

@@ -12,6 +12,7 @@ tags:
     - Rajapinnat
 ---
 
-Maanantaina 18.1.2021 klo 10:00 - 11:00 välisenä aikana on odotettavissa käyttökatko LOTJU:n LAM-tietojen keruussa.
- 
+Maanantaina 18.1.2021 klo 10:00 - 11:00 välisenä aikana on odotettavissa
+käyttökatko LOTJU:n LAM-tietojen keruussa.
+
 Pahoittelemme tästä aiheutuvaa häiriötä.

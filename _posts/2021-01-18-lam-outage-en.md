@@ -12,6 +12,7 @@ tags:
   - APIs
 ---
 
-There is a service break in LOTJU LAM data updating on 18th of January at 10 AM - 11 AM.
+There is a service break in LOTJU LAM data updating on 18th of January at 10
+AM - 11 AM.
 
 We apologize for any inconvenience.

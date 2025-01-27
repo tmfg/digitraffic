@@ -7,5 +7,5 @@ status: finished
 date: 2018-11-22
 ---
 
-
-Current AIS integration is coming to its end of life so a new one will be needed. This should not affect end users.
+Current AIS integration is coming to its end of life so a new one will be
+needed. This should not affect end users.

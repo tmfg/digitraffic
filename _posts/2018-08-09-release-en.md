@@ -12,4 +12,3 @@ tags:
 ---
 
 New forecast source COMBOCALC replaces DIGITRAFFIC_AUTOMATIC
-

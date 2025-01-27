@@ -8,4 +8,6 @@ pre-commit:
   commands:
     deno-fmt:
       #glob: "*.{ts,yml,yaml,md,json,html,css,scss" }"
-      run: pnpm deno fmt {staged_files} && git add {staged_files}
+      run: | # Runs even when deno fmt fails with: No target files found.
+        pnpm deno fmt {staged_files} || true;
+        git add {staged_files} || true;

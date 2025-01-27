@@ -4,12 +4,12 @@
 
   &:first-child {
     padding-left: $margin-xxs;
-    padding-right: 4*$margin-xs/3;
+    padding-right: 4 * $margin-xs / 3;
   }
 
   &:last-child {
-    padding-left: 4*$margin-xs/3;
-    padding-right: $margin-xxs;;
+    padding-left: 4 * $margin-xs / 3;
+    padding-right: $margin-xxs;
   }
 
   /* Elements */
@@ -19,7 +19,7 @@
     transition: $transition-moderate;
 
     &:hover {
-        color: $blue;
+      color: $blue;
     }
   }
 
@@ -45,7 +45,7 @@
     text-transform: capitalize;
 
     &::after {
-      @include separator('•');
+      @include separator("•");
     }
 
     &:last-child::after {
@@ -61,7 +61,7 @@
   &__traffic-type {
     display: inline-block;
     text-transform: capitalize;
-    
+
     &::after {
       @include separator("•");
     }

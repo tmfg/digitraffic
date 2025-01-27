@@ -5,7 +5,7 @@ logo: tietorahdin-kartta/tietorahti-kartta-sovelluslogo.png
 developer:
   - Tietorahti Oy
   - https://tietorahti.fi/tietorahdin-kartta
-traffictypes: 
+traffictypes:
   - Tieliikenne
   - Meriliikenne
 environments:
@@ -20,11 +20,13 @@ download-urls:
 feedback-url: mailto:janne.lausvaara@tietorahti.fi
 ---
 
-Sovelluksesta löytyy mm. liikennehäiriöt, korkeusrajoitukset, painorajoitukset, tankkauspisteet ketjuttain,
-taukopaikat palveluineen, purku- ja jakeluruudut (viralliset ja epäviralliset), kuljetustilauksia ja 
-muuta tarpeellista lisätietoa. Sovellukseen on luotu valmiiksi suoritealakohtaisia karttoja, 
-joissa kohdennettua juuri kyseiselle suoritealalle tärkeää tietoa. Lisäksi kuljettaja on kuningas, 
-sillä hänellä on valta päättää mitä omalla kartalla näkee ja mitä ei.
+Sovelluksesta löytyy mm. liikennehäiriöt, korkeusrajoitukset, painorajoitukset,
+tankkauspisteet ketjuttain, taukopaikat palveluineen, purku- ja jakeluruudut
+(viralliset ja epäviralliset), kuljetustilauksia ja muuta tarpeellista
+lisätietoa. Sovellukseen on luotu valmiiksi suoritealakohtaisia karttoja, joissa
+kohdennettua juuri kyseiselle suoritealalle tärkeää tietoa. Lisäksi kuljettaja
+on kuningas, sillä hänellä on valta päättää mitä omalla kartalla näkee ja mitä
+ei.
 
 <img src="{{ site.baseurl }}/img/tietorahdin-kartta/iPhone0.png" width="200" style="padding: 7px;"><img src="{{ site.baseurl }}/img/tietorahdin-kartta/iPhone1.png" width="200" style="padding: 7px;">
 

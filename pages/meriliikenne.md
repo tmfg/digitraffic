@@ -20,17 +20,20 @@ links:
 
 ## Yleistä tietoa
 
-Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa ammattimerenkulun
-tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetkellä:
+Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa
+ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät
+tällä hetkellä:
 
-- Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat kauppamerenkulun väylien
-  turvalaitepoikkeamat sekä voimassa olevat merivaroitukset.
+- Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat
+  kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat
+  merivaroitukset.
 
-- Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien aikataulutietojen kautta voidaan
-  hakea kauppamerenkulun alusten satamatietoja
+- Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien
+  aikataulutietojen kautta voidaan hakea kauppamerenkulun alusten satamatietoja
 
-- Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten tunnistamiseen ja sijainnin
-  määrittämiseen käytetty järjestelmä. [Lisätietoa](ais/).
+- Alusten sijaintitiedot. AIS (Automatic Identification System) on alusten
+  tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä.
+  [Lisätietoa](ais/).
 
 - Talvimerenkulun avustustiedot Baltice-järjestelmästä
 
@@ -44,18 +47,18 @@ tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät tällä hetke
 
 <h2 id="sisältö">Sisältö</h2>
 
-* Do not remove this line (it will not be displayed)
-  {:toc}
+- Do not remove this line (it will not be displayed) {:toc}
 
 ## REST/JSON-rajapinnat
 
 ### Rajapintojen Swagger-kuvaukset
 
-Rajapintakuvaukset löytyvät [Swagger-dokumentaatiosta]({{page.swagger-link}}){:target="_blank"}
+Rajapintakuvaukset löytyvät
+[Swagger-dokumentaatiosta]({{page.swagger-link}}){:target="_blank"}
 
 ### Merivaroitukset
 
-[```https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active```](https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active){:
+[`https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active`](https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active){:
 target="_blank"}
 
 Merivaroitukset haetaan POOKI-järjestelmästä.
@@ -64,31 +67,32 @@ Merivaroituksiin liittyvää metadataa ei ole digitrafficista saatavilla.
 
 ### Satamakäynnit
 
-[```https://meri.digitraffic.fi/api/port-call/v1/port-calls```](https://meri.digitraffic.fi/api/port-call/v1/port-calls){:
+[`https://meri.digitraffic.fi/api/port-call/v1/port-calls`](https://meri.digitraffic.fi/api/port-call/v1/port-calls){:
 target="_blank"}
 
-Satamakäynnit haetaan [Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"}
+Satamakäynnit haetaan
+[Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"}
 -järjestelmästä.
 
 Metadatat:
 
-[```https://meri.digitraffic.fi/api/port-call/v1/ports```](https://meri.digitraffic.fi/api/port-call/v1/ports){:
+[`https://meri.digitraffic.fi/api/port-call/v1/ports`](https://meri.digitraffic.fi/api/port-call/v1/ports){:
 target="_blank"}
 
-[```https://meri.digitraffic.fi/api/port-call/v1/vessel-details```](https://meri.digitraffic.fi/api/port-call/v1/vessel-details){:
+[`https://meri.digitraffic.fi/api/port-call/v1/vessel-details`](https://meri.digitraffic.fi/api/port-call/v1/vessel-details){:
 target="_blank"}
 
-[```https://meri.digitraffic.fi/api/port-call/v1/code-descriptions```](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:
+[`https://meri.digitraffic.fi/api/port-call/v1/code-descriptions`](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:
 target="_blank"}
 
 ### AIS-tiedot
 
-[```https://meri.digitraffic.fi/api/ais/v1/locations```](https://meri.digitraffic.fi/api/ais/v1/locations){:
+[`https://meri.digitraffic.fi/api/ais/v1/locations`](https://meri.digitraffic.fi/api/ais/v1/locations){:
 target="_blank"}
 
 Alusten metadatat:
 
-[```https://meri.digitraffic.fi/api/ais/v1/vessels```](https://meri.digitraffic.fi/api/ais/v1/vessels){:
+[`https://meri.digitraffic.fi/api/ais/v1/vessels`](https://meri.digitraffic.fi/api/ais/v1/vessels){:
 target="_blank"}
 
 Alusten sijaintitiedot ja metatiedot kerätään laivojen lähettämien AIS-viestien
@@ -96,34 +100,35 @@ perusteella. ([Lisätietoa](ais/)).
 
 ### Talvimerenkulun avustustiedot
 
-[```https://meri.digitraffic.fi/api/winter-navigation/v1/dirways```](https://meri.digitraffic.fi/api/winter-navigation/v1/dirways){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v1/dirways`](https://meri.digitraffic.fi/api/winter-navigation/v1/dirways){:
 target="_blank"}
 
-Avustustiedot haetaan [Baltice](http://baltice.org){:target="_blank"} -järjestelmästä.
+Avustustiedot haetaan [Baltice](http://baltice.org){:target="_blank"}
+-järjestelmästä.
 
 Metadatat:
 
-[```https://meri.digitraffic.fi/api/winter-navigation/v1/ports```](https://meri.digitraffic.fi/api/winter-navigation/v1/ports){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v1/ports`](https://meri.digitraffic.fi/api/winter-navigation/v1/ports){:
 target="_blank"}
 
-[```https://meri.digitraffic.fi/api/winter-navigation/v1/vessels```](https://meri.digitraffic.fi/api/winter-navigation/v1/vessels){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v1/vessels`](https://meri.digitraffic.fi/api/winter-navigation/v1/vessels){:
 target="_blank"}
 
 ### Meren tilan arviointi (SSE)
 
 Data + metadata:
 
-[```https://meri.digitraffic.fi/api/sse/v1/measurements```](https://meri.digitraffic.fi/api/sse/v1/measurements){:
+[`https://meri.digitraffic.fi/api/sse/v1/measurements`](https://meri.digitraffic.fi/api/sse/v1/measurements){:
 target="_blank"}
 
-Meren tilan arviointi -data haetaan TLSC-järjestelmästä, joka kerää ja analysoi älypoijujen lähettämää dataa
-julkaistavaan muotoon.
+Meren tilan arviointi -data haetaan TLSC-järjestelmästä, joka kerää ja analysoi
+älypoijujen lähettämää dataa julkaistavaan muotoon.
 
 Data päivitetään 30 minuutin välein.
 
 ### Vesiliikenteen häiriöt
 
-[```https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions```](https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions){:
+[`https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions`](https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions){:
 target="_blank"}
 
 Vesiliikenteen häiriöt haetaan POOKI-järjestelmästä.
@@ -132,7 +137,7 @@ Data päivitetään 10 minuutin välein.
 
 ### Turvalaiteviat
 
-[```https://meri.digitraffic.fi/api/aton/v1/faults```](https://meri.digitraffic.fi/api/aton/v1/faults){:
+[`https://meri.digitraffic.fi/api/aton/v1/faults`](https://meri.digitraffic.fi/api/aton/v1/faults){:
 target="_blank"}
 
 Turvalaiteviat haetaan POOKI-järjestelmästä.
@@ -141,24 +146,26 @@ Data päivitetään 10 minuutin välein.
 
 ## MQTT WebSocket -rajapinnat
 
-Laivojen sijainteja ja älypoijudataa voi kuunnella WebSocket-rajapinnoista. Käytetty protokolla on MQTT over
-WebSockets, joka mahdollistaa
-ainoastaan haluttujen tietojen vastaanoton topicien avulla.
+Laivojen sijainteja ja älypoijudataa voi kuunnella WebSocket-rajapinnoista.
+Käytetty protokolla on MQTT over WebSockets, joka mahdollistaa ainoastaan
+haluttujen tietojen vastaanoton topicien avulla.
 
-Tuotannon osoite on ```wss://meri.digitraffic.fi:443/mqtt```.
+Tuotannon osoite on `wss://meri.digitraffic.fi:443/mqtt`.
 
 Kirjautuessa tulee käyttää SSL-yhteyttä.
 
-Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 443, esimerkki alempana.
+Pahon JS-clientia käyttäessä osoite on pelkkä meri.digitraffic.fi ja portti 443,
+esimerkki alempana.
 
-Testin osoite vastaavasti ```meri-test.digitraffic.fi```.
+Testin osoite vastaavasti `meri-test.digitraffic.fi`.
 
-Yksinkertainen asiakas sovellus selaimelle löytyy [Tuki > MQTT esimerkkejä](/tuki/script-mqtt/) -sivulta.
+Yksinkertainen asiakas sovellus selaimelle löytyy
+[Tuki > MQTT esimerkkejä](/tuki/script-mqtt/) -sivulta.
 
 ### Topicit
 
-Jokaisen tarjottavan datalajin juuressa on myös topikki `status`. Viesti kertoo, milloin data on viimeksi
-päivittynyt epookki sekunteina. Esim.:
+Jokaisen tarjottavan datalajin juuressa on myös topikki `status`. Viesti kertoo,
+milloin data on viimeksi päivittynyt epookki sekunteina. Esim.:
 
 ```
 status: {
@@ -170,9 +177,9 @@ status: {
 
 Topicit ovat seuraavanlaista muotoa:
 
-- ```vessels-v2/<mmsi>/metadata```
-- ```vessels-v2/<mmsi>/location```
-- ```vessels-v2/status```
+- `vessels-v2/<mmsi>/metadata`
+- `vessels-v2/<mmsi>/location`
+- `vessels-v2/status`
 
 #### Esimerkkejä alusten viestitilauksista
 
@@ -187,10 +194,11 @@ vessels-v2/<mmsi>/metadata  # Yhden aluksen metadata
 
 #### Alusten viestimuodot
 
-***HUOM:*** metadataviestissä aikaleima on millisekunteina kun taas sijaintiviestissä se on sekunteina.
+_**HUOM:**_ metadataviestissä aikaleima on millisekunteina kun taas
+sijaintiviestissä se on sekunteina.
 
-Ks. AIS-datan kenttien kuvaukset
-Swaggerista: [https://meri.digitraffic.fi/swagger/#/AIS%20V1](https://meri.digitraffic.fi/swagger/#/AIS%20V1)
+Ks. AIS-datan kenttien kuvaukset Swaggerista:
+[https://meri.digitraffic.fi/swagger/#/AIS%20V1](https://meri.digitraffic.fi/swagger/#/AIS%20V1)
 
 #### Aluksen metadata -viesti
 
@@ -235,8 +243,8 @@ Swaggerista: [https://meri.digitraffic.fi/swagger/#/AIS%20V1](https://meri.digit
 
 Topicit ovat seuraavanlaista muotoa:
 
-- ```sse-v2/status```
-- ```sse-v2/site/<site-id>```
+- `sse-v2/status`
+- `sse-v2/site/<site-id>`
 
 #### Esimerkkejä SSE-viestitilauksista
 
@@ -264,112 +272,131 @@ sse-v2/site/<site-id>          # Yhden aseman datan tilaaminen
 
 #### Yksinkertainen JavaScript MQTT WebSocket -client
 
-Alla olevassa koodissa viitataan puuttuvaan muuttujaan **clientName**, täydennä siihen sovelluksesi nimi.
+Alla olevassa koodissa viitataan puuttuvaan muuttujaan **clientName**, täydennä
+siihen sovelluksesi nimi.
 
-**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla client.disconnect().  
+**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla
+client.disconnect().\
 Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
 
 ```html
-
 <html>
-<head>
+  <head>
     <title>Testiclient for vessel locations</title>
-    <script type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js"
+    ></script>
 
     <script>
-        const lines = [];
-        var messageCount = 0;
-        let client;
+      const lines = [];
+      var messageCount = 0;
+      let client;
 
-        function connect() {
-            console.log('trying to connect marine mqtt...');
+      function connect() {
+        console.log("trying to connect marine mqtt...");
 
-            // enter a valid client name to fix the syntax error
-            client = new Paho.MQTT.Client("meri-test.digitraffic.fi", 443, clientName);
+        // enter a valid client name to fix the syntax error
+        client = new Paho.MQTT.Client(
+          "meri-test.digitraffic.fi",
+          443,
+          clientName,
+        );
 
-            client.onConnectionLost = function (response) {
-                console.info(Date.now() + ' Connection lost:' + response.errorMessage);
-            };
+        client.onConnectionLost = function (response) {
+          console.info(
+            Date.now() + " Connection lost:" + response.errorMessage,
+          );
+        };
 
-            client.onMessageArrived = function (message) {
-                messageCount++;
+        client.onMessageArrived = function (message) {
+          messageCount++;
 
-                addMessage(message);
+          addMessage(message);
 
-                updateList();
-            };
+          updateList();
+        };
 
-            const connectionProperties = {
-                onSuccess: onConnect, onFailure: onConnectFailure, mqttVersion: 4, useSSL: true
-            };
+        const connectionProperties = {
+          onSuccess: onConnect,
+          onFailure: onConnectFailure,
+          mqttVersion: 4,
+          useSSL: true,
+        };
 
-            client.connect(connectionProperties);
+        client.connect(connectionProperties);
 
-            window.setInterval(logMessageCount, 60 * 1000);
+        window.setInterval(logMessageCount, 60 * 1000);
+      }
+
+      function disconnect() {
+        client.disconnect();
+      }
+
+      function logMessageCount() {
+        console.info(
+          Date.now() + " " + messageCount + " messages per minute",
+        );
+        messageCount = 0;
+      }
+
+      function onConnect() {
+        console.info(Date.now() + " Connection open");
+        client.subscribe("vessels-v2/#");
+      }
+
+      function onConnectFailure(response) {
+        console.info(
+          Date.now() + " Connection failed ." + response.errorCode +
+            ": " + response.errorMessage,
+        );
+      }
+
+      function addMessage(message) {
+        const text = convert(message);
+
+        if (lines.length > 100) {
+          lines.shift();
         }
 
-        function disconnect() {
-            client.disconnect();
+        lines.push(text);
+      }
+
+      function updateList() {
+        $(".messages").html(lines.join("<br/>"));
+      }
+
+      function convert(message) {
+        const content = message.payloadString;
+        const topic = message.destinationName;
+        const time = Date.now();
+        const json = JSON.parse(content);
+        let deltaMs;
+
+        if (typeof json.properties === "undefined") {
+          deltaMs = time - json.timestamp;
+        } else {
+          deltaMs = time - json.properties.timestampExternal;
         }
 
-        function logMessageCount() {
-            console.info(Date.now() + ' ' + messageCount + ' messages per minute');
-            messageCount = 0;
-        }
+        return "{ now: " + time + ", &Delta;timeMs: " + deltaMs +
+          ', topic: "' + topic + '", content: ' + content + " }";
+      }
 
-        function onConnect() {
-            console.info(Date.now() + ' Connection open');
-            client.subscribe("vessels-v2/#");
-        }
+      connect();
 
-        function onConnectFailure(response) {
-            console.info(
-                Date.now() + ' Connection failed .' + response.errorCode + ": " + response.errorMessage);
-        }
-
-        function addMessage(message) {
-            const text = convert(message);
-
-            if (lines.length > 100) {
-                lines.shift();
-            }
-
-            lines.push(text);
-        }
-
-        function updateList() {
-            $(".messages").html(lines.join('<br/>'));
-        }
-
-        function convert(message) {
-            const content = message.payloadString;
-            const topic = message.destinationName;
-            const time = Date.now();
-            const json = JSON.parse(content);
-            let deltaMs;
-
-            if (typeof json.properties === "undefined") {
-                deltaMs = time - json.timestamp;
-            } else {
-                deltaMs = time - json.properties.timestampExternal;
-            }
-
-            return "{ now: " + time + ", &Delta;timeMs: " + deltaMs + ", topic: \"" + topic + "\", content: " + content + " }";
-        }
-
-        connect();
-
-        // disconnect after 30 seconds
-        setTimeout(disconnect, 30000);
+      // disconnect after 30 seconds
+      setTimeout(disconnect, 30000);
     </script>
-</head>
-<body>
-Messages:
-<div class="messages"/>
-</body>
+  </head>
+  <body>
+    Messages:
+    <div class="messages" />
+  </body>
 </html>
 ```
 
@@ -377,7 +404,8 @@ Messages:
 
 Vaihda `APP_NAME` muuttujan sisältö oman sovelluksesi nimi.
 
-**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla `client.disconnect()`.  
+**HUOM!** Mikäli et hae dataa jatkuvasti, sulje yhteys kutsumalla
+`client.disconnect()`.\
 Esimerkkikoodissa yhteys katkaistaan 30 s kuluttua.
 
 ```python
@@ -423,8 +451,10 @@ client.disconnect()
 
 ## Käyttörajoitukset
 
-Katso [Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/tuki/ohjeita/#yleistä-huomioitavaa)
+Katso
+[Ohjeita ja lisätietoa rajapintojen käyttöön > Yleistä huomioitavaa](/tuki/ohjeita/#yleistä-huomioitavaa)
 
 ## Tuetut ja vanhentuneet rajapinnat
 
-Tuettujen ja vanhentuneiden rajapintojen listaus löytyy [täältä](/tuki/rajapintojen-muutokset/).
+Tuettujen ja vanhentuneiden rajapintojen listaus löytyy
+[täältä](/tuki/rajapintojen-muutokset/).

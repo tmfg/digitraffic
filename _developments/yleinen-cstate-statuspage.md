@@ -11,4 +11,5 @@ status: valmis
 date: 2024-01-01
 ---
 
-Status-palvelu on vaihdettu avoimen lähdekoodin tuotteeseen ja itse ylläpidettäväksi.
+Status-palvelu on vaihdettu avoimen lähdekoodin tuotteeseen ja itse
+ylläpidettäväksi.

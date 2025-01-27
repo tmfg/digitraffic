@@ -9,4 +9,6 @@ status: finished
 date: 2018-11-22
 ---
 
-Digitraffic is planning to publish data from navigational buoys (Sea State Estimation (SSE) algorithm on floating marine aids to navigation (AtoN) of the Finnish Traffic Administration). 
+Digitraffic is planning to publish data from navigational buoys (Sea State
+Estimation (SSE) algorithm on floating marine aids to navigation (AtoN) of the
+Finnish Traffic Administration).

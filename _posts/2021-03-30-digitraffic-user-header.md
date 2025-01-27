@@ -10,9 +10,11 @@ traffictypes:
   - Rautatieliikenne
   - Meriliikenne
 tags:
-  - Ylläpito 
+  - Ylläpito
   - Rajapinnat
 ---
 
-Suosittelemme rajapintakutsuihin lisättävän Digitraffic-User -otsikon käyttöä [ohjeet-sivuston](/tuki/ohjeita/#digitraffic-user--otsikko) mukaisesti.
-Pyyntöihin, jotka eivät sisällä otsikkoa, voidaan mahdollisesti jatkossa kohdistaa käyttörajoituksia
+Suosittelemme rajapintakutsuihin lisättävän Digitraffic-User -otsikon käyttöä
+[ohjeet-sivuston](/tuki/ohjeita/#digitraffic-user--otsikko) mukaisesti.
+Pyyntöihin, jotka eivät sisällä otsikkoa, voidaan mahdollisesti jatkossa
+kohdistaa käyttörajoituksia

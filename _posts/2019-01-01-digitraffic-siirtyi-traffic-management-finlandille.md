@@ -1,7 +1,7 @@
 ---
 title: 'Digitraffic siirtyi Fintrafficille'
 categories: Tiedotteet
-image: 
+image:
 lang: fi
 published: true
 ref: 2019-01-01-digitraffic-siirtyi-traffic-management-finlandille

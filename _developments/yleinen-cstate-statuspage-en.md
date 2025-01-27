@@ -11,4 +11,5 @@ status: finished
 date: 2024-01-01
 ---
 
-The status service has been changed to an open source product and it's now self-hosted.
+The status service has been changed to an open source product and it's now
+self-hosted.

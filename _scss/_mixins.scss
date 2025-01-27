@@ -6,7 +6,13 @@
   color: $base-font-color;
 }
 
-@mixin heading($font-size: 3rem, $font-weight: 500, $color: $gray-68, $letter-spacing:$heading-letter-spacing, $word-break: break-word) {
+@mixin heading(
+  $font-size: 3rem,
+  $font-weight: 500,
+  $color: $gray-68,
+  $letter-spacing: $heading-letter-spacing,
+  $word-break: break-word,
+) {
   font-family: $base-font-family;
   font-size: $font-size;
   font-weight: $font-weight;
@@ -17,7 +23,7 @@
 }
 
 @mixin mobile-font-size($font-size: 1rem) {
-  font-size: $base-font-size-n/$base-font-size-mobile-n * $font-size;
+  font-size: $base-font-size-n / $base-font-size-mobile-n * $font-size;
 }
 
 @mixin separator($char: "|", $padding: 0.5rem) {

@@ -18,10 +18,13 @@ Digitraffic production applications have been updated.
 Changelog:
 
 TIE
- - DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - siirretty v1-rajapintaan
- - DPO-337 - T-LOIK painorajoitteet - beta-rajapintaan
+
+- DPO-227 - Tietöiden hakeminen ja julkaiseminen rajapinnassa - siirretty
+  v1-rajapintaan
+- DPO-337 - T-LOIK painorajoitteet - beta-rajapintaan
 
 MERI
- - DPO-415 - Talvimerenkulku siirretty v1-rajapintaan
+
+- DPO-415 - Talvimerenkulku siirretty v1-rajapintaan
 
 We apologize for any inconvenience.

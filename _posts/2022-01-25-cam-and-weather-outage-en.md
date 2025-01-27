@@ -12,6 +12,7 @@ tags:
   - APIs
 ---
 
-There is a service break in weather camera and road weather data on 25th of January at 10 AM - 11 AM.
+There is a service break in weather camera and road weather data on 25th of
+January at 10 AM - 11 AM.
 
 We apologize for any inconvienence.

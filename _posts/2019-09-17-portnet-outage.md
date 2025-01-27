@@ -11,9 +11,9 @@ tags:
     - Ylläpito
     - Rajapinnat
 ---
- 
- 
-Tiistaina 17.9.2019 on PORTNET-integraation palvelukatko lähdejärjestelmän päivittymisen vuoksi. Tiedotamme häiriön päätyttyä.
- 
- 
-Katkon aikana satamakäyntien tiedot eivät päivity. Pahoittelemme tästä aiheutuvaa häiriötä.
+
+Tiistaina 17.9.2019 on PORTNET-integraation palvelukatko lähdejärjestelmän
+päivittymisen vuoksi. Tiedotamme häiriön päätyttyä.
+
+Katkon aikana satamakäyntien tiedot eivät päivity. Pahoittelemme tästä
+aiheutuvaa häiriötä.

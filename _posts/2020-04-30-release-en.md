@@ -12,7 +12,9 @@ tags:
   - Admin
 ---
 
-Requests that do not have `Accept-Encoding: gzip` (unpacked requests) in their HTTP-headers take up lot of resources and money. Therefore they will first be throttled and ultimately rejected completely
+Requests that do not have `Accept-Encoding: gzip` (unpacked requests) in their
+HTTP-headers take up lot of resources and money. Therefore they will first be
+throttled and ultimately rejected completely
 
 Timetable is as follows:
 

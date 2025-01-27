@@ -1,5 +1,5 @@
 ---
-title: 'Tiesääasemien historia -rajapinta julkaistu' 
+title: 'Tiesääasemien historia -rajapinta julkaistu'
 image:
 published: true
 categories: Tiedotteet
@@ -13,5 +13,7 @@ tags:
 
 Uusi rajapinta tiesääasemien 24 tunnin historialle on julkaistu.
 
-Dokumentaatiot löytyvät sivustolta [täältä](/tieliikenne/#tiesääasemien-ajantasaiset-mittaustiedot).\
-Swagger API -kuvaukset löytyvät [täältä](https://tie.digitraffic.fi/swagger/#/Weather%20V1).
+Dokumentaatiot löytyvät sivustolta
+[täältä](/tieliikenne/#tiesääasemien-ajantasaiset-mittaustiedot).\
+Swagger API -kuvaukset löytyvät
+[täältä](https://tie.digitraffic.fi/swagger/#/Weather%20V1).

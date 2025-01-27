@@ -12,11 +12,16 @@ tags:
   - Rajapinnat
 ---
 
-Kelikamerakuvapyynnöissä olisi hyvä käyttää ehdollisia HTTP-pyyntöjä turhan tiedonsiirron välttämiseksi.
+Kelikamerakuvapyynnöissä olisi hyvä käyttää ehdollisia HTTP-pyyntöjä turhan
+tiedonsiirron välttämiseksi.
 
-Kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käyttää ETagin arvoa **If-None-Match** -otsikossa. Mikäli kuva on päivittynyt se palautuu HTTP-paluukoodin 200 kera. Mikäli kuva ei ole päivittynyt mitään kuvaa ei palauteta ja HTTP-paluukoodi on 304.
+Kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**. Voit käyttää
+ETagin arvoa **If-None-Match** -otsikossa. Mikäli kuva on päivittynyt se
+palautuu HTTP-paluukoodin 200 kera. Mikäli kuva ei ole päivittynyt mitään kuvaa
+ei palauteta ja HTTP-paluukoodi on 304.
 
 curl-esimerkki:
+
 ```
 # Haetaan kuva GET-pyynnöllä ja otetaan ETag-arvo talteen (vipu -v)
 curl -v https://weathercam.digitraffic.fi/C0450701.jpg

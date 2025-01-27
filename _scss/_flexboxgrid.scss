@@ -13,18 +13,15 @@ $outer-margin: 2rem !default;
 // Create or remove breakpoints for your project
 // Syntax:
 // name SIZErem,
-$breakpoints:
-  sm 768px 46rem,
-  md 1224px 61rem,
-  lg 1824px 71rem !default;
+$breakpoints: sm 768px 46rem, md 1224px 61rem, lg 1824px 71rem !default;
 $flexboxgrid-max-width: 1200px !default;
 
 //
 // -- Stop editing -- //
 //
 
-$gutter-compensation: $gutter-width * .5 * -1;
-$half-gutter-width: $gutter-width * .5;
+$gutter-compensation: $gutter-width * 0.5 * -1;
+$half-gutter-width: $gutter-width * 0.5;
 
 .wrapper {
   box-sizing: border-box;
@@ -72,7 +69,7 @@ $half-gutter-width: $gutter-width * .5;
   @include flex-grow(0);
   @include flex-shrink(0);
 
-  // we leave @include flex-basis(auto) out of common because  
+  // we leave @include flex-basis(auto) out of common because
   // in some spots we need it and some we dont
   // more why here: https://github.com/kristoferjoseph/flexboxgrid/issues/126
 
@@ -146,7 +143,6 @@ $name: xs;
   order: 1;
 }
 
-
 @each $breakpoint in $breakpoints {
   $name: nth($breakpoint, 1);
   $size: nth($breakpoint, 2);
@@ -170,7 +166,7 @@ $name: xs;
     @for $i from 1 through $grid-columns {
       .col-#{$name}-offset-#{$i} {
         @include flexboxgrid-sass-col-common;
-        margin-left: 100% / $grid-columns * $i
+        margin-left: 100% / $grid-columns * $i;
       }
     }
     .col-#{$name} {

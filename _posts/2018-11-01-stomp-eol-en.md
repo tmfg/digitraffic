@@ -11,7 +11,8 @@ tags:
   - APIs
 ---
 
-STOMP reaches end of life 31.1.2018. STOMP will be replaced by MQTT. See below links for examples on how to use MQTT:
+STOMP reaches end of life 31.1.2018. STOMP will be replaced by MQTT. See below
+links for examples on how to use MQTT:
 
 [https://jsfiddle.net/cb2uj7kg/](https://jsfiddle.net/cb2uj7kg/)
 [https://jsfiddle.net/a9dgjm10/1/](https://jsfiddle.net/a9dgjm10/1/)

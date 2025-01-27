@@ -11,5 +11,5 @@ tags:
   - APIs
 ---
 
-Variable Signs can now be fetched as datex2(formermly in beta).  A new API was added that allows to generate symbols used
-in variable sign text as SVG-files.
+Variable Signs can now be fetched as datex2(formermly in beta). A new API was
+added that allows to generate symbols used in variable sign text as SVG-files.

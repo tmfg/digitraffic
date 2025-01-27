@@ -20799,7 +20799,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   };
   globalThis.getServiceStatus = getServiceStatus2;
-  var cStateStatusString = { OK: "ok", DISRUPTED: "disrupted", DOWN: "down" };
+  var cStateStatusString = {
+    OK: "ok",
+    DISRUPTED: "disrupted",
+    DOWN: "down"
+  };
   var serviceChildComponentHealthThreshold = 50;
   var statusUnderMaintenance = "under_maintenance";
   var digitrafficMaintenancePath = "/digitraffic-maintenance/";
@@ -21078,7 +21082,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       $("<thead/>").append([
         $("<tr/>", { class: "row.nowrap" }).append([
           $("<th/>", { class: "datex2-col-1-2", colspan: 2 }).text(tableTitle),
-          $("<th/>", { class: "datex2-col-3-8", id: "date_" + datexType, colspan: 6 }).text("-")
+          $("<th/>", {
+            class: "datex2-col-3-8",
+            id: "date_" + datexType,
+            colspan: 6
+          }).text("-")
         ]),
         $("<tr/>", { class: "row.nowrap" }).append([
           $("<th/>", { class: "datex2-col1" }).text("GUID"),

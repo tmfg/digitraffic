@@ -12,6 +12,7 @@ tags:
     - Rajapinnat
 ---
 
-Keskiviikkona 17.11.2021 klo 10:00 - 12:00 välisenä aikana on odotettavissa lyhyitä katkoja LAM-, kelikamera-, sekä tiesäätietojen keruussa.
- 
+Keskiviikkona 17.11.2021 klo 10:00 - 12:00 välisenä aikana on odotettavissa
+lyhyitä katkoja LAM-, kelikamera-, sekä tiesäätietojen keruussa.
+
 Pahoittelemme tästä aiheutuvaa häiriötä.

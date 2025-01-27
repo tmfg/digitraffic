@@ -12,6 +12,7 @@ tags:
     - Rajapinnat
 ---
 
-Tiistaina 25.5.2021 klo 10:00 - 15:00 välisenä aikana on odotettavissa katkoja LAM-, kelikamera-, sekä tiesäätietojen keruussa.
- 
+Tiistaina 25.5.2021 klo 10:00 - 15:00 välisenä aikana on odotettavissa katkoja
+LAM-, kelikamera-, sekä tiesäätietojen keruussa.
+
 Pahoittelemme tästä aiheutuvaa häiriötä.

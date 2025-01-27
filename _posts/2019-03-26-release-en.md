@@ -19,6 +19,7 @@ Changelog:
 
 ROAD
 
-- DPO-763 - Viimeisin muokkausaika pitää tallettaa kantaan data_updated-tauluun eikä aina tulkita muista tauluista 
+- DPO-763 - Viimeisin muokkausaika pitää tallettaa kantaan data_updated-tauluun
+  eikä aina tulkita muista tauluista
 
 We apologize for any inconvenience.

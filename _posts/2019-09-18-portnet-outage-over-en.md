@@ -1,6 +1,6 @@
 ---
 title: 'PORTNET service break over'
-image: 
+image:
 published: true
 categories: en News
 ref: 2019-09-18-portnet-outage-over
@@ -12,4 +12,5 @@ tags:
   - APIs
 ---
 
-The PORTNET service break is over and port status information is now available. We apologize for any inconvenience.
+The PORTNET service break is over and port status information is now available.
+We apologize for any inconvenience.

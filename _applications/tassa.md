@@ -5,7 +5,7 @@ logo: tassa/tassa-logo.png
 developer:
   - Adfore Technologies Oy
   - https://www.adfore.com/
-traffictypes: 
+traffictypes:
   - Tieliikenne
 environments:
   - iOS
@@ -13,17 +13,29 @@ environments:
   - Web
 language: Suomi (FIN), Ruotsi (SWE), Englanti (EN), Venäjä (RUS)
 price: Ilmainen
-download-urls: 
+download-urls:
   - https://tassa.fi/lataa
 feedback-url: mailto:tuki@tassa.fi
 ---
 
-Tässä.fi-paikallisopas on helpoin ja luotettavin apu Suomessa moneen eri tilanteeseen.
+Tässä.fi-paikallisopas on helpoin ja luotettavin apu Suomessa moneen eri
+tilanteeseen.
 
-Tässä.fi paikantaa missä olet ja antaa sinulle hyödyllisiä tietoja ympäristöstäsi. Sovelluksen kautta saat ajankohtaista tietoa tarjouksista, toimipisteistä, aukioloajoista, liikenteestä, säästä ja oikeastaan mistä tahansa tarvitset.
+Tässä.fi paikantaa missä olet ja antaa sinulle hyödyllisiä tietoja
+ympäristöstäsi. Sovelluksen kautta saat ajankohtaista tietoa tarjouksista,
+toimipisteistä, aukioloajoista, liikenteestä, säästä ja oikeastaan mistä tahansa
+tarvitset.
 
-Suomen kattavimmat tiedot liikenteeseen. Sovelluksen liikenne-osio tarjoaa Suomen kattavimmat tiedot liikenteeseen. Tässä.fi palvelee sekä autoilijoita että julkisen liikenteen käyttäjiä. Autoilijana löydät helposti lähimmät huoltoasemat, kelikamerat, tiesää- ja ruuhkatiedot. Saat samat tiedot myös oman reittisi varrelle, kuinkas kaukana se seuraava. Merkitsemällä tiesääaseman suosikiksi saat sovelluksesta push-hälytyksen, kun tiesää mittauspisteessä huononee. Merkitsemällä liikennemittauspisteen suosikiksi saat tiedon, kun tienkohta ruuhkautuu.
+Suomen kattavimmat tiedot liikenteeseen. Sovelluksen liikenne-osio tarjoaa
+Suomen kattavimmat tiedot liikenteeseen. Tässä.fi palvelee sekä autoilijoita
+että julkisen liikenteen käyttäjiä. Autoilijana löydät helposti lähimmät
+huoltoasemat, kelikamerat, tiesää- ja ruuhkatiedot. Saat samat tiedot myös oman
+reittisi varrelle, kuinkas kaukana se seuraava. Merkitsemällä tiesääaseman
+suosikiksi saat sovelluksesta push-hälytyksen, kun tiesää mittauspisteessä
+huononee. Merkitsemällä liikennemittauspisteen suosikiksi saat tiedon, kun
+tienkohta ruuhkautuu.
 
 [![Lataa tässä.fi]({{ site.baseurl }}{{ "/img/tassa/tassa-mainos.jpg" }})](https://tassa.fi/lataa){:target="_blank"}
 
-Lataa sovellus ja pysyt ajan tasalla missä tahansa Suomessa liikutkin! Tässä.fi – Paikallinen kaikkialla.
+Lataa sovellus ja pysyt ajan tasalla missä tahansa Suomessa liikutkin! Tässä.fi
+– Paikallinen kaikkialla.

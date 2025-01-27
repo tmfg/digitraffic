@@ -21,8 +21,10 @@ ROAD
 
 - DPO-732 - Tehdään quartzia varten oma dataSource
 - DPO-736 - Epävakaa yksikkötesti
-- DPO-697 - Asemien laskennallisten vakioiden haku LOTJUsta ja jakaminen Digitrafficissa (beta)
-- DPO-305 - TmsListeneriin lokitus, mikäli vastaanotetaan asemia joita ei löydy kannasta
+- DPO-697 - Asemien laskennallisten vakioiden haku LOTJUsta ja jakaminen
+  Digitrafficissa (beta)
+- DPO-305 - TmsListeneriin lokitus, mikäli vastaanotetaan asemia joita ei löydy
+  kannasta
 
 MARINE
 
