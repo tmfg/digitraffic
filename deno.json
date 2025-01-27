@@ -1,0 +1,23 @@
+{
+  "fmt": {
+    "include": [
+      "**/*.ts",
+      "**/*.yml",
+      "**/*.yaml",
+      "**/*.md",
+      "**/*.json",
+      "**/*.css",
+      "**/*.scss"
+    ],
+    "exclude": [
+      "*/**",
+      "**/pnpm-lock.yaml",
+      "**/dist",
+      "/*/**/lib",
+      "**/node_modules",
+      ".git",
+      "**/bundle.*",
+      "_site"
+    ]
+  }
+}

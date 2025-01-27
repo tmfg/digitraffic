@@ -43,27 +43,23 @@ collections:
   developments:
     output: false
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "news"
-  -
-    scope:
+  - scope:
       path: "img"
     values:
       image: true
-  -
-    scope:
+  - scope:
       path: ""
       type: "applications"
     values:
       layout: "application"
       hero-image: "code"
       logo: "application-default-logo.svg"
-  -
-    scope:
+  - scope:
       path: ""
     values:
       lang: "fi"
@@ -335,15 +331,15 @@ t:
       en: "No development plans"
       fi: "Ei näytettäviä hankkeita."
   development-roadmap-phases:
-      planned:
-        en: "planned"
-        fi: "suunnitteilla"
-      inprogress:
-        en: "in progress"
-        fi: "toteutuksessa"
-      finished:
-        en: "finished"
-        fi: "valmis"
+    planned:
+      en: "planned"
+      fi: "suunnitteilla"
+    inprogress:
+      en: "in progress"
+      fi: "toteutuksessa"
+    finished:
+      en: "finished"
+      fi: "valmis"
   frontpage-heading:
     en: "Digitraffic"
     fi: "Digitraffic"
