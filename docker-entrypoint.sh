@@ -11,20 +11,12 @@ then
     echo "Installing/updating required Ruby gems."
     bundle install
     bundle update
-
-    echo
-    echo "Installing/updating required node packages. Please wait..."
-    npm install
-    npm update --save
-    npm audit
-    npm audit fix | true
-
 else
     echo
     echo "env SKIP_UPDATE=true. Skipping bundle and npm updates"
 fi
 
-npm run dev &
+pnpm dev &
 
 while true
 do
