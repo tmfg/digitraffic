@@ -12,7 +12,9 @@ title: Code examples
 intro: Examples of using Digitraffic data and applying good programming practices
 ---
 
-- Do not remove this line (it will not be displayed) {:toc}
+<!-- deno-fmt-ignore -->
+- Do not remove this line (it will not be displayed)
+{:toc}
 
 ### Camera images with ETags
 

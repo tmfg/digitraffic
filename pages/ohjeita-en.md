@@ -14,7 +14,9 @@ intro: Instructions for coding
 
 <h2 id="contents">Contents</h2>
 
-- Do not remove this line (it will not be displayed) {:toc}
+<!-- deno-fmt-ignore -->
+- Do not remove this line (it will not be displayed)
+{:toc}
 
 # General considerations
 

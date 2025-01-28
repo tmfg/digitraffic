@@ -14,7 +14,9 @@ intro: Liikenteen automaattiset mittaustiedot
 Fintraffic kerää tietoa tieliikenteestä liikenteen automaattisten mittausasemien
 (LAM) avulla. Tarjolla on reaaliaika- ja historiadataa.
 
-- Do not remove this line (it will not be displayed) {:toc}
+<!-- deno-fmt-ignore -->
+- Do not remove this line (it will not be displayed)
+{:toc}
 
 # Mittauspisteiden toiminta
 

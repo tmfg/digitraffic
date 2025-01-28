@@ -14,7 +14,9 @@ intro: Ohjeita ohjelmoijille
 
 <h2 id="sisalto">Sisältö</h2>
 
-- Do not remove this line (it will not be displayed) {:toc}
+<!-- deno-fmt-ignore -->
+- Do not remove this line (it will not be displayed)
+{:toc}
 
 # Yleistä huomioitavaa
 

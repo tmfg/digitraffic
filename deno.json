@@ -10,6 +10,9 @@
       "**/*.scss"
     ],
     "exclude": [
+      "data/translations.json",
+      "js/lang.js",
+      "css/style.scss",
       "**/pnpm-lock.yaml",
       "**/dist",
       "/*/**/lib",

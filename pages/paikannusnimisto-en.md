@@ -13,7 +13,9 @@ intro: Finnish RDS-TMC event list and location table
 
 <h2 id="sisältö">Contents</h2>
 
-- Do not remove this line (it will not be displayed) {:toc}
+<!-- deno-fmt-ignore -->
+- Do not remove this line (it will not be displayed)
+{:toc}
 
 This note describes the Finnish location and event tables including which
 decisions have been made concerning items, which are not part of the Location
