@@ -11,7 +11,7 @@ environments:
 language: Suomi (FIN)
 price: Ilmainen
 download-urls:
-  - https://julia.dy.fi
+  - https://juliadata.fi/
 feedback-url:
 ---
 

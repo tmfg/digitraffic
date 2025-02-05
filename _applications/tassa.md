@@ -14,6 +14,7 @@ environments:
 language: Suomi (FIN), Ruotsi (SWE), Englanti (EN), Venäjä (RUS)
 price: Ilmainen
 download-urls:
+  - https://tassa.fi
   - https://tassa.fi/lataa
 feedback-url: mailto:tuki@tassa.fi
 ---

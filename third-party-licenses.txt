@@ -3,7 +3,7 @@ https://www.npmjs.com/package/generate-license-file
 
 The following npm package may be included in this product:
 
- - material-icons@1.13.12
+ - material-icons@1.13.13
 
 This package contains the following license:
 
