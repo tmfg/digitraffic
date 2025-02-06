@@ -238,7 +238,7 @@ The shared sensor data is as follows:
 Statistics web form can be used to search reports from tms-stations.
 
 Web form to search for statistics can be found at
-[https://tie.digitraffic.fi/ui/tms/history/](https://tie.digitraffic.fi/ui/tms/history/){:target="_blank"}.
+[https://tie.digitraffic.fi/ui/tms/history/index_en.html](https://tie.digitraffic.fi/ui/tms/history/index_en.html){:target="_blank"}.
 
 #### Raw data
 
