@@ -497,7 +497,7 @@ Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun ja Turu
 
 #### Mittauspisteiden dataa CSV-muodossa
 
-[`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv){:target="_blank"}
+[`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv?year=2025&month=1&siteId=300044494){:target="_blank"}
 
 ## MQTT WebSocket -rajapinnat
 

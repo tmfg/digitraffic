@@ -483,7 +483,7 @@ Walking and cycling counting site values are currently received from Oulu and Tu
 
 #### Counting site values in CSV
 
-[`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv){:target="_blank"}
+[`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv?year=2025&month=1&siteId=300044494){:target="_blank"}
 
 ## MQTT WebSocket APIs
 
