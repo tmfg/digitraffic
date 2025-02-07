@@ -465,28 +465,25 @@ maintenance vehicles.
 
 ### Walking and cycling counting site values
 
-Walking and cycling counting site values are currently received from Oulu
-region.
+Walking and cycling counting site values are currently received from Oulu and Turku regions.
 
-#### All counters in GeoJSON
+#### All counting sites in GeoJSON
 
-[`/api/counting-site/v1/counters`](https://tie.digitraffic.fi/api/counting-site/v1/counters){:target="_blank"}
+[`/api/counting-site/v2/sites`](https://tie.digitraffic.fi/api/counting-site/v2/sites){:target="_blank"}
 
 #### More metadata
 
-[`/api/counting-site/v1/directions`](https://tie.digitraffic.fi/api/counting-site/v1/directions){:target="_blank"}
-
-[`/api/counting-site/v1/domains`](https://tie.digitraffic.fi/api/counting-site/v1/domains){:target="_blank"}
-
-[`/api/counting-site/v1/user-types`](https://tie.digitraffic.fi/api/counting-site/v1/user-types){:target="_blank"}
+[`/api/counting-site/v2/directions`](https://tie.digitraffic.fi/api/counting-site/v2/directions){:target="_blank"}\
+[`/api/counting-site/v2/domains`](https://tie.digitraffic.fi/api/counting-site/v2/domains){:target="_blank"}\
+[`/api/counting-site/v2/travel-modes`](https://tie.digitraffic.fi/api/counting-site/v2/travel-modes){:target="_blank"}\
 
 #### Counting site values in json
 
-[`/api/counting-site/v1/values`](https://tie.digitraffic.fi/api/counting-site/v1/values){:target="_blank"}
+[`/api/counting-site/v2/values`](https://tie.digitraffic.fi/api/counting-site/v2/values){:target="_blank"}
 
 #### Counting site values in CSV
 
-[`/api/counting-site/v1/values.csv`](https://tie.digitraffic.fi/api/counting-site/v1/values.csv){:target="_blank"}
+[`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv){:target="_blank"}
 
 ## MQTT WebSocket APIs
 
