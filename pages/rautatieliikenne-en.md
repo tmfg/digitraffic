@@ -32,7 +32,7 @@ questions:
 - What is the location of my train at the moment?
 - Which train can I use to travel from A to B on date C?
 - Which trains are departing and arriving next from a specific station?
-- What kind of wagons and locotomovites does my train consist of?
+- What kind of wagons and locomotives does my train consist of?
 - What kind of services does a train provide?
 - Was my train on schedule for example two months ago?
 
