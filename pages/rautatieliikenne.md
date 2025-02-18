@@ -542,8 +542,9 @@ Esimerkki:
 **Kuvaus**
 
 Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun
-versionumeron. Vastaus rajoitettu 2500 junat-tyyppiseen riviin. Huomaa, että
-palautetussa setissä voi olla samasta junasta useampi rivi, mutta eri päiville.
+versionumeron. Huomaa, että palautetussa setissä voi olla samasta junasta useampi rivi, mutta eri päiville.
+
+Vastauksen koko on aina enintään 2500 - n, missä n > 0. Mikäli vastauksen koko on palvelinpäässä 2500 riviä tai yli, palautetaan rajapinnasta 2500 riviä, joista jätetään pois järjestyksessä viimeisen versionumeron rivit. Tämä tehdään osittaisten versioiden palauttamisen välttämiseksi. Vastaukset sisältävät siis aina pelkästään täydellisiä versioita. 
 
 **Hakuehdot**
 
