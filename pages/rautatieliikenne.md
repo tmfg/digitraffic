@@ -544,7 +544,7 @@ Esimerkki:
 Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun
 versionumeron. Huomaa, että palautetussa setissä voi olla samasta junasta useampi rivi, mutta eri päiville.
 
-Vastauksen koko on aina enintään 2500 - n, missä n > 0. Mikäli vastauksen koko on palvelinpäässä 2500 riviä tai yli, palautetaan rajapinnasta 2500 riviä, joista jätetään pois järjestyksessä viimeisen versionumeron rivit. Tämä tehdään osittaisten versioiden palauttamisen välttämiseksi. Vastaukset sisältävät siis aina pelkästään täydellisiä versioita. 
+Vastauksen koko on aina enintään 2500 - n, missä n > 0. Palvelinpäässä vastaus on rajoitettu 2500 riviin, mistä jätetään rajan ylittyessä viimeisen version rivit pois, jolloin rajapinnan vastauksen koko on aina 0 - 2499 riviä. Tämä tehdään osittaisten versioiden palauttamisen välttämiseksi. Rajapinnan vastaukset sisältävät siis vain täydellisiä versioita. 
 
 **Hakuehdot**
 
