@@ -21,7 +21,7 @@ Tämän avoimen rajapinnan tarkoituksena on jakaa tietoa Suomen rataverkolla
 kulkevien junien aikatauluista, sijainneista, kokoonpanoista sekä
 täsmällisyystiedoista. Palvelun omistaa Fintraffic ja tietolähteenä toimii
 Fintrafficin ratakapasiteetin ja liikenteenohjauksen Liike-perheen sovellukset
-sekä matkustajainformaatiojärjestelmä MIKU.
+sekä matkustajainformaatiojärjestelmä RAMI.
 
 ![LIIKE]({{ site.baseurl }}{{ "/img/rata/liike.png" }}) ![REAALI]({{
 site.baseurl }}{{ "/img/rata/reaali.png" }}) ![LOKI]({{ site.baseurl }}{{
