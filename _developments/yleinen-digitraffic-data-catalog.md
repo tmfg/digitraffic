@@ -12,4 +12,4 @@ date: 2023-04-01
 ---
 
 Datakatalogi kuvaamaan digitrafficin tuottamaa dataa datan hyödyntäjille.
-Suunnitellaan toteutettavaksi 2024 aikana.
+Suunnitellaan toteutettavaksi 2025 aikana.

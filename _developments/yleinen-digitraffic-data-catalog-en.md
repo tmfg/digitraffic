@@ -12,4 +12,4 @@ date: 2023-04-01
 ---
 
 Data Catalog service which will provide comprehensive description of Digitraffic
-data for Digitraffic users. Planned to be implemented during 2024.
+data for Digitraffic users. Planned to be implemented during 2025.
