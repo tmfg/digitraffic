@@ -21,7 +21,7 @@ feedback-url: mailto:tuki@nautics.fi
 Sailmate on veneilysovellus, josta käyttäjä näkee rasterimuotoiset
 merikartat (Traficomin lisenssi), oman sijaintinsa ja veneen
 liiketiedot, sääennusteen, satamatietoja ja voi suunnitella reittejä.
-Uutena ominaisuutena tarkoituksemme on näyttäa AIS-A data kartalla.
+Uutena ominaisuutena tarkoituksemme on näyttää AIS-A data kartalla.
 
 Sailmate-sovellus on ollut markkinoilla vuodesta 2013 lähtien. Sailmate
 on täysin suomalainen avainlipputuote.
