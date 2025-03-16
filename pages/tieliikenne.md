@@ -91,8 +91,8 @@ dokumentaatiossa välttämättä kerrottu.
 [`/api/weathercam/v1/stations/{id}`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507){:target="_blank"}
 
 Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä
-kelikamerakuvat löytyvät. Esim. esiasennon C0450701 kuva löytyy osoitteesta
-[https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg){:target="_blank"}.
+kelikamerakuvat löytyvät. Esim. esiasennon C1451601 kuva löytyy osoitteesta
+[https://weathercam.digitraffic.fi/C1451601.jpg](https://weathercam.digitraffic.fi/C1451601.jpg){:target="_blank"}.
 
 Aseman tiedoista kannattaa huomioida ainakin alla olevat kentät, joista voi
 päätellä onko kamera tai esiasento keruussa.
@@ -107,12 +107,12 @@ päätellä onko kamera tai esiasento keruussa.
 
 Kelikamerakuvat päivittyvät noin 10 minuutin välein.
 
-![Kelikamerakuva C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
+![Kelikamerakuva C1451601](https://weathercam.digitraffic.fi/C1451601.jpg)
 
 #### Halutun kameran tai esiasennon 24h historia
 
 [`/api/weathercam/v1/stations/{camraId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history){:target="_blank"}\
-[`/api/weathercam/v1/stations/{presetId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C0450701/history){:target="_blank"}
+[`/api/weathercam/v1/stations/{presetId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C1451601/history){:target="_blank"}
 
 Rajapinta palauttaa linkit menneisiin kuviin viimeisen 24 tunnin ajalta.
 
@@ -479,7 +479,8 @@ sijainti- ja tehtävätiedot
 
 ### Jalankulun ja pyöräilyn mittaustiedot
 
-Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun ja Turun lähistöiltä.
+Jalankulun ja pyöräilyn mittaustietoja saadaan tällä hetkellä Oulun ja Turun
+lähistöiltä.
 
 #### Kaikkien mittauspisteiden tiedot GeoJSON-muodossa
 

@@ -89,8 +89,8 @@ the camera or preset is in collection.
 - Preset field `inCollection`
 
 Response message contains weather camera information and URL for the camera
-image. For example preset image C0450701 is located at
-[https://weathercam.digitraffic.fi/C0450701.jpg](https://weathercam.digitraffic.fi/C0450701.jpg){:target="_blank"}.
+image. For example preset image C1451601 is located at
+[https://weathercam.digitraffic.fi/C1451601.jpg](https://weathercam.digitraffic.fi/C1451601.jpg){:target="_blank"}.
 
 #### Data for all stations and for single station
 
@@ -99,12 +99,12 @@ image. For example preset image C0450701 is located at
 
 Weather camera images are updated approximately about every 10 minutes.
 
-![Weather camera image C0450701](https://weathercam.digitraffic.fi/C0450701.jpg)
+![Weather camera image C1451601](https://weathercam.digitraffic.fi/C1451601.jpg)
 
 ### Weather camera image history for the last 24 hours
 
 [`/api/weathercam/v1/stations/{camraId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history){:target="_blank"}\
-[`/api/weathercam/v1/stations/{presetId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C0450701/history){:target="_blank"}
+[`/api/weathercam/v1/stations/{presetId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C1451601/history){:target="_blank"}
 
 API call returns links to history images for last 24 hours.
 
@@ -465,7 +465,8 @@ maintenance vehicles.
 
 ### Walking and cycling counting site values
 
-Walking and cycling counting site values are currently received from Oulu and Turku regions.
+Walking and cycling counting site values are currently received from Oulu and
+Turku regions.
 
 #### All counting sites in GeoJSON
 
