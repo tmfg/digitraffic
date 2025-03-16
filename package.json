@@ -6,6 +6,9 @@
   "author": "Tom Nuorivaara & Digitraffic",
   "license": "CC-BY-4.0",
   "main": "index.js",
+  "engines": {
+    "node": ">=22 <23"
+  },
   "scripts": {
     "build-and-install": "pnpm clean && pnpm build && pnpm install-all",
     "build": "pnpm build:tsc && pnpm generate-third-party-licenses",
@@ -30,9 +33,9 @@
     "format": "pnpm deno fmt"
   },
   "dependencies": {
-    "@fontsource/public-sans": "^5.1.2",
+    "@fontsource/public-sans": "^5.2.5",
     "@popperjs/core": "^2.11.8",
-    "alpinejs": "^3.14.8",
+    "alpinejs": "^3.14.9",
     "highlight.js": "^11.11.1",
     "jquery": "^3.7.1",
     "lunr": "^2.3.9",

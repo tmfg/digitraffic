@@ -16674,7 +16674,7 @@
     };
   }
 
-  // node_modules/.pnpm/alpinejs@3.14.8/node_modules/alpinejs/dist/module.esm.js
+  // node_modules/.pnpm/alpinejs@3.14.9/node_modules/alpinejs/dist/module.esm.js
   var flushPending = false;
   var flushing = false;
   var queue = [];
@@ -18277,7 +18277,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.14.8",
+    version: "3.14.9",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,

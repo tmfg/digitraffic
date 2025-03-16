@@ -10,7 +10,7 @@ pnpm install
 pnpm build-and-install
 
 # Format files (also done on pre-commit hook with lefthook)
-pnpm 
+pnpm format
 
 # Build Docker image
 docker build . -t digitraffic-pages
