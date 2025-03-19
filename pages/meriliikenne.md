@@ -161,7 +161,7 @@ esimerkki alempana.
 
 Testin osoite vastaavasti `meri-test.digitraffic.fi`.
 
-Yksinkertainen asiakas sovellus selaimelle löytyy
+Yksinkertainen asiakassovellus selaimelle löytyy
 [Tuki > MQTT esimerkkejä](/tuki/script-mqtt/) -sivulta.
 
 ### Topicit

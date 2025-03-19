@@ -404,33 +404,38 @@ connection by calling `client.disconnect()`.\
 The example code disconnects after 30 s.
 
 ```python
+import time
 import uuid
 import paho.mqtt.client as mqtt
-import time
 
-APP_NAME = 'Junamies/FoobarApp 1.0'
-
-
-def on_message(client, userdata, message):
-    print('message received', str(message.payload.decode('utf-8')))
+APP_NAME = "Junahenkilö/FoobarApp 1.0"
 
 
-def on_connect(client, userdata, flags, rc):
-    if rc == 0:
-        print('Connected')
+def on_connect(client, userdata, flags, reason_code, properties):
+    if reason_code == 0:
+        print("Connected")
         client.subscribe("vessels-v2/#")
     else:
-        print('Failed to connect, return code %d\n', rc)
+        print("Failed to connect, return code %d\n", reason_code)
 
 
-client_name = '{}; {}'.format(APP_NAME, str(uuid.uuid4()))
-client = mqtt.Client(client_name, transport="websockets")
+def on_message(client, userdata, msg):
+    print("message received", str(msg.payload.decode("utf-8")))
+
+
+client_name = "{}; {}".format(APP_NAME, str(uuid.uuid4()))
+
+client = mqtt.Client(
+    callback_api_version=mqtt.CallbackAPIVersion.VERSION2,
+    transport="websockets",
+    client_id=client_name,
+)
 
 client.on_connect = on_connect
 client.on_message = on_message
 
 client.tls_set()
-client.connect('tie.digitraffic.fi', 443)
+client.connect("meri.digitraffic.fi", 443)
 
 client.loop_start()
 time.sleep(30)
