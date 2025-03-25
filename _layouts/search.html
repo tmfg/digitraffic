@@ -119,7 +119,10 @@ layout: compress
     </script>
 
     <!-- Search scripts -->
-    <script src="{{ "/js/lunr/lunr.min.js" | prepend:site.baseurl }}"></script>
-    <script src="{{ "/js/custom/search.js" | prepend:site.baseurl }}"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        digitrafficSearch.doSearch();
+      });
+    </script>
   </body>
 </html>
