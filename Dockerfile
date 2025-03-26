@@ -18,7 +18,7 @@ COPY docker-entrypoint.sh /
 
 # Add additional files to install required Ruby gems and Node packages
 # to make docker container startup faster
-COPY Gemfile package.json package-lock.json _config_dev.yml /app/
+COPY Gemfile package.json _config_dev.yml /app/
 
 WORKDIR /app
 RUN cd /app
