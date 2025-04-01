@@ -148,11 +148,11 @@ the header is set.
 
 | **Target / interface**                    | **Max requests / min** | **Key** |
 | ----------------------------------------- | ---------------------- | ------- |
-| **General restriction**                   | 120                    | IP      |
+| **General restriction**                   | 60                     | IP      |
 | **MQTT**                                  | 5                      | IP      |
-| **Weather camera images**                 | 120                    | IP      |
-| **tie/meri.digitraffic.fi V1-interfaces** | 120                    | IP      |
-| **infra- and jeti-api**                   | 120                    | IP      |
+| **Weather camera images**                 | 60                     | IP      |
+| **tie/meri.digitraffic.fi V1-interfaces** | 60                     | IP      |
+| **infra- and jeti-api**                   | 60                     | IP      |
 
 # Cache
 

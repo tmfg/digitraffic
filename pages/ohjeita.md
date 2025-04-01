@@ -147,11 +147,11 @@ tehdä huomattavasti enemmän, jos otsikko on kyselyissä mukana.
 
 | **Kohde / rajapinta**                       | **Max kpl / min** | **Rajaus** |
 | ------------------------------------------- | ----------------- | ---------- |
-| **Yleisrajoitus**                           | 120               | IP         |
+| **Yleisrajoitus**                           | 60                | IP         |
 | **MQTT**                                    | 5                 | IP         |
-| **Kelikamerakuvat**                         | 120 / 5 min       | IP         |
-| **tie/meri.digitraffic.fi:n V1-rajapinnat** | 120               | IP         |
-| **infra- ja jeti-api**                      | 120               | IP         |
+| **Kelikamerakuvat**                         | 60                | IP         |
+| **tie/meri.digitraffic.fi:n V1-rajapinnat** | 60                | IP         |
+| **infra- ja jeti-api**                      | 60                | IP         |
 
 # Cache
 
