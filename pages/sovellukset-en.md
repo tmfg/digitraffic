@@ -5,5 +5,5 @@ searchable: true
 lang: en
 ref: applications
 title: Applications
-intro: Applications using open data provided by the Fintraffic.
+intro: Applications using open data provided by Fintraffic
 ---

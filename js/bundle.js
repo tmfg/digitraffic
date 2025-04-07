@@ -22533,7 +22533,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           appendString += '<div class="date-type-tags">';
           if (item.category === "Page") {
             appendString += '<span class="date-type-tags__section';
-            if (item.traffictypes && item.traffictypes.length > 0) appendString += " date-type-tags__section--has-traffictype";
+            if (item.traffictypes && item.traffictypes.length > 0) {
+              appendString += " date-type-tags__section--has-traffictype";
+            }
             appendString += '">' + item.section + "</span>";
             if (item.traffictypes && item.traffictypes.length > 0) {
               appendString += '<ul class="date-type-tags__type-list">';
