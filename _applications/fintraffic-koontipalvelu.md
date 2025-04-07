@@ -3,6 +3,7 @@ title: Fintraffic/Koontipalvelu
 intro: Fintraffic tarjoaa valtakunnallisia staattisia ja reaaliaikaisia matkatietoja Koontipalvelun kautta.
 logo: f-logo-black.png
 developer:
+  - Fintraffic
   - https://www.fintraffic.fi
 traffictypes:
   - Tieliikenne
