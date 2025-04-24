@@ -114,12 +114,19 @@ TMS data is available in CSV files, one file for each TMS point for each day
 
 Where:
 
-- lam_id = TMS point id
-- yearshort = last two digits of the year
-- day_number = ordinal date (1-366, taking into account leap years). 1.1. = 1
+- lam_id = TMS point number (`tmsNumber` in the
+  [stations-API](https://tie.digitraffic.fi/api/tms/v1/stations))
+- yearshort = Last two digits of the year
+  - 2009 = 9
+  - 2021 = 21
+- day_number = ordinal date järjestysnumero vuoden alusta laskettuna.
+  - 1st. of January = 1
+  - 1st. of February = 32
+  - Take into account leap years, e.g. 2020.
 
-Example: to get data from TMS point number 101 for the date 1.2.2017, GET the
-URL:
+Example: to get data from
+[TMS point number 101](https://tie.digitraffic.fi/api/tms/v1/stations/23101) for
+the date 1.2.2017, GET the URL:
 
 [`https://tie.digitraffic.fi/api/tms/v1/history/raw/lamraw_101_17_32.csv`](https://tie.digitraffic.fi/api/tms/v1/history/raw/lamraw_101_17_32.csv){:target="_blank"}
 

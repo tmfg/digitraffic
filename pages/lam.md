@@ -137,18 +137,19 @@ muodossa:
 
 Jossa:
 
-- lam_id = LAM-pisteen tunniste
+- lam_id = LAM-pisteen tunniste (`tmsNumber`
+  [stations-API:ssa](https://tie.digitraffic.fi/api/tms/v1/stations))
 - yearshort = vuosiluvun kaksi viimeistä numeroa.
   - 2009 = 9
   - 2021 = 21
-- ## day_number = päivän järjestysnumero vuoden alusta laskettuna.
-  1. tammikuuta = 1
-  -
-    1. helmikuuta = 32
+- day_number = päivän järjestysnumero vuoden alusta laskettuna.
+  - 1\. tammikuuta = 1
+  - 1\. helmikuuta = 32
   - Kannattaa kiinnittää erityistä huomiota päivän numeron käsittelyyn
     karkausvuosina, kuten vuonna 2020.
 
-Esimerkiksi: Pisteen 101 tiedot päivältä 1.2.2017, saadaan kutsulla
+Esimerkiksi: [Pisteen 101](https://tie.digitraffic.fi/api/tms/v1/stations/23101)
+tiedot päivältä 1.2.2017, saadaan kutsulla
 
 [`https://tie.digitraffic.fi/api/tms/v1/history/raw/lamraw_101_17_32.csv`](https://tie.digitraffic.fi/api/tms/v1/history/raw/lamraw_101_17_32.csv){:target="_blank"}
 
