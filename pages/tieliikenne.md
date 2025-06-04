@@ -94,6 +94,10 @@ Viesti sisältää kaikkien julkisten kelikameroiden tiedot ja osoitteen mistä
 kelikamerakuvat löytyvät. Esim. esiasennon C1451601 kuva löytyy osoitteesta
 [https://weathercam.digitraffic.fi/C1451601.jpg](https://weathercam.digitraffic.fi/C1451601.jpg){:target="_blank"}.
 
+Kamerakuvan saa ladattua myös pikkukuvana käyttämällä kyselyparametriä
+`thumbnail=true`, esim.
+[https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true](https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true){:target="_blank"}
+
 Aseman tiedoista kannattaa huomioida ainakin alla olevat kentät, joista voi
 päätellä onko kamera tai esiasento keruussa.
 

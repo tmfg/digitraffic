@@ -92,6 +92,10 @@ Response message contains weather camera information and URL for the camera
 image. For example preset image C1451601 is located at
 [https://weathercam.digitraffic.fi/C1451601.jpg](https://weathercam.digitraffic.fi/C1451601.jpg){:target="_blank"}.
 
+You can also load a thumbnail version of a weather camera image by using the
+parameter `thumbnail=true`, for example
+[https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true](https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true){:target="_blank"}
+
 #### Data for all stations and for single station
 
 [`/api/weathercam/v1/stations/data`](https://tie.digitraffic.fi/api/weathercam/v1/stations/data){:target="_blank"}\
