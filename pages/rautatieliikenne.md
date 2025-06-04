@@ -168,6 +168,8 @@ Otamme mielellämme vastaan kehitysehdotuksia
 
 ## Toteutetut ominaisuudet
 
+- 1.6.2025
+  - Pysähdyssektorin lisäys
 - 5.9.2023
   - Matkustajainformaation tiedotteiden rajapinta (/passenger-information)
 - 13.10.2020
@@ -1848,7 +1850,7 @@ järjestykseen.
     stationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"
     }}) _Aseman lyhennekoodi_
   - ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})
-    stationcUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"
+    stationUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"
     }}) _Aseman UIC-koodi_
   - ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode:
     "FI", "RU"
@@ -1916,6 +1918,9 @@ järjestykseen.
     - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})
       thirdCategoryCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})
       _Kolmannen tason syykoodin koodi. Huom. ei yksilöivä_
+  - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})
+    stopSector: string ![Info]({{ site.baseurl }}{{
+    "/img/rata/info.png" }}) _Pysähdyssektori.  Kertoo mille sektorille veturin keula pysähtyy.  Lisätietoa [täältä](https:://www.digitraffic.fi/rautatieliikenne/pysahdyssektorit)_
   - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainReady
     ![Info]({{ site.baseurl }}{{ " /img/rata/info.png" }}) _Junan lähtövalmius.
     Operaattorin tulee tehdä lähtövalmiusilmoitus liikenteenohjaajalle aina kun
