@@ -1920,7 +1920,7 @@ järjestykseen.
       _Kolmannen tason syykoodin koodi. Huom. ei yksilöivä_
   - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})
     stopSector: string ![Info]({{ site.baseurl }}{{
-    "/img/rata/info.png" }}) _Pysähdyssektori.  Kertoo mille sektorille veturin keula pysähtyy.  Lisätietoa [täältä](https:://www.digitraffic.fi/rautatieliikenne/pysahdyssektorit)_
+    "/img/rata/info.png" }}) _Pysähdyssektori.  Kertoo mille sektorille veturin keula pysähtyy.  Lisätietoa [täältä](https://www.digitraffic.fi/rautatieliikenne/pysahdyssektorit)_
   - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainReady
     ![Info]({{ site.baseurl }}{{ " /img/rata/info.png" }}) _Junan lähtövalmius.
     Operaattorin tulee tehdä lähtövalmiusilmoitus liikenteenohjaajalle aina kun
