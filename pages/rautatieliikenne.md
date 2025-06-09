@@ -1059,7 +1059,7 @@ jossa kokoonpano muuttuu.
 
 ![warning]({{ site.baseurl }}{{ "/img/rata/warn.png" }}) Moottorivaunut
 (esimerkiksi tyypit Sm3, Sm4, Sm5) on yleisesti ilmoitettu kokoonpanoissa
-vaunuina.
+vaunuina sekä vetureina.
 
 ### Junan kokoonpanohaku
 
