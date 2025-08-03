@@ -688,7 +688,7 @@ Palauttaa [junat](#junat)-tyyppisen vastauksen.
 ### Liikennepaikan saapuvat ja lähtevät junat (aikavälirajoitus)
 
 URL:
-`/live-trains/station/<station_shortcode>?minutes_before_departure=<minutes_before_departure>&minutes_after_departure=<minutes_after_departure>&minutes_before_arrival=<minutes_before_arrival>&minutes_after_arrival=<minutes_after_arrival>&version=<change_number>&includeNonstopping=<includeNonstopping`
+`/live-trains/station/<station_shortcode>?minutes_before_departure=<minutes_before_departure>&minutes_after_departure=<minutes_after_departure>&minutes_before_arrival=<minutes_before_arrival>&minutes_after_arrival=<minutes_after_arrival>&version=<change_number>&include_nonstopping=<include_nonstopping>`
 
 Esimerkkejä:
 
