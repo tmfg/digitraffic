@@ -36,41 +36,7 @@
         margin-bottom: $margin-md + $margin-xxs;
         padding-bottom: $margin-xs;
         display: grid;
-        grid-template-columns: max-content min-content;
-        gap: 0 $margin-md;
-      }
-    }
-  }
-
-  &__fintraffic-links {
-    margin-bottom: $margin-xs;
-
-    li {
-      // first four list items
-      &:nth-child(-n+4) {
-        font-weight: 600;
-      }
-      &:nth-child(4) {
-        margin-bottom: $margin-xs;
-
-        @media screen and (min-width: $min-width-sm) {
-          & {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-
-    @media screen and (min-width: $min-width-sm) {
-      & {
-        margin-bottom: 0;
-      }
-
-      & ul {
-        list-style-type: none;
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-rows: repeat(4, max-content);
+        grid-template-columns: max-content min-content min-content;
         gap: 0 $margin-md;
       }
     }

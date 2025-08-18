@@ -1,52 +1,94 @@
 <footer class="fintraffic-footer">
-  <div class="row fintraffic-footer__top-bar">
-    {% include Fintraffic_vaakalogo_valkoinen.svg %}
-    <a href="https://www.fintraffic.fi">
-      fintraffic.fi
-    </a>
-  </div>
-  <div class="fintraffic-footer__links">
-    <div class="fintraffic-footer__fintraffic-links">
-      {% include fintraffic-links.html %}
+    <div class="row fintraffic-footer__top-bar">
+        {% include Fintraffic_vaakalogo_valkoinen.svg %}
+        <a href="https://www.fintraffic.fi">
+            fintraffic.fi
+        </a>
     </div>
-    <ul>
-      <li>
-        <a href="https://www.fintraffic.fi/fi/fintraffic/tietosuoja">
-          {{ site.t.fintraffic-privacy-policy[page.lang]}}
+    <div class="fintraffic-footer__links">
+        <ul style="list-style-type: none;">
+            <li>
+                <a href="https://liikennetilanne.fintraffic.fi/" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.traffic-situation[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="{{ site.t.fintraffic-app.url[page.lang] }}" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.fintraffic-app[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://www.palautevayla.fi/aspa" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.feedback-channel[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://junalahdot.fintraffic.fi/" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.train-departures[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://sky.fintraffic.fi/" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.fintraffic-sky[page.lang]}}
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li class="active">
+                <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}" target="_blank" rel="noopener
+                noreferrer">
+                {{ site.t.digitraffic[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://digitransit.fi/" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.digitransit[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://finap.fi/" target="_blank" rel="noopener noreferrer">
+                    {{ site.t.nap[page.lang]}}
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="https://www.fintraffic.fi/fi/fintraffic/saavutettavuusseloste">
+                    {{ site.t.accessibility[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintraffic.fi/fi/fintraffic/tietosuoja-ja-kayttoehdot">
+                    {{ site.t.fintraffic-privacy-policy[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintraffic.fi/fi/palaute">
+                    {{ site.t.feedback[page.lang]}}
+                </a>
+            </li>
+            <li>
+                <a href="https://www.fintraffic.fi/fi/yhteystiedot">
+                    {{ site.t.contact[page.lang]}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="fintraffic-footer__icons">
+        <a href="https://www.facebook.com/FintrafficFI">
+            {% include facebook.svg %}
         </a>
-      </li>
-      <li>
-        <a href="https://www.fintraffic.fi/fi/palaute">
-          {{ site.t.feedback[page.lang]}}
+        <a href="https://twitter.com/Fintraffic_fi">
+            {% include twitter.svg %}
         </a>
-      </li>
-      <li>
-        <a href="https://www.fintraffic.fi/fi/fintraffic/yhteystiedot">
-          {{ site.t.contact[page.lang]}}
+        <a href="https://www.instagram.com/fintraffic_stories_fi">
+            {% include instagram.svg %}
         </a>
-      </li>
-      <li>
-        <a href="https://www.fintraffic.fi/fi/fintraffic/saavutettavuusseloste">
-          {{ site.t.accessibility[page.lang]}}
+        <a href="https://www.youtube.com/channel/UCpnhwBRjt58yUu_Oky7vyxQ">
+            {% include youtube.svg %}
         </a>
-      </li>
-    </ul>
-  </div>
-  <div class="fintraffic-footer__icons">
-    <a href="https://www.facebook.com/FintrafficFI">
-      {% include facebook.svg %}
-    </a>
-    <a href="https://twitter.com/Fintraffic_fi">
-      {% include twitter.svg %}
-    </a>
-    <a href="https://www.instagram.com/fintraffic_stories_fi">
-      {% include instagram.svg %}
-    </a>
-    <a href="https://www.youtube.com/channel/UCpnhwBRjt58yUu_Oky7vyxQ">
-      {% include youtube.svg %}
-    </a>
-    <a href="https://www.linkedin.com/company/fintraffic">
-      {% include linkedin.svg %}
-    </a>
-  </div>
+        <a href="https://www.linkedin.com/company/fintraffic">
+            {% include linkedin.svg %}
+        </a>
+    </div>
 </footer>
