@@ -585,6 +585,7 @@ feedit tarjoavat reaaliaikaista GTFS-dataa protobuf-muodossa.
 - gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.
 - gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja
   perumiset ja se päivitetään minuutin välein.
+- reaaliaikafeediä vastaava gtfs paketti on gtfs-passenger
 
 **Paluuarvo**
 

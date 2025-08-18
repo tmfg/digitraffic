@@ -168,5 +168,7 @@ future trains
 - GTFS-RT updates:
   [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
 
+If you are using real time feeds, then you should be using gtfs-passenger.zip for matching stop_sequences.
+
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
