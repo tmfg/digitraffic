@@ -1,38 +1,48 @@
 <ul style="list-style-type: none;">
-  <li>
-    <a href="http://liikennetilanne.fintraffic.fi">
-      {{ site.t.traffic-situation[page.lang]}}
-    </a>
-  </li>
-  <li>
-    <a href="https://www.palautevayla.fi/aspa/fi/liikenteen-asiakaspalvelu-etsi-tietoa">
-      {{ site.t.feedback-channel[page.lang]}}
-    </a>
-  </li>
-  <li>
-    <a href="http://junalahdot.fi">
-      {{ site.t.train-departures[page.lang]}}
-    </a>
-  </li>
-  <li>
-    <a href="{{ site.t.fintraffic-app.url[page.lang] }}">
-      {{ site.t.fintraffic-app[page.lang]}}
-    </a>
-  </li>
-  <li class="active">
-    <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}">
-      {{ site.t.digitraffic[page.lang]}}
-    </a>
-    <div class="upwards-arrow"></div>
-  </li>
-  <li>
-    <a href="https://digitransit.fi">
-      {{ site.t.digitransit[page.lang]}}
-    </a>
-  </li>
-  <li>
-    <a href="https://finap.fi">
-      {{ site.t.nap[page.lang]}}
-    </a>
-  </li>
+    <li>
+      <a href="https://liikennetilanne.fintraffic.fi/" target="_blank" rel="noopener noreferrer">
+        {{ site.t.traffic-situation[page.lang]}}
+      </a>
+    </li>
+    <li>
+      <a href="https://www.palautevayla.fi/aspa" target="_blank" rel="noopener noreferrer">
+        {{ site.t.feedback-channel[page.lang]}}
+      </a>
+    </li>
+    <li>
+      <a href="https://junalahdot.fintraffic.fi/" target="_blank" rel="noopener noreferrer">
+        {{ site.t.train-departures[page.lang]}}
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.t.fintraffic-app.url[page.lang] }}" target="_blank" rel="noopener noreferrer">
+          {{ site.t.fintraffic-app[page.lang]}}
+      </a>
+    </li>
+    <li>
+      <a href="{{ site.t.route-guide.url[page.lang] }}" target="_blank" rel="noopener noreferrer">
+          {{ site.t.route-guide[page.lang]}}
+      </a>
+    </li>
+    <li>
+      <a href="https://sky.fintraffic.fi/" target="_blank" rel="noopener noreferrer">
+          {{ site.t.fintraffic-sky[page.lang]}}
+      </a>
+    </li>
+    <li class="active">
+        <a href="{{ "/" }}{% if page.lang != "fi" %}{{ page.lang }}/{% endif %}" target="_blank" rel="noopener noreferrer">
+        {{ site.t.digitraffic[page.lang]}}
+        </a>
+        <div class="upwards-arrow"></div>
+    </li>
+    <li>
+      <a href="https://digitransit.fi/" target="_blank" rel="noopener noreferrer">
+          {{ site.t.digitransit[page.lang]}}
+      </a>
+    </li>
+    <li>
+      <a href="https://finap.fi/" target="_blank" rel="noopener noreferrer">
+          {{ site.t.nap[page.lang]}}
+      </a>
+    </li>
 </ul>
