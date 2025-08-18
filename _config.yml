@@ -143,9 +143,9 @@ t:
     url:
       en: "https://matka.fintraffic.fi/?locale=en"
       fi: "https://matka.fintraffic.fi/"
-    fintraffic-sky:
-      en: "Fintraffic Sky"
-      fi: "Fintraffic Sky"
+  fintraffic-sky:
+    en: "Fintraffic Sky"
+    fi: "Fintraffic Sky"
   digitraffic:
     en: "Digitraffic"
     fi: "Digitraffic"
