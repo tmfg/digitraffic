@@ -1352,7 +1352,7 @@ Esimerkki:
 ### Liikenteen rajoite-ilmoitukset
 
 Liikenteen rajoite-ilmoitukset ovat versioituvia. Avoimeen dataan ei tuoda
-kaikkia tietoje, joten peräkkäiset versiot voivat olla tietosisällöltään
+kaikkia tietoja, joten peräkkäiset versiot voivat olla tietosisällöltään
 identtisiä.
 
 #### Liikenteen rajoite-ilmoitusten haku aikavälillä
