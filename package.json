@@ -33,7 +33,7 @@
     "format": "pnpm deno fmt"
   },
   "dependencies": {
-    "@fontsource/public-sans": "^5.2.5",
+    "@fontsource/public-sans": "^5.2.6",
     "@popperjs/core": "^2.11.8",
     "alpinejs": "^3.14.9",
     "highlight.js": "^11.11.1",
@@ -46,12 +46,12 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.32",
-    "deno": "^2.3.1",
-    "esbuild": "^0.25.4",
+    "@types/jquery": "^3.5.33",
+    "deno": "^2.4.4",
+    "esbuild": "^0.25.9",
     "generate-license-file": "^4.0.0",
-    "lefthook": "^1.11.12",
+    "lefthook": "^1.12.3",
     "rimraf": "^6.0.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   }
 }

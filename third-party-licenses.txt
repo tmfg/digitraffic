@@ -379,7 +379,7 @@ EPL-1.0
 
 The following npm package may be included in this product:
 
- - @fontsource/public-sans@5.2.5
+ - @fontsource/public-sans@5.2.6
 
 This package contains the following license:
 

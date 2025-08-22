@@ -6026,11 +6026,11 @@
             return "script";
           }
         });
-        support.createHTMLDocument = function() {
+        support.createHTMLDocument = (function() {
           var body = document2.implementation.createHTMLDocument("").body;
           body.innerHTML = "<form></form><form></form>";
           return body.childNodes.length === 2;
-        }();
+        })();
         jQuery.parseHTML = function(data2, context, keepScripts) {
           if (typeof data2 !== "string") {
             return [];
@@ -6394,9 +6394,9 @@
           root.Paho = factory();
         }
       })(exports, function LibraryFactory() {
-        var PahoMQTT = function(global2) {
+        var PahoMQTT = (function(global2) {
           var version = "@VERSION@-@BUILDLEVEL@";
-          var localStorage = global2.localStorage || /* @__PURE__ */ function() {
+          var localStorage = global2.localStorage || /* @__PURE__ */ (function() {
             var data2 = {};
             return {
               setItem: function(key, item) {
@@ -6409,7 +6409,7 @@
                 delete data2[key];
               }
             };
-          }();
+          })();
           var MESSAGE_TYPE = {
             CONNECT: 1,
             CONNACK: 2,
@@ -7952,7 +7952,7 @@
             Client,
             Message
           };
-        }(typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
+        })(typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
         return PahoMQTT;
       });
     }
@@ -9716,13 +9716,13 @@
         };
         lunr2.version = "2.3.9";
         lunr2.utils = {};
-        lunr2.utils.warn = /* @__PURE__ */ function(global2) {
+        lunr2.utils.warn = /* @__PURE__ */ (function(global2) {
           return function(message) {
             if (global2.console && console.warn) {
               console.warn(message);
             }
           };
-        }(this);
+        })(this);
         lunr2.utils.asString = function(obj) {
           if (obj === void 0 || obj === null) {
             return "";
@@ -10077,7 +10077,7 @@
         lunr2.Vector.prototype.toJSON = function() {
           return this.elements;
         };
-        lunr2.stemmer = function() {
+        lunr2.stemmer = (function() {
           var step2list = {
             "ational": "ate",
             "tional": "tion",
@@ -10241,7 +10241,7 @@
           return function(token) {
             return token.update(porterStemmer);
           };
-        }();
+        })();
         lunr2.Pipeline.registerFunction(lunr2.stemmer, "stemmer");
         lunr2.generateStopWordFilter = function(stopWords) {
           var words = stopWords.reduce(function(memo, stopWord) {
