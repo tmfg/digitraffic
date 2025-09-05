@@ -5,7 +5,7 @@ ref: sektorointi
 issue-number: DPO-117
 traffictypes:
   - Railway traffic
-status: planned
+status: finished
 date: 2025-02-28
 ---
 
