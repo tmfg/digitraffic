@@ -22704,7 +22704,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   }
   function updateServiceStatus(language, index, activeMaintenances) {
-    const categories = index.categories.map((category) => category.name);
+    const categories = index.categories.map((category) => category.name).filter((name) => name !== "Parking");
     categories.forEach((category) => {
       const systems = getSystemsForCategory(index, category);
       if (systemsUnderMaintenance(systems, activeMaintenances)) {

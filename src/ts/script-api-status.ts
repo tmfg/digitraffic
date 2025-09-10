@@ -137,7 +137,9 @@ function updateServiceStatus(
   index: CStateIndex,
   activeMaintenances: CStatePinnedIssueObject[],
 ) {
-  const categories = index.categories.map((category) => category.name);
+  const categories = index.categories
+    .map((category) => category.name)
+    .filter((name: string) => name !== "Parking");
   categories.forEach((category) => {
     const systems = getSystemsForCategory(index, category);
     if (systemsUnderMaintenance(systems, activeMaintenances)) {
