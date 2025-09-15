@@ -156,11 +156,13 @@ Resources:
 
 # GTFS
 
-.zip files are generated daily around 5:00. Packages include all current and
+.zip files are generated daily around 5:00 and should be ready no later than 7:00. Packages include all current and
 future trains
 
 - GTFS for passenger trains:
   [https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
+- GTFS for passenger trains, no pass-by stops:
+  [https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger-stops.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger-stops.zip)
 - GTFS for all trains:
   [https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
 - GTFS-RT locations:
@@ -168,7 +170,8 @@ future trains
 - GTFS-RT updates:
   [https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
 
-If you are using real time feeds, then you should be using gtfs-passenger.zip for matching stop_sequences.
+If you are using real time feeds, then you should be using gtfs-passenger-stops.zip for matching stop_sequences.
+Real time feed is updated every 10 seconds.
 
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)

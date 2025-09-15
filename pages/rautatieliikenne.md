@@ -567,6 +567,7 @@ URL:t
 
 - [/trains/gtfs-all.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-all.zip)
 - [/trains/gtfs-passenger.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip)
+- [/trains/gtfs-passenger-stops.zip](https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger-stops.zip)
 - [/trains/gtfs-rt-locations](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-locations)
 - [/trains/gtfs-rt-updates](https://rata.digitraffic.fi/api/v1/trains/gtfs-rt-updates)
 
@@ -574,7 +575,8 @@ URL:t
 
 Junien tiedot saa myös GTFS-muodossa (General Transit Feed Specification).
 Paketti gtfs-all.zip sisältää kaikki junat ja gtfs-passenger.zip sisältää vain
-matkustajajunat.
+matkustajajunat ja gtfs-passenger-stops.zip sisältää matkustajajunat ja ainoastaan 
+sellaiset pysähdykset joissa juna oikeasti pysähtyy.
 
 Paketti generoidaan uusiksi päivittäin noin klo 5:00. Se sisältää kaikki
 tulevaisuuden junat ja menneisyyden junat viimeiseltä seitsemältä päivältä.
@@ -585,7 +587,7 @@ feedit tarjoavat reaaliaikaista GTFS-dataa protobuf-muodossa.
 - gtfs-rt-locations sisältää junien sijainnit ja se päivitetään 10s välein.
 - gtfs-rt-updates sisältää junien muutostiedot, ennusteet, toteumatiedot ja
   perumiset ja se päivitetään minuutin välein.
-- reaaliaikafeediä vastaava gtfs paketti on gtfs-passenger
+- reaaliaikafeediä vastaava gtfs paketti on gtfs-passenger-stops.zip
 
 **Paluuarvo**
 
