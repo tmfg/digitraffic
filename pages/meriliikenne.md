@@ -35,7 +35,7 @@ tällä hetkellä:
   tunnistamiseen ja sijainnin määrittämiseen käytetty järjestelmä.
   [Lisätietoa](ais/).
 
-- Talvimerenkulun avustustiedot Baltice-järjestelmästä
+- Talvimerenkulun avustustiedot IBNet-järjestelmästä
 
 - Meren tilan arviointi dataa älypoijuilta
 
@@ -102,18 +102,17 @@ perusteella. ([Lisätietoa](ais/)).
 
 ### Talvimerenkulun avustustiedot
 
-[`https://meri.digitraffic.fi/api/winter-navigation/v1/dirways`](https://meri.digitraffic.fi/api/winter-navigation/v1/dirways){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v2/dirways`](https://meri.digitraffic.fi/api/winter-navigation/v2/dirways){:
 target="_blank"}
 
-Avustustiedot haetaan [Baltice](http://baltice.org){:target="_blank"}
--järjestelmästä.
+Avustustiedot haetaan IBNet-järjestelmästä.
 
 Metadatat:
 
-[`https://meri.digitraffic.fi/api/winter-navigation/v1/ports`](https://meri.digitraffic.fi/api/winter-navigation/v1/ports){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v2/locations`](https://meri.digitraffic.fi/api/winter-navigation/v2/locations){:
 target="_blank"}
 
-[`https://meri.digitraffic.fi/api/winter-navigation/v1/vessels`](https://meri.digitraffic.fi/api/winter-navigation/v1/vessels){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v2/vessels`](https://meri.digitraffic.fi/api/winter-navigation/v2/vessels){:
 target="_blank"}
 
 ### Meren tilan arviointi (SSE)

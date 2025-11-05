@@ -264,7 +264,7 @@ Rajapinta tukee sekä HTTP- että HTTPS-muotoa. Suosittelemme HTTPS:n käyttöä
   - Rajapinta, josta löytyy Suomen rautatieverkon yksityiskohtainen kuvaus
 - [https://rata.digitraffic.fi/jeti-api/](https://rata.digitraffic.fi/jeti-api/)
   - Rajapinta, josta löytyy tietoja rataverkkoon kohdistuvista huoltotöistä
-- [https://rata.digitraffic.fi/history](https://rata.digitraffic.fi/history)
+- [https://rata.digitraffic.fi/history/](https://rata.digitraffic.fi/history/)
   - Työkalu, jolla voi tarkastella missä tilassa jokin juna tai kokoonpano oli
     tiettynä ajanhetkenä
 
@@ -544,14 +544,9 @@ Esimerkki:
 **Kuvaus**
 
 Palauttaa kaikkien junien tiedot, jotka ovat muuttuneet sitten annetun
-versionumeron. Huomaa, että palautetussa setissä voi olla samasta junasta
-useampi rivi, mutta eri päiville.
+versionumeron. Huomaa, että palautetussa setissä voi olla samasta junasta useampi rivi, mutta eri päiville.
 
-Vastauksen koko on aina enintään 2500 - n, missä n > 0. Palvelinpäässä vastaus
-on rajoitettu 2500 riviin, mistä jätetään rajan ylittyessä viimeisen version
-rivit pois, jolloin rajapinnan vastauksen koko on aina 0 - 2499 riviä. Tämä
-tehdään osittaisten versioiden palauttamisen välttämiseksi. Rajapinnan
-vastaukset sisältävät siis vain täydellisiä versioita.
+Vastauksen koko on aina enintään 2500 - n, missä n > 0. Palvelinpäässä vastaus on rajoitettu 2500 riviin, mistä jätetään rajan ylittyessä viimeisen version rivit pois, jolloin rajapinnan vastauksen koko on aina 0 - 2499 riviä. Tämä tehdään osittaisten versioiden palauttamisen välttämiseksi. Rajapinnan vastaukset sisältävät siis vain täydellisiä versioita. 
 
 **Hakuehdot**
 
@@ -580,8 +575,8 @@ URL:t
 
 Junien tiedot saa myös GTFS-muodossa (General Transit Feed Specification).
 Paketti gtfs-all.zip sisältää kaikki junat ja gtfs-passenger.zip sisältää vain
-matkustajajunat ja gtfs-passenger-stops.zip sisältää matkustajajunat ja
-ainoastaan sellaiset pysähdykset joissa juna oikeasti pysähtyy.
+matkustajajunat ja gtfs-passenger-stops.zip sisältää matkustajajunat ja ainoastaan 
+sellaiset pysähdykset joissa juna oikeasti pysähtyy.
 
 Paketti generoidaan uusiksi päivittäin noin klo 5:00. Se sisältää kaikki
 tulevaisuuden junat ja menneisyyden junat viimeiseltä seitsemältä päivältä.
@@ -1858,8 +1853,8 @@ järjestykseen.
     stationShortCode: string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"
     }}) _Aseman lyhennekoodi_
   - ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }})
-    stationUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})
-    _Aseman UIC-koodi_
+    stationUICCode: 1-9999 ![Info]({{ site.baseurl }}{{ "/img/rata/info.png"
+    }}) _Aseman UIC-koodi_
   - ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) countryCode:
     "FI", "RU"
   - ![Required]({{ site.baseurl }}{{ "/img/rata/required.png" }}) type:
@@ -1926,10 +1921,9 @@ järjestykseen.
     - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})
       thirdCategoryCode ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})
       _Kolmannen tason syykoodin koodi. Huom. ei yksilöivä_
-  - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) stopSector:
-    string ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }})
-    _Pysähdyssektori. Kertoo mille sektorille veturin keula pysähtyy. Lisätietoa
-    [täältä](https://www.digitraffic.fi/rautatieliikenne/pysahdyssektorit)_
+  - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }})
+    stopSector: string ![Info]({{ site.baseurl }}{{
+    "/img/rata/info.png" }}) _Pysähdyssektori.  Kertoo mille sektorille veturin keula pysähtyy.  Lisätietoa [täältä](https://www.digitraffic.fi/rautatieliikenne/pysahdyssektorit)_
   - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) trainReady
     ![Info]({{ site.baseurl }}{{ " /img/rata/info.png" }}) _Junan lähtövalmius.
     Operaattorin tulee tehdä lähtövalmiusilmoitus liikenteenohjaajalle aina kun

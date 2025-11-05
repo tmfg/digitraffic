@@ -30,7 +30,7 @@ Agency's data sources. Currently open data API provides following information:
 - Vessel location AIS (Automatic Identification System).
   [Additional info](ais/).
 
-- Dirways from Baltice-system
+- Winter navigation dirways from IBNet-system
 
 - Sea state estimation data from TLSC-system, that analyzes data send by smart
   AtoN buoy sites
@@ -96,19 +96,19 @@ Related metadata:
 [`https://meri.digitraffic.fi/api/ais/v1/vessels`](https://meri.digitraffic.fi/api/ais/v1/vessels){:
 target="_blank"}
 
-### Dirways
+### Winter navigation
 
-[`https://meri.digitraffic.fi/api/winter-navigation/v1/dirways`](https://meri.digitraffic.fi/api/winter-navigation/v1/dirways){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v2/dirways`](https://meri.digitraffic.fi/api/winter-navigation/v2/dirways){:
 target="_blank"}
 
-Dirways are fetched from [Baltice](http://baltice.org){:target="_blank"}.
+Dirways are fetched from IBNet.
 
 Related metadata:
 
-[`https://meri.digitraffic.fi/api/winter-navigation/v1/ports`](https://meri.digitraffic.fi/api/winter-navigation/v1/ports){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v2/locations`](https://meri.digitraffic.fi/api/winter-navigation/v2/locations){:
 target="_blank"}
 
-[`https://meri.digitraffic.fi/api/winter-navigation/v1/vessels`](https://meri.digitraffic.fi/api/winter-navigation/v1/vessels){:
+[`https://meri.digitraffic.fi/api/winter-navigation/v2/vessels`](https://meri.digitraffic.fi/api/winter-navigation/v2/vessels){:
 target="_blank"}
 
 ### Sea state estimation (SSE)
