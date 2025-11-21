@@ -18409,7 +18409,7 @@
     };
   }
 
-  // node_modules/.pnpm/alpinejs@3.14.9/node_modules/alpinejs/dist/module.esm.js
+  // node_modules/.pnpm/alpinejs@3.15.2/node_modules/alpinejs/dist/module.esm.js
   var flushPending = false;
   var flushing = false;
   var queue = [];
@@ -18826,7 +18826,14 @@
       handleError(e, el, expression);
     }
   }
-  function handleError(error2, el, expression = void 0) {
+  function handleError(...args) {
+    return errorHandler(...args);
+  }
+  var errorHandler = normalErrorHandler;
+  function setErrorHandler(handler4) {
+    errorHandler = handler4;
+  }
+  function normalErrorHandler(error2, el, expression = void 0) {
     error2 = Object.assign(
       error2 ?? { message: "No error message given." },
       { el, expression }
@@ -18867,7 +18874,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function generateEvaluatorFromFunction(dataStack, func) {
     return (receiver = () => {
-    }, { scope: scope2 = {}, params = [] } = {}) => {
+    }, { scope: scope2 = {}, params = [], context } = {}) => {
       let result = func.apply(mergeProxies([scope2, ...dataStack]), params);
       runIfTypeOfFunction(receiver, result);
     };
@@ -18902,12 +18909,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function generateEvaluatorFromString(dataStack, expression, el) {
     let func = generateFunctionFromString(expression, el);
     return (receiver = () => {
-    }, { scope: scope2 = {}, params = [] } = {}) => {
+    }, { scope: scope2 = {}, params = [], context } = {}) => {
       func.result = void 0;
       func.finished = false;
       let completeScope = mergeProxies([scope2, ...dataStack]);
       if (typeof func === "function") {
-        let promise = func(func, completeScope).catch((error2) => handleError(error2, el, expression));
+        let promise = func.call(context, func, completeScope).catch((error2) => handleError(error2, el, expression));
         if (func.finished) {
           runIfTypeOfFunction(receiver, func.result, completeScope, params, el);
           func.result = void 0;
@@ -19860,10 +19867,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     return el.type === "radio" || el.localName === "ui-radio";
   }
   function debounce3(func, wait) {
-    var timeout;
+    let timeout;
     return function() {
-      var context = this, args = arguments;
-      var later = function() {
+      const context = this, args = arguments;
+      const later = function() {
         timeout = null;
         func.apply(context, args);
       };
@@ -20012,7 +20019,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.14.9",
+    version: "3.15.2",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,
@@ -20026,6 +20033,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     onlyDuringClone,
     addRootSelector,
     addInitSelector,
+    setErrorHandler,
     interceptClone,
     addScopeToNode,
     deferMutations,
@@ -21059,7 +21067,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {
     let keyModifiers = modifiers.filter((i) => {
-      return !["window", "document", "prevent", "stop", "once", "capture", "self", "away", "outside", "passive"].includes(i);
+      return !["window", "document", "prevent", "stop", "once", "capture", "self", "away", "outside", "passive", "preserve-scroll"].includes(i);
     });
     if (keyModifiers.includes("debounce")) {
       let debounceIndex = keyModifiers.indexOf("debounce");
@@ -21156,7 +21164,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           el.setAttribute("name", expression);
       });
     }
-    var event = el.tagName.toLowerCase() === "select" || ["checkbox", "radio"].includes(el.type) || modifiers.includes("lazy") ? "change" : "input";
+    let event = el.tagName.toLowerCase() === "select" || ["checkbox", "radio"].includes(el.type) || modifiers.includes("lazy") ? "change" : "input";
     let removeListener = isCloning ? () => {
     } : on(el, event, modifiers, (e) => {
       setValue(getInputValue(el, modifiers, e, getValue()));
@@ -22665,6 +22673,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   };
   globalThis.getServiceStatus = getServiceStatus2;
+  var ignoreCStateCategories = ["Parking", "Catalog"];
   var cStateStatusString = {
     OK: "ok",
     DISRUPTED: "disrupted",
@@ -22704,7 +22713,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   }
   function updateServiceStatus(language, index, activeMaintenances) {
-    const categories = index.categories.map((category) => category.name).filter((name) => name !== "Parking");
+    const categories = index.categories.map((category) => category.name).filter((name) => !ignoreCStateCategories.includes(name));
     categories.forEach((category) => {
       const systems = getSystemsForCategory(index, category);
       if (systemsUnderMaintenance(systems, activeMaintenances)) {
@@ -22800,8 +22809,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   }
   function addOperationStatus(service, status, language) {
-    const classes = document.getElementById(`service-status-circle-${service}`).classList;
+    const serviceStatusCircleForService = document.getElementById(`service-status-circle-${service}`);
     const statusText = document.getElementById(`service-status-text-${service}`);
+    if (!serviceStatusCircleForService || !statusText) {
+      console.warn(`Status elements missing for service: ${service}`);
+      return;
+    }
+    const classes = serviceStatusCircleForService.classList;
     classes.remove(`service-status__icon-circle-bottom--operational__${service}`, "service-status__icon-circle-bottom--partial-outage", "service-status__icon-circle-bottom--major-outage");
     if (status === cStateStatusString.OK) {
       classes.add(`service-status__icon-circle-bottom--operational__${service}`);

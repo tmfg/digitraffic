@@ -1,6 +1,8 @@
 // export these functions to global scope and don't tree shake them
 globalThis.getServiceStatus = getServiceStatus;
 
+const ignoreCStateCategories = ["Parking", "Catalog"];
+
 export default function () {
   /* Dummy export for bundle */
 }
@@ -139,7 +141,7 @@ function updateServiceStatus(
 ) {
   const categories = index.categories
     .map((category) => category.name)
-    .filter((name: string) => name !== "Parking");
+    .filter((name: string) => !ignoreCStateCategories.includes(name));
   categories.forEach((category) => {
     const systems = getSystemsForCategory(index, category);
     if (systemsUnderMaintenance(systems, activeMaintenances)) {
@@ -354,10 +356,17 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(
 
 function addOperationStatus(service: string, status: string, language: string) {
   // Elements
-  const classes =
-    document.getElementById(`service-status-circle-${service}`).classList;
+  const serviceStatusCircleForService = document.getElementById(
+    `service-status-circle-${service}`,
+  );
   const statusText = document.getElementById(`service-status-text-${service}`);
 
+  // Stop if elements are missing (but don't break the whole script)
+  if (!serviceStatusCircleForService || !statusText) {
+    console.warn(`Status elements missing for service: ${service}`);
+    return;
+  }
+  const classes = serviceStatusCircleForService.classList;
   // Clean previous status
   classes.remove(
     `service-status__icon-circle-bottom--operational__${service}`,
