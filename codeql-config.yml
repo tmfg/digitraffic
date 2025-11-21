@@ -1,0 +1,3 @@
+name: "CodeQL config"
+paths-ignore:
+  - 'js/lang.js' # This has jekyll syntax that breaks the analyzing
