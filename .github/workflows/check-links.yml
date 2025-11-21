@@ -16,6 +16,7 @@ jobs:
           timeout: 10000
           recurse: true
           markdown: true
+          retry: true
           # YAML multiline without linebreaks
           linksToSkip: >-  
             https://jsfiddle.net, 
