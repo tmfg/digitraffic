@@ -1,0 +1,98 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta/schema.json",
+  "files": {
+    "includes": [
+      // In a folder with a biome.jsonc that extends this one, that path seen is one
+      // starting from that folder. Therefore, these need ot be fairly generic.
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.json",
+      "**/*.jsonc",
+      "**/*.css",
+      // These are not yet supported by biome natively https://biomejs.dev/internals/language-support/
+      "**/*.scss",
+      "**/*.yml",
+      "**/*.yaml",
+      "**/*.md",
+      // This should be covered by biome automatically, but just in case.
+      "!**/node_modules",
+      "!**/cdk.out",
+      "!**/dist",
+      "!**/build",
+      "!**/lib",
+      "!**/output",
+      "!**/temp",
+      "!.git",
+      "!**/pnpm-lock.yaml",
+      "!**/dist",
+
+      "!data/translations.json",
+      "!js/lang.js",
+      "!css/style.scss",
+      "!**/bundle.*",
+      "!_site"
+    ],
+    "ignoreUnknown": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "assist": { "enabled": true },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noForEach": "off",
+        // Conflicts with typescript "noUncheckedIndexedAccess"
+        "useLiteralKeys": "warn"
+      },
+      "style": {
+        "useImportType": {
+          "level": "error", // "error", "warn", "off"
+          "options": {
+            // Creates combined import for types and combined import for non types. Can make bundled lambda size smaller.
+            "style": "separatedType" // "inlineType", "separatedType", "auto"
+          }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      // Allow more lenient rules in tests.
+      "includes": ["**/__test__/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noNonNullAssertion": "off"
+          }
+        }
+      }
+    },
+    {
+      // Allow rush configs to have comments without jsonc extension.
+      "includes": [
+        "rush.json",
+        "common/config/rush/*.json",
+        "**/rig.json",
+        "**/config/*.json"
+      ],
+
+      "json": {
+        "parser": {
+          "allowComments": true
+        }
+      }
+    }
+  ],
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    // For some reason this is ignoring way too much, but this
+    // should be safe as we check only staged files
+    "useIgnoreFile": false,
+    "defaultBranch": "master"
+  }
+}

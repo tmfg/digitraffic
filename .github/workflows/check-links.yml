@@ -12,10 +12,11 @@ jobs:
         uses: JustinBeckwith/linkinator-action@v1
         with:
           paths: https://www.digitraffic.fi
-          concurrency: 5
+          concurrency: 1
           timeout: 10000
           recurse: true
           markdown: true
+          retry: true
           # YAML multiline without linebreaks
           linksToSkip: >-  
             https://jsfiddle.net, 
