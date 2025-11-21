@@ -3,34 +3,37 @@
   "version": "1.0.0",
   "description": "Digitraffic",
   "repository": "tmfg/digitraffic",
-  "author": "Tom Nuorivaara & Digitraffic",
   "license": "CC-BY-4.0",
+  "author": "Tom Nuorivaara & Digitraffic",
   "main": "index.js",
-  "engines": {
-    "node": ">=22 <23"
-  },
   "scripts": {
-    "build-and-install": "pnpm clean && pnpm build && pnpm install-all",
     "build": "pnpm build:tsc && pnpm generate-third-party-licenses",
+    "build-and-install": "pnpm clean && pnpm build && pnpm install-all",
     "build:jekyll": "bundle exec jekyll build",
     "build:tsc": "tsc",
     "bundle": "esbuild --bundle src/assets.js --outfile=js/bundle.js --format=iife && esbuild --bundle src/assets.js --minify --outfile=js/bundle.min.js --format=iife && mv js/bundle.css _scss/bundle.scss && rm js/bundle.min.css",
     "clean": "rimraf dist",
-    "dev": "bundle exec jekyll serve --host 0.0.0.0 --port 3000 --livereload --livereload_port 3001 --config _config_dev.yml --trace",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install-all": "pnpm install-icons-and-fonts && pnpm bundle && pnpm generate-third-party-licenses",
-    "install-icons-and-fonts": "pnpm install-icons && pnpm install-fonts",
-    "install-icons": "pnpm copy-icons && pnpm fix-icons-css",
-    "copy-icons": "mkdir -p css/material-icons && cp node_modules/material-icons/iconfont/*round.{css,woff*} css/material-icons/",
-    "fix-icons-css": "sed -i'.bak' -E 's/url\\(\\\"\\./url\\(\\\"\\/css\\/material-icons/g' css/material-icons/round.css && sed -i'.bak' -E 's/\\.material-icons-round/\\.material-icons/g' css/material-icons/round.css && rm css/material-icons/*.css.bak",
-    "install-fonts": "pnpm copy-fonts && pnpm copy-fonts-css && pnpm fix-fonts-css",
     "copy-fonts": "mkdir -p css/public-sans && cp node_modules/@fontsource/public-sans/files/public-sans-latin-* css/public-sans/ && rm css/public-sans/*-ext-*",
     "copy-fonts-css": "cp node_modules/@fontsource/public-sans/latin.css _scss/public-sans-latin.scss && cp node_modules/@fontsource/public-sans/latin-italic.css _scss/public-sans-latin-italic.scss",
+    "copy-icons": "mkdir -p css/material-icons && cp node_modules/material-icons/iconfont/*round.{css,woff*} css/material-icons/",
+    "dev": "bundle exec jekyll serve --host 0.0.0.0 --port 3000 --livereload --livereload_port 3001 --config _config_dev.yml --trace",
     "fix-fonts-css": "sed -i'.bak' -E 's/url\\(\\.\\/files/url\\(\\/css\\/public-sans/g' _scss/public-sans-latin*.scss && rm _scss/public-sans-latin*.scss.bak",
-    "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
-    "prepare": "lefthook install",
+    "fix-icons-css": "sed -i'.bak' -E 's/url\\(\\\"\\./url\\(\\\"\\/css\\/material-icons/g' css/material-icons/round.css && sed -i'.bak' -E 's/\\.material-icons-round/\\.material-icons/g' css/material-icons/round.css && rm css/material-icons/*.css.bak",
     "format-changed": "lefthook run pre-commit",
-    "format": "pnpm deno fmt"
+    "format:check": "biome check ",
+    "format:check-changed": "biome check --changed",
+    "format:check-staged": "biome check --staged",
+    "format:fix": "biome check --write",
+    "format:fix-changed": "biome check --changed --write",
+    "format:fix-staged": "biome check --staged --write",
+    "format:package-json": "sort-package-json",
+    "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
+    "install-all": "pnpm install-icons-and-fonts && pnpm bundle && pnpm generate-third-party-licenses",
+    "install-fonts": "pnpm copy-fonts && pnpm copy-fonts-css && pnpm fix-fonts-css",
+    "install-icons": "pnpm copy-icons && pnpm fix-icons-css",
+    "install-icons-and-fonts": "pnpm install-icons && pnpm install-fonts",
+    "prepare": "lefthook install",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@fontsource/public-sans": "^5.2.7",
@@ -46,12 +49,16 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.7",
     "@types/jquery": "^3.5.33",
-    "deno": "^2.5.6",
     "esbuild": "^0.27.0",
     "generate-license-file": "^4.1.0",
     "lefthook": "^2.0.4",
     "rimraf": "^6.1.2",
+    "sort-package-json": "^3.4.0",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22 <23"
   }
 }

@@ -2,12 +2,22 @@
 #   Refer for explanation to following link:
 #   https://lefthook.dev/configuration/
 #
-
 pre-commit:
   parallel: false
   commands:
-    deno-fmt:
-      #glob: "*.{ts,yml,yaml,md,json,html,css,scss" }"
-      run: | # Runs even when deno fmt fails with: No target files found.
-        pnpm deno fmt {staged_files} || true;
-        git add {staged_files} || true;
+    01-sort-package-json:
+      #glob: "*.{ts,yml,yaml,md,json,html}"
+      run: |
+        set -e  # stop on error except where explicitly allowed
+        # Reorder package.json
+        pnpm run format:package-json
+        # Re-add package.json if it was modified
+        git add package.json || true
+    02-biomejs-check:
+      #glob: "*.{ts,yml,yaml,md,json,html}"
+      run: |
+        # Run Biome on staged files, auto-fixing issues
+        # pnpm format:fix-staged || true; # Errors are ignored to allow commit to proceed even if Biome finds issues
+        pnpm run format:fix-staged; # Dont allow errors to be ignored, commit should fail if Biome finds issues
+        # Re-add any files that Biome fixed. Sometimes deleted files cause git add to fail, so we ignore errors.
+        git add $(git diff --name-only --cached) || true
