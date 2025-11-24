@@ -26,13 +26,13 @@
     "format:fix": "biome check --write",
     "format:fix-changed": "biome check --changed --write",
     "format:fix-staged": "biome check --staged --write",
-    "format:package-json": "sort-package-json",
+    "format:package-json": "sort-package-json $(git ls-files '*package.json')",
     "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
     "install-all": "pnpm install-icons-and-fonts && pnpm bundle && pnpm generate-third-party-licenses",
     "install-fonts": "pnpm copy-fonts && pnpm copy-fonts-css && pnpm fix-fonts-css",
     "install-icons": "pnpm copy-icons && pnpm fix-icons-css",
     "install-icons-and-fonts": "pnpm install-icons && pnpm install-fonts",
-    "prepare": "lefthook install",
+    "setup": "lefthook install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

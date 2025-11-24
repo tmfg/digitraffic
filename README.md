@@ -1,5 +1,9 @@
 # Digitraffic
 
+# Install lefthook githooks
+
+    pnpm run setup
+
 ## Run locally with Docker
 
 ```
@@ -7,10 +11,7 @@
 pnpm install
 
 # Compiled TypeScript files and install compiled JavaScript files in place. Install fonts and Goole icons in place.
-pnpm build-and-install
-
-# Format files (also done on pre-commit hook with lefthook)
-pnpm format
+pnpm run build-and-install
 
 # Build Docker image
 docker build . -t digitraffic-pages
@@ -24,6 +25,19 @@ docker run -p 3000:3000 -p 3001:3001 -v ${PWD}:/app digitraffic-pages:latest
 
 Or with scripts: `./build-and-run-in-docker.sh` that uses
 `build-docker-image.sh` and `run-in-docker.sh` scripts.
+
+# Format on files with BiomeJS
+
+`pnpm run format:check-staged` is run by lefthook pre-commit hook.
+
+    pnpm run format:check":         Check all files
+    pnpm run format:check-changed": Check changed files
+    pnpm run format:check-staged":  Check staged files
+    pnpm run format:fix":           Check and fix all files
+    pnpm run format:fix-changed":   Check and fix changed files
+    pnpm run format:fix-staged":    Check and fix staged files
+    pnpm run format:package-json":  Sort package.json
+
 
 ## Update deps
 
