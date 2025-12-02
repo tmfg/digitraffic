@@ -90,7 +90,7 @@ kun jaettavan datan määrä lisääntyy.
 ### Latauspisteoperaattorit (CPO)
 
 Latauspisteoperaattorit (CPO, Charge Point Operator) ylläpitävät latauspisteitä ja vastaavat niiden toiminnasta.
-Rajapinta tarjoaa palvelussta löytyvien operaattorien tiedot.
+Rajapinta tarjoaa palvelusta löytyvien operaattorien tiedot.
 
 [`/api/charging-network/v1/operators`][afir_api_operators]
 
