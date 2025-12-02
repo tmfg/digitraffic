@@ -11,7 +11,7 @@ ref: afir
 intro: Vaihtoehtoiset polttoaineet (AFIR)
 ---
 
-Digitrafficissa julkastaan Vaihtoehtoisten polttoaineiden latausverkoston dataa avoimena datana.
+Digitrafficissa julkaistaan vaihtoehtoisten polttoaineiden latausverkoston dataa avoimena datana.
 Tällä hetkellä data sisältää sähköautojen latauspisteiden sijainnit sekä niihin liittyvää staattista että
 reaaliaikatietoa.
 
@@ -40,10 +40,10 @@ Rajapintojen Swagger-dokumentaatiot löytyvät seuraavista osoitteista:
 * [Swagger UI – AFIR test][swagger_afir-test]
 
 Rajapintojen sivutus on toteutettu kursori-pohjaisesti, mikä mahdollistaa tehokkaan navigoinnin suurissa tietomäärissä.
-Jokainen sivutettava vastaus sisältää `nextCursor` -kentän, joka osoittaa seuraavan sivun aloituspaikan.
+Jokainen sivutettu vastaus sisältää nextCursor-kentän, joka osoittaa kohdan, josta seuraavan sivun haku jatkuu.
 Asiakas voi hakea seuraavan sivun lisäämällä pyynnön query-parametriksi: `?cursor=<nextCursor-arvo>`.
 
-Esimerkki:
+**Esimerkki:**
 
 Ensimmäinen pyyntö tehdään ilman kursoria:
 
@@ -60,6 +60,7 @@ Vastaus sisältää `nextCursor`-arvon:
     "limit": 500
   },
 ...
+}
 ```
 
 Seuraava pyyntö tehdään käyttäen `nextCursor`-arvoa:
@@ -77,6 +78,7 @@ Vastaus sisältää taas seuraavan `nextCursor`-arvon:
     "limit": 500
   },
 ...
+}
 ```
 
 Mikäli `nextCursor` on `null` tai puuttuu, ei seuraavaa sivua ole enää saatavilla.
@@ -102,7 +104,7 @@ Sijaintitiedot sisältävät latauspisteiden staattiset tiedot.
 
 ### Latauspisteiden statukset
 
-Latauspisteeseen liittyvien EVSE:n (Electric Vehicle Supply Equipment) statustiedot sisältävät reaaliaikaisen tiedon
+Latauspisteeseen liittyvien EVSE-laitteiden (Electric Vehicle Supply Equipment) statustiedot sisältävät reaaliaikaisen tiedon
 latauspisteen käytettävyydestä ja varaustilanteesta.
 Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä operaattoreilta.
 
@@ -117,14 +119,22 @@ Aiheiden avulla voidaan rajata kuunneltavia kohteita.
 Aiheen (topic) muoto on seuraava:
 `status-v1/<operatorCountryCode>/<operatorPartyId>/<locationId>/<evseId>`
 
-*Esimerkki*
-Operaattori: `Nyt Lataa Oy`\
-Osapuolen maakoodi: `FI` (Suomi)\
-Operaattorin osapuoli-id: `NYT`\
-Latauspisteen sijainnin id: `FINYT00001`\
-Latauspisteen EVSE: FI*NYT*E12345
+Jokainen hierarkiatason kenttä rajaa tarkemmin, mitä statustietoja kuunnellaan. `#` lopussa tarkoittaa "kaikki" kyseisellä tasolla.
 
-Aihe: `status-v1/FI/NYT/FINYT00001/FI*NYT*E12345`
+**Esimerkki**:
+
+**Operaattori**: `Nyt Lataa Oy`\
+**Osapuolen maakoodi**: `FI`\
+**Operaattorin osapuoli-id**: `NYT`\
+**Latauspisteen sijainnin id**: `FINYT00001`\
+**Latauspisteen EVSE ID**: `FI*NYT*E12345
+
+**Aihe**: `status-v1/FI/NYT/FINYT00001/FI*NYT*E12345`
+
+Tai jos halutaan kuunnella kaikkia kyseisen operaattorin latauspisteiden statuksia:
+
+**Aihe**: `status-v1/FI/NYT/#`
+
 
 Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden statukset -rajapinnan palauttamaa tietoa.
 
