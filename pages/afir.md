@@ -5,10 +5,10 @@ section: Tietolähteet
 traffictypes: Tieliikenne
 searchable: true
 hero-image: road
-title: AFIR-dokumentaatio
+title: Vaihtoehtoiset polttoaineet
 lang: fi
 ref: afir
-intro: Vaihtoehtoiset polttoaineet (AFIR)
+intro: AFIR
 ---
 
 Digitrafficissa julkaistaan vaihtoehtoisten polttoaineiden latausverkoston dataa avoimena datana.
@@ -37,7 +37,7 @@ statustietoa MQTT-topikkina.
 Rajapintojen Swagger-dokumentaatiot löytyvät seuraavista osoitteista:
 
 * [Swagger UI – AFIR][swagger_afir]
-* [Swagger UI – AFIR test][swagger_afir-test]
+* [Swagger UI – AFIR test][swagger_afir_test]
 
 Rajapintojen sivutus on toteutettu kursori-pohjaisesti, mikä mahdollistaa tehokkaan navigoinnin suurissa tietomäärissä.
 Jokainen sivutettu vastaus sisältää nextCursor-kentän, joka osoittaa kohdan, josta seuraavan sivun haku jatkuu.
@@ -47,9 +47,7 @@ Asiakas voi hakea seuraavan sivun lisäämällä pyynnön query-parametriksi: `?
 
 Ensimmäinen pyyntö tehdään ilman kursoria:
 
-```
-GET /api/charging-network/v1/locations
-```
+`GET /api/charging-network/v1/locations`
 
 Vastaus sisältää `nextCursor`-arvon:
 
@@ -65,9 +63,7 @@ Vastaus sisältää `nextCursor`-arvon:
 
 Seuraava pyyntö tehdään käyttäen `nextCursor`-arvoa:
 
-```
-GET /api/charging-network/v1/locations?cursor=ABCD
-```
+`GET /api/charging-network/v1/locations?cursor=ABCD`
 
 Vastaus sisältää taas seuraavan `nextCursor`-arvon:
 
@@ -84,8 +80,7 @@ Vastaus sisältää taas seuraavan `nextCursor`-arvon:
 Mikäli `nextCursor` on `null` tai puuttuu, ei seuraavaa sivua ole enää saatavilla.
 
 Vastauksen `limit` -kenttä kertoo sivun koon. Tällä hetkellä sivun koko on kiinteä 500, mutta tämä voi muuttua
-tulevaisuudessa,
-kun jaettavan datan määrä lisääntyy.
+tulevaisuudessa, kun jaettavan datan määrä lisääntyy.
 
 ### Latauspisteoperaattorit (CPO)
 
@@ -104,7 +99,8 @@ Sijaintitiedot sisältävät latauspisteiden staattiset tiedot.
 
 ### Latauspisteiden statukset
 
-Latauspisteeseen liittyvien EVSE-laitteiden (Electric Vehicle Supply Equipment) statustiedot sisältävät reaaliaikaisen tiedon
+Latauspisteeseen liittyvien EVSE-laitteiden (Electric Vehicle Supply Equipment) statustiedot sisältävät reaaliaikaisen
+tiedon
 latauspisteen käytettävyydestä ja varaustilanteesta.
 Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä operaattoreilta.
 
@@ -113,21 +109,22 @@ Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä o
 
 ## MQTT WebSocket -rajapinnat
 
-Reaaliaikaiset statustiedot ovat saatavilla myös MQTT-topikkina WebSocket-rajapinnan yli.
-Aiheiden avulla voidaan rajata kuunneltavia kohteita.
+Reaaliaikaiset statustiedot ovat saatavilla myös MQTT over WebSockets protokollalla.
+MQTT-aiheiden avulla voidaan rajata kuunneltavia kohteita.
 
-Aiheen (topic) muoto on seuraava:
+Aiheen (topic) muoto on seuraava: 
 `status-v1/<operatorCountryCode>/<operatorPartyId>/<locationId>/<evseId>`
 
-Jokainen hierarkiatason kenttä rajaa tarkemmin, mitä statustietoja kuunnellaan. `#` lopussa tarkoittaa "kaikki" kyseisellä tasolla.
+Jokainen hierarkiatason kenttä rajaa tarkemmin, mitä statustietoja kuunnellaan. `#` lopussa tarkoittaa "kaikki"
+kyseisellä tasolla.
 
 **Esimerkki**:
 
 **Operaattori**: `Nyt Lataa Oy`\
-**Osapuolen maakoodi**: `FI`\
-**Operaattorin osapuoli-id**: `NYT`\
-**Latauspisteen sijainnin id**: `FINYT00001`\
-**Latauspisteen EVSE ID**: `FI*NYT*E12345
+**Maakoodi**: `FI`\
+**Osapuoli-id**: `NYT`\
+**Sijainnin id**: `FINYT00001`\
+**EVSE ID**: `FI*NYT*E12345
 
 **Aihe**: `status-v1/FI/NYT/FINYT00001/FI*NYT*E12345`
 
@@ -135,10 +132,9 @@ Tai jos halutaan kuunnella kaikkia kyseisen operaattorin latauspisteiden statuks
 
 **Aihe**: `status-v1/FI/NYT/#`
 
-
 Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden statukset -rajapinnan palauttamaa tietoa.
 
-```json{ 
+``` 
 {
   "status" : "CHARGING",
   "time" : "2025-12-02T09:38:06.000Z"
@@ -147,8 +143,7 @@ Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden st
 
 Viestin aihe (topic) kertoo aina, minkä latauslaitteen statuksesta on kyse.
 
-
-[swagger_afir-test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
+[swagger_afir_test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
 
 [swagger_afir]: https://afir.digitraffic.fi/swagger/  "AFIR Swagger UI"
 
@@ -167,6 +162,8 @@ Viestin aihe (topic) kertoo aina, minkä latauslaitteen statuksesta on kyse.
 [digitraffic_en]: /en/ "digitraffic.fi/en"
 
 [fintraffic_fi]: https://www.fintraffic.fi/fi  "Fintraffic – fi"
+
+[fintraffic_en]: https://www.fintraffic.fi/en  "Fintraffic – en"
 
 [fintraffic_afir_fi]: https://www.fintraffic.fi/fi/digitaalisetpalvelut/afir  "Fintraffic – Vaihtoehtoiset polttoaineet (AFIR)"
 
