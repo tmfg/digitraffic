@@ -124,7 +124,7 @@ kyseisellä tasolla.
 **Maakoodi**: `FI`\
 **Osapuoli-id**: `NYT`\
 **Sijainnin id**: `FINYT00001`\
-**EVSE ID**: `FI*NYT*E12345
+**EVSE ID**: `FI*NYT*E12345`
 
 **Aihe**: `status-v1/FI/NYT/FINYT00001/FI*NYT*E12345`
 

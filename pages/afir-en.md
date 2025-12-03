@@ -122,9 +122,9 @@ A trailing `#` means “all at this level”.
 
 **Operator**: `Nyt Lataa Oy`\
 **Country code**: `FI`\
-**Operator party ID**: `NYT`\  
-**Location ID**: `FINYT00001`\  
-**EVSE ID**: `FI*NYT*E12345`\
+**Operator party ID**: `NYT`\
+**Location ID**: `FINYT00001`\
+**EVSE ID**: `FI*NYT*E12345`
 
 **Topic**: `status-v1/FI/NYT/FINYT00001/FI*NYT*E12345`:
 
