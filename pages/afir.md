@@ -39,9 +39,9 @@ Rajapintojen Swagger-dokumentaatiot löytyvät seuraavista osoitteista:
 * [Swagger UI – AFIR][swagger_afir]
 * [Swagger UI – AFIR test][swagger_afir_test]
 
-Rajapintojen sivutus on toteutettu kursori-pohjaisesti, mikä mahdollistaa tehokkaan navigoinnin suurissa tietomäärissä.
+Rajapintojen sivutus on toteutettu kursoripohjaisesti, mikä mahdollistaa tehokkaan navigoinnin suurissa tietomäärissä.
 Jokainen sivutettu vastaus sisältää nextCursor-kentän, joka osoittaa kohdan, josta seuraavan sivun haku jatkuu.
-Asiakas voi hakea seuraavan sivun lisäämällä pyynnön query-parametriksi: `?cursor=<nextCursor-arvo>`.
+Asiakas voi hakea seuraavan sivun lisäämällä pyynnön kyselyparametriksi: `?cursor=<nextCursor-arvo>`.
 
 **Esimerkki:**
 
@@ -91,7 +91,7 @@ Rajapinta tarjoaa palvelusta löytyvien operaattorien tiedot.
 
 ### Latauspisteiden sijainnit
 
-Sijainnit jaetaan GeoJSON-muodossa ja lisäksi tiettyjen operaattoreiden tiedot myös Datex II v3.6. -muodossa.
+Sijainnit jaetaan GeoJSON-muodossa ja lisäksi tiettyjen operaattoreiden tiedot myös Datex II v3.6-muodossa.
 Sijaintitiedot sisältävät latauspisteiden staattiset tiedot.
 
 [`/api/charging-network/v1/locations`][afir_api_locations] (GeoJSON)\
@@ -106,6 +106,11 @@ Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä o
 
 [`/api/charging-network/v1/locations/statuses`][afir_api_locations_statuses] (GeoJSON)\
 [`/api/charging-network/v1/locations/statuses/datex2-3.6`][afir_api_locations_statuses_datex_ii] (Datex II v3.6)
+
+### Tulevat ominaisuudet
+
+Suunnitteilla on lisätä ladattavat snapshot-tiedostot asemien kaikista tiedoista. 
+Tiedostot päivittyvät automaattisesti määräajoin.
 
 ## MQTT WebSocket -rajapinnat
 

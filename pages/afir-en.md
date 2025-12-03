@@ -107,6 +107,11 @@ The data is available in JSON format and, for certain operators, also in Datex I
 [`/api/charging-network/v1/locations/statuses`][afir_api_locations_statuses] (GeoJSON)\
 [`/api/charging-network/v1/locations/statuses/datex2-3.6`][afir_api_locations_statuses_datex_ii] (Datex II v3.6)
 
+### Upcoming features
+
+We are planning to add downloadable snapshot files containing all station data.
+These files will be automatically updated at regular intervals.
+
 ## MQTT WebSocket Interfaces
 
 Real-time status data is also available via MQTT topics over a WebSocket protocol.
