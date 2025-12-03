@@ -25,8 +25,8 @@ website:
 
 <h2 id="sisältö">Contents</h2>
 
-- Do not remove this line (it will not be displayed)
-  {:toc}
+- Do not remove this line (it will not be displayed). Next line must not have spaces.
+{:toc}
 
 # Alternative Fuels (AFIR)
 

@@ -24,7 +24,7 @@ kuinka saada data jakoon [digitraffic.fi][digitraffic_fi] -palveluun löytyy [Fi
 
 <h2 id="sisältö">Sisältö</h2>
 
-- Do not remove this line (it will not be displayed)
+- Do not remove this line (it will not be displayed). Next line must not have spaces.
 {:toc}
 
 # Vaihtoehtoiset polttoaineet (AFIR)
@@ -112,7 +112,7 @@ Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä o
 Reaaliaikaiset statustiedot ovat saatavilla myös MQTT over WebSockets protokollalla.
 MQTT-aiheiden avulla voidaan rajata kuunneltavia kohteita.
 
-Aiheen (topic) muoto on seuraava: 
+Aiheen (topic) muoto on seuraava:
 `status-v1/<operatorCountryCode>/<operatorPartyId>/<locationId>/<evseId>`
 
 Jokainen hierarkiatason kenttä rajaa tarkemmin, mitä statustietoja kuunnellaan. `#` lopussa tarkoittaa "kaikki"
