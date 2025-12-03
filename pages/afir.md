@@ -27,12 +27,10 @@ kuinka saada data jakoon [digitraffic.fi][digitraffic_fi] -palveluun löytyy [Fi
 - Do not remove this line (it will not be displayed). Next line must not have spaces.
 {:toc}
 
-# Vaihtoehtoiset polttoaineet (AFIR)
-
 Digitraffic tarjoaa Vaihtoehtoisten polttoaineiden latausverkoston dataa REST-rajapintoina sekä reaaliaikaista
 statustietoa MQTT-topikkina.
 
-## REST-rajapinnat
+# REST-rajapinnat
 
 Rajapintojen Swagger-dokumentaatiot löytyvät seuraavista osoitteista:
 
@@ -82,14 +80,14 @@ Mikäli `nextCursor` on `null` tai puuttuu, ei seuraavaa sivua ole enää saatav
 Vastauksen `limit` -kenttä kertoo sivun koon. Tällä hetkellä sivun koko on kiinteä 500, mutta tämä voi muuttua
 tulevaisuudessa, kun jaettavan datan määrä lisääntyy.
 
-### Latauspisteoperaattorit (CPO)
+## Latauspisteoperaattorit (CPO)
 
 Latauspisteoperaattorit (CPO, Charge Point Operator) ylläpitävät latauspisteitä ja vastaavat niiden toiminnasta.
 Rajapinta tarjoaa palvelusta löytyvien operaattorien tiedot.
 
 [`/api/charging-network/v1/operators`][afir_api_operators]
 
-### Latauspisteiden sijainnit
+## Latauspisteiden sijainnit
 
 Sijainnit jaetaan GeoJSON-muodossa ja lisäksi tiettyjen operaattoreiden tiedot myös Datex II v3.6-muodossa.
 Sijaintitiedot sisältävät latauspisteiden staattiset tiedot.
@@ -97,7 +95,7 @@ Sijaintitiedot sisältävät latauspisteiden staattiset tiedot.
 [`/api/charging-network/v1/locations`][afir_api_locations] (GeoJSON)\
 [`/api/charging-network/v1/locations/datex2-3.6`][afir_api_locations_datex_ii] (Datex II v3.6)
 
-### Latauspisteiden statukset
+## Latauspisteiden statukset
 
 Latauspisteeseen liittyvien EVSE-laitteiden (Electric Vehicle Supply Equipment) statustiedot sisältävät reaaliaikaisen
 tiedon
@@ -107,12 +105,7 @@ Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä o
 [`/api/charging-network/v1/locations/statuses`][afir_api_locations_statuses] (GeoJSON)\
 [`/api/charging-network/v1/locations/statuses/datex2-3.6`][afir_api_locations_statuses_datex_ii] (Datex II v3.6)
 
-### Tulevat ominaisuudet
-
-Suunnitteilla on lisätä ladattavat snapshot-tiedostot asemien kaikista tiedoista. 
-Tiedostot päivittyvät automaattisesti määräajoin.
-
-## MQTT WebSocket -rajapinnat
+# MQTT WebSocket -rajapinnat
 
 Reaaliaikaiset statustiedot ovat saatavilla myös MQTT over WebSockets protokollalla.
 MQTT-aiheiden avulla voidaan rajata kuunneltavia kohteita.
@@ -147,6 +140,12 @@ Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden st
 ```
 
 Viestin aihe (topic) kertoo aina, minkä latauslaitteen statuksesta on kyse.
+
+# Tulevat ominaisuudet
+
+Suunnitteilla on lisätä ladattavat snapshot-tiedostot asemien kaikista tiedoista.
+Tiedostot päivittyvät automaattisesti määräajoin.
+
 
 [swagger_afir_test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
 

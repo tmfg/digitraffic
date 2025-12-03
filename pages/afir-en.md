@@ -28,12 +28,10 @@ website:
 - Do not remove this line (it will not be displayed). Next line must not have spaces.
 {:toc}
 
-# Alternative Fuels (AFIR)
-
 Digitraffic provides alternative fuels charging network data via REST APIs as well as real-time status
 information via MQTT topics.
 
-## REST APIs
+# REST APIs
 
 Swagger documentation for the APIs can be found at:
 
@@ -83,14 +81,14 @@ If `nextCursor` is `null` or missing, no further pages are available.
 The `limit` field indicates the page size. Currently, the page size is fixed at 500, but this may change in
 the future as the amount of distributed data increases.
 
-### Charge Point Operators (CPO)
+## Charge Point Operators (CPO)
 
 Charge Point Operators (CPOs) maintain charging points and are responsible for their operation.
 This API provides information about the operators available in the service.
 
 [`/api/charging-network/v1/operators`][afir_api_operators]
 
-### Charging Point Locations
+## Charging Point Locations
 
 Location data is provided in GeoJSON format, and for certain operators, also in Datex II v3.6 format.
 The location data includes static information about charging points.
@@ -98,7 +96,7 @@ The location data includes static information about charging points.
 [`/api/charging-network/v1/locations`][afir_api_locations] (GeoJSON)\
 [`/api/charging-network/v1/locations/datex2-3.6`][afir_api_locations_datex_ii] (Datex II v3.6)
 
-### Charging Point Status
+## Charging Point Status
 
 Status information for EVSE devices (Electric Vehicle Supply Equipment) provides real-time details about
 availability and reservations of the charging equipment.
@@ -107,12 +105,7 @@ The data is available in JSON format and, for certain operators, also in Datex I
 [`/api/charging-network/v1/locations/statuses`][afir_api_locations_statuses] (GeoJSON)\
 [`/api/charging-network/v1/locations/statuses/datex2-3.6`][afir_api_locations_statuses_datex_ii] (Datex II v3.6)
 
-### Upcoming features
-
-We are planning to add downloadable snapshot files containing all station data.
-These files will be automatically updated at regular intervals.
-
-## MQTT WebSocket Interfaces
+# MQTT WebSocket Interfaces
 
 Real-time status data is also available via MQTT topics over a WebSocket protocol.
 Topics can be used to filter which charging points' data is listened to.
@@ -147,6 +140,11 @@ The message payload is JSON-formatted and corresponds to the data returned by th
 ```
 
 The topic indicates which EVSE device’s status the message refers to.
+
+# Upcoming features
+
+We are planning to add downloadable snapshot files containing all station data.
+These files will be automatically updated at regular intervals.
 
 [swagger_afir_test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
 

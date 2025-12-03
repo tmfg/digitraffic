@@ -64,6 +64,10 @@ hetkellä:
   tiedonkeruupisteiden sijainti- ja tilatiedot. GeoJSON-formaatissa saatavat
   sijaintitiedot päivittyvät 12 tunnin välein ja tilatiedot tunnin välein.
 
+- Vaihtoehtoisten polttoaineet (AFIR). 
+  Data sisältää sähköautojen latauspisteiden sijainnit sekä niihin liittyvää
+  staattista että reaaliaikatietoa.
+
 ### Käyttörajoitukset
 
 Katso
@@ -73,6 +77,11 @@ Katso
 
 Tuettujen ja vanhentuneiden rajapintojen listaus löytyy
 [täältä](/tuki/rajapintojen-muutokset/).
+
+### Vaihtoehtoiset polttoaineet (AFIR)
+
+Vaihtoehtoisten polttoaineiden dokumentaatio löytyy
+omalta sivultaan: [Vaihtoehtoiset polttoaineet - AFIR][afir_fi]
 
 ## REST/JSON-rajapinnat
 
@@ -711,3 +720,6 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 ```
 
 [Swagger-kuvauksesta]: https://tie.digitraffic.fi/swagger/
+
+[afir_fi]: /tieliikenne/afir/  "Vaihtoehtoiset polttoaineet (AFIR)"
+[afir_en]: /en/road-traffic/afir/  "Alternative Fuels (AFIR)"

@@ -56,6 +56,10 @@ API includes:
 
 - Metadata for all services is updated twice per day
 
+- Alternative Fuels (AFIR).
+  The data includes the locations of electric vehicle charging 
+  points as well as related static and real-time information.
+
 ### Restrictions
 
 See
@@ -65,6 +69,10 @@ See
 
 Listings of supported and deprecated APIs can be found
 [here](/en/support/api-changes/).
+
+### Alternative Fuels (AFIR)
+
+Documentation on alternative fuels can be found on a dedicated page: [Alternative Fuels – AFIR][afir_en]
 
 ## REST/JSON -APIs
 
@@ -695,3 +703,6 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 ```
 
 [Swagger-documentation]: https://tie.digitraffic.fi/swagger/
+
+[afir_fi]: /tieliikenne/afir/  "Vaihtoehtoiset polttoaineet (AFIR)"
+[afir_en]: /en/road-traffic/afir/  "Alternative Fuels (AFIR)"
