@@ -110,6 +110,15 @@ Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä o
 Reaaliaikaiset statustiedot ovat saatavilla myös MQTT over WebSockets protokollalla.
 MQTT-aiheiden avulla voidaan rajata kuunneltavia kohteita.
 
+Tuotannon osoite on `wss://afir.digitraffic.fi:443/mqtt`
+Tuotannon osoite on `wss://afir-test.digitraffic.fi:443/mqtt`
+
+Kirjautuessa tulee käyttää SSL-yhteyttä.
+
+Pahon JS-clientia käyttäessä osoite on pelkkä `afir.digitraffic.fi` ja portti `443`.
+
+Yksinkertainen selainpohjainen MQTT-esimerkkisovellus löytyy sivulta [Tuki > MQTT-esimerkkejä][mqtt_example].
+
 Aiheen (topic) muoto on seuraava:
 `status-v1/<operatorCountryCode>/<operatorPartyId>/<locationId>/<evseId>`
 
@@ -160,6 +169,8 @@ Tiedostot päivittyvät automaattisesti määräajoin.
 [afir_api_locations_statuses]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses
 
 [afir_api_locations_statuses_datex_ii]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses/datex2-3.6
+
+[mqtt_example]: /tuki/script-mqtt/ "MQTT esimerkkejä"
 
 [digitraffic_fi]: / "digitraffic.fi"
 

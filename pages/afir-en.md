@@ -110,6 +110,14 @@ The data is available in JSON format and, for certain operators, also in Datex I
 Real-time status data is also available via MQTT topics over a WebSocket protocol.
 Topics can be used to filter which charging points' data is listened to.
 
+The production address is `wss://afir.digitraffic.fi:443/mqtt`
+The test address is `wss://afir-test.digitraffic.fi:443/mqtt`
+
+An SSL connection must be used when logging in.
+
+When using the Paho JS client, the address is simply afir.digitraffic.fi with port `443`.
+A simple browser-based MQTT example application is available on the [Support > MQTT examples][mqtt_example] page.
+
 The topic format is:
 `status-v1/<operatorCountryCode>/<operatorPartyId>/<locationId>/<evseId>`
 
@@ -159,6 +167,8 @@ These files will be automatically updated at regular intervals.
 [afir_api_locations_statuses]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses
 
 [afir_api_locations_statuses_datex_ii]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses/datex2-3.6
+
+[mqtt_example]: /tuki/script-mqtt/ "MQTT examples"
 
 [digitraffic_fi]: / "digitraffic.fi"
 
