@@ -1,5 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0-beta/schema.json",
+  //  "$schema": "https://biomejs.dev/schemas/2.0.0-beta/schema.json",
+  "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "includes": [
       // In a folder with a biome.jsonc that extends this one, that path seen is one
@@ -9,6 +10,7 @@
       "**/*.json",
       "**/*.jsonc",
       "**/*.css",
+
       // These are not yet supported by biome natively https://biomejs.dev/internals/language-support/
       "**/*.scss",
       "**/*.yml",
@@ -37,6 +39,11 @@
   "formatter": {
     "enabled": true,
     "indentStyle": "space"
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    }
   },
   "assist": { "enabled": true },
   "linter": {
