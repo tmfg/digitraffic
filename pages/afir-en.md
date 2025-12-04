@@ -110,7 +110,7 @@ The data is available in JSON format and, for certain operators, also in Datex I
 Real-time status data is also available via MQTT topics over a WebSocket protocol.
 Topics can be used to filter which charging points' data is listened to.
 
-The production address is `wss://afir.digitraffic.fi:443/mqtt`
+The production address is `wss://afir.digitraffic.fi:443/mqtt`\
 The test address is `wss://afir-test.digitraffic.fi:443/mqtt`
 
 An SSL connection must be used when logging in.

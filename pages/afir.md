@@ -110,8 +110,8 @@ Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä o
 Reaaliaikaiset statustiedot ovat saatavilla myös MQTT over WebSockets protokollalla.
 MQTT-aiheiden avulla voidaan rajata kuunneltavia kohteita.
 
-Tuotannon osoite on `wss://afir.digitraffic.fi:443/mqtt`
-Tuotannon osoite on `wss://afir-test.digitraffic.fi:443/mqtt`
+Tuotannon osoite on `wss://afir.digitraffic.fi:443/mqtt`\
+Testin osoite on `wss://afir-test.digitraffic.fi:443/mqtt`
 
 Kirjautuessa tulee käyttää SSL-yhteyttä.
 
