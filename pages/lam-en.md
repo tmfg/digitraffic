@@ -176,4 +176,6 @@ The vehicle classes are:
 4 KAPP (semi-trailer truck)\
 5 KATP (truck with trailer)\
 6 HA + PK (car or delivery van with trailer)\
-7 HA + AV (car or delivery van with trailer or camper)
+7 HA + AV (car or delivery van with trailer or camper)\
+8 MP (Motorcycles and mopeds)\
+9 HCT (High Capacity Truck)
