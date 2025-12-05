@@ -5,7 +5,7 @@ ref: udot
 issue-number: DPO-2549
 traffictypes:
   - Railway traffic
-status: in progress
+status: finished  
 date: 2024-08-16
 ---
 

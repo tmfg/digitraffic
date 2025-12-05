@@ -7,7 +7,7 @@ traffictypes:
   - Tieliikenne
   - Meriliikenne
   - Rautatieliikenne
-status: toteutuksessa
+status: valmis
 date: 2023-04-01
 ---
 

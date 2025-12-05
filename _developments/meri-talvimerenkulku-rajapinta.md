@@ -5,7 +5,7 @@ ref: talvimerenkulun_uusi_rajapinta
 issue-number: DPO-2669
 traffictypes:
     - Meriliikenne
-status: toteutuksessa
+status: valmis
 date: 2024-08-16
 ---
 

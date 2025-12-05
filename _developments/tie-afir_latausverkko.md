@@ -5,7 +5,7 @@ ref: afir-latausverkko
 issue-number: DPO-2881
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2024-11-12
 ---
 

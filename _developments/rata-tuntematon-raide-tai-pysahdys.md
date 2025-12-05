@@ -5,7 +5,7 @@ ref: udot
 issue-number: DPO-2549
 traffictypes:
   - Rautatieliikenne
-status: toteutuksessa
+status: valmis
 date: 2024-08-16
 ---
 

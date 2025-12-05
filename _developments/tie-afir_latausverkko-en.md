@@ -5,7 +5,7 @@ ref: afir-latausverkko
 issue-number: DPO-2881
 traffictypes:
   - Road traffic
-status: in progress
+status: finished
 date: 2024-11-12
 ---
 

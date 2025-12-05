@@ -5,7 +5,7 @@ ref: talvimerenkulun_uusi_rajapinta
 issue-number: DPO-2669
 traffictypes:
     - Marine traffic
-status: in progress
+status: finished
 date: 2024-08-16
 ---
 
