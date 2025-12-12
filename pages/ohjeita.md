@@ -146,12 +146,12 @@ Taulukossa olevat rajoitukset koskevat kyselyitä, joissa ei ole
 tehdä huomattavasti enemmän, jos otsikko on kyselyissä mukana.
 
 | **Kohde / rajapinta**                       | **Max kpl / min** | **Rajaus** |
-| ------------------------------------------- | ----------------- | ---------- |
+| ------------------------------------------- |-------------------| ---------- |
 | **Yleisrajoitus**                           | 60                | IP         |
 | **MQTT**                                    | 5                 | IP         |
 | **Kelikamerakuvat**                         | 60                | IP         |
 | **tie/meri.digitraffic.fi:n V1-rajapinnat** | 60                | IP         |
-| **infra- ja jeti-api**                      | 60                | IP         |
+| **infra- ja jeti-api**                      | 30                | IP         |
 
 # Cache
 

@@ -147,12 +147,12 @@ The restrictions listed in the table below are for request without the
 the header is set.
 
 | **Target / interface**                    | **Max requests / min** | **Key** |
-| ----------------------------------------- | ---------------------- | ------- |
+| ----------------------------------------- |------------------------| ------- |
 | **General restriction**                   | 60                     | IP      |
 | **MQTT**                                  | 5                      | IP      |
 | **Weather camera images**                 | 60                     | IP      |
 | **tie/meri.digitraffic.fi V1-interfaces** | 60                     | IP      |
-| **infra- and jeti-api**                   | 60                     | IP      |
+| **infra- and jeti-api**                   | 30                     | IP      |
 
 # Cache
 
