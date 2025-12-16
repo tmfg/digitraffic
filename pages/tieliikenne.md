@@ -309,19 +309,30 @@ aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
   - Viesti sisältää poikkeuksellisia teiden käyttöä rajoittavia
     painorajoituksia.
 
-#### Liikennetiedotteiden DATEX II -muotoisen datan rajapinnat
+#### Liikennetiedotteiden DATEX II 3.5-muotoisen datan rajapinnat
 
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+- [`/api/traffic-message/v2/exempted-transports/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-3.5.xml){:target="_blank"}
+- [`/api/traffic-message/v2/roadworks/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-3.5.xml){:target="_blank"}
+- [`/api/traffic-message/v2/traffic-announcements/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/trafficf-announcements/datex2-3.5.xml){:target="_blank"}
+- [`/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml){:target="_blank"}
 
-#### Liikennetiedotteiden Simppelin JSON -muotoisen datan rajapinnat
+#### Liikennetiedotteiden DATEX II 2.2.3-muotoisen datan rajapinnat
 
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+- [`/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml){:target="_blank"}
+- [`/api/traffic-message/v2/roadworks/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-2.2.3.xml){:target="_blank"}
+- [`/api/traffic-message/v2/traffic-announcements/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/trafficf-announcements/datex2-2.2.3.xml){:target="_blank"}
+- [`/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml){:target="_blank"}
+
+#### Liikennetiedotteiden Simppelin JSON-muotoisen datan rajapinnat
+
+- [`/api/traffic-message/v2/exempted-transports`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports){:target="_blank"}
+- [`/api/traffic-message/v2/roadworks`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks){:target="_blank"}
+- [`/api/traffic-message/v2/traffic-announcements`](https://tie.digitraffic.fi/api/traffic-message/v2/trafficf-announcements){:target="_blank"}
+- [`/api/traffic-message/v2/weight-restrictions`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions){:target="_blank"}
+
+#### SRTI/RTTI-tiedotteiden DATEX II 3.5-muotoisen datan rajapinnat
+
+- [`/api/traffic-message/v2/traffic-data/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-data/datex2-3.5.xml){:target="_blank"}
 
 #### Liikennetiedotteiden aluegeometriat
 

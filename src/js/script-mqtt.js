@@ -25,7 +25,7 @@ function initMqtt() {
 export default function scriptMqtt() {}
 
 function connect() {
-    const clientId = "testclient_" + now();
+    const clientId = "page_testclient_" + now();
     host = $("#domain").val();
     topic = $("#topic").val();
     console.log("Trying to connect to host " + host + ":" + port + ", topic: " + topic + " client id: " + clientId);
@@ -52,8 +52,9 @@ function connect() {
         } catch (error) {
             // not json or xml, try decompress
             try {
-                const json = decompressGzipToString(message.payloadString)
-                addMessage(message.destinationName, "RAW: \"" + message.payloadString + "\"\nDECOMPRESSED: \"" + JSON.stringify(JSON.parse(json)) + "\"");
+                const message = decompress(message.payloadString);
+
+                addMessage(message.destinationName, "RAW: \"" + message.payloadString + "\"\nDECOMPRESSED: \"" + message + "\"");
             } catch (errorIn) {
                 console.error("addMessage failed " + error);
                 console.info(message);
@@ -95,6 +96,16 @@ function onConnectSuccess() {
     console.info(now() + ' Connection open. Subscribing to topic ' + topic);
     $("#connectionStatus").text(new Date().toISOString() + ' Connected to host ' + host + ', topic: ' + topic);
     client.subscribe(topic);
+}
+
+function decompress(compressed) {
+    const data = decompressGzipToString(compressed)
+
+    try {
+        return JSON.stringify(JSON.parse(data));
+    } catch (error) {
+        return data;
+    }
 }
 
 function onConnectFailure(response) {

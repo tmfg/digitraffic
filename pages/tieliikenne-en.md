@@ -291,19 +291,30 @@ date format.
 - **Weight restriction** `WEIGHT_RESTRICTION`
   - Message contains weight restriction limiting usage of the roads.
 
-#### Traffic messages DATEX II -APIs
+#### Traffic messages DATEX II 3.5-APIs
 
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=ROAD_WORK){:target="_blank"}
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-- [`/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION`](https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2?inactiveHours=0&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+- [`/api/traffic-message/v2/exempted-transports/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-3.5.xml){:target="_blank"}
+- [`/api/traffic-message/v2/roadworks/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-3.5.xml){:target="_blank"}
+- [`/api/traffic-message/v2/traffic-announcements/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/trafficf-announcements/datex2-3.5.xml){:target="_blank"}
+- [`/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml){:target="_blank"}
 
-#### Traffic messages Simpele JSON -APIs
+#### Traffic messages DATEX II 3.5-APIs
 
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=EXEMPTED_TRANSPORT){:target="_blank"}
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=ROAD_WORK){:target="_blank"}
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=TRAFFIC_ANNOUNCEMENT){:target="_blank"}
-- [`/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION`](https://tie.digitraffic.fi/api/traffic-message/v1/messages?inactiveHours=0&includeAreaGeometry=false&situationType=WEIGHT_RESTRICTION){:target="_blank"}
+- [`/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml){:target="_blank"}
+- [`/api/traffic-message/v2/roadworks/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-2.2.3.xml){:target="_blank"}
+- [`/api/traffic-message/v2/traffic-announcements/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/trafficf-announcements/datex2-2.2.3.xml){:target="_blank"}
+- [`/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml){:target="_blank"}
+
+#### Traffic messages Simple JSON-APIs
+
+- [`/api/traffic-message/v2/exempted-transports`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports){:target="_blank"}
+- [`/api/traffic-message/v2/roadworks`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks){:target="_blank"}
+- [`/api/traffic-message/v2/traffic-announcements`](https://tie.digitraffic.fi/api/traffic-message/v2/trafficf-announcements){:target="_blank"}
+- [`/api/traffic-message/v2/weight-restrictions`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions){:target="_blank"}
+
+#### SRTI/RTTI messages DATEX II 3.5-API
+
+- [`/api/traffic-message/v2/traffic-data/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-data/datex2-3.5.xml){:target="_blank"}
 
 #### Traffic messages area geometries
 
