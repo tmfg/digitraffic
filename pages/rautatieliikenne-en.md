@@ -45,6 +45,7 @@ a short form). You might get more information using Google Translate with the
 1. [GraphQL](#graphql)
 2. [Swagger](#swagger)
 3. [GTFS](#gtfs)
+4. [Track work project and yearly plans](#track-work-project-and-yearly-plans)
 
 # GraphQL
 
@@ -175,3 +176,20 @@ Real time feed is updated every 10 seconds.
 
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+# Track work project and yearly plans
+
+[https://rata.digitraffic.fi/api/v1/yearly-plans/yearly-plans.json](https://rata.digitraffic.fi/api/v1/yearly-plans/yearly-plans.json)
+
+[https://rata.digitraffic.fi/api/v1/project-plans/project-plans.json](https://rata.digitraffic.fi/api/v1/project-plans/project-plans.json)
+
+Track work project and yearly plans are available as static JSON datasets from the above URLs.
+
+Data is updated from the source system once per day.
+
+Dataset descriptions are available in JSON Schema format:
+
+[https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts](https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts)
+
+
+

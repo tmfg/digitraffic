@@ -123,6 +123,8 @@ turvallisuuskriittisissä sovelluksissa.
    1. [GPS-sijaintien kuuntelu](#gps-sijaintien-kuuntelu)
    1. [Kulkutietoviestien kuuntelu](#kulkutietoviestien-kuuntelu)
    1. [Kulkutievarauksien kuntelu](#kulkutievarauksien-kuuntelu)
+1. [Muut tietoaineistot](#muut-tietoaineistot)
+   1. [Ratatöiden hanke- ja vuosisuunnitelmat](#ratatoiden-hanke-ja-vuosisuunnitelmat)
 1. [Vastaustyypit](#vastaustyypit)
    1. [Junat](#junat)
    1. [Kokoonpanot](#kokoonpanot)
@@ -1792,6 +1794,22 @@ Esimerkki: [https://jsfiddle.net/g5x9ywnh/](https://jsfiddle.net/g5x9ywnh/)
 **Paluuarvo**
 
 Palauttaa [kokoonpanot](#kokoonpanot)-tyyppisiä vastauksia.
+
+## Muut tietoaineistot
+
+### Ratatöiden hanke- ja vuosisuunnitelmat
+
+[https://rata.digitraffic.fi/api/v1/yearly-plans/yearly-plans.json](https://rata.digitraffic.fi/api/v1/yearly-plans/yearly-plans.json)
+
+[https://rata.digitraffic.fi/api/v1/project-plans/project-plans.json](https://rata.digitraffic.fi/api/v1/project-plans/project-plans.json)
+
+Ratatöiden hanke- ja vuosisuunnitelmat ovat saatavilla staattisina JSON-muotoisina aineistoina ylläolevista osoitteista.
+
+Data päivitetään lähdejärjestelmästä kerran vuorokaudessa.
+
+Tietoaineistojen kuvaukset ovat saatavilla JSON Schema -muodossa:
+
+[https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts](https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts)
 
 ## Vastaustyypit
 
