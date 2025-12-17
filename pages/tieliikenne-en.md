@@ -574,13 +574,13 @@ Topics are constructed like shown below.
 
 #### Traffic messages
 
-- `traffic-message-v2/datex2/<situationType>` Message payload is in Datex2 XML
-  format.
-- `traffic-message-v2/simple/<situationType>` Message payload is in simple JSON
-  that is gzipped and base64-coded
+- `traffic-message-v3/datex2-3.5/<situationType>` Message payload is in DatexII 3.5 XML format.
+- `traffic-message-v3/datex2-2.2.3/<situationType>` Message payload is in DatexII 2.2.3 XML format.
+- `traffic-message-v3/simple/<situationType>` Message payload is in Simple JSON format that is gzipped and base64-encoded.
+- `traffic-message-v3/datex2-3.5/SRTI` Message payload is in DatexII 3.5 XML format.
+- `traffic-message-v3/datex2-3.5/RTTI` Message payload is in DatexII 3.5 XML format.
 
-Possible values for situationType are: `TRAFFIC_ANNOUNCEMENT`,
-`EXEMPTED_TRANSPORT`, `WEIGHT_RESTRICTION`, `ROAD_WORK`
+Possible values for situationType are: `TRAFFIC_ANNOUNCEMENT`, `EXEMPTED_TRANSPORT`, `WEIGHT_RESTRICTION`, `ROAD_WORK`
 
 Example simple JSON gzipped and base64-coded value:
 `H4sIAAAAAAAAAO1VS27bMBDd5xSE1rZCfWI7XtWIk9ZtqgSN0wBpg4KR6JiVRAokFSAIvOtRfIZeQBfrSKJs+RcUXXfjD+dx5s0bzszrEUKWfsmohYbIuqBE55JanfL0iYqUavlSWl7hoA28FozrCganoRAyYpxoqkrjN+Se2J6P+7jXQT3Hdr2ed9JHDwBeVI4zKTIqNavhxrViOieaCT6JqgjvbyfjE+zjUw97TaAVZtrwmH4ZXVxMzn6MguDqNjg7/3weTBu0lmQ2Y+GIc5HzkKaU69W982B8Pm6Az1QqcFoaTs2RpAklik5ZWuNd7Hpd7HRdf4oHQ9cdYs8eDNz7LRd78adDDw+9no29/gpPWqSMaLUOYEsIf8rJk6nIxFwpE2I6MWkzily/g0aKxTFJiI0uGYsp5xRUjYSmSJS/tUjzPKJKA2DKwC8Hw5zZaO0zEWGl6LoSpqQ5h9KfiagK2OusTc2NKXlMaJCnj1SWEKd/CPN1La/l2I5j+57VwgK/ULKsIWFyQ8/FMmFJUizRJZlrhrroY7FMVbFsZf0dAsiYphlDGSnPhugavgkkjCZKdItfjLPiN3I6LorTDlI5ZEUIRzckATXSYhkz2zJUFjuajKkmLFFb0khBolEUSarU5V7xqhfOUiJf6i7ZMoI5zTkLWUYSpqvuspqMWroYP+KZwTOpe65Ysp/FUnc/gBB0G2oqViFvcpGybUCL9y4lYy8N8K72mW5o2KQ62AFEDCQ3PD3P7W3YF1tESALNf3ZIu40KNO/P9Qe9naCcmGZrldp6k5rj+v1Naq1/GzQtRUPBo/813CfOP9ewf7iGrY58u4Y+Phn8ZQ0jJtcJW7fBp+DqLrCOti+uG39Wrz8zkB9W56V2d0LG13PYCTtWDUN/xKNxLvdNUmAu9aE9gocY37eHIeXR4R3iuLbnePe7A4tEEStDk2TCZ0KmKx5Wsxa66CdBMYXHWu0HBPsqFkrBwJxrnanh8XGyWiDVnrBn8OzrBQo/j9cLQwHFeuJbFysIbBfaOIipinOFpiSFJU9rsotGLnjiMIHDjYaysrngdcrYxdh1MF6HoymM4Mqma4f2Zpx3GzxNNBMrIprcZvBJ3xDVx5Wgi6PFH4BXin4LCQAA`

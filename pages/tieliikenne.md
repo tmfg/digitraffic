@@ -590,10 +590,11 @@ Esim. `tms-v2/#`
 
 #### Liikennetiedotteet
 
-- `traffic-message-v2/datex2/<situationType>` Viestin sisältö on Datex2 XML
-  muotoa.
-- `traffic-message-v2/simple/<situationType>` Viestin sisältö on
-  liikennetiedotteiden simppeli JSON joka on gzip-pakattu ja base64-koodattu.
+- `traffic-message-v3/datex2-3.5/<situationType>` Viestin sisältö on DatexII 3.5 XML muotoa.
+- `traffic-message-v3/datex2-2.2.3/<situationType>` Viestin sisältö on DatexII 2.2.3 XML muotoa.
+- `traffic-message-v3/simple/<situationType>` Viestin sisältö on Simple JSON joka on gzip-pakattu ja base64-enkoodattu.
+- `traffic-message-v3/datex2-3.5/SRTI` Viestin sisältö on DatexII 3.5 XML muotoa.
+- `traffic-message-v3/datex2-3.5/RTTI` Viestin sisältö on DatexII 3.5 XML muotoa.
 
 Mahdolliset situationType -arvot: `TRAFFIC_ANNOUNCEMENT`, `EXEMPTED_TRANSPORT`,
 `WEIGHT_RESTRICTION`, `ROAD_WORK`
