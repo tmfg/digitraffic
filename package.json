@@ -8,9 +8,9 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm build:tsc && pnpm generate-third-party-licenses",
-    "build-and-install": "pnpm clean && pnpm build && pnpm install-all",
     "build:jekyll": "bundle exec jekyll build",
     "build:tsc": "tsc",
+    "build-and-install": "pnpm clean && pnpm build && pnpm install-all",
     "bundle": "esbuild --bundle src/assets.js --outfile=js/bundle.js --format=iife && esbuild --bundle src/assets.js --minify --outfile=js/bundle.min.js --format=iife && mv js/bundle.css _scss/bundle.scss && rm js/bundle.min.css",
     "clean": "rimraf dist",
     "copy-fonts": "mkdir -p css/public-sans && cp node_modules/@fontsource/public-sans/files/public-sans-latin-* css/public-sans/ && rm css/public-sans/*-ext-*",
@@ -19,7 +19,6 @@
     "dev": "bundle exec jekyll serve --host 0.0.0.0 --port 3000 --livereload --livereload_port 3001 --config _config_dev.yml --trace",
     "fix-fonts-css": "sed -i'.bak' -E 's/url\\(\\.\\/files/url\\(\\/css\\/public-sans/g' _scss/public-sans-latin*.scss && rm _scss/public-sans-latin*.scss.bak",
     "fix-icons-css": "sed -i'.bak' -E 's/url\\(\\\"\\./url\\(\\\"\\/css\\/material-icons/g' css/material-icons/round.css && sed -i'.bak' -E 's/\\.material-icons-round/\\.material-icons/g' css/material-icons/round.css && rm css/material-icons/*.css.bak",
-    "format-changed": "lefthook run pre-commit",
     "format:check": "biome check ",
     "format:check-changed": "biome check --changed",
     "format:check-staged": "biome check --staged",
@@ -27,6 +26,7 @@
     "format:fix-changed": "biome check --changed --write",
     "format:fix-staged": "biome check --staged --write",
     "format:package-json": "sort-package-json $(git ls-files '*package.json')",
+    "format-changed": "lefthook run pre-commit",
     "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
     "install-all": "pnpm install-icons-and-fonts && pnpm bundle && pnpm generate-third-party-licenses",
     "install-fonts": "pnpm copy-fonts && pnpm copy-fonts-css && pnpm fix-fonts-css",
@@ -36,27 +36,27 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@fontsource/public-sans": "^5.2.7",
-    "@popperjs/core": "^2.11.8",
-    "alpinejs": "^3.15.2",
-    "highlight.js": "^11.11.1",
-    "jquery": "^3.7.1",
-    "lunr": "^2.3.9",
-    "material-icons": "^1.13.14",
-    "paho-mqtt": "^1.1.0",
-    "pako": "^2.1.0",
-    "tippy.js": "^6.3.7",
-    "xmlhttprequest": "^1.8.0"
+    "@fontsource/public-sans": "5.2.7",
+    "@popperjs/core": "2.11.8",
+    "alpinejs": "3.15.4",
+    "highlight.js": "11.11.1",
+    "jquery": "3.7.1",
+    "lunr": "2.3.9",
+    "material-icons": "1.13.14",
+    "paho-mqtt": "1.1.0",
+    "pako": "2.1.0",
+    "tippy.js": "6.3.7",
+    "xmlhttprequest": "1.8.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.7",
-    "@types/jquery": "^3.5.33",
-    "esbuild": "^0.27.0",
-    "generate-license-file": "^4.1.0",
-    "lefthook": "^2.0.4",
-    "rimraf": "^6.1.2",
-    "sort-package-json": "^3.4.0",
-    "typescript": "^5.9.3"
+    "@biomejs/biome": "2.3.11",
+    "@types/jquery": "3.5.33",
+    "esbuild": "0.27.2",
+    "generate-license-file": "4.1.1",
+    "lefthook": "2.0.15",
+    "rimraf": "6.1.2",
+    "sort-package-json": "3.6.0",
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=22 <23"
