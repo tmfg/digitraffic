@@ -23,14 +23,12 @@ links:
 Marine traffic information is gathered from Finnish Transport Infrastructure
 Agency's data sources. Currently open data API provides following information:
 
-- Marine warnings
-
 - Harbor schedules (gathered from the Portnet-system)
 
 - Vessel location AIS (Automatic Identification System).
   [Additional info](ais/).
 
-- Winter navigation dirways from IBNet-system
+- Winter navigation assistance data from the IBNet system
 
 - Sea state estimation data from TLSC-system, that analyzes data send by smart
   AtoN buoy sites
@@ -53,15 +51,6 @@ Agency's data sources. Currently open data API provides following information:
 
 Full API descriptions can be found in
 [Swagger-documentation page]({{page.swagger-link}}){:target="_blank"}
-
-### Nautical warnings
-
-[`https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active`](https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active){:
-target="_blank"}
-
-Nautical warnings are fetched from POOKI.
-
-At this time there is no metadata available.
 
 ### Port calls
 

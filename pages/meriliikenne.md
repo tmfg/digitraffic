@@ -24,10 +24,6 @@ Meriliikenteen tiedot syntyvät VTS Finlandin ja Väyläviraston operoimissa
 ammattimerenkulun tietojärjestelmissä. Avoimet meriliikenteen tiedot sisältävät
 tällä hetkellä:
 
-- Merivaroitustiedot. Merivaroitustietojen avulla voidaan hakea voimassa olevat
-  kauppamerenkulun väylien turvalaitepoikkeamat sekä voimassa olevat
-  merivaroitukset.
-
 - Satamien aikataulutiedot. Portnet-järjestelmästä saatavien Suomen satamien
   aikataulutietojen kautta voidaan hakea kauppamerenkulun alusten satamatietoja
 
@@ -58,14 +54,6 @@ tällä hetkellä:
 Rajapintakuvaukset löytyvät
 [Swagger-dokumentaatiosta]({{page.swagger-link}}){:target="_blank"}
 
-### Merivaroitukset
-
-[`https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active`](https://meri.digitraffic.fi/api/nautical-warning/v1/warnings/active){:
-target="_blank"}
-
-Merivaroitukset haetaan POOKI-järjestelmästä.
-
-Merivaroituksiin liittyvää metadataa ei ole digitrafficista saatavilla.
 
 ### Satamakäynnit
 

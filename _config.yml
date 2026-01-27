@@ -369,8 +369,8 @@ t:
       en: "en/marine-traffic/"
       fi: "meriliikenne/"
   marine-traffic-description:
-    en: "Marine traffic APIs provide sea warnings, ship locations and their meta data, and Portnet data."
-    fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten Merivaroitukset, Alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
+    en: "Marine traffic APIs provide vessel locations and metadata, data on port calls and other marine traffic information."
+    fi: "Vesiliikenteen liikennetiedoista avoimiin rajapintoihin on tuotu useita tietolajeja kuten alusten sijaintitiedot (AIS-viestit) ja niihin liittyvä metadata sekä Portnet -tiedot alusten satamakäynneistä."
   marine-traffic-button:
     en: "Marine traffic APIs"
     fi: "Meriliikenne tietolähteet"
