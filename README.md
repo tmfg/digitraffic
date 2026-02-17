@@ -2,6 +2,7 @@
 
 # Install lefthook githooks
 
+    pnpm install
     pnpm run setup
 
 ## Run locally with Docker

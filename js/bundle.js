@@ -8856,7 +8856,7 @@
       };
       var escape = escapeHTML;
       var inherit = inherit$1;
-      var NO_MATCH = Symbol("nomatch");
+      var NO_MATCH = /* @__PURE__ */ Symbol("nomatch");
       var MAX_KEYWORD_HITS = 7;
       var HLJS = function(hljs2) {
         const languages = /* @__PURE__ */ Object.create(null);
@@ -18409,7 +18409,7 @@
     };
   }
 
-  // node_modules/.pnpm/alpinejs@3.15.2/node_modules/alpinejs/dist/module.esm.js
+  // node_modules/.pnpm/alpinejs@3.15.4/node_modules/alpinejs/dist/module.esm.js
   var flushPending = false;
   var flushing = false;
   var queue = [];
@@ -18865,6 +18865,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function setEvaluator(newEvaluator) {
     theEvaluatorFunction = newEvaluator;
   }
+  var theRawEvaluatorFunction;
+  function setRawEvaluator(newEvaluator) {
+    theRawEvaluatorFunction = newEvaluator;
+  }
   function normalEvaluator(el, expression) {
     let overriddenMagics = {};
     injectMagics(overriddenMagics, el);
@@ -18875,6 +18879,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function generateEvaluatorFromFunction(dataStack, func) {
     return (receiver = () => {
     }, { scope: scope2 = {}, params = [], context } = {}) => {
+      if (!shouldAutoEvaluateFunctions) {
+        runIfTypeOfFunction(receiver, func, mergeProxies([scope2, ...dataStack]), params);
+        return;
+      }
       let result = func.apply(mergeProxies([scope2, ...dataStack]), params);
       runIfTypeOfFunction(receiver, result);
     };
@@ -18940,6 +18948,38 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       receiver(value);
     }
   }
+  function evaluateRaw(...args) {
+    return theRawEvaluatorFunction(...args);
+  }
+  function normalRawEvaluator(el, expression, extras = {}) {
+    let overriddenMagics = {};
+    injectMagics(overriddenMagics, el);
+    let dataStack = [overriddenMagics, ...closestDataStack(el)];
+    let scope2 = mergeProxies([extras.scope ?? {}, ...dataStack]);
+    let params = extras.params ?? [];
+    if (expression.includes("await")) {
+      let AsyncFunction = Object.getPrototypeOf(async function() {
+      }).constructor;
+      let rightSideSafeExpression = /^[\n\s]*if.*\(.*\)/.test(expression.trim()) || /^(let|const)\s/.test(expression.trim()) ? `(async()=>{ ${expression} })()` : expression;
+      let func = new AsyncFunction(
+        ["scope"],
+        `with (scope) { let __result = ${rightSideSafeExpression}; return __result }`
+      );
+      let result = func.call(extras.context, scope2);
+      return result;
+    } else {
+      let rightSideSafeExpression = /^[\n\s]*if.*\(.*\)/.test(expression.trim()) || /^(let|const)\s/.test(expression.trim()) ? `(()=>{ ${expression} })()` : expression;
+      let func = new Function(
+        ["scope"],
+        `with (scope) { let __result = ${rightSideSafeExpression}; return __result }`
+      );
+      let result = func.call(extras.context, scope2);
+      if (typeof result === "function" && shouldAutoEvaluateFunctions) {
+        return result.apply(scope2, params);
+      }
+      return result;
+    }
+  }
   var prefixAsString = "x-";
   function prefix(subject = "") {
     return prefixAsString + subject;
@@ -18991,10 +19031,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   var isDeferringHandlers = false;
   var directiveHandlerStacks = /* @__PURE__ */ new Map();
-  var currentHandlerStackKey = Symbol();
+  var currentHandlerStackKey = /* @__PURE__ */ Symbol();
   function deferHandlingDirectives(callback) {
     isDeferringHandlers = true;
-    let key = Symbol();
+    let key = /* @__PURE__ */ Symbol();
     currentHandlerStackKey = key;
     directiveHandlerStacks.set(key, []);
     let flushHandlers = () => {
@@ -19067,6 +19107,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   var alpineAttributeRegex = () => new RegExp(`^${prefixAsString}([^:^.]+)\\b`);
   function toParsedDirectives(transformedAttributeMap, originalAttributeOverride) {
     return ({ name, value }) => {
+      if (name === value)
+        value = "";
       let typeMatch = name.match(alpineAttributeRegex());
       let valueMatch = name.match(/:([a-zA-Z0-9\-_:]+)/);
       let modifiers = name.match(/\.[^.\]]+(?=[^\]]*$)/g) || [];
@@ -19184,6 +19226,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       return el;
     if (el._x_teleportBack)
       el = el._x_teleportBack;
+    if (el.parentNode instanceof ShadowRoot) {
+      return findClosest(el.parentNode.host, callback);
+    }
     if (!el.parentElement)
       return;
     return findClosest(el.parentElement, callback);
@@ -20019,7 +20064,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.15.2",
+    version: "3.15.4",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,
@@ -20040,7 +20085,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     mapAttributes,
     evaluateLater,
     interceptInit,
+    initInterceptors,
+    injectMagics,
     setEvaluator,
+    setRawEvaluator,
     mergeProxies,
     extractProp,
     findClosest,
@@ -20059,6 +20107,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     throttle,
     debounce: debounce3,
     evaluate,
+    evaluateRaw,
     initTree,
     nextTick,
     prefixed: prefix,
@@ -20123,8 +20172,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   var targetMap = /* @__PURE__ */ new WeakMap();
   var effectStack = [];
   var activeEffect;
-  var ITERATE_KEY = Symbol(true ? "iterate" : "");
-  var MAP_KEY_ITERATE_KEY = Symbol(true ? "Map key iterate" : "");
+  var ITERATE_KEY = /* @__PURE__ */ Symbol(true ? "iterate" : "");
+  var MAP_KEY_ITERATE_KEY = /* @__PURE__ */ Symbol(true ? "Map key iterate" : "");
   function isEffect(fn2) {
     return fn2 && fn2._isEffect === true;
   }
@@ -21695,6 +21744,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     directive(directiveName, (el) => warn(`You can't use [x-${directiveName}] without first installing the "${name}" plugin here: https://alpinejs.dev/plugins/${slug}`, el));
   }
   alpine_default.setEvaluator(normalEvaluator);
+  alpine_default.setRawEvaluator(normalRawEvaluator);
   alpine_default.setReactivityEngine({ reactive: reactive2, effect: effect22, release: stop, raw: toRaw });
   var src_default = alpine_default;
   var module_default = src_default;
@@ -22389,7 +22439,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     window.setInterval(logMessageCount, 60 * 1e3);
   }
   function connect() {
-    const clientId = "testclient_" + now();
+    const clientId = "page_testclient_" + now();
     host = (0, import_jquery4.default)("#domain").val();
     topic = (0, import_jquery4.default)("#topic").val();
     console.log("Trying to connect to host " + host + ":" + port + ", topic: " + topic + " client id: " + clientId);
@@ -22412,8 +22462,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         }
       } catch (error2) {
         try {
-          const json2 = decompressGzipToString(message.payloadString);
-          addMessage(message.destinationName, 'RAW: "' + message.payloadString + '"\nDECOMPRESSED: "' + JSON.stringify(JSON.parse(json2)) + '"');
+          const message2 = decompress(message2.payloadString);
+          addMessage(message2.destinationName, 'RAW: "' + message2.payloadString + '"\nDECOMPRESSED: "' + message2 + '"');
         } catch (errorIn) {
           console.error("addMessage failed " + error2);
           console.info(message);
@@ -22449,6 +22499,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     console.info(now() + " Connection open. Subscribing to topic " + topic);
     (0, import_jquery4.default)("#connectionStatus").text((/* @__PURE__ */ new Date()).toISOString() + " Connected to host " + host + ", topic: " + topic);
     client.subscribe(topic);
+  }
+  function decompress(compressed) {
+    const data2 = decompressGzipToString(compressed);
+    try {
+      return JSON.stringify(JSON.parse(data2));
+    } catch (error2) {
+      return data2;
+    }
   }
   function onConnectFailure(response) {
     const msg = (/* @__PURE__ */ new Date()).toISOString() + " Connection to host " + host + " failed. " + response.errorCode + ": " + response.errorMessage;

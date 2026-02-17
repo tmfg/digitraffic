@@ -16,8 +16,10 @@ Tältä sivulta löydät Digitrafficiin liittyvät yhteystiedot.
 
 Mikäli kyseessä on tukipyyntö, pyydämme ottamaan yhteyttä kyseisen tietolajin
 Google-ryhmän kautta. Google-ryhmät löytyvät
-[Tukikanavat](/tuki/tukikanavat/)-sivulta.
+[Tukikanavat](/tuki/tukikanavat/) -sivulta.
 
-Sähköposti: digitraffic@fintraffic.fi
-
-X: [(@Digitraffic_fi)](https://twitter.com/Digitraffic_fi)
+<span id="info"></span>
+<script>
+  const encoded = 'RW1haWw6IDxhIGhyZWY9Im1haWx0bzpkaWdpdHJhZmZpYyYjNjQ7ZmludHJhZmZpYyYjNDY7ZmkiPmRpZ2l0cmFmZmljJiM2NDtmaW50cmFmZmljJiM0NjtmaTwvYT4=';
+  document.getElementById('info').innerHTML = atob(encoded);
+</script>

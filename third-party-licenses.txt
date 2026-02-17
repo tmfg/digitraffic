@@ -481,7 +481,7 @@ EPL-1.0
 
 The following npm package may be included in this product:
 
- - alpinejs@3.15.2
+ - alpinejs@3.15.4
 
 This package contains the following license:
 

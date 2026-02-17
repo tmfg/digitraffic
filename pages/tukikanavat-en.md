@@ -16,10 +16,9 @@ links:
 ---
 
 On the [Digitraffic status page](https://status.digitraffic.fi/), users can
-subscribe via email or feed to notices regarding service disruptions and
-maintenance breaks. The status service also has an API for querying the state of
-components and fetching service notices. We will also be notifying about API
-sunsets via the status page.
+see status of API endpoints and subscribe to ATOM feed for notices regarding service disruptions and
+maintenance breaks. We will also be notifying about API
+sunsets via the status page and in [API changes](/en/support/api-changes/) page.
 
 Open developer communities form the support channel for the Digitraffic service.
 The communities operate on open Google discussion groups where all discussion is
