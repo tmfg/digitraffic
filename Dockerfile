@@ -1,5 +1,5 @@
 # https://pages.github.com/versions/
-FROM ruby:3.4.5-alpine
+FROM ruby:3.4.8-alpine
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LC_ALL=en_US.UTF-8
@@ -7,11 +7,13 @@ ENV LANGUAGE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LC_TYPE=en_US.UTF-8
 
+RUN apk update
+
 # Install and set locales ruby-dev
 RUN apk -q --no-cache --update add nodejs npm make gcc g++ libc-dev \
-&& npm install --global pnpm@latest \
-&& apk cache clean \
-&& gem install bundler
+    && npm install --global pnpm@latest \
+    && apk cache clean \
+    && gem install bundler
 
 # Entrypoint
 COPY docker-entrypoint.sh /
