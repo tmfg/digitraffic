@@ -140,7 +140,7 @@ The tariff API provides information about the pricing of electric vehicle chargi
 how charging is billed: for example, based on time, energy (€/kWh), a fixed session fee, or a combination of
 these.
 
-[`/api/charging-network/v1/tariffs`][afir_api_tariffs] (JSON)\
+[`/api/charging-network/v1/tariffs`][afir_api_tariffs] (JSON)
 
 # MQTT WebSocket Interfaces
 

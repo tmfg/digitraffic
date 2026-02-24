@@ -140,7 +140,7 @@ Tariffi-rajapinta tarjoaa tiedot sähköautojen latauspisteiden hinnoittelusta. 
 latauksesta veloitetaan: esimerkiksi aikaperusteisesti, energiapohjaisesti (€/kWh), kertamaksuna tai
 yhdistelmänä näistä.
 
-[`/api/charging-network/v1/tariffs`][afir_api_tariffs] (JSON)\
+[`/api/charging-network/v1/tariffs`][afir_api_tariffs] (JSON)
 
 # MQTT WebSocket -rajapinnat
 
