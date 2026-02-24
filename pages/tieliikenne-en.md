@@ -12,17 +12,18 @@ lang: en
 ref: road-traffic
 intro: Open data from Finnish roads.
 links:
-  - ["Väylävirasto", "https://vayla.fi"]
-  - ["Fintraffic","https://fintraffic.fi"]
-  - ["Swagger-UI", "https://tie.digitraffic.fi/swagger/"]
-  - ["Swagger-description", "https://tie.digitraffic.fi/swagger/openapi.json"]
+    - [ "Väylävirasto", "https://vayla.fi" ]
+    - [ "Fintraffic","https://fintraffic.fi" ]
+    - [ "Swagger-UI", "https://tie.digitraffic.fi/swagger/" ]
+    - [ "Swagger-description", "https://tie.digitraffic.fi/swagger/openapi.json" ]
 ---
 
 <h2 id="sisältö">Contents</h2>
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 ## General info
 
@@ -32,32 +33,22 @@ API includes:
 
 - Road weather cameras. Cameras provide information on current traffic flow and
   weather conditions. Currently, there are over 470 road weather cameras.
-
 - Road weather station data. The road weather stations measure e.g. temperature,
   wind, rain, relative humidity and dew point. Data is updated once per minute.
   Currently, there are over 350 road weather stations on the Finnish road
   network.
-
 - Road weather forecasts. Content is updated every five minutes.
-
 - Traffic measurement system (TMS) data. Information about average speeds and
   traffic amounts.
-
 - Traffic messages. Traffic disorders, weight restrictions, roadworks and weight
   restrictions are available in Datex2 and Simple-JSON format.
-
 - TMC/ALERT-C location data which is used in Traffic messages.
-
 - Variable signs
-
 - Road maintenance information
-
 - Walking and cycling counting site values
-
 - Metadata for all services is updated twice per day
-
 - Alternative Fuels (AFIR).
-  The data includes the locations of electric vehicle charging 
+  The data includes the locations of electric vehicle charging
   points as well as related static and real-time information.
 
 ### Restrictions
@@ -88,7 +79,8 @@ the APIs.
 #### Simplified and detailed information of stations
 
 [`/api/weathercam/v1/stations`](https://tie.digitraffic.fi/api/weathercam/v1/stations){:target="_blank"}\
-[`/api/weathercam/v1/stations/{id}`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507){:target="_blank"}
+[`/api/weathercam/v1/stations/{id}`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507){:target="_
+blank"}
 
 You should check from the station metadata at the least field below to make sure
 the camera or preset is in collection.
@@ -98,16 +90,20 @@ the camera or preset is in collection.
 
 Response message contains weather camera information and URL for the camera
 image. For example preset image C1451601 is located at
-[https://weathercam.digitraffic.fi/C1451601.jpg](https://weathercam.digitraffic.fi/C1451601.jpg){:target="_blank"}.
+[https://weathercam.digitraffic.fi/C1451601.jpg](https://weathercam.digitraffic.fi/C1451601.jpg){:target="_
+blank"}.
 
 You can also load a thumbnail version of a weather camera image by using the
 parameter `thumbnail=true`, for example
-[https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true](https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true){:target="_blank"}
+[https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true](https://weathercam.digitraffic.fi/C1451601.jpg?thumbnail=true){:
+target="_blank"}
 
 #### Data for all stations and for single station
 
-[`/api/weathercam/v1/stations/data`](https://tie.digitraffic.fi/api/weathercam/v1/stations/data){:target="_blank"}\
-[`/api/weathercam/v1/stations/{id}/data`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data){:target="_blank"}
+[`/api/weathercam/v1/stations/data`](https://tie.digitraffic.fi/api/weathercam/v1/stations/data){:target="_
+blank"}\
+[`/api/weathercam/v1/stations/{id}/data`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data){:
+target="_blank"}
 
 Weather camera images are updated approximately about every 10 minutes.
 
@@ -115,8 +111,12 @@ Weather camera images are updated approximately about every 10 minutes.
 
 ### Weather camera image history for the last 24 hours
 
-[`/api/weathercam/v1/stations/{camraId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history){:target="_blank"}\
-[`/api/weathercam/v1/stations/{presetId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C1451601/history){:target="_blank"}
+[
+`/api/weathercam/v1/stations/{camraId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/history){:
+target="_blank"}\
+[
+`/api/weathercam/v1/stations/{presetId}/history`](https://tie.digitraffic.fi/api/weathercam/v1/stations/C1451601/history){:
+target="_blank"}
 
 API call returns links to history images for last 24 hours.
 
@@ -134,7 +134,8 @@ API call returns links to history images for last 24 hours.
 #### Data for all stations and for single station
 
 [`/api/weather/v1/stations/data`](https://tie.digitraffic.fi/api/weather/v1/stations/data){:target="_blank"}\
-[`/api/weather/v1/stations/{id}/data`](https://tie.digitraffic.fi/api/weather/v1/stations/1012/data){:target="_blank"}
+[`/api/weather/v1/stations/{id}/data`](https://tie.digitraffic.fi/api/weather/v1/stations/1012/data){:
+target="_blank"}
 
 Response message contains latest weather measurement data.
 
@@ -145,11 +146,15 @@ interval is one minute. Real time data can be read from WebSocket.
 
 Sensor history from the weather road station can be fetched by API call:
 
-[`/api/weather/v1/stations/{id}/data/history`](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history){:target="_blank"}
+[
+`/api/weather/v1/stations/{id}/data/history`](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history){:
+target="_blank"}
 
 Single sensor history can be fetched by API call:
 
-[`/api/weather/v1/stations/1001/data/history?sensorId={sensorId}`](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history?sensorId=1){:target="_blank"}
+[
+`/api/weather/v1/stations/1001/data/history?sensorId={sensorId}`](https://tie.digitraffic.fi/api/weather/v1/stations/1001/data/history?sensorId=1){:
+target="_blank"}
 
 Time interval can be adjusted with `from={ISO 8061 time}` and
 `to={ISO 8061 time}` parameters. By default last hour is returned.
@@ -158,25 +163,48 @@ Time interval can be adjusted with `from={ISO 8061 time}` and
 
 #### Detailed ja simpler forecast road sections
 
-[`/api/weather/v1/forecast-sections`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections){:target="_blank"}\
-[`/api/weather/v1/forecast-sections/{id}`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0){:target="_blank"}\
-[`/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
+[`/api/weather/v1/forecast-sections`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections){:target="_
+blank"}\
+[
+`/api/weather/v1/forecast-sections/{id}`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections?xMin=22&yMin=59&xMax=27&yMax=60){:
+target="_blank"}
 
-[`/api/weather/v1/forecast-sections-simple`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple){:target="_blank"}\
-[`/api/weather/v1/forecast-sections-simple/{id}`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0){:target="_blank"}\
-[`/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
+[
+`/api/weather/v1/forecast-sections-simple`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections-simple/{id}`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple?xMin=22&yMin=59&xMax=27&yMax=60){:
+target="_blank"}
 
 Forecast sections are normally updated once a year.
 
 #### Forecasts of the forecast sections
 
-[`/api/weather/v1/forecast-sections/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts){:target="_blank"}\
-[`/api/weather/v1/forecast-sections/{id}/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0/forecasts){:target="_blank"}\
-[`/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
+[
+`/api/weather/v1/forecast-sections/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections/{id}/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/00003_101_00000_1_0/forecasts){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:
+target="_blank"}
 
-[`/api/weather/v1/forecast-sections-simple/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts){:target="_blank"}\
-[`/api/weather/v1/forecast-sections-simple/{id}/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0/forecasts){:target="_blank"}\
-[`/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:target="_blank"}
+[
+`/api/weather/v1/forecast-sections-simple/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections-simple/{id}/forecasts`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/00003_101_000_0/forecasts){:
+target="_blank"}\
+[
+`/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60`](https://tie.digitraffic.fi/api/weather/v1/forecast-sections-simple/forecasts?xMin=22&yMin=59&xMax=27&yMax=60){:
+target="_blank"}
 
 Message contains road sections weather forecasts. Reports are updated every five
 minutes.
@@ -191,7 +219,9 @@ The [TMS documentation](lam/) contains descriptions of TMS data.
 
 [`/api/tms/v1/stations`](https://tie.digitraffic.fi/api/tms/v1/stations){:target="_blank"}\
 [`/api/tms/v1/stations/{id}`](https://tie.digitraffic.fi/api/tms/v1/stations/23001){:target="_blank"}\
-[`/api/tms/v1/stations/{id}/sensor-constants`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/sensor-constants){:target="_blank"}
+[
+`/api/tms/v1/stations/{id}/sensor-constants`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/sensor-constants){:
+target="_blank"}
 
 #### Available computational sensors information
 
@@ -200,7 +230,8 @@ The [TMS documentation](lam/) contains descriptions of TMS data.
 #### Data for all stations and for single station
 
 [`/api/tms/v1/stations/data`](https://tie.digitraffic.fi/api/tms/v1/stations/data){:target="_blank"}\
-[`/api/tms/v1/stations/{id}/data`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data){:target="_blank"}
+[`/api/tms/v1/stations/{id}/data`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data){:target="_
+blank"}
 
 Response message contains TMS (Traffic Measurement System)–stations measurement
 data.
@@ -227,22 +258,30 @@ The shared sensor data is as follows:
 
 [`/api/tms/v1/stations/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2){:target="_blank"}
 (Datex2 JSON)\
-[`/api/tms/v1/stations/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2.xml){:target="_blank"}
+[`/api/tms/v1/stations/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2.xml){:target="_
+blank"}
 (Datex2 XML)\
-[`/api/tms/v1/stations/{id}/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2){:target="_blank"}
+[`/api/tms/v1/stations/{id}/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2){:target="_
+blank"}
 (Datex2 JSON)\
-[`/api/tms/v1/stations/{id}/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2.xml){:target="_blank"}
+[`/api/tms/v1/stations/{id}/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2.xml){:
+target="_blank"}
 (Datex2 XML)\
 
 ##### Data for all the stations and for a single station
 
-[`/api/tms/v1/stations/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2){:target="_blank"}
+[`/api/tms/v1/stations/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2){:target="_
+blank"}
 (Datex2 JSON)\
-[`/api/tms/v1/stations/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2.xml){:target="_blank"}
+[`/api/tms/v1/stations/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2.xml){:
+target="_blank"}
 (Datex2 XML)\
-[`/api/tms/v1/stations/{id}/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2){:target="_blank"}
+[`/api/tms/v1/stations/{id}/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2){:
+target="_blank"}
 (Datex2 JSON)\
-[`/api/tms/v1/stations/{id}/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2.xml){:target="_blank"}
+[
+`/api/tms/v1/stations/{id}/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2.xml){:
+target="_blank"}
 (Datex2 XML)
 
 #### Statistics
@@ -250,7 +289,8 @@ The shared sensor data is as follows:
 Statistics web form can be used to search reports from tms-stations.
 
 Web form to search for statistics can be found at
-[https://tie.digitraffic.fi/ui/tms/history/index_en.html](https://tie.digitraffic.fi/ui/tms/history/index_en.html){:target="_blank"}.
+[https://tie.digitraffic.fi/ui/tms/history/index_en.html](https://tie.digitraffic.fi/ui/tms/history/index_en.html){:
+target="_blank"}.
 
 #### Raw data
 
@@ -280,41 +320,66 @@ date format.
 #### Types of traffic messages
 
 - **Exempted transport** `EXEMPTED_TRANSPORT`
-  - Message contains information of transports causing disruptions for other
-    road users.
+    - Message contains information of transports causing disruptions for other
+      road users.
 - **Road work** `ROAD_WORK`
-  - Message contains information of road works including progress and
-    disruptions for other road users.
+    - Message contains information of road works including progress and
+      disruptions for other road users.
 - **Traffic announcement** `TRAFFIC_ANNOUNCEMENT`
-  - Message contains traffic incidents those have significant impact on traffic
-    flow, e.g. traffic accidents and temporary traffic rearrangements.
+    - Message contains traffic incidents those have significant impact on traffic
+      flow, e.g. traffic accidents and temporary traffic rearrangements.
 - **Weight restriction** `WEIGHT_RESTRICTION`
-  - Message contains weight restriction limiting usage of the roads.
+    - Message contains weight restriction limiting usage of the roads.
 
 #### Traffic messages DATEX II 3.5-APIs
 
-- [`/api/traffic-message/v2/exempted-transports/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-3.5.xml){:target="_blank"}
-- [`/api/traffic-message/v2/roadworks/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-3.5.xml){:target="_blank"}
-- [`/api/traffic-message/v2/traffic-announcements/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements/datex2-3.5.xml){:target="_blank"}
-- [`/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml){:target="_blank"}
+- [
+  `/api/traffic-message/v2/exempted-transports/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-3.5.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/roadworks/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-3.5.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/traffic-announcements/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements/datex2-3.5.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml){:
+  target="_blank"}
 
 #### Traffic messages DATEX II 3.5-APIs
 
-- [`/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml){:target="_blank"}
-- [`/api/traffic-message/v2/roadworks/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-2.2.3.xml){:target="_blank"}
-- [`/api/traffic-message/v2/traffic-announcements/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements/datex2-2.2.3.xml){:target="_blank"}
-- [`/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml){:target="_blank"}
+- [
+  `/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/roadworks/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-2.2.3.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/traffic-announcements/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements/datex2-2.2.3.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-2.2.3.xml){:
+  target="_blank"}
 
 #### Traffic messages Simple JSON-APIs
 
-- [`/api/traffic-message/v2/exempted-transports`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports){:target="_blank"}
-- [`/api/traffic-message/v2/roadworks`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks){:target="_blank"}
-- [`/api/traffic-message/v2/traffic-announcements`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements){:target="_blank"}
-- [`/api/traffic-message/v2/weight-restrictions`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions){:target="_blank"}
+- [
+  `/api/traffic-message/v2/exempted-transports`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports){:
+  target="_blank"}
+- [`/api/traffic-message/v2/roadworks`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/traffic-announcements`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/weight-restrictions`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions){:
+  target="_blank"}
 
 #### SRTI/RTTI messages DATEX II 3.5-API
 
-- [`/api/traffic-message/v2/traffic-data/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-data/datex2-3.5.xml){:target="_blank"}
+- [
+  `/api/traffic-message/v2/traffic-data/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-data/datex2-3.5.xml){:
+  target="_blank"}
 
 #### Traffic messages area geometries
 
@@ -382,9 +447,13 @@ Oulu" } ], "contact": { "phone": "02002100", "email":
 Area geometries are served from the API:
 
 - Geometry with ALERT-C location code 27:
-  [`/api/traffic-message/v1/area-geometries/27?lastUpdated=false`](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?includeGeometry=true){:target="_blank"}
+  [
+  `/api/traffic-message/v1/area-geometries/27?lastUpdated=false`](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries/27?includeGeometry=true){:
+  target="_blank"}
 - All geometries:
-  [`/api/traffic-message/v1/area-geometries?lastUpdated=false`](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:target="_blank"}
+  [
+  `/api/traffic-message/v1/area-geometries?lastUpdated=false`](https://tie.digitraffic.fi/api/traffic-message/v1/area-geometries?lastUpdated=false){:
+  target="_blank"}
 
 ### TMC/ALERT-C location data
 
@@ -392,16 +461,25 @@ TMC/ALERT-C material contains location data which is used in Traffic information
 such as road works, accidents, traffic jams and weather. More information can be
 found at [TMC Data](tmc-data) -page.
 
-[`/api/traffic-message/v1/locations/versions`](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions){:target="_blank"}\
-[`/api/traffic-message/v1/locations/types`](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types){:target="_blank"}\
-[`/api/traffic-message/v1/locations`](https://tie.digitraffic.fi/api/traffic-message/v1/locations){:target="_blank"}\
-[`/api/traffic-message/v1/locations/{id}`](https://tie.digitraffic.fi/api/traffic-message/v1/locations/35){:target="_blank"}
+[
+`/api/traffic-message/v1/locations/versions`](https://tie.digitraffic.fi/api/traffic-message/v1/locations/versions){:
+target="_blank"}\
+[
+`/api/traffic-message/v1/locations/types`](https://tie.digitraffic.fi/api/traffic-message/v1/locations/types){:
+target="_blank"}\
+[`/api/traffic-message/v1/locations`](https://tie.digitraffic.fi/api/traffic-message/v1/locations){:target="_
+blank"}\
+[`/api/traffic-message/v1/locations/{id}`](https://tie.digitraffic.fi/api/traffic-message/v1/locations/35){:
+target="_blank"}
 
 ### Variable signs
 
 [`/api/variable-sign/v1/signs`](https://tie.digitraffic.fi/api/variable-sign/v1/signs){:target="_blank"}\
-[`/api/variable-sign/v1/signs/{id}`](https://tie.digitraffic.fi/api/variable-sign/v1/signs/KRM01V102){:target="_blank"}\
-[`/api/variable-sign/v1/signs/history`](https://tie.digitraffic.fi/api/variable-sign/v1/signs/history?deviceId=KRM01V102){:target="_blank"}
+[`/api/variable-sign/v1/signs/{id}`](https://tie.digitraffic.fi/api/variable-sign/v1/signs/KRM01V102){:
+target="_blank"}\
+[
+`/api/variable-sign/v1/signs/history`](https://tie.digitraffic.fi/api/variable-sign/v1/signs/history?deviceId=KRM01V102){:
+target="_blank"}
 
 Response message contains latest variable sign data. Currenty supported sign
 types are speed limits and warnings. Digitraffic publishes the data only from
@@ -410,7 +488,9 @@ the road or on ramps is not available.
 
 Warning sign types(in Finnish):
 
-[`/api/variable-sign/v1/signs/code-descriptions`](https://tie.digitraffic.fi/api/variable-sign/v1/signs/code-descriptions){:target="_blank"}
+[
+`/api/variable-sign/v1/signs/code-descriptions`](https://tie.digitraffic.fi/api/variable-sign/v1/signs/code-descriptions){:
+target="_blank"}
 
 Warning sign images:
 
@@ -418,13 +498,18 @@ Warning sign images:
 
 Data is also available in datex2-format:
 
-[`/api/variable-sign/v1/signs.datex2`](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:target="_blank"}
+[`/api/variable-sign/v1/signs.datex2`](https://tie.digitraffic.fi/api/variable-sign/v1/signs.datex2){:
+target="_blank"}
 
 Warnings text can contain sign symbols enclosed with []. It is possible to
 render those in svg-format:
 
-[`/api/variable-sign/v1/images/ramppi_{number}`](https://tie.digitraffic.fi/api/variable-sign/v1/images/ramppi_123){:target="_blank"}\
-[`/api/variable-sign/v1/images/tie_{number}`](https://tie.digitraffic.fi/api/variable-sign/v1/images/tie_321){:target="_blank"}
+[
+`/api/variable-sign/v1/images/ramppi_{number}`](https://tie.digitraffic.fi/api/variable-sign/v1/images/ramppi_123){:
+target="_blank"}\
+[
+`/api/variable-sign/v1/images/tie_{number}`](https://tie.digitraffic.fi/api/variable-sign/v1/images/tie_321){:
+target="_blank"}
 
 ### Road maintenance information
 
@@ -449,14 +534,16 @@ services.
 The api returns possible values for domains. Domain tells the system where the
 data is coming.
 
-[`/api/maintenance/v1/tracking/domains`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains){:target="_blank"}
+[`/api/maintenance/v1/tracking/domains`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/domains){:
+target="_blank"}
 
 #### Vehicle task types
 
 The API returns more detailed explanations of the tasks performed by the
 vehicles.
 
-[`/api/maintenance/v1/tracking/tasks`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks){:target="_blank"}
+[`/api/maintenance/v1/tracking/tasks`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/tasks){:
+target="_blank"}
 
 #### Vehicle tracking data
 
@@ -477,11 +564,15 @@ A new tracking object is created whenever:
 These treatments eliminate the largest possible errors in the data generated by
 the vehicles.
 
-[`/api/maintenance/v1/tracking/routes?domain=state-roads`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads){:target="_blank"}
+[
+`/api/maintenance/v1/tracking/routes?domain=state-roads`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes?domain=state-roads){:
+target="_blank"}
 
 #### Vehicle latest location
 
-[`/api/maintenance/v1/tracking/routes/latest?domain=state-roads`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:target="_blank"}
+[
+`/api/maintenance/v1/tracking/routes/latest?domain=state-roads`](https://tie.digitraffic.fi/api/maintenance/v1/tracking/routes/latest?domain=state-roads){:
+target="_blank"}
 
 The API returns the latest location and task information received from the
 maintenance vehicles.
@@ -497,9 +588,11 @@ Turku regions.
 
 #### More metadata
 
-[`/api/counting-site/v2/directions`](https://tie.digitraffic.fi/api/counting-site/v2/directions){:target="_blank"}\
+[`/api/counting-site/v2/directions`](https://tie.digitraffic.fi/api/counting-site/v2/directions){:target="_
+blank"}\
 [`/api/counting-site/v2/domains`](https://tie.digitraffic.fi/api/counting-site/v2/domains){:target="_blank"}\
-[`/api/counting-site/v2/travel-modes`](https://tie.digitraffic.fi/api/counting-site/v2/travel-modes){:target="_blank"}\
+[`/api/counting-site/v2/travel-modes`](https://tie.digitraffic.fi/api/counting-site/v2/travel-modes){:
+target="_blank"}\
 
 #### Counting site values in json
 
@@ -507,7 +600,9 @@ Turku regions.
 
 #### Counting site values in CSV
 
-[`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv?year=2025&month=1&siteId=300044494){:target="_blank"}
+[
+`/api/counting-site/v2/values.csv`](https://tie.digitraffic.fi/api/counting-site/v2/values.csv?year=2025&month=1&siteId=300044494){:
+target="_blank"}
 
 ## MQTT WebSocket APIs
 
@@ -576,11 +671,13 @@ Topics are constructed like shown below.
 
 - `traffic-message-v3/datex2-3.5/<situationType>` Message payload is in DatexII 3.5 XML format.
 - `traffic-message-v3/datex2-2.2.3/<situationType>` Message payload is in DatexII 2.2.3 XML format.
-- `traffic-message-v3/simple/<situationType>` Message payload is in Simple JSON format that is gzipped and base64-encoded.
+- `traffic-message-v3/simple/<situationType>` Message payload is in Simple JSON format that is gzipped and
+  base64-encoded.
 - `traffic-message-v3/datex2-3.5/SRTI` Message payload is in DatexII 3.5 XML format.
 - `traffic-message-v3/datex2-3.5/RTTI` Message payload is in DatexII 3.5 XML format.
 
-Possible values for situationType are: `TRAFFIC_ANNOUNCEMENT`, `EXEMPTED_TRANSPORT`, `WEIGHT_RESTRICTION`, `ROAD_WORK`
+Possible values for situationType are: `TRAFFIC_ANNOUNCEMENT`, `EXEMPTED_TRANSPORT`, `WEIGHT_RESTRICTION`,
+`ROAD_WORK`
 
 Example simple JSON gzipped and base64-coded value:
 `H4sIAAAAAAAAAO1VS27bMBDd5xSE1rZCfWI7XtWIk9ZtqgSN0wBpg4KR6JiVRAokFSAIvOtRfIZeQBfrSKJs+RcUXXfjD+dx5s0bzszrEUKWfsmohYbIuqBE55JanfL0iYqUavlSWl7hoA28FozrCganoRAyYpxoqkrjN+Se2J6P+7jXQT3Hdr2ed9JHDwBeVI4zKTIqNavhxrViOieaCT6JqgjvbyfjE+zjUw97TaAVZtrwmH4ZXVxMzn6MguDqNjg7/3weTBu0lmQ2Y+GIc5HzkKaU69W982B8Pm6Az1QqcFoaTs2RpAklik5ZWuNd7Hpd7HRdf4oHQ9cdYs8eDNz7LRd78adDDw+9no29/gpPWqSMaLUOYEsIf8rJk6nIxFwpE2I6MWkzily/g0aKxTFJiI0uGYsp5xRUjYSmSJS/tUjzPKJKA2DKwC8Hw5zZaO0zEWGl6LoSpqQ5h9KfiagK2OusTc2NKXlMaJCnj1SWEKd/CPN1La/l2I5j+57VwgK/ULKsIWFyQ8/FMmFJUizRJZlrhrroY7FMVbFsZf0dAsiYphlDGSnPhugavgkkjCZKdItfjLPiN3I6LorTDlI5ZEUIRzckATXSYhkz2zJUFjuajKkmLFFb0khBolEUSarU5V7xqhfOUiJf6i7ZMoI5zTkLWUYSpqvuspqMWroYP+KZwTOpe65Ysp/FUnc/gBB0G2oqViFvcpGybUCL9y4lYy8N8K72mW5o2KQ62AFEDCQ3PD3P7W3YF1tESALNf3ZIu40KNO/P9Qe9naCcmGZrldp6k5rj+v1Naq1/GzQtRUPBo/813CfOP9ewf7iGrY58u4Y+Phn8ZQ0jJtcJW7fBp+DqLrCOti+uG39Wrz8zkB9W56V2d0LG13PYCTtWDUN/xKNxLvdNUmAu9aE9gocY37eHIeXR4R3iuLbnePe7A4tEEStDk2TCZ0KmKx5Wsxa66CdBMYXHWu0HBPsqFkrBwJxrnanh8XGyWiDVnrBn8OzrBQo/j9cLQwHFeuJbFysIbBfaOIipinOFpiSFJU9rsotGLnjiMIHDjYaysrngdcrYxdh1MF6HoymM4Mqma4f2Zpx3GzxNNBMrIprcZvBJ3xDVx5Wgi6PFH4BXin4LCQAA`
@@ -716,4 +813,5 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 [Swagger-documentation]: https://tie.digitraffic.fi/swagger/
 
 [afir_fi]: /tieliikenne/afir/  "Vaihtoehtoiset polttoaineet (AFIR)"
+
 [afir_en]: /en/road-traffic/afir/  "Alternative Fuels (AFIR)"

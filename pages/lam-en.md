@@ -15,9 +15,10 @@ swagger-source: https://meri.digitraffic.fi/swagger/openapi.json
 Fintraffic collects information about road traffic using automatic traffic
 measurement stations (LAM). Real-time and historical data are available.
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 # Operation of measurement points
 

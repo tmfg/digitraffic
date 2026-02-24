@@ -16,7 +16,8 @@ Tällä hetkellä data sisältää sähköautojen latauspisteiden sijainnit sek�
 reaaliaikatietoa.
 
 Lisätietoa AFIR-velvoitteista sekä toimintaohje latausalan toimijoille
-kuinka saada data jakoon [digitraffic.fi][digitraffic_fi] -palveluun löytyy [Fintrafficin][fintraffic_fi] sivuilta:
+kuinka saada data jakoon [digitraffic.fi][digitraffic_fi] -palveluun löytyy [Fintrafficin][fintraffic_fi]
+sivuilta:
 
 * Suomeksi [Vaihtoehtoiset polttoaineet (AFIR)][fintraffic_afir_fi]
 * Ruotsiksi [Alternativa drivmedel (AFIR)][fintraffic_afir_sv]
@@ -24,21 +25,29 @@ kuinka saada data jakoon [digitraffic.fi][digitraffic_fi] -palveluun löytyy [Fi
 
 <h2 id="sisältö">Sisältö</h2>
 
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed). Next line must not have spaces.
 {:toc}
+<!-- @formatter:on -->
 
 Digitraffic tarjoaa Vaihtoehtoisten polttoaineiden latausverkoston dataa REST-rajapintoina sekä reaaliaikaista
 statustietoa MQTT-topikkina.
 
 # REST-rajapinnat
 
+## Swagger-dokumentaatio
+
 Rajapintojen Swagger-dokumentaatiot löytyvät seuraavista osoitteista:
 
 * [Swagger UI – AFIR][swagger_afir]
 * [Swagger UI – AFIR test][swagger_afir_test]
 
-Rajapintojen sivutus on toteutettu kursoripohjaisesti, mikä mahdollistaa tehokkaan navigoinnin suurissa tietomäärissä.
-Jokainen sivutettu vastaus sisältää nextCursor-kentän, joka osoittaa kohdan, josta seuraavan sivun haku jatkuu.
+## Sivutus
+
+Rajapintojen sivutus on toteutettu kursoripohjaisesti, mikä mahdollistaa tehokkaan navigoinnin suurissa
+tietomäärissä.
+Jokainen sivutettu vastaus sisältää nextCursor-kentän, joka osoittaa kohdan, josta seuraavan sivun haku
+jatkuu.
 Asiakas voi hakea seuraavan sivun lisäämällä pyynnön kyselyparametriksi: `?cursor=<nextCursor-arvo>`.
 
 **Esimerkki:**
@@ -80,9 +89,27 @@ Mikäli `nextCursor` on `null` tai puuttuu, ei seuraavaa sivua ole enää saatav
 Vastauksen `limit` -kenttä kertoo sivun koon. Tällä hetkellä sivun koko on kiinteä 500, mutta tämä voi muuttua
 tulevaisuudessa, kun jaettavan datan määrä lisääntyy.
 
+## Koosteet
+
+Sivutettavista rajapinnoista on saatavana myös minuutin välein muodostettavat koosteet. Ne voidaan hakea joko
+antamalla `limit`-parametriksi `ALL` tai lisäämällä urlin perään /all. Sama koskee myös Datex II -rajapintoja.
+
+Huom! Jos teet pyynnön osoitteeseen `?limit=ALL`, palvelu palauttaa
+HTTP 302 -uudelleenohjauksen (redirect), jonka Location-otsikko osoittaa suoraan snapshot-endpointiin
+`/api/charging-network/v1/locations/statuses/all`. Suositeltavaa on käyttää suoraan snapshot-osoitetta, mutta
+myös limit-parametrilla varustettu pyyntö toimii uudelleenohjauksen kautta.
+
+Esim.
+
+* [`/api/charging-network/v1/locations/statuses/all`][afir_api_locations_statuses_all]
+* [`/api/charging-network/v1/locations/statuses?limit=ALL`][afir_api_locations_statuses_limit_all] (redirect)
+* [`/api/charging-network/v1/locations/statuses/datex2-3.6/all`][afir_api_locations_statuses_datex_ii_all]
+* [`/api/charging-network/v1/locations/statuses/datex2-3.6?limit=ALL`][afir_api_locations_statuses_datex_ii_limit_all] (redirect)
+  
 ## Latauspisteoperaattorit (CPO)
 
-Latauspisteoperaattorit (CPO, Charge Point Operator) ylläpitävät latauspisteitä ja vastaavat niiden toiminnasta.
+Latauspisteoperaattorit (CPO, Charge Point Operator) ylläpitävät latauspisteitä ja vastaavat niiden
+toiminnasta.
 Rajapinta tarjoaa palvelusta löytyvien operaattorien tiedot.
 
 [`/api/charging-network/v1/operators`][afir_api_operators]
@@ -97,13 +124,23 @@ Sijaintitiedot sisältävät latauspisteiden staattiset tiedot.
 
 ## Latauspisteiden statukset
 
-Latauspisteeseen liittyvien EVSE-laitteiden (Electric Vehicle Supply Equipment) statustiedot sisältävät reaaliaikaisen
+Latauspisteeseen liittyvien EVSE-laitteiden (Electric Vehicle Supply Equipment) statustiedot sisältävät
+reaaliaikaisen
 tiedon
 latauspisteen käytettävyydestä ja varaustilanteesta.
 Tiedot ovat saatavilla JSON-muodossa sekä Datex II v3.6. -muodossa tietyiltä operaattoreilta.
 
 [`/api/charging-network/v1/locations/statuses`][afir_api_locations_statuses] (GeoJSON)\
-[`/api/charging-network/v1/locations/statuses/datex2-3.6`][afir_api_locations_statuses_datex_ii] (Datex II v3.6)
+[`/api/charging-network/v1/locations/statuses/datex2-3.6`][afir_api_locations_statuses_datex_ii] (Datex II
+v3.6)
+
+## Latauspisteiden tariffit
+
+Tariffi-rajapinta tarjoaa tiedot sähköautojen latauspisteiden hinnoittelusta. Tariffit kuvaavat, miten
+latauksesta veloitetaan: esimerkiksi aikaperusteisesti, energiapohjaisesti (€/kWh), kertamaksuna tai
+yhdistelmänä näistä.
+
+[`/api/charging-network/v1/tariffs`][afir_api_tariffs] (JSON)\
 
 # MQTT WebSocket -rajapinnat
 
@@ -122,7 +159,8 @@ Yksinkertainen selainpohjainen MQTT-esimerkkisovellus löytyy sivulta [Tuki > MQ
 Aiheen (topic) muoto on seuraava:
 `status-v1/<operatorCountryCode>/<operatorPartyId>/<locationId>/<evseId>`
 
-Jokainen hierarkiatason kenttä rajaa tarkemmin, mitä statustietoja kuunnellaan. `#` lopussa tarkoittaa "kaikki"
+Jokainen hierarkiatason kenttä rajaa tarkemmin, mitä statustietoja kuunnellaan. `#` lopussa tarkoittaa "
+kaikki"
 kyseisellä tasolla.
 
 **Esimerkki**:
@@ -139,9 +177,10 @@ Tai jos halutaan kuunnella kaikkia kyseisen operaattorin latauspisteiden statuks
 
 **Aihe**: `status-v1/FI/NYT/#`
 
-Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden statukset -rajapinnan palauttamaa tietoa.
+Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden statukset -rajapinnan palauttamaa
+tietoa.
 
-``` 
+```
 {
   "status" : "CHARGING",
   "time" : "2025-12-02T09:38:06.000Z"
@@ -149,12 +188,6 @@ Viestin sisältö on JSON-muotoinen ja vastaa REST-rajapinnan latauspisteiden st
 ```
 
 Viestin aihe (topic) kertoo aina, minkä latauslaitteen statuksesta on kyse.
-
-# Tulevat ominaisuudet
-
-Suunnitteilla on lisätä ladattavat snapshot-tiedostot asemien kaikista tiedoista.
-Tiedostot päivittyvät automaattisesti määräajoin.
-
 
 [swagger_afir_test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
 
@@ -167,6 +200,17 @@ Tiedostot päivittyvät automaattisesti määräajoin.
 [afir_api_locations_datex_ii]: https://afir.digitraffic.fi/api/charging-network/v1/locations/datex2-3.6
 
 [afir_api_locations_statuses]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses
+
+[afir_api_locations_statuses_all]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses/all
+
+[afir_api_locations_statuses_limit_all]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses?limit=ALL
+
+[afir_api_locations_statuses_datex_ii_all]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses/datex2-3.6/all
+
+[afir_api_locations_statuses_datex_ii_limit_all]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses/datex2-3.6?limit=ALL
+
+
+[afir_api_tariffs]: https://afir.digitraffic.fi/api/charging-network/v1/tariffs
 
 [afir_api_locations_statuses_datex_ii]: https://afir.digitraffic.fi/api/charging-network/v1/locations/statuses/datex2-3.6
 

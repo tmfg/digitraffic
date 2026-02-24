@@ -13,9 +13,10 @@ intro: Suomen liikennetiedottamisessa käytettävä paikannuspisteistö
 
 <h2 id="sisältö">Sisältö</h2>
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 ## TMC/ALERT-C paikannuspisteistö
 

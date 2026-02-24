@@ -14,9 +14,10 @@ intro: Ohjeita ohjelmoijille
 
 <h2 id="sisalto">Sisältö</h2>
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 # Yleistä huomioitavaa
 
@@ -362,7 +363,7 @@ Tilaa silloin myös status-topic(tms/status, weather/status, vessels/status).
 # Turhan tiedonsiirron välttäminen ehdollisilla HTTP-pyynnöillä
 
 Suurin osa uusista `/api/{datalaji}/v{n}/` -muotoisista rajapinnoista tukee
-ehdollisia HTTP-pyyntöjä. Tällaisen rajapinnan tunnistaa siitä, että se palautaa
+ehdollisia HTTP-pyyntöjä. Tällaisen rajapinnan tunnistaa siitä, että se palauttaa
 pyynnön vastauksessa **ETag** -HTTP-otsikon.
 
 Esimerkiksi kelikamerakuvan palauttava vastaus palauttaa HTTP-otsikon **ETag**.

@@ -41,9 +41,10 @@ Agency's data sources. Currently open data API provides following information:
 
 <h2 id="content">Content</h2>
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 ## REST/JSON -API
 

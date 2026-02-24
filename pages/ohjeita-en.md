@@ -14,9 +14,10 @@ intro: Instructions for coding
 
 <h2 id="contents">Contents</h2>
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 # General considerations
 

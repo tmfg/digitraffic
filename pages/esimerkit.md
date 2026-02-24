@@ -12,9 +12,10 @@ title: Koodiesimerkit
 intro: Esimerkkejä Digitrafficin tarjoaman datan käytöstä ja hyvistä ohjelmointikäytännöistä
 ---
 
-<!-- deno-fmt-ignore -->
+<!-- @formatter:off -->
 - Do not remove this line (it will not be displayed)
 {:toc}
+<!-- @formatter:on -->
 
 ### Kamerakuvat ja ETagin käyttö
 
