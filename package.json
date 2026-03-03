@@ -49,8 +49,8 @@
     "xmlhttprequest": "1.8.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.3",
-    "@types/jquery": "3.5.33",
+    "@biomejs/biome": "2.4.4",
+    "@types/jquery": "4.0.0",
     "esbuild": "0.27.3",
     "generate-license-file": "4.1.1",
     "lefthook": "2.1.1",

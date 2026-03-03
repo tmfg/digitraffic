@@ -42,6 +42,14 @@ Or with scripts: `./build-and-run-in-docker.sh` that uses
 
 ## Update deps
 
+### Update dependencies for page scripts
+
+```
+pnpm update --latest
+```
+
+### Update Ruby gems
+
 Just run [./run-in-docker.sh](./run-in-docker.sh). When docker starts it runs
 [docker-entrypoint.sh](docker-entrypoint.sh) and it will run `bundle update` to
 update Ruby gems and npm update to update JavaScript packages.
