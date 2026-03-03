@@ -46,6 +46,8 @@ Or with scripts: `./build-and-run-in-docker.sh` that uses
 
 ```
 pnpm update --latest
+pnpm install
+pnpm run build-and-install
 ```
 
 ### Update Ruby gems

@@ -27,7 +27,7 @@
     "format:fix-staged": "biome check --staged --write",
     "format:package-json": "sort-package-json $(git ls-files '*package.json')",
     "format-changed": "lefthook run pre-commit",
-    "generate-third-party-licenses": "npx generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
+    "generate-third-party-licenses": "generate-license-file --input package.json --output third-party-licenses.txt --overwrite",
     "install-all": "pnpm install-icons-and-fonts && pnpm bundle && pnpm generate-third-party-licenses",
     "install-fonts": "pnpm copy-fonts && pnpm copy-fonts-css && pnpm fix-fonts-css",
     "install-icons": "pnpm copy-icons && pnpm fix-icons-css",
