@@ -5,7 +5,7 @@ ref: datex_II-3.5
 issue-number: DPO-3345
 traffictypes:
   - Road traffic
-status: in progress
+status: finished
 date: 2025-08-14
 ---
 

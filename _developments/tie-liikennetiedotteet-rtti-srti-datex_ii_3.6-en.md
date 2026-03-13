@@ -5,7 +5,7 @@ ref: rtti-srti
 issue-number: DPO-3499
 traffictypes:
   - Road traffic
-status: in progress
+status: finished
 date: 2025-10-27
 ---
 

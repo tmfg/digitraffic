@@ -5,7 +5,7 @@ ref: rtti-srti
 issue-number: DPO-3499
 traffictypes:
   - Tieliikenne
-status: toteutuksessa
+status: valmis
 date: 2025-10-27
 ---
 

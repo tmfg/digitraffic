@@ -1,5 +1,5 @@
 ---
-title: Developer Portal, user management and data catalog
+title: Developer portal
 lang: en
 ref: yleinen-digitraffic-developer-portal
 issue-number: DPO-2007
@@ -11,4 +11,4 @@ status: planned
 date: 2023-04-01
 ---
 
-Developer Portal for developers to better manage Digitraffic APIs.
+A portal for developers to better manage Digitraffic APIs.

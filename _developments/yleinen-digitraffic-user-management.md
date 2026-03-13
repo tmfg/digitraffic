@@ -11,5 +11,5 @@ status: suunnitteilla
 date: 2023-04-01
 ---
 
-Käyttäjähallinta ja api-avaimet paremman palvelutuen tarjoamisen vaativampaan
+Käyttäjähallinta ja API-avaimet paremman palvelutuen tarjoamisen vaativampaan
 käyttöön.

@@ -5,8 +5,8 @@ ref: uusi_satamakayntien_rajapinta
 issue-number:
 traffictypes:
     - Marine traffic
-status: planned
+status: in progress
 date: 2024-11-22
 ---
 
-The data model and API for port calls will undergo changes during 2025.
+The data model and API for port calls will undergo changes during 2026.
