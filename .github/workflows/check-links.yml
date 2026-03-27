@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Link checking
         id: link_check
-        uses: JustinBeckwith/linkinator-action@f62ba0c # v2.4.0
+        uses: JustinBeckwith/linkinator-action@f62ba0c110a76effb2ee6022cc6ce4ab161085e3 # v2.4.0
         with:
           paths: https://www.digitraffic.fi
           concurrency: 1
