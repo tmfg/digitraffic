@@ -1,0 +1,22 @@
+name: "Trufflehog secret scanning"
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Secret scanning
+        uses: trufflesecurity/trufflehog@6bd2d14f7a4bc1e569fa3550efa7ec632a4fa67b # v3.94.2
+        with:
+          version: 3.94.2@sha256:9587195ca599f525202d19427d4e069a6bbc714e596d693e3041c57a22f5c13b
+          base: ""
+          head: ${{ github.ref_name }}
+          extra_args: --exclude-paths=.github/trufflehog-exclude.txt --results=verified,unknown
