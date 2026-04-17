@@ -1,16 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "rootDir": "./src/ts",
     "outDir": "./dist",
     "target": "ES6",
     "module": "ES2022",
     "lib": ["DOM", "ES2020"],
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "strict": false,
+    "types": ["jquery"],
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
-    "alwaysStrict": true,
-    // "noImplicitAny": true,
     "checkJs": true,
     "allowJs": true
   },
