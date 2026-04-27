@@ -33,8 +33,6 @@ Agency's data sources. Currently open data API provides following information:
 - Sea state estimation data from TLSC-system, that analyzes data send by smart
   AtoN buoy sites
 
-- Waterway traffic disturbances
-
 - Aton faults
 
 - Related metadata
@@ -112,15 +110,6 @@ Sea state estimation data is fetched from TLSC-server, that gathers and analyzes
 data send by AtoN sites.
 
 Data is updated every 30 minutes.
-
-### Disturbances in waterway traffic
-
-[`https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions`](https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions){:
-target="_blank"}
-
-Waterway traffic disturbances are fetched from POOKI.
-
-Data is updated every 10 minutes.
 
 ### Aton faults
 

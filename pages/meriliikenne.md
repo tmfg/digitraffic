@@ -35,8 +35,6 @@ tällä hetkellä:
 
 - Meren tilan arviointi dataa älypoijuilta
 
-- Vesiliikenteen häiriötiedot
-
 - Turvalaiteviat
 
 - Näihin liittyvät metatiedot
@@ -115,15 +113,6 @@ Meren tilan arviointi -data haetaan TLSC-järjestelmästä, joka kerää ja anal
 älypoijujen lähettämää dataa julkaistavaan muotoon.
 
 Data päivitetään 30 minuutin välein.
-
-### Vesiliikenteen häiriöt
-
-[`https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions`](https://meri.digitraffic.fi/api/bridge-lock/v1/disruptions){:
-target="_blank"}
-
-Vesiliikenteen häiriöt haetaan POOKI-järjestelmästä.
-
-Data päivitetään 10 minuutin välein.
 
 ### Turvalaiteviat
 
