@@ -61,6 +61,7 @@ async function loadContent(requestType: string): Promise<void> {
   processResponse(data, requestType);
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
 function processResponse(resp: any, requestType: string): void {
   if (resp) {
     console.log("Response:", resp);
@@ -80,6 +81,7 @@ function processResponse(resp: any, requestType: string): void {
   }
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
 function addMessage(clazz: string, message: any): void {
   let warn = "";
   let start = "-";
@@ -92,18 +94,14 @@ function addMessage(clazz: string, message: any): void {
 
     if (endDateTime) {
       end = endDateTime.toISOString();
-      const days = Math.round(
-        (endDateTime.getTime() - startDateTime.getTime()) / 86400000,
-      );
+      const days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 86400000);
 
       end = `${end} (${days} days)`;
       if (endDateTime.getTime() < Date.now()) {
         warn = " warn";
       }
     } else {
-      const days = Math.round(
-        (Date.now()- startDateTime.getTime()) / 86400000,
-      );
+      const days = Math.round((Date.now() - startDateTime.getTime()) / 86400000);
       end = `(${days} days)`;
 
       if (days > 14) {
@@ -124,7 +122,7 @@ function addMessage(clazz: string, message: any): void {
       $("<td/>", { class: "datex2-col6" }).append(
         $("<a />", {
           target: "_blank",
-          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`            
+          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
         }).text("xml"),
       ),
       $("<td/>", { class: "datex2-col7" }).append(
@@ -136,13 +134,14 @@ function addMessage(clazz: string, message: any): void {
       $("<td/>", { class: "datex2-col8" }).append(
         $("<a />", {
           target: "_blank",
-          href: `https://geojson.tools/?url=${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`,
+          href: `https://geojson.tools/?url=${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`
         }).text("map"),
       ),
     ]),
   );
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
 function calculateDaysOpen(feature: any): any {
   const startDateTime = getStartDateTime(feature.properties.announcements);
   const endDateTime = getEndDateTime(feature.properties.announcements);
@@ -177,11 +176,12 @@ function getSortAlgorithm() {
   if (sort === "days") {
     return sortBy((f) => f.properties.daysOpen, true);
   }
-  return sortBy((f) => getStartDateTime(f.properties.announcements).valueOf());
+  return sortBy((f) => getStartDateTime(f.properties.announcements)?.valueOf());
 }
 
-function getStartDateTime(anouncements: any[]): Date | null {
-  const times = anouncements
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function getStartDateTime(announcements: any[]): Date | null {
+  const times = announcements
     .filter((a) => a.timeAndDuration?.startTime)
     .map((a) => new Date(a.timeAndDuration.startTime).getTime());
   if (times.length > 0) {
@@ -190,8 +190,9 @@ function getStartDateTime(anouncements: any[]): Date | null {
   return null;
 }
 
-function getEndDateTime(anouncements: any[]): Date | null {
-  const times = anouncements
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function getEndDateTime(announcements: any[]): Date | null {
+  const times = announcements
     .filter((a) => a.timeAndDuration?.endTime)
     .map((a) => new Date(a.timeAndDuration.endTime).getTime());
   if (times.length > 0) {
@@ -200,6 +201,7 @@ function getEndDateTime(anouncements: any[]): Date | null {
   return null;
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
 function getTitle(announcements: any[]): string {
   for (var ann of announcements) {
     if (ann.title) {

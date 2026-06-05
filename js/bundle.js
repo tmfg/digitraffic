@@ -22643,7 +22643,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       $("<td/>", { class: "datex2-col5" }).text(getTitle(message.properties.announcements)),
       $("<td/>", { class: "datex2-col6" }).append($("<a />", {
         target: "_blank",
-        href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`
+        href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
       }).text("xml")),
       $("<td/>", { class: "datex2-col7" }).append($("<a />", {
         target: "_blank",
@@ -22681,10 +22681,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     if (sort2 === "days") {
       return sortBy((f) => f.properties.daysOpen, true);
     }
-    return sortBy((f) => getStartDateTime(f.properties.announcements).valueOf());
+    return sortBy((f) => {
+      var _a;
+      return (_a = getStartDateTime(f.properties.announcements)) === null || _a === void 0 ? void 0 : _a.valueOf();
+    });
   }
-  function getStartDateTime(anouncements) {
-    const times = anouncements.filter((a) => {
+  function getStartDateTime(announcements) {
+    const times = announcements.filter((a) => {
       var _a;
       return (_a = a.timeAndDuration) === null || _a === void 0 ? void 0 : _a.startTime;
     }).map((a) => new Date(a.timeAndDuration.startTime).getTime());
@@ -22693,8 +22696,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
     return null;
   }
-  function getEndDateTime(anouncements) {
-    const times = anouncements.filter((a) => {
+  function getEndDateTime(announcements) {
+    const times = announcements.filter((a) => {
       var _a;
       return (_a = a.timeAndDuration) === null || _a === void 0 ? void 0 : _a.endTime;
     }).map((a) => new Date(a.timeAndDuration.endTime).getTime());
