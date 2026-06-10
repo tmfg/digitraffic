@@ -159,6 +159,7 @@ function calculateDaysOpen(feature: any): any {
   return feature;
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
 type SortCallbackFunction = (a: any) => number;
 
 function sortBy(fn: SortCallbackFunction, reverse: boolean = false) {
