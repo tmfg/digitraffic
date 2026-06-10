@@ -22552,13 +22552,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   };
   globalThis.loadDatex2 = loadDatex22;
-  var TRAFFIC_MESSAGES_URL = "https://tie.digitraffic.fi/api/traffic-message/v1/messages";
-  var TYPE_EXEMPTED_TRANSPORT = "EXEMPTED_TRANSPORT";
-  var TYPE_ROAD_WORK = "ROAD_WORK";
-  var TYPE_TRAFFIC_ANNOUNCEMENT = "TRAFFIC_ANNOUNCEMENT";
-  var TYPE_WEIGHT_RESTRICTION = "WEIGHT_RESTRICTION";
+  var TRAFFIC_MESSAGES_URL = "https://tie.digitraffic.fi/api/traffic-message/v2";
+  var TYPE_EXEMPTED_TRANSPORTS = "exempted-transports";
+  var TYPE_ROADWORKS = "roadworks";
+  var TYPE_TRAFFIC_ANNOUNCEMENTS = "traffic-announcements";
+  var TYPE_WEIGHT_RESTRICTIONS = "weight-restrictions";
   function initTable2(datexType, tableTitle) {
-    $("#" + datexType).append([
+    $(`#${datexType}`).append([
       $("<colgroup>").append([
         $("<col>", { class: "datex2-col1" }),
         $("<col>", { class: "datex2-col2" }),
@@ -22574,7 +22574,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           $("<th/>", { class: "datex2-col-1-2", colspan: 2 }).text(tableTitle),
           $("<th/>", {
             class: "datex2-col-3-8",
-            id: "date_" + datexType,
+            id: `date_${datexType}`,
             colspan: 6
           }).text("-")
         ]),
@@ -22595,7 +22595,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function loadContent2(requestType) {
     return __awaiter2(this, void 0, void 0, function* () {
       console.info("Load traffic messages of type", requestType);
-      const response = yield fetch(`${TRAFFIC_MESSAGES_URL}?situationType=${requestType}`);
+      const response = yield fetch(`${TRAFFIC_MESSAGES_URL}/${requestType}`);
       const data2 = yield response.json();
       processResponse(data2, requestType);
     });
@@ -22603,7 +22603,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function processResponse(resp, requestType) {
     if (resp) {
       console.log("Response:", resp);
-      $("#date_" + requestType).text("Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " + resp.features.length + " pcs");
+      $(`#date_${requestType}`).text("Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " + resp.features.length + " pcs");
       const features = resp.features.map(calculateDaysOpen);
       const sortAlgorithm = getSortAlgorithm();
       const sorted = features.sort(sortAlgorithm);
@@ -22622,36 +22622,36 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       start3 = startDateTime.toISOString();
       if (endDateTime) {
         end2 = endDateTime.toISOString();
-        let days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 864e5);
-        end2 = end2 + " (" + days + " days)";
-        if (endDateTime.getTime() < (/* @__PURE__ */ new Date()).getTime()) {
+        const days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 864e5);
+        end2 = `${end2} (${days} days)`;
+        if (endDateTime.getTime() < Date.now()) {
           warn2 = " warn";
         }
       } else {
-        let days = Math.round(((/* @__PURE__ */ new Date()).getTime() - startDateTime.getTime()) / 864e5);
-        end2 = "(" + days + " days)";
+        const days = Math.round((Date.now() - startDateTime.getTime()) / 864e5);
+        end2 = `(${days} days)`;
         if (days > 14) {
           warn2 = " warn";
         }
       }
     }
-    $("#" + clazz + " > tbody:last-child").append($("<tr/>", { class: "row.nowrap" + warn2 }).append([
+    $(`#${clazz} > tbody:last-child`).append($("<tr/>", { class: `row.nowrap${warn2}` }).append([
       $("<td/>", { class: "datex2-col1" }).text(message.properties.situationId),
       $("<td/>", { class: "datex2-col2" }).text(message.properties.version),
       $("<td/>", { class: "datex2-col3" }).text(start3),
-      $("<td/>", { class: "datex2-col4" + warn2 }).text(end2),
+      $("<td/>", { class: `datex2-col4${warn2}` }).text(end2),
       $("<td/>", { class: "datex2-col5" }).text(getTitle(message.properties.announcements)),
       $("<td/>", { class: "datex2-col6" }).append($("<a />", {
         target: "_blank",
-        href: TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + ".datex2?latest=true"
+        href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
       }).text("xml")),
       $("<td/>", { class: "datex2-col7" }).append($("<a />", {
         target: "_blank",
-        href: TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + "?latest=true"
+        href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`
       }).text("json")),
       $("<td/>", { class: "datex2-col8" }).append($("<a />", {
         target: "_blank",
-        href: "https://geojson.tools/?url=" + TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId + "?latest=true"
+        href: `https://geojson.tools/?url=${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`
       }).text("map"))
     ]));
   }
@@ -22659,12 +22659,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     const startDateTime = getStartDateTime(feature.properties.announcements);
     const endDateTime = getEndDateTime(feature.properties.announcements);
     if (startDateTime) {
-      const start3 = startDateTime.toISOString();
       if (endDateTime) {
-        const end2 = endDateTime.toISOString();
         feature.properties.daysOpen = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 864e5);
       } else {
-        feature.properties.daysOpen = Math.round(((/* @__PURE__ */ new Date()).getTime() - startDateTime.getTime()) / 864e5);
+        feature.properties.daysOpen = Math.round((Date.now() - startDateTime.getTime()) / 864e5);
       }
     }
     return feature;
@@ -22683,17 +22681,26 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     if (sort2 === "days") {
       return sortBy((f) => f.properties.daysOpen, true);
     }
-    return sortBy((f) => getStartDateTime(f.properties.announcements).valueOf());
+    return sortBy((f) => {
+      var _a;
+      return (_a = getStartDateTime(f.properties.announcements)) === null || _a === void 0 ? void 0 : _a.valueOf();
+    });
   }
-  function getStartDateTime(anouncements) {
-    const times = anouncements.filter((a) => a.timeAndDuration && a.timeAndDuration.startTime).map((a) => new Date(a.timeAndDuration.startTime).getTime());
+  function getStartDateTime(announcements) {
+    const times = announcements.filter((a) => {
+      var _a;
+      return (_a = a.timeAndDuration) === null || _a === void 0 ? void 0 : _a.startTime;
+    }).map((a) => new Date(a.timeAndDuration.startTime).getTime());
     if (times.length > 0) {
       return new Date(Math.min(...times));
     }
     return null;
   }
-  function getEndDateTime(anouncements) {
-    const times = anouncements.filter((a) => a.timeAndDuration && a.timeAndDuration.endTime).map((a) => new Date(a.timeAndDuration.endTime).getTime());
+  function getEndDateTime(announcements) {
+    const times = announcements.filter((a) => {
+      var _a;
+      return (_a = a.timeAndDuration) === null || _a === void 0 ? void 0 : _a.endTime;
+    }).map((a) => new Date(a.timeAndDuration.endTime).getTime());
     if (times.length > 0) {
       return new Date(Math.max(...times));
     }
@@ -22709,15 +22716,15 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function loadDatex22() {
     return __awaiter2(this, void 0, void 0, function* () {
-      initTable2(TYPE_TRAFFIC_ANNOUNCEMENT, "Traffic announcements");
-      initTable2(TYPE_EXEMPTED_TRANSPORT, "Exempted transports");
-      initTable2(TYPE_ROAD_WORK, "Road works");
-      initTable2(TYPE_WEIGHT_RESTRICTION, "Weight restrictions");
+      initTable2(TYPE_TRAFFIC_ANNOUNCEMENTS, "Traffic announcements");
+      initTable2(TYPE_EXEMPTED_TRANSPORTS, "Exempted transports");
+      initTable2(TYPE_ROADWORKS, "Road works");
+      initTable2(TYPE_WEIGHT_RESTRICTIONS, "Weight restrictions");
       const promises = yield Promise.allSettled([
-        loadContent2(TYPE_TRAFFIC_ANNOUNCEMENT),
-        loadContent2(TYPE_EXEMPTED_TRANSPORT),
-        loadContent2(TYPE_ROAD_WORK),
-        loadContent2(TYPE_WEIGHT_RESTRICTION)
+        loadContent2(TYPE_TRAFFIC_ANNOUNCEMENTS),
+        loadContent2(TYPE_EXEMPTED_TRANSPORTS),
+        loadContent2(TYPE_ROADWORKS),
+        loadContent2(TYPE_WEIGHT_RESTRICTIONS)
       ]);
       promises.forEach((promise) => {
         if (promise.status === "rejected") {

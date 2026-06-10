@@ -9,16 +9,15 @@ globalThis.loadDatex2 = loadDatex2;
 declare function toLocalDate(date: string): string;
 
 const TRAFFIC_MESSAGES_URL =
-  "https://tie.digitraffic.fi/api/traffic-message/v1/messages";
-const TRAFFIC_MESSAGES_DATEX2_URL =
-  "https://tie.digitraffic.fi/api/traffic-message/v1/messages.datex2";
-const TYPE_EXEMPTED_TRANSPORT = "EXEMPTED_TRANSPORT";
-const TYPE_ROAD_WORK = "ROAD_WORK";
-const TYPE_TRAFFIC_ANNOUNCEMENT = "TRAFFIC_ANNOUNCEMENT";
-const TYPE_WEIGHT_RESTRICTION = "WEIGHT_RESTRICTION";
+  "https://tie.digitraffic.fi/api/traffic-message/v2";
 
-function initTable(datexType, tableTitle) {
-  $("#" + datexType).append([
+const TYPE_EXEMPTED_TRANSPORTS = "exempted-transports";
+const TYPE_ROADWORKS = "roadworks";
+const TYPE_TRAFFIC_ANNOUNCEMENTS = "traffic-announcements";
+const TYPE_WEIGHT_RESTRICTIONS = "weight-restrictions";
+
+function initTable(datexType: string, tableTitle: string) {
+  $(`#${datexType}`).append([
     $("<colgroup>").append([
       $("<col>", { class: "datex2-col1" }),
       $("<col>", { class: "datex2-col2" }),
@@ -34,7 +33,7 @@ function initTable(datexType, tableTitle) {
         $("<th/>", { class: "datex2-col-1-2", colspan: 2 }).text(tableTitle),
         $("<th/>", {
           class: "datex2-col-3-8",
-          id: "date_" + datexType,
+          id: `date_${datexType}`,
           colspan: 6,
         }).text("-"),
       ]),
@@ -53,20 +52,21 @@ function initTable(datexType, tableTitle) {
   ]);
 }
 
-async function loadContent(requestType) {
+async function loadContent(requestType: string): Promise<void> {
   console.info("Load traffic messages of type", requestType);
   const response = await fetch(
-    `${TRAFFIC_MESSAGES_URL}?situationType=${requestType}`,
+    `${TRAFFIC_MESSAGES_URL}/${requestType}`,
   );
   const data = await response.json();
   processResponse(data, requestType);
 }
 
-function processResponse(resp, requestType) {
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function processResponse(resp: any, requestType: string): void {
   if (resp) {
     console.log("Response:", resp);
 
-    $("#date_" + requestType).text(
+    $(`#date_${requestType}`).text(
       "Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " +
         resp.features.length + " pcs",
     );
@@ -81,7 +81,8 @@ function processResponse(resp, requestType) {
   }
 }
 
-function addMessage(clazz, message) {
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function addMessage(clazz: string, message: any): void {
   let warn = "";
   let start = "-";
   let end = "-";
@@ -93,19 +94,15 @@ function addMessage(clazz, message) {
 
     if (endDateTime) {
       end = endDateTime.toISOString();
-      let days = Math.round(
-        (endDateTime.getTime() - startDateTime.getTime()) / 86400000,
-      );
+      const days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 86400000);
 
-      end = end + " (" + days + " days)";
-      if (endDateTime.getTime() < new Date().getTime()) {
+      end = `${end} (${days} days)`;
+      if (endDateTime.getTime() < Date.now()) {
         warn = " warn";
       }
     } else {
-      let days = Math.round(
-        (new Date().getTime() - startDateTime.getTime()) / 86400000,
-      );
-      end = "(" + days + " days)";
+      const days = Math.round((Date.now() - startDateTime.getTime()) / 86400000);
+      end = `(${days} days)`;
 
       if (days > 14) {
         warn = " warn";
@@ -113,63 +110,56 @@ function addMessage(clazz, message) {
     }
   }
 
-  $("#" + clazz + " > tbody:last-child").append(
-    $("<tr/>", { class: "row.nowrap" + warn }).append([
+  $(`#${clazz} > tbody:last-child`).append(
+    $("<tr/>", { class: `row.nowrap${warn}` }).append([
       $("<td/>", { class: "datex2-col1" }).text(message.properties.situationId),
       $("<td/>", { class: "datex2-col2" }).text(message.properties.version),
       $("<td/>", { class: "datex2-col3" }).text(start),
-      $("<td/>", { class: "datex2-col4" + warn }).text(end),
+      $("<td/>", { class: `datex2-col4${warn}` }).text(end),
       $("<td/>", { class: "datex2-col5" }).text(
         getTitle(message.properties.announcements),
       ),
       $("<td/>", { class: "datex2-col6" }).append(
         $("<a />", {
           target: "_blank",
-          href: TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId +
-            ".datex2?latest=true",
+          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
         }).text("xml"),
       ),
       $("<td/>", { class: "datex2-col7" }).append(
         $("<a />", {
           target: "_blank",
-          href: TRAFFIC_MESSAGES_URL + "/" + message.properties.situationId +
-            "?latest=true",
+          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`,
         }).text("json"),
       ),
       $("<td/>", { class: "datex2-col8" }).append(
         $("<a />", {
           target: "_blank",
-          href: "https://geojson.tools/?url=" +
-            TRAFFIC_MESSAGES_URL +
-            "/" +
-            message.properties.situationId +
-            "?latest=true",
+          href: `https://geojson.tools/?url=${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`
         }).text("map"),
       ),
     ]),
   );
 }
 
-function calculateDaysOpen(feature) {
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function calculateDaysOpen(feature: any): any {
   const startDateTime = getStartDateTime(feature.properties.announcements);
   const endDateTime = getEndDateTime(feature.properties.announcements);
   if (startDateTime) {
-    const start = startDateTime.toISOString();
-
     if (endDateTime) {
-      const end = endDateTime.toISOString();
       feature.properties.daysOpen = Math.round(
         (endDateTime.getTime() - startDateTime.getTime()) / 86400000,
       );
     } else {
       feature.properties.daysOpen = Math.round(
-        (new Date().getTime() - startDateTime.getTime()) / 86400000,
+        (Date.now()- startDateTime.getTime()) / 86400000,
       );
     }
   }
   return feature;
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
 type SortCallbackFunction = (a: any) => number;
 
 function sortBy(fn: SortCallbackFunction, reverse: boolean = false) {
@@ -187,12 +177,13 @@ function getSortAlgorithm() {
   if (sort === "days") {
     return sortBy((f) => f.properties.daysOpen, true);
   }
-  return sortBy((f) => getStartDateTime(f.properties.announcements).valueOf());
+  return sortBy((f) => getStartDateTime(f.properties.announcements)?.valueOf());
 }
 
-function getStartDateTime(anouncements) {
-  const times = anouncements
-    .filter((a) => a.timeAndDuration && a.timeAndDuration.startTime)
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function getStartDateTime(announcements: any[]): Date | null {
+  const times = announcements
+    .filter((a) => a.timeAndDuration?.startTime)
     .map((a) => new Date(a.timeAndDuration.startTime).getTime());
   if (times.length > 0) {
     return new Date(Math.min(...times));
@@ -200,9 +191,10 @@ function getStartDateTime(anouncements) {
   return null;
 }
 
-function getEndDateTime(anouncements) {
-  const times = anouncements
-    .filter((a) => a.timeAndDuration && a.timeAndDuration.endTime)
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function getEndDateTime(announcements: any[]): Date | null {
+  const times = announcements
+    .filter((a) => a.timeAndDuration?.endTime)
     .map((a) => new Date(a.timeAndDuration.endTime).getTime());
   if (times.length > 0) {
     return new Date(Math.max(...times));
@@ -210,7 +202,8 @@ function getEndDateTime(anouncements) {
   return null;
 }
 
-function getTitle(announcements) {
+// biome-ignore lint/suspicious/noExplicitAny: not going to define all the types for the response
+function getTitle(announcements: any[]): string {
   for (var ann of announcements) {
     if (ann.title) {
       return ann.title;
@@ -220,17 +213,17 @@ function getTitle(announcements) {
   return "-";
 }
 
-export async function loadDatex2() {
-  initTable(TYPE_TRAFFIC_ANNOUNCEMENT, "Traffic announcements");
-  initTable(TYPE_EXEMPTED_TRANSPORT, "Exempted transports");
-  initTable(TYPE_ROAD_WORK, "Road works");
-  initTable(TYPE_WEIGHT_RESTRICTION, "Weight restrictions");
+export async function loadDatex2(): Promise<void> {
+  initTable(TYPE_TRAFFIC_ANNOUNCEMENTS, "Traffic announcements");
+  initTable(TYPE_EXEMPTED_TRANSPORTS, "Exempted transports");
+  initTable(TYPE_ROADWORKS, "Road works");
+  initTable(TYPE_WEIGHT_RESTRICTIONS, "Weight restrictions");
 
   const promises = await Promise.allSettled([
-    loadContent(TYPE_TRAFFIC_ANNOUNCEMENT),
-    loadContent(TYPE_EXEMPTED_TRANSPORT),
-    loadContent(TYPE_ROAD_WORK),
-    loadContent(TYPE_WEIGHT_RESTRICTION),
+    loadContent(TYPE_TRAFFIC_ANNOUNCEMENTS),
+    loadContent(TYPE_EXEMPTED_TRANSPORTS),
+    loadContent(TYPE_ROADWORKS),
+    loadContent(TYPE_WEIGHT_RESTRICTIONS),
   ]);
 
   promises.forEach((promise) => {
