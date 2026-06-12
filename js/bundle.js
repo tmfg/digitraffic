@@ -17906,7 +17906,7 @@
     };
   }
 
-  // node_modules/.pnpm/alpinejs@3.15.11/node_modules/alpinejs/dist/module.esm.js
+  // node_modules/.pnpm/alpinejs@3.15.12/node_modules/alpinejs/dist/module.esm.js
   var flushPending = false;
   var flushing = false;
   var queue = [];
@@ -18658,8 +18658,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   var directiveOrder = [
     "ignore",
     "ref",
-    "data",
     "id",
+    "data",
     "anchor",
     "bind",
     "init",
@@ -19595,7 +19595,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get transaction() {
       return transaction;
     },
-    version: "3.15.11",
+    version: "3.15.12",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,
@@ -20508,8 +20508,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       }
     };
     mutateDom(() => {
-      placeInDom(clone2, target, modifiers);
       skipDuringClone(() => {
+        placeInDom(clone2, target, modifiers);
         initTree(clone2);
       })();
     });
@@ -21107,7 +21107,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     evaluateItems((items) => {
       if (isNumeric3(items))
         items = Array.from({ length: items }, (_, i) => i + 1);
-      if (items === void 0)
+      if (items === void 0 || items === null)
         items = [];
       if (items instanceof Set)
         items = Array.from(items);
@@ -21216,7 +21216,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     return scopeVariables;
   }
   function isNumeric3(subject) {
-    return !Array.isArray(subject) && !isNaN(subject);
+    return typeof subject !== "object" && !isNaN(subject);
   }
   function isObject2(subject) {
     return typeof subject === "object" && !Array.isArray(subject);
