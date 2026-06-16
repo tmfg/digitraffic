@@ -189,6 +189,13 @@ tietoa.
 
 Viestin aihe (topic) kertoo aina, minkä latauslaitteen statuksesta on kyse.
 
+## MQTT-käyttäjä
+
+MQTT-viestejä voi kuunnella anonyymisti ilman käyttäjää, mutta käyttämäsi MQTT-ohjelmisto jostain syystä
+vaatii käyttäjän ja salasanan, voit käyttää seuraavaa tunnusta ja salasanaa:
+**Tunnus** : digitraffic
+**Salasana** : digitrafficPassword
+
 [swagger_afir_test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
 
 [swagger_afir]: https://afir.digitraffic.fi/swagger/  "AFIR Swagger UI"

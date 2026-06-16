@@ -187,6 +187,13 @@ The message payload is JSON-formatted and corresponds to the data returned by th
 
 The topic indicates which EVSE device’s status the message refers to.
 
+## MQTT user
+
+MQTT messages can be listened to anonymously without a user, but if your MQTT software for some reason
+requires a username and password, you can use the following credentials:
+**Username** : digitraffic
+**Password** : digitrafficPassword
+
 [swagger_afir_test]: https://afir-test.digitraffic.fi/swagger/  "AFIR test Swagger UI"
 
 [swagger_afir]: https://afir.digitraffic.fi/swagger/  "AFIR Swagger UI"
