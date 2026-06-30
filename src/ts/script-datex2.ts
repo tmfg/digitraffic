@@ -54,9 +54,7 @@ function initTable(datexType: string, tableTitle: string) {
 
 async function loadContent(requestType: string): Promise<void> {
   console.info("Load traffic messages of type", requestType);
-  const response = await fetch(
-    `${TRAFFIC_MESSAGES_URL}/${requestType}`,
-  );
+  const response = await fetch(`${TRAFFIC_MESSAGES_URL}/${requestType}`);
   const data = await response.json();
   processResponse(data, requestType);
 }
@@ -67,8 +65,11 @@ function processResponse(resp: any, requestType: string): void {
     console.log("Response:", resp);
 
     $(`#date_${requestType}`).text(
-      "Updated: " + toLocalDate(resp.dataUpdatedTime) + " / " +
-        resp.features.length + " pcs",
+      "Updated: " +
+        toLocalDate(resp.dataUpdatedTime) +
+        " / " +
+        resp.features.length +
+        " pcs",
     );
 
     const features = resp.features.map(calculateDaysOpen);
@@ -94,14 +95,18 @@ function addMessage(clazz: string, message: any): void {
 
     if (endDateTime) {
       end = endDateTime.toISOString();
-      const days = Math.round((endDateTime.getTime() - startDateTime.getTime()) / 86400000);
+      const days = Math.round(
+        (endDateTime.getTime() - startDateTime.getTime()) / 86400000,
+      );
 
       end = `${end} (${days} days)`;
       if (endDateTime.getTime() < Date.now()) {
         warn = " warn";
       }
     } else {
-      const days = Math.round((Date.now() - startDateTime.getTime()) / 86400000);
+      const days = Math.round(
+        (Date.now() - startDateTime.getTime()) / 86400000,
+      );
       end = `(${days} days)`;
 
       if (days > 14) {
@@ -122,7 +127,7 @@ function addMessage(clazz: string, message: any): void {
       $("<td/>", { class: "datex2-col6" }).append(
         $("<a />", {
           target: "_blank",
-          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
+          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`,
         }).text("xml"),
       ),
       $("<td/>", { class: "datex2-col7" }).append(
@@ -134,7 +139,7 @@ function addMessage(clazz: string, message: any): void {
       $("<td/>", { class: "datex2-col8" }).append(
         $("<a />", {
           target: "_blank",
-          href: `https://geojson.tools/?url=${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`
+          href: `https://geojson.tools/?url=${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`,
         }).text("map"),
       ),
     ]),

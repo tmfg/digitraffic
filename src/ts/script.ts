@@ -23,7 +23,7 @@ declare function loadApiChanges(string): void;
 declare function tippy(string, any): void;
 
 // Init parallax elements
-var parallaxElements: unknown;
+var parallaxElements: HTMLElement[];
 var _footerElement: unknown;
 
 /* Init when dom is fully loaded */

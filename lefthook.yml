@@ -28,6 +28,6 @@ pre-commit:
       # stage_fixed: true:          lefthook re-stages ONLY files that biome actually modified,
       #                             which correctly handles `git add -p` partial staging
       run: >
-        ./node_modules/.bin/biome check --write --no-errors-on-unmatched {staged_files} &&
-        ./node_modules/.bin/biome check --error-on-warnings .
+        pnpm exec biome check --write --no-errors-on-unmatched {staged_files} &&
+        pnpm exec biome check --error-on-warnings .
       stage_fixed: true
