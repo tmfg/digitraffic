@@ -75,11 +75,9 @@ const digitrafficMaintenancePath = "/digitraffic-maintenance/";
 function addApiStatusTabLinksEventListeners() {
   if (document.getElementsByClassName("service-status-incidents")) {
     const tabLinks = document.getElementsByClassName("tab-link");
-    Array.prototype.forEach.call(tabLinks, function (link) {
-      link.addEventListener(
-        "click",
-        (event) =>
-          openTab(link.href.substring(link.href.lastIndexOf("#") + 1), event),
+    Array.prototype.forEach.call(tabLinks, (link) => {
+      link.addEventListener("click", (event) =>
+        openTab(link.href.substring(link.href.lastIndexOf("#") + 1), event),
       );
     });
   }
@@ -88,7 +86,7 @@ function addApiStatusTabLinksEventListeners() {
 export async function getServiceStatus(baseUrl: string, language: string) {
   addApiStatusTabLinksEventListeners();
 
-  const index = (await getJson(baseUrl + "/index.json")) as CStateIndex;
+  const index = (await getJson(`${baseUrl}/index.json`)) as CStateIndex;
 
   // if a maintenance notice with a past date is found in pinned issues, it is considered a currently active maintenance break
   const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
@@ -123,8 +121,9 @@ export async function getServiceStatus(baseUrl: string, language: string) {
   }
 
   // Get current and past service incidents from api
-  const allIssues =
-    (await getJson(baseUrl + "/issues/index.json")) as CStateIssues;
+  const allIssues = (await getJson(
+    `${baseUrl}/issues/index.json`,
+  )) as CStateIssues;
 
   if (document.getElementById("service-status-incident-list")) {
     await updateServiceStatusList(language, allIssues.pages);
@@ -189,7 +188,7 @@ async function updateServiceStatusList(
   }
 
   // Limit to 7 days                      day hour  min  sec  msec
-  const limitTimestamp = new Date().getTime() - 7 * 24 * 60 * 60 * 1000;
+  const limitTimestamp = Date.now() - 7 * 24 * 60 * 60 * 1000;
 
   const displayableIncidents = issues
     // show any unresolved incidents on top
@@ -210,12 +209,12 @@ async function updateServiceStatusList(
   if (displayableIncidents.length > 0) {
     for (const issue of displayableIncidents) {
       const issueWithBody = (await getJson(
-        issue.permalink + "index.json",
+        `${issue.permalink}index.json`,
       )) as CStateIssuePageObject;
       addIncidentDetailedList(
         issue.createdAt,
         // for clarity, prefix resolved issue titles with [Resolved] similarly to the cstate RSS feed
-        issue.resolved ? "[Resolved] " + issue.title : issue.title,
+        issue.resolved ? `[Resolved] ${issue.title}` : issue.title,
         issueWithBody.body,
         issue.permalink,
         statusList,
@@ -249,8 +248,9 @@ async function updateActiveMaintenancesList(
 
   // Add active maintenances to list of ongoing maintenances
   for (const issue of activeMaintenances) {
-    const issueWithBody =
-      (await getJson(issue.permalink + "index.json")) as CStateIssuePageObject;
+    const issueWithBody = (await getJson(
+      `${issue.permalink}index.json`,
+    )) as CStateIssuePageObject;
     addIncidentDetailedList(
       issue.createdAt,
       issue.title,
@@ -276,15 +276,15 @@ async function updateUpcomingMaintenancesAndOtherIssuesList(
     statusList.removeChild(statusList.firstChild);
   }
 
-  const displayableIssues = index.pinnedIssues.filter((issue) =>
-    !isActiveMaintenance(issue)
+  const displayableIssues = index.pinnedIssues.filter(
+    (issue) => !isActiveMaintenance(issue),
   );
 
   if (displayableIssues.length > 0) {
     // Add to list upcoming maintenances and other informational issues
     for (const issue of displayableIssues) {
       const issueWithBody = (await getJson(
-        issue.permalink + "index.json",
+        `${issue.permalink}index.json`,
       )) as CStateIssuePageObject;
       addIncidentDetailedList(
         issue.createdAt,
@@ -325,9 +325,9 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(
   }, []);
 
   // active incidents and maintenances are displayable issues
-  const displayableIssues = activeMaintenances.concat(unresolvedIncidents).sort(
-    issuesByDate(),
-  );
+  const displayableIssues = activeMaintenances
+    .concat(unresolvedIncidents)
+    .sort(issuesByDate());
 
   // Get a reference to the template li and remove it from dom
   const templateItem = statusList.firstElementChild;
@@ -339,6 +339,7 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(
   // Take only first three to show on front page
   const first3 = displayableIssues.slice(0, 3);
   if (first3.length > 0) {
+    // biome-ignore lint/suspicious/useIterableCallbackReturn: addIncidentFrontPageList returns void, forEach callback return is intentional
     first3.forEach((issue) =>
       addIncidentFrontPageList(
         issue.createdAt,
@@ -346,7 +347,7 @@ function updateActiveMaintenancesAndIncidentsOnFrontPage(
         issue.permalink,
         statusList,
         templateItem,
-      )
+      ),
     );
   } else {
     // empty placeholder
@@ -408,7 +409,8 @@ function addIncidentDetailedList(
   const newItem = templateItem.cloneNode(true) as HTMLElement;
 
   if (isoDateTime) {
-    newItem.innerHTML = '<h3 class="h3 latest-item__header-text"><a href="' +
+    newItem.innerHTML =
+      '<h3 class="h3 latest-item__header-text"><a href="' +
       link +
       '" class="latest-item__header-link">' +
       name +
@@ -416,9 +418,9 @@ function addIncidentDetailedList(
       '<div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' +
       getTimeStringFromIsoString(isoDateTime) +
       "</span></div>" +
-      (message ? "<div>" + message + "</div>" : "");
+      (message ? `<div>${message}</div>` : "");
   } else {
-    newItem.innerHTML = "<p>" + name + "</p>";
+    newItem.innerHTML = `<p>${name}</p>`;
   }
   statusList.appendChild(newItem);
 }
@@ -432,7 +434,8 @@ function addIncidentFrontPageList(
 ) {
   const newItem = templateItem.cloneNode(true) as HTMLElement;
   if (scheduledFor) {
-    newItem.innerHTML = '<h4 class="h4 latest-item__header-text"><a href="' +
+    newItem.innerHTML =
+      '<h4 class="h4 latest-item__header-text"><a href="' +
       link +
       '" class="latest-item__header-link">' +
       name +
@@ -441,7 +444,8 @@ function addIncidentFrontPageList(
       getTimeStringFromIsoString(scheduledFor) +
       "</span></div>";
   } else {
-    newItem.innerHTML = '<h4 class="h4 latest-item__header-text">&nbsp;</h4>' +
+    newItem.innerHTML =
+      '<h4 class="h4 latest-item__header-text">&nbsp;</h4>' +
       '<div class="latest-item__meta-first">&nbsp;<span class="latest-item__traffic-type"></span></div>';
   }
   statusList.appendChild(newItem);
@@ -456,9 +460,9 @@ function getTimeStringFromIsoString(dateTime: string) {
     "." +
     asDate.getFullYear() +
     " " +
-    ("0" + asDate.getHours()).slice(-2) +
+    `0${asDate.getHours()}`.slice(-2) +
     ":" +
-    ("0" + asDate.getMinutes()).slice(-2)
+    `0${asDate.getMinutes()}`.slice(-2)
   );
 }
 
@@ -484,12 +488,12 @@ function openTab(tabId: string, event) {
 }
 
 function getJson(url: string) {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     const req = new XMLHttpRequest();
     req.responseType = "json";
-    req.onload = function () {
+    req.onload = () => {
       const status = req.status;
-      if (status == 200) {
+      if (status === 200) {
         resolve(req.response);
       } else {
         reject(status);
@@ -520,7 +524,7 @@ function systemsDownOrDisrupted(systems: CStateSystem[]) {
       (issue) =>
         issue.severity === cStateStatusString.DOWN ||
         issue.severity === cStateStatusString.DISRUPTED,
-    )
+    ),
   );
 }
 
@@ -540,6 +544,8 @@ function issuesByDate() {
 
 function isActiveMaintenance(issue: CStateIssue) {
   // the cState field createdAt is the intended time of the maintenance
-  return Date.parse(issue.createdAt) <= Date.now() &&
-    issue.permalink.includes(digitrafficMaintenancePath);
+  return (
+    Date.parse(issue.createdAt) <= Date.now() &&
+    issue.permalink.includes(digitrafficMaintenancePath)
+  );
 }

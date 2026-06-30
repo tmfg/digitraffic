@@ -152,7 +152,7 @@ function calculateDaysOpen(feature: any): any {
       );
     } else {
       feature.properties.daysOpen = Math.round(
-        (Date.now()- startDateTime.getTime()) / 86400000,
+        (Date.now() - startDateTime.getTime()) / 86400000,
       );
     }
   }

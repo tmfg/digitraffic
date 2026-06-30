@@ -23,12 +23,12 @@ declare function loadApiChanges(string): void;
 declare function tippy(string, any): void;
 
 // Init parallax elements
-var parallaxElements;
-var footerElement;
+var parallaxElements: unknown;
+var _footerElement: unknown;
 
 /* Init when dom is fully loaded */
-var waitForJQueryAndTippy = setInterval(function () {
-  if (typeof $ !== undefined && tippy !== undefined) {
+var waitForJQueryAndTippy = setInterval(() => {
+  if (typeof $ !== "undefined" && tippy !== undefined) {
     clearInterval(waitForJQueryAndTippy);
     $(() => init());
   }
@@ -39,7 +39,7 @@ async function init() {
 
   //Set parallax elements
   parallaxElements = [].slice.call(document.body.querySelectorAll(".parallax"));
-  footerElement = document.body.querySelector("footer");
+  _footerElement = document.body.querySelector("footer");
 
   // Add parallax effect to elements with ".parallax" and to footer
   parallax();
@@ -170,12 +170,14 @@ function setDropDowns() {
 
 /* Add event listeners for menu, search and language */
 function addEventListeners() {
-  let menuElement = document.body.querySelector(".header-menu__item--menu");
-  let searchElement = document.body.querySelector(".header-menu__item--search");
-  let languageElement = document.body.querySelector(
+  const menuElement = document.body.querySelector(".header-menu__item--menu");
+  const searchElement = document.body.querySelector(
+    ".header-menu__item--search",
+  );
+  const languageElement = document.body.querySelector(
     ".header-menu__item--language",
   );
-  let outsideMenu = document.body.querySelector(".content");
+  const outsideMenu = document.body.querySelector(".content");
 
   if (menuElement) {
     menuElement.addEventListener("click", toggleMenu);
@@ -282,9 +284,10 @@ function closeMenuSearchLanguage() {
 // Open menu
 function openMenu() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerClasses.add("header--menu-opening");
   headerContentWrapperClasses.add("header__content-wrapper--menu-opening");
@@ -299,9 +302,10 @@ function openMenu() {
 // Close menu
 function closeMenu() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerClasses.add("header--menu-closing");
   headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
@@ -318,9 +322,10 @@ function closeMenu() {
 // Quickly close menu
 function closeMenuQuick() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--menu-opened");
@@ -335,9 +340,10 @@ function closeMenuQuick() {
 // Open search
 function openSearch() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const _headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerClasses.add("header--search-opening");
   // bodyClasses.add("u--disable-scroll-mobile");
@@ -351,9 +357,10 @@ function openSearch() {
 // Close search
 function closeSearch() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerClasses.add("header--search-closing");
   headerContentWrapperClasses.add("header__content-wrapper--search-closing");
@@ -372,9 +379,10 @@ function closeSearch() {
 // Quickly close search
 function closeSearchQuick() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--search-opened");
@@ -389,9 +397,10 @@ function closeSearchQuick() {
 // Open language
 function openLanguage() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const _headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerClasses.add("header--language-opening");
   // bodyClasses.add("u--disable-scroll-mobile");
@@ -404,9 +413,10 @@ function openLanguage() {
 // Close language
 function closeLanguage() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
-  const bodyClasses = document.body.classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
+  const _bodyClasses = document.body.classList;
 
   headerClasses.add("header--language-closing");
   headerContentWrapperClasses.add("header__content-wrapper--language-closing");
@@ -425,8 +435,9 @@ function closeLanguage() {
 // Quickly close language
 function closeLanguageQuick() {
   const headerClasses = document.body.querySelector(".header").classList;
-  const headerContentWrapperClasses =
-    document.body.querySelector(".header__content-wrapper").classList;
+  const headerContentWrapperClasses = document.body.querySelector(
+    ".header__content-wrapper",
+  ).classList;
 
   headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
   headerClasses.remove("header--language-opened");
@@ -442,13 +453,15 @@ function parallax() {
   if (parallaxElements) {
     parallaxElements.forEach((element) => {
       if (elementInViewport(element)) {
-        let elementCenter = (element.getBoundingClientRect().bottom -
-              element.getBoundingClientRect().top) / 2 +
+        const elementCenter =
+          (element.getBoundingClientRect().bottom -
+            element.getBoundingClientRect().top) /
+            2 +
           element.getBoundingClientRect().top;
-        let windowCenter = window.innerHeight / 2;
-        let diffFromCenter = elementCenter - windowCenter;
-        let translateY = diffFromCenter / 15;
-        element.style.transform = "translate3d(0, " + translateY + "px, 1px)";
+        const windowCenter = window.innerHeight / 2;
+        const diffFromCenter = elementCenter - windowCenter;
+        const translateY = diffFromCenter / 15;
+        element.style.transform = `translate3d(0, ${translateY}px, 1px)`;
       }
     });
   }
@@ -464,8 +477,10 @@ function elementInViewport(el) {
     top += el.offsetTop;
   }
 
-  return top < window.pageYOffset + window.innerHeight &&
-    top + height > window.pageYOffset;
+  return (
+    top < window.pageYOffset + window.innerHeight &&
+    top + height > window.pageYOffset
+  );
 }
 
 function toIsoLocalDate(utc) {
@@ -473,10 +488,10 @@ function toIsoLocalDate(utc) {
   const offsetMs = new Date().getTimezoneOffset() * 60 * 1000 * -1;
   const localMs = utcDateMs + offsetMs;
   const localDateTime = new Date(localMs);
-  const isoLocalDateTimeStr = localDateTime.toISOString().slice(0, 19).replace(
-    "T",
-    " ",
-  );
+  const isoLocalDateTimeStr = localDateTime
+    .toISOString()
+    .slice(0, 19)
+    .replace("T", " ");
   return isoLocalDateTimeStr;
 }
 

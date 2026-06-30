@@ -32,7 +32,8 @@
       "!js/lang.js",
       "!css/style.scss",
       "!**/bundle.*",
-      "!_site"
+      "!_site",
+      "!css/material-icons"
     ],
     "ignoreUnknown": true
   },

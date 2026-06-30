@@ -6,18 +6,28 @@ pre-commit:
   parallel: false
   commands:
     01-sort-package-json:
-      #glob: "*.{ts,yml,yaml,md,json,html}"
+      # Only runs when package.json is among the staged files.
+      glob: "package.json"
       run: |
-        set -e  # stop on error except where explicitly allowed
-        # Reorder package.json
         pnpm run format:package-json
-        # Re-add package.json if it was modified
-        git add package.json || true
+        git add package.json
+
     02-biomejs-check:
-      #glob: "*.{ts,yml,yaml,md,json,html}"
-      run: |
-        # Run Biome on staged files, auto-fixing issues
-        # pnpm format:fix-staged || true; # Errors are ignored to allow commit to proceed even if Biome finds issues
-        pnpm run format:fix-staged; # Dont allow errors to be ignored, commit should fail if Biome finds issues
-        # Re-add any files that Biome fixed. Sometimes deleted files cause git add to fail, so we ignore errors.
-        git add $(git diff --name-only --cached) || true
+      # {staged_files} — lefthook provides all staged files as arguments automatically.
+      # If no files are staged, lefthook skips this command entirely.
+      #
+      # Biome self-filters unknown file types via "ignoreUnknown": true in biome.jsonc,
+      # so no extension allowlist is needed here.
+      #
+      # Step 1 --write {staged_files}: auto-fixes safe issues on staged files only
+      # Step 2 check . --error-on-warnings:
+      #                             verifies the ENTIRE repo — no file may have errors or
+      #                             warnings. --error-on-warnings makes warnings exit with
+      #                             code 1 (biome check exits 0 for warnings by default).
+      # --no-errors-on-unmatched:   exits cleanly when all staged files are ignored by biome
+      # stage_fixed: true:          lefthook re-stages ONLY files that biome actually modified,
+      #                             which correctly handles `git add -p` partial staging
+      run: >
+        ./node_modules/.bin/biome check --write --no-errors-on-unmatched {staged_files} &&
+        ./node_modules/.bin/biome check --error-on-warnings .
+      stage_fixed: true
