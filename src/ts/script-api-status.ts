@@ -188,7 +188,7 @@ async function updateServiceStatusList(
   }
 
   // Limit to 7 days                      day hour  min  sec  msec
-  const limitTimestamp = Date.now() - 7 * 24 * 60 * 60 * 1000;
+  const limitTimestamp = Date.now() - 12 * 24 * 60 * 60 * 1000;
 
   const displayableIncidents = issues
     // show any unresolved incidents on top
@@ -452,13 +452,17 @@ function addIncidentFrontPageList(
 }
 
 function getTimeStringFromIsoString(dateTime: string) {
-  // cState outputs dates like "2026-04-07 05:30:36 +0000 UTC"
-  // Safari doesn't parse this — normalize to ISO 8601
-  const normalized = dateTime
-    .replace(" UTC", "")
-    .replace(" +0000", "+00:00")
-    .replace(" ", "T");
-  const asDate = new Date(normalized);
+  // cState outputs Go-style dates like "2026-04-07 05:30:36 +0000 UTC"
+  // Safari requires strict ISO 8601 — parse with a regex that handles
+  // varying timezone formats and optional timezone names
+  const match = dateTime.match(
+    /^(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})\s*([+-]\d{2}:?\d{2})?/,
+  );
+  const asDate = match
+    ? new Date(
+        `${match[1]}T${match[2]}${match[3]?.replace(/(\d{2})(\d{2})$/, "$1:$2") ?? "Z"}`,
+      )
+    : new Date(dateTime);
   return (
     asDate.getDate() +
     "." +

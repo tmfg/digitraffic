@@ -22351,7 +22351,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       while (statusList.firstChild) {
         statusList.removeChild(statusList.firstChild);
       }
-      const limitTimestamp = Date.now() - 7 * 24 * 60 * 60 * 1e3;
+      const limitTimestamp = Date.now() - 12 * 24 * 60 * 60 * 1e3;
       const displayableIncidents = issues.filter((issue) => !issue.informational && !issue.resolved).sort(issuesByDate()).concat(issues.filter((issue) => issue.resolved && !issue.informational && limitTimestamp < new Date(issue.resolvedAt).getTime()).sort(issuesByDate()));
       if (displayableIncidents.length > 0) {
         for (const issue of displayableIncidents) {
@@ -22471,8 +22471,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     statusList.appendChild(newItem);
   }
   function getTimeStringFromIsoString(dateTime) {
-    const normalized = dateTime.replace(" UTC", "").replace(" +0000", "+00:00").replace(" ", "T");
-    const asDate = new Date(normalized);
+    var _a, _b;
+    const match = dateTime.match(/^(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2})\s*([+-]\d{2}:?\d{2})?/);
+    const asDate = match ? /* @__PURE__ */ new Date(`${match[1]}T${match[2]}${(_b = (_a = match[3]) === null || _a === void 0 ? void 0 : _a.replace(/(\d{2})(\d{2})$/, "$1:$2")) !== null && _b !== void 0 ? _b : "Z"}`) : new Date(dateTime);
     return asDate.getDate() + "." + (asDate.getMonth() + 1) + "." + asDate.getFullYear() + " " + `0${asDate.getHours()}`.slice(-2) + ":" + `0${asDate.getMinutes()}`.slice(-2);
   }
   function openTab(tabId, event) {
