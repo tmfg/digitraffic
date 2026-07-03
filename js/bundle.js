@@ -22471,7 +22471,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     statusList.appendChild(newItem);
   }
   function getTimeStringFromIsoString(dateTime) {
-    const asDate = new Date(dateTime);
+    const normalized = dateTime.replace(" UTC", "").replace(" +0000", "+00:00").replace(" ", "T");
+    const asDate = new Date(normalized);
     return asDate.getDate() + "." + (asDate.getMonth() + 1) + "." + asDate.getFullYear() + " " + `0${asDate.getHours()}`.slice(-2) + ":" + `0${asDate.getMinutes()}`.slice(-2);
   }
   function openTab(tabId, event) {

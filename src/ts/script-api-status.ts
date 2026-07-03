@@ -452,7 +452,13 @@ function addIncidentFrontPageList(
 }
 
 function getTimeStringFromIsoString(dateTime: string) {
-  const asDate = new Date(dateTime);
+  // cState outputs dates like "2026-04-07 05:30:36 +0000 UTC"
+  // Safari doesn't parse this — normalize to ISO 8601
+  const normalized = dateTime
+    .replace(" UTC", "")
+    .replace(" +0000", "+00:00")
+    .replace(" ", "T");
+  const asDate = new Date(normalized);
   return (
     asDate.getDate() +
     "." +
