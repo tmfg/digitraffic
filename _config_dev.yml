@@ -168,9 +168,6 @@ t:
   nap:
     en: "NAP"
     fi: "NAP"
-    url:
-      en: "en/NAP"
-      fi: "en/NAP"
   about:
     en: "About Digitraffic"
     fi: "Tietoa palvelusta"

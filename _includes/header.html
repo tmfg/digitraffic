@@ -37,7 +37,6 @@
                  or page.url contains railway-traffic
                  or page.url contains marine-traffic
                  or page.url contains experimental
-                 or page.url contains nap 
               %}
                 active
               {% endif %}
@@ -179,11 +178,6 @@
     <li class="{% if page.url contains experimental %}active{% endif %}">
       <a class="" href="/{{ site.t.experimental.url[page.lang] | prepend:site.baseurl }}">
         {{ site.t.experimental[page.lang] }}
-      </a>
-    </li>
-    <li class="{% if page.url contains nap %}active{% endif %}">
-      <a class="" href="/{{ site.t.nap.url[page.lang] | prepend:site.baseurl }}">
-        {{ site.t.nap[page.lang] }}
       </a>
     </li>
   </ul>

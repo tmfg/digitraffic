@@ -6,7 +6,11 @@
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __commonJS = (cb, mod) => function __require() {
-    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+    try {
+      return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+    } catch (e) {
+      throw mod = 0, e;
+    }
   };
   var __export = (target, all) => {
     for (var name in all)
@@ -22295,7 +22299,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function addApiStatusTabLinksEventListeners() {
     if (document.getElementsByClassName("service-status-incidents")) {
       const tabLinks = document.getElementsByClassName("tab-link");
-      Array.prototype.forEach.call(tabLinks, function(link) {
+      Array.prototype.forEach.call(tabLinks, (link) => {
         link.addEventListener("click", (event) => openTab(link.href.substring(link.href.lastIndexOf("#") + 1), event));
       });
     }
@@ -22303,7 +22307,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function getServiceStatus2(baseUrl, language) {
     return __awaiter(this, void 0, void 0, function* () {
       addApiStatusTabLinksEventListeners();
-      const index = yield getJson(baseUrl + "/index.json");
+      const index = yield getJson(`${baseUrl}/index.json`);
       const activeMaintenances = index.pinnedIssues.filter(isActiveMaintenance);
       updateServiceStatus(language, index, activeMaintenances);
       if (document.getElementById("service-status-ongoing-maintenance-list")) {
@@ -22315,7 +22319,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       if (document.getElementById("service-status-active-incidents-short")) {
         updateActiveMaintenancesAndIncidentsOnFrontPage("service-status-active-incidents-short", activeMaintenances, index.systems);
       }
-      const allIssues = yield getJson(baseUrl + "/issues/index.json");
+      const allIssues = yield getJson(`${baseUrl}/issues/index.json`);
       if (document.getElementById("service-status-incident-list")) {
         yield updateServiceStatusList(language, allIssues.pages);
       }
@@ -22347,15 +22351,15 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       while (statusList.firstChild) {
         statusList.removeChild(statusList.firstChild);
       }
-      const limitTimestamp = (/* @__PURE__ */ new Date()).getTime() - 7 * 24 * 60 * 60 * 1e3;
+      const limitTimestamp = Date.now() - 7 * 24 * 60 * 60 * 1e3;
       const displayableIncidents = issues.filter((issue) => !issue.informational && !issue.resolved).sort(issuesByDate()).concat(issues.filter((issue) => issue.resolved && !issue.informational && limitTimestamp < new Date(issue.resolvedAt).getTime()).sort(issuesByDate()));
       if (displayableIncidents.length > 0) {
         for (const issue of displayableIncidents) {
-          const issueWithBody = yield getJson(issue.permalink + "index.json");
+          const issueWithBody = yield getJson(`${issue.permalink}index.json`);
           addIncidentDetailedList(
             issue.createdAt,
             // for clarity, prefix resolved issue titles with [Resolved] similarly to the cstate RSS feed
-            issue.resolved ? "[Resolved] " + issue.title : issue.title,
+            issue.resolved ? `[Resolved] ${issue.title}` : issue.title,
             issueWithBody.body,
             issue.permalink,
             statusList,
@@ -22375,7 +22379,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         statusList.removeChild(statusList.firstChild);
       }
       for (const issue of activeMaintenances) {
-        const issueWithBody = yield getJson(issue.permalink + "index.json");
+        const issueWithBody = yield getJson(`${issue.permalink}index.json`);
         addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
       }
     });
@@ -22390,7 +22394,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       const displayableIssues = index.pinnedIssues.filter((issue) => !isActiveMaintenance(issue));
       if (displayableIssues.length > 0) {
         for (const issue of displayableIssues) {
-          const issueWithBody = yield getJson(issue.permalink + "index.json");
+          const issueWithBody = yield getJson(`${issue.permalink}index.json`);
           addIncidentDetailedList(issue.createdAt, issue.title, issueWithBody.body, issue.permalink, statusList, templateItem);
         }
       } else {
@@ -22451,9 +22455,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function addIncidentDetailedList(isoDateTime, name, message, link, statusList, templateItem) {
     const newItem = templateItem.cloneNode(true);
     if (isoDateTime) {
-      newItem.innerHTML = '<h3 class="h3 latest-item__header-text"><a href="' + link + '" class="latest-item__header-link">' + name + '</a></h3><div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' + getTimeStringFromIsoString(isoDateTime) + "</span></div>" + (message ? "<div>" + message + "</div>" : "");
+      newItem.innerHTML = '<h3 class="h3 latest-item__header-text"><a href="' + link + '" class="latest-item__header-link">' + name + '</a></h3><div class="latest-item__meta-first"><span class="latest-item__traffic-type"><i class="material-icons md-md date-type-tags__date-icon">create</i>' + getTimeStringFromIsoString(isoDateTime) + "</span></div>" + (message ? `<div>${message}</div>` : "");
     } else {
-      newItem.innerHTML = "<p>" + name + "</p>";
+      newItem.innerHTML = `<p>${name}</p>`;
     }
     statusList.appendChild(newItem);
   }
@@ -22468,7 +22472,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function getTimeStringFromIsoString(dateTime) {
     const asDate = new Date(dateTime);
-    return asDate.getDate() + "." + (asDate.getMonth() + 1) + "." + asDate.getFullYear() + " " + ("0" + asDate.getHours()).slice(-2) + ":" + ("0" + asDate.getMinutes()).slice(-2);
+    return asDate.getDate() + "." + (asDate.getMonth() + 1) + "." + asDate.getFullYear() + " " + `0${asDate.getHours()}`.slice(-2) + ":" + `0${asDate.getMinutes()}`.slice(-2);
   }
   function openTab(tabId, event) {
     event.preventDefault();
@@ -22485,12 +22489,12 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     return false;
   }
   function getJson(url) {
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
       const req = new XMLHttpRequest();
       req.responseType = "json";
-      req.onload = function() {
+      req.onload = () => {
         const status = req.status;
-        if (status == 200) {
+        if (status === 200) {
           resolve(req.response);
         } else {
           reject(status);
@@ -22765,9 +22769,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   globalThis.toLocalDate = toLocalDate2;
   globalThis.toIsoLocalDate = toIsoLocalDate2;
   var parallaxElements;
-  var footerElement;
-  var waitForJQueryAndTippy = setInterval(function() {
-    if (typeof $ !== void 0 && tippy !== void 0) {
+  var _footerElement;
+  var waitForJQueryAndTippy = setInterval(() => {
+    if (typeof $ !== "undefined" && tippy !== void 0) {
       clearInterval(waitForJQueryAndTippy);
       $(() => init());
     }
@@ -22776,7 +22780,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     return __awaiter3(this, void 0, void 0, function* () {
       setDropDowns();
       parallaxElements = [].slice.call(document.body.querySelectorAll(".parallax"));
-      footerElement = document.body.querySelector("footer");
+      _footerElement = document.body.querySelector("footer");
       parallax();
       addEventListeners4();
       headerScrolled();
@@ -22885,10 +22889,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   }
   function addEventListeners4() {
-    let menuElement = document.body.querySelector(".header-menu__item--menu");
-    let searchElement = document.body.querySelector(".header-menu__item--search");
-    let languageElement = document.body.querySelector(".header-menu__item--language");
-    let outsideMenu = document.body.querySelector(".content");
+    const menuElement = document.body.querySelector(".header-menu__item--menu");
+    const searchElement = document.body.querySelector(".header-menu__item--search");
+    const languageElement = document.body.querySelector(".header-menu__item--language");
+    const outsideMenu = document.body.querySelector(".content");
     if (menuElement) {
       menuElement.addEventListener("click", toggleMenu);
     }
@@ -22971,7 +22975,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function openMenu() {
     const headerClasses = document.body.querySelector(".header").classList;
     const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _bodyClasses = document.body.classList;
     headerClasses.add("header--menu-opening");
     headerContentWrapperClasses.add("header__content-wrapper--menu-opening");
     setTimeout(() => {
@@ -22982,7 +22986,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function closeMenu() {
     const headerClasses = document.body.querySelector(".header").classList;
     const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _bodyClasses = document.body.classList;
     headerClasses.add("header--menu-closing");
     headerContentWrapperClasses.add("header__content-wrapper--menu-closing");
     headerClasses.remove("header--menu-opened");
@@ -22996,7 +23000,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function closeMenuQuick() {
     const headerClasses = document.body.querySelector(".header").classList;
     const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _bodyClasses = document.body.classList;
     headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
     headerClasses.remove("header--menu-opened");
     setTimeout(() => {
@@ -23005,8 +23009,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function openSearch() {
     const headerClasses = document.body.querySelector(".header").classList;
-    const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+    const _bodyClasses = document.body.classList;
     headerClasses.add("header--search-opening");
     setTimeout(() => {
       headerClasses.add("header--search-opened");
@@ -23016,7 +23020,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function closeSearch() {
     const headerClasses = document.body.querySelector(".header").classList;
     const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _bodyClasses = document.body.classList;
     headerClasses.add("header--search-closing");
     headerContentWrapperClasses.add("header__content-wrapper--search-closing");
     headerClasses.remove("header--search-opened");
@@ -23030,7 +23034,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function closeSearchQuick() {
     const headerClasses = document.body.querySelector(".header").classList;
     const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _bodyClasses = document.body.classList;
     headerContentWrapperClasses.add("header__content-wrapper--menu-switching");
     headerClasses.remove("header--search-opened");
     setTimeout(() => {
@@ -23039,8 +23043,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function openLanguage() {
     const headerClasses = document.body.querySelector(".header").classList;
-    const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
+    const _bodyClasses = document.body.classList;
     headerClasses.add("header--language-opening");
     setTimeout(() => {
       headerClasses.add("header--language-opened");
@@ -23050,7 +23054,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   function closeLanguage() {
     const headerClasses = document.body.querySelector(".header").classList;
     const headerContentWrapperClasses = document.body.querySelector(".header__content-wrapper").classList;
-    const bodyClasses = document.body.classList;
+    const _bodyClasses = document.body.classList;
     headerClasses.add("header--language-closing");
     headerContentWrapperClasses.add("header__content-wrapper--language-closing");
     headerClasses.remove("header--language-opened");
@@ -23074,11 +23078,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     if (parallaxElements) {
       parallaxElements.forEach((element) => {
         if (elementInViewport(element)) {
-          let elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
-          let windowCenter = window.innerHeight / 2;
-          let diffFromCenter = elementCenter - windowCenter;
-          let translateY = diffFromCenter / 15;
-          element.style.transform = "translate3d(0, " + translateY + "px, 1px)";
+          const elementCenter = (element.getBoundingClientRect().bottom - element.getBoundingClientRect().top) / 2 + element.getBoundingClientRect().top;
+          const windowCenter = window.innerHeight / 2;
+          const diffFromCenter = elementCenter - windowCenter;
+          const translateY = diffFromCenter / 15;
+          element.style.transform = `translate3d(0, ${translateY}px, 1px)`;
         }
       });
     }

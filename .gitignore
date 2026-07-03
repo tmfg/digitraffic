@@ -6,3 +6,4 @@ _site
 _site_tmp
 .DS_Store
 dist
+.pnpm-store
