@@ -188,7 +188,7 @@ async function updateServiceStatusList(
   }
 
   // Limit to 7 days                      day hour  min  sec  msec
-  const limitTimestamp = Date.now() - 12 * 24 * 60 * 60 * 1000;
+  const limitTimestamp = Date.now() - 7 * 24 * 60 * 60 * 1000;
 
   const displayableIncidents = issues
     // show any unresolved incidents on top

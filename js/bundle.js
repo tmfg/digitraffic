@@ -22351,7 +22351,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       while (statusList.firstChild) {
         statusList.removeChild(statusList.firstChild);
       }
-      const limitTimestamp = Date.now() - 12 * 24 * 60 * 60 * 1e3;
+      const limitTimestamp = Date.now() - 7 * 24 * 60 * 60 * 1e3;
       const displayableIncidents = issues.filter((issue) => !issue.informational && !issue.resolved).sort(issuesByDate()).concat(issues.filter((issue) => issue.resolved && !issue.informational && limitTimestamp < new Date(issue.resolvedAt).getTime()).sort(issuesByDate()));
       if (displayableIncidents.length > 0) {
         for (const issue of displayableIncidents) {
