@@ -4,7 +4,7 @@
 
 // Init translations object
 var t = {{ site.t.js | jsonify }};
-var pageLang = "fi";
+var pageLang = document.documentElement.lang || "fi";
 window.t = t;
 window.pageLang = pageLang;
 
