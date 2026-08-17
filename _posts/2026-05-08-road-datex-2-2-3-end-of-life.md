@@ -1,5 +1,5 @@
 ---
-title: 'Tiepuolen DATEX2 2.2.3 -rajapinnat poistuvat käytöstä'
+title: 'Tiepuolen Datex II 2.2.3 -rajapinnat poistuvat käytöstä'
 image:
 published: true
 categories: Tiedotteet

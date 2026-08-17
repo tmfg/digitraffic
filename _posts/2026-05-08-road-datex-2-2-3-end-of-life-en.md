@@ -1,5 +1,5 @@
 ---
-title: 'Road DATEX2 2.2.3 APIs are being deprecated'
+title: 'Road Datex II 2.2.3 APIs are being deprecated'
 image:
 published: true
 categories: en News
