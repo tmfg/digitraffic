@@ -15,7 +15,7 @@ Liikennetiedotteet on saatavilla nyt MQTT:n kautta.
 
 MQTT-aiheet ovat seuraavat:
 
-- `traffic-message-v2/datex2/<situationType>` Viestin sisältö on Datex2 XML
+- `traffic-message-v2/datex2/<situationType>` Viestin sisältö on Datex II XML
   muotoa.
 - `traffic-message-v2/simple/<situationType>` Viestin sisältö on
   liikennetiedotteiden simppeli JSON joka on gzip-pakattu ja base64-koodattu.

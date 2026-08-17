@@ -1,5 +1,5 @@
 ---
-title: Datex2-viesteihin muuttuvat nopeusrajoitukset ja liikennemerkit
+title: Datex II -viesteihin muuttuvat nopeusrajoitukset ja liikennemerkit
 lang: fi
 ref: datex2muuttuvatmerkit
 issue-number: DPO-905
@@ -9,5 +9,5 @@ status: valmis
 date: 2020-04-01
 ---
 
-Datex2-rajapintan kautta jaetaan tietoa muuttuvista nopeusrajoituksista ja
+Datex II -rajapinnan kautta jaetaan tietoa muuttuvista nopeusrajoituksista ja
 liikennemerkeistä. Tiedot saadaan Väyläviraston T-LOIK järjestelmästä.

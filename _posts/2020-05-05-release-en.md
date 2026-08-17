@@ -21,7 +21,7 @@ ROAD
 - DPO-740 HARJA tyokoneenseurannan tallennus ja jako viivageometrialla
   - More info at
     [Digitraffic > Road traffic > Road maintenance information](/en/road-traffic/#road-maintenance-information)
-- DPO-249 Datex2-SimppeliJSON
+- DPO-249 Datex II -SimppeliJSON
   - More info at
     [Digitraffic > Road traffic > Traffic incidents](/en/road-traffic/#traffic-incidents)
 

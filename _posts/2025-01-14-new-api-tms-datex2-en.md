@@ -1,5 +1,5 @@
 ---
-title: 'The Datex2 format APIs for data from TMS stations have been published.'
+title: 'The Datex II format APIs for data from TMS stations have been published.'
 image:
 published: true
 categories: en News
@@ -11,9 +11,9 @@ tags:
 - APIs
 ---
 
-The Datex2 format APIs for data from TMS stations have been published.
+The Datex II format APIs for data from TMS stations have been published.
 
-The Datex2 API version is 3.5 and data is shared in both JSON and XML formats.
+The Datex II API version is 3.5 and data is shared in both JSON and XML formats.
 
 The shared sensor data is as follows:
 
@@ -25,5 +25,5 @@ The shared sensor data is as follows:
 - Passings over a fixed 60-minute period `(OHITUKSET_60MIN_KIINTEA_SUUNTA1/2)`
 
 Documentation can be found
-[here](/en/road-traffic/#traffic-speed-and-traffic-volume-data-in-datex2-format).\
+[here](/en/road-traffic/#traffic-speed-and-traffic-volume-data-in-datex-ii-format).\
 Swagger descriptions [here](https://tie.digitraffic.fi/swagger/#/TMS%20V1).

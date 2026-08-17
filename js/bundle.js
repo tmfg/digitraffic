@@ -22647,10 +22647,17 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       $("<td/>", { class: "datex2-col3" }).text(start3),
       $("<td/>", { class: `datex2-col4${warn2}` }).text(end2),
       $("<td/>", { class: "datex2-col5" }).text(getTitle(message.properties.announcements)),
-      $("<td/>", { class: "datex2-col6" }).append($("<a />", {
-        target: "_blank",
-        href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
-      }).text("xml")),
+      $("<td/>", { class: "datex2-col6" }).append([
+        $("<a />", {
+          target: "_blank",
+          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.7.xml`
+        }).text("3.7"),
+        document.createTextNode(" / "),
+        $("<a />", {
+          target: "_blank",
+          href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}/datex2-3.5.xml`
+        }).text("3.5")
+      ]),
       $("<td/>", { class: "datex2-col7" }).append($("<a />", {
         target: "_blank",
         href: `${TRAFFIC_MESSAGES_URL}/messages/${message.properties.situationId}`

@@ -19,7 +19,7 @@ Changelog:
 
 ROAD
 
-- DPO-226 - Datex2 messages are now fetched into a new daemon
+- DPO-226 - Datex II messages are now fetched into a new daemon
 - DPO-268 - OPERATIONS listHistoryData throws Illegal Year excepotion
 - DPO-282 - Wheather camera images processing stability improvements
 

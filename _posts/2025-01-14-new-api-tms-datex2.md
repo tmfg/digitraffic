@@ -1,5 +1,5 @@
 ---
-title: 'LAM-asemista saatavien tietojen Datex2-muotoiset rajapinnat ovat julkaistu.'
+title: 'LAM-asemista saatavien tietojen Datex II -muotoiset rajapinnat ovat julkaistu.'
 image:
 published: true
 categories: Tiedotteet
@@ -11,9 +11,9 @@ tags:
 - Rajapinnat
 ---
 
-LAM-asemista saatavien tietojen Datex2-muotoiset rajapinnat ovat julkaistu.
+LAM-asemista saatavien tietojen Datex II -muotoiset rajapinnat ovat julkaistu.
 
-Rajapinnan Datex2 versio on 3.5 ja data jaetaan sekä JSON- että xml-muodoissa.
+Rajapinnan Datex II versio on 3.5 ja data jaetaan sekä JSON- että xml-muodoissa.
 
 Jaettava sensoridata on seuraava:
 
@@ -27,6 +27,6 @@ Jaettava sensoridata on seuraava:
   `(OHITUKSET_60MIN_KIINTEA_SUUNTA1/2)`
 
 Dokumentaatiot löytyvät sivustolta
-[täältä](/tieliikenne/#liikenteen-nopeus--ja-määrätiedot-datex2-muodossa).\
+[täältä](/tieliikenne/#liikenteen-nopeus--ja-määrätiedot-datex-ii--muodossa).\
 Swagger API -kuvaukset löytyvät
 [täältä](https://tie.digitraffic.fi/swagger/#/TMS%20V1).

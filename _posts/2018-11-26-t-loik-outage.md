@@ -15,5 +15,5 @@ tags:
 Lähdejärjestelmissä tehdään suunniteltuja huoltotöitä 27.11.2018 klo 11:00 -
 13:00.
 
-Tästä johtuen Datex2 häiriötiedotteissa, tietöissä ja painorajoitteissa voi
+Tästä johtuen Datex II häiriötiedotteissa, tietöissä ja painorajoitteissa voi
 ilmetä katkoja. Pahoittelemme tästä aiheutuvaa häiriötä.
