@@ -15,6 +15,6 @@ tags:
 
 Kuten aiemmin ilmoitettu, olemme alkaneet tänään (3.12.2024) rajoittamaan
 sellaisia kyselyjä, joissa ei ole mukana
-[Digitraffic-User otsikkoa](https://www.digitraffic.fi/tuki/ohjeita/#digitraffic-user--otsikko).
+[Digitraffic-User otsikkoa](/tuki/ohjeita/#digitraffic-user--otsikko).
 Rajapinta vastaa 429 statuskoodilla, mikäli rajat ylittyvät. Lisäämällä
 Digitraffic-User otsikon pyyntöihin voit jatkaa käyttöä entiseen tapaan.

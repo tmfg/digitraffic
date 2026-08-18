@@ -15,7 +15,7 @@ tags:
 
 As previously stated, we have started today (3.12.2024) to throttle queries that
 do not include a
-[Digitraffic-User header](https://www.digitraffic.fi/en/support/instructions/#digitraffic-user).
+[Digitraffic-User header](/en/support/instructions/#digitraffic-user).
 The API responds with a 429 status code if the limits are exceeded. By adding a
 Digitraffic-User header to your requests, you can continue using the service as
 before.
