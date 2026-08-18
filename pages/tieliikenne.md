@@ -47,7 +47,7 @@ hetkellä:
   induktiosilmukalta saadaan tietoja liikennemääristä ja nopeuksista
   ajoneuvoluokittain.
 - Liikennetiedotteet. Tieliikenteen häiriötiedotteet, painorajoitukset, tietyöt
-  ja erikoiskuljetukset ovat saatavissa Datex2 sekä Simppeli-JSON -muodossa.
+  ja erikoiskuljetukset ovat saatavissa Datex II sekä Simppeli-JSON -muodossa.
 - TMC/ALERT-C paikannuspisteistö, jota käytetään mm. liikennetiedotteissa.
 - Muuttuvien liikennemerkkien tiedot
 - Maanteiden kunnossapitotiedot
@@ -253,9 +253,9 @@ Tietoa päivitetään lähes reaaliaikaisesti, mutta ulospäin tarjottavaa viest
 pidetään välimuistissa minuutin ajan ts. se päivittyy minuutin välein.
 Reaaliaikaiset tiedot on saatavissa WebSocket-rajapinnasta.
 
-#### Liikenteen nopeus- ja määrätiedot Datex2-muodossa
+#### Liikenteen nopeus- ja määrätiedot Datex II -muodossa
 
-Rajapinnan Datex2 versio on 3.5 ja data jaetaan sekä JSON- että xml-muodoissa.
+Rajapinnan Datex II versio on 3.5 ja data jaetaan sekä JSON- että xml-muodoissa.
 
 Jaettava sensoridata on seuraava:
 
@@ -270,32 +270,32 @@ Jaettava sensoridata on seuraava:
 ##### Asemien tiedot ja yksittäisen aseman tiedot
 
 [`/api/tms/v1/stations/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2){:target="_blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [`/api/tms/v1/stations/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2.xml){:target="_
 blank"}
-(Datex2 XML)\
+(Datex II XML)\
 [`/api/tms/v1/stations/{id}/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2){:target="_
 blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [`/api/tms/v1/stations/{id}/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2.xml){:
 target="_blank"}
-(Datex2 XML)\
+(Datex II XML)\
 
 ##### Kaikkien asemien data ja yksittäisen aseman data
 
 [`/api/tms/v1/stations/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2){:target="_
 blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [`/api/tms/v1/stations/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2.xml){:
 target="_blank"}
-(Datex2 XML)\
+(Datex II XML)\
 [`/api/tms/v1/stations/{id}/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2){:
 target="_blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [
 `/api/tms/v1/stations/{id}/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2.xml){:
 target="_blank"}
-(Datex2 XML)
+(Datex II XML)
 
 #### Tilastohaku
 
@@ -347,6 +347,21 @@ aikavyöhykeellä ISO 8601 -muotoisesta päivämäärästä.
 - **Painorajoitus** `WEIGHT_RESTRICTION`
     - Viesti sisältää poikkeuksellisia teiden käyttöä rajoittavia
       painorajoituksia.
+
+#### Liikennetiedotteiden DATEX II 3.7-muotoisen datan rajapinnat
+
+- [
+  `/api/traffic-message/v2/exempted-transports/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-3.7.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/roadworks/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-3.7.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/traffic-announcements/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements/datex2-3.7.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/weight-restrictions/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.7.xml){:
+  target="_blank"}
 
 #### Liikennetiedotteiden DATEX II 3.5-muotoisen datan rajapinnat
 
@@ -684,10 +699,13 @@ Esim. `tms-v2/#`
 
 #### Liikennetiedotteet
 
+- `traffic-message-v3/datex2-3.7/<situationType>` Viestin sisältö on DatexII 3.7 XML muotoa.
 - `traffic-message-v3/datex2-3.5/<situationType>` Viestin sisältö on DatexII 3.5 XML muotoa.
 - `traffic-message-v3/datex2-2.2.3/<situationType>` Viestin sisältö on DatexII 2.2.3 XML muotoa.
 - `traffic-message-v3/simple/<situationType>` Viestin sisältö on Simple JSON joka on gzip-pakattu ja
   base64-enkoodattu.
+- `traffic-message-v3/datex2-3.7/SRTI` Viestin sisältö on DatexII 3.7 XML muotoa.
+- `traffic-message-v3/datex2-3.7/RTTI` Viestin sisältö on DatexII 3.7 XML muotoa.
 - `traffic-message-v3/datex2-3.5/SRTI` Viestin sisältö on DatexII 3.5 XML muotoa.
 - `traffic-message-v3/datex2-3.5/RTTI` Viestin sisältö on DatexII 3.5 XML muotoa.
 

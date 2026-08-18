@@ -41,7 +41,7 @@ API includes:
 - Traffic measurement system (TMS) data. Information about average speeds and
   traffic amounts.
 - Traffic messages. Traffic disorders, weight restrictions, roadworks and weight
-  restrictions are available in Datex2 and Simple-JSON format.
+  restrictions are available in Datex II and Simple-JSON format.
 - TMC/ALERT-C location data which is used in Traffic messages.
 - Variable signs
 - Road maintenance information
@@ -242,9 +242,9 @@ values.
 Data is updated almost in real time but information is cached. Actual update
 interval is one minute. Real time data can be read from WebSocket.
 
-#### Traffic speed and traffic volume data in Datex2 format
+#### Traffic speed and traffic volume data in Datex II format
 
-The Datex2 API version is 3.5 and data is shared in both JSON and XML formats.
+The Datex II API version is 3.5 and data is shared in both JSON and XML formats.
 
 The shared sensor data is as follows:
 
@@ -257,32 +257,32 @@ The shared sensor data is as follows:
 ##### Information of all the stations and for a single station
 
 [`/api/tms/v1/stations/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2){:target="_blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [`/api/tms/v1/stations/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/datex2.xml){:target="_
 blank"}
-(Datex2 XML)\
+(Datex II XML)\
 [`/api/tms/v1/stations/{id}/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2){:target="_
 blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [`/api/tms/v1/stations/{id}/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/datex2.xml){:
 target="_blank"}
-(Datex2 XML)\
+(Datex II XML)\
 
 ##### Data for all the stations and for a single station
 
 [`/api/tms/v1/stations/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2){:target="_
 blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [`/api/tms/v1/stations/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/data/datex2.xml){:
 target="_blank"}
-(Datex2 XML)\
+(Datex II XML)\
 [`/api/tms/v1/stations/{id}/data/datex2`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2){:
 target="_blank"}
-(Datex2 JSON)\
+(Datex II JSON)\
 [
 `/api/tms/v1/stations/{id}/data/datex2.xml`](https://tie.digitraffic.fi/api/tms/v1/stations/23001/data/datex2.xml){:
 target="_blank"}
-(Datex2 XML)
+(Datex II XML)
 
 #### Statistics
 
@@ -331,6 +331,21 @@ date format.
 - **Weight restriction** `WEIGHT_RESTRICTION`
     - Message contains weight restriction limiting usage of the roads.
 
+#### Traffic messages DATEX II 3.7-APIs
+
+- [
+  `/api/traffic-message/v2/exempted-transports/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-3.7.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/roadworks/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/roadworks/datex2-3.7.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/traffic-announcements/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/traffic-announcements/datex2-3.7.xml){:
+  target="_blank"}
+- [
+  `/api/traffic-message/v2/weight-restrictions/datex2-3.7.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.7.xml){:
+  target="_blank"}
+
 #### Traffic messages DATEX II 3.5-APIs
 
 - [
@@ -346,7 +361,7 @@ date format.
   `/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/weight-restrictions/datex2-3.5.xml){:
   target="_blank"}
 
-#### Traffic messages DATEX II 3.5-APIs
+#### Traffic messages DATEX II 2.2.3-APIs
 
 - [
   `/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml`](https://tie.digitraffic.fi/api/traffic-message/v2/exempted-transports/datex2-2.2.3.xml){:
@@ -669,10 +684,13 @@ Topics are constructed like shown below.
 
 #### Traffic messages
 
+- `traffic-message-v3/datex2-3.7/<situationType>` Message payload is in DatexII 3.7 XML format.
 - `traffic-message-v3/datex2-3.5/<situationType>` Message payload is in DatexII 3.5 XML format.
 - `traffic-message-v3/datex2-2.2.3/<situationType>` Message payload is in DatexII 2.2.3 XML format.
 - `traffic-message-v3/simple/<situationType>` Message payload is in Simple JSON format that is gzipped and
   base64-encoded.
+- `traffic-message-v3/datex2-3.7/SRTI` Message payload is in DatexII 3.7 XML format.
+- `traffic-message-v3/datex2-3.7/RTTI` Message payload is in DatexII 3.7 XML format.
 - `traffic-message-v3/datex2-3.5/SRTI` Message payload is in DatexII 3.5 XML format.
 - `traffic-message-v3/datex2-3.5/RTTI` Message payload is in DatexII 3.5 XML format.
 
