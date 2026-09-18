@@ -57,7 +57,7 @@ Full API descriptions can be found in
 target="_blank"}
 
 Port calls are fetched from
-[Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_
+Portnet(https://www.traficom.fi/fi/vesivaylat-ja-satamat/satamat/portnet){:target="_
 blank"}.
 
 Related metadata:

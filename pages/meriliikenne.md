@@ -60,7 +60,7 @@ Rajapintakuvaukset löytyvät
 target="_blank"}
 
 Satamakäynnit haetaan
-[Portnet](https://www.traficom.fi/fi/liikenne/merenkulku/portnet){:target="_blank"}
+[Portnet](https://www.traficom.fi/fi/vesivaylat-ja-satamat/satamat/portnet){:target="_blank"}
 -järjestelmästä.
 
 Metadatat:

@@ -1910,7 +1910,7 @@ järjestykseen.
     ennustetta ei voida antaa luotettavasti, liikenteenohjaaja voi kytkeä
     unknownDelay-bitin päälle. Bitti tarkoittaa, että juna on myöhässä, mutta ei
     osata kertoa kuinka paljon. Lisätietoa:
-    [https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla](https://www.liikennevirasto.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla)_
+    [https://vayla.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla](https://vayla.fi/-/juna-myohassa-eika-arviota-lahtoajasta-asemien-nayttotaulut-kertovat-taman-pian-uudella-tavalla)_
   - ![Optional]({{ site.baseurl }}{{ "/img/rata/optional.png" }}) actualTime:
     datetime ![Info]({{ site.baseurl }}{{ "/img/rata/info.png" }}) _Aika jolloin
     juna saapui tai lähti asemalta_
