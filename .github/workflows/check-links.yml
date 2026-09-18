@@ -44,4 +44,4 @@ jobs:
           status: ${{ job.status }}
           fields: repo, job
           text: "TEMPORARY TEST of tmfg/digitraffic-actions@slack-notify/v1 — ignore"
-          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
+          webhook-url: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
