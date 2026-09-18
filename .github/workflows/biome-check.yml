@@ -19,6 +19,20 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@4c91541eaada48f67d7dbd7833600ce162b68f51 # v2.7.1
         with:
-          version: latest
+          # Read the version from the lockfile so CI matches the local install
+          # instead of drifting with "latest".
+          working-dir: .
       - name: Run Biome
         run: biome ci --reporter=github --error-on-warnings --no-errors-on-unmatched .
+
+      # The github reporter only emits annotations, so the summary is written separately.
+      - name: Write job summary
+        if: always()
+        run: |
+          {
+            echo '## Biome'
+            echo ''
+            echo '```'
+            biome ci --reporter=summary --error-on-warnings --no-errors-on-unmatched . 2>&1 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
