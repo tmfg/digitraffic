@@ -6,7 +6,7 @@ on:
 
 jobs:
   scan:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -16,7 +16,7 @@ jobs:
       - name: Secret scanning
         uses: trufflesecurity/trufflehog@363923b901c911a9164f50b6c423f47c15372b1c # v3.97.4
         with:
-          version: 3.95.8@sha256:2233f7b95e2659c15de11715352e840397ce6d4553fe3d40e13e742e5b239be4
+          version: 3.97.4@sha256:562bc231afa9de3d04de44cfe624252b08207de1fc3cebc5e7ed92bed7f279e4
           base: ""
           head: ${{ github.ref_name }}
           extra_args: --exclude-paths=.github/trufflehog-exclude.txt --results=verified,unknown
