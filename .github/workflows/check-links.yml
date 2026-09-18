@@ -34,10 +34,9 @@ jobs:
             https://liikenne.palautevayla.fi/feedback
       - name: Notify Slack
         if: failure()
-        uses: 8398a7/action-slack@v3
+        uses: tmfg/digitraffic-actions@slack-notify/v1
         with:
           status: failure
           fields: repo, job
           text: "www.digitraffic.fi link check failed"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          webhook-url: ${{ secrets.SLACK_WEBHOOK }}
