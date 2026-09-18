@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Link checking
         id: link_check
+        # TEMPORARY: skipped so the Slack step is reached in seconds instead of
+        # crawling the whole site. Revert before merging.
+        if: false
         uses: JustinBeckwith/linkinator-action@12f7a61a56e5e75d659f0dfd6357e2d852ede281 # v2.5.0
         with:
           paths: https://www.digitraffic.fi
@@ -33,10 +36,12 @@ jobs:
             https://www.gnu.org/software/wget/
             https://liikenne.palautevayla.fi/feedback
       - name: Notify Slack
-        if: failure()
+        # TEMPORARY: always() and job.status so a successful run also delivers,
+        # to verify the replacement action. Revert before merging.
+        if: always()
         uses: tmfg/digitraffic-actions@slack-notify/v1
         with:
-          status: failure
+          status: ${{ job.status }}
           fields: repo, job
-          text: "www.digitraffic.fi link check failed"
+          text: "TEMPORARY TEST of tmfg/digitraffic-actions@slack-notify/v1 — ignore"
           webhook-url: ${{ secrets.SLACK_WEBHOOK }}
