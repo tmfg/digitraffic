@@ -21,4 +21,4 @@ jobs:
         with:
           version: latest
       - name: Run Biome
-        run: biome ci --reporter=github --no-errors-on-unmatched .
+        run: biome ci --reporter=github --error-on-warnings --no-errors-on-unmatched .
