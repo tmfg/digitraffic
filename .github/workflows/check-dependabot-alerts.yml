@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-26.04
     steps:
       - name: Check Dependabot alerts
-        uses: tmfg/digitraffic-actions@dependabot-slack/v1
+        uses: tmfg/digitraffic-actions@fbeb7a1b2641eab9b3068949630cf19054d290ca # dependabot-slack/v1
         with:
           TOKEN: ${{ secrets.DEPENDABOT_ALERTS_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
