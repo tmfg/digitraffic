@@ -74,6 +74,11 @@ target="_blank"}
 [`https://meri.digitraffic.fi/api/port-call/v1/code-descriptions`](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:
 target="_blank"}
 
+Lisäksi pilottikäytössä on satamakäyntien haku [NEMO](https://www.emsw.fi/en){:target="_blank"}-järjestelmästä.
+
+[`https://meri.digitraffic.fi/api/port-call/v2/visits`](https://meri.digitraffic.fi/api/port-call/v2/visits){:target="_blank"}
+
+
 ### AIS-tiedot
 
 [`https://meri.digitraffic.fi/api/ais/v1/locations`](https://meri.digitraffic.fi/api/ais/v1/locations){:

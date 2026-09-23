@@ -56,8 +56,7 @@ Full API descriptions can be found in
 [`https://meri.digitraffic.fi/api/port-call/v1/port-calls`](https://meri.digitraffic.fi/api/port-call/v1/port-calls){:
 target="_blank"}
 
-Port calls are fetched from
-Portnet(https://www.traficom.fi/fi/vesivaylat-ja-satamat/satamat/portnet){:target="_
+Port calls are fetched from [Portnet](https://www.traficom.fi/fi/vesivaylat-ja-satamat/satamat/portnet){:target="_
 blank"}.
 
 Related metadata:
@@ -70,6 +69,11 @@ target="_blank"}
 
 [`https://meri.digitraffic.fi/api/port-call/v1/code-descriptions`](https://meri.digitraffic.fi/api/port-call/v1/code-descriptions){:
 target="_blank"}
+
+We are also piloting port calls from [NEMO](https://www.emsw.fi/en){:target="_blank"}.
+
+[`https://meri.digitraffic.fi/api/port-call/v2/visits`](https://meri.digitraffic.fi/api/port-call/v2/visits){:target="_blank"}
+
 
 ### Vessel locations
 
