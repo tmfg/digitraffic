@@ -79,8 +79,10 @@ There are prebuilt reports based on the data available through a form.
 
 [`https://tie.digitraffic.fi/ui/tms/history/`](https://tie.digitraffic.fi/ui/tms/history/){:target="_blank"}
 
-- **Available data**: statistics of traffic volumes is available since 2010,
-  average speeds since 2020 and raw data since December 2021.
+- **Coverage**: traffic volume data is available since 2010 and speed data since
+  2020. File-based raw data is available since December 2021. Original
+  hourly observations can be viewed using the form search (Raw data
+  observations) for the preceding two weeks.
 - **Updating and reliability of traffic volumes**: yesterday’s data is updated
   each day usually between 8:00 and 9:00. If there are deviations in traffic
   volumes this subset of data is updated usually within a couple of days.

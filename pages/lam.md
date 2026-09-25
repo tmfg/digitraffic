@@ -96,9 +96,10 @@ kautta:
 
 [`https://tie.digitraffic.fi/ui/tms/history/`](https://tie.digitraffic.fi/ui/tms/history/){:target="_blank"}
 
-- **Kattavuus**: Liikennemäärädatan osalta aineistoa on saatavilla vuodesta 2010
-  alkaen ja nopeustietoja vuodesta 2020 alkaen. Raakadatatiedot löytyvät 12/2021
-  lähtien.
+- **Kattavuus**: Liikennemäärädataa on saatavilla vuodesta 2010 alkaen ja
+  nopeustietoja vuodesta 2020 alkaen. Tiedostopohjaiset raakadatat ovat
+  saatavilla 12/2021 lähtien. Lomakehaulla alkuperäisiä tuntitason havaintoja
+  (Raakadatahavainnot-haku) voi tarkastella kahden edeltävän viikon ajalta.
 - **Liikennemäärätietojen ajantasaisuus ja tiedon luotettavuus**: havaintopäivän
   tiedot tulevat tyypillisesti saataville seuraavana päivänä klo 8 ja 9 välillä
   tai jos liikennemäärätiedoissa on havaittu tarkistettavaa, tulevat nämä
