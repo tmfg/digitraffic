@@ -1,19 +1,17 @@
 /** Dependencies **/
 import $ from "jquery";
 import tippy from "tippy.js"; // uses popper
-import Paho from "paho-mqtt";
-import * as pako from "pako";
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
-import highlightjs_css from "highlight.js/styles/default.css";
+import "highlight.js/styles/default.css";
 import Alpine from "alpinejs";
 
 /** Static JavaScript files **/
-import filter_applications from "./js/filter-applications";
-import filter_developments from "./js/filter-developments";
-import filter_posts from "./js/filter-posts";
-import script_api_changes from "./js/script-api-changes.js";
-import script_twc from "./js/script-twc";
+import "./js/filter-applications";
+import "./js/filter-developments";
+import "./js/filter-posts";
+import "./js/script-api-changes.js";
+import "./js/script-twc";
 import {
   mqtt_disconnect,
   mqtt_reconnect,
@@ -22,9 +20,9 @@ import {
 import * as digitrafficSearch from "./js/search";
 
 /** Compiled JavaScript files **/
-import script_api_status, { getServiceStatus } from "../dist/script-api-status";
-import script_datex2 from "../dist/script-datex2";
-import script from "../dist/script";
+import "../dist/script-api-status";
+import "../dist/script-datex2";
+import "../dist/script";
 
 // Register objects/functions to window
 window.$ = $;

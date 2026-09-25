@@ -140,8 +140,9 @@ function addMessage(destination, message) {
 }
 
 export function mqtt_updateTopicTemplate() {
-    $("#topic").val($("#topic_select").val());
-    console.log("updateTopicTemplate changed to " + $("#topic").val());
+    const topic = $("#topic");
+    topic.val($("#topic_select").val());
+    console.log("updateTopicTemplate changed to " + topic.val());
 }
 
 export function mqtt_reconnect() {
