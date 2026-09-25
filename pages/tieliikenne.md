@@ -69,11 +69,6 @@ Katso
 Tuettujen ja vanhentuneiden rajapintojen listaus löytyy
 [täältä](/tuki/rajapintojen-muutokset/).
 
-### Vaihtoehtoiset polttoaineet (AFIR)
-
-Vaihtoehtoisten polttoaineiden dokumentaatio löytyy
-omalta sivultaan: [Vaihtoehtoiset polttoaineet - AFIR][afir_fi]
-
 ## REST/JSON-rajapinnat
 
 ### Rajapintojen Swagger-kuvaukset
@@ -82,6 +77,16 @@ Rajapintakuvaukset löytyvät [Swagger-kuvauksesta]{:target="_blank"}.
 
 Sieltä löytyvät rajapintojen tarkemmat parametrit, joita kaikkia ei ole tässä
 dokumentaatiossa välttämättä kerrottu.
+
+### Vaihtoehtoiset polttoaineet (AFIR)
+
+Vaihtoehtoisten polttoaineiden dokumentaatio löytyy sivulta
+[Vaihtoehtoiset polttoaineet - AFIR][afir_fi].
+
+### Tie- ja katuverkko (Digitraffic Road Network)
+
+Tie- ja katuverkko -aineiston kuvaus löytyy sivulta
+[Tie- ja katuverkko][roadnetwork_fi].
 
 ### Kelikamerat
 
@@ -849,3 +854,7 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 [afir_fi]: /tieliikenne/afir/  "Vaihtoehtoiset polttoaineet (AFIR)"
 
 [afir_en]: /en/road-traffic/afir/  "Alternative Fuels (AFIR)"
+
+[roadnetwork_fi]: /tieliikenne/tie-ja-katuverkko/  "Tie- ja katuverkko"
+
+[roadnetwork_en]: /en/road-traffic/road-and-street-network/  "Road and street network"

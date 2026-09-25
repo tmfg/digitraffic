@@ -61,10 +61,6 @@ See
 Listings of supported and deprecated APIs can be found
 [here](/en/support/api-changes/).
 
-### Alternative Fuels (AFIR)
-
-Documentation on alternative fuels can be found on a dedicated page: [Alternative Fuels – AFIR][afir_en]
-
 ## REST/JSON -APIs
 
 ### Swagger descriptions of APIs
@@ -73,6 +69,16 @@ Full API descriptions can be found in [Swagger-documentation]{:target="_blank"}
 
 There you can find more detailed information about the available parameters of
 the APIs.
+
+### Alternative Fuels (AFIR)
+
+Documentation on alternative fuels can be found on the
+[Alternative Fuels – AFIR][afir_en] page.
+
+### Road and street network (Digitraffic Road Network)
+
+Documentation on the road and street network can be found on the
+[Road and street network][roadnetwork_en] page.
 
 ### Weather cameras
 
@@ -833,3 +839,7 @@ Messages (<span id="messagesPerMinute">&lt;counting&gt;</span> messages per minu
 [afir_fi]: /tieliikenne/afir/  "Vaihtoehtoiset polttoaineet (AFIR)"
 
 [afir_en]: /en/road-traffic/afir/  "Alternative Fuels (AFIR)"
+
+[roadnetwork_fi]: /tieliikenne/tie-ja-katuverkko/  "Tie- ja katuverkko"
+
+[roadnetwork_en]: /en/road-traffic/road-and-street-network/  "Road and street network"
