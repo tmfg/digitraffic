@@ -1,0 +1,104 @@
+name: Build and Validate
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and Validate
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af4d1d8 # v4.0.2
+        with:
+          node-version: "24.x"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
+        with:
+          version: 10.34.5
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Clean
+        run: pnpm run clean
+
+      - name: Build (TypeScript)
+        run: pnpm run build
+
+      - name: Install assets (icons, fonts, bundle)
+        run: pnpm run install-all
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@a6e6f86333f0a2523ece813be7cf370f6c5c589e # v1.190.0
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: pnpm run build:jekyll
+
+      - name: Upload bundle artifacts
+        if: always()
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        with:
+          name: build-artifacts
+          path: |
+            js/bundle*.js*
+            _scss/bundle.scss
+          retention-days: 7
+
+      - name: Write job summary
+        if: always()
+        run: |
+          {
+            echo '## Build Status'
+            echo ''
+            echo '✅ Build completed successfully'
+            echo ''
+            echo '### Build Steps'
+            echo '- Install dependencies'
+            echo '- Clean'
+            echo '- TypeScript compilation'
+            echo '- Install assets (icons, fonts, bundle)'
+            echo '- Build Jekyll site'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Notify Slack on failure
+        if: failure()
+        uses: tmfg/digitraffic-actions@dd6f974ac0e0fe24e70e70487de009a669c0d704 # slack-notify/v1
+        with:
+          status: failure
+          fields: repo, job, commit, author
+          text: "Build failed"
+          webhook-url: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
+
+
+
+
+
