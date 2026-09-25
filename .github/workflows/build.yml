@@ -52,6 +52,8 @@ jobs:
         run: pnpm run build
 
       - name: Install assets (icons, fonts, bundle)
+        env:
+          npm_config_script_shell: /bin/bash
         run: pnpm run install-all
 
       - name: Setup Ruby
@@ -75,18 +77,26 @@ jobs:
 
       - name: Write job summary
         if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
         run: |
           {
             echo '## Build Status'
             echo ''
-            echo '✅ Build completed successfully'
-            echo ''
-            echo '### Build Steps'
-            echo '- Install dependencies'
-            echo '- Clean'
-            echo '- TypeScript compilation'
-            echo '- Install assets (icons, fonts, bundle)'
-            echo '- Build Jekyll site'
+            case "$JOB_STATUS" in
+              success)
+                echo '✅ Build completed successfully'
+                ;;
+              failure)
+                echo '❌ Build failed'
+                ;;
+              cancelled)
+                echo '⚠️ Build was cancelled'
+                ;;
+              *)
+                echo "Build status: $JOB_STATUS"
+                ;;
+            esac
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Notify Slack on failure
@@ -94,9 +104,7 @@ jobs:
         uses: tmfg/digitraffic-actions@88cc4d1a9c5cb96c037cb0dec41e1c64804b4d0e # slack-notify/v1
         with:
           status: failure
-          fields: repo, job, commit, author
+          fields: repo, job, took
           text: "Build failed"
           webhook-url: ${{ secrets.SLACK_ALARMS_WEBHOOK_URL }}
-
-
 
