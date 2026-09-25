@@ -1,7 +1,7 @@
 'use strict';
 import $ from "jquery";
 import Paho from "paho-mqtt"
-import pako from "pako"
+import * as pako from "pako"
 
 let lines = [];
 let messagesLastMinuteCount = 0, client;

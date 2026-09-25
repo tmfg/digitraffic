@@ -2,7 +2,7 @@
 import $ from "jquery";
 import tippy from "tippy.js"; // uses popper
 import Paho from "paho-mqtt";
-import pako from "pako";
+import * as pako from "pako";
 import hljs from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
 import highlightjs_css from "highlight.js/styles/default.css";
