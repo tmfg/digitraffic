@@ -21,6 +21,7 @@ exclude:
   - _site
   - src
   - dist
+  - vendor
   - node_modules
   - .dockerignore
   - .gitignore
