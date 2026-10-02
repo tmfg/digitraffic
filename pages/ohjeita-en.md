@@ -183,28 +183,13 @@ Every different combination of parameters is a separate response in the cache.
 The more unique your parameters are, the less often the response is found in the
 cache and the more often the request reaches the server. If you need almost all
 of the data, do not restrict it at all, and use the same parameters from one
-request to the next.
-
-### Help the cache
-
-If you are fetching data that is valid at the moment, give the previous UTC
-midnight (`T00:00:00Z`) as the value of the `time` parameter instead of the
-current clock time — an exact time makes every request unique.
-Give the parameters in alphabetical order.
+request to the next. Give the parameters in alphabetical order for more efficient caching.
 
 ### Fetch large datasets in parts
 
 If the whole dataset does not come in a single request, the easiest way is to
 fetch it one subtype at a time with the `typeNames` parameter. The FAQ also
 describes the other paging methods.
-
-### Combine the data yourself
-
-You can include related data with something like
-`propertyName=kunnossapitoalue.nimi`, but that suits one-off needs best. An
-application that uses the interface regularly is better off fetching the
-datasets separately and combining them at its own end: the responses are then
-more likely to come from the cache and are faster.
 
 # Cache
 
