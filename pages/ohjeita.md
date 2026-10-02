@@ -154,6 +154,54 @@ tehdä huomattavasti enemmän, jos otsikko on kyselyissä mukana.
 | **tie/meri.digitraffic.fi:n V1-rajapinnat** | 60                | IP         |
 | **infra- ja jeti-api**                      | 30                | IP         |
 
+## Infra-API:n ja Jeti-API:n tehokas käyttö
+
+Infra-API ja Jeti-API ovat raskaita rajapintoja, ja kyselyparametreilla on suuri
+vaikutus siihen, kuinka paljon työtä palvelin joutuu pyyntöäsi varten tekemään.
+Alla tärkeimmät periaatteet. Yksityiskohdat, esimerkit ja loput parametrit
+löytyvät rajapintojen omista FAQ-sivuista:
+[Infra-API FAQ](https://rata.digitraffic.fi/infra-api/faq.html) ja
+[Jeti-API FAQ](https://rata.digitraffic.fi/jeti-api/faq.html).
+
+### Jätä laskennalliset kentät pois
+
+Osa kentistä on laskennallisia: ne muodostetaan vasta pyynnön aikana ja ovat
+selvästi muita raskaampia. Rajapinnan HTML-muodossa ne näkyvät punaisina
+sarakeotsikoina. Ne kannattaa jättää pois silloin kun et tarvitse niitä.
+
+Kentän saa pois `propertyName`-parametrissa kirjoittamalla sen nimen eteen
+väliviivan:
+
+```
+propertyName=-liikennesuunnittelualueet,-ratakmvalit
+```
+
+### Älä kuitenkaan rajaa turhaan
+
+Jokainen erilainen parametriyhdistelmä on välimuistissa oma vastauksensa. Mitä
+yksilöllisemmät parametrit, sitä harvemmin vastaus löytyy välimuistista ja sitä
+useammin pyyntö päätyy palvelimelle asti. Jos tarvitset lähes kaiken datan, älä
+rajaa sitä lainkaan, ja käytä samoja parametreja pyynnöstä toiseen.
+
+### Auta välimuistia
+
+Jos haet tällä hetkellä voimassaolevaa dataa, anna `time`-parametrin arvoksi edellinen UTC-ajan keskiyö (`T00:00:00Z`) äläkä todellista kellonaikaa — tarkka kellonaika tekee jokaisesta pyynnöstä uniikin.
+Anna parametrit aakkosjärjestyksessä. 
+
+### Hae suuret aineistot osissa
+
+Jos koko aineisto ei tule yhdellä pyynnöllä, helpoin tapa on hakea se
+`typeNames`-parametrilla alityyppi kerrallaan. FAQ:ssa on kuvattu myös muut
+sivutustavat.
+
+### Yhdistele tiedot itse
+
+Voit hakea liittyvää dataa mukaan tyyliin `propertyName=kunnossapitoalue.nimi`,
+mutta se sopii lähinnä kertaluonteisiin tarpeisiin. Säännöllisesti rajapintaa
+käyttävän sovelluksen kannattaa hakea aineistot erikseen ja yhdistellä ne omassa
+päässään: vastaukset löytyvät silloin todennäköisemmin välimuistista ja ovat
+nopeampia.
+
 # Cache
 
 **K**: Miksi saan rajapinnoilta usein saman vastauksen?\

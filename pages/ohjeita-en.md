@@ -155,6 +155,57 @@ the header is set.
 | **tie/meri.digitraffic.fi V1-interfaces** | 60                     | IP      |
 | **infra- and jeti-api**                   | 30                     | IP      |
 
+## Using Infra-API and Jeti-API efficiently
+
+Infra-API and Jeti-API are heavy interfaces, and the query parameters have a
+large effect on how much work the server has to do for your request. The most
+important principles are described below. For more details, examples and the full list of
+parameters, see the interfaces' own FAQ pages:
+[Infra-API FAQ](https://rata.digitraffic.fi/infra-api/faq.html) and
+[Jeti-API FAQ](https://rata.digitraffic.fi/jeti-api/faq.html).
+
+### Leave out computed fields
+
+Some fields are computed: they are produced only when the request is made, and
+they are clearly heavier than the rest. In the HTML format of the interface they
+are shown as red column headers. Leave computed fields out if you do not need them.
+
+A field is left out by writing a dash in front of its name in the
+`propertyName` parameter:
+
+```
+propertyName=-liikennesuunnittelualueet,-ratakmvalit
+```
+
+### But do not restrict without reason
+
+Every different combination of parameters is a separate response in the cache.
+The more unique your parameters are, the less often the response is found in the
+cache and the more often the request reaches the server. If you need almost all
+of the data, do not restrict it at all, and use the same parameters from one
+request to the next.
+
+### Help the cache
+
+If you are fetching data that is valid at the moment, give the previous UTC
+midnight (`T00:00:00Z`) as the value of the `time` parameter instead of the
+current clock time — an exact time makes every request unique.
+Give the parameters in alphabetical order.
+
+### Fetch large datasets in parts
+
+If the whole dataset does not come in a single request, the easiest way is to
+fetch it one subtype at a time with the `typeNames` parameter. The FAQ also
+describes the other paging methods.
+
+### Combine the data yourself
+
+You can include related data with something like
+`propertyName=kunnossapitoalue.nimi`, but that suits one-off needs best. An
+application that uses the interface regularly is better off fetching the
+datasets separately and combining them at its own end: the responses are then
+more likely to come from the cache and are faster.
+
 # Cache
 
 **Q**: Why do APIs often return the same response?\
