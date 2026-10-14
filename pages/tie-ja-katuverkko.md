@@ -21,29 +21,15 @@ published: true
 
 ## Yleistä
 
-<!-- TODO (Road Network -tiimi): kuvaus osiosta -->
+Digitraffic Road Network on kansallinen avoimen datan tietojärjestelmä. Se sisältää koko Suomen tie- ja katuverkon keskilinjageometrian sekä tärkeimmät ominaisuustiedot.
 
-Tällä sivulla kuvataan Suomen tie- ja katuverkon rakennetta ja siihen
-liittyviä aineistoja. Tie- ja katuverkkoon liittyvät tiedot muodostavat
-perustan monille muille Digitraffic-palvelun tarjoamille tieliikenteen
-aineistoille, kuten liikennetiedotteille ja kelitiedoille, jotka sijoittuvat
-tie- ja katuverkon eri kohtiin.
+Digitraffic Road Network tarjoaa maksuttoman ja yhtenäisen, digitaalisessa muodossa olevan liikenneverkon kuvauksen.
+Aineistoja voidaan hyödyntää esimerkiksi reititys- ja karttapalveluissa sekä muissa tie- ja katuverkon tietoja hyödyntävissä palveluissa.
 
 ## Aineistot
 
-<!-- TODO: linkit/kuvaukset rajapintoihin ja aineistoihin -->
-
-Tie- ja katuverkon aineistot julkaistaan Digitraffic-rajapintojen kautta
-koneluettavassa muodossa. Aineistot sisältävät muun muassa tie- ja
-katuverkon geometrian, tienumerot ja -osoitteet sekä muut verkon
-rakenteeseen liittyvät tiedot, joita voi hyödyntää esimerkiksi reititys- ja
-karttasovelluksissa.
+Digitraffic Road Network -aineistot ovat avointa dataa ja maksutta ladattavissa Digitraffic-palvelusta: [Aineistot | Digitraffic](https://tie.digitraffic.fi/roadnetwork/#/)
 
 ## Lisätietoa
 
-<!-- TODO: linkit dokumentaatioon, yhteystiedot tms. -->
-
-Lisätietoa tie- ja katuverkon aineistoista ja niiden käytöstä löytyy
-Digitraffic-palvelun dokumentaatiosta. Mikäli sinulla on kysyttävää
-aineistoista, voit olla yhteydessä Digitraffic-tiimiin sivun alalaidasta
-löytyvien yhteystietojen kautta.
+Lisätietoa Digitraffic Road Networkista, sen tietosisällöstä ja tietojen toimittamisesta: [Digitraffic Road Network ](https://www.fintraffic.fi/fi/digitrafficroadnetwork)

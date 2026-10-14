@@ -21,29 +21,18 @@ published: true
 
 ## General
 
-<!-- TODO (Road Network team): description of this section -->
+Digitraffic Road Network is Finland's national open data information system. It contains the centreline geometry of the entire Finnish road and street network together with its key attributes.
 
-This page describes the structure of the Finnish road and street network
-and its related datasets. Road and street network information forms the
-basis for many other road traffic datasets provided by Digitraffic, such as
-traffic messages and weather data, which are located at various points
-along the road and street network.
+Digitraffic Road Network provides a free and consistent digital representation of the transport network. The datasets can be used, for example, in routing and mapping services and other services that utilise road and street network data.
 
 ## Datasets
 
-<!-- TODO: links/descriptions of relevant APIs and datasets -->
-
-Road and street network datasets are published through Digitraffic APIs in
-a machine-readable format. The datasets include, among other things, the
-geometry of the road and street network, road numbers and addresses, and
-other information related to the structure of the network, which can be
-utilized, for example, in routing and mapping applications.
+Digitraffic Road Network datasets are open data and can be downloaded free of charge from Digitraffic: https://tie.digitraffic.fi/roadnetwork/#/
 
 ## More information
 
-<!-- TODO: links to documentation, contact info, etc. -->
+For more information about Digitraffic Road Network, its data content and data submission:
 
-More information about the road and street network datasets and their use
-can be found in the Digitraffic documentation. If you have any questions
-about the datasets, you can contact the Digitraffic team using the contact
-information found at the bottom of the page.
+- In Finnish: [Digitraffic Road Network](https://www.fintraffic.fi/fi/digitrafficroadnetwork)
+
+- In Swedish: [Digitraffic Road Network ](https://www.fintraffic.fi/sv/digitrafficroadnetwork)
