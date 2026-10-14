@@ -27,7 +27,7 @@ Digitraffic Road Network provides a free and consistent digital representation o
 
 ## Datasets
 
-Digitraffic Road Network datasets are open data and can be downloaded free of charge from Digitraffic: https://tie.digitraffic.fi/roadnetwork/#/
+Digitraffic Road Network datasets are open data and can be downloaded free of charge from Digitraffic: [Datasets | Digitraffic](https://tie.digitraffic.fi/roadnetwork/#/)
 
 ## More information
 
