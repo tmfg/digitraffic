@@ -33,6 +33,6 @@ Digitraffic Road Network datasets are open data and can be downloaded free of ch
 
 For more information about Digitraffic Road Network, its data content and data submission:
 
-- In Finnish: [Digitraffic Road Network](https://www.fintraffic.fi/fi/digitrafficroadnetwork)
+- In Finnish: [Digitraffic Road Network](https://www.fintraffic.fi/fi/digitrafficroadnetwork){:target="_blank"}
 
 - In Swedish: [Digitraffic Road Network ](https://www.fintraffic.fi/sv/digitrafficroadnetwork)
