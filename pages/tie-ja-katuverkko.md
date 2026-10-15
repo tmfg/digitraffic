@@ -28,7 +28,7 @@ Aineistoja voidaan hyödyntää esimerkiksi reititys- ja karttapalveluissa sekä
 
 ## Aineistot
 
-Digitraffic Road Network -aineistot ovat avointa dataa ja maksutta ladattavissa Digitraffic-palvelusta: [Aineistot | Digitraffic](https://tie.digitraffic.fi/roadnetwork/#/)
+Digitraffic Road Network -aineistot ovat avointa dataa ja maksutta ladattavissa Digitraffic-palvelusta: [Aineistot \| Digitraffic](https://tie.digitraffic.fi/roadnetwork/){:target="_blank"}
 
 ## Lisätietoa
 
