@@ -32,4 +32,4 @@ Digitraffic Road Network -aineistot ovat avointa dataa ja maksutta ladattavissa 
 
 ## Lisätietoa
 
-Lisätietoa Digitraffic Road Networkista, sen tietosisällöstä ja tietojen toimittamisesta: [Digitraffic Road Network ](https://www.fintraffic.fi/fi/digitrafficroadnetwork)
+Lisätietoa Digitraffic Road Networkista, sen tietosisällöstä ja tietojen toimittamisesta: [Digitraffic Road Network ](https://www.fintraffic.fi/fi/digitrafficroadnetwork){:target="_blank"}
