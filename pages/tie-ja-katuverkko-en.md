@@ -35,4 +35,4 @@ For more information about Digitraffic Road Network, its data content and data s
 
 - In Finnish: [Digitraffic Road Network](https://www.fintraffic.fi/fi/digitrafficroadnetwork){:target="_blank"}
 
-- In Swedish: [Digitraffic Road Network ](https://www.fintraffic.fi/sv/digitrafficroadnetwork)
+- In Swedish: [Digitraffic Road Network ](https://www.fintraffic.fi/sv/digitrafficroadnetwork){:target="_blank"}
