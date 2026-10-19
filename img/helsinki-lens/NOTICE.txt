@@ -1,0 +1,12 @@
+Helsinki Lens
+Copyright 2026 Radu Boncea
+
+Created by Radu Boncea.
+Project: https://helsinki.ai.ro
+
+The project's original code, documentation and vehicle models are licensed
+under the Apache License, Version 2.0. See LICENSE.
+
+Third-party datasets, imagery, photographs, media and dependencies retain
+their respective licenses and attribution requirements. See README.md,
+docs/data-access.md and the source credits shown in the app.
