@@ -52,9 +52,9 @@ function connect() {
         } catch (error) {
             // not json or xml, try decompress
             try {
-                const message = decompress(message.payloadString);
+                const decompressed = decompress(message.payloadString);
 
-                addMessage(message.destinationName, "RAW: \"" + message.payloadString + "\"\nDECOMPRESSED: \"" + message + "\"");
+                addMessage(message.destinationName, "RAW: \"" + message.payloadString + "\"\nDECOMPRESSED: \"" + escapeXml(decompressed) + "\"");
             } catch (errorIn) {
                 console.error("addMessage failed " + error);
                 console.info(message);
@@ -77,7 +77,7 @@ function connect() {
 
 export function mqtt_disconnect() {
     try {
-        if (client && client.isConnected) {
+        if (client && client.isConnected()) {
             client.disconnect();
             $("#connectionStatus").text(new Date().toISOString() + ' Disconnected from host '  + host);
         }

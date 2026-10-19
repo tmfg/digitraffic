@@ -21273,8 +21273,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         }
       } catch (error2) {
         try {
-          const message2 = decompress(message2.payloadString);
-          addMessage(message2.destinationName, 'RAW: "' + message2.payloadString + '"\nDECOMPRESSED: "' + message2 + '"');
+          const decompressed = decompress(message.payloadString);
+          addMessage(message.destinationName, 'RAW: "' + message.payloadString + '"\nDECOMPRESSED: "' + escapeXml(decompressed) + '"');
         } catch (errorIn) {
           console.error("addMessage failed " + error2);
           console.info(message);
@@ -21293,7 +21293,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function mqtt_disconnect() {
     try {
-      if (client && client.isConnected) {
+      if (client && client.isConnected()) {
         client.disconnect();
         jquery_module_default("#connectionStatus").text((/* @__PURE__ */ new Date()).toISOString() + " Disconnected from host " + host);
       }
