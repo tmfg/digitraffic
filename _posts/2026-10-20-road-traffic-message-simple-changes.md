@@ -12,7 +12,7 @@ tags:
 
 ---
 
-[Dokumentaation](https://www.digitraffic.fi/tieliikenne/#liikennetiedotteet-1){:target="_blank"} mukaan aihe
+[Dokumentaation](https://www.digitraffic.fi/tieliikenne/#liikennetiedotteet-1){:target="_blank"} mukaan MQTT-aihe
 `traffic-message-v3/simple/<situationType>` lähettää samaa sisältöä kuin REST-rajapinnan simple-vastaus.
 Käytännössä niiden välillä on ollut pieniä eroja, koska MQTT lähetti viestin eri tavalla. 27.10.2026 alkaen
 hyötykuorma tuotetaan samasta muunnoksesta kuin REST-vastaus, jolloin erot poistuvat.

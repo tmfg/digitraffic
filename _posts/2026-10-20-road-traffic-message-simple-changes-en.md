@@ -12,7 +12,7 @@ tags:
 ---
 
 The [documentation](https://www.digitraffic.fi/en/road-traffic/#traffic-messages-1){:target="_blank"} says
-that the topic `traffic-message-v3/simple/<situationType>` carries the same content as the simple REST API
+that the MQTT topic `traffic-message-v3/simple/<situationType>` carries the same content as the simple REST API
 response. In practice there have been small differences, because MQTT sent the message differently. From 27
 October 2026 the payload is produced by the same conversion as the REST response, which removes the
 differences.
