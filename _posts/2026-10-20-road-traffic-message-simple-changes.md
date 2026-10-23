@@ -23,8 +23,8 @@ hyötykuorma tuotetaan samasta muunnoksesta kuin REST-vastaus, jolloin erot pois
 - Aikaleimat ovat jatkossa aina muodossa `yyyy-MM-dd'T'HH:mm:ss.SSSZ`. Aiemmin tarkkuus vaihteli.
 - `dataUpdatedTime` on uusi kenttä, jota ei aiemmin ollut mukana.
 - `trafficAnnouncementType` on uusi kenttä, jota ei aiemmin ollut mukana. Sen arvo voi olla `null`.
-- `locationOpenLr.secondaryBinary` on uusi valinnainen kenttä. Se on OpenLR-viite saman tieosuuden
-  vastakkaiseen suuntaan. Kenttä tulee mukaan myös REST-rajapintoihin.
+- `locationOpenLr.secondaryBinary` on uusi valinnainen kenttä. Se on OpenLR-viite tiedotteeseen
+  liittyvään toiseen sijaintiin. Kenttä tulee mukaan myös REST-rajapintoihin.
 
 Korjaamme samalla REST-rajapinnan kentän `properties.dataUpdatedTime`, joka on ollut tyhjä. Jatkossa se kertoo
 milloin tiedote on viimeksi päivittynyt.

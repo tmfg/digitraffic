@@ -23,8 +23,8 @@ differences.
 - Timestamps are now always in the format `yyyy-MM-dd'T'HH:mm:ss.SSSZ`. The precision used to vary.
 - `dataUpdatedTime` is a new field that was not present before.
 - `trafficAnnouncementType` is a new field that was not present before. Its value may be `null`.
-- `locationOpenLr.secondaryBinary` is a new optional field. It is an OpenLR reference to the opposite
-  direction of the same road section. The field is also added to the REST APIs.
+- `locationOpenLr.secondaryBinary` is a new optional field. It is an OpenLR reference to another
+  location related to the message. The field is also added to the REST APIs.
 
 We are also fixing `properties.dataUpdatedTime` in the REST API. It has been empty, and from now on it tells
 when the message was last updated.
