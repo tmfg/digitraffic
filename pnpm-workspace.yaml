@@ -6,3 +6,5 @@ allowBuilds:
 onlyBuiltDependencies:
   - esbuild
   - lefthook
+overrides:
+  brace-expansion@<5.0.12: "5.0.12"
