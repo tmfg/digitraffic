@@ -1,5 +1,5 @@
 ---
-title: 'Uusia rajapintoja merkitty poistuviksi'
+title: 'Säätietojen ja liikennetiedotteiden v1-rajapinnat poistuvat'
 image:
 published: true
 categories: Tiedotteet
@@ -13,25 +13,39 @@ tags:
 ---
 
 Olemme merkinneet poistuviksi säätietojen v1-rajapinnat sekä liikennetiedotteiden v1-rajapinnat. Korvaavat
-v2-rajapinnat ovat jo käytössä. Polku on muuten sama, mutta `v1` vaihtuu `v2`:ksi.
+v2-rajapinnat ovat jo käytössä.
 
-Tarkasta poistuvat rajapinnat ja niiden poistumispäivät
-sivulta [Rajapintojen muutokset](/tuki/rajapintojen-muutokset/). Siirry korvaaviin rajapintoihin hyvissä ajoin
-ennen poistumispäivää.
+## Poistumispäivät
 
-## Sisältö on enimmäkseen sama
+- **3.11.2026**: ennusteiden v1-rajapinnat, eli `/api/weather/v1/forecast-sections/forecasts`,
+  `/api/weather/v1/forecast-sections-simple/forecasts` ja niiden `/{id}/forecasts`-versiot.
+- **13.4.2027**: muut säätietojen v1-rajapinnat ja kaikki liikennetiedotteiden v1-rajapinnat.
+- **13.4.2027**: DATEX II 2.2.3 -rajapinnat. Ilmoitimme [aiemmin](/tiedotteet/2026/05/08/road-datex-2-2-3-end-of-life.html),
+  että ne poistuvat 20.10.2026. Poisto siirtyy samaan päivään liikennetiedotteiden v1-rajapintojen kanssa.
 
-Useimmat v2-rajapinnat palauttavat saman sisällön kuin v1, joten niissä riittää polun vaihtaminen.
+Poistuvat rajapinnat on lueteltu myös sivulla [Rajapintojen muutokset](/tuki/rajapintojen-muutokset/). Siirry
+korvaaviin rajapintoihin hyvissä ajoin ennen poistumispäivää.
 
-Kolmessa kohdassa on eroa.
+## Mitä pitää muuttaa
 
-### Liikennetiedotteet
+Useimmissa rajapinnoissa riittää vaihtaa polun `v1` muotoon `v2`. Sisältö pysyy samana. Alla luetellut
+rajapinnat muuttuvat enemmän.
 
-`/api/traffic-message/v1/messages`
+### Ennusteet
 
-- Haettava tiedotetyyppi valittiin `situationType`-parametrilla. Vastaavat v2-rajapinnat on jaettu tyypin
-  mukaan omiin osoitteisiinsa: `roadworks`, `traffic-announcements`, `weight-restrictions` ja
-  `exempted-transports`.
+`/api/weather/v1/forecast-sections/forecasts` ja muut `forecasts`-rajapinnat
+
+- Ennusteet tulevat uudesta lähteestä, joten arvot ja havaintojen ajat eivät ole samat kuin v1:ssä.
+- `weatherSymbol` on jatkossa numero, ja koodisto on eri. v1 käytti Vaisalan symboleja (esim. `d100`), v2
+  käyttää Ilmatieteen laitoksen SmartSymbol-koodeja (esim. `7`). Yöllä koodiin lisätään 100. Symbolit ovat
+  saatavilla [Ilmatieteen laitoksen GitHubista](https://github.com/fmidev/opendata-resources/tree/master/symbols){:target="_blank"}.
+- `forecastConditionReason` poistuu. Sen sisältämä `roadCondition` on nyt suoraan ennusteen alla. Muut
+  sen kentät (`precipitationCondition`, `windCondition`, `freezingRainCondition`, `winterSlipperiness`,
+  `visibilityCondition` ja `frictionCondition`) poistuvat ilman korvaajaa.
+- `reliability` poistuu.
+- `roadCondition` voi saada arvon `NOT_KNOWN`.
+- `overallRoadCondition`: arvo `CONDITION_COULD_NOT_BE_RESOLVED` on korvattu arvolla `NOT_KNOWN`.
+- `dataUpdatedTime` kerrotaan vastauksen ja ennusteosuuden tasolla, mutta ei enää jokaisessa ennusteessa.
 
 ### Anturiarvojen historia
 
@@ -39,13 +53,27 @@ Kolmessa kohdassa on eroa.
 
 - Lista `values` on nyt nimeltään `sensorValues`.
 
-### Ennusteet
+### Liikennetiedotteet
 
-`/api/weather/v1/forecast-sections/forecasts` ja muut `forecasts`-rajapinnat
+Kaikki JSON-rajapinnat:
 
-- `weatherSymbol` on jatkossa numero. Aiemmin se oli merkkijono.
-- `forecastConditionReason` ja `reliability` poistuvat. Sen sisällä ollut `roadCondition` on nyt suoraan
-  ennusteen alla.
-- `roadCondition` voi saada arvon `NOT_KNOWN`.
-- `overallRoadCondition`: arvo `CONDITION_COULD_NOT_BE_RESOLVED` on korvattu arvolla `NOT_KNOWN`.
-- `dataUpdatedTime` kerrotaan vain vastauksen tasolla, ei enää jokaisessa ennusteessa.
+- Luettelotyyppisten kenttien arvot kirjoitetaan eri tavalla. v1 palauttaa esimerkiksi `ROAD_WORK` ja
+  `HIGH`, v2 palauttaa `road work` ja `high`. Muutos koskee mm. kenttiä `situationType` ja `severity`.
+
+`/api/traffic-message/v1/messages`
+
+- Tiedotetyyppi valittiin `situationType`-parametrilla. v2:ssa jokaisella tyypillä on oma rajapintansa:
+  `roadworks`, `traffic-announcements`, `weight-restrictions` ja `exempted-transports`.
+- `inactiveHours` on korvattu parametreilla `from` ja `to`. Jos `from` puuttuu, haetaan tunnin takaa alkaen.
+
+`/api/traffic-message/v1/messages/{situationId}`
+
+- v1 palautti oletuksena tiedotteen kaikki versiot. v2 palauttaa vain uusimman version.
+- Kaikki versiot saa osoitteesta `/api/traffic-message/v2/messages/{situationId}/history`. Se palauttaa
+  listan tiedotteita ilman ympäröivää `FeatureCollection`-rakennetta.
+
+`/api/traffic-message/v1/messages.datex2` ja `/api/traffic-message/v1/messages/{situationId}.datex2`
+
+- Nämä palauttavat DATEX II 2.2.3 -muotoa, eikä niille ole v2-versiota samassa polussa. Korvaavat
+  rajapinnat ovat DATEX II 3.5 ja 3.7 -muodossa, esim. `/api/traffic-message/v2/roadworks/datex2-3.7.xml` ja
+  `/api/traffic-message/v2/messages/{situationId}/datex2-3.7.xml`.
