@@ -13,16 +13,16 @@ intro: Pysähdyssektorit
 
 # Pysähdyssektorit 
 
-Pysähdyssektoritieto kertoo asemalta sen pysähdyssektorin, johon veturin keula pysähtyy.  Tämän tiedot ja muutaman muun lisätiedon avulla on 
+Pysähdyssektoritieto kertoo asemalta sen pysähdyssektorin, johon veturin keula pysähtyy. Tämän tiedon ja muutaman muun lisätiedon avulla on 
 suurinpiirtein mahdollista määritellä mihin kukin vaunu pysähtyy.
 
 ## Sektorit ja alisektorit
 
-Sektoreita merkitään kirjaimilla ABCD.  Sektorit jakautuvat alisektoreihin niin, että A:lla ja D:llä on 5 alisektoria ja muilla 4.  Tämän lisäksi A:lla numerointi alkaa nollasta ja muilla yhdestä. Tämän mukaisesti mahdolliset sektorit siis ovat:
+Sektoreita merkitään kirjaimilla A, B, C ja D.  Sektorit jakautuvat alisektoreihin niin, että A:lla ja D:llä on 5 alisektoria ja muilla 4.  Tämän lisäksi A:lla numerointi alkaa nollasta ja muilla yhdestä. Tämän mukaisesti mahdolliset sektorit siis ovat:
 
-A0 A1 A3 A3 A4 B1 B2 B3 B4 C1 C2 C3 C4 D1 D2 D3 D4 D5
+A0 A1 A2 A3 A4 B1 B2 B3 B4 C1 C2 C3 C4 D1 D2 D3 D4 D5
 
-Yleisesti ottaen pohjoiseen menevät junat tulevat A:n suunnasta D :hen päin ja etelään menevät junat D :n suunnasta A:han päin.
+Yleisesti ottaen pohjoiseen menevät junat tulevat D:n suunnasta A:han päin ja etelään menevät junat A:n suunnasta D:hen päin.
 
 ## Junan kokoonpanot
 
@@ -33,6 +33,6 @@ Jotta voidaan laskea veturien sijainnit sektoreilla, täytyy tietää veturien j
 
 ## Esimerkkejä
 
-Jos IC etelän suuntaan, jossa on kaksi vaunua, pysähtyy kohtaa C3, niin tällöin perä on suunnilleen kohdassa C1(2*1 vasemmalle kohdasta C1)
+Jos IC etelän suuntaan, jossa on kaksi vaunua, pysähtyy kohtaa C3, niin tällöin perä on suunnilleen kohdassa D1 (2*1 oikealle kohdasta C1)
 
-Jos Sm4 etelän suuntaan, jossa on 3 vaunua, pysähtyy kohtaan D5, niin tällöin perä on suunnilleen kohdassa B1(3*4 vasemmalle kohdasta D5)
+Jos Sm4 pohjoisen suuntaan, jossa on 3 vaunua, pysähtyy kohtaan D5, niin tällöin perä on suunnilleen kohdassa B1 (3*4 vasemmalle kohdasta D5)
