@@ -1,6 +1,7 @@
 ---
 title: Junalinkki
 intro: Yleiseen käyttöön tarkoitettu aikataulunäyttö.
+logo: junalinkki/junalinkki-logo.png
 developer:
   - Olli Tossavainen
 traffictypes:
