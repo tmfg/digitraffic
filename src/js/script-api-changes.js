@@ -50,11 +50,11 @@ const translations = {
     }
 };
 
-const removalTextMatcher = /(?:W|w)ill be removed/
+const removalTextMatcher = /[Ww]ill be removed/
 const sunsetDateMatcher = RegExp(`(${removalTextMatcher.source}).+(?<sunsetDate>\\d{4}-\\d{2}-\\d{2})`);
 
 function initDeprecationsTable(trafficType, tableTitle, language) {
-    $("#" + trafficType + "-DEPRECATIONS").append([
+    $(`#${trafficType}-DEPRECATIONS`).append([
         $("<colgroup>").append([
             $("<col>", { "class": "deprecations-col1" }),
             $("<col>", { "class": "deprecations-col2" })
@@ -73,7 +73,7 @@ function initDeprecationsTable(trafficType, tableTitle, language) {
 }
 
 function initSupportedTable(trafficType, tableTitle) {
-    $("#" + trafficType + "-SUPPORTED").append([
+    $(`#${trafficType}-SUPPORTED`).append([
         $("<colgroup>").append([
             $("<col>", { "class": "supported-col" })
         ]),
@@ -91,7 +91,7 @@ function loadApiDescription(trafficType) {
         const xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", OPENAPI_URLS[trafficType], true);
         xmlhttp.onload = function () {
-            if (xmlhttp.status == 200) {
+            if (xmlhttp.status === 200) {
                 resolve(xmlhttp.response);
             } else {
                 reject(xmlhttp.status);
@@ -102,17 +102,28 @@ function loadApiDescription(trafficType) {
 }
 
 function getSwaggerLink(swaggerPath, trafficType) {
-    return `${OPENAPI_URLS[`${trafficType}_UI`]}/${swaggerPath.tags[0]}/${swaggerPath.operationId}`;
+    const parts = [swaggerPath.tags?.[0], swaggerPath.operationId].filter(Boolean).map(encodeURIComponent);
+    return [OPENAPI_URLS[`${trafficType}_UI`], ...parts].join("/");
+}
+
+function getOperations(apiDescription) {
+    return Object.keys(apiDescription.paths)
+        .filter(path => apiDescription.paths[path].get)
+        .map(path => ({ path, operation: apiDescription.paths[path].get }));
+}
+
+function isDeprecated(operation) {
+    return operation.deprecated === true || removalTextMatcher.test(operation.summary ?? "");
 }
 
 function populateDeprecations(apiDescription, trafficType) {
-    const deprecatedPaths = Object.keys(apiDescription.paths)
-        .filter(path => apiDescription.paths[path].get.deprecated === true || removalTextMatcher.test(apiDescription.paths[path].get.summary))
-        .map(path => {
-            const match = apiDescription.paths[path].get.summary.match(sunsetDateMatcher);
+    const deprecatedPaths = getOperations(apiDescription)
+        .filter(({ operation }) => isDeprecated(operation))
+        .map(({ path, operation }) => {
+            const match = (operation.summary ?? "").match(sunsetDateMatcher);
             const sunset = match !== null ? match.groups.sunsetDate : "TBD";
             const dateClass = sunset !== "TBD" ? getSunsetDateClass(sunset) : "";
-            const swaggerLink = getSwaggerLink(apiDescription.paths[path].get, trafficType);
+            const swaggerLink = getSwaggerLink(operation, trafficType);
             return {
                 path,
                 sunset,
@@ -146,14 +157,14 @@ function getSunsetDateClass(isoLocalDateString) {
 }
 
 function populateSupported(apiDescription, trafficType) {
-    Object.keys(apiDescription.paths)
-        .filter(path => apiDescription.paths[path].get.deprecated !== true && !removalTextMatcher.test(apiDescription.paths[path].get.summary))
-        .forEach(path => addToSupportedTable({ path, swaggerLink: getSwaggerLink(apiDescription.paths[path].get, trafficType) }, trafficType));
+    getOperations(apiDescription)
+        .filter(({ operation }) => !isDeprecated(operation))
+        .forEach(({ path, operation }) => addToSupportedTable({ path, swaggerLink: getSwaggerLink(operation, trafficType) }, trafficType));
 }
 
 
 function addToDeprecationsTable(api, trafficType) {
-    $('#' + trafficType + '-DEPRECATIONS > tbody:last-child').append(
+    $(`#${trafficType}-DEPRECATIONS > tbody:last-child`).append(
         $('<tr/>', { "class": "row.nowrap" }).append([
             $('<td/>', { "class": "deprecations-col1" }).append(
                 $('<a/>', { "href": api.swaggerLink }).text(api.path)
@@ -164,7 +175,7 @@ function addToDeprecationsTable(api, trafficType) {
 }
 
 function addToSupportedTable(api, trafficType) {
-    $('#' + trafficType + '-SUPPORTED > tbody:last-child').append(
+    $(`#${trafficType}-SUPPORTED > tbody:last-child`).append(
         $('<tr/>', { "class": "row.nowrap" }).append([
             $('<td/>', { "class": "supported-col" }).append(
                 $('<a/>', { "href": api.swaggerLink }).text(api.path)
@@ -205,7 +216,7 @@ function addHeadersAndText(language) {
 }
 
 function removeEmptyDeprecationsTable(trafficType) {
-    $('#' + trafficType + "-DEPRECATIONS-DIV").remove();
+    $(`#${trafficType}-DEPRECATIONS-DIV`).remove();
 }
 
 async function loadApiChanges(language) {
