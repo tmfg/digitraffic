@@ -4,6 +4,7 @@ baseurl:
 repository: tmfg/digitraffic
 encoding: utf-8
 incremental: true
+future: true
 
 plugins_dir:
   - jekyll-babel
