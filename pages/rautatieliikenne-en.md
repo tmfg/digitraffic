@@ -183,7 +183,7 @@ Data is licensed under
 
 [https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip](https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip)
 
-NeTEx is a CEN standard for exchanging public transport information, such as
+NeTEx is a [CEN standard](https://netex-cen.eu/) for exchanging public transport information, such as
 timetables and routes, as XML. The package follows the
 [Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
 and contains the planned timetables and routes of passenger trains.
@@ -200,20 +200,22 @@ cancelled stops.
 
 The response headers `x-timestamp` (generation time) and `x-is-fresh` (`true`
 when the package is less than 25 hours old) tell how current the package is.
-Responses may be cached for 15 minutes. The interface returns 404 if no package
-is available.
+The interface returns 404 if no package is available.
 
 NeTEx gives the plan and [SIRI](#siri) gives the real-time changes to it.
 
-Returns a zip package that follows the
-[Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile).
+Returns a [NeTEx](https://netex-cen.eu/) zip package. NeTEx is the broader
+standard, and the rules of the
+[Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
+apply on top of it.
 
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 # SIRI
 
-SIRI (Service Interface for Real Time Information) is a European standard for
+SIRI (Service Interface for Real Time Information) is a
+[CEN specification](https://siri-cen.eu/) (CEN/TS 15531) for exchanging
 real-time public transport data. The interfaces follow the
 [Nordic SIRI profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
 (SIRI 2.0 schema). Each interface returns one XML document
@@ -237,8 +239,6 @@ current the document is:
 - `x-timestamp` is the generation time of the document. For SIRI-SX it is the
   time of the last successful check.
 - `x-is-fresh` is `true` when the document is less than 5 minutes old.
-
-Responses may be cached for 30 seconds.
 
 Identifiers and times:
 

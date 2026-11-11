@@ -1720,7 +1720,7 @@ URL
 **Kuvaus**
 
 NeTEx on joukkoliikenteen tietojen, kuten aikataulujen ja reittien,
-XML-muotoiseen vaihtoon tarkoitettu CEN-standardi. Paketti noudattaa
+XML-muotoiseen vaihtoon tarkoitettu [CEN-standardi](https://netex-cen.eu/). Paketti noudattaa
 [Nordic NeTEx -profiilia](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
 ja sisältää matkustajajunien suunnitellut aikataulut ja reitit.
 
@@ -1744,8 +1744,7 @@ Vastauksen headerit:
 - `x-timestamp` on paketin generointiaika.
 - `x-is-fresh` on `true`, kun paketti on alle 25 tuntia vanha.
 
-Vastauksen saa välimuistittaa 15 minuutin ajan. Jos pakettia ei ole saatavilla,
-rajapinta palauttaa 404.
+Jos pakettia ei ole saatavilla, rajapinta palauttaa 404.
 
 SIRI-rajapinnat käyttävät samoja tunnisteita kuin tämä paketti, joten NeTEx ja
 [SIRI](#siri-siri) toimivat yhdessä: NeTEx kertoo suunnitelman ja SIRI
@@ -1753,8 +1752,10 @@ reaaliaikaiset muutokset.
 
 **Paluuarvo**
 
-Palauttaa [Nordic NeTEx -profiilin](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
-mukaisen zip-paketin.
+Palauttaa [NeTEx](https://netex-cen.eu/)-muotoisen zip-paketin. NeTEx on
+laajempi standardi, ja sen päälle tulevat
+[Nordic NeTEx -profiilin](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
+säännöt.
 
 ## SIRI (/siri)
 
@@ -1766,8 +1767,9 @@ URL:t
 
 **Kuvaus**
 
-SIRI (Service Interface for Real Time Information) on eurooppalainen standardi
-joukkoliikenteen reaaliaikaisen tiedon välittämiseen. Rajapinnat noudattavat
+SIRI (Service Interface for Real Time Information) on joukkoliikenteen
+reaaliaikaisen tiedon välittämiseen tarkoitettu
+[CEN-spesifikaatio](https://siri-cen.eu/) (CEN/TS 15531). Rajapinnat noudattavat
 [Nordic SIRI -profiilia](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
 (SIRI 2.0 -skeema). Jokainen rajapinta palauttaa yhden
 XML-dokumentin (`application/xml`).
@@ -1786,8 +1788,6 @@ dokumentin tuoreuden:
 - `x-timestamp` on dokumentin generointiaika. SIRI-SX:ssä se on viimeisimmän
   onnistuneen tarkistuksen aika.
 - `x-is-fresh` on `true`, kun dokumentti on alle 5 minuuttia vanha.
-
-Vastauksen saa välimuistittaa 30 sekunnin ajan.
 
 Tunnisteet ja ajat:
 
