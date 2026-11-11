@@ -203,6 +203,8 @@ is available.
 
 NeTEx gives the plan and [SIRI](#siri) gives the real-time changes to it.
 
+Returns a [NeTEx](https://netex-cen.eu/) zip package.
+
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
 
@@ -213,30 +215,88 @@ real-time public transport data. The interfaces follow the Nordic SIRI profile
 (SIRI 2.0 schema). Each interface returns one XML document
 (`application/xml`):
 
-- SIRI-ET (Estimated Timetable), deviations from the timetable: estimated and
-  actual times, cancellations, partial cancellations and platform changes:
+- `/siri/et` (Estimated Timetable) tells the deviations from the plan during the
+  current operating day: estimated and actual times, cancellations, partial
+  cancellations and platform changes:
   [https://rata.digitraffic.fi/api/v1/siri/et](https://rata.digitraffic.fi/api/v1/siri/et)
-- SIRI-VM (Vehicle Monitoring), locations and delays of passenger trains:
+- `/siri/vm` (Vehicle Monitoring) tells the location and delay of passenger
+  trains and the stop the train is approaching or standing at:
   [https://rata.digitraffic.fi/api/v1/siri/vm](https://rata.digitraffic.fi/api/v1/siri/vm)
-- SIRI-SX (Situation Exchange), passenger information messages shown and
-  announced at stations and on trains:
+- `/siri/sx` (Situation Exchange) contains passenger information messages shown
+  and announced at stations and on trains. They are the same messages as in the
+  passenger information API (`/passenger-information`). A message relates to
+  either a station or a train:
   [https://rata.digitraffic.fi/api/v1/siri/sx](https://rata.digitraffic.fi/api/v1/siri/sx)
 
-The documents are regenerated every minute. The response headers `x-timestamp`
-(generation time; for SIRI-SX the time of the last successful check) and
-`x-is-fresh` (`true` when the document is less than 5 minutes old) tell how
-current the document is. Responses may be cached for 30 seconds.
+The documents are regenerated every minute. The response headers tell how
+current the document is:
 
-Journeys, lines and operators use the same identifiers as the NeTEx package
-above. Platforms (ET and VM) and stations (SX station messages) use the
-identifiers of Fintraffic's national stop registry (PETI), for example
-`FSR:Quay`. The identifier prefix (codespace) is `FTR`. Times are in Finnish
-time.
+- `x-timestamp` is the generation time of the document. For SIRI-SX it is the
+  time of the last successful check.
+- `x-is-fresh` is `true` when the document is less than 5 minutes old.
 
-A journey that is not in the NeTEx package, for example a freight train, is not
-in the documents. If the NeTEx package or the stop registry data is not
-available, a new document is not generated and the previous one stays available
-(`x-is-fresh` becomes `false`).
+Responses may be cached for 30 seconds.
+
+Identifiers and times:
+
+- Journeys, lines and operators use the same identifiers as the
+  [NeTEx package](#netex), so SIRI complements the plan in NeTEx with real-time
+  information. The identifier prefix (codespace) is `FTR`.
+- Platforms (ET and VM) and stations (SX station messages) use the identifiers of
+  Fintraffic's national stop registry (PETI). A platform identifier looks like
+  `FSR:Quay`.
+- Times are in Finnish time.
+
+**SIRI-ET**
+
+- The document contains the trains of the operating day. A train of the previous
+  day is also included if it is still running. Only stops where passengers can
+  board or alight are included.
+- Stops already served are in `RecordedCall` elements and upcoming stops in
+  `EstimatedCall` elements.
+- A cancelled train is marked on the journey and cancelled stops on the stops.
+- If a train does not stop at all planned stations (partial cancellation), NeTEx
+  has a separate shortened journey for that day. SIRI-ET refers to that journey.
+- A platform change is shown in the `StopAssignment` element (planned and actual
+  platform).
+- A train that is not published in the NeTEx timetable (for example a freight
+  train) is not in the document.
+- If the NeTEx data or the stop registry data is not available, a new document
+  is not generated. The previous document stays available and `x-is-fresh`
+  becomes `false`.
+
+**SIRI-VM**
+
+- The document contains the latest location of each passenger train when it is
+  at most 30 minutes old. The location is the same as in the GTFS-RT
+  `gtfs-rt-locations` interface.
+- `Delay` is the estimated delay at the next stop. If the delay is not known, it
+  is `PT0S`.
+- `MonitoredCall` describes the next stop. When the train has arrived at its
+  final stop, it is that stop.
+- A train that is not published in the NeTEx timetable is not in the document.
+- If the NeTEx data is not available, a new document is not generated. The
+  previous document stays available and `x-is-fresh` becomes `false`.
+
+**SIRI-SX**
+
+- A message is published as soon as it is created, even if its validity has not
+  started yet. The validity period is in the `ValidityPeriod` element.
+- A deleted message stays in the document for 5 hours with the state `closed`
+  and is then removed.
+- The message text (`Summary`) is at most 160 characters. A longer text is
+  truncated and the full text is in the `Description` element. Texts are in
+  Finnish, Swedish and English (`FI`, `SV`, `EN`).
+- A station message refers to a station (`StopPlaceRef`) and a train message to a
+  train (`FramedVehicleJourneyRef`). A train message is published only when the
+  journey of the train has been published in NeTEx. It can be delayed if the
+  departure date is more than 14 days away.
+- If the stop registry data is not available, a new document is not generated.
+  If the NeTEx journeys are not available, train messages are left out, station
+  messages are still published and the document stays fresh
+  (`x-is-fresh` is `true`).
+
+Returns a [SIRI 2.0](https://www.siri.org.uk/) XML document.
 
 # Track work project and yearly plans
 

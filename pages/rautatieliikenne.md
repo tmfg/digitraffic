@@ -841,9 +841,9 @@ kannattaa harkita tarkkaan.
 URL: `/train-locations/latest?bbox=<points>`
 
 - Esimerkki 1 (sijainnit GeoJSON-muodossa):
-  [/train-locations.geojson/latest/](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest/)
+  [/train-locations.geojson/latest](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest)
 - Esimerkki 2 (sijainnit "vanhassa" muodossa):
-  [/train-locations/latest/](https://rata.digitraffic.fi/api/v1/train-locations/latest/)
+  [/train-locations/latest](https://rata.digitraffic.fi/api/v1/train-locations/latest)
 - Esimerkki 3 (Helsingin keskustan junat GeoJSON-muodossa):
   [/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234](https://rata.digitraffic.fi/api/v1/train-locations.geojson/latest?bbox=24.896417,60.149976,24.980804,60.190234)
 
@@ -1828,6 +1828,8 @@ Tunnisteet ja ajat:
 - Seuraavaa pysäkkiä kuvaa `MonitoredCall`. Kun juna on saapunut päätepysäkille,
   se on tuo pysäkki.
 - Junaa, jota ei ole julkaistu NeTEx-aikataulussa, ei ole dokumentissa.
+- Jos NeTEx-aineisto ei ole saatavilla, uutta dokumenttia ei tehdä. Edellinen
+  dokumentti pysyy tarjolla ja `x-is-fresh` muuttuu arvoon `false`.
 
 **SIRI-SX**
 
@@ -1842,6 +1844,10 @@ Tunnisteet ja ajat:
   (`FramedVehicleJourneyRef`). Junaviesti julkaistaan vasta, kun junan vuoro on
   julkaistu NeTEx-aineistossa. Se voi viivästyä, jos lähtöpäivä on yli 14
   päivän päässä.
+- Jos pysäkkirekisterin tiedot eivät ole saatavilla, uutta dokumenttia ei
+  tehdä. Jos NeTEx-vuorot eivät ole saatavilla, junaviestit jätetään pois,
+  asemaviestit julkaistaan edelleen ja dokumentti pysyy tuoreena (`x-is-fresh`
+  on `true`).
 
 **Paluuarvo**
 
