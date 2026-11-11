@@ -116,6 +116,8 @@ turvallisuuskriittisissä sovelluksissa.
    1. [Matkustajainformaation tiedotteet (/passenger-information)](#matkustajainformaation-tiedotteet-passenger-information)
       - [Voimassa olevat tiedotteet](#voimassa-olevat-tiedotteet)
       - [Ajankohdan jälkeen päivittyneet tiedotteet](#annetun-ajankohdan-jälkeen-päivittyneet-tiedotteet)
+   1. [NeTEx (/netex)](#netex-netex)
+   1. [SIRI (/siri)](#siri-siri)
 1. [WebSocket (MQTT)](#websocket-mqtt)
    1. [Yleistä MQTT:stä](#yleistä-mqttstä)
    1. [Junien kuuntelu](#junien-kuuntelu)
@@ -164,12 +166,12 @@ Otamme mielellämme vastaan kehitysehdotuksia
 
 **Suunnitteilla olevat ominaisuudet:**
 
-- Siri-sanomat
-  - Sisältävät asemakuulutusten kaltaista tietoa. Esimerkiksi "Raide 5 on
-    remontissa Pasilassa".
+Ei tällä hetkellä.
 
 ## Toteutetut ominaisuudet
 
+- SIRI-rajapinnat (ET, VM ja SX)
+- NeTEx-aikatauluaineisto
 - 1.6.2025
   - Pysähdyssektorin lisäys
 - 5.9.2023
@@ -1708,6 +1710,142 @@ versionumero
 Palauttaa
 [Matkustajainformaation tiedotteet](#matkustajainformaation-tiedotteet)
 -tyyppisen vastauksen.
+
+## NeTEx (/netex)
+
+URL
+
+- [/netex/FTR-netex.zip](https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip)
+
+**Kuvaus**
+
+NeTEx on eurooppalainen standardi joukkoliikenteen aikataulujen ja reittien
+kuvaamiseen. Paketti noudattaa Nordic NeTEx -profiilia ja sisältää
+matkustajajunien suunnitellut aikataulut ja reitit.
+
+Paketti generoidaan uusiksi päivittäin aamuyöllä. Se sisältää menneisyyden
+aikataulut viimeiseltä seitsemältä päivältä ja tulevaisuuden aikataulut
+seuraavan vuoden loppuun asti.
+
+Paketin sisältö:
+
+- `_FTR_shared_data.xml` sisältää yhteiset tiedot: liikennöitsijät,
+  pysäkkiviittaukset ja kalenterin.
+- Jokaiselle linjalle on oma XML-tiedosto (esim. `FTR_S-979_Helsinki-Turku.xml`).
+  Tiedostossa ovat linjan reitit ja vuorot.
+
+Jos junan aikataulusta on peruttu osa pysähdyksistä tietyiksi päiviksi
+(osittainen peruutus), NeTEx sisältää niille päiville oman lyhennetyn vuoron,
+josta perutut pysähdykset puuttuvat.
+
+Vastauksen headerit:
+
+- `x-timestamp` on paketin generointiaika.
+- `x-is-fresh` on `true`, kun paketti on alle 25 tuntia vanha.
+
+Vastauksen saa välimuistittaa 15 minuutin ajan. Jos pakettia ei ole saatavilla,
+rajapinta palauttaa 404.
+
+SIRI-rajapinnat käyttävät samoja tunnisteita kuin tämä paketti, joten NeTEx ja
+[SIRI](#siri-siri) toimivat yhdessä: NeTEx kertoo suunnitelman ja SIRI
+reaaliaikaiset muutokset.
+
+**Paluuarvo**
+
+Palauttaa [NeTEx](https://netex-cen.eu/)-muotoisen zip-paketin.
+
+## SIRI (/siri)
+
+URL:t
+
+- [/siri/et](https://rata.digitraffic.fi/api/v1/siri/et)
+- [/siri/vm](https://rata.digitraffic.fi/api/v1/siri/vm)
+- [/siri/sx](https://rata.digitraffic.fi/api/v1/siri/sx)
+
+**Kuvaus**
+
+SIRI (Service Interface for Real Time Information) on eurooppalainen standardi
+joukkoliikenteen reaaliaikaisen tiedon välittämiseen. Rajapinnat noudattavat
+Nordic SIRI -profiilia (SIRI 2.0 -skeema). Jokainen rajapinta palauttaa yhden
+XML-dokumentin (`application/xml`).
+
+- `/siri/et` (Estimated Timetable) kertoo poikkeamat suunnitelmasta kuluvan
+  liikennöintipäivän aikana: arvioidut ja toteutuneet ajat, peruutukset,
+  osittaiset peruutukset ja laiturimuutokset.
+- `/siri/vm` (Vehicle Monitoring) kertoo matkustajajunien sijainnin, viiveen ja
+  pysäkin, jota juna lähestyy tai jossa se seisoo.
+- `/siri/sx` (Situation Exchange) sisältää asemilla ja junissa näytettäviä ja
+  kuulutettavia tiedotteita. Ne ovat samoja viestejä kuin
+  [matkustajainformaation tiedotteet](#matkustajainformaation-tiedotteet-passenger-information).
+  Tiedote liittyy joko asemaan tai junaan.
+
+Dokumentit generoidaan uusiksi minuutin välein. Vastauksen headerit kertovat
+dokumentin tuoreuden:
+
+- `x-timestamp` on dokumentin generointiaika. SIRI-SX:ssä se on viimeisimmän
+  onnistuneen tarkistuksen aika.
+- `x-is-fresh` on `true`, kun dokumentti on alle 5 minuuttia vanha.
+
+Vastauksen saa välimuistittaa 30 sekunnin ajan.
+
+Tunnisteet ja ajat:
+
+- Vuorot, linjat ja liikennöitsijät tunnistetaan samoilla tunnisteilla kuin
+  [NeTEx-aikatauluaineistossa](#netex-netex), joten SIRI täydentää NeTEx:in
+  suunnitelman reaaliaikaisilla tiedoilla. Tunnisteiden etuliite (codespace) on
+  `FTR`.
+- Laiturit (ET ja VM) ja asemat (SX:n asemaviestit) tunnistetaan Fintrafficin
+  valtakunnallisen pysäkkirekisterin (PETI) tunnisteilla. Laiturin tunniste on
+  muotoa `FSR:Quay`.
+- Ajat ovat Suomen aikaa.
+
+**SIRI-ET**
+
+- Dokumentissa ovat liikennöintipäivän junat. Mukana on myös edellisen päivän
+  juna, jos se on vielä liikkeellä. Dokumentissa on vain pysähdykset, joissa
+  matkustaja voi nousta kyytiin tai poistua.
+- Jo palvellut pysähdykset ovat `RecordedCall`-elementeissä ja tulevat
+  `EstimatedCall`-elementeissä.
+- Peruttu juna on merkitty vuorolle ja perutut pysähdykset pysähdyksille.
+- Jos juna ei pysähdy kaikilla suunnitelman mukaisilla asemilla (osittainen
+  peruutus), NeTEx sisältää sille kyseiselle päivälle oman lyhennetyn vuoron.
+  SIRI-ET viittaa tähän vuoroon.
+- Laiturimuutos näkyy `StopAssignment`-elementissä (suunniteltu ja todellinen
+  laituri).
+- Junaa, jota ei ole julkaistu NeTEx-aikataulussa (esim. tavarajuna), ei ole
+  dokumentissa.
+- Jos NeTEx-aineisto tai pysäkkirekisterin tiedot eivät ole saatavilla, uutta
+  dokumenttia ei tehdä. Edellinen dokumentti pysyy tarjolla ja `x-is-fresh`
+  muuttuu arvoon `false`.
+
+**SIRI-VM**
+
+- Dokumentissa on jokaisen matkustajajunan uusin sijainti, kun se on enintään
+  30 minuuttia vanha. Sijainti on sama kuin GTFS-RT:n
+  `gtfs-rt-locations`-rajapinnassa.
+- `Delay` on seuraavan pysäkin arvioitu viive. Jos viivettä ei tiedetä, se on
+  `PT0S`.
+- Seuraavaa pysäkkiä kuvaa `MonitoredCall`. Kun juna on saapunut päätepysäkille,
+  se on tuo pysäkki.
+- Junaa, jota ei ole julkaistu NeTEx-aikataulussa, ei ole dokumentissa.
+
+**SIRI-SX**
+
+- Tiedote julkaistaan heti, kun se on luotu, vaikka sen voimassaolo ei olisi
+  vielä alkanut. Voimassaoloaika on `ValidityPeriod`-kentässä.
+- Poistettu tiedote on 5 tuntia poistamisesta tilassa `closed`, minkä jälkeen
+  se poistuu dokumentista.
+- Tiedotteen teksti (`Summary`) on enintään 160 merkkiä. Jos teksti on
+  pidempi, se katkaistaan ja koko teksti on `Description`-kentässä. Tekstit ovat
+  suomeksi, ruotsiksi ja englanniksi (`FI`, `SV`, `EN`).
+- Asemaviesti viittaa asemaan (`StopPlaceRef`) ja junaviesti junaan
+  (`FramedVehicleJourneyRef`). Junaviesti julkaistaan vasta, kun junan vuoro on
+  julkaistu NeTEx-aineistossa. Se voi viivästyä, jos lähtöpäivä on yli 14
+  päivän päässä.
+
+**Paluuarvo**
+
+Palauttaa [SIRI 2.0](https://www.siri.org.uk/)-muotoisen XML-dokumentin.
 
 ## WebSocket (MQTT)
 

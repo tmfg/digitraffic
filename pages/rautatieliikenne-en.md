@@ -45,7 +45,9 @@ a short form). You might get more information using Google Translate with the
 1. [GraphQL](#graphql)
 2. [Swagger](#swagger)
 3. [GTFS](#gtfs)
-4. [Track work project and yearly plans](#track-work-project-and-yearly-plans)
+4. [NeTEx](#netex)
+5. [SIRI](#siri)
+6. [Track work project and yearly plans](#track-work-project-and-yearly-plans)
 
 # GraphQL
 
@@ -176,6 +178,65 @@ Real time feed is updated every 10 seconds.
 
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+# NeTEx
+
+[https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip](https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip)
+
+NeTEx is a European standard for describing public transport timetables and
+routes. The package follows the Nordic NeTEx profile and contains the planned
+timetables and routes of passenger trains.
+
+The package is generated daily during the early morning. It contains timetables
+for the last seven days and for the future until the end of next year. It has a
+shared file `_FTR_shared_data.xml` (operators, stop references and calendar) and
+one XML file per line, for example `FTR_S-979_Helsinki-Turku.xml`.
+
+If some stops of a train are cancelled on certain days (partial cancellation),
+the package has a separate shortened journey for those days, without the
+cancelled stops.
+
+The response headers `x-timestamp` (generation time) and `x-is-fresh` (`true`
+when the package is less than 25 hours old) tell how current the package is.
+Responses may be cached for 15 minutes. The interface returns 404 if no package
+is available.
+
+NeTEx gives the plan and [SIRI](#siri) gives the real-time changes to it.
+
+Data is licensed under
+[Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+# SIRI
+
+SIRI (Service Interface for Real Time Information) is a European standard for
+real-time public transport data. The interfaces follow the Nordic SIRI profile
+(SIRI 2.0 schema). Each interface returns one XML document
+(`application/xml`):
+
+- SIRI-ET (Estimated Timetable), deviations from the timetable: estimated and
+  actual times, cancellations, partial cancellations and platform changes:
+  [https://rata.digitraffic.fi/api/v1/siri/et](https://rata.digitraffic.fi/api/v1/siri/et)
+- SIRI-VM (Vehicle Monitoring), locations and delays of passenger trains:
+  [https://rata.digitraffic.fi/api/v1/siri/vm](https://rata.digitraffic.fi/api/v1/siri/vm)
+- SIRI-SX (Situation Exchange), passenger information messages shown and
+  announced at stations and on trains:
+  [https://rata.digitraffic.fi/api/v1/siri/sx](https://rata.digitraffic.fi/api/v1/siri/sx)
+
+The documents are regenerated every minute. The response headers `x-timestamp`
+(generation time; for SIRI-SX the time of the last successful check) and
+`x-is-fresh` (`true` when the document is less than 5 minutes old) tell how
+current the document is. Responses may be cached for 30 seconds.
+
+Journeys, lines and operators use the same identifiers as the NeTEx package
+above. Platforms (ET and VM) and stations (SX station messages) use the
+identifiers of Fintraffic's national stop registry (PETI), for example
+`FSR:Quay`. The identifier prefix (codespace) is `FTR`. Times are in Finnish
+time.
+
+A journey that is not in the NeTEx package, for example a freight train, is not
+in the documents. If the NeTEx package or the stop registry data is not
+available, a new document is not generated and the previous one stays available
+(`x-is-fresh` becomes `false`).
 
 # Track work project and yearly plans
 
