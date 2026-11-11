@@ -1719,18 +1719,19 @@ URL
 
 **Kuvaus**
 
-NeTEx on eurooppalainen standardi joukkoliikenteen aikataulujen ja reittien
-kuvaamiseen. Paketti noudattaa Nordic NeTEx -profiilia ja sisältää
-matkustajajunien suunnitellut aikataulut ja reitit.
+NeTEx on joukkoliikenteen tietojen, kuten aikataulujen ja reittien,
+XML-muotoiseen vaihtoon tarkoitettu CEN-standardi. Paketti noudattaa
+[Nordic NeTEx -profiilia](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
+ja sisältää matkustajajunien suunnitellut aikataulut ja reitit.
 
-Paketti generoidaan uusiksi päivittäin aamuyöllä. Se sisältää menneisyyden
+Paketti generoidaan uusiksi päivittäin. Se sisältää menneisyyden
 aikataulut viimeiseltä seitsemältä päivältä ja tulevaisuuden aikataulut
 seuraavan vuoden loppuun asti.
 
 Paketin sisältö:
 
-- `_FTR_shared_data.xml` sisältää yhteiset tiedot: liikennöitsijät,
-  pysäkkiviittaukset ja kalenterin.
+- `_FTR_shared_data.xml` sisältää yhteiset tiedot: liikennöitsijät, pysäkit ja
+  niiden laiturit sekä kalenterin.
 - Jokaiselle linjalle on oma XML-tiedosto (esim. `FTR_S-979_Helsinki-Turku.xml`).
   Tiedostossa ovat linjan reitit ja vuorot.
 
@@ -1752,7 +1753,8 @@ reaaliaikaiset muutokset.
 
 **Paluuarvo**
 
-Palauttaa [NeTEx](https://netex-cen.eu/)-muotoisen zip-paketin.
+Palauttaa [Nordic NeTEx -profiilin](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
+mukaisen zip-paketin.
 
 ## SIRI (/siri)
 
@@ -1766,7 +1768,8 @@ URL:t
 
 SIRI (Service Interface for Real Time Information) on eurooppalainen standardi
 joukkoliikenteen reaaliaikaisen tiedon välittämiseen. Rajapinnat noudattavat
-Nordic SIRI -profiilia (SIRI 2.0 -skeema). Jokainen rajapinta palauttaa yhden
+[Nordic SIRI -profiilia](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
+(SIRI 2.0 -skeema). Jokainen rajapinta palauttaa yhden
 XML-dokumentin (`application/xml`).
 
 - `/siri/et` (Estimated Timetable) kertoo poikkeamat suunnitelmasta kuluvan
@@ -1774,10 +1777,8 @@ XML-dokumentin (`application/xml`).
   osittaiset peruutukset ja laiturimuutokset.
 - `/siri/vm` (Vehicle Monitoring) kertoo matkustajajunien sijainnin, viiveen ja
   pysäkin, jota juna lähestyy tai jossa se seisoo.
-- `/siri/sx` (Situation Exchange) sisältää asemilla ja junissa näytettäviä ja
-  kuulutettavia tiedotteita. Ne ovat samoja viestejä kuin
-  [matkustajainformaation tiedotteet](#matkustajainformaation-tiedotteet-passenger-information).
-  Tiedote liittyy joko asemaan tai junaan.
+- `/siri/sx` (Situation Exchange) sisältää asemien ja junien näytöillä näytettäviä
+  ja kuulutettavia tiedotteita. Tiedote liittyy joko asemaan tai junaan.
 
 Dokumentit generoidaan uusiksi minuutin välein. Vastauksen headerit kertovat
 dokumentin tuoreuden:
@@ -1851,7 +1852,8 @@ Tunnisteet ja ajat:
 
 **Paluuarvo**
 
-Palauttaa [SIRI 2.0](https://www.siri.org.uk/)-muotoisen XML-dokumentin.
+Palauttaa [Nordic SIRI -profiilin](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
+mukaisen XML-dokumentin (SIRI 2.0).
 
 ## WebSocket (MQTT)
 

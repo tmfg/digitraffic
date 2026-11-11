@@ -183,13 +183,15 @@ Data is licensed under
 
 [https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip](https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip)
 
-NeTEx is a European standard for describing public transport timetables and
-routes. The package follows the Nordic NeTEx profile and contains the planned
-timetables and routes of passenger trains.
+NeTEx is a CEN standard for exchanging public transport information, such as
+timetables and routes, as XML. The package follows the
+[Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
+and contains the planned timetables and routes of passenger trains.
 
-The package is generated daily during the early morning. It contains timetables
+The package is generated daily. It contains timetables
 for the last seven days and for the future until the end of next year. It has a
-shared file `_FTR_shared_data.xml` (operators, stop references and calendar) and
+shared file `_FTR_shared_data.xml` (operators, stops with their platforms and
+calendar) and
 one XML file per line, for example `FTR_S-979_Helsinki-Turku.xml`.
 
 If some stops of a train are cancelled on certain days (partial cancellation),
@@ -203,7 +205,8 @@ is available.
 
 NeTEx gives the plan and [SIRI](#siri) gives the real-time changes to it.
 
-Returns a [NeTEx](https://netex-cen.eu/) zip package.
+Returns a zip package that follows the
+[Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile).
 
 Data is licensed under
 [Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -211,7 +214,8 @@ Data is licensed under
 # SIRI
 
 SIRI (Service Interface for Real Time Information) is a European standard for
-real-time public transport data. The interfaces follow the Nordic SIRI profile
+real-time public transport data. The interfaces follow the
+[Nordic SIRI profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
 (SIRI 2.0 schema). Each interface returns one XML document
 (`application/xml`):
 
@@ -223,8 +227,7 @@ real-time public transport data. The interfaces follow the Nordic SIRI profile
   trains and the stop the train is approaching or standing at:
   [https://rata.digitraffic.fi/api/v1/siri/vm](https://rata.digitraffic.fi/api/v1/siri/vm)
 - `/siri/sx` (Situation Exchange) contains passenger information messages shown
-  and announced at stations and on trains. They are the same messages as in the
-  passenger information API (`/passenger-information`). A message relates to
+  and announced at stations and on trains. A message relates to
   either a station or a train:
   [https://rata.digitraffic.fi/api/v1/siri/sx](https://rata.digitraffic.fi/api/v1/siri/sx)
 
@@ -296,7 +299,9 @@ Identifiers and times:
   messages are still published and the document stays fresh
   (`x-is-fresh` is `true`).
 
-Returns a [SIRI 2.0](https://www.siri.org.uk/) XML document.
+Returns an XML document that follows the
+[Nordic SIRI profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
+(SIRI 2.0).
 
 # Track work project and yearly plans
 
