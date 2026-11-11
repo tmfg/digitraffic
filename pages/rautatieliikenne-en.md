@@ -177,14 +177,15 @@ If you are using real time feeds, then you should be using gtfs-passenger-stops.
 Real time feed is updated every 10 seconds.
 
 Data is licensed under
-[Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
+[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
 # NeTEx
 
 [https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip](https://rata.digitraffic.fi/api/v1/netex/FTR-netex.zip)
 
-NeTEx is a [CEN standard](https://netex-cen.eu/) for exchanging public transport information, such as
-timetables and routes, as XML. The package follows the
+NeTEx is a [CEN standard](https://netex-cen.eu/) for exchanging public
+transport information, such as timetables and routes, as XML. The package
+follows the
 [Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
 and contains the planned timetables and routes of passenger trains.
 
@@ -204,13 +205,10 @@ The interface returns 404 if no package is available.
 
 NeTEx gives the plan and [SIRI](#siri) gives the real-time changes to it.
 
-Returns a [NeTEx](https://netex-cen.eu/) zip package. NeTEx is the broader
-standard, and the rules of the
-[Nordic NeTEx Profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
-apply on top of it.
+Returns a zip package that follows the Nordic NeTEx Profile.
 
 Data is licensed under
-[Creative Commons Nimeä 4.0](https://creativecommons.org/licenses/by/4.0/)
+[Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
 # SIRI
 
@@ -299,9 +297,7 @@ Identifiers and times:
   messages are still published and the document stays fresh
   (`x-is-fresh` is `true`).
 
-Returns an XML document that follows the
-[Nordic SIRI profile](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
-(SIRI 2.0).
+Returns an XML document that follows the Nordic SIRI profile.
 
 # Track work project and yearly plans
 

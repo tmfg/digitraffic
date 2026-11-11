@@ -1720,7 +1720,8 @@ URL
 **Kuvaus**
 
 NeTEx on joukkoliikenteen tietojen, kuten aikataulujen ja reittien,
-XML-muotoiseen vaihtoon tarkoitettu [CEN-standardi](https://netex-cen.eu/). Paketti noudattaa
+XML-muotoiseen vaihtoon tarkoitettu [CEN-standardi](https://netex-cen.eu/).
+Paketti noudattaa
 [Nordic NeTEx -profiilia](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
 ja sisältää matkustajajunien suunnitellut aikataulut ja reitit.
 
@@ -1752,10 +1753,7 @@ reaaliaikaiset muutokset.
 
 **Paluuarvo**
 
-Palauttaa [NeTEx](https://netex-cen.eu/)-muotoisen zip-paketin. NeTEx on
-laajempi standardi, ja sen päälle tulevat
-[Nordic NeTEx -profiilin](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
-säännöt.
+Palauttaa Nordic NeTEx -profiilin mukaisen zip-paketin.
 
 ## SIRI (/siri)
 
@@ -1852,8 +1850,7 @@ Tunnisteet ja ajat:
 
 **Paluuarvo**
 
-Palauttaa [Nordic SIRI -profiilin](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/637370373/General+information+SIRI)
-mukaisen XML-dokumentin (SIRI 2.0).
+Palauttaa Nordic SIRI -profiilin mukaisen XML-dokumentin.
 
 ## WebSocket (MQTT)
 
