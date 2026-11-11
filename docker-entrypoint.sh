@@ -10,7 +10,7 @@ then
     echo
     echo "Installing/updating required Ruby gems."
     bundle install
-    bundle update
+    bundle update --all
 else
     echo
     echo "env SKIP_UPDATE=true. Skipping bundle and npm updates"
