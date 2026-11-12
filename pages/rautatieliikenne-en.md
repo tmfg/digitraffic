@@ -205,8 +205,6 @@ The interface returns 404 if no package is available.
 
 NeTEx gives the plan and [SIRI](#siri) gives the real-time changes to it.
 
-Returns a zip package that follows the Nordic NeTEx Profile.
-
 Data is licensed under
 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
@@ -244,18 +242,22 @@ Identifiers and times:
   [NeTEx package](#netex), so SIRI complements the plan in NeTEx with real-time
   information. The identifier prefix (codespace) is `FTR`.
 - Platforms (ET and VM) and stations (SX station messages) use the identifiers of
-  Fintraffic's national stop registry (PETI). A platform identifier looks like
+  Fintraffic's national stop registry
+  ([PETI](https://peti.fintraffic.fi/api/fintraffic/v1/stops?transportModes=rail)).
+  A platform identifier looks like
   `FSR:Quay`.
 - Times are in Finnish time.
 
 **SIRI-ET**
 
-- The document contains the trains of the operating day. A train of the previous
-  day is also included if it is still running. Only stops where passengers can
+- The document contains the trains of the operating day and trains of previous
+  days if they are still running. Only stops where passengers can
   board or alight are included.
-- Stops already served are in `RecordedCall` elements and upcoming stops in
+- Stops already visited are in `RecordedCall` elements and upcoming stops in
   `EstimatedCall` elements.
-- A cancelled train is marked on the journey and cancelled stops on the stops.
+- If the whole journey is cancelled, the `Cancellation` field of the journey is
+  `true`. If a single stop is cancelled, the `Cancellation` field of that stop
+  is `true`.
 - If a train does not stop at all planned stations (partial cancellation), NeTEx
   has a separate shortened journey for that day. SIRI-ET refers to that journey.
 - A platform change is shown in the `StopAssignment` element (planned and actual
@@ -273,8 +275,8 @@ Identifiers and times:
   `gtfs-rt-locations` interface.
 - `Delay` is the estimated delay at the next stop. If the delay is not known, it
   is `PT0S`.
-- `MonitoredCall` describes the next stop. When the train has arrived at its
-  final stop, it is that stop.
+- `MonitoredCall` describes the next stop of the train, or the final stop if the
+  train has already arrived.
 - A train that is not published in the NeTEx timetable is not in the document.
 - If the NeTEx data is not available, a new document is not generated. The
   previous document stays available and `x-is-fresh` becomes `false`.
@@ -290,14 +292,13 @@ Identifiers and times:
   Finnish, Swedish and English (`FI`, `SV`, `EN`).
 - A station message refers to a station (`StopPlaceRef`) and a train message to a
   train (`FramedVehicleJourneyRef`). A train message is published only when the
-  journey of the train has been published in NeTEx. It can be delayed if the
-  departure date is more than 14 days away.
+  journey of the train is found in the NeTEx data. SIRI-SX knows the journeys 14
+  days ahead, so a message for a departure date more than 14 days away can be
+  delayed.
 - If the stop registry data is not available, a new document is not generated.
   If the NeTEx journeys are not available, train messages are left out, station
   messages are still published and the document stays fresh
   (`x-is-fresh` is `true`).
-
-Returns an XML document that follows the Nordic SIRI profile.
 
 # Track work project and yearly plans
 

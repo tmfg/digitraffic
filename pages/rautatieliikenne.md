@@ -1719,8 +1719,8 @@ URL
 
 **Kuvaus**
 
-NeTEx on joukkoliikenteen tietojen, kuten aikataulujen ja reittien,
-XML-muotoiseen vaihtoon tarkoitettu [CEN-standardi](https://netex-cen.eu/).
+NeTEx on XML-muotoisen joukkoliikennetiedon, kuten aikataulujen ja reittien,
+siirtoon tarkoitettu [CEN-standardi](https://netex-cen.eu/).
 Paketti noudattaa
 [Nordic NeTEx -profiilia](https://entur.atlassian.net/wiki/spaces/PUBLIC/pages/728891481/Nordic+NeTEx+Profile)
 ja sisältää matkustajajunien suunnitellut aikataulut ja reitit.
@@ -1750,10 +1750,6 @@ Jos pakettia ei ole saatavilla, rajapinta palauttaa 404.
 SIRI-rajapinnat käyttävät samoja tunnisteita kuin tämä paketti, joten NeTEx ja
 [SIRI](#siri-siri) toimivat yhdessä: NeTEx kertoo suunnitelman ja SIRI
 reaaliaikaiset muutokset.
-
-**Paluuarvo**
-
-Palauttaa Nordic NeTEx -profiilin mukaisen zip-paketin.
 
 ## SIRI (/siri)
 
@@ -1794,18 +1790,22 @@ Tunnisteet ja ajat:
   suunnitelman reaaliaikaisilla tiedoilla. Tunnisteiden etuliite (codespace) on
   `FTR`.
 - Laiturit (ET ja VM) ja asemat (SX:n asemaviestit) tunnistetaan Fintrafficin
-  valtakunnallisen pysäkkirekisterin (PETI) tunnisteilla. Laiturin tunniste on
+  valtakunnallisen pysäkkirekisterin
+  ([PETI](https://peti.fintraffic.fi/api/fintraffic/v1/stops?transportModes=rail))
+  tunnisteilla. Laiturin tunniste on
   muotoa `FSR:Quay`.
 - Ajat ovat Suomen aikaa.
 
 **SIRI-ET**
 
-- Dokumentissa ovat liikennöintipäivän junat. Mukana on myös edellisen päivän
-  juna, jos se on vielä liikkeellä. Dokumentissa on vain pysähdykset, joissa
+- Dokumentissa ovat liikennöintipäivän junat ja edellisten päivien junat, jos
+  niitä on vielä liikkeellä. Dokumentissa on vain pysähdykset, joilla
   matkustaja voi nousta kyytiin tai poistua.
-- Jo palvellut pysähdykset ovat `RecordedCall`-elementeissä ja tulevat
+- Jo käydyt pysähdykset ovat `RecordedCall`-elementeissä ja tulevat
   `EstimatedCall`-elementeissä.
-- Peruttu juna on merkitty vuorolle ja perutut pysähdykset pysähdyksille.
+- Jos koko junavuoro on peruttu, vuoron `Cancellation`-kentän arvo on `true`.
+  Jos yksittäinen pysähdys on peruttu, kyseisen pysähdyksen
+  `Cancellation`-kentän arvo on `true`.
 - Jos juna ei pysähdy kaikilla suunnitelman mukaisilla asemilla (osittainen
   peruutus), NeTEx sisältää sille kyseiselle päivälle oman lyhennetyn vuoron.
   SIRI-ET viittaa tähän vuoroon.
@@ -1824,8 +1824,8 @@ Tunnisteet ja ajat:
   `gtfs-rt-locations`-rajapinnassa.
 - `Delay` on seuraavan pysäkin arvioitu viive. Jos viivettä ei tiedetä, se on
   `PT0S`.
-- Seuraavaa pysäkkiä kuvaa `MonitoredCall`. Kun juna on saapunut päätepysäkille,
-  se on tuo pysäkki.
+- `MonitoredCall` kuvaa junan seuraavaa pysäkkiä tai päätepysäkkiä, jos juna on
+  jo saapunut perille.
 - Junaa, jota ei ole julkaistu NeTEx-aikataulussa, ei ole dokumentissa.
 - Jos NeTEx-aineisto ei ole saatavilla, uutta dokumenttia ei tehdä. Edellinen
   dokumentti pysyy tarjolla ja `x-is-fresh` muuttuu arvoon `false`.
@@ -1840,17 +1840,13 @@ Tunnisteet ja ajat:
   pidempi, se katkaistaan ja koko teksti on `Description`-kentässä. Tekstit ovat
   suomeksi, ruotsiksi ja englanniksi (`FI`, `SV`, `EN`).
 - Asemaviesti viittaa asemaan (`StopPlaceRef`) ja junaviesti junaan
-  (`FramedVehicleJourneyRef`). Junaviesti julkaistaan vasta, kun junan vuoro on
-  julkaistu NeTEx-aineistossa. Se voi viivästyä, jos lähtöpäivä on yli 14
-  päivän päässä.
+  (`FramedVehicleJourneyRef`). Junaviesti julkaistaan vasta, kun junan vuoro
+  löytyy NeTEx-aineistosta. SIRI-SX tuntee vuorot 14 päivää eteenpäin, joten
+  viesti yli 14 päivän päässä olevalle lähtöpäivälle voi viivästyä.
 - Jos pysäkkirekisterin tiedot eivät ole saatavilla, uutta dokumenttia ei
   tehdä. Jos NeTEx-vuorot eivät ole saatavilla, junaviestit jätetään pois,
   asemaviestit julkaistaan edelleen ja dokumentti pysyy tuoreena (`x-is-fresh`
   on `true`).
-
-**Paluuarvo**
-
-Palauttaa Nordic SIRI -profiilin mukaisen XML-dokumentin.
 
 ## WebSocket (MQTT)
 
