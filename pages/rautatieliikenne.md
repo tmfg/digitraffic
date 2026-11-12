@@ -1797,7 +1797,7 @@ Tunnisteet ja ajat:
 
 **SIRI-ET**
 
-- Dokumentissa ovat liikennöintipäivän junat ja edellisten päivien junat, jos
+- Dokumentissa ovat liikennöintipäivän junat ja edellisen päivän junat, jos
   niitä on vielä liikkeellä. Dokumentissa on vain pysähdykset, joilla
   matkustaja voi nousta kyytiin tai poistua.
 - Jo käydyt pysähdykset ovat `RecordedCall`-elementeissä ja tulevat

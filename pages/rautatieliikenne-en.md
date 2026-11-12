@@ -249,8 +249,8 @@ Identifiers and times:
 
 **SIRI-ET**
 
-- The document contains the trains of the operating day and trains of previous
-  days if they are still running. Only stops where passengers can
+- The document contains the trains of the operating day and trains from the
+  previous day if they are still running. Only stops where passengers can
   board or alight are included.
 - Stops already visited are in `RecordedCall` elements and upcoming stops in
   `EstimatedCall` elements.
@@ -313,5 +313,4 @@ Data is updated from the source system once per day.
 Dataset descriptions are available in JSON Schema format:
 
 [https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts](https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts)
-
 
