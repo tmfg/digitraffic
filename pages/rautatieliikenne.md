@@ -170,8 +170,13 @@ Ei tällä hetkellä.
 
 ## Toteutetut ominaisuudet
 
-- SIRI-rajapinnat (ET, VM ja SX)
-- NeTEx-aikatauluaineisto
+- 3.11.2026
+  - SIRI-SX-rajapinta
+- 14.10.2026
+  - SIRI-VM-rajapinta
+- 6.10.2026
+  - SIRI-ET-rajapinta
+  - NeTEx-aikatauluaineisto
 - 1.6.2025
   - Pysähdyssektorin lisäys
 - 5.9.2023
