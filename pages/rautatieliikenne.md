@@ -1792,8 +1792,7 @@ Tunnisteet ja ajat:
 - Laiturit (ET ja VM) ja asemat (SX:n asemaviestit) tunnistetaan Fintrafficin
   valtakunnallisen pysäkkirekisterin
   ([PETI](https://peti.fintraffic.fi/api/fintraffic/v1/stops?transportModes=rail))
-  tunnisteilla. Laiturin tunniste on
-  muotoa `FSR:Quay`.
+  tunnisteilla. Laiturin tunniste on esimerkiksi `FSR:Quay:415`.
 - Ajat ovat Suomen aikaa.
 
 **SIRI-ET**
@@ -1837,8 +1836,9 @@ Tunnisteet ja ajat:
 - Poistettu tiedote on 5 tuntia poistamisesta tilassa `closed`, minkä jälkeen
   se poistuu dokumentista.
 - Tiedotteen teksti (`Summary`) on enintään 160 merkkiä. Jos teksti on
-  pidempi, se katkaistaan ja koko teksti on `Description`-kentässä. Tekstit ovat
-  suomeksi, ruotsiksi ja englanniksi (`FI`, `SV`, `EN`).
+  pidempi, se katkaistaan ja koko teksti on `Description`-kentässä. Teksti voi
+  olla suomeksi, ruotsiksi tai englanniksi (`FI`, `SV`, `EN`). Kaikkia
+  kieliversioita ei välttämättä ole.
 - Asemaviesti viittaa asemaan (`StopPlaceRef`) ja junaviesti junaan
   (`FramedVehicleJourneyRef`). Junaviesti julkaistaan vasta, kun junan vuoro
   löytyy NeTEx-aineistosta. SIRI-SX tuntee vuorot 14 päivää eteenpäin, joten

@@ -244,8 +244,7 @@ Identifiers and times:
 - Platforms (ET and VM) and stations (SX station messages) use the identifiers of
   Fintraffic's national stop registry
   ([PETI](https://peti.fintraffic.fi/api/fintraffic/v1/stops?transportModes=rail)).
-  A platform identifier looks like
-  `FSR:Quay`.
+  For example, a platform identifier is `FSR:Quay:415`.
 - Times are in Finnish time.
 
 **SIRI-ET**
@@ -288,8 +287,9 @@ Identifiers and times:
 - A deleted message stays in the document for 5 hours with the state `closed`
   and is then removed.
 - The message text (`Summary`) is at most 160 characters. A longer text is
-  truncated and the full text is in the `Description` element. Texts are in
-  Finnish, Swedish and English (`FI`, `SV`, `EN`).
+  truncated and the full text is in the `Description` element. The text may be
+  available in Finnish, Swedish or English (`FI`, `SV`, `EN`). Not every
+  language is necessarily present.
 - A station message refers to a station (`StopPlaceRef`) and a train message to a
   train (`FramedVehicleJourneyRef`). A train message is published only when the
   journey of the train is found in the NeTEx data. SIRI-SX knows the journeys 14
@@ -313,6 +313,5 @@ Data is updated from the source system once per day.
 Dataset descriptions are available in JSON Schema format:
 
 [https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts](https://github.com/tmfg/digitraffic-cdk/blob/master/rail/yearly-plans/src/model/schema.ts)
-
 
 
