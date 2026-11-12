@@ -10,7 +10,7 @@ ENV LC_TYPE=en_US.UTF-8
 RUN apk update
 
 # Install and set locales ruby-dev
-RUN apk -q --no-cache --update add nodejs npm make gcc g++ libc-dev \
+RUN apk -q --no-cache --update add nodejs npm make gcc g++ libc-dev openssl-dev pkgconf \
     && npm install --global pnpm@latest \
     && apk cache clean \
     && gem install bundler
@@ -27,7 +27,7 @@ RUN cd /app
 
 # Installing/updating required Ruby gems.
 RUN bundle install
-RUN bundle update
+RUN bundle update --all
 
 # CMD
 ENTRYPOINT ["/docker-entrypoint.sh"]

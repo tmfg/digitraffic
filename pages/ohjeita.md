@@ -253,7 +253,7 @@ fetch(TMS_STATION_URL, { headers: DT_USER_ID })
 ```php
 # Settings
 $user = 'Käyttäjänimesi'; # Choose descriptive name, eg. your organisation and append it with your nickname (not real name)
-$tiesaa_id = '14028'; # Find id from https://tie.digitraffic.fi/api/weather/v1/stations/
+$tiesaa_id = '14028'; # Find id from https://tie.digitraffic.fi/api/weather/v1/stations
 # End of settings
 
 # Tiesääaseman perustiedot https://tie.digitraffic.fi/api/weather/v1/stations/14028
