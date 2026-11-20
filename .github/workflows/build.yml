@@ -101,7 +101,7 @@ jobs:
 
       - name: Notify Slack on failure
         if: failure()
-        uses: tmfg/digitraffic-actions@88cc4d1a9c5cb96c037cb0dec41e1c64804b4d0e # slack-notify/v1
+        uses: tmfg/digitraffic-actions@4cdf78c4e7d654eaa1d8a6677bb7ea00d1bf1ca9 # slack-notify/v1
         with:
           status: failure
           fields: repo, job, took
