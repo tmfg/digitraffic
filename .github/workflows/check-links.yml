@@ -35,7 +35,7 @@ jobs:
             https://liikenne.palautevayla.fi/feedback
       - name: Notify Slack
         if: failure()
-        uses: tmfg/digitraffic-actions@dd6f974ac0e0fe24e70e70487de009a669c0d704 # slack-notify/v1
+        uses: tmfg/digitraffic-actions@4cdf78c4e7d654eaa1d8a6677bb7ea00d1bf1ca9 # slack-notify/v1
         with:
           status: failure
           fields: repo, job
