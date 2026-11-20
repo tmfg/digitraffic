@@ -10,7 +10,7 @@ traffictypes:
   - Tieliikenne
 environments:
   - Web
-language: Finnish
+language: Suomi (FIN)
 price: Ilmainen
 download-urls:
   - https://matkakohteet.fi
