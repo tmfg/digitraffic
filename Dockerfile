@@ -1,5 +1,5 @@
 # https://pages.github.com/versions/
-FROM ruby:3.4.11-alpine@sha256:50133d02799e7da49a1e0bd16d865701622fd61d150a8cd3463edf0016504af5
+FROM ruby:3.4.12-alpine@sha256:68d60620b4458fc58c1e1d04a79ee26b85564fdd5387f3071ae077e2c56ae766
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LC_ALL=en_US.UTF-8
