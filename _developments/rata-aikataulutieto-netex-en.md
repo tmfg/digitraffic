@@ -4,8 +4,9 @@ lang: en
 ref: rata-netex
 traffictypes:
   - Rail traffic
-status: planned
-date: 2026-06-05
+status: finished
+date: 2026-11-12
 ---
 
-Distribution of passenger traffic timetable data from NeTEx/SIRI APIs.
+Planned passenger train timetables and routes are distributed as a NeTEx package, with real-time changes provided
+through the SIRI APIs.

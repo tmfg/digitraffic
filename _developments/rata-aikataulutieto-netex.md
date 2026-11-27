@@ -4,8 +4,9 @@ lang: fi
 ref: rata-netex
 traffictypes:
   - Rautatieliikenne
-status: suunnitteilla
-date: 2026-06-05
+status: valmis
+date: 2026-11-12
 ---
 
-Matkustajaliikenteen aikataulutietojen jakaminen NeTEx/SIRI rajapinnoista. 
+Matkustajaliikenteen suunnitellut aikataulut ja reitit jaetaan NeTEx-aineistona, ja reaaliaikaiset muutokset
+SIRI-rajapinnoista.

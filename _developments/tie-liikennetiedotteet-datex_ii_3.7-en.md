@@ -4,8 +4,9 @@ lang: en
 ref: datex_II-3.7
 traffictypes:
   - Road traffic
-status: planned
-date: 2026-06-05
+status: finished
+date: 2026-08-18
 ---
 
-We are updating the Datex II data model used in traffic messages from the current version to the new 3.7 version.
+Traffic messages are available in Datex II v3.7 format through the REST and MQTT APIs. The Datex II 3.5 APIs
+remain available.
