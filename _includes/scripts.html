@@ -1,3 +1,2 @@
 <script type="text/javascript" src="{{ '/js/lang.js' | prepend:site.baseurl }}" defer></script>
-<script type="module" src="{{ '/js/bundle.min.js' | prepend:site.baseurl }}" defer></script>
-
+<script type="module" src="{{ '/js/bundle.min.js' | prepend:site.baseurl }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}" defer></script>

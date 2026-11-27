@@ -42,31 +42,37 @@ function addEventListeners() {
 }
 
 function getParams() {
-    let query = window.location.search.substring(1);
-    getFiltersFromQuery(query);
+    const params = new URLSearchParams(window.location.search);
+
+    Object.keys(activeFilters).forEach(filterType => {
+        const values = (params.get(filterType) || "").split(",").filter(Boolean);
+        const filterSection = document.body.querySelector(`ul[data-filtersection="${filterType}"]`);
+
+        if (!filterSection) {
+            return;
+        }
+
+        filterSection.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            if (values.includes(checkbox.dataset.filtervalue)) {
+                checkbox.checked = true;
+                activeFilters[filterType].push(checkbox.dataset.filtervalue);
+            }
+        });
+    });
 }
 
-function getFiltersFromQuery(query) {
-    if (query.length > 0) {
-        query.split('&').forEach(filter => {
-            let key = filter.split('=')[0];
-            let values = filter.split('=')[1].split(',');
-            values = values.map(value => {
-                return decodeURIComponent(value);
-            });
-            let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"]').querySelectorAll('li');
-            [].slice.call(listItems).forEach(listItem => {
-                let checkbox = listItem.querySelector('input');
-                for (let i = 0; i < values.length; i++) {
-                    if (values[i] === checkbox.dataset.filtervalue) {
-                        checkbox.checked = true;
-                        activeFilters[key].push(values[i]);
-                        break;
-                    }
-                }
-            });
-        });
-    }
+function updateFilterUrl() {
+    const url = new URL(window.location.href);
+
+    Object.entries(activeFilters).forEach(([filterType, values]) => {
+        if (values.length > 0) {
+            url.searchParams.set(filterType, values.join(","));
+        } else {
+            url.searchParams.delete(filterType);
+        }
+    });
+
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
 function toggleFilter() {
@@ -81,6 +87,7 @@ function toggleFilter() {
             activeFilters[filtertype].splice(activeFilters[filtertype].indexOf(filtervalue), 1);
         }
     }
+    updateFilterUrl();
     showHideDevs();
     updateVisibleAmounts();
 }

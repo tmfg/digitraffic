@@ -7,7 +7,7 @@ traffictypes:
   - Tieliikenne
   - Meriliikenne
   - Rautatieliikenne
-status: suunnitteilla
+status: piilotettu
 date: 2023-04-01
 ---
 

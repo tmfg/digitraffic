@@ -17925,30 +17925,31 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     });
   }
   function getParams2() {
-    let query = window.location.search.substring(1);
-    getFiltersFromQuery2(query);
-  }
-  function getFiltersFromQuery2(query) {
-    if (query.length > 0) {
-      query.split("&").forEach((filter) => {
-        let key = filter.split("=")[0];
-        let values = filter.split("=")[1].split(",");
-        values = values.map((value) => {
-          return decodeURIComponent(value);
-        });
-        let listItems = document.body.querySelector('ul[data-filtersection="' + key.toLowerCase() + '"]').querySelectorAll("li");
-        [].slice.call(listItems).forEach((listItem) => {
-          let checkbox = listItem.querySelector("input");
-          for (let i = 0; i < values.length; i++) {
-            if (values[i] === checkbox.dataset.filtervalue) {
-              checkbox.checked = true;
-              activeFilters2[key].push(values[i]);
-              break;
-            }
-          }
-        });
+    const params = new URLSearchParams(window.location.search);
+    Object.keys(activeFilters2).forEach((filterType) => {
+      const values = (params.get(filterType) || "").split(",").filter(Boolean);
+      const filterSection = document.body.querySelector(`ul[data-filtersection="${filterType}"]`);
+      if (!filterSection) {
+        return;
+      }
+      filterSection.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        if (values.includes(checkbox.dataset.filtervalue)) {
+          checkbox.checked = true;
+          activeFilters2[filterType].push(checkbox.dataset.filtervalue);
+        }
       });
-    }
+    });
+  }
+  function updateFilterUrl() {
+    const url = new URL(window.location.href);
+    Object.entries(activeFilters2).forEach(([filterType, values]) => {
+      if (values.length > 0) {
+        url.searchParams.set(filterType, values.join(","));
+      } else {
+        url.searchParams.delete(filterType);
+      }
+    });
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
   }
   function toggleFilter2() {
     let filtertype = this.dataset.filtertype;
@@ -17962,6 +17963,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         activeFilters2[filtertype].splice(activeFilters2[filtertype].indexOf(filtervalue), 1);
       }
     }
+    updateFilterUrl();
     showHideDevs();
     updateVisibleAmounts2();
   }
@@ -18088,9 +18090,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   }
   function getParams3() {
     let query = window.location.search.substring(1);
-    getFiltersFromQuery3(query);
+    getFiltersFromQuery2(query);
   }
-  function getFiltersFromQuery3(query) {
+  function getFiltersFromQuery2(query) {
     if (query.length > 0) {
       query.split("&").forEach((filter) => {
         let key = filter.split("=")[0];
