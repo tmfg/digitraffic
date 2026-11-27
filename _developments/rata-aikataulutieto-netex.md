@@ -5,7 +5,7 @@ ref: rata-netex
 traffictypes:
   - Rautatieliikenne
 status: valmis
-date: 2026-11-12
+date: 2026-11-24
 ---
 
 Matkustajaliikenteen suunnitellut aikataulut ja reitit jaetaan NeTEx-aineistona, ja reaaliaikaiset muutokset
