@@ -39,7 +39,7 @@ layout: compress
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-6 col-md-3">
               <div class="service-status__column">
                 <a href="/{{ site.t.tieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link_">
                   <div class="service-status__content">
@@ -56,7 +56,7 @@ layout: compress
                 </a>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-6 col-md-3">
               <div class="service-status__column">
                 <a href="/{{ site.t.rautatieliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
@@ -73,7 +73,7 @@ layout: compress
                 </a>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-6 col-md-3">
               <div class="service-status__column">
                 <a href="/{{ site.t.meriliikenne.url[page.lang] | prepend:site.baseurl }}" class="service-status__link">
                   <div class="service-status__content">
@@ -85,6 +85,23 @@ layout: compress
                     <div class="service-status__text">
                       <h4 class="h4 service-status__service-heading">{{ site.t.meriliikenne[page.lang] }}</h4>
                       <span id="service-status-text-marine" class="service-status__service-text service-status__service-text--loading">{{ site.t.loading[page.lang] }}...</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="service-status__column">
+                <a href="/{{ site.t.road-traffic.url[page.lang] | prepend:site.baseurl }}afir/" class="service-status__link">
+                  <div class="service-status__content">
+                    <div id="service-status-circle-afir" class="service-status__icon-circle-bottom">
+                      <div class="service-status__icon-circle">
+                        <i class="material-icons md-light service-status__icon">ev_station</i>
+                      </div>
+                    </div>
+                    <div class="service-status__text">
+                      <h4 class="h4 service-status__service-heading">AFIR</h4>
+                      <span id="service-status-text-afir" class="service-status__service-text service-status__service-text--loading">{{ site.t.loading[page.lang] }}...</span>
                     </div>
                   </div>
                 </a>

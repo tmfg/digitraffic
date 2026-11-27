@@ -18250,9 +18250,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     MARINE: "https://meri.digitraffic.fi/swagger/openapi.json",
     RAIL: "https://rata.digitraffic.fi/swagger/openapi.json",
     ROAD: "https://tie.digitraffic.fi/swagger/openapi.json",
+    AFIR: "https://afir.digitraffic.fi/swagger/openapi.json",
     MARINE_UI: "https://meri.digitraffic.fi/swagger/#",
     RAIL_UI: "https://rata.digitraffic.fi/swagger/#",
-    ROAD_UI: "https://tie.digitraffic.fi/swagger/#"
+    ROAD_UI: "https://tie.digitraffic.fi/swagger/#",
+    AFIR_UI: "https://afir.digitraffic.fi/swagger/#"
   };
   var translations = {
     en: {
@@ -18266,6 +18268,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       marine: "Marine",
       rail: "Rail",
       road: "Road",
+      afir: "AFIR",
       sunset: "Sunset date",
       supportedHeader: "Supported APIs",
       trafficType: "Traffic type"
@@ -18281,6 +18284,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       marine: "Meri",
       rail: "Rata",
       road: "Tie",
+      afir: "AFIR",
       sunset: "Poistuu",
       supportedHeader: "Tuetut rajapinnat",
       trafficType: "Liikennemuoto"
@@ -18402,7 +18406,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     $("#SUPPORTED-HEADER").append(
       $("<h3 />").text(translations[language].supportedHeader)
     );
-    if ($("#MARINE-DEPRECATIONS-DIV").children().length === 0 && $("#RAIL-DEPRECATIONS-DIV").children().length === 0 && $("#ROAD-DEPRECATIONS-DIV").children().length === 0) {
+    if ($("#MARINE-DEPRECATIONS-DIV").children().length === 0 && $("#RAIL-DEPRECATIONS-DIV").children().length === 0 && $("#ROAD-DEPRECATIONS-DIV").children().length === 0 && $("#AFIR-DEPRECATIONS-DIV").children().length === 0) {
       $("#DEPRECATIONS-TEXT").append([
         $("<p />", { class: "deprecations-text-paragraph" }).text(translations[language].noDeprecationsText)
       ]);
@@ -18430,20 +18434,25 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     initDeprecationsTable("MARINE", translations[language].marine.toUpperCase(), language);
     initDeprecationsTable("RAIL", translations[language].rail.toUpperCase(), language);
     initDeprecationsTable("ROAD", translations[language].road.toUpperCase(), language);
+    initDeprecationsTable("AFIR", translations[language].afir.toUpperCase(), language);
     initSupportedTable("MARINE", translations[language].marine.toUpperCase(), language);
     initSupportedTable("RAIL", translations[language].rail.toUpperCase(), language);
     initSupportedTable("ROAD", translations[language].road.toUpperCase(), language);
-    const [marineApi, railApi, roadApi] = await Promise.all([
+    initSupportedTable("AFIR", translations[language].afir.toUpperCase(), language);
+    const [marineApi, railApi, roadApi, afirApi] = await Promise.all([
       loadApiDescription("MARINE"),
       loadApiDescription("RAIL"),
-      loadApiDescription("ROAD")
+      loadApiDescription("ROAD"),
+      loadApiDescription("AFIR")
     ]).then((apis) => apis.map((a) => JSON.parse(a)));
     populateDeprecations(marineApi, "MARINE");
     populateDeprecations(railApi, "RAIL");
     populateDeprecations(roadApi, "ROAD");
+    populateDeprecations(afirApi, "AFIR");
     populateSupported(marineApi, "MARINE");
     populateSupported(railApi, "RAIL");
     populateSupported(roadApi, "ROAD");
+    populateSupported(afirApi, "AFIR");
     addHeadersAndText(language);
   }
 

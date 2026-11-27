@@ -61,6 +61,15 @@
           box-shadow: 0px 0px 10px $green;
         }
       }
+
+      &__afir {
+        box-shadow: 0px 0px 10px $green;
+        background-color: $green;
+
+        .service-status__icon-circle {
+          box-shadow: 0px 0px 10px $green;
+        }
+      }
     }
 
     &--under-maintenance {
